@@ -10,7 +10,6 @@ public class userBooking extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - godieina fire
         panel2 = new JPanel();
         panel1 = new JPanel();
         home = new JButton();
@@ -27,7 +26,6 @@ public class userBooking extends JFrame {
         //======== panel2 ========
         {
             panel2.setMinimumSize(new Dimension(500, 500));
-
             panel2.setLayout(new GridLayout());
 
             //======== panel1 ========
@@ -133,7 +131,6 @@ public class userBooking extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - godieina fire
     private JPanel panel1;
     private JPanel panel2;
     private JButton home;
