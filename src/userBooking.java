@@ -1,16 +1,18 @@
 import java.awt.*;
 import javax.swing.*;
 import com.intellij.uiDesigner.core.*;
-public class userBooking {
+public class userBooking extends JFrame {
     public userBooking() {
         initComponents();
+        this.setContentPane(panel2);
+        this.pack();
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - godieina fire
         panel2 = new JPanel();
-        JPanel panel1 = new JPanel();
+        panel1 = new JPanel();
         home = new JButton();
         dateTime = new JLabel();
         languageSelect = new JButton();
@@ -25,13 +27,6 @@ public class userBooking {
         //======== panel2 ========
         {
             panel2.setMinimumSize(new Dimension(500, 500));
-
-            // JFormDesigner evaluation mark
-            panel2.setBorder(new javax.swing.border.CompoundBorder(
-                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                    java.awt.Color.red), panel2.getBorder())); panel2.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
             panel2.setLayout(new GridLayout());
 
@@ -139,6 +134,7 @@ public class userBooking {
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - godieina fire
+    private JPanel panel1;
     private JPanel panel2;
     private JButton home;
     private JLabel dateTime;
