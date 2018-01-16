@@ -1,8 +1,8 @@
 import java.awt.*;
 import javax.swing.*;
 import com.intellij.uiDesigner.core.*;
-public class userBooking extends JFrame {
-    public userBooking() {
+public class UserBooking extends JFrame {
+    public UserBooking() {
         initComponents();
         this.setContentPane(panel2);
         this.pack();
@@ -10,8 +10,9 @@ public class userBooking extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
+        // Generated using JFormDesigner Evaluation license - godieina fire
         panel2 = new JPanel();
-        panel1 = new JPanel();
+        JPanel panel1 = new JPanel();
         home = new JButton();
         dateTime = new JLabel();
         languageSelect = new JButton();
@@ -25,8 +26,14 @@ public class userBooking extends JFrame {
 
         //======== panel2 ========
         {
-            panel2.setMinimumSize(new Dimension(500, 500));
-            panel2.setLayout(new GridLayout());
+
+            // JFormDesigner evaluation mark
+            panel2.setBorder(new javax.swing.border.CompoundBorder(
+                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                    java.awt.Color.red), panel2.getBorder())); panel2.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+
 
             //======== panel1 ========
             {
@@ -80,7 +87,7 @@ public class userBooking extends JFrame {
                             .addGroup(panel1Layout.createParallelGroup()
                                 .addGroup(panel1Layout.createSequentialGroup()
                                     .addComponent(home, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                    .addContainerGap(384, Short.MAX_VALUE))
+                                    .addContainerGap(404, Short.MAX_VALUE))
                                 .addGroup(panel1Layout.createSequentialGroup()
                                     .addGroup(panel1Layout.createParallelGroup()
                                         .addGroup(panel1Layout.createSequentialGroup()
@@ -100,7 +107,7 @@ public class userBooking extends JFrame {
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(destination3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
                                         .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
-                                    .addGap(0, 48, Short.MAX_VALUE))))
+                                    .addGap(0, 68, Short.MAX_VALUE))))
                 );
                 panel1Layout.setVerticalGroup(
                     panel1Layout.createParallelGroup()
@@ -120,18 +127,32 @@ public class userBooking extends JFrame {
                                     .addComponent(destination5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                                     .addComponent(destination6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
                                 .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                             .addContainerGap())
                 );
             }
-            panel2.add(panel1);
+
+            GroupLayout panel2Layout = new GroupLayout(panel2);
+            panel2.setLayout(panel2Layout);
+            panel2Layout.setHorizontalGroup(
+                panel2Layout.createParallelGroup()
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addComponent(panel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+            );
+            panel2Layout.setVerticalGroup(
+                panel2Layout.createParallelGroup()
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addComponent(panel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+            );
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    private JPanel panel1;
+    // Generated using JFormDesigner Evaluation license - godieina fire
     private JPanel panel2;
     private JButton home;
     private JLabel dateTime;

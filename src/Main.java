@@ -6,7 +6,7 @@ public class Main {
         System.out.println("Hello World!");
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                userBooking GUI = new userBooking();
+                UserBooking GUI = new UserBooking();
                 GUI.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 GUI.setVisible(true);
             }
