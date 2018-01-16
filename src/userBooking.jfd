@@ -7,17 +7,67 @@ new FormModel {
 			name: "panel2"
 			"minimumSize": new java.awt.Dimension( 500, 500 )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {space :0:500:x}"
-				"$verticalGroup": "par l {space :0:500:x}"
+				"$horizontalGroup": "par l {seq {space :::p, par l {seq {comp home:::p:90:p, space ::384:x}, seq {par l {seq {comp displayTimetable:::p:90:p, space u:::p, comp destination4:::p:100:p, space u:::p, comp destination5:::p:100:p, space u:::p, comp destination6:::p:100:p}, seq l {comp languageSelect:::p:90:p, space :p:12:p, comp destination1:::p:100:p, space u:::p, comp destination2:::p:100:p, space u:::p, comp destination3:::p:100:p}, comp dateTime::l:p:90:p}, space :0:48:x}}}}"
+				"$verticalGroup": "par l {seq l {space :::p, comp home:::p:60:p, space :::p, par b {comp destination1::b:p:100:p, comp destination2::b:p:100:p, comp destination3::b:p:100:p, comp languageSelect::b:p:60:p}, space :::p, par l {par b {comp destination4::b:p:100:p, comp destination5::b:p:100:p, comp destination6::b:p:100:p}, comp displayTimetable::l:p:60:p}, space ::71:x, comp dateTime:::p:60:p, space :::p}}"
 			} ) {
 				name: "panel1"
 				auxiliary() {
 					"JavaCodeGenerator.variableLocal": true
 				}
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "home"
+					"text": "Home"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "dateTime"
+					"text": "dateTime"
+					"horizontalAlignment": 0
+					"maximumSize": new java.awt.Dimension( 25, 25 )
+					"minimumSize": new java.awt.Dimension( 25, 25 )
+					"preferredSize": new java.awt.Dimension( 25, 25 )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "languageSelect"
+					"text": "languageSelect"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "displayTimetable"
+					"text": "displayTimetable"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "destination1"
+					"text": "Destination 1"
+					"font": &Font0 new java.awt.Font( ".SF NS Text", 0, 10 )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "destination2"
+					"text": "Destination 2"
+					"font": #Font0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "destination3"
+					"text": "Destination 3"
+					"font": #Font0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "destination4"
+					"text": "Destination 4"
+					"font": #Font0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "destination5"
+					"text": "Destination 5"
+					"font": #Font0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "destination6"
+					"text": "Destination 6"
+					"font": #Font0
+				} )
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 150, 0 )
-			"size": new java.awt.Dimension( 500, 500 )
+			"size": new java.awt.Dimension( 480, 415 )
 		} )
 	}
 }
