@@ -1,0 +1,23 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:301:p, comp lblBarcode:::p::p, space ::370:x}}"
+			"$verticalGroup": "par l {seq l {space :p:146:p, comp lblBarcode:::p::p, space ::142:x}}"
+		} ) {
+			name: "panel1"
+			auxiliary() {
+				"JavaCodeGenerator.variableLocal": true
+			}
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "lblBarcode"
+				"text": "INPUT BARCODE TO BEGIN"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 480, 160 )
+		} )
+	}
+}

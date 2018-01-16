@@ -1,3 +1,4 @@
+import java.awt.event.*;
 import javax.swing.*;
 
 public class GUI extends JFrame {
@@ -7,6 +8,10 @@ public class GUI extends JFrame {
         initComponents();
 //        this.setContentPane(panel1);
 //        this.pack();
+    }
+
+    private void btnBarcodeActionPerformed(ActionEvent e) {
+        new Barcode().setVisible(true);
     }
 
     private void initComponents() {
@@ -37,6 +42,7 @@ public class GUI extends JFrame {
 
             //---- btnBarcode ----
             btnBarcode.setText("BARCODE CARD");
+            btnBarcode.addActionListener(e -> btnBarcodeActionPerformed(e));
 
             //---- lblCard ----
             lblCard.setText("WHICH TYPE OF CARD DO YOU HAVE?");
