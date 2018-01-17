@@ -1,25 +1,88 @@
 import java.awt.*;
+import java.awt.event.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Iterator;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import javax.swing.*;
 import com.intellij.uiDesigner.core.*;
 
-public class loginForm {
+public class loginForm extends JFrame {
     public loginForm() {
         initComponents();
-        initComponents();
+        this.setContentPane(panel1);
+        this.pack();
+    }
+
+    private void cancelButActionPerformed(ActionEvent e) {
+        passField.setText("");
+        userField.setText("");
+    }
+
+    private void successUserLoginActionPerformed(ActionEvent e) {
+        passField.setText("password");
+        userField.setText("randThor");
+    }
+
+    private void successLoginAdminActionPerformed(ActionEvent e) {
+        passField.setText("password");
+        userField.setText("roseBush");
+    }
+
+    private void unsuccessfulLoginActionPerformed(ActionEvent e) {
+        passField.setText("password");
+        userField.setText("willSparks");
+    }
+
+    private void loginButActionPerformed(ActionEvent e) throws FileNotFoundException, IOException, ParseException {
+        String userName = userField.getText();
+        String password = passField.getText();
+        boolean success = false;
+        JSONParser parser = new JSONParser();
+        Object obj = parser.parse(new FileReader("src\\users.json"));
+        JSONArray jsonArray = (JSONArray) obj;
+        for(int i = 0; i < jsonArray.size(); i++) {
+            JSONObject jsonobj = (JSONObject) jsonArray.get(i);
+            if(((JSONObject) jsonArray.get(i)).get("username").equals(userName)) {
+                if(((JSONObject) jsonArray.get(i)).get("password").equals(password)) {
+                    invalidCred.setVisible(false);
+                    if(((JSONObject) jsonArray.get(i)).get("admin").equals("true")){
+                        new adminHome().setVisible(true);
+                    } else {
+                        new userHome().setVisible(true);
+                    }
+                    this.setVisible(false);
+                    break;
+                }
+            }
+        }
+
+        if(!success) {
+            invalidCred.setVisible(true);
+        }
+
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Benjamin Ward
-        JPanel panel1 = new JPanel();
+        panel1 = new JPanel();
         panel2 = new JPanel();
         label1 = new JLabel();
         label2 = new JLabel();
         label3 = new JLabel();
-        passwordField1 = new JPasswordField();
-        textField1 = new JTextField();
-        button1 = new JButton();
-        button2 = new JButton();
+        passField = new JPasswordField();
+        userField = new JTextField();
+        loginBut = new JButton();
+        cancelBut = new JButton();
+        successUserLogin = new JButton();
+        successLoginAdmin = new JButton();
+        unsuccessfulLogin = new JButton();
+        invalidCred = new JLabel();
 
         //======== panel1 ========
         {
@@ -46,46 +109,93 @@ public class loginForm {
                 //---- label3 ----
                 label3.setText("Password");
 
-                //---- button1 ----
-                button1.setText("Login");
+                //---- loginBut ----
+                loginBut.setText("Login");
+                loginBut.addActionListener(e -> {
+                    try {
+                        loginButActionPerformed(e);
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    } catch (ParseException e1) {
+                        e1.printStackTrace();
+                    }
+                });
 
-                //---- button2 ----
-                button2.setText("Cancel");
+                //---- cancelBut ----
+                cancelBut.setText("Cancel");
+                cancelBut.addActionListener(e -> cancelButActionPerformed(e));
+
+                //---- successUserLogin ----
+                successUserLogin.setText("Successful Login - User");
+                successUserLogin.addActionListener(e -> successUserLoginActionPerformed(e));
+
+                //---- successLoginAdmin ----
+                successLoginAdmin.setText("Successful Login - Admin");
+                successLoginAdmin.addActionListener(e -> successLoginAdminActionPerformed(e));
+
+                //---- unsuccessfulLogin ----
+                unsuccessfulLogin.setText("Unsuccessful Login ");
+                unsuccessfulLogin.addActionListener(e -> unsuccessfulLoginActionPerformed(e));
+
+                //---- invalidCred ----
+                invalidCred.setText("Invalid Credentials");
+                invalidCred.setForeground(Color.red);
+                invalidCred.setFont(new Font("Segoe UI", Font.BOLD, 12));
+                invalidCred.setHorizontalAlignment(SwingConstants.CENTER);
+                invalidCred.setBackground(Color.black);
+                invalidCred.setVisible(false);
 
                 GroupLayout panel2Layout = new GroupLayout(panel2);
                 panel2.setLayout(panel2Layout);
                 panel2Layout.setHorizontalGroup(
                     panel2Layout.createParallelGroup()
                         .addGroup(panel2Layout.createSequentialGroup()
-                            .addGap(162, 162, 162)
-                            .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                .addComponent(label3)
-                                .addComponent(label2)
-                                .addComponent(label1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(passwordField1)
-                                .addComponent(textField1)
-                                .addComponent(button1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(button2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addContainerGap(188, Short.MAX_VALUE))
+                            .addGroup(panel2Layout.createParallelGroup()
+                                .addGroup(panel2Layout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addComponent(successUserLogin)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(successLoginAdmin)
+                                    .addGap(16, 16, 16)
+                                    .addComponent(unsuccessfulLogin))
+                                .addGroup(panel2Layout.createSequentialGroup()
+                                    .addGap(162, 162, 162)
+                                    .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(cancelBut, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(loginBut, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(passField)
+                                        .addComponent(label3)
+                                        .addComponent(userField)
+                                        .addComponent(label2)
+                                        .addComponent(label1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(invalidCred, GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))))
+                            .addContainerGap(8, Short.MAX_VALUE))
                 );
                 panel2Layout.setVerticalGroup(
                     panel2Layout.createParallelGroup()
                         .addGroup(panel2Layout.createSequentialGroup()
-                            .addGap(91, 91, 91)
+                            .addGap(15, 15, 15)
+                            .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(unsuccessfulLogin)
+                                .addComponent(successUserLogin)
+                                .addComponent(successLoginAdmin))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(label1)
-                            .addGap(40, 40, 40)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(invalidCred, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(label2)
-                            .addGap(12, 12, 12)
-                            .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(userField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(label3)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(passwordField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addGap(19, 19, 19)
-                            .addComponent(button1)
+                            .addComponent(passField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(loginBut)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(button2)
-                            .addContainerGap(59, Short.MAX_VALUE))
+                            .addComponent(cancelBut)
+                            .addContainerGap(138, Short.MAX_VALUE))
                 );
             }
             panel1.add(panel2, new GridConstraints(0, 0, 1, 1,
@@ -100,12 +210,17 @@ public class loginForm {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Benjamin Ward
     private JPanel panel2;
+    private JPanel panel1;
     private JLabel label1;
     private JLabel label2;
     private JLabel label3;
-    private JPasswordField passwordField1;
-    private JTextField textField1;
-    private JButton button1;
-    private JButton button2;
+    private JPasswordField passField;
+    private JTextField userField;
+    private JButton loginBut;
+    private JButton cancelBut;
+    private JButton successUserLogin;
+    private JButton successLoginAdmin;
+    private JButton unsuccessfulLogin;
+    private JLabel invalidCred;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

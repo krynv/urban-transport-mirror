@@ -1,0 +1,17 @@
+[  
+    {  
+        "username":"randThor",
+        "password":"password",
+        "admin":"false"
+    },
+   {  
+        "username":"roseBush",
+        "password":"password",
+        "admin":"true"
+    },
+{  
+        "username":"billSparks",
+        "password":"password",
+        "admin":"true"
+    },
+]
