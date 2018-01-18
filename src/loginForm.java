@@ -67,6 +67,10 @@ public class loginForm extends JFrame {
 
     }
 
+    private void regButActionPerformed(ActionEvent e) {
+        new registerForm().setVisible(true);
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Benjamin Ward
@@ -83,6 +87,7 @@ public class loginForm extends JFrame {
         successLoginAdmin = new JButton();
         unsuccessfulLogin = new JButton();
         invalidCred = new JLabel();
+        regBut = new JButton();
 
         //======== panel1 ========
         {
@@ -145,6 +150,13 @@ public class loginForm extends JFrame {
                 invalidCred.setBackground(Color.black);
                 invalidCred.setVisible(false);
 
+                //---- regBut ----
+                regBut.setText("Register");
+                regBut.setBackground(Color.black);
+                regBut.setForeground(Color.blue);
+                regBut.setOpaque(false);
+                regBut.addActionListener(e -> regButActionPerformed(e));
+
                 GroupLayout panel2Layout = new GroupLayout(panel2);
                 panel2.setLayout(panel2Layout);
                 panel2Layout.setHorizontalGroup(
@@ -168,7 +180,8 @@ public class loginForm extends JFrame {
                                         .addComponent(userField)
                                         .addComponent(label2)
                                         .addComponent(label1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(invalidCred, GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))))
+                                        .addComponent(invalidCred, GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                                        .addComponent(regBut, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                             .addContainerGap(8, Short.MAX_VALUE))
                 );
                 panel2Layout.setVerticalGroup(
@@ -195,7 +208,9 @@ public class loginForm extends JFrame {
                             .addComponent(loginBut)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(cancelBut)
-                            .addContainerGap(138, Short.MAX_VALUE))
+                            .addGap(31, 31, 31)
+                            .addComponent(regBut)
+                            .addContainerGap(75, Short.MAX_VALUE))
                 );
             }
             panel1.add(panel2, new GridConstraints(0, 0, 1, 1,
@@ -222,5 +237,6 @@ public class loginForm extends JFrame {
     private JButton successLoginAdmin;
     private JButton unsuccessfulLogin;
     private JLabel invalidCred;
+    private JButton regBut;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
