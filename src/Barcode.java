@@ -1,19 +1,40 @@
+import java.awt.event.*;
 import javax.swing.*;
 
 public class Barcode extends JFrame {
-//    private JPanel panel1;
+    private final String validBarcode = "86657673683465826779686123";
+
+    private JPanel panel1;
 
     public Barcode() {
         initComponents();
-//        this.setContentPane(panel1);
-//        this.pack();
+        txtBarcode.setText(validBarcode);
+        this.setContentPane(panel1);
+        this.pack();
+    }
+
+    private void btnBarcodeActionPerformed(ActionEvent e) {
+        String barcode = txtBarcode.getText();
+
+        if (barcode.equals(validBarcode)) {
+            System.out.println("valid barcode");
+        } else {
+            lblBarcodeError.setVisible(true);
+        }
+    }
+
+    private void txtBarcodeFocusGained(FocusEvent e) {
+        lblBarcodeError.setVisible(false);
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - godieina fire
-        JPanel panel1 = new JPanel();
+        panel1 = new JPanel();
         lblBarcode = new JLabel();
+        txtBarcode = new JTextField();
+        btnBarcode = new JButton();
+        lblBarcodeError = new JLabel();
 
         //======== panel1 ========
         {
@@ -29,21 +50,55 @@ public class Barcode extends JFrame {
             //---- lblBarcode ----
             lblBarcode.setText("INPUT BARCODE TO BEGIN");
 
+            //---- txtBarcode ----
+            txtBarcode.addFocusListener(new FocusAdapter() {
+                @Override
+                public void focusGained(FocusEvent e) {
+                    txtBarcodeFocusGained(e);
+                }
+            });
+
+            //---- btnBarcode ----
+            btnBarcode.setText("BEGIN");
+            btnBarcode.addActionListener(e -> btnBarcodeActionPerformed(e));
+
+            //---- lblBarcodeError ----
+            lblBarcodeError.setText("INVALID BARCODE TRY AGAIN");
+            lblBarcodeError.setVisible(false);
+
             GroupLayout panel1Layout = new GroupLayout(panel1);
             panel1.setLayout(panel1Layout);
             panel1Layout.setHorizontalGroup(
                 panel1Layout.createParallelGroup()
                     .addGroup(panel1Layout.createSequentialGroup()
-                        .addGap(301, 301, 301)
-                        .addComponent(lblBarcode)
-                        .addContainerGap(370, Short.MAX_VALUE))
+                        .addGroup(panel1Layout.createParallelGroup()
+                            .addGroup(panel1Layout.createSequentialGroup()
+                                .addGap(154, 154, 154)
+                                .addGroup(panel1Layout.createParallelGroup()
+                                    .addComponent(lblBarcodeError)
+                                    .addGroup(panel1Layout.createSequentialGroup()
+                                        .addGap(13, 13, 13)
+                                        .addComponent(btnBarcode, GroupLayout.PREFERRED_SIZE, 289, GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(panel1Layout.createSequentialGroup()
+                                .addGap(170, 170, 170)
+                                .addComponent(lblBarcode))
+                            .addGroup(panel1Layout.createSequentialGroup()
+                                .addGap(116, 116, 116)
+                                .addComponent(txtBarcode, GroupLayout.PREFERRED_SIZE, 401, GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(123, Short.MAX_VALUE))
             );
             panel1Layout.setVerticalGroup(
                 panel1Layout.createParallelGroup()
                     .addGroup(panel1Layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
+                        .addGap(36, 36, 36)
                         .addComponent(lblBarcode)
-                        .addContainerGap(142, Short.MAX_VALUE))
+                        .addGap(29, 29, 29)
+                        .addComponent(lblBarcodeError)
+                        .addGap(43, 43, 43)
+                        .addComponent(txtBarcode, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(btnBarcode)
+                        .addContainerGap(64, Short.MAX_VALUE))
             );
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
@@ -52,5 +107,8 @@ public class Barcode extends JFrame {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - godieina fire
     private JLabel lblBarcode;
+    private JTextField txtBarcode;
+    private JButton btnBarcode;
+    private JLabel lblBarcodeError;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

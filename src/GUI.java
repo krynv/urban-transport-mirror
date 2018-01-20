@@ -2,12 +2,12 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class GUI extends JFrame {
-//    private JPanel panel1;
+    private JPanel panel1;
 
     public GUI() {
         initComponents();
-//        this.setContentPane(panel1);
-//        this.pack();
+        this.setContentPane(panel1);
+        this.pack();
     }
 
     private void btnBarcodeActionPerformed(ActionEvent e) {
@@ -17,7 +17,7 @@ public class GUI extends JFrame {
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - godieina fire
-        JPanel panel1 = new JPanel();
+        panel1 = new JPanel();
         btnMagnetic = new JButton();
         btnContactless = new JButton();
         btnBarcode = new JButton();
