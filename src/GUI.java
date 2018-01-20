@@ -14,6 +14,10 @@ public class GUI extends JFrame {
         new Barcode().setVisible(true);
     }
 
+    private void btnMagneticActionPerformed(ActionEvent e) {
+        new MagneticCard().setVisible(true);
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - godieina fire
@@ -36,6 +40,7 @@ public class GUI extends JFrame {
 
             //---- btnMagnetic ----
             btnMagnetic.setText("MAGNETIC STRIP CARD");
+            btnMagnetic.addActionListener(e -> btnMagneticActionPerformed(e));
 
             //---- btnContactless ----
             btnContactless.setText("CONTACTLESS CARD");
