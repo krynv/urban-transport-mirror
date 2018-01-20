@@ -14,7 +14,7 @@ public class MagneticCard extends JFrame {
 
     private void btnSwipeCareActionPerformed(ActionEvent e) {
         if (valid) {
-            System.out.println("valid magnetic card");
+            new Account().setVisible(true);
         } else {
             lblMagneticCardError.setVisible(true);
         }

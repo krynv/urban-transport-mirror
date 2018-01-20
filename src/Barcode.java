@@ -17,7 +17,7 @@ public class Barcode extends JFrame {
         String barcode = txtBarcode.getText();
 
         if (barcode.equals(validBarcode)) {
-            System.out.println("valid barcode");
+            new Account().setVisible(true);
         } else {
             lblBarcodeError.setVisible(true);
         }

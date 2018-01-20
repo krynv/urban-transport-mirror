@@ -14,7 +14,7 @@ public class RFID extends JFrame {
 
     private void btnRFIDActionPerformed(ActionEvent e) {
         if (valid) {
-            System.out.println("valid contactless card");
+            new Account().setVisible(true);
         } else {
             lblRFIDError.setVisible(true);
         }
