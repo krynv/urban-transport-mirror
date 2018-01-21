@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.beans.*;
 import javax.swing.*;
 import com.jgoodies.forms.layout.*;
 public class ConfirmBooking extends JFrame {
@@ -20,6 +21,25 @@ public class ConfirmBooking extends JFrame {
         this.dispose();
     }
 
+
+    public void changed() {
+        if (couponTextField.getText().equals("killyourself")) {
+            couponVerificationLabel.setText("KYS");
+            couponVerificationLabel.setOpaque(true);
+            couponVerificationLabel.setBackground(new Color(216, 231, 213));
+        }
+        else {
+            couponVerificationLabel.setBackground(new Color(241, 207, 205));
+            couponVerificationLabel.setOpaque(true);
+            couponVerificationLabel.setText("Coupon Code Invalid");
+        }
+    }
+
+    private void couponTextFieldKeyTyped(KeyEvent e) {
+        changed();
+    }
+
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - godieina fire
@@ -37,11 +57,12 @@ public class ConfirmBooking extends JFrame {
         label7 = new JLabel();
         checkBox1 = new JCheckBox();
         checkBox2 = new JCheckBox();
-        textField1 = new JTextField();
         label8 = new JLabel();
         button1 = new JButton();
         label9 = new JLabel();
         label10 = new JLabel();
+        couponVerificationLabel = new JLabel();
+        couponTextField = new JTextField();
 
         //======== panel2 ========
         {
@@ -112,6 +133,17 @@ public class ConfirmBooking extends JFrame {
             //---- label10 ----
             label10.setText("Via Locations");
 
+            //---- couponVerificationLabel ----
+            couponVerificationLabel.setToolTipText("Coupon Validity Check");
+
+            //---- couponTextField ----
+            couponTextField.addKeyListener(new KeyAdapter() {
+                @Override
+                public void keyTyped(KeyEvent e) {
+                    couponTextFieldKeyTyped(e);
+                }
+            });
+
             GroupLayout panel2Layout = new GroupLayout(panel2);
             panel2.setLayout(panel2Layout);
             panel2Layout.setHorizontalGroup(
@@ -119,7 +151,6 @@ public class ConfirmBooking extends JFrame {
                     .addGroup(panel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(panel2Layout.createParallelGroup()
-                            .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addGroup(panel2Layout.createParallelGroup()
                                     .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
@@ -127,62 +158,63 @@ public class ConfirmBooking extends JFrame {
                                     .addComponent(home, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
                                 .addGroup(panel2Layout.createParallelGroup()
                                     .addGroup(panel2Layout.createSequentialGroup()
-                                        .addGap(38, 38, 38)
+                                        .addGap(27, 27, 27)
                                         .addGroup(panel2Layout.createParallelGroup()
                                             .addGroup(panel2Layout.createSequentialGroup()
-                                                .addGap(2, 2, 2)
+                                                .addGap(6, 6, 6)
                                                 .addGroup(panel2Layout.createParallelGroup()
                                                     .addGroup(panel2Layout.createSequentialGroup()
-                                                        .addComponent(label5)
-                                                        .addGap(60, 60, 60)
-                                                        .addComponent(label6))
-                                                    .addComponent(label7, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE)))
-                                            .addGroup(panel2Layout.createSequentialGroup()
-                                                .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                                    .addGroup(panel2Layout.createParallelGroup()
-                                                        .addComponent(checkBox1)
-                                                        .addComponent(checkBox2))
-                                                    .addGroup(panel2Layout.createParallelGroup()
-                                                        .addComponent(label8)
-                                                        .addComponent(textField1, GroupLayout.PREFERRED_SIZE, 104, GroupLayout.PREFERRED_SIZE)))
-                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 244, Short.MAX_VALUE)
-                                                .addComponent(button1))))
+                                                        .addGap(2, 2, 2)
+                                                        .addGroup(panel2Layout.createParallelGroup()
+                                                            .addGroup(panel2Layout.createSequentialGroup()
+                                                                .addComponent(label5)
+                                                                .addGap(60, 60, 60)
+                                                                .addComponent(label6))
+                                                            .addComponent(label7, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE)))
+                                                    .addGroup(panel2Layout.createSequentialGroup()
+                                                        .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                            .addGroup(panel2Layout.createParallelGroup()
+                                                                .addComponent(checkBox1)
+                                                                .addComponent(checkBox2))
+                                                            .addComponent(label8)
+                                                            .addComponent(couponTextField, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE))
+                                                        .addGap(283, 283, 283)
+                                                        .addComponent(button1))))
+                                            .addComponent(label4)))
                                     .addGroup(panel2Layout.createSequentialGroup()
+                                        .addGap(119, 119, 119)
                                         .addGroup(panel2Layout.createParallelGroup()
                                             .addGroup(panel2Layout.createSequentialGroup()
-                                                .addGap(130, 130, 130)
-                                                .addGroup(panel2Layout.createParallelGroup()
-                                                    .addGroup(panel2Layout.createSequentialGroup()
-                                                        .addGap(87, 87, 87)
-                                                        .addComponent(label10))
-                                                    .addGroup(panel2Layout.createSequentialGroup()
-                                                        .addComponent(label3, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(0, 0, 0)
-                                                        .addComponent(label9))
-                                                    .addGroup(panel2Layout.createSequentialGroup()
-                                                        .addGap(68, 68, 68)
-                                                        .addComponent(label2)
-                                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                        .addComponent(label1))))
+                                                .addComponent(label3, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, 0)
+                                                .addComponent(label9))
                                             .addGroup(panel2Layout.createSequentialGroup()
-                                                .addGap(27, 27, 27)
-                                                .addComponent(label4)))
-                                        .addGap(0, 98, Short.MAX_VALUE)))))
-                        .addGap(35, 35, 35))
+                                                .addGap(68, 68, 68)
+                                                .addComponent(label2)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(label1))
+                                            .addGroup(panel2Layout.createSequentialGroup()
+                                                .addGap(87, 87, 87)
+                                                .addComponent(label10))))
+                                    .addGroup(panel2Layout.createSequentialGroup()
+                                        .addGap(180, 180, 180)
+                                        .addComponent(couponVerificationLabel, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             );
             panel2Layout.setVerticalGroup(
                 panel2Layout.createParallelGroup()
                     .addGroup(panel2Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(panel2Layout.createParallelGroup()
                             .addGroup(panel2Layout.createSequentialGroup()
-                                .addContainerGap()
                                 .addComponent(home, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                                 .addGap(42, 42, 42)
                                 .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                                 .addGap(6, 6, 6)
                                 .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
                             .addGroup(panel2Layout.createSequentialGroup()
-                                .addGap(47, 47, 47)
+                                .addGap(12, 12, 12)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(label1)
                                     .addComponent(label2))
@@ -192,9 +224,11 @@ public class ConfirmBooking extends JFrame {
                                     .addComponent(label9))
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(label10)
-                                .addGap(18, 18, 18)
-                                .addComponent(label4, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(couponVerificationLabel, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
+                                .addGap(23, 23, 23)
+                                .addComponent(label4, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(label5)
                                     .addComponent(label6))
@@ -208,11 +242,11 @@ public class ConfirmBooking extends JFrame {
                                 .addComponent(label8)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(button1))))
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                                    .addComponent(button1)
+                                    .addComponent(couponTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addGap(39, 39, 39))
             );
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
@@ -234,10 +268,11 @@ public class ConfirmBooking extends JFrame {
     private JLabel label7;
     private JCheckBox checkBox1;
     private JCheckBox checkBox2;
-    private JTextField textField1;
     private JLabel label8;
     private JButton button1;
     private JLabel label9;
     private JLabel label10;
+    private JLabel couponVerificationLabel;
+    private JTextField couponTextField;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {space :::p, par l {comp dateTime::l:p:90:p, seq {par l {comp languageSelect::l:p:90:p, comp displayTimetable::l:p:90:p, comp home::l:p:90:p}, par l {seq {space :p:38:p, par l {seq l {space :2:2:p, par l {seq l {comp label5:::p::p, space :p:60:p, comp label6:::p::p}, comp label7:::p:112:p}}, seq l {par t {par l:t {comp checkBox1:::p::p, comp checkBox2::l:p::p}, par l:t {comp label8:::p::p, comp textField1:::p:104:p}}, space ::244:x, comp button1:::p::p}}}, seq {par l {seq l {space :p:130:p, par l {seq l {space :p:87:p, comp label10:::p::p}, seq l {comp label3:::p:135:p, space :0:0:p, comp label9:::p::p}, seq l {space :p:68:p, comp label2:::p::p, space :::p, comp label1:::p::p}}}, seq l {space :p:27:p, comp label4:::p::p}}, space :0:98:x}}}}, space :p:35:p}}"
-			"$verticalGroup": "par l {seq l {par l {seq l {space :::p, comp home:::p:60:p, space :p:42:p, comp languageSelect:::p:60:p, space :p:6:p, comp displayTimetable:::p:60:p}, seq l {space :p:47:p, par b {comp label1::b:p::p, comp label2::b:p::p}, space :::p, par b {comp label3::b:p:24:p, comp label9::b:p::p}, space :::p, comp label10:::p::p, space :p:18:p, comp label4:::p:16:p, space :::p, par b {comp label5::b:p::p, comp label6::b:p::p}, space :::p, comp label7:::p::p, space :::p, comp checkBox1:::p::p, space :::p, comp checkBox2:::p::p, space :::p, comp label8:::p::p, space :::p, par b {comp textField1::b:p::p, comp button1::b:p::p}}}, space ::14:x, comp dateTime:::p:60:p, space :::p}}"
+			"$horizontalGroup": "par l {seq {space :::p, par l {seq {par l {comp languageSelect::l:p:90:p, comp displayTimetable::l:p:90:p, comp home::l:p:90:p}, par l {seq {space :p:27:p, par l {seq l {space :6:6:p, par l {seq l {space :2:2:p, par l {seq l {comp label5:::p::p, space :p:60:p, comp label6:::p::p}, comp label7:::p:112:p}}, seq l {par t {par l:t {comp checkBox1:::p::p, comp checkBox2::l:p::p}, comp label8:::p::p, comp couponTextField:::p:85:p}, space :p:283:p, comp button1:::p::p}}}, comp label4::l:p::p}}, seq {space :p:119:p, par l {seq l {comp label3:::p:135:p, space :0:0:p, comp label9:::p::p}, seq l {space :p:68:p, comp label2:::p::p, space :::p, comp label1:::p::p}, seq l {space :p:87:p, comp label10:::p::p}}}, seq l {space :p:180:p, comp couponVerificationLabel:::p:137:p}}}, comp dateTime::l:p:90:p}, space :20::x}}"
+			"$verticalGroup": "par l {seq l {space :::p, par l {seq l {comp home:::p:60:p, space :p:42:p, comp languageSelect:::p:60:p, space :p:6:p, comp displayTimetable:::p:60:p}, seq l {space :p:12:p, par b {comp label1::b:p::p, comp label2::b:p::p}, space :::p, par b {comp label3::b:p:24:p, comp label9::b:p::p}, space :::p, comp label10:::p::p, space :::p, comp couponVerificationLabel:::p:18:p, space :p:23:p, comp label4:::p:16:p, space u:::p, par b {comp label5::b:p::p, comp label6::b:p::p}, space :::p, comp label7:::p::p, space :::p, comp checkBox1:::p::p, space :::p, comp checkBox2:::p::p, space :::p, comp label8:::p::p, space :::p, par b {comp button1::b:p::p, comp couponTextField::b:p::p}}}, space :::x, comp dateTime:::p:60:p, space :p:39:p}}"
 		} ) {
 			name: "panel2"
 			add( new FormComponent( "javax.swing.JButton" ) {
@@ -67,9 +67,6 @@ new FormModel {
 				name: "checkBox2"
 				"text": "CARD"
 			} )
-			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField1"
-			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label8"
 				"text": "Coupon Code"
@@ -86,9 +83,17 @@ new FormModel {
 				name: "label10"
 				"text": "Via Locations"
 			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "couponVerificationLabel"
+				"toolTipText": "Coupon Validity Check"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "couponTextField"
+				addEvent( new FormEvent( "java.awt.event.KeyListener", "keyTyped", "couponTextFieldKeyTyped", true ) )
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 600, 385 )
+			"size": new java.awt.Dimension( 600, 390 )
 		} )
 	}
 }

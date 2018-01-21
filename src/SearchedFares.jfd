@@ -36,6 +36,7 @@ new FormModel {
 				"text": "<html>\nDestination <br>\nDeparture Date/Time <br>\nReturn Date/Time <br>\nPRICE\n</html>"
 				"horizontalAlignment": 11
 				"font": &Font0 new java.awt.Font( ".SF NS Text", 0, 11 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "button2"

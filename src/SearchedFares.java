@@ -21,6 +21,11 @@ public class SearchedFares extends JFrame {
         this.dispose();
     }
 
+    private void button1ActionPerformed(ActionEvent e) {
+        new ConfirmBooking().setVisible(true);
+        this.dispose();
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - godieina fire
@@ -70,6 +75,7 @@ public class SearchedFares extends JFrame {
             button1.setText("<html>\nDestination <br>\nDeparture Date/Time <br>\nReturn Date/Time <br>\nPRICE\n</html>");
             button1.setHorizontalAlignment(SwingConstants.TRAILING);
             button1.setFont(new Font(".SF NS Text", Font.PLAIN, 11));
+            button1.addActionListener(e -> button1ActionPerformed(e));
 
             //---- button2 ----
             button2.setText("<html>\nDestination <br>\nDeparture Date/Time <br>\nReturn Date/Time <br>\nPRICE\n</html>");
