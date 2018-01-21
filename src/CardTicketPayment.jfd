@@ -1,0 +1,96 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space :::p, par l {seq l {par l {seq l {comp home:::p:90:p, space :119:119:p, par l {seq l {space :68:68:p, comp label2:::p::p, space :6:6:p, comp label1:::p::p}, seq l {comp label3:::p:135:p, space :0:0:p, comp label9:::p::p}}}, seq l {par l {comp languageSelect::l:p:90:p, comp displayTimetable::l:p:90:p}, par l {seq {space :p:30:p, comp label4:::p::p}, seq l {space :p:62:p, par l {comp label5:::p::p, comp label7:1:l:p::p, comp label11:1:l:p::p, comp label8:1:l:p::p}}}, par l {seq {space :p:48:p, par l {comp label6:::p::p, comp label10:::p::p}}, seq l {space :p:32:p, par l:::p {comp textField3::::147:x, comp textField1::::147:x, comp textField2::::147:x}}}}}, space ::114:x}, seq l {comp dateTime:::p:90:p, space ::290:x, comp button1:::p::p, space :p:48:p}}}}"
+			"$verticalGroup": "par l {seq l {space :::p, par l {comp home:::p:60:p, seq l {space :12:12:p, par l {comp label2:::p::p, comp label1:::p::p}, space :6:6:p, par l {comp label3:::p:24:p, seq l {space :4:4:p, comp label9:::p::p}}}}, space :4:4:p, comp label10:::p::p, par l {seq {space :22:22:p, par b {comp languageSelect::b:p:60:p, comp label4::b:p::p}, space :6:6:p, comp displayTimetable:::p:60:p}, seq l {space :p:71:p, par b {comp label5::b:p::p, comp label6::b:p::p}, space :p:22:p, par b {comp label7::b:p::p, comp textField1::b:p::p}, space :::p, par b {comp textField2::b:p::p, comp label8::b:p::p}}}, par l {seq {space :::p, par b {comp textField3::b:p::p, comp label11::b:p::p}, space u:::p, comp button1:::p::p, space ::62:x}, seq t {space ::70:x, comp dateTime:::p:60:p, space :::p}}}}"
+		} ) {
+			name: "panel2"
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "home"
+				"text": "Home"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "homeActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "languageSelect"
+				"text": "languageSelect"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "languageSelectActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "displayTimetable"
+				"text": "displayTimetable"
+				"enabled": false
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "dateTime"
+				"text": "dateTime"
+				"horizontalAlignment": 0
+				"maximumSize": new java.awt.Dimension( 25, 25 )
+				"minimumSize": new java.awt.Dimension( 25, 25 )
+				"preferredSize": new java.awt.Dimension( 25, 25 )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label10"
+				"text": "Via Locations"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": "Departure Date/Time"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": "Station"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": "Destination"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label9"
+				"text": "Return Date/Time"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label4"
+				"text": "Payment Information"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label5"
+				"text": "Ticket Type"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label6"
+				"text": "PRICE"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label7"
+				"text": "Card Name"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label8"
+				"text": "Card Number"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label11"
+				"text": "Security Code"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField2"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField3"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": "Confirm Payment"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 5 )
+			"size": new java.awt.Dimension( 570, 385 )
+		} )
+	}
+}

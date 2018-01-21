@@ -21,7 +21,6 @@ public class ConfirmBooking extends JFrame {
         this.dispose();
     }
 
-
     public void changed() {
         if (couponTextField.getText().equals("killyourself")) {
             couponVerificationLabel.setText("KYS");
@@ -39,6 +38,10 @@ public class ConfirmBooking extends JFrame {
         changed();
     }
 
+    private void button1ActionPerformed(ActionEvent e) {
+        new CardTicketPayment().setVisible(true);
+        this.dispose();
+    }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -126,6 +129,7 @@ public class ConfirmBooking extends JFrame {
 
             //---- button1 ----
             button1.setText("Advance");
+            button1.addActionListener(e -> button1ActionPerformed(e));
 
             //---- label9 ----
             label9.setText("Return Date/Time");
