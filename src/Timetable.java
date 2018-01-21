@@ -34,6 +34,7 @@ public class Timetable extends JFrame {
 
         //======== panel2 ========
         {
+            panel2.setMinimumSize(new Dimension(580, 385));
 
             // JFormDesigner evaluation mark
             panel2.setBorder(new javax.swing.border.CompoundBorder(
@@ -79,7 +80,7 @@ public class Timetable extends JFrame {
                             .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
                             .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 507, Short.MAX_VALUE)
+                        .addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 472, Short.MAX_VALUE)
                         .addContainerGap())
             );
             panel2Layout.setVerticalGroup(
@@ -96,7 +97,7 @@ public class Timetable extends JFrame {
                                 .addGap(90, 90, 90)
                                 .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
                             .addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 281, GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(15, Short.MAX_VALUE))
+                        .addContainerGap(25, Short.MAX_VALUE))
             );
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents

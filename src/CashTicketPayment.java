@@ -43,6 +43,7 @@ public class CashTicketPayment extends JFrame {
 
         //======== panel2 ========
         {
+            panel2.setMinimumSize(new Dimension(580, 385));
 
             // JFormDesigner evaluation mark
             panel2.setBorder(new javax.swing.border.CompoundBorder(
@@ -114,14 +115,14 @@ public class CashTicketPayment extends JFrame {
             panel2Layout.setHorizontalGroup(
                 panel2Layout.createParallelGroup()
                     .addGroup(GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
-                        .addContainerGap(242, Short.MAX_VALUE)
+                        .addContainerGap(237, Short.MAX_VALUE)
                         .addComponent(notificationLabel, GroupLayout.PREFERRED_SIZE, 204, GroupLayout.PREFERRED_SIZE)
                         .addGap(139, 139, 139))
                     .addGroup(panel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(panel2Layout.createParallelGroup()
                             .addGroup(GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
-                                .addGap(0, 298, Short.MAX_VALUE)
+                                .addGap(0, 293, Short.MAX_VALUE)
                                 .addComponent(viaLocationsLabel)
                                 .addGap(198, 198, 198))
                             .addGroup(panel2Layout.createSequentialGroup()
@@ -155,7 +156,7 @@ public class CashTicketPayment extends JFrame {
                                                     .addComponent(cashValueLabel)
                                                     .addComponent(priceLabel)))))
                                     .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(129, Short.MAX_VALUE))))
+                                .addContainerGap(124, Short.MAX_VALUE))))
             );
             panel2Layout.linkSize(SwingConstants.HORIZONTAL, new Component[] {cashValueLabel, priceLabel});
             panel2Layout.setVerticalGroup(
@@ -196,7 +197,7 @@ public class CashTicketPayment extends JFrame {
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addGap(16, 16, 16)
                                 .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                         .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16))
             );

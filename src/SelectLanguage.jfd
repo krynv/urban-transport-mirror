@@ -4,71 +4,62 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {comp panel1::l:::x}"
-			"$verticalGroup": "par l {seq l {comp panel1:::p::p, space :0:5:x}}"
+			"$horizontalGroup": "par l {space :0:580:x};par l {seq {space :0:0:x, par l {comp homeButton:::p:90:p, seq {comp languageSelectButton:::p:90:p, space :17:17:p, par l {comp englishLabel:::p:63:p, comp frenchLabel:::p:63:p}, space :6:6:p, par l {comp englishButton:::p:63:p, comp frenchButton:::p:63:p}}, seq {comp displayTimetableButton:::p:90:p, space :17:17:p, comp germanLabel:::p:63:p, space :6:6:p, comp germanButton:::p:63:p}, seq {space :319:319:p, comp selectLanguage:::p::p}, comp dateTimeLabel:::p:90:p}, space :0:0:x}}"
+			"$verticalGroup": "par l {space :0:385:x};par l {seq {space :0:0:x, comp homeButton:::p:60:p, space :6:6:p, par l {comp languageSelectButton:::p:60:p, seq {comp englishLabel:::p:29:p, space :6:6:p, comp frenchLabel:::p:29:p}, seq {comp englishButton:::p:29:p, space :6:6:p, comp frenchButton:::p:29:p}}, space :2:2:p, par l {comp displayTimetableButton:::p:60:p, seq {space :4:4:p, par l {comp germanLabel:::p:29:p, comp germanButton:::p:29:p}}}, space :34:34:p, comp selectLanguage:::p::p, space :20:20:p, comp dateTimeLabel:::p:60:p, space :0:0:x}}"
 		} ) {
 			name: "panel2"
-			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq {space :::p, par l {seq {comp homeButton:::p:90:p, space :::x}, seq {par l {comp dateTimeLabel::l:p:90:p, seq l {par l:::p {seq {comp displayTimetableButton:::p:90:p, space :::x, comp germanLabel:::p:63:p}, seq {comp languageSelectButton:::p:90:p, space :p:17:p, par t {comp englishLabel:1::p::p, comp frenchLabel:::p:63:p}}}, space :::p, par l {comp englishButton:1::p:63:p, comp frenchButton:::p:63:p, comp germanButton::l:p:63:p}}}, space :0:240:x}}}, seq t {space ::325:x, comp selectLanguage:::p::p, space :p:36:p}}"
-				"$verticalGroup": "par l {seq l {space :::p, comp homeButton:::p:60:p, space :::p, par l {seq l {par l:::p {seq {comp englishButton:2::p:29:p, space :::p, comp frenchButton:::p:29:p}, seq {comp englishLabel:2::p::p, space :::x, comp frenchLabel:::p:29:p}}, space :::p, par t {comp germanButton:::p:29:p, comp germanLabel:::p:29:p}, space :0:173:x}, seq l {comp languageSelectButton:::p:60:p, space :::p, comp displayTimetableButton:::p:60:p, space ::34:x, comp selectLanguage:::p::p, space :p:20:p, comp dateTimeLabel:::p:60:p}}, space :::p}}"
-			} ) {
-				name: "panel1"
-				"minimumSize": new java.awt.Dimension( 450, 350 )
-				auxiliary() {
-					"JavaCodeGenerator.variableLocal": true
-				}
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "homeButton"
-					"text": "Home"
-					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "homeActionPerformed", true ) )
-				} )
-				add( new FormComponent( "javax.swing.JLabel" ) {
-					name: "dateTimeLabel"
-					"text": "Date/Time"
-					"horizontalAlignment": 0
-					"maximumSize": new java.awt.Dimension( 25, 25 )
-					"minimumSize": new java.awt.Dimension( 25, 25 )
-					"preferredSize": new java.awt.Dimension( 25, 25 )
-				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "languageSelectButton"
-					"text": "Select Language"
-				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "displayTimetableButton"
-					"text": "Display Timetable"
-					"enabled": false
-				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "selectLanguage"
-					"text": "Load Language"
-					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
-				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "englishButton"
-				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "frenchButton"
-				} )
-				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "germanButton"
-				} )
-				add( new FormComponent( "javax.swing.JLabel" ) {
-					name: "englishLabel"
-					"text": "English"
-				} )
-				add( new FormComponent( "javax.swing.JLabel" ) {
-					name: "frenchLabel"
-					"text": "French"
-				} )
-				add( new FormComponent( "javax.swing.JLabel" ) {
-					name: "germanLabel"
-					"text": "German"
-				} )
+			"minimumSize": new java.awt.Dimension( 580, 385 )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "homeButton"
+				"text": "Home"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "homeActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "dateTimeLabel"
+				"text": "Date/Time"
+				"horizontalAlignment": 0
+				"maximumSize": new java.awt.Dimension( 25, 25 )
+				"minimumSize": new java.awt.Dimension( 25, 25 )
+				"preferredSize": new java.awt.Dimension( 25, 25 )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "languageSelectButton"
+				"text": "Select Language"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "displayTimetableButton"
+				"text": "Display Timetable"
+				"enabled": false
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "selectLanguage"
+				"text": "Load Language"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "englishButton"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "frenchButton"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "germanButton"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "englishLabel"
+				"text": "English"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "frenchLabel"
+				"text": "French"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "germanLabel"
+				"text": "German"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 485, 355 )
+			"size": new java.awt.Dimension( 580, 385 )
 		} )
 	}
 }

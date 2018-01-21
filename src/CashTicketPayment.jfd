@@ -4,10 +4,11 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq t {space ::242:x, comp notificationLabel:::p:204:p, space :p:139:p}, seq {space :::p, par l {seq t {space :0:298:x, comp viaLocationsLabel:::p::p, space :p:198:p}, seq {par l {seq l {comp homeButton:::p:90:p, space :119:119:p, par l {seq l {space :68:68:p, comp stationLabel:::p::p, space :6:6:p, comp destinationLabel:::p::p}, seq l {comp departureDateAndTimeLabel:::p:135:p, space :0:0:p, comp returnDateAndTimeLabel:::p::p}}}, seq l {par l {comp languageSelectButton:::p:90:p, comp displayTimetableButton::l:p:90:p}, space :p:35:p, par l {comp paymentInformationLabel:::p::p, seq l {par l {comp ticketTypeLabel::l:p::p, comp cashInsertedLabel::l:p::p}, space :p:55:p, par l {comp cashValueLabel:1::p::p, comp priceLabel:1::p::p}}}}, comp dateTimeLabel::l:p:90:p}, space ::129:x}}}}"
-			"$verticalGroup": "par l {seq l {space u:::p, par l {comp homeButton:::p:60:p, seq l {space :12:12:p, par l {comp stationLabel:::p::p, comp destinationLabel:::p::p}, space :6:6:p, par l {comp departureDateAndTimeLabel:::p:24:p, seq l {space :4:4:p, comp returnDateAndTimeLabel:::p::p}}}}, space :::p, comp viaLocationsLabel:::p::p, space :::p, comp notificationLabel:::p:18:p, space :p:5:p, par b {comp languageSelectButton::b:p:60:p, comp paymentInformationLabel::b:p::p}, par l {seq {space :::p, par b {comp ticketTypeLabel::b:p::p, comp priceLabel::b:p::p}, space u:::p, par b {comp cashInsertedLabel::b:p::p, comp cashValueLabel::b:p::p}}, seq l {space :p:16:p, comp displayTimetableButton:::p:60:p}}, space ::66:x, comp dateTimeLabel:::p:60:p, space :p:16:p}}"
+			"$horizontalGroup": "par l {seq t {space ::237:x, comp notificationLabel:::p:204:p, space :p:139:p}, seq {space :::p, par l {seq t {space :0:293:x, comp viaLocationsLabel:::p::p, space :p:198:p}, seq {par l {seq l {comp homeButton:::p:90:p, space :119:119:p, par l {seq l {space :68:68:p, comp stationLabel:::p::p, space :6:6:p, comp destinationLabel:::p::p}, seq l {comp departureDateAndTimeLabel:::p:135:p, space :0:0:p, comp returnDateAndTimeLabel:::p::p}}}, seq l {par l {comp languageSelectButton:::p:90:p, comp displayTimetableButton::l:p:90:p}, space :p:35:p, par l {comp paymentInformationLabel:::p::p, seq l {par l {comp ticketTypeLabel::l:p::p, comp cashInsertedLabel::l:p::p}, space :p:55:p, par l {comp cashValueLabel:1::p::p, comp priceLabel:1::p::p}}}}, comp dateTimeLabel::l:p:90:p}, space ::124:x}}}}"
+			"$verticalGroup": "par l {seq l {space u:::p, par l {comp homeButton:::p:60:p, seq l {space :12:12:p, par l {comp stationLabel:::p::p, comp destinationLabel:::p::p}, space :6:6:p, par l {comp departureDateAndTimeLabel:::p:24:p, seq l {space :4:4:p, comp returnDateAndTimeLabel:::p::p}}}}, space :::p, comp viaLocationsLabel:::p::p, space :::p, comp notificationLabel:::p:18:p, space :p:5:p, par b {comp languageSelectButton::b:p:60:p, comp paymentInformationLabel::b:p::p}, par l {seq {space :::p, par b {comp ticketTypeLabel::b:p::p, comp priceLabel::b:p::p}, space u:::p, par b {comp cashInsertedLabel::b:p::p, comp cashValueLabel::b:p::p}}, seq l {space :p:16:p, comp displayTimetableButton:::p:60:p}}, space ::56:x, comp dateTimeLabel:::p:60:p, space :p:16:p}}"
 		} ) {
 			name: "panel2"
+			"minimumSize": new java.awt.Dimension( 580, 385 )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "homeButton"
 				"text": "Home"
@@ -82,7 +83,7 @@ new FormModel {
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 585, 395 )
+			"size": new java.awt.Dimension( 580, 385 )
 		} )
 	}
 }

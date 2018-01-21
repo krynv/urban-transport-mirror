@@ -10,7 +10,7 @@ public class CardTicketPayment extends JFrame {
         this.setTitle("Pay With Card");
         this.pack();
         paymentValidateLabel.setVisible(false);
-        printTicket.setVisible(false);
+        printTicketButton.setVisible(false);
     }
 
     private void homeActionPerformed(ActionEvent e) {
@@ -34,9 +34,9 @@ public class CardTicketPayment extends JFrame {
         cardNameTextBox.setVisible(false);
         cardNumberTextBox.setVisible(false);
         securityCodeTextBox.setVisible(false);
-        confirmPayment.setVisible(false);
+        confirmPaymentButton.setVisible(false);
 
-        printTicket.setVisible(true);
+        printTicketButton.setVisible(true);
         paymentValidateLabel.setVisible(true);
 
         paymentValidateLabel.setBackground(new Color(216, 231, 213));
@@ -66,12 +66,13 @@ public class CardTicketPayment extends JFrame {
         cardNameTextBox = new JTextField();
         cardNumberTextBox = new JTextField();
         securityCodeTextBox = new JTextField();
-        confirmPayment = new JButton();
-        printTicket = new JButton();
+        confirmPaymentButton = new JButton();
+        printTicketButton = new JButton();
         paymentValidateLabel = new JLabel();
 
         //======== panel2 ========
         {
+            panel2.setMinimumSize(new Dimension(580, 385));
 
             // JFormDesigner evaluation mark
             panel2.setBorder(new javax.swing.border.CompoundBorder(
@@ -136,12 +137,12 @@ public class CardTicketPayment extends JFrame {
             securityCodeLabel.setText("Security Code");
             securityCodeLabel.setLabelFor(securityCodeTextBox);
 
-            //---- confirmPayment ----
-            confirmPayment.setText("Confirm Payment");
-            confirmPayment.addActionListener(e -> confirmPaymentActionPerformed(e));
+            //---- confirmPaymentButton ----
+            confirmPaymentButton.setText("Confirm Payment");
+            confirmPaymentButton.addActionListener(e -> confirmPaymentActionPerformed(e));
 
-            //---- printTicket ----
-            printTicket.setText("PRINT TICKET");
+            //---- printTicketButton ----
+            printTicketButton.setText("PRINT TICKET");
 
             //---- paymentValidateLabel ----
             paymentValidateLabel.setToolTipText("Coupon Validity Check");
@@ -195,17 +196,17 @@ public class CardTicketPayment extends JFrame {
                                                     .addComponent(securityCodeTextBox, GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
                                                     .addComponent(cardNameTextBox, GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
                                                     .addComponent(cardNumberTextBox, GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))))))
-                                .addContainerGap(114, Short.MAX_VALUE))
+                                .addContainerGap(124, Short.MAX_VALUE))
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
-                                .addComponent(printTicket)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                                .addComponent(printTicketButton)
                                 .addGap(38, 38, 38)
-                                .addComponent(confirmPayment)
+                                .addComponent(confirmPaymentButton)
                                 .addGap(48, 48, 48))
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
                                 .addComponent(paymentValidateLabel, GroupLayout.PREFERRED_SIZE, 312, GroupLayout.PREFERRED_SIZE)
                                 .addGap(71, 71, 71))))
             );
@@ -259,8 +260,8 @@ public class CardTicketPayment extends JFrame {
                                     .addComponent(securityCodeLabel))
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(confirmPayment)
-                                    .addComponent(printTicket))
+                                    .addComponent(confirmPaymentButton)
+                                    .addComponent(printTicketButton))
                                 .addContainerGap(62, Short.MAX_VALUE))
                             .addGroup(GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
@@ -292,8 +293,8 @@ public class CardTicketPayment extends JFrame {
     private JTextField cardNameTextBox;
     private JTextField cardNumberTextBox;
     private JTextField securityCodeTextBox;
-    private JButton confirmPayment;
-    private JButton printTicket;
+    private JButton confirmPaymentButton;
+    private JButton printTicketButton;
     private JLabel paymentValidateLabel;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

@@ -86,6 +86,8 @@ public class ConfirmBooking extends JFrame {
 
         //======== panel2 ========
         {
+            panel2.setMinimumSize(new Dimension(580, 385));
+            panel2.setPreferredSize(new Dimension(580, 385));
 
             // JFormDesigner evaluation mark
             panel2.setBorder(new javax.swing.border.CompoundBorder(
@@ -100,7 +102,7 @@ public class ConfirmBooking extends JFrame {
             homeButton.addActionListener(e -> homeActionPerformed(e));
 
             //---- languageSelectButton ----
-            languageSelectButton.setText("languageSelect");
+            languageSelectButton.setText("Select Language");
             languageSelectButton.addActionListener(e -> languageSelectActionPerformed(e));
 
             //---- displayTimetableButton ----
@@ -201,9 +203,10 @@ public class ConfirmBooking extends JFrame {
                                                                 .addComponent(cardCheckBox))
                                                             .addComponent(couponCodeLabel)
                                                             .addComponent(couponTextField, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE))
-                                                        .addGap(283, 283, 283)
+                                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 256, Short.MAX_VALUE)
                                                         .addComponent(advanceButton))))
-                                            .addComponent(ticketInformationLabel)))
+                                            .addComponent(ticketInformationLabel))
+                                        .addGap(21, 21, 21))
                                     .addGroup(panel2Layout.createSequentialGroup()
                                         .addGap(119, 119, 119)
                                         .addGroup(panel2Layout.createParallelGroup()
@@ -265,8 +268,8 @@ public class ConfirmBooking extends JFrame {
                                 .addComponent(couponCodeLabel)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(advanceButton)
-                                    .addComponent(couponTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(couponTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(advanceButton))))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                         .addGap(39, 39, 39))

@@ -25,7 +25,6 @@ public class UserBooking extends JFrame {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - godieina fire
         panel2 = new JPanel();
-        JPanel panel1 = new JPanel();
         homeButton = new JButton();
         dateTimeLabel = new JLabel();
         languageSelectButton = new JButton();
@@ -39,8 +38,8 @@ public class UserBooking extends JFrame {
 
         //======== panel2 ========
         {
-            panel2.setMinimumSize(new Dimension(450, 350));
-            panel2.setPreferredSize(new Dimension(450, 350));
+            panel2.setMinimumSize(new Dimension(580, 385));
+            panel2.setPreferredSize(new Dimension(580, 385));
 
             // JFormDesigner evaluation mark
             panel2.setBorder(new javax.swing.border.CompoundBorder(
@@ -50,121 +49,102 @@ public class UserBooking extends JFrame {
                     java.awt.Color.red), panel2.getBorder())); panel2.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
 
-            //======== panel1 ========
-            {
-                panel1.setMinimumSize(new Dimension(450, 350));
+            //---- homeButton ----
+            homeButton.setText("Home");
 
-                //---- homeButton ----
-                homeButton.setText("Home");
+            //---- dateTimeLabel ----
+            dateTimeLabel.setText("Date/Time");
+            dateTimeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+            dateTimeLabel.setMaximumSize(new Dimension(25, 25));
+            dateTimeLabel.setMinimumSize(new Dimension(25, 25));
+            dateTimeLabel.setPreferredSize(new Dimension(25, 25));
 
-                //---- dateTimeLabel ----
-                dateTimeLabel.setText("Date/Time");
-                dateTimeLabel.setHorizontalAlignment(SwingConstants.CENTER);
-                dateTimeLabel.setMaximumSize(new Dimension(25, 25));
-                dateTimeLabel.setMinimumSize(new Dimension(25, 25));
-                dateTimeLabel.setPreferredSize(new Dimension(25, 25));
+            //---- languageSelectButton ----
+            languageSelectButton.setText("Select Language");
+            languageSelectButton.addActionListener(e -> languageSelectActionPerformed(e));
 
-                //---- languageSelectButton ----
-                languageSelectButton.setText("Select Language");
-                languageSelectButton.addActionListener(e -> languageSelectActionPerformed(e));
+            //---- displayTimetableButton ----
+            displayTimetableButton.setText("Display Timetable");
+            displayTimetableButton.setEnabled(false);
 
-                //---- displayTimetableButton ----
-                displayTimetableButton.setText("Display Timetable");
-                displayTimetableButton.setEnabled(false);
+            //---- destination1 ----
+            destination1.setText("Destination 1");
+            destination1.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
+            destination1.addActionListener(e -> destination1ActionPerformed(e));
 
-                //---- destination1 ----
-                destination1.setText("Destination 1");
-                destination1.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
-                destination1.addActionListener(e -> destination1ActionPerformed(e));
+            //---- destination2 ----
+            destination2.setText("Destination 2");
+            destination2.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
 
-                //---- destination2 ----
-                destination2.setText("Destination 2");
-                destination2.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
+            //---- destination3 ----
+            destination3.setText("Destination 3");
+            destination3.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
 
-                //---- destination3 ----
-                destination3.setText("Destination 3");
-                destination3.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
+            //---- destination4 ----
+            destination4.setText("Destination 4");
+            destination4.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
 
-                //---- destination4 ----
-                destination4.setText("Destination 4");
-                destination4.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
+            //---- destination5 ----
+            destination5.setText("Destination 5");
+            destination5.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
 
-                //---- destination5 ----
-                destination5.setText("Destination 5");
-                destination5.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
-
-                //---- destination6 ----
-                destination6.setText("Destination 6");
-                destination6.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
-
-                GroupLayout panel1Layout = new GroupLayout(panel1);
-                panel1.setLayout(panel1Layout);
-                panel1Layout.setHorizontalGroup(
-                    panel1Layout.createParallelGroup()
-                        .addGroup(panel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addGroup(panel1Layout.createParallelGroup()
-                                .addGroup(panel1Layout.createSequentialGroup()
-                                    .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                    .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(panel1Layout.createSequentialGroup()
-                                    .addGroup(panel1Layout.createParallelGroup()
-                                        .addGroup(panel1Layout.createSequentialGroup()
-                                            .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(destination4, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(destination5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(destination6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(panel1Layout.createSequentialGroup()
-                                            .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                            .addGap(12, 12, 12)
-                                            .addComponent(destination1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(destination2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                            .addComponent(destination3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
-                                    .addGap(0, 47, Short.MAX_VALUE))))
-                );
-                panel1Layout.setVerticalGroup(
-                    panel1Layout.createParallelGroup()
-                        .addGroup(panel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(destination1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(destination2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(destination3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(panel1Layout.createParallelGroup()
-                                .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(destination4, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(destination5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(destination6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
-                                .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap())
-                );
-            }
+            //---- destination6 ----
+            destination6.setText("Destination 6");
+            destination6.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
 
             GroupLayout panel2Layout = new GroupLayout(panel2);
             panel2.setLayout(panel2Layout);
             panel2Layout.setHorizontalGroup(
                 panel2Layout.createParallelGroup()
-                    .addGroup(panel2Layout.createSequentialGroup()
-                        .addComponent(panel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 6, Short.MAX_VALUE))
+                    .addGroup(panel2Layout.createParallelGroup()
+                        .addGroup(panel2Layout.createSequentialGroup()
+                            .addGap(0, 0, Short.MAX_VALUE)
+                            .addGroup(panel2Layout.createParallelGroup()
+                                .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                .addGroup(panel2Layout.createSequentialGroup()
+                                    .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(12, 12, 12)
+                                    .addComponent(destination1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(12, 12, 12)
+                                    .addComponent(destination2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(12, 12, 12)
+                                    .addComponent(destination3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+                                .addGroup(panel2Layout.createSequentialGroup()
+                                    .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(12, 12, 12)
+                                    .addComponent(destination4, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(12, 12, 12)
+                                    .addComponent(destination5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(12, 12, 12)
+                                    .addComponent(destination6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+                                .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
+                            .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 580, Short.MAX_VALUE)
             );
             panel2Layout.setVerticalGroup(
                 panel2Layout.createParallelGroup()
-                    .addGroup(panel2Layout.createSequentialGroup()
-                        .addComponent(panel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(panel2Layout.createParallelGroup()
+                        .addGroup(panel2Layout.createSequentialGroup()
+                            .addGap(0, 0, Short.MAX_VALUE)
+                            .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                            .addGap(6, 6, 6)
+                            .addGroup(panel2Layout.createParallelGroup()
+                                .addGroup(panel2Layout.createSequentialGroup()
+                                    .addGap(19, 19, 19)
+                                    .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
+                                .addComponent(destination1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(destination2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(destination3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+                            .addGap(6, 6, 6)
+                            .addGroup(panel2Layout.createParallelGroup()
+                                .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(destination4, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(destination5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(destination6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+                            .addGap(6, 6, 6)
+                            .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                            .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 385, Short.MAX_VALUE)
             );
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
