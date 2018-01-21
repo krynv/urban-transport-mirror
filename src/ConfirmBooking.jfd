@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {space :::p, par l {seq {par l {comp languageSelect::l:p:90:p, comp displayTimetable::l:p:90:p, comp home::l:p:90:p}, par l {seq {space :p:27:p, par l {seq l {space :6:6:p, par l {seq l {space :2:2:p, par l {seq l {comp label5:::p::p, space :p:60:p, comp label6:::p::p}, comp label7:::p:112:p}}, seq l {par t {par l:t {comp checkBox1:::p::p, comp checkBox2::l:p::p}, comp label8:::p::p, comp couponTextField:::p:85:p}, space :p:283:p, comp button1:::p::p}}}, comp label4::l:p::p}}, seq {space :p:119:p, par l {seq l {comp label3:::p:135:p, space :0:0:p, comp label9:::p::p}, seq l {space :p:68:p, comp label2:::p::p, space :::p, comp label1:::p::p}, seq l {space :p:87:p, comp label10:::p::p}}}, seq l {space :p:180:p, comp couponVerificationLabel:::p:137:p}}}, comp dateTime::l:p:90:p}, space :20::x}}"
-			"$verticalGroup": "par l {seq l {space :::p, par l {seq l {comp home:::p:60:p, space :p:42:p, comp languageSelect:::p:60:p, space :p:6:p, comp displayTimetable:::p:60:p}, seq l {space :p:12:p, par b {comp label1::b:p::p, comp label2::b:p::p}, space :::p, par b {comp label3::b:p:24:p, comp label9::b:p::p}, space :::p, comp label10:::p::p, space :::p, comp couponVerificationLabel:::p:18:p, space :p:23:p, comp label4:::p:16:p, space u:::p, par b {comp label5::b:p::p, comp label6::b:p::p}, space :::p, comp label7:::p::p, space :::p, comp checkBox1:::p::p, space :::p, comp checkBox2:::p::p, space :::p, comp label8:::p::p, space :::p, par b {comp button1::b:p::p, comp couponTextField::b:p::p}}}, space :::x, comp dateTime:::p:60:p, space :p:39:p}}"
+			"$horizontalGroup": "par l {seq {space :::p, par l {seq {par l {comp languageSelect::l:p:90:p, comp displayTimetable::l:p:90:p, comp home::l:p:90:p}, par l {seq {space :p:27:p, par l {seq l {space :6:6:p, par l {seq l {space :2:2:p, par l {seq l {comp label5:::p::p, space :p:60:p, comp label6:::p::p}, comp label7:::p:112:p}}, seq l {par t {par l:t {comp cashCheckBox:::p::p, comp cardCheckBox::l:p::p}, comp label8:::p::p, comp couponTextField:::p:85:p}, space :p:283:p, comp button1:::p::p}}}, comp label4::l:p::p}}, seq {space :p:119:p, par l {seq l {comp label3:::p:135:p, space :0:0:p, comp label9:::p::p}, seq l {space :p:68:p, comp label2:::p::p, space :::p, comp label1:::p::p}, seq l {space :p:87:p, comp label10:::p::p}}}, seq l {space :p:180:p, comp couponVerificationLabel:::p:137:p}}}, comp dateTime::l:p:90:p}, space :20::x}}"
+			"$verticalGroup": "par l {seq l {space :::p, par l {seq l {comp home:::p:60:p, space :p:42:p, comp languageSelect:::p:60:p, space :p:6:p, comp displayTimetable:::p:60:p}, seq l {space :p:12:p, par b {comp label1::b:p::p, comp label2::b:p::p}, space :::p, par b {comp label3::b:p:24:p, comp label9::b:p::p}, space :::p, comp label10:::p::p, space :::p, comp couponVerificationLabel:::p:18:p, space :p:23:p, comp label4:::p:16:p, space u:::p, par b {comp label5::b:p::p, comp label6::b:p::p}, space :::p, comp label7:::p::p, space :::p, comp cashCheckBox:::p::p, space :::p, comp cardCheckBox:::p::p, space :::p, comp label8:::p::p, space :::p, par b {comp button1::b:p::p, comp couponTextField::b:p::p}}}, space :::x, comp dateTime:::p:60:p, space :p:39:p}}"
 		} ) {
 			name: "panel2"
 			add( new FormComponent( "javax.swing.JButton" ) {
@@ -60,11 +60,11 @@ new FormModel {
 				"text": "Payment Method"
 			} )
 			add( new FormComponent( "javax.swing.JCheckBox" ) {
-				name: "checkBox1"
+				name: "cashCheckBox"
 				"text": "CASH"
 			} )
 			add( new FormComponent( "javax.swing.JCheckBox" ) {
-				name: "checkBox2"
+				name: "cardCheckBox"
 				"text": "CARD"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
@@ -87,6 +87,7 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "couponVerificationLabel"
 				"toolTipText": "Coupon Validity Check"
+				"horizontalAlignment": 0
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
 				name: "couponTextField"

@@ -39,8 +39,21 @@ public class ConfirmBooking extends JFrame {
     }
 
     private void button1ActionPerformed(ActionEvent e) {
-        new CardTicketPayment().setVisible(true);
-        this.dispose();
+
+        if (cashCheckBox.isSelected()) {
+            new CashTicketPayment().setVisible(true);
+            this.dispose();
+        }
+        else if (cardCheckBox.isSelected()) {
+                new CardTicketPayment().setVisible(true);
+                this.dispose();
+        }
+        else if (cashCheckBox.isSelected() && cardCheckBox.isSelected()) {
+            //do nothing
+        }
+        else {
+            //do nothing
+        }
     }
 
     private void initComponents() {
@@ -58,8 +71,8 @@ public class ConfirmBooking extends JFrame {
         label5 = new JLabel();
         label6 = new JLabel();
         label7 = new JLabel();
-        checkBox1 = new JCheckBox();
-        checkBox2 = new JCheckBox();
+        cashCheckBox = new JCheckBox();
+        cardCheckBox = new JCheckBox();
         label8 = new JLabel();
         button1 = new JButton();
         label9 = new JLabel();
@@ -118,11 +131,11 @@ public class ConfirmBooking extends JFrame {
             //---- label7 ----
             label7.setText("Payment Method");
 
-            //---- checkBox1 ----
-            checkBox1.setText("CASH");
+            //---- cashCheckBox ----
+            cashCheckBox.setText("CASH");
 
-            //---- checkBox2 ----
-            checkBox2.setText("CARD");
+            //---- cardCheckBox ----
+            cardCheckBox.setText("CARD");
 
             //---- label8 ----
             label8.setText("Coupon Code");
@@ -139,6 +152,7 @@ public class ConfirmBooking extends JFrame {
 
             //---- couponVerificationLabel ----
             couponVerificationLabel.setToolTipText("Coupon Validity Check");
+            couponVerificationLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
             //---- couponTextField ----
             couponTextField.addKeyListener(new KeyAdapter() {
@@ -178,8 +192,8 @@ public class ConfirmBooking extends JFrame {
                                                     .addGroup(panel2Layout.createSequentialGroup()
                                                         .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                                             .addGroup(panel2Layout.createParallelGroup()
-                                                                .addComponent(checkBox1)
-                                                                .addComponent(checkBox2))
+                                                                .addComponent(cashCheckBox)
+                                                                .addComponent(cardCheckBox))
                                                             .addComponent(label8)
                                                             .addComponent(couponTextField, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE))
                                                         .addGap(283, 283, 283)
@@ -239,9 +253,9 @@ public class ConfirmBooking extends JFrame {
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(label7)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(checkBox1)
+                                .addComponent(cashCheckBox)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(checkBox2)
+                                .addComponent(cardCheckBox)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(label8)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
@@ -270,8 +284,8 @@ public class ConfirmBooking extends JFrame {
     private JLabel label5;
     private JLabel label6;
     private JLabel label7;
-    private JCheckBox checkBox1;
-    private JCheckBox checkBox2;
+    private JCheckBox cashCheckBox;
+    private JCheckBox cardCheckBox;
     private JLabel label8;
     private JButton button1;
     private JLabel label9;
