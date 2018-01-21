@@ -68,6 +68,7 @@ public class SelectLanguage extends JFrame {
 
                 //---- displayTimetable ----
                 displayTimetable.setText("displayTimetable");
+                displayTimetable.setEnabled(false);
 
                 //---- selectLanguage ----
                 selectLanguage.setText("Load Language");

@@ -69,6 +69,7 @@ public class UserBooking extends JFrame {
 
                 //---- displayTimetable ----
                 displayTimetable.setText("displayTimetable");
+                displayTimetable.setEnabled(false);
 
                 //---- destination1 ----
                 destination1.setText("Destination 1");

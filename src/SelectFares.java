@@ -28,7 +28,8 @@ public class SelectFares extends JFrame {
     }
 
     private void searchActionPerformed(ActionEvent e) {
-        // TODO add your code here
+        new SearchedFares().setVisible(true);
+        this.dispose();
     }
 
     private void languageSelectActionPerformed(ActionEvent e) {
@@ -88,6 +89,7 @@ public class SelectFares extends JFrame {
 
                 //---- displayTimetable ----
                 displayTimetable.setText("displayTimetable");
+                displayTimetable.setEnabled(false);
 
                 //---- button1 ----
                 button1.setText("Search");
@@ -138,25 +140,25 @@ public class SelectFares extends JFrame {
                             .addGroup(panel1Layout.createParallelGroup()
                                 .addGroup(panel1Layout.createSequentialGroup()
                                     .addGap(6, 6, 6)
-                                    .addComponent(home, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(130, 130, 130)
-                                    .addComponent(label1))
+                                    .addGroup(panel1Layout.createParallelGroup()
+                                        .addGroup(panel1Layout.createSequentialGroup()
+                                            .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(label2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(comboBox1))
+                                            .addGap(63, 63, 63)
+                                            .addGroup(panel1Layout.createParallelGroup()
+                                                .addComponent(label3)
+                                                .addComponent(comboBox2, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(panel1Layout.createSequentialGroup()
+                                            .addComponent(home, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(130, 130, 130)
+                                            .addComponent(label1))))
                                 .addGroup(panel1Layout.createSequentialGroup()
                                     .addGap(114, 114, 114)
                                     .addComponent(label4)))
-                            .addContainerGap(171, Short.MAX_VALUE))
-                        .addGroup(panel1Layout.createSequentialGroup()
-                            .addGap(6, 6, 6)
-                            .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                .addComponent(label2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(comboBox1))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
-                            .addGroup(panel1Layout.createParallelGroup()
-                                .addComponent(label3)
-                                .addComponent(comboBox2, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE))
-                            .addGap(49, 49, 49))
+                            .addContainerGap(50, Short.MAX_VALUE))
                 );
                 panel1Layout.linkSize(SwingConstants.HORIZONTAL, new Component[] {comboBox1, comboBox2, label2, label3});
                 panel1Layout.linkSize(SwingConstants.HORIZONTAL, new Component[] {checkBox3, checkBox4, checkBox5});
@@ -169,16 +171,19 @@ public class SelectFares extends JFrame {
                                 .addComponent(label1))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(panel1Layout.createParallelGroup()
-                                .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-                                .addGroup(panel1Layout.createSequentialGroup()
+                                .addGroup(GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
                                     .addComponent(label2)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(comboBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(comboBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(17, 17, 17))
                                 .addGroup(panel1Layout.createSequentialGroup()
-                                    .addComponent(label3)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(comboBox2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(panel1Layout.createParallelGroup()
+                                        .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(panel1Layout.createSequentialGroup()
+                                            .addComponent(label3)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(comboBox2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)))
                             .addGroup(panel1Layout.createParallelGroup()
                                 .addGroup(panel1Layout.createSequentialGroup()
                                     .addComponent(label4)
@@ -196,6 +201,8 @@ public class SelectFares extends JFrame {
                                         .addComponent(button1))))
                             .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 );
+                panel1Layout.linkSize(SwingConstants.VERTICAL, new Component[] {comboBox2, label3});
+                panel1Layout.linkSize(SwingConstants.VERTICAL, new Component[] {comboBox1, label2});
             }
 
             GroupLayout panel2Layout = new GroupLayout(panel2);
@@ -209,7 +216,7 @@ public class SelectFares extends JFrame {
             panel2Layout.setVerticalGroup(
                 panel2Layout.createParallelGroup()
                     .addGroup(panel2Layout.createSequentialGroup()
-                        .addComponent(panel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(panel1, GroupLayout.PREFERRED_SIZE, 270, GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 5, Short.MAX_VALUE))
             );
         }

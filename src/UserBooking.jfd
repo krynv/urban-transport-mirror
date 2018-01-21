@@ -39,6 +39,7 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "displayTimetable"
 					"text": "displayTimetable"
+					"enabled": false
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "destination1"
