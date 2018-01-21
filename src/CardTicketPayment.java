@@ -7,6 +7,7 @@ public class CardTicketPayment extends JFrame {
         initComponents();
         this.setContentPane(panel2);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("Pay With Card");
         this.pack();
     }
 

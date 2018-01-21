@@ -7,6 +7,7 @@ public class SelectLanguage extends JFrame {
         initComponents();
         this.setContentPane(panel2);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("Select Language");
         this.pack();
     }
 

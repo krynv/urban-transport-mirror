@@ -8,6 +8,7 @@ public class SearchedFares extends JFrame {
         initComponents();
         this.setContentPane(panel2);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("Searched Fares");
         this.pack();
     }
 

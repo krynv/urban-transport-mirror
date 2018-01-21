@@ -8,6 +8,7 @@ public class ConfirmBooking extends JFrame {
         initComponents();
         this.setContentPane(panel2);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("Confirm Booking");
         this.pack();
     }
 
@@ -40,18 +41,21 @@ public class ConfirmBooking extends JFrame {
 
     private void button1ActionPerformed(ActionEvent e) {
 
-        if (cashCheckBox.isSelected()) {
-            new CashTicketPayment().setVisible(true);
-            this.dispose();
+        if (cashCheckBox.isSelected() && cardCheckBox.isSelected()) {
+            // if both are selected
+            //do nothing
         }
-        else if (cardCheckBox.isSelected()) {
+        else if (cashCheckBox.isSelected()) {
+                new CashTicketPayment().setVisible(true);
+                this.dispose();
+            }
+
+            else if (cardCheckBox.isSelected()) {
                 new CardTicketPayment().setVisible(true);
                 this.dispose();
         }
-        else if (cashCheckBox.isSelected() && cardCheckBox.isSelected()) {
-            //do nothing
-        }
         else {
+            // if none are selected
             //do nothing
         }
     }
