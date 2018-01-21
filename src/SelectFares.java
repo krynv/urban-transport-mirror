@@ -46,6 +46,15 @@ public class SelectFares extends JFrame {
         languageSelect = new JButton();
         displayTimetable = new JButton();
         button1 = new JButton();
+        label1 = new JLabel();
+        label2 = new JLabel();
+        label3 = new JLabel();
+        comboBox1 = new JComboBox();
+        comboBox2 = new JComboBox();
+        label4 = new JLabel();
+        checkBox3 = new JCheckBox();
+        checkBox4 = new JCheckBox();
+        checkBox5 = new JCheckBox();
 
         //======== panel2 ========
         {
@@ -84,41 +93,108 @@ public class SelectFares extends JFrame {
                 button1.setText("Search");
                 button1.addActionListener(e -> searchActionPerformed(e));
 
+                //---- label1 ----
+                label1.setText("Destination #");
+
+                //---- label2 ----
+                label2.setText("Departure Date/Time");
+
+                //---- label3 ----
+                label3.setText("Return Date/Time");
+
+                //---- label4 ----
+                label4.setText("Ticket Type");
+
+                //---- checkBox3 ----
+                checkBox3.setText("One Way");
+
+                //---- checkBox4 ----
+                checkBox4.setText("Return");
+
+                //---- checkBox5 ----
+                checkBox5.setText("Open Return");
+
                 GroupLayout panel1Layout = new GroupLayout(panel1);
                 panel1.setLayout(panel1Layout);
                 panel1Layout.setHorizontalGroup(
                     panel1Layout.createParallelGroup()
-                        .addGroup(panel1Layout.createSequentialGroup()
+                        .addGroup(GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
                             .addContainerGap()
                             .addGroup(panel1Layout.createParallelGroup()
+                                .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
+                            .addGap(18, 18, 18)
+                            .addGroup(panel1Layout.createParallelGroup()
                                 .addGroup(panel1Layout.createSequentialGroup()
-                                    .addComponent(home, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                    .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(checkBox5)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(button1))
                                 .addGroup(panel1Layout.createSequentialGroup()
                                     .addGroup(panel1Layout.createParallelGroup()
-                                        .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
-                                    .addGap(0, 407, Short.MAX_VALUE))
+                                        .addComponent(checkBox4)
+                                        .addComponent(checkBox3))
+                                    .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGroup(panel1Layout.createSequentialGroup()
+                            .addGroup(panel1Layout.createParallelGroup()
                                 .addGroup(panel1Layout.createSequentialGroup()
-                                    .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 255, Short.MAX_VALUE)
-                                    .addComponent(button1)
-                                    .addGap(80, 80, 80))))
+                                    .addGap(6, 6, 6)
+                                    .addComponent(home, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(130, 130, 130)
+                                    .addComponent(label1))
+                                .addGroup(panel1Layout.createSequentialGroup()
+                                    .addGap(114, 114, 114)
+                                    .addComponent(label4)))
+                            .addContainerGap(171, Short.MAX_VALUE))
+                        .addGroup(panel1Layout.createSequentialGroup()
+                            .addGap(6, 6, 6)
+                            .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                .addComponent(label2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(comboBox1))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                            .addGroup(panel1Layout.createParallelGroup()
+                                .addComponent(label3)
+                                .addComponent(comboBox2, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE))
+                            .addGap(49, 49, 49))
                 );
+                panel1Layout.linkSize(SwingConstants.HORIZONTAL, new Component[] {comboBox1, comboBox2, label2, label3});
+                panel1Layout.linkSize(SwingConstants.HORIZONTAL, new Component[] {checkBox3, checkBox4, checkBox5});
                 panel1Layout.setVerticalGroup(
                     panel1Layout.createParallelGroup()
                         .addGroup(panel1Layout.createSequentialGroup()
                             .addContainerGap()
-                            .addComponent(home, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(home, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label1))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(panel1Layout.createParallelGroup()
-                                .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(button1))
-                            .addContainerGap())
+                                .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                .addGroup(panel1Layout.createSequentialGroup()
+                                    .addComponent(label2)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(comboBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                .addGroup(panel1Layout.createSequentialGroup()
+                                    .addComponent(label3)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(comboBox2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(panel1Layout.createParallelGroup()
+                                .addGroup(panel1Layout.createSequentialGroup()
+                                    .addComponent(label4)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(checkBox3)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(checkBox4)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(checkBox5))
+                                .addGroup(panel1Layout.createSequentialGroup()
+                                    .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(button1))))
+                            .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 );
             }
 
@@ -127,8 +203,8 @@ public class SelectFares extends JFrame {
             panel2Layout.setHorizontalGroup(
                 panel2Layout.createParallelGroup()
                     .addGroup(panel2Layout.createSequentialGroup()
-                        .addComponent(panel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(panel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
             );
             panel2Layout.setVerticalGroup(
                 panel2Layout.createParallelGroup()
@@ -148,5 +224,14 @@ public class SelectFares extends JFrame {
     private JButton languageSelect;
     private JButton displayTimetable;
     private JButton button1;
+    private JLabel label1;
+    private JLabel label2;
+    private JLabel label3;
+    private JComboBox comboBox1;
+    private JComboBox comboBox2;
+    private JLabel label4;
+    private JCheckBox checkBox3;
+    private JCheckBox checkBox4;
+    private JCheckBox checkBox5;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
