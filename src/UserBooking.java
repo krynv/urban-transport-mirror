@@ -6,11 +6,17 @@ public class UserBooking extends JFrame {
     public UserBooking() {
         initComponents();
         this.setContentPane(panel2);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
     }
 
     private void languageSelectActionPerformed(ActionEvent e) {
         new SelectLanguage().setVisible(true);
+        this.dispose();
+    }
+
+    private void destination1ActionPerformed(ActionEvent e) {
+        new SelectFares().setVisible(true);
         this.dispose();
     }
 
@@ -67,6 +73,7 @@ public class UserBooking extends JFrame {
                 //---- destination1 ----
                 destination1.setText("Destination 1");
                 destination1.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
+                destination1.addActionListener(e -> destination1ActionPerformed(e));
 
                 //---- destination2 ----
                 destination2.setText("Destination 2");

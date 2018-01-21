@@ -44,6 +44,7 @@ new FormModel {
 					name: "destination1"
 					"text": "Destination 1"
 					"font": &Font0 new java.awt.Font( ".SF NS Text", 0, 10 )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "destination1ActionPerformed", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "destination2"

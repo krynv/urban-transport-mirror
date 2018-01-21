@@ -15,6 +15,11 @@ public class SelectLanguage extends JFrame {
         this.dispose();
     }
 
+    private void button1ActionPerformed(ActionEvent e) {
+        new UserBooking().setVisible(true);
+        this.dispose();
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - godieina fire
@@ -24,13 +29,13 @@ public class SelectLanguage extends JFrame {
         dateTime = new JLabel();
         languageSelect = new JButton();
         displayTimetable = new JButton();
-        button1 = new JButton();
+        selectLanguage = new JButton();
         button2 = new JButton();
         button3 = new JButton();
         button4 = new JButton();
-        textField1 = new JTextField();
-        textField2 = new JTextField();
-        textField3 = new JTextField();
+        label1 = new JLabel();
+        label2 = new JLabel();
+        label3 = new JLabel();
 
         //======== panel2 ========
         {
@@ -64,17 +69,18 @@ public class SelectLanguage extends JFrame {
                 //---- displayTimetable ----
                 displayTimetable.setText("displayTimetable");
 
-                //---- button1 ----
-                button1.setText("Load Language");
+                //---- selectLanguage ----
+                selectLanguage.setText("Load Language");
+                selectLanguage.addActionListener(e -> button1ActionPerformed(e));
 
-                //---- textField1 ----
-                textField1.setText("English");
+                //---- label1 ----
+                label1.setText("English");
 
-                //---- textField2 ----
-                textField2.setText("French");
+                //---- label2 ----
+                label2.setText("French");
 
-                //---- textField3 ----
-                textField3.setText("German");
+                //---- label3 ----
+                label3.setText("German");
 
                 GroupLayout panel1Layout = new GroupLayout(panel1);
                 panel1.setLayout(panel1Layout);
@@ -85,7 +91,7 @@ public class SelectLanguage extends JFrame {
                             .addGroup(panel1Layout.createParallelGroup()
                                 .addGroup(panel1Layout.createSequentialGroup()
                                     .addComponent(home, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                    .addContainerGap(389, Short.MAX_VALUE))
+                                    .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(panel1Layout.createSequentialGroup()
                                     .addGroup(panel1Layout.createParallelGroup()
                                         .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
@@ -93,25 +99,26 @@ public class SelectLanguage extends JFrame {
                                             .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                                                 .addGroup(panel1Layout.createSequentialGroup()
                                                     .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                                    .addGap(18, 18, 18)
-                                                    .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(label3, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
                                                 .addGroup(panel1Layout.createSequentialGroup()
                                                     .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
-                                                        .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE))))
+                                                    .addGap(17, 17, 17)
+                                                    .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(label1)
+                                                        .addComponent(label2, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))))
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                             .addGroup(panel1Layout.createParallelGroup()
-                                                .addComponent(button4, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(button2, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(button3, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(button3, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(button4, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))))
                                     .addGap(0, 240, Short.MAX_VALUE))))
                         .addGroup(GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
                             .addContainerGap(325, Short.MAX_VALUE)
-                            .addComponent(button1)
+                            .addComponent(selectLanguage)
                             .addGap(36, 36, 36))
                 );
+                panel1Layout.linkSize(SwingConstants.HORIZONTAL, new Component[] {button2, label1});
                 panel1Layout.setVerticalGroup(
                     panel1Layout.createParallelGroup()
                         .addGroup(panel1Layout.createSequentialGroup()
@@ -120,28 +127,31 @@ public class SelectLanguage extends JFrame {
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(panel1Layout.createParallelGroup()
                                 .addGroup(panel1Layout.createSequentialGroup()
+                                    .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(panel1Layout.createSequentialGroup()
+                                            .addComponent(button2, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(button3, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(panel1Layout.createSequentialGroup()
+                                            .addComponent(label1)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(label2, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                        .addComponent(button4, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(label3, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE))
+                                    .addGap(0, 173, Short.MAX_VALUE))
+                                .addGroup(panel1Layout.createSequentialGroup()
                                     .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                                    .addComponent(button1)
+                                    .addComponent(selectLanguage)
                                     .addGap(20, 20, 20)
-                                    .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
-                                .addGroup(panel1Layout.createSequentialGroup()
-                                    .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                        .addComponent(button2, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                        .addComponent(button3, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                        .addComponent(button4, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                    .addGap(0, 173, Short.MAX_VALUE)))
+                                    .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)))
                             .addContainerGap())
                 );
+                panel1Layout.linkSize(SwingConstants.VERTICAL, new Component[] {button2, label1});
             }
 
             GroupLayout panel2Layout = new GroupLayout(panel2);
@@ -167,12 +177,12 @@ public class SelectLanguage extends JFrame {
     private JLabel dateTime;
     private JButton languageSelect;
     private JButton displayTimetable;
-    private JButton button1;
+    private JButton selectLanguage;
     private JButton button2;
     private JButton button3;
     private JButton button4;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
+    private JLabel label1;
+    private JLabel label2;
+    private JLabel label3;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

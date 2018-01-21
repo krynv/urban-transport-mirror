@@ -1,9 +1,21 @@
 import java.awt.*;
 import java.awt.event.*;
+import javax.management.remote.JMXConnectorFactory;
 import javax.swing.*;
-import com.jgoodies.forms.layout.*;
-public class SearchFares extends JFrame {
-    public SearchFares() {
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle;
+/*
+ * Created by JFormDesigner on Sun Jan 21 15:33:25 GMT 2018
+ */
+
+
+
+/**
+ * @author godieina fire
+ */
+public class SelectFares extends JFrame {
+
+    public SelectFares() {
         initComponents();
         this.setContentPane(panel2);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -13,6 +25,10 @@ public class SearchFares extends JFrame {
     private void homeActionPerformed(ActionEvent e) {
         new UserBooking().setVisible(true);
         this.dispose();
+    }
+
+    private void searchActionPerformed(ActionEvent e) {
+        // TODO add your code here
     }
 
     private void languageSelectActionPerformed(ActionEvent e) {
@@ -66,6 +82,7 @@ public class SearchFares extends JFrame {
 
                 //---- button1 ----
                 button1.setText("Search");
+                button1.addActionListener(e -> searchActionPerformed(e));
 
                 GroupLayout panel1Layout = new GroupLayout(panel1);
                 panel1.setLayout(panel1Layout);
@@ -76,17 +93,17 @@ public class SearchFares extends JFrame {
                             .addGroup(panel1Layout.createParallelGroup()
                                 .addGroup(panel1Layout.createSequentialGroup()
                                     .addComponent(home, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                    .addContainerGap(389, Short.MAX_VALUE))
+                                    .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(panel1Layout.createSequentialGroup()
                                     .addGroup(panel1Layout.createParallelGroup()
-                                        .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
-                                    .addGap(0, 389, Short.MAX_VALUE))))
-                        .addGroup(GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                            .addContainerGap(325, Short.MAX_VALUE)
-                            .addComponent(button1)
-                            .addGap(36, 36, 36))
+                                    .addGap(0, 407, Short.MAX_VALUE))
+                                .addGroup(panel1Layout.createSequentialGroup()
+                                    .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 255, Short.MAX_VALUE)
+                                    .addComponent(button1)
+                                    .addGap(80, 80, 80))))
                 );
                 panel1Layout.setVerticalGroup(
                     panel1Layout.createParallelGroup()
@@ -98,9 +115,9 @@ public class SearchFares extends JFrame {
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(button1)
-                            .addGap(20, 20, 20)
-                            .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panel1Layout.createParallelGroup()
+                                .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(button1))
                             .addContainerGap())
                 );
             }
@@ -117,7 +134,7 @@ public class SearchFares extends JFrame {
                 panel2Layout.createParallelGroup()
                     .addGroup(panel2Layout.createSequentialGroup()
                         .addComponent(panel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 3, Short.MAX_VALUE))
+                        .addGap(0, 5, Short.MAX_VALUE))
             );
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
