@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq t {space ::242:x, comp notificationLabel:::p:204:p, space :p:139:p}, seq {space :::p, par l {seq t {space :0:298:x, comp label10:::p::p, space :p:198:p}, seq {par l {seq l {comp home:::p:90:p, space :119:119:p, par l {seq l {space :68:68:p, comp label2:::p::p, space :6:6:p, comp label1:::p::p}, seq l {comp label3:::p:135:p, space :0:0:p, comp label9:::p::p}}}, seq l {par l {comp languageSelect:::p:90:p, comp displayTimetable::l:p:90:p}, space :p:35:p, par l {comp label4:::p::p, seq l {par l {comp label5::l:p::p, comp label7::l:p::p}, space :p:55:p, par l {comp label8:1::p::p, comp label6:1::p::p}}}}, comp dateTime::l:p:90:p}, space ::129:x}}}}"
-			"$verticalGroup": "par l {seq l {space u:::p, par l {comp home:::p:60:p, seq l {space :12:12:p, par l {comp label2:::p::p, comp label1:::p::p}, space :6:6:p, par l {comp label3:::p:24:p, seq l {space :4:4:p, comp label9:::p::p}}}}, space :::p, comp label10:::p::p, space :::p, comp notificationLabel:::p:18:p, space :p:5:p, par b {comp languageSelect::b:p:60:p, comp label4::b:p::p}, par l {seq {space :::p, par b {comp label5::b:p::p, comp label6::b:p::p}, space u:::p, par b {comp label7::b:p::p, comp label8::b:p::p}}, seq l {space :p:16:p, comp displayTimetable:::p:60:p}}, space ::66:x, comp dateTime:::p:60:p, space :p:16:p}}"
+			"$horizontalGroup": "par l {seq t {space ::242:x, comp notificationLabel:::p:204:p, space :p:139:p}, seq {space :::p, par l {seq t {space :0:298:x, comp viaLocationsLabel:::p::p, space :p:198:p}, seq {par l {seq l {comp home:::p:90:p, space :119:119:p, par l {seq l {space :68:68:p, comp stationLabel:::p::p, space :6:6:p, comp destinationLabel:::p::p}, seq l {comp departureDateAndTimeLabel:::p:135:p, space :0:0:p, comp returnDateAndTimeLabel:::p::p}}}, seq l {par l {comp languageSelect:::p:90:p, comp displayTimetable::l:p:90:p}, space :p:35:p, par l {comp label4:::p::p, seq l {par l {comp ticketTypeLabel::l:p::p, comp label7::l:p::p}, space :p:55:p, par l {comp label8:1::p::p, comp label6:1::p::p}}}}, comp dateTime::l:p:90:p}, space ::129:x}}}}"
+			"$verticalGroup": "par l {seq l {space u:::p, par l {comp home:::p:60:p, seq l {space :12:12:p, par l {comp stationLabel:::p::p, comp destinationLabel:::p::p}, space :6:6:p, par l {comp departureDateAndTimeLabel:::p:24:p, seq l {space :4:4:p, comp returnDateAndTimeLabel:::p::p}}}}, space :::p, comp viaLocationsLabel:::p::p, space :::p, comp notificationLabel:::p:18:p, space :p:5:p, par b {comp languageSelect::b:p:60:p, comp label4::b:p::p}, par l {seq {space :::p, par b {comp ticketTypeLabel::b:p::p, comp label6::b:p::p}, space u:::p, par b {comp label7::b:p::p, comp label8::b:p::p}}, seq l {space :p:16:p, comp displayTimetable:::p:60:p}}, space ::66:x, comp dateTime:::p:60:p, space :p:16:p}}"
 		} ) {
 			name: "panel2"
 			add( new FormComponent( "javax.swing.JButton" ) {
@@ -32,23 +32,23 @@ new FormModel {
 				"preferredSize": new java.awt.Dimension( 25, 25 )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label3"
+				name: "departureDateAndTimeLabel"
 				"text": "Departure Date/Time"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label2"
+				name: "stationLabel"
 				"text": "Station"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label1"
+				name: "destinationLabel"
 				"text": "Destination"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label9"
+				name: "returnDateAndTimeLabel"
 				"text": "Return Date/Time"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label10"
+				name: "viaLocationsLabel"
 				"text": "Via Locations"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
@@ -65,7 +65,7 @@ new FormModel {
 				"text": "Payment Information"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label5"
+				name: "ticketTypeLabel"
 				"text": "Ticket Type"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {

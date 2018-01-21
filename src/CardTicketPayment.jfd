@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {space :::p, par l {seq l {par l {seq l {comp home:::p:90:p, space :119:119:p, par l {seq l {space :68:68:p, comp label2:::p::p, space :6:6:p, comp label1:::p::p}, seq l {comp label3:::p:135:p, space :0:0:p, comp label9:::p::p}}}, seq l {par l {comp languageSelect::l:p:90:p, comp displayTimetable::l:p:90:p}, par l {seq {space :p:30:p, comp label4:::p::p}, seq l {space :p:62:p, par l {comp label5:::p::p, comp label7:1:l:p::p, comp label11:1:l:p::p, comp label8:1:l:p::p}}}, par l {seq {space :p:48:p, par l {comp label6:::p::p, comp label10:::p::p}}, seq l {space :p:32:p, par l:::p {comp textField3::::147:x, comp textField1::::147:x, comp textField2::::147:x}}}}}, space ::114:x}, seq l {comp dateTime:::p:90:p, space ::290:x, comp button1:::p::p, space :p:48:p}}}}"
-			"$verticalGroup": "par l {seq l {space :::p, par l {comp home:::p:60:p, seq l {space :12:12:p, par l {comp label2:::p::p, comp label1:::p::p}, space :6:6:p, par l {comp label3:::p:24:p, seq l {space :4:4:p, comp label9:::p::p}}}}, space :4:4:p, comp label10:::p::p, par l {seq {space :22:22:p, par b {comp languageSelect::b:p:60:p, comp label4::b:p::p}, space :6:6:p, comp displayTimetable:::p:60:p}, seq l {space :p:71:p, par b {comp label5::b:p::p, comp label6::b:p::p}, space :p:22:p, par b {comp label7::b:p::p, comp textField1::b:p::p}, space :::p, par b {comp textField2::b:p::p, comp label8::b:p::p}}}, par l {seq {space :::p, par b {comp textField3::b:p::p, comp label11::b:p::p}, space u:::p, comp button1:::p::p, space ::62:x}, seq t {space ::70:x, comp dateTime:::p:60:p, space :::p}}}}"
+			"$horizontalGroup": "par l {seq {space :::p, par l {seq l {par l {seq l {comp home:::p:90:p, space :119:119:p, par l {seq l {space :68:68:p, comp stationLabel:::p::p, space :6:6:p, comp destinationLabel:::p::p}, seq l {comp departureDateAndTimeLabel:::p:135:p, space :0:0:p, comp returnDateAndTimeLabel:::p::p}}}, seq l {comp displayTimetable:::p:90:p, par l {seq {space :p:30:p, comp paymentInformationLabel:::p::p}, seq l {space :p:62:p, par l {comp ticketTypeLabel:::p::p, comp cardNameLabel:1:l:p::p, comp securityCodeLabel:1:l:p::p, comp cardNumberLabel:1:l:p::p}}}, par l {seq {space :p:48:p, par l {comp priceLabel:::p::p, comp viaLocationsLabel:::p::p}}, seq l {space :p:32:p, par l:::p {comp securityCodeTextBox::::147:x, comp cardNameTextBox::::147:x, comp cardNumberTextBox::::147:x}}}}}, space ::114:x}, seq l {comp dateTime:::p:90:p, space ::136:x, comp printTicket:::p::p, space :p:38:p, comp confirmPayment:::p::p, space :p:48:p}, seq l {comp languageSelect:::p:90:p, space ::91:x, comp paymentValidateLabel:::p:312:p, space :p:71:p}}}}"
+			"$verticalGroup": "par l {seq l {space :::p, par l {comp home:::p:60:p, seq l {space :12:12:p, par l {comp stationLabel:::p::p, comp destinationLabel:::p::p}, space :6:6:p, par l {comp departureDateAndTimeLabel:::p:24:p, seq l {space :4:4:p, comp returnDateAndTimeLabel:::p::p}}}}, space :4:4:p, comp viaLocationsLabel:::p::p, space :::p, comp paymentValidateLabel:::p:18:p, par l {seq l {par b {comp languageSelect::b:p:60:p, comp paymentInformationLabel::b:p::p}, space :6:6:p, comp displayTimetable:::p:60:p}, seq l {space :p:47:p, par b {comp ticketTypeLabel::b:p::p, comp priceLabel::b:p::p}, space :p:22:p, par b {comp cardNameLabel::b:p::p, comp cardNameTextBox::b:p::p}, space :::p, par b {comp cardNumberTextBox::b:p::p, comp cardNumberLabel::b:p::p}}}, par l {seq {space :::p, par b {comp securityCodeTextBox::b:p::p, comp securityCodeLabel::b:p::p}, space u:::p, par b {comp confirmPayment::b:p::p, comp printTicket::b:p::p}, space ::62:x}, seq t {space ::70:x, comp dateTime:::p:60:p, space :::p}}}}"
 		} ) {
 			name: "panel2"
 			add( new FormComponent( "javax.swing.JButton" ) {
@@ -32,61 +32,75 @@ new FormModel {
 				"preferredSize": new java.awt.Dimension( 25, 25 )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label10"
+				name: "viaLocationsLabel"
 				"text": "Via Locations"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label3"
+				name: "departureDateAndTimeLabel"
 				"text": "Departure Date/Time"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label2"
+				name: "stationLabel"
 				"text": "Station"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label1"
+				name: "destinationLabel"
 				"text": "Destination"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label9"
+				name: "returnDateAndTimeLabel"
 				"text": "Return Date/Time"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label4"
+				name: "paymentInformationLabel"
 				"text": "Payment Information"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label5"
+				name: "ticketTypeLabel"
 				"text": "Ticket Type"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label6"
+				name: "priceLabel"
 				"text": "PRICE"
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label7"
+				name: "cardNameLabel"
 				"text": "Card Name"
+				"labelFor": new FormReference( "cardNameTextBox" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label8"
+				name: "cardNumberLabel"
 				"text": "Card Number"
+				"labelFor": new FormReference( "cardNumberTextBox" )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "label11"
+				name: "securityCodeLabel"
 				"text": "Security Code"
+				"labelFor": new FormReference( "securityCodeTextBox" )
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField1"
+				name: "cardNameTextBox"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField2"
+				name: "cardNumberTextBox"
 			} )
 			add( new FormComponent( "javax.swing.JTextField" ) {
-				name: "textField3"
+				name: "securityCodeTextBox"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button1"
+				name: "confirmPayment"
 				"text": "Confirm Payment"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "confirmPaymentActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "printTicket"
+				"text": "PRINT TICKET"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "paymentValidateLabel"
+				"toolTipText": "Coupon Validity Check"
+				"horizontalAlignment": 0
+				"horizontalTextPosition": 0
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 5 )

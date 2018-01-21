@@ -9,6 +9,8 @@ public class CardTicketPayment extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Pay With Card");
         this.pack();
+        paymentValidateLabel.setVisible(false);
+        printTicket.setVisible(false);
     }
 
     private void homeActionPerformed(ActionEvent e) {
@@ -21,6 +23,27 @@ public class CardTicketPayment extends JFrame {
         this.dispose();
     }
 
+    private void confirmPaymentActionPerformed(ActionEvent e) {
+
+        paymentInformationLabel.setVisible(false);
+        ticketTypeLabel.setVisible(false);
+        priceLabel.setVisible(false);
+        cardNameLabel.setVisible(false);
+        cardNumberLabel.setVisible(false);
+        securityCodeLabel.setVisible(false);
+        cardNameTextBox.setVisible(false);
+        cardNumberTextBox.setVisible(false);
+        securityCodeTextBox.setVisible(false);
+        confirmPayment.setVisible(false);
+
+        printTicket.setVisible(true);
+        paymentValidateLabel.setVisible(true);
+
+        paymentValidateLabel.setBackground(new Color(216, 231, 213));
+        paymentValidateLabel.setOpaque(true);
+        paymentValidateLabel.setText("PAYMENT SUCCESSFUL");
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - godieina fire
@@ -29,21 +52,23 @@ public class CardTicketPayment extends JFrame {
         languageSelect = new JButton();
         displayTimetable = new JButton();
         dateTime = new JLabel();
-        label10 = new JLabel();
-        label3 = new JLabel();
-        label2 = new JLabel();
-        label1 = new JLabel();
-        label9 = new JLabel();
-        label4 = new JLabel();
-        label5 = new JLabel();
-        label6 = new JLabel();
-        label7 = new JLabel();
-        label8 = new JLabel();
-        label11 = new JLabel();
-        textField1 = new JTextField();
-        textField2 = new JTextField();
-        textField3 = new JTextField();
-        button1 = new JButton();
+        viaLocationsLabel = new JLabel();
+        departureDateAndTimeLabel = new JLabel();
+        stationLabel = new JLabel();
+        destinationLabel = new JLabel();
+        returnDateAndTimeLabel = new JLabel();
+        paymentInformationLabel = new JLabel();
+        ticketTypeLabel = new JLabel();
+        priceLabel = new JLabel();
+        cardNameLabel = new JLabel();
+        cardNumberLabel = new JLabel();
+        securityCodeLabel = new JLabel();
+        cardNameTextBox = new JTextField();
+        cardNumberTextBox = new JTextField();
+        securityCodeTextBox = new JTextField();
+        confirmPayment = new JButton();
+        printTicket = new JButton();
+        paymentValidateLabel = new JLabel();
 
         //======== panel2 ========
         {
@@ -75,41 +100,53 @@ public class CardTicketPayment extends JFrame {
             dateTime.setMinimumSize(new Dimension(25, 25));
             dateTime.setPreferredSize(new Dimension(25, 25));
 
-            //---- label10 ----
-            label10.setText("Via Locations");
+            //---- viaLocationsLabel ----
+            viaLocationsLabel.setText("Via Locations");
 
-            //---- label3 ----
-            label3.setText("Departure Date/Time");
+            //---- departureDateAndTimeLabel ----
+            departureDateAndTimeLabel.setText("Departure Date/Time");
 
-            //---- label2 ----
-            label2.setText("Station");
+            //---- stationLabel ----
+            stationLabel.setText("Station");
 
-            //---- label1 ----
-            label1.setText("Destination");
+            //---- destinationLabel ----
+            destinationLabel.setText("Destination");
 
-            //---- label9 ----
-            label9.setText("Return Date/Time");
+            //---- returnDateAndTimeLabel ----
+            returnDateAndTimeLabel.setText("Return Date/Time");
 
-            //---- label4 ----
-            label4.setText("Payment Information");
+            //---- paymentInformationLabel ----
+            paymentInformationLabel.setText("Payment Information");
 
-            //---- label5 ----
-            label5.setText("Ticket Type");
+            //---- ticketTypeLabel ----
+            ticketTypeLabel.setText("Ticket Type");
 
-            //---- label6 ----
-            label6.setText("PRICE");
+            //---- priceLabel ----
+            priceLabel.setText("PRICE");
 
-            //---- label7 ----
-            label7.setText("Card Name");
+            //---- cardNameLabel ----
+            cardNameLabel.setText("Card Name");
+            cardNameLabel.setLabelFor(cardNameTextBox);
 
-            //---- label8 ----
-            label8.setText("Card Number");
+            //---- cardNumberLabel ----
+            cardNumberLabel.setText("Card Number");
+            cardNumberLabel.setLabelFor(cardNumberTextBox);
 
-            //---- label11 ----
-            label11.setText("Security Code");
+            //---- securityCodeLabel ----
+            securityCodeLabel.setText("Security Code");
+            securityCodeLabel.setLabelFor(securityCodeTextBox);
 
-            //---- button1 ----
-            button1.setText("Confirm Payment");
+            //---- confirmPayment ----
+            confirmPayment.setText("Confirm Payment");
+            confirmPayment.addActionListener(e -> confirmPaymentActionPerformed(e));
+
+            //---- printTicket ----
+            printTicket.setText("PRINT TICKET");
+
+            //---- paymentValidateLabel ----
+            paymentValidateLabel.setToolTipText("Coupon Validity Check");
+            paymentValidateLabel.setHorizontalAlignment(SwingConstants.CENTER);
+            paymentValidateLabel.setHorizontalTextPosition(SwingConstants.CENTER);
 
             GroupLayout panel2Layout = new GroupLayout(panel2);
             panel2.setLayout(panel2Layout);
@@ -126,48 +163,53 @@ public class CardTicketPayment extends JFrame {
                                         .addGroup(panel2Layout.createParallelGroup()
                                             .addGroup(panel2Layout.createSequentialGroup()
                                                 .addGap(68, 68, 68)
-                                                .addComponent(label2)
+                                                .addComponent(stationLabel)
                                                 .addGap(6, 6, 6)
-                                                .addComponent(label1))
+                                                .addComponent(destinationLabel))
                                             .addGroup(panel2Layout.createSequentialGroup()
-                                                .addComponent(label3, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(departureDateAndTimeLabel, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
                                                 .addGap(0, 0, 0)
-                                                .addComponent(label9))))
+                                                .addComponent(returnDateAndTimeLabel))))
                                     .addGroup(panel2Layout.createSequentialGroup()
-                                        .addGroup(panel2Layout.createParallelGroup()
-                                            .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
                                         .addGroup(panel2Layout.createParallelGroup()
                                             .addGroup(panel2Layout.createSequentialGroup()
                                                 .addGap(30, 30, 30)
-                                                .addComponent(label4))
+                                                .addComponent(paymentInformationLabel))
                                             .addGroup(panel2Layout.createSequentialGroup()
                                                 .addGap(62, 62, 62)
                                                 .addGroup(panel2Layout.createParallelGroup()
-                                                    .addComponent(label5)
-                                                    .addComponent(label7)
-                                                    .addComponent(label11)
-                                                    .addComponent(label8))))
+                                                    .addComponent(ticketTypeLabel)
+                                                    .addComponent(cardNameLabel)
+                                                    .addComponent(securityCodeLabel)
+                                                    .addComponent(cardNumberLabel))))
                                         .addGroup(panel2Layout.createParallelGroup()
                                             .addGroup(panel2Layout.createSequentialGroup()
                                                 .addGap(48, 48, 48)
                                                 .addGroup(panel2Layout.createParallelGroup()
-                                                    .addComponent(label6)
-                                                    .addComponent(label10)))
+                                                    .addComponent(priceLabel)
+                                                    .addComponent(viaLocationsLabel)))
                                             .addGroup(panel2Layout.createSequentialGroup()
                                                 .addGap(32, 32, 32)
                                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(textField3, GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
-                                                    .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
-                                                    .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))))))
+                                                    .addComponent(securityCodeTextBox, GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                                                    .addComponent(cardNameTextBox, GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
+                                                    .addComponent(cardNumberTextBox, GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))))))
                                 .addContainerGap(114, Short.MAX_VALUE))
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 290, Short.MAX_VALUE)
-                                .addComponent(button1)
-                                .addGap(48, 48, 48))))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
+                                .addComponent(printTicket)
+                                .addGap(38, 38, 38)
+                                .addComponent(confirmPayment)
+                                .addGap(48, 48, 48))
+                            .addGroup(panel2Layout.createSequentialGroup()
+                                .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                                .addComponent(paymentValidateLabel, GroupLayout.PREFERRED_SIZE, 312, GroupLayout.PREFERRED_SIZE)
+                                .addGap(71, 71, 71))))
             );
-            panel2Layout.linkSize(SwingConstants.HORIZONTAL, new Component[] {label11, label7, label8});
+            panel2Layout.linkSize(SwingConstants.HORIZONTAL, new Component[] {cardNameLabel, cardNumberLabel, securityCodeLabel});
             panel2Layout.setVerticalGroup(
                 panel2Layout.createParallelGroup()
                     .addGroup(panel2Layout.createSequentialGroup()
@@ -177,45 +219,48 @@ public class CardTicketPayment extends JFrame {
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
                                 .addGroup(panel2Layout.createParallelGroup()
-                                    .addComponent(label2)
-                                    .addComponent(label1))
+                                    .addComponent(stationLabel)
+                                    .addComponent(destinationLabel))
                                 .addGap(6, 6, 6)
                                 .addGroup(panel2Layout.createParallelGroup()
-                                    .addComponent(label3, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(departureDateAndTimeLabel, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
                                     .addGroup(panel2Layout.createSequentialGroup()
                                         .addGap(4, 4, 4)
-                                        .addComponent(label9)))))
+                                        .addComponent(returnDateAndTimeLabel)))))
                         .addGap(4, 4, 4)
-                        .addComponent(label10)
+                        .addComponent(viaLocationsLabel)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(paymentValidateLabel, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
                         .addGroup(panel2Layout.createParallelGroup()
                             .addGroup(panel2Layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(label4))
+                                    .addComponent(paymentInformationLabel))
                                 .addGap(6, 6, 6)
                                 .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
                             .addGroup(panel2Layout.createSequentialGroup()
-                                .addGap(71, 71, 71)
+                                .addGap(47, 47, 47)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(label5)
-                                    .addComponent(label6))
+                                    .addComponent(ticketTypeLabel)
+                                    .addComponent(priceLabel))
                                 .addGap(22, 22, 22)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(label7)
-                                    .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(cardNameLabel)
+                                    .addComponent(cardNameTextBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(label8))))
+                                    .addComponent(cardNumberTextBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cardNumberLabel))))
                         .addGroup(panel2Layout.createParallelGroup()
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(label11))
+                                    .addComponent(securityCodeTextBox, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(securityCodeLabel))
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(button1)
+                                .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                    .addComponent(confirmPayment)
+                                    .addComponent(printTicket))
                                 .addContainerGap(62, Short.MAX_VALUE))
                             .addGroup(GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
@@ -233,20 +278,22 @@ public class CardTicketPayment extends JFrame {
     private JButton languageSelect;
     private JButton displayTimetable;
     private JLabel dateTime;
-    private JLabel label10;
-    private JLabel label3;
-    private JLabel label2;
-    private JLabel label1;
-    private JLabel label9;
-    private JLabel label4;
-    private JLabel label5;
-    private JLabel label6;
-    private JLabel label7;
-    private JLabel label8;
-    private JLabel label11;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JButton button1;
+    private JLabel viaLocationsLabel;
+    private JLabel departureDateAndTimeLabel;
+    private JLabel stationLabel;
+    private JLabel destinationLabel;
+    private JLabel returnDateAndTimeLabel;
+    private JLabel paymentInformationLabel;
+    private JLabel ticketTypeLabel;
+    private JLabel priceLabel;
+    private JLabel cardNameLabel;
+    private JLabel cardNumberLabel;
+    private JLabel securityCodeLabel;
+    private JTextField cardNameTextBox;
+    private JTextField cardNumberTextBox;
+    private JTextField securityCodeTextBox;
+    private JButton confirmPayment;
+    private JButton printTicket;
+    private JLabel paymentValidateLabel;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

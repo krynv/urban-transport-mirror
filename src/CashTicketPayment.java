@@ -29,14 +29,14 @@ public class CashTicketPayment extends JFrame {
         languageSelect = new JButton();
         displayTimetable = new JButton();
         dateTime = new JLabel();
-        label3 = new JLabel();
-        label2 = new JLabel();
-        label1 = new JLabel();
-        label9 = new JLabel();
-        label10 = new JLabel();
+        departureDateAndTimeLabel = new JLabel();
+        stationLabel = new JLabel();
+        destinationLabel = new JLabel();
+        returnDateAndTimeLabel = new JLabel();
+        viaLocationsLabel = new JLabel();
         notificationLabel = new JLabel();
         label4 = new JLabel();
-        label5 = new JLabel();
+        ticketTypeLabel = new JLabel();
         label6 = new JLabel();
         label7 = new JLabel();
         label8 = new JLabel();
@@ -71,20 +71,20 @@ public class CashTicketPayment extends JFrame {
             dateTime.setMinimumSize(new Dimension(25, 25));
             dateTime.setPreferredSize(new Dimension(25, 25));
 
-            //---- label3 ----
-            label3.setText("Departure Date/Time");
+            //---- departureDateAndTimeLabel ----
+            departureDateAndTimeLabel.setText("Departure Date/Time");
 
-            //---- label2 ----
-            label2.setText("Station");
+            //---- stationLabel ----
+            stationLabel.setText("Station");
 
-            //---- label1 ----
-            label1.setText("Destination");
+            //---- destinationLabel ----
+            destinationLabel.setText("Destination");
 
-            //---- label9 ----
-            label9.setText("Return Date/Time");
+            //---- returnDateAndTimeLabel ----
+            returnDateAndTimeLabel.setText("Return Date/Time");
 
-            //---- label10 ----
-            label10.setText("Via Locations");
+            //---- viaLocationsLabel ----
+            viaLocationsLabel.setText("Via Locations");
 
             //---- notificationLabel ----
             notificationLabel.setToolTipText("Information Text");
@@ -97,8 +97,8 @@ public class CashTicketPayment extends JFrame {
             //---- label4 ----
             label4.setText("Payment Information");
 
-            //---- label5 ----
-            label5.setText("Ticket Type");
+            //---- ticketTypeLabel ----
+            ticketTypeLabel.setText("Ticket Type");
 
             //---- label6 ----
             label6.setText("PRICE");
@@ -122,7 +122,7 @@ public class CashTicketPayment extends JFrame {
                         .addGroup(panel2Layout.createParallelGroup()
                             .addGroup(GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
                                 .addGap(0, 298, Short.MAX_VALUE)
-                                .addComponent(label10)
+                                .addComponent(viaLocationsLabel)
                                 .addGap(198, 198, 198))
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addGroup(panel2Layout.createParallelGroup()
@@ -132,13 +132,13 @@ public class CashTicketPayment extends JFrame {
                                         .addGroup(panel2Layout.createParallelGroup()
                                             .addGroup(panel2Layout.createSequentialGroup()
                                                 .addGap(68, 68, 68)
-                                                .addComponent(label2)
+                                                .addComponent(stationLabel)
                                                 .addGap(6, 6, 6)
-                                                .addComponent(label1))
+                                                .addComponent(destinationLabel))
                                             .addGroup(panel2Layout.createSequentialGroup()
-                                                .addComponent(label3, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(departureDateAndTimeLabel, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
                                                 .addGap(0, 0, 0)
-                                                .addComponent(label9))))
+                                                .addComponent(returnDateAndTimeLabel))))
                                     .addGroup(panel2Layout.createSequentialGroup()
                                         .addGroup(panel2Layout.createParallelGroup()
                                             .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
@@ -148,7 +148,7 @@ public class CashTicketPayment extends JFrame {
                                             .addComponent(label4)
                                             .addGroup(panel2Layout.createSequentialGroup()
                                                 .addGroup(panel2Layout.createParallelGroup()
-                                                    .addComponent(label5)
+                                                    .addComponent(ticketTypeLabel)
                                                     .addComponent(label7))
                                                 .addGap(55, 55, 55)
                                                 .addGroup(panel2Layout.createParallelGroup()
@@ -167,16 +167,16 @@ public class CashTicketPayment extends JFrame {
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
                                 .addGroup(panel2Layout.createParallelGroup()
-                                    .addComponent(label2)
-                                    .addComponent(label1))
+                                    .addComponent(stationLabel)
+                                    .addComponent(destinationLabel))
                                 .addGap(6, 6, 6)
                                 .addGroup(panel2Layout.createParallelGroup()
-                                    .addComponent(label3, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(departureDateAndTimeLabel, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
                                     .addGroup(panel2Layout.createSequentialGroup()
                                         .addGap(4, 4, 4)
-                                        .addComponent(label9)))))
+                                        .addComponent(returnDateAndTimeLabel)))))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label10)
+                        .addComponent(viaLocationsLabel)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(notificationLabel, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
                         .addGap(5, 5, 5)
@@ -187,7 +187,7 @@ public class CashTicketPayment extends JFrame {
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(label5)
+                                    .addComponent(ticketTypeLabel)
                                     .addComponent(label6))
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
@@ -211,14 +211,14 @@ public class CashTicketPayment extends JFrame {
     private JButton languageSelect;
     private JButton displayTimetable;
     private JLabel dateTime;
-    private JLabel label3;
-    private JLabel label2;
-    private JLabel label1;
-    private JLabel label9;
-    private JLabel label10;
+    private JLabel departureDateAndTimeLabel;
+    private JLabel stationLabel;
+    private JLabel destinationLabel;
+    private JLabel returnDateAndTimeLabel;
+    private JLabel viaLocationsLabel;
     private JLabel notificationLabel;
     private JLabel label4;
-    private JLabel label5;
+    private JLabel ticketTypeLabel;
     private JLabel label6;
     private JLabel label7;
     private JLabel label8;

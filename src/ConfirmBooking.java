@@ -68,19 +68,19 @@ public class ConfirmBooking extends JFrame {
         languageSelect = new JButton();
         displayTimetable = new JButton();
         dateTime = new JLabel();
-        label1 = new JLabel();
-        label2 = new JLabel();
-        label3 = new JLabel();
+        destinationLabel = new JLabel();
+        stationLabel = new JLabel();
+        departureDateAndTimeLabel = new JLabel();
         label4 = new JLabel();
-        label5 = new JLabel();
+        ticketTypeLabel = new JLabel();
         label6 = new JLabel();
         label7 = new JLabel();
         cashCheckBox = new JCheckBox();
         cardCheckBox = new JCheckBox();
         label8 = new JLabel();
         button1 = new JButton();
-        label9 = new JLabel();
-        label10 = new JLabel();
+        returnDateAndTimeLabel = new JLabel();
+        viaLocationsLabel = new JLabel();
         couponVerificationLabel = new JLabel();
         couponTextField = new JTextField();
 
@@ -114,20 +114,20 @@ public class ConfirmBooking extends JFrame {
             dateTime.setMinimumSize(new Dimension(25, 25));
             dateTime.setPreferredSize(new Dimension(25, 25));
 
-            //---- label1 ----
-            label1.setText("Destination");
+            //---- destinationLabel ----
+            destinationLabel.setText("Destination");
 
-            //---- label2 ----
-            label2.setText("Station");
+            //---- stationLabel ----
+            stationLabel.setText("Station");
 
-            //---- label3 ----
-            label3.setText("Departure Date/Time");
+            //---- departureDateAndTimeLabel ----
+            departureDateAndTimeLabel.setText("Departure Date/Time");
 
             //---- label4 ----
             label4.setText("Ticket Information");
 
-            //---- label5 ----
-            label5.setText("Ticket Type");
+            //---- ticketTypeLabel ----
+            ticketTypeLabel.setText("Ticket Type");
 
             //---- label6 ----
             label6.setText("Price");
@@ -148,11 +148,11 @@ public class ConfirmBooking extends JFrame {
             button1.setText("Advance");
             button1.addActionListener(e -> button1ActionPerformed(e));
 
-            //---- label9 ----
-            label9.setText("Return Date/Time");
+            //---- returnDateAndTimeLabel ----
+            returnDateAndTimeLabel.setText("Return Date/Time");
 
-            //---- label10 ----
-            label10.setText("Via Locations");
+            //---- viaLocationsLabel ----
+            viaLocationsLabel.setText("Via Locations");
 
             //---- couponVerificationLabel ----
             couponVerificationLabel.setToolTipText("Coupon Validity Check");
@@ -189,7 +189,7 @@ public class ConfirmBooking extends JFrame {
                                                         .addGap(2, 2, 2)
                                                         .addGroup(panel2Layout.createParallelGroup()
                                                             .addGroup(panel2Layout.createSequentialGroup()
-                                                                .addComponent(label5)
+                                                                .addComponent(ticketTypeLabel)
                                                                 .addGap(60, 60, 60)
                                                                 .addComponent(label6))
                                                             .addComponent(label7, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE)))
@@ -207,17 +207,17 @@ public class ConfirmBooking extends JFrame {
                                         .addGap(119, 119, 119)
                                         .addGroup(panel2Layout.createParallelGroup()
                                             .addGroup(panel2Layout.createSequentialGroup()
-                                                .addComponent(label3, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(departureDateAndTimeLabel, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
                                                 .addGap(0, 0, 0)
-                                                .addComponent(label9))
+                                                .addComponent(returnDateAndTimeLabel))
                                             .addGroup(panel2Layout.createSequentialGroup()
                                                 .addGap(68, 68, 68)
-                                                .addComponent(label2)
+                                                .addComponent(stationLabel)
                                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(label1))
+                                                .addComponent(destinationLabel))
                                             .addGroup(panel2Layout.createSequentialGroup()
                                                 .addGap(87, 87, 87)
-                                                .addComponent(label10))))
+                                                .addComponent(viaLocationsLabel))))
                                     .addGroup(panel2Layout.createSequentialGroup()
                                         .addGap(180, 180, 180)
                                         .addComponent(couponVerificationLabel, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE))))
@@ -238,21 +238,21 @@ public class ConfirmBooking extends JFrame {
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(label1)
-                                    .addComponent(label2))
+                                    .addComponent(destinationLabel)
+                                    .addComponent(stationLabel))
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(label3, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(label9))
+                                    .addComponent(departureDateAndTimeLabel, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(returnDateAndTimeLabel))
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(label10)
+                                .addComponent(viaLocationsLabel)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(couponVerificationLabel, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
                                 .addGap(23, 23, 23)
                                 .addComponent(label4, GroupLayout.PREFERRED_SIZE, 16, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(label5)
+                                    .addComponent(ticketTypeLabel)
                                     .addComponent(label6))
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(label7)
@@ -281,19 +281,19 @@ public class ConfirmBooking extends JFrame {
     private JButton languageSelect;
     private JButton displayTimetable;
     private JLabel dateTime;
-    private JLabel label1;
-    private JLabel label2;
-    private JLabel label3;
+    private JLabel destinationLabel;
+    private JLabel stationLabel;
+    private JLabel departureDateAndTimeLabel;
     private JLabel label4;
-    private JLabel label5;
+    private JLabel ticketTypeLabel;
     private JLabel label6;
     private JLabel label7;
     private JCheckBox cashCheckBox;
     private JCheckBox cardCheckBox;
     private JLabel label8;
     private JButton button1;
-    private JLabel label9;
-    private JLabel label10;
+    private JLabel returnDateAndTimeLabel;
+    private JLabel viaLocationsLabel;
     private JLabel couponVerificationLabel;
     private JTextField couponTextField;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
