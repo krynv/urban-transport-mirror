@@ -4,28 +4,28 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {space :::p, par l {seq l {par l {seq l {comp home:::p:90:p, space :119:119:p, par l {seq l {space :68:68:p, comp stationLabel:::p::p, space :6:6:p, comp destinationLabel:::p::p}, seq l {comp departureDateAndTimeLabel:::p:135:p, space :0:0:p, comp returnDateAndTimeLabel:::p::p}}}, seq l {comp displayTimetable:::p:90:p, par l {seq {space :p:30:p, comp paymentInformationLabel:::p::p}, seq l {space :p:62:p, par l {comp ticketTypeLabel:::p::p, comp cardNameLabel:1:l:p::p, comp securityCodeLabel:1:l:p::p, comp cardNumberLabel:1:l:p::p}}}, par l {seq {space :p:48:p, par l {comp priceLabel:::p::p, comp viaLocationsLabel:::p::p}}, seq l {space :p:32:p, par l:::p {comp securityCodeTextBox::::147:x, comp cardNameTextBox::::147:x, comp cardNumberTextBox::::147:x}}}}}, space ::114:x}, seq l {comp dateTime:::p:90:p, space ::136:x, comp printTicket:::p::p, space :p:38:p, comp confirmPayment:::p::p, space :p:48:p}, seq l {comp languageSelect:::p:90:p, space ::91:x, comp paymentValidateLabel:::p:312:p, space :p:71:p}}}}"
-			"$verticalGroup": "par l {seq l {space :::p, par l {comp home:::p:60:p, seq l {space :12:12:p, par l {comp stationLabel:::p::p, comp destinationLabel:::p::p}, space :6:6:p, par l {comp departureDateAndTimeLabel:::p:24:p, seq l {space :4:4:p, comp returnDateAndTimeLabel:::p::p}}}}, space :4:4:p, comp viaLocationsLabel:::p::p, space :::p, comp paymentValidateLabel:::p:18:p, par l {seq l {par b {comp languageSelect::b:p:60:p, comp paymentInformationLabel::b:p::p}, space :6:6:p, comp displayTimetable:::p:60:p}, seq l {space :p:47:p, par b {comp ticketTypeLabel::b:p::p, comp priceLabel::b:p::p}, space :p:22:p, par b {comp cardNameLabel::b:p::p, comp cardNameTextBox::b:p::p}, space :::p, par b {comp cardNumberTextBox::b:p::p, comp cardNumberLabel::b:p::p}}}, par l {seq {space :::p, par b {comp securityCodeTextBox::b:p::p, comp securityCodeLabel::b:p::p}, space u:::p, par b {comp confirmPayment::b:p::p, comp printTicket::b:p::p}, space ::62:x}, seq t {space ::70:x, comp dateTime:::p:60:p, space :::p}}}}"
+			"$horizontalGroup": "par l {seq {space :::p, par l {seq l {par l {seq l {comp homeButton:::p:90:p, space :119:119:p, par l {seq l {space :68:68:p, comp stationLabel:::p::p, space :6:6:p, comp destinationLabel:::p::p}, seq l {comp departureDateAndTimeLabel:::p:135:p, space :0:0:p, comp returnDateAndTimeLabel:::p::p}}}, seq l {comp displayTimetableButton:::p:90:p, par l {seq {space :p:30:p, comp paymentInformationLabel:::p::p}, seq l {space :p:62:p, par l {comp ticketTypeLabel:::p::p, comp cardNameLabel:1:l:p::p, comp securityCodeLabel:1:l:p::p, comp cardNumberLabel:1:l:p::p}}}, par l {seq {space :p:48:p, par l {comp priceLabel:::p::p, comp viaLocationsLabel:::p::p}}, seq l {space :p:32:p, par l:::p {comp securityCodeTextBox::::147:x, comp cardNameTextBox::::147:x, comp cardNumberTextBox::::147:x}}}}}, space ::114:x}, seq l {comp dateTimeLabel:::p:90:p, space ::136:x, comp printTicket:::p::p, space :p:38:p, comp confirmPayment:::p::p, space :p:48:p}, seq l {comp languageSelectButton:::p:90:p, space ::91:x, comp paymentValidateLabel:::p:312:p, space :p:71:p}}}}"
+			"$verticalGroup": "par l {seq l {space :::p, par l {comp homeButton:::p:60:p, seq l {space :12:12:p, par l {comp stationLabel:::p::p, comp destinationLabel:::p::p}, space :6:6:p, par l {comp departureDateAndTimeLabel:::p:24:p, seq l {space :4:4:p, comp returnDateAndTimeLabel:::p::p}}}}, space :4:4:p, comp viaLocationsLabel:::p::p, space :::p, comp paymentValidateLabel:::p:18:p, par l {seq l {par b {comp languageSelectButton::b:p:60:p, comp paymentInformationLabel::b:p::p}, space :6:6:p, comp displayTimetableButton:::p:60:p}, seq l {space :p:47:p, par b {comp ticketTypeLabel::b:p::p, comp priceLabel::b:p::p}, space :p:22:p, par b {comp cardNameLabel::b:p::p, comp cardNameTextBox::b:p::p}, space :::p, par b {comp cardNumberTextBox::b:p::p, comp cardNumberLabel::b:p::p}}}, par l {seq {space :::p, par b {comp securityCodeTextBox::b:p::p, comp securityCodeLabel::b:p::p}, space u:::p, par b {comp confirmPayment::b:p::p, comp printTicket::b:p::p}, space ::62:x}, seq t {space ::70:x, comp dateTimeLabel:::p:60:p, space :::p}}}}"
 		} ) {
 			name: "panel2"
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "home"
+				name: "homeButton"
 				"text": "Home"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "homeActionPerformed", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "languageSelect"
-				"text": "languageSelect"
+				name: "languageSelectButton"
+				"text": "Select Language"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "languageSelectActionPerformed", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "displayTimetable"
-				"text": "displayTimetable"
+				name: "displayTimetableButton"
+				"text": "Display Timetable"
 				"enabled": false
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "dateTime"
-				"text": "dateTime"
+				name: "dateTimeLabel"
+				"text": "Date/Time"
 				"horizontalAlignment": 0
 				"maximumSize": new java.awt.Dimension( 25, 25 )
 				"minimumSize": new java.awt.Dimension( 25, 25 )

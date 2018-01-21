@@ -25,21 +25,21 @@ public class CashTicketPayment extends JFrame {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - godieina fire
         panel2 = new JPanel();
-        home = new JButton();
-        languageSelect = new JButton();
-        displayTimetable = new JButton();
-        dateTime = new JLabel();
+        homeButton = new JButton();
+        languageSelectButton = new JButton();
+        displayTimetableButton = new JButton();
+        dateTimeLabel = new JLabel();
         departureDateAndTimeLabel = new JLabel();
         stationLabel = new JLabel();
         destinationLabel = new JLabel();
         returnDateAndTimeLabel = new JLabel();
         viaLocationsLabel = new JLabel();
         notificationLabel = new JLabel();
-        label4 = new JLabel();
+        paymentInformationLabel = new JLabel();
         ticketTypeLabel = new JLabel();
-        label6 = new JLabel();
-        label7 = new JLabel();
-        label8 = new JLabel();
+        priceLabel = new JLabel();
+        cashInsertedLabel = new JLabel();
+        cashValueLabel = new JLabel();
 
         //======== panel2 ========
         {
@@ -52,24 +52,24 @@ public class CashTicketPayment extends JFrame {
                     java.awt.Color.red), panel2.getBorder())); panel2.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
 
-            //---- home ----
-            home.setText("Home");
-            home.addActionListener(e -> homeActionPerformed(e));
+            //---- homeButton ----
+            homeButton.setText("Home");
+            homeButton.addActionListener(e -> homeActionPerformed(e));
 
-            //---- languageSelect ----
-            languageSelect.setText("languageSelect");
-            languageSelect.addActionListener(e -> languageSelectActionPerformed(e));
+            //---- languageSelectButton ----
+            languageSelectButton.setText("Select Language");
+            languageSelectButton.addActionListener(e -> languageSelectActionPerformed(e));
 
-            //---- displayTimetable ----
-            displayTimetable.setText("displayTimetable");
-            displayTimetable.setEnabled(false);
+            //---- displayTimetableButton ----
+            displayTimetableButton.setText("Display Timetable");
+            displayTimetableButton.setEnabled(false);
 
-            //---- dateTime ----
-            dateTime.setText("dateTime");
-            dateTime.setHorizontalAlignment(SwingConstants.CENTER);
-            dateTime.setMaximumSize(new Dimension(25, 25));
-            dateTime.setMinimumSize(new Dimension(25, 25));
-            dateTime.setPreferredSize(new Dimension(25, 25));
+            //---- dateTimeLabel ----
+            dateTimeLabel.setText("Date/Time");
+            dateTimeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+            dateTimeLabel.setMaximumSize(new Dimension(25, 25));
+            dateTimeLabel.setMinimumSize(new Dimension(25, 25));
+            dateTimeLabel.setPreferredSize(new Dimension(25, 25));
 
             //---- departureDateAndTimeLabel ----
             departureDateAndTimeLabel.setText("Departure Date/Time");
@@ -94,20 +94,20 @@ public class CashTicketPayment extends JFrame {
             notificationLabel.setForeground(Color.black);
             notificationLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
-            //---- label4 ----
-            label4.setText("Payment Information");
+            //---- paymentInformationLabel ----
+            paymentInformationLabel.setText("Payment Information");
 
             //---- ticketTypeLabel ----
             ticketTypeLabel.setText("Ticket Type");
 
-            //---- label6 ----
-            label6.setText("PRICE");
+            //---- priceLabel ----
+            priceLabel.setText("PRICE");
 
-            //---- label7 ----
-            label7.setText("Cash Inserted");
+            //---- cashInsertedLabel ----
+            cashInsertedLabel.setText("Cash Inserted");
 
-            //---- label8 ----
-            label8.setText("VALUE");
+            //---- cashValueLabel ----
+            cashValueLabel.setText("VALUE");
 
             GroupLayout panel2Layout = new GroupLayout(panel2);
             panel2.setLayout(panel2Layout);
@@ -127,7 +127,7 @@ public class CashTicketPayment extends JFrame {
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addGroup(panel2Layout.createParallelGroup()
                                     .addGroup(panel2Layout.createSequentialGroup()
-                                        .addComponent(home, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
                                         .addGap(119, 119, 119)
                                         .addGroup(panel2Layout.createParallelGroup()
                                             .addGroup(panel2Layout.createSequentialGroup()
@@ -141,29 +141,29 @@ public class CashTicketPayment extends JFrame {
                                                 .addComponent(returnDateAndTimeLabel))))
                                     .addGroup(panel2Layout.createSequentialGroup()
                                         .addGroup(panel2Layout.createParallelGroup()
-                                            .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
                                         .addGap(35, 35, 35)
                                         .addGroup(panel2Layout.createParallelGroup()
-                                            .addComponent(label4)
+                                            .addComponent(paymentInformationLabel)
                                             .addGroup(panel2Layout.createSequentialGroup()
                                                 .addGroup(panel2Layout.createParallelGroup()
                                                     .addComponent(ticketTypeLabel)
-                                                    .addComponent(label7))
+                                                    .addComponent(cashInsertedLabel))
                                                 .addGap(55, 55, 55)
                                                 .addGroup(panel2Layout.createParallelGroup()
-                                                    .addComponent(label8)
-                                                    .addComponent(label6)))))
-                                    .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(cashValueLabel)
+                                                    .addComponent(priceLabel)))))
+                                    .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap(129, Short.MAX_VALUE))))
             );
-            panel2Layout.linkSize(SwingConstants.HORIZONTAL, new Component[] {label6, label8});
+            panel2Layout.linkSize(SwingConstants.HORIZONTAL, new Component[] {cashValueLabel, priceLabel});
             panel2Layout.setVerticalGroup(
                 panel2Layout.createParallelGroup()
                     .addGroup(panel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(panel2Layout.createParallelGroup()
-                            .addComponent(home, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
                                 .addGroup(panel2Layout.createParallelGroup()
@@ -181,23 +181,23 @@ public class CashTicketPayment extends JFrame {
                         .addComponent(notificationLabel, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
                         .addGap(5, 5, 5)
                         .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-                            .addComponent(label4))
+                            .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(paymentInformationLabel))
                         .addGroup(panel2Layout.createParallelGroup()
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(ticketTypeLabel)
-                                    .addComponent(label6))
+                                    .addComponent(priceLabel))
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(label7)
-                                    .addComponent(label8)))
+                                    .addComponent(cashInsertedLabel)
+                                    .addComponent(cashValueLabel)))
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addGap(16, 16, 16)
-                                .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                        .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16))
             );
         }
@@ -207,20 +207,20 @@ public class CashTicketPayment extends JFrame {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - godieina fire
     private JPanel panel2;
-    private JButton home;
-    private JButton languageSelect;
-    private JButton displayTimetable;
-    private JLabel dateTime;
+    private JButton homeButton;
+    private JButton languageSelectButton;
+    private JButton displayTimetableButton;
+    private JLabel dateTimeLabel;
     private JLabel departureDateAndTimeLabel;
     private JLabel stationLabel;
     private JLabel destinationLabel;
     private JLabel returnDateAndTimeLabel;
     private JLabel viaLocationsLabel;
     private JLabel notificationLabel;
-    private JLabel label4;
+    private JLabel paymentInformationLabel;
     private JLabel ticketTypeLabel;
-    private JLabel label6;
-    private JLabel label7;
-    private JLabel label8;
+    private JLabel priceLabel;
+    private JLabel cashInsertedLabel;
+    private JLabel cashValueLabel;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

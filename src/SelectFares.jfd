@@ -9,8 +9,8 @@ new FormModel {
 		} ) {
 			name: "panel2"
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq t {space :::p, par l {comp dateTime::l:p:90:p, comp displayTimetable::l:p:90:p}, space s:::p, par l {seq {comp checkBox5:2::p::p, space :::x, comp searchButton:::p::p}, seq {par l {comp checkBox4:2::p::p, comp checkBox3:2::p::p}, space :0:0:x}}}, seq {par l {seq l {space :6:6:p, par l {seq l {comp languageSelect:::p:90:p, space s:::p, par l:::p {comp departureDateAndTimeLabel:1::::x, comp comboBox1:1::::x}, space :p:63:p, par l {comp returnDateAndTimeLabel:1::p::p, comp comboBox2:1::p:124:p}}, seq l {comp home:::p:90:p, space :p:130:p, comp destinationNumberLabel:::p::p}}}, seq {space :114:114:p, comp ticketTypeLabel:::p::p}}, space ::50:x}}"
-				"$verticalGroup": "par l {seq l {space :p::p, par b {comp home::b:p:60:p, comp destinationNumberLabel::b:p::p}, space :::p, par l {seq t {comp departureDateAndTimeLabel:4::p::p, space :::p, comp comboBox1:4::p::p, space :p:17:p}, seq {par l {comp languageSelect:::p:60:p, seq {comp returnDateAndTimeLabel:3::p::p, space :::p, comp comboBox2:3::p::p}}, space :::p}}, par l {seq l {comp ticketTypeLabel:::p::p, space :::p, comp checkBox3:::p::p, space :::p, comp checkBox4:::p::p, space :::p, comp checkBox5:::p::p}, seq l {comp displayTimetable:::p:60:p, space :::p, par b {comp dateTime::b:p:60:p, comp searchButton::b:p::p}}}, space :::x}}"
+				"$horizontalGroup": "par l {seq t {space :::p, par l {comp dateTime::l:p:90:p, comp displayTimetableButton::l:p:90:p}, space s:::p, par l {seq {comp openReturnCheckBox:2::p::p, space :::x, comp searchButton:::p::p}, seq {par l {comp returnCheckBox:2::p::p, comp oneWayCheckBox:2::p::p}, space :0:0:x}}}, seq {par l {seq l {space :6:6:p, par l {seq l {comp languageSelectButton:::p:90:p, space s:::p, par l:::p {comp departureDateAndTimeLabel:1::::x, comp departureDropdownMenu:1::::x}, space :p:63:p, par l {comp returnDateAndTimeLabel:1::p::p, comp returnDropdownMenu:1::p:124:p}}, seq l {comp homeButton:::p:90:p, space :p:130:p, comp destinationNumberLabel:::p::p}}}, seq {space :114:114:p, comp ticketTypeLabel:::p::p}}, space ::50:x}}"
+				"$verticalGroup": "par l {seq l {space :p::p, par b {comp homeButton::b:p:60:p, comp destinationNumberLabel::b:p::p}, space :::p, par l {seq t {comp departureDateAndTimeLabel:4::p::p, space :::p, comp departureDropdownMenu:4::p::p, space :p:17:p}, seq {par l {comp languageSelectButton:::p:60:p, seq {comp returnDateAndTimeLabel:3::p::p, space :::p, comp returnDropdownMenu:3::p::p}}, space :::p}}, par l {seq l {comp ticketTypeLabel:::p::p, space :::p, comp oneWayCheckBox:::p::p, space :::p, comp returnCheckBox:::p::p, space :::p, comp openReturnCheckBox:::p::p}, seq l {comp displayTimetableButton:::p:60:p, space :::p, par b {comp dateTime::b:p:60:p, comp searchButton::b:p::p}}}, space :::x}}"
 			} ) {
 				name: "panel1"
 				"minimumSize": new java.awt.Dimension( 450, 350 )
@@ -18,25 +18,25 @@ new FormModel {
 					"JavaCodeGenerator.variableLocal": true
 				}
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "home"
+					name: "homeButton"
 					"text": "Home"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "homeActionPerformed", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "dateTime"
-					"text": "dateTime"
+					"text": "Date/Time"
 					"horizontalAlignment": 0
 					"maximumSize": new java.awt.Dimension( 25, 25 )
 					"minimumSize": new java.awt.Dimension( 25, 25 )
 					"preferredSize": new java.awt.Dimension( 25, 25 )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "languageSelect"
-					"text": "languageSelect"
+					name: "languageSelectButton"
+					"text": "Select Language"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "languageSelectActionPerformed", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "displayTimetable"
+					name: "displayTimetableButton"
 					"text": "displayTimetable"
 					"enabled": false
 				} )
@@ -58,25 +58,25 @@ new FormModel {
 					"text": "Return Date/Time"
 				} )
 				add( new FormComponent( "javax.swing.JComboBox" ) {
-					name: "comboBox1"
+					name: "departureDropdownMenu"
 				} )
 				add( new FormComponent( "javax.swing.JComboBox" ) {
-					name: "comboBox2"
+					name: "returnDropdownMenu"
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "ticketTypeLabel"
 					"text": "Ticket Type"
 				} )
 				add( new FormComponent( "javax.swing.JCheckBox" ) {
-					name: "checkBox3"
+					name: "oneWayCheckBox"
 					"text": "One Way"
 				} )
 				add( new FormComponent( "javax.swing.JCheckBox" ) {
-					name: "checkBox4"
+					name: "returnCheckBox"
 					"text": "Return"
 				} )
 				add( new FormComponent( "javax.swing.JCheckBox" ) {
-					name: "checkBox5"
+					name: "openReturnCheckBox"
 					"text": "Open Return"
 				} )
 			} )

@@ -26,10 +26,10 @@ public class UserBooking extends JFrame {
         // Generated using JFormDesigner Evaluation license - godieina fire
         panel2 = new JPanel();
         JPanel panel1 = new JPanel();
-        home = new JButton();
-        dateTime = new JLabel();
-        languageSelect = new JButton();
-        displayTimetable = new JButton();
+        homeButton = new JButton();
+        dateTimeLabel = new JLabel();
+        languageSelectButton = new JButton();
+        displayTimetableButton = new JButton();
         destination1 = new JButton();
         destination2 = new JButton();
         destination3 = new JButton();
@@ -54,23 +54,23 @@ public class UserBooking extends JFrame {
             {
                 panel1.setMinimumSize(new Dimension(450, 350));
 
-                //---- home ----
-                home.setText("Home");
+                //---- homeButton ----
+                homeButton.setText("Home");
 
-                //---- dateTime ----
-                dateTime.setText("dateTime");
-                dateTime.setHorizontalAlignment(SwingConstants.CENTER);
-                dateTime.setMaximumSize(new Dimension(25, 25));
-                dateTime.setMinimumSize(new Dimension(25, 25));
-                dateTime.setPreferredSize(new Dimension(25, 25));
+                //---- dateTimeLabel ----
+                dateTimeLabel.setText("Date/Time");
+                dateTimeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+                dateTimeLabel.setMaximumSize(new Dimension(25, 25));
+                dateTimeLabel.setMinimumSize(new Dimension(25, 25));
+                dateTimeLabel.setPreferredSize(new Dimension(25, 25));
 
-                //---- languageSelect ----
-                languageSelect.setText("languageSelect");
-                languageSelect.addActionListener(e -> languageSelectActionPerformed(e));
+                //---- languageSelectButton ----
+                languageSelectButton.setText("Select Language");
+                languageSelectButton.addActionListener(e -> languageSelectActionPerformed(e));
 
-                //---- displayTimetable ----
-                displayTimetable.setText("displayTimetable");
-                displayTimetable.setEnabled(false);
+                //---- displayTimetableButton ----
+                displayTimetableButton.setText("Display Timetable");
+                displayTimetableButton.setEnabled(false);
 
                 //---- destination1 ----
                 destination1.setText("Destination 1");
@@ -105,12 +105,12 @@ public class UserBooking extends JFrame {
                             .addContainerGap()
                             .addGroup(panel1Layout.createParallelGroup()
                                 .addGroup(panel1Layout.createSequentialGroup()
-                                    .addComponent(home, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
                                     .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(panel1Layout.createSequentialGroup()
                                     .addGroup(panel1Layout.createParallelGroup()
                                         .addGroup(panel1Layout.createSequentialGroup()
-                                            .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(destination4, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
@@ -118,36 +118,36 @@ public class UserBooking extends JFrame {
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(destination6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
                                         .addGroup(panel1Layout.createSequentialGroup()
-                                            .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
                                             .addGap(12, 12, 12)
                                             .addComponent(destination1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(destination2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(destination3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
                                     .addGap(0, 47, Short.MAX_VALUE))))
                 );
                 panel1Layout.setVerticalGroup(
                     panel1Layout.createParallelGroup()
                         .addGroup(panel1Layout.createSequentialGroup()
                             .addContainerGap()
-                            .addComponent(home, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                 .addComponent(destination1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(destination2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(destination3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
+                                .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(panel1Layout.createParallelGroup()
                                 .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(destination4, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                                     .addComponent(destination5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                                     .addComponent(destination6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
-                                .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
+                                .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                             .addContainerGap())
                 );
             }
@@ -173,10 +173,10 @@ public class UserBooking extends JFrame {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - godieina fire
     private JPanel panel2;
-    private JButton home;
-    private JLabel dateTime;
-    private JButton languageSelect;
-    private JButton displayTimetable;
+    private JButton homeButton;
+    private JLabel dateTimeLabel;
+    private JButton languageSelectButton;
+    private JButton displayTimetableButton;
     private JButton destination1;
     private JButton destination2;
     private JButton destination3;

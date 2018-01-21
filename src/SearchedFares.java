@@ -31,10 +31,10 @@ public class SearchedFares extends JFrame {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - godieina fire
         panel2 = new JPanel();
-        displayTimetable = new JButton();
-        dateTime = new JLabel();
-        languageSelect = new JButton();
-        home = new JButton();
+        displayTimetableButton = new JButton();
+        dateTimeLabel = new JLabel();
+        languageSelectButton = new JButton();
+        homeButton = new JButton();
         button1 = new JButton();
         button2 = new JButton();
         button3 = new JButton();
@@ -53,24 +53,24 @@ public class SearchedFares extends JFrame {
                     java.awt.Color.red), panel2.getBorder())); panel2.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
 
-            //---- displayTimetable ----
-            displayTimetable.setText("displayTimetable");
-            displayTimetable.setEnabled(false);
+            //---- displayTimetableButton ----
+            displayTimetableButton.setText("Display Timetable");
+            displayTimetableButton.setEnabled(false);
 
-            //---- dateTime ----
-            dateTime.setText("dateTime");
-            dateTime.setHorizontalAlignment(SwingConstants.CENTER);
-            dateTime.setMaximumSize(new Dimension(25, 25));
-            dateTime.setMinimumSize(new Dimension(25, 25));
-            dateTime.setPreferredSize(new Dimension(25, 25));
+            //---- dateTimeLabel ----
+            dateTimeLabel.setText("Date/Time");
+            dateTimeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+            dateTimeLabel.setMaximumSize(new Dimension(25, 25));
+            dateTimeLabel.setMinimumSize(new Dimension(25, 25));
+            dateTimeLabel.setPreferredSize(new Dimension(25, 25));
 
-            //---- languageSelect ----
-            languageSelect.setText("languageSelect");
-            languageSelect.addActionListener(e -> languageSelectActionPerformed(e));
+            //---- languageSelectButton ----
+            languageSelectButton.setText("Select Language");
+            languageSelectButton.addActionListener(e -> languageSelectActionPerformed(e));
 
-            //---- home ----
-            home.setText("Home");
-            home.addActionListener(e -> homeActionPerformed(e));
+            //---- homeButton ----
+            homeButton.setText("Home");
+            homeButton.addActionListener(e -> homeActionPerformed(e));
 
             //---- button1 ----
             button1.setText("<html>\nDestination <br>\nDeparture Date/Time <br>\nReturn Date/Time <br>\nPRICE\n</html>");
@@ -112,9 +112,9 @@ public class SearchedFares extends JFrame {
                         .addGroup(panel2Layout.createParallelGroup()
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addGroup(panel2Layout.createParallelGroup()
-                                    .addComponent(home, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                                     .addGroup(panel2Layout.createSequentialGroup()
@@ -129,7 +129,7 @@ public class SearchedFares extends JFrame {
                                         .addComponent(button2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                         .addGap(30, 30, 30)
                                         .addComponent(button5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))))
-                            .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
+                            .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(46, Short.MAX_VALUE))
             );
             panel2Layout.setVerticalGroup(
@@ -138,13 +138,13 @@ public class SearchedFares extends JFrame {
                         .addContainerGap()
                         .addGroup(panel2Layout.createParallelGroup()
                             .addGroup(panel2Layout.createSequentialGroup()
-                                .addComponent(home, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                                 .addGap(34, 34, 34)
-                                .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                                 .addGap(6, 6, 6)
-                                .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                                .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                                 .addGap(17, 17, 17))
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addGap(22, 22, 22)
@@ -168,10 +168,10 @@ public class SearchedFares extends JFrame {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - godieina fire
     private JPanel panel2;
-    private JButton displayTimetable;
-    private JLabel dateTime;
-    private JButton languageSelect;
-    private JButton home;
+    private JButton displayTimetableButton;
+    private JLabel dateTimeLabel;
+    private JButton languageSelectButton;
+    private JButton homeButton;
     private JButton button1;
     private JButton button2;
     private JButton button3;

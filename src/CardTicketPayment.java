@@ -48,10 +48,10 @@ public class CardTicketPayment extends JFrame {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - godieina fire
         panel2 = new JPanel();
-        home = new JButton();
-        languageSelect = new JButton();
-        displayTimetable = new JButton();
-        dateTime = new JLabel();
+        homeButton = new JButton();
+        languageSelectButton = new JButton();
+        displayTimetableButton = new JButton();
+        dateTimeLabel = new JLabel();
         viaLocationsLabel = new JLabel();
         departureDateAndTimeLabel = new JLabel();
         stationLabel = new JLabel();
@@ -81,24 +81,24 @@ public class CardTicketPayment extends JFrame {
                     java.awt.Color.red), panel2.getBorder())); panel2.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
 
-            //---- home ----
-            home.setText("Home");
-            home.addActionListener(e -> homeActionPerformed(e));
+            //---- homeButton ----
+            homeButton.setText("Home");
+            homeButton.addActionListener(e -> homeActionPerformed(e));
 
-            //---- languageSelect ----
-            languageSelect.setText("languageSelect");
-            languageSelect.addActionListener(e -> languageSelectActionPerformed(e));
+            //---- languageSelectButton ----
+            languageSelectButton.setText("Select Language");
+            languageSelectButton.addActionListener(e -> languageSelectActionPerformed(e));
 
-            //---- displayTimetable ----
-            displayTimetable.setText("displayTimetable");
-            displayTimetable.setEnabled(false);
+            //---- displayTimetableButton ----
+            displayTimetableButton.setText("Display Timetable");
+            displayTimetableButton.setEnabled(false);
 
-            //---- dateTime ----
-            dateTime.setText("dateTime");
-            dateTime.setHorizontalAlignment(SwingConstants.CENTER);
-            dateTime.setMaximumSize(new Dimension(25, 25));
-            dateTime.setMinimumSize(new Dimension(25, 25));
-            dateTime.setPreferredSize(new Dimension(25, 25));
+            //---- dateTimeLabel ----
+            dateTimeLabel.setText("Date/Time");
+            dateTimeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+            dateTimeLabel.setMaximumSize(new Dimension(25, 25));
+            dateTimeLabel.setMinimumSize(new Dimension(25, 25));
+            dateTimeLabel.setPreferredSize(new Dimension(25, 25));
 
             //---- viaLocationsLabel ----
             viaLocationsLabel.setText("Via Locations");
@@ -158,7 +158,7 @@ public class CardTicketPayment extends JFrame {
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addGroup(panel2Layout.createParallelGroup()
                                     .addGroup(panel2Layout.createSequentialGroup()
-                                        .addComponent(home, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
                                         .addGap(119, 119, 119)
                                         .addGroup(panel2Layout.createParallelGroup()
                                             .addGroup(panel2Layout.createSequentialGroup()
@@ -171,7 +171,7 @@ public class CardTicketPayment extends JFrame {
                                                 .addGap(0, 0, 0)
                                                 .addComponent(returnDateAndTimeLabel))))
                                     .addGroup(panel2Layout.createSequentialGroup()
-                                        .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
                                         .addGroup(panel2Layout.createParallelGroup()
                                             .addGroup(panel2Layout.createSequentialGroup()
                                                 .addGap(30, 30, 30)
@@ -197,14 +197,14 @@ public class CardTicketPayment extends JFrame {
                                                     .addComponent(cardNumberTextBox, GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))))))
                                 .addContainerGap(114, Short.MAX_VALUE))
                             .addGroup(panel2Layout.createSequentialGroup()
-                                .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 136, Short.MAX_VALUE)
                                 .addComponent(printTicket)
                                 .addGap(38, 38, 38)
                                 .addComponent(confirmPayment)
                                 .addGap(48, 48, 48))
                             .addGroup(panel2Layout.createSequentialGroup()
-                                .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
                                 .addComponent(paymentValidateLabel, GroupLayout.PREFERRED_SIZE, 312, GroupLayout.PREFERRED_SIZE)
                                 .addGap(71, 71, 71))))
@@ -215,7 +215,7 @@ public class CardTicketPayment extends JFrame {
                     .addGroup(panel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(panel2Layout.createParallelGroup()
-                            .addComponent(home, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
                                 .addGroup(panel2Layout.createParallelGroup()
@@ -234,10 +234,10 @@ public class CardTicketPayment extends JFrame {
                         .addGroup(panel2Layout.createParallelGroup()
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                                     .addComponent(paymentInformationLabel))
                                 .addGap(6, 6, 6)
-                                .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
+                                .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE))
                             .addGroup(panel2Layout.createSequentialGroup()
                                 .addGap(47, 47, 47)
                                 .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
@@ -264,7 +264,7 @@ public class CardTicketPayment extends JFrame {
                                 .addContainerGap(62, Short.MAX_VALUE))
                             .addGroup(GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                                .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())))
             );
         }
@@ -274,10 +274,10 @@ public class CardTicketPayment extends JFrame {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - godieina fire
     private JPanel panel2;
-    private JButton home;
-    private JButton languageSelect;
-    private JButton displayTimetable;
-    private JLabel dateTime;
+    private JButton homeButton;
+    private JButton languageSelectButton;
+    private JButton displayTimetableButton;
+    private JLabel dateTimeLabel;
     private JLabel viaLocationsLabel;
     private JLabel departureDateAndTimeLabel;
     private JLabel stationLabel;

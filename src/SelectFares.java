@@ -43,20 +43,20 @@ public class SelectFares extends JFrame {
         // Generated using JFormDesigner Evaluation license - godieina fire
         panel2 = new JPanel();
         JPanel panel1 = new JPanel();
-        home = new JButton();
+        homeButton = new JButton();
         dateTime = new JLabel();
-        languageSelect = new JButton();
-        displayTimetable = new JButton();
+        languageSelectButton = new JButton();
+        displayTimetableButton = new JButton();
         searchButton = new JButton();
         destinationNumberLabel = new JLabel();
         departureDateAndTimeLabel = new JLabel();
         returnDateAndTimeLabel = new JLabel();
-        comboBox1 = new JComboBox();
-        comboBox2 = new JComboBox();
+        departureDropdownMenu = new JComboBox();
+        returnDropdownMenu = new JComboBox();
         ticketTypeLabel = new JLabel();
-        checkBox3 = new JCheckBox();
-        checkBox4 = new JCheckBox();
-        checkBox5 = new JCheckBox();
+        oneWayCheckBox = new JCheckBox();
+        returnCheckBox = new JCheckBox();
+        openReturnCheckBox = new JCheckBox();
 
         //======== panel2 ========
         {
@@ -73,24 +73,24 @@ public class SelectFares extends JFrame {
             {
                 panel1.setMinimumSize(new Dimension(450, 350));
 
-                //---- home ----
-                home.setText("Home");
-                home.addActionListener(e -> homeActionPerformed(e));
+                //---- homeButton ----
+                homeButton.setText("Home");
+                homeButton.addActionListener(e -> homeActionPerformed(e));
 
                 //---- dateTime ----
-                dateTime.setText("dateTime");
+                dateTime.setText("Date/Time");
                 dateTime.setHorizontalAlignment(SwingConstants.CENTER);
                 dateTime.setMaximumSize(new Dimension(25, 25));
                 dateTime.setMinimumSize(new Dimension(25, 25));
                 dateTime.setPreferredSize(new Dimension(25, 25));
 
-                //---- languageSelect ----
-                languageSelect.setText("languageSelect");
-                languageSelect.addActionListener(e -> languageSelectActionPerformed(e));
+                //---- languageSelectButton ----
+                languageSelectButton.setText("Select Language");
+                languageSelectButton.addActionListener(e -> languageSelectActionPerformed(e));
 
-                //---- displayTimetable ----
-                displayTimetable.setText("displayTimetable");
-                displayTimetable.setEnabled(false);
+                //---- displayTimetableButton ----
+                displayTimetableButton.setText("displayTimetable");
+                displayTimetableButton.setEnabled(false);
 
                 //---- searchButton ----
                 searchButton.setText("Search");
@@ -108,14 +108,14 @@ public class SelectFares extends JFrame {
                 //---- ticketTypeLabel ----
                 ticketTypeLabel.setText("Ticket Type");
 
-                //---- checkBox3 ----
-                checkBox3.setText("One Way");
+                //---- oneWayCheckBox ----
+                oneWayCheckBox.setText("One Way");
 
-                //---- checkBox4 ----
-                checkBox4.setText("Return");
+                //---- returnCheckBox ----
+                returnCheckBox.setText("Return");
 
-                //---- checkBox5 ----
-                checkBox5.setText("Open Return");
+                //---- openReturnCheckBox ----
+                openReturnCheckBox.setText("Open Return");
 
                 GroupLayout panel1Layout = new GroupLayout(panel1);
                 panel1.setLayout(panel1Layout);
@@ -125,17 +125,17 @@ public class SelectFares extends JFrame {
                             .addContainerGap()
                             .addGroup(panel1Layout.createParallelGroup()
                                 .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
+                                .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
                             .addGap(18, 18, 18)
                             .addGroup(panel1Layout.createParallelGroup()
                                 .addGroup(panel1Layout.createSequentialGroup()
-                                    .addComponent(checkBox5)
+                                    .addComponent(openReturnCheckBox)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(searchButton))
                                 .addGroup(panel1Layout.createSequentialGroup()
                                     .addGroup(panel1Layout.createParallelGroup()
-                                        .addComponent(checkBox4)
-                                        .addComponent(checkBox3))
+                                        .addComponent(returnCheckBox)
+                                        .addComponent(oneWayCheckBox))
                                     .addGap(0, 0, Short.MAX_VALUE))))
                         .addGroup(panel1Layout.createSequentialGroup()
                             .addGroup(panel1Layout.createParallelGroup()
@@ -143,17 +143,17 @@ public class SelectFares extends JFrame {
                                     .addGap(6, 6, 6)
                                     .addGroup(panel1Layout.createParallelGroup()
                                         .addGroup(panel1Layout.createSequentialGroup()
-                                            .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
                                             .addGap(18, 18, 18)
                                             .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                                                 .addComponent(departureDateAndTimeLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(comboBox1))
+                                                .addComponent(departureDropdownMenu))
                                             .addGap(63, 63, 63)
                                             .addGroup(panel1Layout.createParallelGroup()
                                                 .addComponent(returnDateAndTimeLabel)
-                                                .addComponent(comboBox2, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(returnDropdownMenu, GroupLayout.PREFERRED_SIZE, 124, GroupLayout.PREFERRED_SIZE)))
                                         .addGroup(panel1Layout.createSequentialGroup()
-                                            .addComponent(home, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
                                             .addGap(130, 130, 130)
                                             .addComponent(destinationNumberLabel))))
                                 .addGroup(panel1Layout.createSequentialGroup()
@@ -161,49 +161,49 @@ public class SelectFares extends JFrame {
                                     .addComponent(ticketTypeLabel)))
                             .addContainerGap(50, Short.MAX_VALUE))
                 );
-                panel1Layout.linkSize(SwingConstants.HORIZONTAL, new Component[] {comboBox1, comboBox2, departureDateAndTimeLabel, returnDateAndTimeLabel});
-                panel1Layout.linkSize(SwingConstants.HORIZONTAL, new Component[] {checkBox3, checkBox4, checkBox5});
+                panel1Layout.linkSize(SwingConstants.HORIZONTAL, new Component[] {departureDateAndTimeLabel, departureDropdownMenu, returnDateAndTimeLabel, returnDropdownMenu});
+                panel1Layout.linkSize(SwingConstants.HORIZONTAL, new Component[] {oneWayCheckBox, openReturnCheckBox, returnCheckBox});
                 panel1Layout.setVerticalGroup(
                     panel1Layout.createParallelGroup()
                         .addGroup(panel1Layout.createSequentialGroup()
                             .addContainerGap()
                             .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(home, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(destinationNumberLabel))
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(panel1Layout.createParallelGroup()
                                 .addGroup(GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
                                     .addComponent(departureDateAndTimeLabel)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(comboBox1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(departureDropdownMenu, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                     .addGap(17, 17, 17))
                                 .addGroup(panel1Layout.createSequentialGroup()
                                     .addGroup(panel1Layout.createParallelGroup()
-                                        .addComponent(languageSelect, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                                         .addGroup(panel1Layout.createSequentialGroup()
                                             .addComponent(returnDateAndTimeLabel)
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(comboBox2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(returnDropdownMenu, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)))
                             .addGroup(panel1Layout.createParallelGroup()
                                 .addGroup(panel1Layout.createSequentialGroup()
                                     .addComponent(ticketTypeLabel)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(checkBox3)
+                                    .addComponent(oneWayCheckBox)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(checkBox4)
+                                    .addComponent(returnCheckBox)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(checkBox5))
+                                    .addComponent(openReturnCheckBox))
                                 .addGroup(panel1Layout.createSequentialGroup()
-                                    .addComponent(displayTimetable, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                         .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(searchButton))))
                             .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 );
-                panel1Layout.linkSize(SwingConstants.VERTICAL, new Component[] {comboBox2, returnDateAndTimeLabel});
-                panel1Layout.linkSize(SwingConstants.VERTICAL, new Component[] {comboBox1, departureDateAndTimeLabel});
+                panel1Layout.linkSize(SwingConstants.VERTICAL, new Component[] {returnDateAndTimeLabel, returnDropdownMenu});
+                panel1Layout.linkSize(SwingConstants.VERTICAL, new Component[] {departureDateAndTimeLabel, departureDropdownMenu});
             }
 
             GroupLayout panel2Layout = new GroupLayout(panel2);
@@ -227,19 +227,19 @@ public class SelectFares extends JFrame {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - godieina fire
     private JPanel panel2;
-    private JButton home;
+    private JButton homeButton;
     private JLabel dateTime;
-    private JButton languageSelect;
-    private JButton displayTimetable;
+    private JButton languageSelectButton;
+    private JButton displayTimetableButton;
     private JButton searchButton;
     private JLabel destinationNumberLabel;
     private JLabel departureDateAndTimeLabel;
     private JLabel returnDateAndTimeLabel;
-    private JComboBox comboBox1;
-    private JComboBox comboBox2;
+    private JComboBox departureDropdownMenu;
+    private JComboBox returnDropdownMenu;
     private JLabel ticketTypeLabel;
-    private JCheckBox checkBox3;
-    private JCheckBox checkBox4;
-    private JCheckBox checkBox5;
+    private JCheckBox oneWayCheckBox;
+    private JCheckBox returnCheckBox;
+    private JCheckBox openReturnCheckBox;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

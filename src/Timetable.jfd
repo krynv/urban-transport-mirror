@@ -4,37 +4,37 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {space :::p, par l {comp home:::p:90:p, comp dateTime::l:p:90:p, comp languageSelect::l:p:90:p, comp displayTimetable::l:p:90:p}, space :::p, comp scrollPane1::::507:x, space :::p}}"
-			"$verticalGroup": "par l {seq l {space :::p, par l {seq {comp home:::p:60:p, space s:::p, comp languageSelect:::p:60:p, space :p:6:p, comp displayTimetable:::p:60:p, space :p:90:p, comp dateTime:::p:60:p}, comp scrollPane1:::p:281:p}, space ::15:x}}"
+			"$horizontalGroup": "par l {seq {space :::p, par l {comp homeButton:::p:90:p, comp dateTimeLabel::l:p:90:p, comp languageSelectButton::l:p:90:p, comp displayTimetableButton::l:p:90:p}, space :::p, comp scrollPane::::507:x, space :::p}}"
+			"$verticalGroup": "par l {seq l {space :::p, par l {seq {comp homeButton:::p:60:p, space s:::p, comp languageSelectButton:::p:60:p, space :p:6:p, comp displayTimetableButton:::p:60:p, space :p:90:p, comp dateTimeLabel:::p:60:p}, comp scrollPane:::p:281:p}, space ::15:x}}"
 		} ) {
 			name: "panel2"
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "languageSelect"
-				"text": "languageSelect"
+				name: "languageSelectButton"
+				"text": "Select Language"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "languageSelectActionPerformed", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "displayTimetable"
-				"text": "displayTimetable"
+				name: "displayTimetableButton"
+				"text": "Display Timetable"
 				"enabled": false
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
-				name: "dateTime"
-				"text": "dateTime"
+				name: "dateTimeLabel"
+				"text": "Date/Time"
 				"horizontalAlignment": 0
 				"maximumSize": new java.awt.Dimension( 25, 25 )
 				"minimumSize": new java.awt.Dimension( 25, 25 )
 				"preferredSize": new java.awt.Dimension( 25, 25 )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "home"
+				name: "homeButton"
 				"text": "Home"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "homeActionPerformed", true ) )
 			} )
 			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
-				name: "scrollPane1"
+				name: "scrollPane"
 				add( new FormComponent( "javax.swing.JTable" ) {
-					name: "table1"
+					name: "ticketTable"
 				} )
 			} )
 		}, new FormLayoutConstraints( null ) {

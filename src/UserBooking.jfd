@@ -11,8 +11,8 @@ new FormModel {
 			"minimumSize": new java.awt.Dimension( 450, 350 )
 			"preferredSize": new java.awt.Dimension( 450, 350 )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq {space :::p, par l {seq {comp home:::p:90:p, space :::x}, seq {par l {seq {comp displayTimetable:::p:90:p, space u:::p, comp destination4:::p:100:p, space u:::p, comp destination5:::p:100:p, space u:::p, comp destination6:::p:100:p}, seq l {comp languageSelect:::p:90:p, space :p:12:p, comp destination1:::p:100:p, space u:::p, comp destination2:::p:100:p, space u:::p, comp destination3:::p:100:p}, comp dateTime::l:p:90:p}, space :0:47:x}}}}"
-				"$verticalGroup": "par l {seq l {space :::p, comp home:::p:60:p, space :::p, par b {comp destination1::b:p:100:p, comp destination2::b:p:100:p, comp destination3::b:p:100:p, comp languageSelect::b:p:60:p}, space :::p, par l {par b {comp destination4::b:p:100:p, comp destination5::b:p:100:p, comp destination6::b:p:100:p}, comp displayTimetable::l:p:60:p}, space :::x, comp dateTime:::p:60:p, space :::p}}"
+				"$horizontalGroup": "par l {seq {space :::p, par l {seq {comp homeButton:::p:90:p, space :::x}, seq {par l {seq {comp displayTimetableButton:::p:90:p, space u:::p, comp destination4:::p:100:p, space u:::p, comp destination5:::p:100:p, space u:::p, comp destination6:::p:100:p}, seq l {comp languageSelectButton:::p:90:p, space :p:12:p, comp destination1:::p:100:p, space u:::p, comp destination2:::p:100:p, space u:::p, comp destination3:::p:100:p}, comp dateTimeLabel::l:p:90:p}, space :0:47:x}}}}"
+				"$verticalGroup": "par l {seq l {space :::p, comp homeButton:::p:60:p, space :::p, par b {comp destination1::b:p:100:p, comp destination2::b:p:100:p, comp destination3::b:p:100:p, comp languageSelectButton::b:p:60:p}, space :::p, par l {par b {comp destination4::b:p:100:p, comp destination5::b:p:100:p, comp destination6::b:p:100:p}, comp displayTimetableButton::l:p:60:p}, space :::x, comp dateTimeLabel:::p:60:p, space :::p}}"
 			} ) {
 				name: "panel1"
 				"minimumSize": new java.awt.Dimension( 450, 350 )
@@ -20,25 +20,25 @@ new FormModel {
 					"JavaCodeGenerator.variableLocal": true
 				}
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "home"
+					name: "homeButton"
 					"text": "Home"
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
-					name: "dateTime"
-					"text": "dateTime"
+					name: "dateTimeLabel"
+					"text": "Date/Time"
 					"horizontalAlignment": 0
 					"maximumSize": new java.awt.Dimension( 25, 25 )
 					"minimumSize": new java.awt.Dimension( 25, 25 )
 					"preferredSize": new java.awt.Dimension( 25, 25 )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "languageSelect"
-					"text": "languageSelect"
+					name: "languageSelectButton"
+					"text": "Select Language"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "languageSelectActionPerformed", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "displayTimetable"
-					"text": "displayTimetable"
+					name: "displayTimetableButton"
+					"text": "Display Timetable"
 					"enabled": false
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
