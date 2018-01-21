@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {space :::p, par l {seq l {par l {comp home::l:p:90:p, comp languageSelect::l:p:90:p, comp displayTimetable::l:p:90:p}, space u:::p, par l:::p {seq {comp button2:::p::p, space :::p, comp button5:::p::p}, seq l {comp button1:::p::p, space :::p, comp button4:::p::p}, seq {comp button3:::p::p, space :::x, comp button6:::p::p}}}, comp dateTime::l:p:90:p}, space ::70:x}}"
-			"$verticalGroup": "par l {seq {space :::p, par l {seq l {comp home:::p:60:p, space :p:34:p, comp languageSelect:::p:60:p, space :p:6:p, comp displayTimetable:::p:60:p, space ::17:x, comp dateTime:::p:60:p, space :p:17:p}, seq l {space :p:22:p, par b {comp button1::b:p::p, comp button4::b:p::p}, space :::p, par b {comp button6::b:p::p, comp button3::b:p::p}, space :::p, par b {comp button5::b:p::p, comp button2::b:p::p}, space :::x}}}}"
+			"$horizontalGroup": "par l {seq {space :::p, par l {seq l {par l {comp home::l:p:90:p, comp languageSelect::l:p:90:p, comp displayTimetable::l:p:90:p}, space u:::p, par l:::p {seq l {comp button1:::p::p, space :::x, comp button4:::p::p}, seq {comp button3:::p::p, space :p:30:p, comp button6:::p::p}, seq l {comp button2:::p::p, space :p:30:p, comp button5:::p::p}}}, comp dateTime::l:p:90:p}, space ::46:x}}"
+			"$verticalGroup": "par l {seq {space :::p, par l {seq l {comp home:::p:60:p, space :p:34:p, comp languageSelect:::p:60:p, space :p:6:p, comp displayTimetable:::p:60:p, space ::17:x, comp dateTime:::p:60:p, space :p:17:p}, seq l {space :p:22:p, par b {comp button1::b:p::p, comp button4::b:p::p}, space :::p, par b {comp button3::b:p::p, comp button6::b:p::p}, space :::p, par b {comp button2::b:p::p, comp button5::b:p::p}, space :::x}}}}"
 		} ) {
 			name: "panel2"
 			add( new FormComponent( "javax.swing.JButton" ) {
