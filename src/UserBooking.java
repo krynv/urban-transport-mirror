@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 import com.intellij.uiDesigner.core.*;
 public class UserBooking extends JFrame {
@@ -6,6 +7,11 @@ public class UserBooking extends JFrame {
         initComponents();
         this.setContentPane(panel2);
         this.pack();
+    }
+
+    private void languageSelectActionPerformed(ActionEvent e) {
+        new SelectLanguage().setVisible(true);
+        this.dispose();
     }
 
     private void initComponents() {
@@ -26,6 +32,8 @@ public class UserBooking extends JFrame {
 
         //======== panel2 ========
         {
+            panel2.setMinimumSize(new Dimension(450, 350));
+            panel2.setPreferredSize(new Dimension(450, 350));
 
             // JFormDesigner evaluation mark
             panel2.setBorder(new javax.swing.border.CompoundBorder(
@@ -37,6 +45,7 @@ public class UserBooking extends JFrame {
 
             //======== panel1 ========
             {
+                panel1.setMinimumSize(new Dimension(450, 350));
 
                 //---- home ----
                 home.setText("Home");
@@ -50,6 +59,7 @@ public class UserBooking extends JFrame {
 
                 //---- languageSelect ----
                 languageSelect.setText("languageSelect");
+                languageSelect.addActionListener(e -> languageSelectActionPerformed(e));
 
                 //---- displayTimetable ----
                 displayTimetable.setText("displayTimetable");
@@ -87,7 +97,7 @@ public class UserBooking extends JFrame {
                             .addGroup(panel1Layout.createParallelGroup()
                                 .addGroup(panel1Layout.createSequentialGroup()
                                     .addComponent(home, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                    .addContainerGap(404, Short.MAX_VALUE))
+                                    .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGroup(panel1Layout.createSequentialGroup()
                                     .addGroup(panel1Layout.createParallelGroup()
                                         .addGroup(panel1Layout.createSequentialGroup()
@@ -107,7 +117,7 @@ public class UserBooking extends JFrame {
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(destination3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
                                         .addComponent(dateTime, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
-                                    .addGap(0, 68, Short.MAX_VALUE))))
+                                    .addGap(0, 47, Short.MAX_VALUE))))
                 );
                 panel1Layout.setVerticalGroup(
                     panel1Layout.createParallelGroup()
@@ -139,7 +149,7 @@ public class UserBooking extends JFrame {
                 panel2Layout.createParallelGroup()
                     .addGroup(panel2Layout.createSequentialGroup()
                         .addComponent(panel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 6, Short.MAX_VALUE))
             );
             panel2Layout.setVerticalGroup(
                 panel2Layout.createParallelGroup()
