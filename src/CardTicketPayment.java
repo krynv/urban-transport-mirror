@@ -1,7 +1,9 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+
 import com.jgoodies.forms.layout.*;
+
 public class CardTicketPayment extends JFrame {
     public CardTicketPayment() {
         initComponents();

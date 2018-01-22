@@ -3,6 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.*;
 import com.jgoodies.forms.layout.*;
+
 public class SearchedFares extends JFrame {
     public SearchedFares() {
         initComponents();

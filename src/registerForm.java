@@ -2,7 +2,10 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import com.intellij.uiDesigner.core.*;
+
 public class registerForm extends JFrame{
+    private JPanel panel1;
+
     public registerForm() {
         initComponents();
         this.setContentPane(panel1);
