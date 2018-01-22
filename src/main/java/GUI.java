@@ -9,7 +9,6 @@ public class GUI extends JFrame {
         this.setContentPane(panel1);
         this.pack();
     }
-
     private void btnBarcodeActionPerformed(ActionEvent e) {
         new Barcode().setVisible(true);
     }
