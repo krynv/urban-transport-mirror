@@ -23,7 +23,7 @@ public class EmployeeRegistery {
             String lastName = (String) ((JSONObject) jsonArray.get(i)).get("lastName");
             String password = (String) ((JSONObject) jsonArray.get(i)).get("password");
             Boolean admin = (Boolean) ((JSONObject) jsonArray.get(i)).get("admin");
-             employees.add(new Employee(userName, firstName, lastName, password, admin));
+            employees.add(new Employee(userName, firstName, lastName, password, admin));
         }
     }
 

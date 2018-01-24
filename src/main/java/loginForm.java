@@ -1,16 +1,9 @@
 import java.awt.*;
 import java.awt.event.*;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import javax.swing.*;
 import com.intellij.uiDesigner.core.*;
-import org.mindrot.jbcrypt.BCrypt;
 
 public class loginForm extends JFrame {
     public loginForm() {
@@ -39,35 +32,25 @@ public class loginForm extends JFrame {
         userField.setText("willSparks");
     }
 
-    private void loginButActionPerformed(ActionEvent e) throws FileNotFoundException, IOException, ParseException {
+    public void tooManyRetries() {
+        tooManyRetries.setVisible(true);
+    }
+
+    private void loginButActionPerformed(ActionEvent e) throws IOException, ParseException {
         String userName = userField.getText();
 
         String password = new String(passField.getPassword());
-        AccountManager.login(userName, password);
-//        boolean success = false;
-//        JSONParser parser = new JSONParser();
-//        Object obj = parser.parse(new FileReader("src\\main\\java\\users.json"));
-//        JSONArray jsonArray = (JSONArray) obj;
-//        for(int i = 0; i < jsonArray.size(); i++) {
-//            if(((JSONObject) jsonArray.get(i)).get("username").equals(userName)) {
-//                String userPassword = ((JSONObject) jsonArray.get(i)).get("password").toString();
-//
-//                if (BCrypt.checkpw(password, userPassword)) {
-//                    invalidCred.setVisible(false);
-//                    if (((JSONObject) jsonArray.get(i)).get("admin").equals(true)) {
-//                        new adminHome().setVisible(true);
-//                    } else {
-//                        new userHome().setVisible(true);
-//                    }
-//                    this.setVisible(false);
-//                    break;
-//                }
-//            }
-//        }
-//
-//        if(!success) {
-//            invalidCred.setVisible(true);
-//        }
+        AccountManager accountManager = new AccountManager();
+
+        boolean loginSuccess = accountManager.login(userName, password);
+        if (loginSuccess) {
+            new adminHome().setVisible(true);
+            this.setVisible(false);
+        }
+
+        if(!loginSuccess) {
+            invalidCred.setVisible(true);
+        }
 
     }
 
@@ -92,6 +75,7 @@ public class loginForm extends JFrame {
         unsuccessfulLogin = new JButton();
         invalidCred = new JLabel();
         regBut = new JButton();
+        tooManyRetries = new JLabel();
 
         //======== panel1 ========
         {
@@ -161,6 +145,11 @@ public class loginForm extends JFrame {
                 regBut.setOpaque(false);
                 regBut.addActionListener(e -> regButActionPerformed(e));
 
+                //---- tooManyRetries ----
+                tooManyRetries.setText("Too Many Retries. Please wait");
+                tooManyRetries.setForeground(Color.red);
+                tooManyRetries.setVisible(false);
+
                 GroupLayout panel2Layout = new GroupLayout(panel2);
                 panel2.setLayout(panel2Layout);
                 panel2Layout.setHorizontalGroup(
@@ -176,16 +165,18 @@ public class loginForm extends JFrame {
                                     .addComponent(unsuccessfulLogin))
                                 .addGroup(panel2Layout.createSequentialGroup()
                                     .addGap(162, 162, 162)
-                                    .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(cancelBut, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(loginBut, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(passField)
-                                        .addComponent(label3)
-                                        .addComponent(userField)
-                                        .addComponent(label2)
-                                        .addComponent(label1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(invalidCred, GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
-                                        .addComponent(regBut, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addGroup(panel2Layout.createParallelGroup()
+                                        .addComponent(tooManyRetries)
+                                        .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(cancelBut, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(loginBut, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(passField)
+                                            .addComponent(label3)
+                                            .addComponent(userField)
+                                            .addComponent(label2)
+                                            .addComponent(label1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(invalidCred, GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                                            .addComponent(regBut, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                             .addContainerGap(8, Short.MAX_VALUE))
                 );
                 panel2Layout.setVerticalGroup(
@@ -214,7 +205,9 @@ public class loginForm extends JFrame {
                             .addComponent(cancelBut)
                             .addGap(31, 31, 31)
                             .addComponent(regBut)
-                            .addContainerGap(75, Short.MAX_VALUE))
+                            .addGap(27, 27, 27)
+                            .addComponent(tooManyRetries)
+                            .addContainerGap(32, Short.MAX_VALUE))
                 );
             }
             panel1.add(panel2, new GridConstraints(0, 0, 1, 1,
@@ -242,5 +235,6 @@ public class loginForm extends JFrame {
     private JButton unsuccessfulLogin;
     private JLabel invalidCred;
     private JButton regBut;
+    private JLabel tooManyRetries;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
