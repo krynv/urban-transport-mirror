@@ -1,8 +1,26 @@
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import com.jgoodies.forms.layout.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+
 public class CashTicketPayment extends JFrame {
+    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - godieina fire
+    private JPanel panel2;
+    private JButton homeButton;
+    private JButton languageSelectButton;
+    private JButton displayTimetableButton;
+    private JLabel dateTimeLabel;
+    private JLabel departureDateAndTimeLabel;
+    private JLabel stationLabel;
+    private JLabel destinationLabel;
+    private JLabel returnDateAndTimeLabel;
+    private JLabel viaLocationsLabel;
+    private JLabel notificationLabel;
+    private JLabel paymentInformationLabel;
+    private JLabel ticketTypeLabel;
+    private JLabel priceLabel;
+    private JLabel cashInsertedLabel;
+    private JLabel cashValueLabel;
     public CashTicketPayment() {
         initComponents();
         this.setContentPane(panel2);
@@ -47,10 +65,15 @@ public class CashTicketPayment extends JFrame {
 
             // JFormDesigner evaluation mark
             panel2.setBorder(new javax.swing.border.CompoundBorder(
-                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                    java.awt.Color.red), panel2.getBorder())); panel2.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+                    new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                            "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                            javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                            java.awt.Color.red), panel2.getBorder()));
+            panel2.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+                public void propertyChange(java.beans.PropertyChangeEvent e) {
+                    if ("border".equals(e.getPropertyName())) throw new RuntimeException();
+                }
+            });
 
 
             //---- homeButton ----
@@ -113,115 +136,96 @@ public class CashTicketPayment extends JFrame {
             GroupLayout panel2Layout = new GroupLayout(panel2);
             panel2.setLayout(panel2Layout);
             panel2Layout.setHorizontalGroup(
-                panel2Layout.createParallelGroup()
-                    .addGroup(GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
-                        .addContainerGap(237, Short.MAX_VALUE)
-                        .addComponent(notificationLabel, GroupLayout.PREFERRED_SIZE, 204, GroupLayout.PREFERRED_SIZE)
-                        .addGap(139, 139, 139))
-                    .addGroup(panel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panel2Layout.createParallelGroup()
+                    panel2Layout.createParallelGroup()
                             .addGroup(GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
-                                .addGap(0, 293, Short.MAX_VALUE)
-                                .addComponent(viaLocationsLabel)
-                                .addGap(198, 198, 198))
+                                    .addContainerGap(237, Short.MAX_VALUE)
+                                    .addComponent(notificationLabel, GroupLayout.PREFERRED_SIZE, 204, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(139, 139, 139))
                             .addGroup(panel2Layout.createSequentialGroup()
-                                .addGroup(panel2Layout.createParallelGroup()
-                                    .addGroup(panel2Layout.createSequentialGroup()
-                                        .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                        .addGap(119, 119, 119)
-                                        .addGroup(panel2Layout.createParallelGroup()
+                                    .addContainerGap()
+                                    .addGroup(panel2Layout.createParallelGroup()
+                                            .addGroup(GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
+                                                    .addGap(0, 293, Short.MAX_VALUE)
+                                                    .addComponent(viaLocationsLabel)
+                                                    .addGap(198, 198, 198))
                                             .addGroup(panel2Layout.createSequentialGroup()
-                                                .addGap(68, 68, 68)
-                                                .addComponent(stationLabel)
-                                                .addGap(6, 6, 6)
-                                                .addComponent(destinationLabel))
-                                            .addGroup(panel2Layout.createSequentialGroup()
-                                                .addComponent(departureDateAndTimeLabel, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
-                                                .addGap(0, 0, 0)
-                                                .addComponent(returnDateAndTimeLabel))))
-                                    .addGroup(panel2Layout.createSequentialGroup()
-                                        .addGroup(panel2Layout.createParallelGroup()
-                                            .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
-                                        .addGap(35, 35, 35)
-                                        .addGroup(panel2Layout.createParallelGroup()
-                                            .addComponent(paymentInformationLabel)
-                                            .addGroup(panel2Layout.createSequentialGroup()
-                                                .addGroup(panel2Layout.createParallelGroup()
-                                                    .addComponent(ticketTypeLabel)
-                                                    .addComponent(cashInsertedLabel))
-                                                .addGap(55, 55, 55)
-                                                .addGroup(panel2Layout.createParallelGroup()
-                                                    .addComponent(cashValueLabel)
-                                                    .addComponent(priceLabel)))))
-                                    .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
-                                .addContainerGap(124, Short.MAX_VALUE))))
+                                                    .addGroup(panel2Layout.createParallelGroup()
+                                                            .addGroup(panel2Layout.createSequentialGroup()
+                                                                    .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                                                    .addGap(119, 119, 119)
+                                                                    .addGroup(panel2Layout.createParallelGroup()
+                                                                            .addGroup(panel2Layout.createSequentialGroup()
+                                                                                    .addGap(68, 68, 68)
+                                                                                    .addComponent(stationLabel)
+                                                                                    .addGap(6, 6, 6)
+                                                                                    .addComponent(destinationLabel))
+                                                                            .addGroup(panel2Layout.createSequentialGroup()
+                                                                                    .addComponent(departureDateAndTimeLabel, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
+                                                                                    .addGap(0, 0, 0)
+                                                                                    .addComponent(returnDateAndTimeLabel))))
+                                                            .addGroup(panel2Layout.createSequentialGroup()
+                                                                    .addGroup(panel2Layout.createParallelGroup()
+                                                                            .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE)
+                                                                            .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
+                                                                    .addGap(35, 35, 35)
+                                                                    .addGroup(panel2Layout.createParallelGroup()
+                                                                            .addComponent(paymentInformationLabel)
+                                                                            .addGroup(panel2Layout.createSequentialGroup()
+                                                                                    .addGroup(panel2Layout.createParallelGroup()
+                                                                                            .addComponent(ticketTypeLabel)
+                                                                                            .addComponent(cashInsertedLabel))
+                                                                                    .addGap(55, 55, 55)
+                                                                                    .addGroup(panel2Layout.createParallelGroup()
+                                                                                            .addComponent(cashValueLabel)
+                                                                                            .addComponent(priceLabel)))))
+                                                            .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 90, GroupLayout.PREFERRED_SIZE))
+                                                    .addContainerGap(124, Short.MAX_VALUE))))
             );
-            panel2Layout.linkSize(SwingConstants.HORIZONTAL, new Component[] {cashValueLabel, priceLabel});
+            panel2Layout.linkSize(SwingConstants.HORIZONTAL, new Component[]{cashValueLabel, priceLabel});
             panel2Layout.setVerticalGroup(
-                panel2Layout.createParallelGroup()
-                    .addGroup(panel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(panel2Layout.createParallelGroup()
-                            .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                    panel2Layout.createParallelGroup()
                             .addGroup(panel2Layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addGroup(panel2Layout.createParallelGroup()
-                                    .addComponent(stationLabel)
-                                    .addComponent(destinationLabel))
-                                .addGap(6, 6, 6)
-                                .addGroup(panel2Layout.createParallelGroup()
-                                    .addComponent(departureDateAndTimeLabel, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(panel2Layout.createSequentialGroup()
-                                        .addGap(4, 4, 4)
-                                        .addComponent(returnDateAndTimeLabel)))))
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(viaLocationsLabel)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(notificationLabel, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
-                        .addGap(5, 5, 5)
-                        .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-                            .addComponent(paymentInformationLabel))
-                        .addGroup(panel2Layout.createParallelGroup()
-                            .addGroup(panel2Layout.createSequentialGroup()
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(ticketTypeLabel)
-                                    .addComponent(priceLabel))
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                    .addComponent(cashInsertedLabel)
-                                    .addComponent(cashValueLabel)))
-                            .addGroup(panel2Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                        .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16))
+                                    .addContainerGap()
+                                    .addGroup(panel2Layout.createParallelGroup()
+                                            .addComponent(homeButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(panel2Layout.createSequentialGroup()
+                                                    .addGap(12, 12, 12)
+                                                    .addGroup(panel2Layout.createParallelGroup()
+                                                            .addComponent(stationLabel)
+                                                            .addComponent(destinationLabel))
+                                                    .addGap(6, 6, 6)
+                                                    .addGroup(panel2Layout.createParallelGroup()
+                                                            .addComponent(departureDateAndTimeLabel, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+                                                            .addGroup(panel2Layout.createSequentialGroup()
+                                                                    .addGap(4, 4, 4)
+                                                                    .addComponent(returnDateAndTimeLabel)))))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(viaLocationsLabel)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(notificationLabel, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(5, 5, 5)
+                                    .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                            .addComponent(languageSelectButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(paymentInformationLabel))
+                                    .addGroup(panel2Layout.createParallelGroup()
+                                            .addGroup(panel2Layout.createSequentialGroup()
+                                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                            .addComponent(ticketTypeLabel)
+                                                            .addComponent(priceLabel))
+                                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                                    .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                            .addComponent(cashInsertedLabel)
+                                                            .addComponent(cashValueLabel)))
+                                            .addGroup(panel2Layout.createSequentialGroup()
+                                                    .addGap(16, 16, 16)
+                                                    .addComponent(displayTimetableButton, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                                    .addComponent(dateTimeLabel, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(16, 16, 16))
             );
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
-
-    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - godieina fire
-    private JPanel panel2;
-    private JButton homeButton;
-    private JButton languageSelectButton;
-    private JButton displayTimetableButton;
-    private JLabel dateTimeLabel;
-    private JLabel departureDateAndTimeLabel;
-    private JLabel stationLabel;
-    private JLabel destinationLabel;
-    private JLabel returnDateAndTimeLabel;
-    private JLabel viaLocationsLabel;
-    private JLabel notificationLabel;
-    private JLabel paymentInformationLabel;
-    private JLabel ticketTypeLabel;
-    private JLabel priceLabel;
-    private JLabel cashInsertedLabel;
-    private JLabel cashValueLabel;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

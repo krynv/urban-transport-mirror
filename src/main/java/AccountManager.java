@@ -9,7 +9,7 @@ public class AccountManager {
     private Employee setActiveUser;
     private EmployeeRegistery employeeRegistery;
 
-    public AccountManager () {
+    public AccountManager() {
 
     }
 
@@ -18,7 +18,7 @@ public class AccountManager {
         this.password = password;
         employeeRegistery = new EmployeeRegistery();
         this.activeUser = employeeRegistery.getEmployee(username);
-        if(activeUser != null ) {
+        if (activeUser != null) {
             Boolean passwordMatch = activeUser.passwordMatch(password);
             if (passwordMatch) {
                 this.setActiveUser = activeUser;
@@ -30,7 +30,6 @@ public class AccountManager {
             return false;
         }
     }
-
 
 
 }

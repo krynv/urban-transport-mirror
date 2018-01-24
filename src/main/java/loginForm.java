@@ -1,11 +1,30 @@
-import java.awt.*;
-import java.awt.event.*;
-import java.io.IOException;
+import com.intellij.uiDesigner.core.GridConstraints;
+import com.intellij.uiDesigner.core.GridLayoutManager;
 import org.json.simple.parser.ParseException;
+
 import javax.swing.*;
-import com.intellij.uiDesigner.core.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 public class loginForm extends JFrame {
+    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - Benjamin Ward
+    private JPanel panel2;
+    private JPanel panel1;
+    private JLabel label1;
+    private JLabel label2;
+    private JLabel label3;
+    private JPasswordField passField;
+    private JTextField userField;
+    private JButton loginBut;
+    private JButton cancelBut;
+    private JButton successUserLogin;
+    private JButton successLoginAdmin;
+    private JButton unsuccessfulLogin;
+    private JLabel invalidCred;
+    private JButton regBut;
+    private JLabel tooManyRetries;
     public loginForm() {
         initComponents();
         this.setContentPane(panel1);
@@ -48,7 +67,7 @@ public class loginForm extends JFrame {
             this.setVisible(false);
         }
 
-        if(!loginSuccess) {
+        if (!loginSuccess) {
             invalidCred.setVisible(true);
         }
 
@@ -82,10 +101,15 @@ public class loginForm extends JFrame {
 
             // JFormDesigner evaluation mark
             panel1.setBorder(new javax.swing.border.CompoundBorder(
-                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                    java.awt.Color.red), panel1.getBorder())); panel1.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+                    new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                            "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                            javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                            java.awt.Color.red), panel1.getBorder()));
+            panel1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+                public void propertyChange(java.beans.PropertyChangeEvent e) {
+                    if ("border".equals(e.getPropertyName())) throw new RuntimeException();
+                }
+            });
 
             panel1.setLayout(new GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
 
@@ -153,88 +177,70 @@ public class loginForm extends JFrame {
                 GroupLayout panel2Layout = new GroupLayout(panel2);
                 panel2.setLayout(panel2Layout);
                 panel2Layout.setHorizontalGroup(
-                    panel2Layout.createParallelGroup()
-                        .addGroup(panel2Layout.createSequentialGroup()
-                            .addGroup(panel2Layout.createParallelGroup()
+                        panel2Layout.createParallelGroup()
                                 .addGroup(panel2Layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(successUserLogin)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(successLoginAdmin)
-                                    .addGap(16, 16, 16)
-                                    .addComponent(unsuccessfulLogin))
-                                .addGroup(panel2Layout.createSequentialGroup()
-                                    .addGap(162, 162, 162)
-                                    .addGroup(panel2Layout.createParallelGroup()
-                                        .addComponent(tooManyRetries)
-                                        .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(cancelBut, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(loginBut, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(passField)
-                                            .addComponent(label3)
-                                            .addComponent(userField)
-                                            .addComponent(label2)
-                                            .addComponent(label1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(invalidCred, GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
-                                            .addComponent(regBut, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                            .addContainerGap(8, Short.MAX_VALUE))
+                                        .addGroup(panel2Layout.createParallelGroup()
+                                                .addGroup(panel2Layout.createSequentialGroup()
+                                                        .addContainerGap()
+                                                        .addComponent(successUserLogin)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(successLoginAdmin)
+                                                        .addGap(16, 16, 16)
+                                                        .addComponent(unsuccessfulLogin))
+                                                .addGroup(panel2Layout.createSequentialGroup()
+                                                        .addGap(162, 162, 162)
+                                                        .addGroup(panel2Layout.createParallelGroup()
+                                                                .addComponent(tooManyRetries)
+                                                                .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                                        .addComponent(cancelBut, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                        .addComponent(loginBut, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                        .addComponent(passField)
+                                                                        .addComponent(label3)
+                                                                        .addComponent(userField)
+                                                                        .addComponent(label2)
+                                                                        .addComponent(label1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                        .addComponent(invalidCred, GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                                                                        .addComponent(regBut, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                        .addContainerGap(8, Short.MAX_VALUE))
                 );
                 panel2Layout.setVerticalGroup(
-                    panel2Layout.createParallelGroup()
-                        .addGroup(panel2Layout.createSequentialGroup()
-                            .addGap(15, 15, 15)
-                            .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(unsuccessfulLogin)
-                                .addComponent(successUserLogin)
-                                .addComponent(successLoginAdmin))
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(label1)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(invalidCred, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(label2)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(userField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(label3)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(passField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(loginBut)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(cancelBut)
-                            .addGap(31, 31, 31)
-                            .addComponent(regBut)
-                            .addGap(27, 27, 27)
-                            .addComponent(tooManyRetries)
-                            .addContainerGap(32, Short.MAX_VALUE))
+                        panel2Layout.createParallelGroup()
+                                .addGroup(panel2Layout.createSequentialGroup()
+                                        .addGap(15, 15, 15)
+                                        .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(unsuccessfulLogin)
+                                                .addComponent(successUserLogin)
+                                                .addComponent(successLoginAdmin))
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(label1)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(invalidCred, GroupLayout.PREFERRED_SIZE, 49, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(label2)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(userField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(label3)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(passField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(loginBut)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cancelBut)
+                                        .addGap(31, 31, 31)
+                                        .addComponent(regBut)
+                                        .addGap(27, 27, 27)
+                                        .addComponent(tooManyRetries)
+                                        .addContainerGap(32, Short.MAX_VALUE))
                 );
             }
             panel1.add(panel2, new GridConstraints(0, 0, 1, 1,
-                GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
-                GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_WANT_GROW,
-                GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_WANT_GROW,
-                null, null, null));
+                    GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE,
+                    GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_WANT_GROW,
+                    GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_WANT_GROW,
+                    null, null, null));
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
-
-    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Benjamin Ward
-    private JPanel panel2;
-    private JPanel panel1;
-    private JLabel label1;
-    private JLabel label2;
-    private JLabel label3;
-    private JPasswordField passField;
-    private JTextField userField;
-    private JButton loginBut;
-    private JButton cancelBut;
-    private JButton successUserLogin;
-    private JButton successLoginAdmin;
-    private JButton unsuccessfulLogin;
-    private JLabel invalidCred;
-    private JButton regBut;
-    private JLabel tooManyRetries;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

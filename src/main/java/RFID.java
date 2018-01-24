@@ -1,10 +1,16 @@
-import java.awt.event.*;
 import javax.swing.*;
+import java.awt.event.ActionEvent;
 
 public class RFID extends JFrame {
     private Boolean valid = false;
 
     private JPanel panel1;
+    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - godieina fire
+    private JLabel lblRFIDError;
+    private JButton btnRFID;
+    private JButton btnValidCard;
+    private JButton btnInvalidCard;
 
     public RFID() {
         initComponents();
@@ -44,10 +50,15 @@ public class RFID extends JFrame {
 
             // JFormDesigner evaluation mark
             panel1.setBorder(new javax.swing.border.CompoundBorder(
-                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                    java.awt.Color.red), panel1.getBorder())); panel1.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+                    new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                            "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                            javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                            java.awt.Color.red), panel1.getBorder()));
+            panel1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+                public void propertyChange(java.beans.PropertyChangeEvent e) {
+                    if ("border".equals(e.getPropertyName())) throw new RuntimeException();
+                }
+            });
 
 
             //---- lblRFIDError ----
@@ -69,44 +80,37 @@ public class RFID extends JFrame {
             GroupLayout panel1Layout = new GroupLayout(panel1);
             panel1.setLayout(panel1Layout);
             panel1Layout.setHorizontalGroup(
-                panel1Layout.createParallelGroup()
-                    .addGroup(panel1Layout.createSequentialGroup()
-                        .addGroup(panel1Layout.createParallelGroup()
+                    panel1Layout.createParallelGroup()
                             .addGroup(panel1Layout.createSequentialGroup()
-                                .addGap(300, 300, 300)
-                                .addComponent(lblRFIDError))
-                            .addGroup(panel1Layout.createSequentialGroup()
-                                .addGap(236, 236, 236)
-                                .addComponent(btnRFID, GroupLayout.PREFERRED_SIZE, 418, GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panel1Layout.createSequentialGroup()
-                                .addGap(253, 253, 253)
-                                .addComponent(btnValidCard)
-                                .addGap(43, 43, 43)
-                                .addComponent(btnInvalidCard)))
-                        .addContainerGap(346, Short.MAX_VALUE))
+                                    .addGroup(panel1Layout.createParallelGroup()
+                                            .addGroup(panel1Layout.createSequentialGroup()
+                                                    .addGap(300, 300, 300)
+                                                    .addComponent(lblRFIDError))
+                                            .addGroup(panel1Layout.createSequentialGroup()
+                                                    .addGap(236, 236, 236)
+                                                    .addComponent(btnRFID, GroupLayout.PREFERRED_SIZE, 418, GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(panel1Layout.createSequentialGroup()
+                                                    .addGap(253, 253, 253)
+                                                    .addComponent(btnValidCard)
+                                                    .addGap(43, 43, 43)
+                                                    .addComponent(btnInvalidCard)))
+                                    .addContainerGap(346, Short.MAX_VALUE))
             );
             panel1Layout.setVerticalGroup(
-                panel1Layout.createParallelGroup()
-                    .addGroup(panel1Layout.createSequentialGroup()
-                        .addGap(165, 165, 165)
-                        .addComponent(lblRFIDError)
-                        .addGap(58, 58, 58)
-                        .addComponent(btnRFID, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90)
-                        .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnValidCard)
-                            .addComponent(btnInvalidCard))
-                        .addContainerGap(312, Short.MAX_VALUE))
+                    panel1Layout.createParallelGroup()
+                            .addGroup(panel1Layout.createSequentialGroup()
+                                    .addGap(165, 165, 165)
+                                    .addComponent(lblRFIDError)
+                                    .addGap(58, 58, 58)
+                                    .addComponent(btnRFID, GroupLayout.PREFERRED_SIZE, 127, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(90, 90, 90)
+                                    .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                            .addComponent(btnValidCard)
+                                            .addComponent(btnInvalidCard))
+                                    .addContainerGap(312, Short.MAX_VALUE))
             );
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
-
-    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - godieina fire
-    private JLabel lblRFIDError;
-    private JButton btnRFID;
-    private JButton btnValidCard;
-    private JButton btnInvalidCard;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

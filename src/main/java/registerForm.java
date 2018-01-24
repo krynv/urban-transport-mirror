@@ -1,19 +1,33 @@
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import java.io.FileNotFoundException;
-import org.mindrot.jbcrypt.BCrypt;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.mindrot.jbcrypt.BCrypt;
 
-public class registerForm extends JFrame{
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
+public class registerForm extends JFrame {
+
+    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - Benjamin Ward
+    private JLabel label1;
+    private JLabel label2;
+    private JLabel label3;
+    private JLabel label4;
+    private JLabel label5;
+    private JPanel panel1;
+    private JCheckBox adminCheckBox;
+    private JButton submitBut;
+    private JButton cancelBut;
+    private JTextField userNameField;
+    private JTextField firstNameField;
+    private JTextField lastNameField;
+    private JPasswordField passwordField;
     public registerForm() {
         initComponents();
         this.setContentPane(panel1);
@@ -77,10 +91,15 @@ public class registerForm extends JFrame{
 
             // JFormDesigner evaluation mark
             panel1.setBorder(new javax.swing.border.CompoundBorder(
-                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                    java.awt.Color.red), panel1.getBorder())); panel1.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+                    new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                            "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                            javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                            java.awt.Color.red), panel1.getBorder()));
+            panel1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+                public void propertyChange(java.beans.PropertyChangeEvent e) {
+                    if ("border".equals(e.getPropertyName())) throw new RuntimeException();
+                }
+            });
 
 
             //---- label1 ----
@@ -121,78 +140,62 @@ public class registerForm extends JFrame{
             GroupLayout panel1Layout = new GroupLayout(panel1);
             panel1.setLayout(panel1Layout);
             panel1Layout.setHorizontalGroup(
-                panel1Layout.createParallelGroup()
-                    .addGroup(panel1Layout.createSequentialGroup()
-                        .addGroup(panel1Layout.createParallelGroup()
+                    panel1Layout.createParallelGroup()
                             .addGroup(panel1Layout.createSequentialGroup()
-                                .addGap(210, 210, 210)
-                                .addComponent(label1))
-                            .addGroup(panel1Layout.createSequentialGroup()
-                                .addGap(128, 128, 128)
-                                .addGroup(panel1Layout.createParallelGroup()
-                                    .addComponent(adminCheckBox)
-                                    .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(label4)
-                                        .addComponent(label5)
-                                        .addComponent(label2)
-                                        .addComponent(userNameField)
-                                        .addComponent(label3)
-                                        .addComponent(lastNameField)
-                                        .addComponent(firstNameField)
-                                        .addGroup(panel1Layout.createSequentialGroup()
-                                            .addComponent(submitBut, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(cancelBut, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(passwordField)))))
-                        .addContainerGap(184, Short.MAX_VALUE))
+                                    .addGroup(panel1Layout.createParallelGroup()
+                                            .addGroup(panel1Layout.createSequentialGroup()
+                                                    .addGap(210, 210, 210)
+                                                    .addComponent(label1))
+                                            .addGroup(panel1Layout.createSequentialGroup()
+                                                    .addGap(128, 128, 128)
+                                                    .addGroup(panel1Layout.createParallelGroup()
+                                                            .addComponent(adminCheckBox)
+                                                            .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                                    .addComponent(label4)
+                                                                    .addComponent(label5)
+                                                                    .addComponent(label2)
+                                                                    .addComponent(userNameField)
+                                                                    .addComponent(label3)
+                                                                    .addComponent(lastNameField)
+                                                                    .addComponent(firstNameField)
+                                                                    .addGroup(panel1Layout.createSequentialGroup()
+                                                                            .addComponent(submitBut, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)
+                                                                            .addGap(18, 18, 18)
+                                                                            .addComponent(cancelBut, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE))
+                                                                    .addComponent(passwordField)))))
+                                    .addContainerGap(184, Short.MAX_VALUE))
             );
             panel1Layout.setVerticalGroup(
-                panel1Layout.createParallelGroup()
-                    .addGroup(panel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(label1)
-                        .addGap(33, 33, 33)
-                        .addComponent(label2)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(userNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label3)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(firstNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label4)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lastNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGap(1, 1, 1)
-                        .addComponent(label5)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(passwordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(adminCheckBox)
-                        .addGap(32, 32, 32)
-                        .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(cancelBut)
-                            .addComponent(submitBut))
-                        .addContainerGap(26, Short.MAX_VALUE))
+                    panel1Layout.createParallelGroup()
+                            .addGroup(panel1Layout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addComponent(label1)
+                                    .addGap(33, 33, 33)
+                                    .addComponent(label2)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(userNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(label3)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(firstNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(label4)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(lastNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(1, 1, 1)
+                                    .addComponent(label5)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(passwordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(adminCheckBox)
+                                    .addGap(32, 32, 32)
+                                    .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                            .addComponent(cancelBut)
+                                            .addComponent(submitBut))
+                                    .addContainerGap(26, Short.MAX_VALUE))
             );
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
-
-    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Benjamin Ward
-    private JLabel label1;
-    private JLabel label2;
-    private JLabel label3;
-    private JLabel label4;
-    private JLabel label5;
-    private JPanel panel1;
-    private JCheckBox adminCheckBox;
-    private JButton submitBut;
-    private JButton cancelBut;
-    private JTextField userNameField;
-    private JTextField firstNameField;
-    private JTextField lastNameField;
-    private JPasswordField passwordField;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
