@@ -2,6 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.io.FileNotFoundException;
+import org.mindrot.jbcrypt.BCrypt;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -39,8 +40,9 @@ public class registerForm extends JFrame{
         jsonObject.put("username", userNameField.getText());
         jsonObject.put("firstName", firstNameField.getText());
         jsonObject.put("lastName", lastNameField.getText());
-        jsonObject.put("password", password);
         jsonObject.put("admin", adminCheckBox.isSelected());
+        String hashedPass = BCrypt.hashpw(password, BCrypt.gensalt(12));
+        jsonObject.put("password", hashedPass);
         jsonArray.add(jsonObject);
         // writing the JSONObject into a file(info.json)
         try {
@@ -50,7 +52,6 @@ public class registerForm extends JFrame{
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println(jsonArray);
 
     }
 

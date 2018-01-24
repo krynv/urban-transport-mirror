@@ -10,6 +10,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import javax.swing.*;
 import com.intellij.uiDesigner.core.*;
+import org.mindrot.jbcrypt.BCrypt;
 
 public class loginForm extends JFrame {
     public loginForm() {
@@ -40,7 +41,8 @@ public class loginForm extends JFrame {
 
     private void loginButActionPerformed(ActionEvent e) throws FileNotFoundException, IOException, ParseException {
         String userName = userField.getText();
-        char[] password = passField.getPassword();
+
+        String password = new String(passField.getPassword());
         System.out.println(password);
         boolean success = false;
         JSONParser parser = new JSONParser();
@@ -48,8 +50,9 @@ public class loginForm extends JFrame {
         JSONArray jsonArray = (JSONArray) obj;
         for(int i = 0; i < jsonArray.size(); i++) {
             if(((JSONObject) jsonArray.get(i)).get("username").equals(userName)) {
-                char [] userPassword = ((JSONObject) jsonArray.get(i)).get("password").toString().toCharArray();
-                if (Arrays.equals(userPassword, password)) {
+                String userPassword = ((JSONObject) jsonArray.get(i)).get("password").toString();
+
+                if (BCrypt.checkpw(password, userPassword)) {
                     invalidCred.setVisible(false);
                     if (((JSONObject) jsonArray.get(i)).get("admin").equals(true)) {
                         new adminHome().setVisible(true);
