@@ -3,7 +3,7 @@ import java.awt.event.*;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Iterator;
+import java.util.Arrays;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -40,17 +40,19 @@ public class loginForm extends JFrame {
 
     private void loginButActionPerformed(ActionEvent e) throws FileNotFoundException, IOException, ParseException {
         String userName = userField.getText();
-        String password = passField.getText();
+        char[] password = passField.getPassword();
+        System.out.println(password);
         boolean success = false;
         JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader("src\\users.json"));
+        Object obj = parser.parse(new FileReader("src\\main\\java\\users.json"));
         JSONArray jsonArray = (JSONArray) obj;
         for(int i = 0; i < jsonArray.size(); i++) {
             JSONObject jsonobj = (JSONObject) jsonArray.get(i);
             if(((JSONObject) jsonArray.get(i)).get("username").equals(userName)) {
-                if(((JSONObject) jsonArray.get(i)).get("password").equals(password)) {
+                char [] userPassword = ((JSONObject) jsonArray.get(i)).get("password").toString().toCharArray();
+                if (Arrays.equals(userPassword, password)) {
                     invalidCred.setVisible(false);
-                    if(((JSONObject) jsonArray.get(i)).get("admin").equals("true")){
+                    if (((JSONObject) jsonArray.get(i)).get("admin").equals("true")) {
                         new adminHome().setVisible(true);
                     } else {
                         new userHome().setVisible(true);
