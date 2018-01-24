@@ -1,10 +1,17 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import com.intellij.uiDesigner.core.*;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class registerForm extends JFrame{
-    private JPanel panel1;
 
     public registerForm() {
         initComponents();
@@ -21,17 +28,43 @@ public class registerForm extends JFrame{
         this.setVisible(false);
     }
 
+    private void submitButActionPerformed(ActionEvent d) throws IOException, ParseException {
+        JSONObject jsonObject = new JSONObject();
+        JSONParser parser = new JSONParser();
+        Object obj = parser.parse(new FileReader("src\\main\\java\\users.json"));
+        JSONArray jsonArray = (JSONArray) obj;
+        String password = new String(passwordField.getPassword());
+        //JSON object and values
+
+        jsonObject.put("username", userNameField.getText());
+        jsonObject.put("firstName", firstNameField.getText());
+        jsonObject.put("lastName", lastNameField.getText());
+        jsonObject.put("password", password);
+        jsonObject.put("admin", adminCheckBox.isSelected());
+        jsonArray.add(jsonObject);
+        // writing the JSONObject into a file(info.json)
+        try {
+            FileWriter fileWriter = new FileWriter("src\\main\\java\\users.json");
+            fileWriter.write(jsonArray.toJSONString());
+            fileWriter.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println(jsonArray);
+
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Benjamin Ward
-        JPanel panel1 = new JPanel();
+        panel1 = new JPanel();
         label1 = new JLabel();
         label2 = new JLabel();
         label3 = new JLabel();
         label4 = new JLabel();
         label5 = new JLabel();
         adminCheckBox = new JCheckBox();
-        button1 = new JButton();
+        submitBut = new JButton();
         cancelBut = new JButton();
         userNameField = new JTextField();
         firstNameField = new JTextField();
@@ -68,8 +101,17 @@ public class registerForm extends JFrame{
             //---- adminCheckBox ----
             adminCheckBox.setText("Admin");
 
-            //---- button1 ----
-            button1.setText("Submit");
+            //---- submitBut ----
+            submitBut.setText("Submit");
+            submitBut.addActionListener(e -> {
+                try {
+                    submitButActionPerformed(e);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                } catch (ParseException e1) {
+                    e1.printStackTrace();
+                }
+            });
 
             //---- cancelBut ----
             cancelBut.setText("Cancel");
@@ -86,22 +128,21 @@ public class registerForm extends JFrame{
                                 .addComponent(label1))
                             .addGroup(panel1Layout.createSequentialGroup()
                                 .addGap(128, 128, 128)
-                                .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(label4)
-                                    .addComponent(label5)
-                                    .addComponent(label2)
-                                    .addComponent(userNameField)
-                                    .addComponent(label3)
-                                    .addComponent(lastNameField)
-                                    .addComponent(firstNameField)
-                                    .addGroup(panel1Layout.createSequentialGroup()
-                                        .addComponent(button1, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(cancelBut, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(panel1Layout.createSequentialGroup()
-                                        .addGap(20, 20, 20)
-                                        .addComponent(adminCheckBox))
-                                    .addComponent(passwordField))))
+                                .addGroup(panel1Layout.createParallelGroup()
+                                    .addComponent(adminCheckBox)
+                                    .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(label4)
+                                        .addComponent(label5)
+                                        .addComponent(label2)
+                                        .addComponent(userNameField)
+                                        .addComponent(label3)
+                                        .addComponent(lastNameField)
+                                        .addComponent(firstNameField)
+                                        .addGroup(panel1Layout.createSequentialGroup()
+                                            .addComponent(submitBut, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(cancelBut, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(passwordField)))))
                         .addContainerGap(184, Short.MAX_VALUE))
             );
             panel1Layout.setVerticalGroup(
@@ -125,12 +166,12 @@ public class registerForm extends JFrame{
                         .addComponent(label5)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(passwordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24)
+                        .addGap(18, 18, 18)
                         .addComponent(adminCheckBox)
-                        .addGap(26, 26, 26)
+                        .addGap(32, 32, 32)
                         .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                             .addComponent(cancelBut)
-                            .addComponent(button1))
+                            .addComponent(submitBut))
                         .addContainerGap(26, Short.MAX_VALUE))
             );
         }
@@ -144,8 +185,9 @@ public class registerForm extends JFrame{
     private JLabel label3;
     private JLabel label4;
     private JLabel label5;
+    private JPanel panel1;
     private JCheckBox adminCheckBox;
-    private JButton button1;
+    private JButton submitBut;
     private JButton cancelBut;
     private JTextField userNameField;
     private JTextField firstNameField;

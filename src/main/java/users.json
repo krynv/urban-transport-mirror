@@ -1,17 +1,1 @@
-[  
-    {  
-        "username":"randThor",
-        "password":"password",
-        "admin":"false"
-    },
-   {  
-        "username":"roseBush",
-        "password":"password",
-        "admin":"true"
-    },
-{  
-        "username":"billSparks",
-        "password":"password",
-        "admin":"true"
-    },
-]
+[{"password":"password","admin":"false","username":"randThor"},{"password":"password","admin":"true","username":"roseBush"},{"password":"password","admin":"true","username":"billSparks"},{"firstName":"tom","lastName":"tom","password":"tom","admin":true,"username":"tom"}]

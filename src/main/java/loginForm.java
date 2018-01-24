@@ -47,12 +47,11 @@ public class loginForm extends JFrame {
         Object obj = parser.parse(new FileReader("src\\main\\java\\users.json"));
         JSONArray jsonArray = (JSONArray) obj;
         for(int i = 0; i < jsonArray.size(); i++) {
-            JSONObject jsonobj = (JSONObject) jsonArray.get(i);
             if(((JSONObject) jsonArray.get(i)).get("username").equals(userName)) {
                 char [] userPassword = ((JSONObject) jsonArray.get(i)).get("password").toString().toCharArray();
                 if (Arrays.equals(userPassword, password)) {
                     invalidCred.setVisible(false);
-                    if (((JSONObject) jsonArray.get(i)).get("admin").equals("true")) {
+                    if (((JSONObject) jsonArray.get(i)).get("admin").equals(true)) {
                         new adminHome().setVisible(true);
                     } else {
                         new userHome().setVisible(true);
