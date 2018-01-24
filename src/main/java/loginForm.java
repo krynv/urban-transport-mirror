@@ -43,31 +43,31 @@ public class loginForm extends JFrame {
         String userName = userField.getText();
 
         String password = new String(passField.getPassword());
-        System.out.println(password);
-        boolean success = false;
-        JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader("src\\main\\java\\users.json"));
-        JSONArray jsonArray = (JSONArray) obj;
-        for(int i = 0; i < jsonArray.size(); i++) {
-            if(((JSONObject) jsonArray.get(i)).get("username").equals(userName)) {
-                String userPassword = ((JSONObject) jsonArray.get(i)).get("password").toString();
-
-                if (BCrypt.checkpw(password, userPassword)) {
-                    invalidCred.setVisible(false);
-                    if (((JSONObject) jsonArray.get(i)).get("admin").equals(true)) {
-                        new adminHome().setVisible(true);
-                    } else {
-                        new userHome().setVisible(true);
-                    }
-                    this.setVisible(false);
-                    break;
-                }
-            }
-        }
-
-        if(!success) {
-            invalidCred.setVisible(true);
-        }
+        AccountManager.login(userName, password);
+//        boolean success = false;
+//        JSONParser parser = new JSONParser();
+//        Object obj = parser.parse(new FileReader("src\\main\\java\\users.json"));
+//        JSONArray jsonArray = (JSONArray) obj;
+//        for(int i = 0; i < jsonArray.size(); i++) {
+//            if(((JSONObject) jsonArray.get(i)).get("username").equals(userName)) {
+//                String userPassword = ((JSONObject) jsonArray.get(i)).get("password").toString();
+//
+//                if (BCrypt.checkpw(password, userPassword)) {
+//                    invalidCred.setVisible(false);
+//                    if (((JSONObject) jsonArray.get(i)).get("admin").equals(true)) {
+//                        new adminHome().setVisible(true);
+//                    } else {
+//                        new userHome().setVisible(true);
+//                    }
+//                    this.setVisible(false);
+//                    break;
+//                }
+//            }
+//        }
+//
+//        if(!success) {
+//            invalidCred.setVisible(true);
+//        }
 
     }
 
