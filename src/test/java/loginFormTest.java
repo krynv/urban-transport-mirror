@@ -15,7 +15,7 @@ import java.io.FileWriter;
 
 import static org.junit.jupiter.api.Assertions.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class LoginRegisterTest {
+public class loginFormTest {
 
     private EmployeeRegistery employeeRegistery;
     private Employee user;
@@ -52,7 +52,23 @@ public class LoginRegisterTest {
     @Test
     public void bLoginUserTest()  throws IOException, ParseException {
 
-        assertTrue(true);
+        employeeRegistery = new EmployeeRegistery();
+        System.out.println("CHECK USER LOGIN TEST-------");
+
+        System.out.println("Getting User details - testing");
+
+        this.user = employeeRegistery.getEmployee("testing");
+        if(user != null) {
+            Boolean passwordMatch = user.passwordMatch("password");
+            System.out.println("Got User now testing password - testing");
+            if (passwordMatch) {
+                assertTrue(true);
+            } else {
+                assertTrue(false);
+            }
+        } else {
+            assertTrue(false);
+        }
     }
 
     @Test
@@ -84,10 +100,10 @@ public class LoginRegisterTest {
 
         System.out.println("Looking for user to check its been deleted - testing");
         this.user = employeeRegistery.getEmployee("testing");
-        if(user == null) {
-            assertFalse(true);
+        if(user != null) {
+            assertTrue(false);
         } else {
-            assertFalse(false);
+            assertTrue(true);
         }
     }
 
