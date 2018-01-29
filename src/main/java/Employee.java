@@ -52,10 +52,14 @@ public class Employee {
     }
 
     public boolean passwordMatch(String password) {
-        this.addAthenticationAttempt();
-        if (BCrypt.checkpw(password, this.getPassword())) {
-            this.resetAuthentication();
-            return true;
+
+        if (this.addAuthenticationAttempt()) {
+            if (BCrypt.checkpw(password, this.getPassword())) {
+                this.resetAuthentication();
+                return true;
+            } else {
+                return false;
+            }
         } else {
             return false;
         }
@@ -65,9 +69,12 @@ public class Employee {
         this.auth = 0;
     }
 
-    private void addAthenticationAttempt() {
+    private boolean addAuthenticationAttempt() {
+        this.auth += 1;
         if (auth > 3) {
-            //TODO add call to stop inputs after this
+            return false;
+        } else {
+            return true;
         }
 
     }

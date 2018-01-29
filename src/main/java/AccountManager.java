@@ -7,16 +7,17 @@ public class AccountManager {
     private String password;
     private Employee activeUser;
     private Employee setActiveUser;
+    private int counter;
     private EmployeeRegistery employeeRegistery;
 
-    public AccountManager() {
-
+    public AccountManager() throws IOException, ParseException {
+        employeeRegistery = new EmployeeRegistery();
+        counter = 0;
     }
 
     public boolean login(String username, String password) throws IOException, ParseException {
         this.username = username;
         this.password = password;
-        employeeRegistery = new EmployeeRegistery();
         this.activeUser = employeeRegistery.getEmployee(username);
         if (activeUser != null) {
             Boolean passwordMatch = activeUser.passwordMatch(password);

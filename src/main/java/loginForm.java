@@ -25,10 +25,14 @@ public class loginForm extends JFrame {
     private JLabel invalidCred;
     private JButton regBut;
     private JLabel tooManyRetries;
-    public loginForm() {
+    private AccountManager accountManager;
+    private int counter;
+    public loginForm() throws IOException, ParseException {
         initComponents();
         this.setContentPane(panel1);
         this.pack();
+        this.counter = 0;
+        accountManager = new AccountManager();
     }
 
     private void cancelButActionPerformed(ActionEvent e) {
@@ -51,24 +55,27 @@ public class loginForm extends JFrame {
         userField.setText("willSparks");
     }
 
-    public void tooManyRetries() {
-        tooManyRetries.setVisible(true);
-    }
 
     private void loginButActionPerformed(ActionEvent e) throws IOException, ParseException {
         String userName = userField.getText();
 
         String password = new String(passField.getPassword());
-        AccountManager accountManager = new AccountManager();
 
         boolean loginSuccess = accountManager.login(userName, password);
         if (loginSuccess) {
             new adminHome().setVisible(true);
+            this.counter = 0;
             this.setVisible(false);
         }
 
         if (!loginSuccess) {
-            invalidCred.setVisible(true);
+            this.counter++;
+            if (this.counter > 3) {
+                invalidCred.setVisible(false);
+                tooManyRetries.setVisible(true);
+            } else {
+                invalidCred.setVisible(true);
+            }
         }
 
     }
