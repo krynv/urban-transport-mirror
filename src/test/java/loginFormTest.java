@@ -76,7 +76,7 @@ public class loginFormTest {
 
         System.out.println("DELETE USER TEST-------");
         JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader("src\\test\\java\\users.json"));
+        Object obj = parser.parse(new FileReader("users.json"));
         JSONArray jsonArray = (JSONArray) obj;
 
         System.out.println("Finding the user - testing");
@@ -90,7 +90,7 @@ public class loginFormTest {
             }
         }
         try {
-            FileWriter fileWriter = new FileWriter("src\\test\\java\\users.json");
+            FileWriter fileWriter = new FileWriter("users.json");
             fileWriter.write(jsonArray.toJSONString());
             fileWriter.flush();
         } catch (Exception e) {
