@@ -19,64 +19,64 @@ public class loginFormTest {
 
     private EmployeeRegistery employeeRegistery;
     private Employee user;
-    @Test
-    public void aRegisterUserTest()  throws IOException, ParseException {
-
-        employeeRegistery = new EmployeeRegistery();
-        System.out.println("REGISTER USER TEST-------");
-        System.out.println("Adding User - testing");
-
-        JSONObject jsonObject = new JSONObject();
-        JSONArray jsonArray = new JSONArray();
-        //JSON object and values
-
-        jsonObject.put("username", "testing");
-        jsonObject.put("firstName", "test");
-        jsonObject.put("lastName", "ing");
-        jsonObject.put("admin", true);
-        String hashedPass = BCrypt.hashpw("password", BCrypt.gensalt(12));
-        jsonObject.put("password", hashedPass);
-        jsonArray.add(jsonObject);
-
-        employeeRegistery.addEmployee(jsonArray);
-
-        System.out.println("Checking its add the User - testing");
-        this.user = employeeRegistery.getEmployee("testing");
-        if(user != null) {
-            assertTrue(true);
-        } else {
-            assertTrue(false);
-        }
-
-    }
-    @Test
-    public void bLoginUserTest()  throws IOException, ParseException {
-
-        employeeRegistery = new EmployeeRegistery();
-        System.out.println("CHECK USER LOGIN TEST-------");
-
-        System.out.println("Getting User details - testing");
-
-        this.user = employeeRegistery.getEmployee("testing");
-        if(user != null) {
-            Boolean passwordMatch = user.passwordMatch("password");
-            System.out.println("Got User now testing password - testing");
-            if (passwordMatch) {
-                assertTrue(true);
-            } else {
-                assertTrue(false);
-            }
-        } else {
-            assertTrue(false);
-        }
-    }
+//    @Test
+//    public void aRegisterUserTest()  throws IOException, ParseException {
+//
+//        employeeRegistery = new EmployeeRegistery();
+//        System.out.println("REGISTER USER TEST-------");
+//        System.out.println("Adding User - testing");
+//
+//        JSONObject jsonObject = new JSONObject();
+//        JSONArray jsonArray = new JSONArray();
+//        //JSON object and values
+//
+//        jsonObject.put("username", "testing");
+//        jsonObject.put("firstName", "test");
+//        jsonObject.put("lastName", "ing");
+//        jsonObject.put("admin", true);
+//        String hashedPass = BCrypt.hashpw("password", BCrypt.gensalt(12));
+//        jsonObject.put("password", hashedPass);
+//        jsonArray.add(jsonObject);
+//
+//        employeeRegistery.addEmployee(jsonArray);
+//
+//        System.out.println("Checking its add the User - testing");
+//        this.user = employeeRegistery.getEmployee("testing");
+//        if(user != null) {
+//            assertTrue(true);
+//        } else {
+//            assertTrue(false);
+//        }
+//
+//    }
+//    @Test
+//    public void bLoginUserTest()  throws IOException, ParseException {
+//
+//        employeeRegistery = new EmployeeRegistery();
+//        System.out.println("CHECK USER LOGIN TEST-------");
+//
+//        System.out.println("Getting User details - testing");
+//
+//        this.user = employeeRegistery.getEmployee("testing");
+//        if(user != null) {
+//            Boolean passwordMatch = user.passwordMatch("password");
+//            System.out.println("Got User now testing password - testing");
+//            if (passwordMatch) {
+//                assertTrue(true);
+//            } else {
+//                assertTrue(false);
+//            }
+//        } else {
+//            assertTrue(false);
+//        }
+//    }
 
     @Test
     public void cDeleteUserTest()  throws IOException, ParseException {
 
         System.out.println("DELETE USER TEST-------");
         JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader("src\\main\\java\\users.json"));
+        Object obj = parser.parse(new FileReader("src\\test\\java\\users.json"));
         JSONArray jsonArray = (JSONArray) obj;
 
         System.out.println("Finding the user - testing");
@@ -90,7 +90,7 @@ public class loginFormTest {
             }
         }
         try {
-            FileWriter fileWriter = new FileWriter("src\\main\\java\\users.json");
+            FileWriter fileWriter = new FileWriter("src\\test\\java\\users.json");
             fileWriter.write(jsonArray.toJSONString());
             fileWriter.flush();
         } catch (Exception e) {
