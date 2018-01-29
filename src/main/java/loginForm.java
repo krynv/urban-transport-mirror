@@ -80,7 +80,7 @@ public class loginForm extends JFrame {
 
     }
 
-    private void regButActionPerformed(ActionEvent e) {
+    private void regButActionPerformed(ActionEvent e) throws IOException, ParseException {
         new registerForm().setVisible(true);
     }
 
@@ -174,7 +174,15 @@ public class loginForm extends JFrame {
                 regBut.setBackground(Color.black);
                 regBut.setForeground(Color.blue);
                 regBut.setOpaque(false);
-                regBut.addActionListener(e -> regButActionPerformed(e));
+                regBut.addActionListener(e -> {
+                    try {
+                        regButActionPerformed(e);
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    } catch (ParseException e1) {
+                        e1.printStackTrace();
+                    }
+                });
 
                 //---- tooManyRetries ----
                 tooManyRetries.setText("Too Many Retries. Please wait");

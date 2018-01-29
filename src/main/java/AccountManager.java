@@ -11,11 +11,12 @@ public class AccountManager {
     private EmployeeRegistery employeeRegistery;
 
     public AccountManager() throws IOException, ParseException {
-        employeeRegistery = new EmployeeRegistery();
+
         counter = 0;
     }
 
     public boolean login(String username, String password) throws IOException, ParseException {
+        employeeRegistery = new EmployeeRegistery();
         this.username = username;
         this.password = password;
         this.activeUser = employeeRegistery.getEmployee(username);

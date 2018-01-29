@@ -28,8 +28,11 @@ public class registerForm extends JFrame {
     private JTextField firstNameField;
     private JTextField lastNameField;
     private JPasswordField passwordField;
-    public registerForm() {
+    private EmployeeRegistery employeeRegistery;
+
+    public registerForm() throws IOException, ParseException {
         initComponents();
+        employeeRegistery = new EmployeeRegistery();
         this.setContentPane(panel1);
         this.pack();
     }
@@ -45,9 +48,7 @@ public class registerForm extends JFrame {
 
     private void submitButActionPerformed(ActionEvent d) throws IOException, ParseException {
         JSONObject jsonObject = new JSONObject();
-        JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader("src\\main\\java\\users.json"));
-        JSONArray jsonArray = (JSONArray) obj;
+        JSONArray jsonArray = new JSONArray();
         String password = new String(passwordField.getPassword());
         //JSON object and values
 
@@ -58,14 +59,8 @@ public class registerForm extends JFrame {
         String hashedPass = BCrypt.hashpw(password, BCrypt.gensalt(12));
         jsonObject.put("password", hashedPass);
         jsonArray.add(jsonObject);
-        // writing the JSONObject into a file(info.json)
-        try {
-            FileWriter fileWriter = new FileWriter("src\\main\\java\\users.json");
-            fileWriter.write(jsonArray.toJSONString());
-            fileWriter.flush();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        employeeRegistery.addEmployee(jsonArray);
+
 
     }
 
