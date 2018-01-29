@@ -50,7 +50,7 @@ public class SelectFares extends JFrame {
         destinationNumberLabel = new JLabel();
         departureDateAndTimeLabel = new JLabel();
         returnDateAndTimeLabel = new JLabel();
-        departureDropdownMenu = new JComboBox();
+        departureDropdownMenu = new JComboBox<>();
         returnDropdownMenu = new JComboBox();
         ticketTypeLabel = new JLabel();
         oneWayCheckBox = new JCheckBox();
@@ -100,6 +100,13 @@ public class SelectFares extends JFrame {
 
             //---- returnDateAndTimeLabel ----
             returnDateAndTimeLabel.setText("Return Date/Time");
+
+            //---- departureDropdownMenu ----
+            departureDropdownMenu.setModel(new DefaultComboBoxModel<>(new String[] {
+                "test1",
+                "test2",
+                "test3"
+            }));
 
             //---- ticketTypeLabel ----
             ticketTypeLabel.setText("Ticket Type");
@@ -206,7 +213,7 @@ public class SelectFares extends JFrame {
     private JLabel destinationNumberLabel;
     private JLabel departureDateAndTimeLabel;
     private JLabel returnDateAndTimeLabel;
-    private JComboBox departureDropdownMenu;
+    private JComboBox<String> departureDropdownMenu;
     private JComboBox returnDropdownMenu;
     private JLabel ticketTypeLabel;
     private JCheckBox oneWayCheckBox;

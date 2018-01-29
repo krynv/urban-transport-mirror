@@ -26,6 +26,7 @@ new FormModel {
 				name: "languageSelectButton"
 				"text": "Select Language"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "languageSelectActionPerformed", true ) )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "selectLanguage", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "displayTimetableButton"

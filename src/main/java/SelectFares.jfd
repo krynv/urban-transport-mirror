@@ -51,6 +51,12 @@ new FormModel {
 			} )
 			add( new FormComponent( "javax.swing.JComboBox" ) {
 				name: "departureDropdownMenu"
+				"model": new javax.swing.DefaultComboBoxModel {
+					selectedItem: "test1"
+					addElement( "test1" )
+					addElement( "test2" )
+					addElement( "test3" )
+				}
 			} )
 			add( new FormComponent( "javax.swing.JComboBox" ) {
 				name: "returnDropdownMenu"

@@ -3,6 +3,16 @@ import java.awt.event.*;
 import javax.swing.*;
 import com.intellij.uiDesigner.core.*;
 public class UserBooking extends JFrame {
+
+    private String language;
+    //private ListOfRoutes routes;
+    //private ListOfFares fares;
+    private String couponID;
+    private double credits;
+
+    private RouteRegistry routeRegistry;
+
+
     public UserBooking() {
         initComponents();
         this.setContentPane(panel2);
@@ -11,15 +21,30 @@ public class UserBooking extends JFrame {
         this.pack();
     }
 
-    private void languageSelectActionPerformed(ActionEvent e) {
-        new SelectLanguage().setVisible(true);
-        this.dispose();
+    //TODO: added int to cost
+    private void reCalcCost(double credits, int cost) {
+        // do something
     }
 
     private void destination1ActionPerformed(ActionEvent e) {
         new SelectFares().setVisible(true);
         this.dispose();
     }
+
+    //TODO: class diagram says it doesn't accept parameters??
+    public void loadLanguageFile(String language) {
+        //load language file
+        System.out.println("Loaded the " + language + " language");
+    }
+
+    public void selectLanguage(ActionEvent e) {
+        new SelectLanguage().setVisible(true);
+        this.dispose();
+    }
+
+
+
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -61,7 +86,9 @@ public class UserBooking extends JFrame {
 
             //---- languageSelectButton ----
             languageSelectButton.setText("Select Language");
-            languageSelectButton.addActionListener(e -> languageSelectActionPerformed(e));
+            languageSelectButton.addActionListener(e -> {
+			selectLanguage(e);
+		});
 
             //---- displayTimetableButton ----
             displayTimetableButton.setText("Display Timetable");
@@ -164,4 +191,6 @@ public class UserBooking extends JFrame {
     private JButton destination5;
     private JButton destination6;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
+
+
 }

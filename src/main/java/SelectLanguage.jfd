@@ -35,15 +35,19 @@ new FormModel {
 				name: "selectLanguage"
 				"text": "Load Language"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "selectLanguageActionPerformed", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "englishButton"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "englishButtonActionPerformed", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "frenchButton"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "frenchButtonActionPerformed", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "germanButton"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "germanButtonActionPerformed", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "englishLabel"

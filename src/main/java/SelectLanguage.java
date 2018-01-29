@@ -3,6 +3,9 @@ import java.awt.event.*;
 import javax.swing.*;
 import com.intellij.uiDesigner.core.*;
 public class SelectLanguage extends JFrame {
+
+    private String buttonPressed;
+
     public SelectLanguage() {
         initComponents();
         this.setContentPane(panel2);
@@ -16,8 +19,22 @@ public class SelectLanguage extends JFrame {
         this.dispose();
     }
 
-    private void button1ActionPerformed(ActionEvent e) {
-        new UserBooking().setVisible(true);
+    private void englishButtonActionPerformed(ActionEvent e) {
+        buttonPressed = "English";
+    }
+
+    private void frenchButtonActionPerformed(ActionEvent e) {
+        buttonPressed = "French";
+    }
+
+    private void germanButtonActionPerformed(ActionEvent e) {
+        buttonPressed = "German";
+    }
+
+    private void selectLanguageActionPerformed(ActionEvent e) {
+        UserBooking theUI = new UserBooking();
+        theUI.loadLanguageFile(buttonPressed);
+        theUI.setVisible(true);
         this.dispose();
     }
 
@@ -69,7 +86,18 @@ public class SelectLanguage extends JFrame {
 
             //---- selectLanguage ----
             selectLanguage.setText("Load Language");
-            selectLanguage.addActionListener(e -> button1ActionPerformed(e));
+            selectLanguage.addActionListener(e -> {
+			selectLanguageActionPerformed(e);
+		});
+
+            //---- englishButton ----
+            englishButton.addActionListener(e -> englishButtonActionPerformed(e));
+
+            //---- frenchButton ----
+            frenchButton.addActionListener(e -> frenchButtonActionPerformed(e));
+
+            //---- germanButton ----
+            germanButton.addActionListener(e -> germanButtonActionPerformed(e));
 
             //---- englishLabel ----
             englishLabel.setText("English");
