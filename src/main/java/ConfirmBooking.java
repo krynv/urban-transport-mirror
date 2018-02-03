@@ -23,8 +23,8 @@ public class ConfirmBooking extends JFrame {
     }
 
     public void changed() {
-        if (couponTextField.getText().equals("killyourself")) {
-            couponVerificationLabel.setText("KYS");
+        if (couponTextField.getText().equals("UrbanTransport")) {
+            couponVerificationLabel.setText("Coode Applied");
             couponVerificationLabel.setOpaque(true);
             couponVerificationLabel.setBackground(new Color(216, 231, 213));
         }
