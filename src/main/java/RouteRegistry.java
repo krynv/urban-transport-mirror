@@ -24,7 +24,7 @@ public class RouteRegistry extends ArrayList<Route> {
         for(Route aRoute:this) {
             LocationRegistry destinationLocations = aRoute.getDestinationLocations();
             for(Location aLocation: destinationLocations) {
-                if(aLocation == arrivingLocation){
+                if(aLocation.getLocationID() == arrivingLocation.getLocationID()){
                     // do something useful
                     returnedRoutes.add(aRoute);
                 }
