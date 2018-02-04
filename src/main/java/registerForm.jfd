@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par l {seq l {space :p:210:p, comp label1:::p::p}, seq l {space :p:128:p, par l:::p {comp label4:::p::p, comp label5::l:p::p, comp label2::l:p::p, comp userNameField::l:::x, comp label3::l:p::p, comp lastNameField::l:::x, comp firstNameField::l:::x, seq {comp button1:::p:84:p, space s:::p, comp cancelBut:::p:86:p}, seq l {space :p:20:p, comp adminCheckBox:::p::p}, comp passwordField::l:::x}}}, space ::184:x}}"
-			"$verticalGroup": "par l {seq l {space :::p, comp label1:::p::p, space :p:33:p, comp label2:::p::p, space :::p, comp userNameField:::p::p, space :::p, comp label3:::p::p, space :::p, comp firstNameField:::p::p, space :::p, comp label4:::p::p, space :::p, comp lastNameField:::p::p, space :p:1:p, comp label5:::p::p, space u:::p, comp passwordField:::p::p, space :p:24:p, comp adminCheckBox:::p::p, space :p:26:p, par b {comp cancelBut::b:p::p, comp button1::b:p::p}, space ::26:x}}"
+			"$horizontalGroup": "par l {seq {par l {seq l {space :p:210:p, comp label1:::p::p}, seq l {space :p:128:p, par l {comp adminCheckBox:::p::p, par l:::p {comp label4:::p::p, comp label5::l:p::p, comp label2::l:p::p, comp userNameField::l:::x, comp label3::l:p::p, comp lastNameField::l:::x, comp firstNameField::l:::x, seq {comp submitBut:::p:84:p, space s:::p, comp cancelBut:::p:86:p}, comp passwordField::l:::x}}}}, space ::184:x}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp label1:::p::p, space :p:33:p, comp label2:::p::p, space :::p, comp userNameField:::p::p, space :::p, comp label3:::p::p, space :::p, comp firstNameField:::p::p, space :::p, comp label4:::p::p, space :::p, comp lastNameField:::p::p, space :p:1:p, comp label5:::p::p, space u:::p, comp passwordField:::p::p, space s:::p, comp adminCheckBox:::p::p, space :p:32:p, par b {comp cancelBut::b:p::p, comp submitBut::b:p::p}, space ::26:x}}"
 		} ) {
 			name: "panel1"
 			auxiliary() {
@@ -37,8 +37,9 @@ new FormModel {
 				"text": "Admin"
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
-				name: "button1"
+				name: "submitBut"
 				"text": "Submit"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "submitButActionPerformed", true ) )
 			} )
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "cancelBut"

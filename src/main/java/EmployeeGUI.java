@@ -1,19 +1,24 @@
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
 import javax.swing.plaf.*;
-import com.jgoodies.forms.factories.*;
-import com.jgoodies.forms.layout.*;
-import org.jdesktop.swingx.*;
+import org.json.simple.parser.ParseException;
 
-public class test extends JFrame {
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import javax.swing.event.*;
 
+public class EmployeeGUI extends JFrame {
 
+    private AccountManager accountManager;
+
+    private JPanel mainPanel;
     private JPanel panel1;
 
-    public test(Container mainPanel) {
+    public EmployeeGUI(String username) throws IOException, ParseException {
+        this.accountManager = new AccountManager();
+        this.accountManager.setActiveUser(username);
         initComponents();
-
         this.setContentPane(mainPanel);
         this.pack();
     }
@@ -22,12 +27,48 @@ public class test extends JFrame {
         // TODO add your code here
     }
 
+    private void tabbedPane14StateChanged(ChangeEvent e) {
+        String name = "maintenance";
+        LocalDateTime startDateTime = LocalDateTime.of(2018, 02, 04, 12, 0,0);
+        LocalDateTime endDateTime = LocalDateTime.of(2018, 02, 04, 13, 0,0);
 
+        Report report = this.accountManager.viewReport(name, startDateTime, endDateTime);
+        MaintenanceReport maintenanceReport = (MaintenanceReport) report;
+
+        textField2.setText(Double.toString(maintenanceReport.getMaintenanceCost()));
+        textField4.setText(Double.toString(maintenanceReport.getBrakedownCost()));
+        textField5.setText(maintenanceReport.getMostExpensiveVehicle());
+        textField11.setText(maintenanceReport.getCheapestVehicle());
+    }
+
+    private void printButtonClicked(ActionEvent e) {
+        String name = "maintenance";
+
+        LocalDateTime startDateTime = LocalDateTime.of(2018, 02, 04, 12, 0,0);
+        LocalDateTime endDateTime = LocalDateTime.of(2018, 02, 04, 13, 0,0);
+
+        Report report = this.accountManager.viewReport(name, startDateTime, endDateTime);
+        MaintenanceReport maintenanceReport = (MaintenanceReport) report;
+
+        System.out.println(maintenanceReport.print(7));
+    }
+
+    private void logOutButtonActionPerformed(ActionEvent e) {
+        this.accountManager.logout();
+        this.dispose();
+        try {
+            new LoginGUI().setVisible(true);
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        } catch (ParseException e1) {
+            e1.printStackTrace();
+        }
+    }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Daniel Morrris
-        JPanel mainPanel = new JPanel();
+        // Generated using JFormDesigner Evaluation license - Barry Chuckle
+        mainPanel = new JPanel();
         tabbedPane12 = new JTabbedPane();
         panel20 = new JPanel();
         label10 = new JLabel();
@@ -59,8 +100,8 @@ public class test extends JFrame {
         button3 = new JButton();
         button4 = new JButton();
         button5 = new JButton();
-        comboBox1 = new JComboBox();
-        comboBox2 = new JComboBox();
+        textField5 = new JTextField();
+        textField11 = new JTextField();
         panel23 = new JPanel();
         textField7 = new JTextField();
         button6 = new JButton();
@@ -75,6 +116,8 @@ public class test extends JFrame {
         panel12 = new JPanel();
         panel13 = new JPanel();
         panel14 = new JPanel();
+        logOutPanel = new JPanel();
+        logOutButton = new JButton();
 
         //======== mainPanel ========
         {
@@ -108,7 +151,7 @@ public class test extends JFrame {
                         panel20Layout.createParallelGroup()
                             .addGroup(panel20Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(label10, GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE))
+                                .addComponent(label10, GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE))
                     );
                 }
                 tabbedPane12.addTab("Staff Menu:", panel20);
@@ -184,7 +227,7 @@ public class test extends JFrame {
                             );
                             panel21Layout.setVerticalGroup(
                                 panel21Layout.createParallelGroup()
-                                    .addGap(0, 428, Short.MAX_VALUE)
+                                    .addGap(0, 432, Short.MAX_VALUE)
                             );
                         }
                         tabbedPane15.addTab("T2", panel21);
@@ -200,7 +243,7 @@ public class test extends JFrame {
                             );
                             panel22Layout.setVerticalGroup(
                                 panel22Layout.createParallelGroup()
-                                    .addGap(0, 428, Short.MAX_VALUE)
+                                    .addGap(0, 432, Short.MAX_VALUE)
                             );
                         }
                         tabbedPane15.addTab("T3", panel22);
@@ -216,6 +259,12 @@ public class test extends JFrame {
                     //======== tabbedPane14 ========
                     {
                         tabbedPane14.setFont(tabbedPane14.getFont().deriveFont(tabbedPane14.getFont().getStyle() | Font.ITALIC));
+                        tabbedPane14.addChangeListener(e -> {
+			tabbedPane14StateChanged(e);
+			tabbedPane14StateChanged(e);
+			tabbedPane14StateChanged(e);
+			tabbedPane14StateChanged(e);
+		});
 
                         //======== panel19 ========
                         {
@@ -233,7 +282,7 @@ public class test extends JFrame {
                             );
                             panel19Layout.setVerticalGroup(
                                 panel19Layout.createParallelGroup()
-                                    .addComponent(label9, GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+                                    .addComponent(label9, GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
                             );
                         }
                         tabbedPane14.addTab("Reports:", panel19);
@@ -288,6 +337,21 @@ public class test extends JFrame {
                             //---- button5 ----
                             button5.setText("Print Report");
                             button5.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+                            button5.addActionListener(e -> printButtonClicked(e));
+
+                            //---- textField5 ----
+                            textField5.setBackground(new Color(60, 63, 65));
+                            textField5.setText("Vehicle");
+                            textField5.setForeground(UIManager.getColor("Button.darcula.selectedButtonForeground"));
+                            textField5.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                            textField5.setHorizontalAlignment(SwingConstants.CENTER);
+
+                            //---- textField11 ----
+                            textField11.setBackground(new Color(60, 63, 65));
+                            textField11.setText("Vehicle");
+                            textField11.setForeground(UIManager.getColor("Button.darcula.selectedButtonForeground"));
+                            textField11.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                            textField11.setHorizontalAlignment(SwingConstants.CENTER);
 
                             GroupLayout panel18Layout = new GroupLayout(panel18);
                             panel18.setLayout(panel18Layout);
@@ -298,19 +362,20 @@ public class test extends JFrame {
                                         .addGroup(panel18Layout.createParallelGroup()
                                             .addGroup(panel18Layout.createSequentialGroup()
                                                 .addGroup(panel18Layout.createParallelGroup()
-                                                    .addComponent(textField2, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(textField4, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(comboBox1, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(comboBox2, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(panel18Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                                        .addComponent(textField4, GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                                                    .addComponent(textField5, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(textField11, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE))
                                                 .addGap(43, 43, 43)
                                                 .addGroup(panel18Layout.createParallelGroup()
                                                     .addComponent(label8)
                                                     .addComponent(label7)
                                                     .addComponent(label6)
                                                     .addComponent(label5))
-                                                .addContainerGap(207, Short.MAX_VALUE))
+                                                .addContainerGap(185, Short.MAX_VALUE))
                                             .addGroup(panel18Layout.createSequentialGroup()
-                                                .addGap(0, 344, Short.MAX_VALUE)
+                                                .addGap(0, 328, Short.MAX_VALUE)
                                                 .addComponent(button3)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(textField6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
@@ -339,14 +404,14 @@ public class test extends JFrame {
                                             .addComponent(textField4, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
                                             .addComponent(label6))
                                         .addGap(18, 18, 18)
-                                        .addGroup(panel18Layout.createParallelGroup()
-                                            .addComponent(comboBox1, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(label7))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(panel18Layout.createParallelGroup()
-                                            .addComponent(comboBox2, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(label8))
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                                        .addGroup(panel18Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                            .addComponent(label7)
+                                            .addComponent(textField5, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+                                        .addGap(7, 7, 7)
+                                        .addGroup(panel18Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                            .addComponent(label8)
+                                            .addComponent(textField11, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                                         .addComponent(button5, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
                                         .addGap(31, 31, 31))
                             );
@@ -419,9 +484,9 @@ public class test extends JFrame {
                                             .addComponent(label11)
                                             .addComponent(label12)
                                             .addComponent(label13))
-                                        .addContainerGap(314, Short.MAX_VALUE))
+                                        .addContainerGap(296, Short.MAX_VALUE))
                                     .addGroup(GroupLayout.Alignment.TRAILING, panel23Layout.createSequentialGroup()
-                                        .addContainerGap(347, Short.MAX_VALUE)
+                                        .addContainerGap(331, Short.MAX_VALUE)
                                         .addComponent(button6)
                                         .addGap(18, 18, 18)
                                         .addGroup(panel23Layout.createParallelGroup()
@@ -452,7 +517,7 @@ public class test extends JFrame {
                                         .addGroup(panel23Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                             .addComponent(textField10, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
                                             .addComponent(label13))
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                                         .addComponent(button8, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
                                         .addGap(31, 31, 31))
                             );
@@ -480,6 +545,32 @@ public class test extends JFrame {
                     panel9.add(tabbedPane14);
                 }
                 tabbedPane12.addTab("Reports", panel9);
+
+                //======== logOutPanel ========
+                {
+
+                    //---- logOutButton ----
+                    logOutButton.setText("Log Out");
+                    logOutButton.addActionListener(e -> logOutButtonActionPerformed(e));
+
+                    GroupLayout logOutPanelLayout = new GroupLayout(logOutPanel);
+                    logOutPanel.setLayout(logOutPanelLayout);
+                    logOutPanelLayout.setHorizontalGroup(
+                        logOutPanelLayout.createParallelGroup()
+                            .addGroup(GroupLayout.Alignment.TRAILING, logOutPanelLayout.createSequentialGroup()
+                                .addContainerGap(287, Short.MAX_VALUE)
+                                .addComponent(logOutButton)
+                                .addGap(276, 276, 276))
+                    );
+                    logOutPanelLayout.setVerticalGroup(
+                        logOutPanelLayout.createParallelGroup()
+                            .addGroup(logOutPanelLayout.createSequentialGroup()
+                                .addGap(204, 204, 204)
+                                .addComponent(logOutButton)
+                                .addContainerGap(220, Short.MAX_VALUE))
+                    );
+                }
+                tabbedPane12.addTab("Log Out", logOutPanel);
             }
 
             GroupLayout mainPanelLayout = new GroupLayout(mainPanel);
@@ -497,7 +588,7 @@ public class test extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Daniel Morrris
+    // Generated using JFormDesigner Evaluation license - Barry Chuckle
     private JTabbedPane tabbedPane12;
     private JPanel panel20;
     private JLabel label10;
@@ -529,8 +620,8 @@ public class test extends JFrame {
     private JButton button3;
     private JButton button4;
     private JButton button5;
-    private JComboBox comboBox1;
-    private JComboBox comboBox2;
+    private JTextField textField5;
+    private JTextField textField11;
     private JPanel panel23;
     private JTextField textField7;
     private JButton button6;
@@ -545,5 +636,7 @@ public class test extends JFrame {
     private JPanel panel12;
     private JPanel panel13;
     private JPanel panel14;
+    private JPanel logOutPanel;
+    private JButton logOutButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

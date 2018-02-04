@@ -1,7 +1,9 @@
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
+import javax.swing.event.ChangeEvent;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class Account extends JFrame {
     private JPanel panel1;
@@ -12,7 +14,60 @@ public class Account extends JFrame {
     private String cardName = "John Smith";
     private String cardNumber = "0000-1111-2222-3333";
     private String securityCode = "012";
-
+    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - godieina fire
+    private JTabbedPane tabbedPane1;
+    private JPanel pnlHistory;
+    private JLabel lblCardNumberHistory;
+    private JLabel lblJourneyHistory;
+    private JScrollPane scrollPane1;
+    private JTextArea txtaHistory;
+    private JButton btnExitHistory;
+    private JPanel pnlHome;
+    private JPanel pnlAccount;
+    private JLabel lblCardNumberAccount;
+    private JTextField txtCredits;
+    private JLabel lblCreditsRemaining;
+    private JButton btnAddCredits;
+    private JButton btnExitAccount;
+    private JPanel pnlAddCredits;
+    private JButton btnCard;
+    private JButton btnCash;
+    private JLabel lblCardNumberAddCredits;
+    private JButton btnExitAddCredits;
+    private JPanel pnlCash;
+    private JLabel lblCardNumberCash;
+    private JLabel label2;
+    private JLabel label3;
+    private JLabel label4;
+    private JLabel lblCashValue;
+    private JLabel lblCreditsGained;
+    private JButton btnFinish;
+    private JButton btnExitCash;
+    private JButton btnInsert;
+    private JPanel pnlCashConfirmation;
+    private JLabel lblCardNumberCashConfirmation;
+    private JLabel label6;
+    private JButton btnExitCashConfirmation;
+    private JPanel pnlCard;
+    private JButton btn5Pound;
+    private JButton btn10Pound;
+    private JButton btn15Pound;
+    private JLabel label7;
+    private JLabel lblCardNumberCard;
+    private JButton btnNext;
+    private JButton btnExitCard;
+    private JPanel pnlCardDetails;
+    private JLabel label8;
+    private JLabel label9;
+    private JLabel label10;
+    private JTextField txtCardName;
+    private JTextField txtCardNumber;
+    private JTextField txtSecurityCode;
+    private JButton btnCardFinish;
+    private JButton btnExitCardDetails;
+    private JLabel lblCardDetails;
+    private JLabel lblTransactionFailed;
     public Account() {
         initComponents();
         lblCardNumberAccount.setText("Card " + urbanNumber);
@@ -202,10 +257,15 @@ public class Account extends JFrame {
 
             // JFormDesigner evaluation mark
             panel1.setBorder(new javax.swing.border.CompoundBorder(
-                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                    java.awt.Color.red), panel1.getBorder())); panel1.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+                    new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
+                            "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
+                            javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
+                            java.awt.Color.red), panel1.getBorder()));
+            panel1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+                public void propertyChange(java.beans.PropertyChangeEvent e) {
+                    if ("border".equals(e.getPropertyName())) throw new RuntimeException();
+                }
+            });
 
 
             //======== tabbedPane1 ========
@@ -233,35 +293,35 @@ public class Account extends JFrame {
                     GroupLayout pnlHistoryLayout = new GroupLayout(pnlHistory);
                     pnlHistory.setLayout(pnlHistoryLayout);
                     pnlHistoryLayout.setHorizontalGroup(
-                        pnlHistoryLayout.createParallelGroup()
-                            .addGroup(pnlHistoryLayout.createSequentialGroup()
-                                .addGroup(pnlHistoryLayout.createParallelGroup()
+                            pnlHistoryLayout.createParallelGroup()
                                     .addGroup(pnlHistoryLayout.createSequentialGroup()
-                                        .addGap(292, 292, 292)
-                                        .addComponent(lblCardNumberHistory))
-                                    .addGroup(pnlHistoryLayout.createSequentialGroup()
-                                        .addGap(184, 184, 184)
-                                        .addComponent(lblJourneyHistory))
-                                    .addGroup(pnlHistoryLayout.createSequentialGroup()
-                                        .addGap(107, 107, 107)
-                                        .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 617, GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(pnlHistoryLayout.createSequentialGroup()
-                                        .addGap(334, 334, 334)
-                                        .addComponent(btnExitHistory)))
-                                .addContainerGap(132, Short.MAX_VALUE))
+                                            .addGroup(pnlHistoryLayout.createParallelGroup()
+                                                    .addGroup(pnlHistoryLayout.createSequentialGroup()
+                                                            .addGap(292, 292, 292)
+                                                            .addComponent(lblCardNumberHistory))
+                                                    .addGroup(pnlHistoryLayout.createSequentialGroup()
+                                                            .addGap(184, 184, 184)
+                                                            .addComponent(lblJourneyHistory))
+                                                    .addGroup(pnlHistoryLayout.createSequentialGroup()
+                                                            .addGap(107, 107, 107)
+                                                            .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 617, GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(pnlHistoryLayout.createSequentialGroup()
+                                                            .addGap(334, 334, 334)
+                                                            .addComponent(btnExitHistory)))
+                                            .addContainerGap(132, Short.MAX_VALUE))
                     );
                     pnlHistoryLayout.setVerticalGroup(
-                        pnlHistoryLayout.createParallelGroup()
-                            .addGroup(pnlHistoryLayout.createSequentialGroup()
-                                .addGap(54, 54, 54)
-                                .addComponent(lblCardNumberHistory)
-                                .addGap(44, 44, 44)
-                                .addComponent(lblJourneyHistory)
-                                .addGap(45, 45, 45)
-                                .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 213, GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(btnExitHistory)
-                                .addContainerGap(42, Short.MAX_VALUE))
+                            pnlHistoryLayout.createParallelGroup()
+                                    .addGroup(pnlHistoryLayout.createSequentialGroup()
+                                            .addGap(54, 54, 54)
+                                            .addComponent(lblCardNumberHistory)
+                                            .addGap(44, 44, 44)
+                                            .addComponent(lblJourneyHistory)
+                                            .addGap(45, 45, 45)
+                                            .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 213, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(30, 30, 30)
+                                            .addComponent(btnExitHistory)
+                                            .addContainerGap(42, Short.MAX_VALUE))
                     );
                 }
                 tabbedPane1.addTab("JOURNEY HISTORY", pnlHistory);
@@ -290,38 +350,38 @@ public class Account extends JFrame {
                         GroupLayout pnlAccountLayout = new GroupLayout(pnlAccount);
                         pnlAccount.setLayout(pnlAccountLayout);
                         pnlAccountLayout.setHorizontalGroup(
-                            pnlAccountLayout.createParallelGroup()
-                                .addGroup(pnlAccountLayout.createSequentialGroup()
-                                    .addGroup(pnlAccountLayout.createParallelGroup()
+                                pnlAccountLayout.createParallelGroup()
                                         .addGroup(pnlAccountLayout.createSequentialGroup()
-                                            .addGap(323, 323, 323)
-                                            .addComponent(lblCardNumberAccount))
-                                        .addGroup(pnlAccountLayout.createSequentialGroup()
-                                            .addGap(111, 111, 111)
-                                            .addGroup(pnlAccountLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(btnAddCredits, GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
-                                                .addComponent(txtCredits, GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE))
-                                            .addGap(18, 18, 18)
-                                            .addComponent(lblCreditsRemaining))
-                                        .addGroup(pnlAccountLayout.createSequentialGroup()
-                                            .addGap(337, 337, 337)
-                                            .addComponent(btnExitAccount)))
-                                    .addContainerGap(279, Short.MAX_VALUE))
+                                                .addGroup(pnlAccountLayout.createParallelGroup()
+                                                        .addGroup(pnlAccountLayout.createSequentialGroup()
+                                                                .addGap(323, 323, 323)
+                                                                .addComponent(lblCardNumberAccount))
+                                                        .addGroup(pnlAccountLayout.createSequentialGroup()
+                                                                .addGap(111, 111, 111)
+                                                                .addGroup(pnlAccountLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                                        .addComponent(btnAddCredits, GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE)
+                                                                        .addComponent(txtCredits, GroupLayout.DEFAULT_SIZE, 253, Short.MAX_VALUE))
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(lblCreditsRemaining))
+                                                        .addGroup(pnlAccountLayout.createSequentialGroup()
+                                                                .addGap(337, 337, 337)
+                                                                .addComponent(btnExitAccount)))
+                                                .addContainerGap(279, Short.MAX_VALUE))
                         );
                         pnlAccountLayout.setVerticalGroup(
-                            pnlAccountLayout.createParallelGroup()
-                                .addGroup(pnlAccountLayout.createSequentialGroup()
-                                    .addGap(66, 66, 66)
-                                    .addComponent(lblCardNumberAccount)
-                                    .addGap(119, 119, 119)
-                                    .addGroup(pnlAccountLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                        .addComponent(txtCredits, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lblCreditsRemaining))
-                                    .addGap(58, 58, 58)
-                                    .addComponent(btnAddCredits)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                                    .addComponent(btnExitAccount)
-                                    .addGap(53, 53, 53))
+                                pnlAccountLayout.createParallelGroup()
+                                        .addGroup(pnlAccountLayout.createSequentialGroup()
+                                                .addGap(66, 66, 66)
+                                                .addComponent(lblCardNumberAccount)
+                                                .addGap(119, 119, 119)
+                                                .addGroup(pnlAccountLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(txtCredits, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(lblCreditsRemaining))
+                                                .addGap(58, 58, 58)
+                                                .addComponent(btnAddCredits)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                                                .addComponent(btnExitAccount)
+                                                .addGap(53, 53, 53))
                         );
                     }
                     pnlHome.add(pnlAccount, "card1");
@@ -347,34 +407,34 @@ public class Account extends JFrame {
                         GroupLayout pnlAddCreditsLayout = new GroupLayout(pnlAddCredits);
                         pnlAddCredits.setLayout(pnlAddCreditsLayout);
                         pnlAddCreditsLayout.setHorizontalGroup(
-                            pnlAddCreditsLayout.createParallelGroup()
-                                .addGroup(pnlAddCreditsLayout.createSequentialGroup()
-                                    .addGroup(pnlAddCreditsLayout.createParallelGroup()
+                                pnlAddCreditsLayout.createParallelGroup()
                                         .addGroup(pnlAddCreditsLayout.createSequentialGroup()
-                                            .addGap(183, 183, 183)
-                                            .addComponent(btnCard)
-                                            .addGap(132, 132, 132)
-                                            .addComponent(btnCash))
-                                        .addGroup(pnlAddCreditsLayout.createSequentialGroup()
-                                            .addGap(335, 335, 335)
-                                            .addComponent(btnExitAddCredits))
-                                        .addGroup(pnlAddCreditsLayout.createSequentialGroup()
-                                            .addGap(309, 309, 309)
-                                            .addComponent(lblCardNumberAddCredits)))
-                                    .addContainerGap(276, Short.MAX_VALUE))
+                                                .addGroup(pnlAddCreditsLayout.createParallelGroup()
+                                                        .addGroup(pnlAddCreditsLayout.createSequentialGroup()
+                                                                .addGap(183, 183, 183)
+                                                                .addComponent(btnCard)
+                                                                .addGap(132, 132, 132)
+                                                                .addComponent(btnCash))
+                                                        .addGroup(pnlAddCreditsLayout.createSequentialGroup()
+                                                                .addGap(335, 335, 335)
+                                                                .addComponent(btnExitAddCredits))
+                                                        .addGroup(pnlAddCreditsLayout.createSequentialGroup()
+                                                                .addGap(309, 309, 309)
+                                                                .addComponent(lblCardNumberAddCredits)))
+                                                .addContainerGap(276, Short.MAX_VALUE))
                         );
                         pnlAddCreditsLayout.setVerticalGroup(
-                            pnlAddCreditsLayout.createParallelGroup()
-                                .addGroup(pnlAddCreditsLayout.createSequentialGroup()
-                                    .addGap(72, 72, 72)
-                                    .addComponent(lblCardNumberAddCredits)
-                                    .addGap(99, 99, 99)
-                                    .addGroup(pnlAddCreditsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                        .addComponent(btnCard)
-                                        .addComponent(btnCash))
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
-                                    .addComponent(btnExitAddCredits)
-                                    .addGap(100, 100, 100))
+                                pnlAddCreditsLayout.createParallelGroup()
+                                        .addGroup(pnlAddCreditsLayout.createSequentialGroup()
+                                                .addGap(72, 72, 72)
+                                                .addComponent(lblCardNumberAddCredits)
+                                                .addGap(99, 99, 99)
+                                                .addGroup(pnlAddCreditsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(btnCard)
+                                                        .addComponent(btnCash))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 141, Short.MAX_VALUE)
+                                                .addComponent(btnExitAddCredits)
+                                                .addGap(100, 100, 100))
                         );
                     }
                     pnlHome.add(pnlAddCredits, "card2");
@@ -415,58 +475,58 @@ public class Account extends JFrame {
                         GroupLayout pnlCashLayout = new GroupLayout(pnlCash);
                         pnlCash.setLayout(pnlCashLayout);
                         pnlCashLayout.setHorizontalGroup(
-                            pnlCashLayout.createParallelGroup()
-                                .addGroup(pnlCashLayout.createSequentialGroup()
-                                    .addGroup(pnlCashLayout.createParallelGroup()
+                                pnlCashLayout.createParallelGroup()
                                         .addGroup(pnlCashLayout.createSequentialGroup()
-                                            .addGap(157, 157, 157)
-                                            .addGroup(pnlCashLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                                .addComponent(label4)
-                                                .addComponent(label3))
-                                            .addGap(68, 68, 68)
-                                            .addGroup(pnlCashLayout.createParallelGroup()
-                                                .addComponent(lblCashValue)
-                                                .addComponent(lblCreditsGained)))
-                                        .addGroup(pnlCashLayout.createSequentialGroup()
-                                            .addContainerGap()
-                                            .addComponent(btnInsert))
-                                        .addGroup(pnlCashLayout.createSequentialGroup()
-                                            .addGap(361, 361, 361)
-                                            .addGroup(pnlCashLayout.createParallelGroup()
-                                                .addComponent(btnFinish)
-                                                .addGroup(pnlCashLayout.createSequentialGroup()
-                                                    .addGap(9, 9, 9)
-                                                    .addComponent(btnExitCash))))
-                                        .addGroup(pnlCashLayout.createSequentialGroup()
-                                            .addGap(337, 337, 337)
-                                            .addComponent(label2))
-                                        .addGroup(pnlCashLayout.createSequentialGroup()
-                                            .addGap(367, 367, 367)
-                                            .addComponent(lblCardNumberCash)))
-                                    .addContainerGap(351, Short.MAX_VALUE))
+                                                .addGroup(pnlCashLayout.createParallelGroup()
+                                                        .addGroup(pnlCashLayout.createSequentialGroup()
+                                                                .addGap(157, 157, 157)
+                                                                .addGroup(pnlCashLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                                        .addComponent(label4)
+                                                                        .addComponent(label3))
+                                                                .addGap(68, 68, 68)
+                                                                .addGroup(pnlCashLayout.createParallelGroup()
+                                                                        .addComponent(lblCashValue)
+                                                                        .addComponent(lblCreditsGained)))
+                                                        .addGroup(pnlCashLayout.createSequentialGroup()
+                                                                .addContainerGap()
+                                                                .addComponent(btnInsert))
+                                                        .addGroup(pnlCashLayout.createSequentialGroup()
+                                                                .addGap(361, 361, 361)
+                                                                .addGroup(pnlCashLayout.createParallelGroup()
+                                                                        .addComponent(btnFinish)
+                                                                        .addGroup(pnlCashLayout.createSequentialGroup()
+                                                                                .addGap(9, 9, 9)
+                                                                                .addComponent(btnExitCash))))
+                                                        .addGroup(pnlCashLayout.createSequentialGroup()
+                                                                .addGap(337, 337, 337)
+                                                                .addComponent(label2))
+                                                        .addGroup(pnlCashLayout.createSequentialGroup()
+                                                                .addGap(367, 367, 367)
+                                                                .addComponent(lblCardNumberCash)))
+                                                .addContainerGap(351, Short.MAX_VALUE))
                         );
                         pnlCashLayout.setVerticalGroup(
-                            pnlCashLayout.createParallelGroup()
-                                .addGroup(pnlCashLayout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(btnInsert)
-                                    .addGap(58, 58, 58)
-                                    .addComponent(lblCardNumberCash)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(label2)
-                                    .addGap(71, 71, 71)
-                                    .addGroup(pnlCashLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                        .addComponent(label3)
-                                        .addComponent(lblCashValue))
-                                    .addGap(36, 36, 36)
-                                    .addGroup(pnlCashLayout.createParallelGroup()
-                                        .addComponent(label4)
-                                        .addComponent(lblCreditsGained))
-                                    .addGap(74, 74, 74)
-                                    .addComponent(btnFinish)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btnExitCash)
-                                    .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                pnlCashLayout.createParallelGroup()
+                                        .addGroup(pnlCashLayout.createSequentialGroup()
+                                                .addContainerGap()
+                                                .addComponent(btnInsert)
+                                                .addGap(58, 58, 58)
+                                                .addComponent(lblCardNumberCash)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(label2)
+                                                .addGap(71, 71, 71)
+                                                .addGroup(pnlCashLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(label3)
+                                                        .addComponent(lblCashValue))
+                                                .addGap(36, 36, 36)
+                                                .addGroup(pnlCashLayout.createParallelGroup()
+                                                        .addComponent(label4)
+                                                        .addComponent(lblCreditsGained))
+                                                .addGap(74, 74, 74)
+                                                .addComponent(btnFinish)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(btnExitCash)
+                                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         );
                     }
                     pnlHome.add(pnlCash, "card3");
@@ -487,30 +547,30 @@ public class Account extends JFrame {
                         GroupLayout pnlCashConfirmationLayout = new GroupLayout(pnlCashConfirmation);
                         pnlCashConfirmation.setLayout(pnlCashConfirmationLayout);
                         pnlCashConfirmationLayout.setHorizontalGroup(
-                            pnlCashConfirmationLayout.createParallelGroup()
-                                .addGroup(pnlCashConfirmationLayout.createSequentialGroup()
-                                    .addGroup(pnlCashConfirmationLayout.createParallelGroup()
+                                pnlCashConfirmationLayout.createParallelGroup()
                                         .addGroup(pnlCashConfirmationLayout.createSequentialGroup()
-                                            .addGap(320, 320, 320)
-                                            .addComponent(lblCardNumberCashConfirmation))
-                                        .addGroup(pnlCashConfirmationLayout.createSequentialGroup()
-                                            .addGap(83, 83, 83)
-                                            .addComponent(label6))
-                                        .addGroup(pnlCashConfirmationLayout.createSequentialGroup()
-                                            .addGap(333, 333, 333)
-                                            .addComponent(btnExitCashConfirmation)))
-                                    .addContainerGap(183, Short.MAX_VALUE))
+                                                .addGroup(pnlCashConfirmationLayout.createParallelGroup()
+                                                        .addGroup(pnlCashConfirmationLayout.createSequentialGroup()
+                                                                .addGap(320, 320, 320)
+                                                                .addComponent(lblCardNumberCashConfirmation))
+                                                        .addGroup(pnlCashConfirmationLayout.createSequentialGroup()
+                                                                .addGap(83, 83, 83)
+                                                                .addComponent(label6))
+                                                        .addGroup(pnlCashConfirmationLayout.createSequentialGroup()
+                                                                .addGap(333, 333, 333)
+                                                                .addComponent(btnExitCashConfirmation)))
+                                                .addContainerGap(183, Short.MAX_VALUE))
                         );
                         pnlCashConfirmationLayout.setVerticalGroup(
-                            pnlCashConfirmationLayout.createParallelGroup()
-                                .addGroup(pnlCashConfirmationLayout.createSequentialGroup()
-                                    .addGap(90, 90, 90)
-                                    .addComponent(lblCardNumberCashConfirmation)
-                                    .addGap(64, 64, 64)
-                                    .addComponent(label6)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
-                                    .addComponent(btnExitCashConfirmation)
-                                    .addGap(130, 130, 130))
+                                pnlCashConfirmationLayout.createParallelGroup()
+                                        .addGroup(pnlCashConfirmationLayout.createSequentialGroup()
+                                                .addGap(90, 90, 90)
+                                                .addComponent(lblCardNumberCashConfirmation)
+                                                .addGap(64, 64, 64)
+                                                .addComponent(label6)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
+                                                .addComponent(btnExitCashConfirmation)
+                                                .addGap(130, 130, 130))
                         );
                     }
                     pnlHome.add(pnlCashConfirmation, "card4");
@@ -547,46 +607,46 @@ public class Account extends JFrame {
                         GroupLayout pnlCardLayout = new GroupLayout(pnlCard);
                         pnlCard.setLayout(pnlCardLayout);
                         pnlCardLayout.setHorizontalGroup(
-                            pnlCardLayout.createParallelGroup()
-                                .addGroup(pnlCardLayout.createSequentialGroup()
-                                    .addGroup(pnlCardLayout.createParallelGroup()
+                                pnlCardLayout.createParallelGroup()
                                         .addGroup(pnlCardLayout.createSequentialGroup()
-                                            .addGap(140, 140, 140)
-                                            .addComponent(btn5Pound)
-                                            .addGap(81, 81, 81)
-                                            .addComponent(btn10Pound)
-                                            .addGap(96, 96, 96)
-                                            .addComponent(btn15Pound))
-                                        .addGroup(pnlCardLayout.createSequentialGroup()
-                                            .addGap(261, 261, 261)
-                                            .addComponent(label7))
-                                        .addGroup(pnlCardLayout.createSequentialGroup()
-                                            .addGap(299, 299, 299)
-                                            .addComponent(lblCardNumberCard))
-                                        .addGroup(pnlCardLayout.createSequentialGroup()
-                                            .addGap(297, 297, 297)
-                                            .addGroup(pnlCardLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                                .addComponent(btnNext)
-                                                .addComponent(btnExitCard))))
-                                    .addContainerGap(219, Short.MAX_VALUE))
+                                                .addGroup(pnlCardLayout.createParallelGroup()
+                                                        .addGroup(pnlCardLayout.createSequentialGroup()
+                                                                .addGap(140, 140, 140)
+                                                                .addComponent(btn5Pound)
+                                                                .addGap(81, 81, 81)
+                                                                .addComponent(btn10Pound)
+                                                                .addGap(96, 96, 96)
+                                                                .addComponent(btn15Pound))
+                                                        .addGroup(pnlCardLayout.createSequentialGroup()
+                                                                .addGap(261, 261, 261)
+                                                                .addComponent(label7))
+                                                        .addGroup(pnlCardLayout.createSequentialGroup()
+                                                                .addGap(299, 299, 299)
+                                                                .addComponent(lblCardNumberCard))
+                                                        .addGroup(pnlCardLayout.createSequentialGroup()
+                                                                .addGap(297, 297, 297)
+                                                                .addGroup(pnlCardLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                                        .addComponent(btnNext)
+                                                                        .addComponent(btnExitCard))))
+                                                .addContainerGap(219, Short.MAX_VALUE))
                         );
                         pnlCardLayout.setVerticalGroup(
-                            pnlCardLayout.createParallelGroup()
-                                .addGroup(pnlCardLayout.createSequentialGroup()
-                                    .addGap(34, 34, 34)
-                                    .addComponent(lblCardNumberCard)
-                                    .addGap(41, 41, 41)
-                                    .addComponent(label7)
-                                    .addGap(30, 30, 30)
-                                    .addGroup(pnlCardLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                        .addComponent(btn5Pound)
-                                        .addComponent(btn10Pound)
-                                        .addComponent(btn15Pound))
-                                    .addGap(97, 97, 97)
-                                    .addComponent(btnNext)
-                                    .addGap(109, 109, 109)
-                                    .addComponent(btnExitCard)
-                                    .addContainerGap(21, Short.MAX_VALUE))
+                                pnlCardLayout.createParallelGroup()
+                                        .addGroup(pnlCardLayout.createSequentialGroup()
+                                                .addGap(34, 34, 34)
+                                                .addComponent(lblCardNumberCard)
+                                                .addGap(41, 41, 41)
+                                                .addComponent(label7)
+                                                .addGap(30, 30, 30)
+                                                .addGroup(pnlCardLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(btn5Pound)
+                                                        .addComponent(btn10Pound)
+                                                        .addComponent(btn15Pound))
+                                                .addGap(97, 97, 97)
+                                                .addComponent(btnNext)
+                                                .addGap(109, 109, 109)
+                                                .addComponent(btnExitCard)
+                                                .addContainerGap(21, Short.MAX_VALUE))
                         );
                     }
                     pnlHome.add(pnlCard, "card5");
@@ -645,62 +705,62 @@ public class Account extends JFrame {
                         GroupLayout pnlCardDetailsLayout = new GroupLayout(pnlCardDetails);
                         pnlCardDetails.setLayout(pnlCardDetailsLayout);
                         pnlCardDetailsLayout.setHorizontalGroup(
-                            pnlCardDetailsLayout.createParallelGroup()
-                                .addGroup(pnlCardDetailsLayout.createSequentialGroup()
-                                    .addGroup(pnlCardDetailsLayout.createParallelGroup()
+                                pnlCardDetailsLayout.createParallelGroup()
                                         .addGroup(pnlCardDetailsLayout.createSequentialGroup()
-                                            .addGroup(pnlCardDetailsLayout.createParallelGroup()
-                                                .addGroup(pnlCardDetailsLayout.createSequentialGroup()
-                                                    .addGap(111, 111, 111)
-                                                    .addComponent(label8)
-                                                    .addGap(4, 4, 4))
-                                                .addGroup(GroupLayout.Alignment.TRAILING, pnlCardDetailsLayout.createSequentialGroup()
-                                                    .addContainerGap()
-                                                    .addGroup(pnlCardDetailsLayout.createParallelGroup()
-                                                        .addComponent(label9, GroupLayout.Alignment.TRAILING)
-                                                        .addComponent(label10, GroupLayout.Alignment.TRAILING))))
-                                            .addGap(39, 39, 39)
-                                            .addGroup(pnlCardDetailsLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(btnCardFinish, GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
-                                                .addComponent(txtCardName, GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
-                                                .addComponent(txtCardNumber, GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
-                                                .addComponent(txtSecurityCode, GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)))
-                                        .addGroup(pnlCardDetailsLayout.createSequentialGroup()
-                                            .addGap(365, 365, 365)
-                                            .addComponent(btnExitCardDetails))
-                                        .addGroup(pnlCardDetailsLayout.createSequentialGroup()
-                                            .addGap(263, 263, 263)
-                                            .addGroup(pnlCardDetailsLayout.createParallelGroup()
-                                                .addComponent(lblCardDetails)
-                                                .addGroup(pnlCardDetailsLayout.createSequentialGroup()
-                                                    .addGap(23, 23, 23)
-                                                    .addComponent(lblTransactionFailed)))))
-                                    .addContainerGap(300, Short.MAX_VALUE))
+                                                .addGroup(pnlCardDetailsLayout.createParallelGroup()
+                                                        .addGroup(pnlCardDetailsLayout.createSequentialGroup()
+                                                                .addGroup(pnlCardDetailsLayout.createParallelGroup()
+                                                                        .addGroup(pnlCardDetailsLayout.createSequentialGroup()
+                                                                                .addGap(111, 111, 111)
+                                                                                .addComponent(label8)
+                                                                                .addGap(4, 4, 4))
+                                                                        .addGroup(GroupLayout.Alignment.TRAILING, pnlCardDetailsLayout.createSequentialGroup()
+                                                                                .addContainerGap()
+                                                                                .addGroup(pnlCardDetailsLayout.createParallelGroup()
+                                                                                        .addComponent(label9, GroupLayout.Alignment.TRAILING)
+                                                                                        .addComponent(label10, GroupLayout.Alignment.TRAILING))))
+                                                                .addGap(39, 39, 39)
+                                                                .addGroup(pnlCardDetailsLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                                        .addComponent(btnCardFinish, GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
+                                                                        .addComponent(txtCardName, GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
+                                                                        .addComponent(txtCardNumber, GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
+                                                                        .addComponent(txtSecurityCode, GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)))
+                                                        .addGroup(pnlCardDetailsLayout.createSequentialGroup()
+                                                                .addGap(365, 365, 365)
+                                                                .addComponent(btnExitCardDetails))
+                                                        .addGroup(pnlCardDetailsLayout.createSequentialGroup()
+                                                                .addGap(263, 263, 263)
+                                                                .addGroup(pnlCardDetailsLayout.createParallelGroup()
+                                                                        .addComponent(lblCardDetails)
+                                                                        .addGroup(pnlCardDetailsLayout.createSequentialGroup()
+                                                                                .addGap(23, 23, 23)
+                                                                                .addComponent(lblTransactionFailed)))))
+                                                .addContainerGap(300, Short.MAX_VALUE))
                         );
                         pnlCardDetailsLayout.setVerticalGroup(
-                            pnlCardDetailsLayout.createParallelGroup()
-                                .addGroup(pnlCardDetailsLayout.createSequentialGroup()
-                                    .addGap(26, 26, 26)
-                                    .addComponent(lblCardDetails)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(lblTransactionFailed)
-                                    .addGap(18, 18, 18)
-                                    .addGroup(pnlCardDetailsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                        .addComponent(label8)
-                                        .addComponent(txtCardName, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(pnlCardDetailsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                        .addComponent(label9)
-                                        .addComponent(txtCardNumber, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                    .addGap(18, 18, 18)
-                                    .addGroup(pnlCardDetailsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                        .addComponent(txtSecurityCode, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(label10))
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btnCardFinish)
-                                    .addGap(56, 56, 56)
-                                    .addComponent(btnExitCardDetails)
-                                    .addContainerGap(76, Short.MAX_VALUE))
+                                pnlCardDetailsLayout.createParallelGroup()
+                                        .addGroup(pnlCardDetailsLayout.createSequentialGroup()
+                                                .addGap(26, 26, 26)
+                                                .addComponent(lblCardDetails)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(lblTransactionFailed)
+                                                .addGap(18, 18, 18)
+                                                .addGroup(pnlCardDetailsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(label8)
+                                                        .addComponent(txtCardName, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                                .addGap(18, 18, 18)
+                                                .addGroup(pnlCardDetailsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(label9)
+                                                        .addComponent(txtCardNumber, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                                .addGap(18, 18, 18)
+                                                .addGroup(pnlCardDetailsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(txtSecurityCode, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(label10))
+                                                .addGap(18, 18, 18)
+                                                .addComponent(btnCardFinish)
+                                                .addGap(56, 56, 56)
+                                                .addComponent(btnExitCardDetails)
+                                                .addContainerGap(76, Short.MAX_VALUE))
                         );
                     }
                     pnlHome.add(pnlCardDetails, "card6");
@@ -711,72 +771,17 @@ public class Account extends JFrame {
             GroupLayout panel1Layout = new GroupLayout(panel1);
             panel1.setLayout(panel1Layout);
             panel1Layout.setHorizontalGroup(
-                panel1Layout.createParallelGroup()
-                    .addComponent(tabbedPane1, GroupLayout.Alignment.TRAILING)
+                    panel1Layout.createParallelGroup()
+                            .addComponent(tabbedPane1, GroupLayout.Alignment.TRAILING)
             );
             panel1Layout.setVerticalGroup(
-                panel1Layout.createParallelGroup()
-                    .addGroup(GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                        .addComponent(tabbedPane1, GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
-                        .addContainerGap())
+                    panel1Layout.createParallelGroup()
+                            .addGroup(GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
+                                    .addComponent(tabbedPane1, GroupLayout.DEFAULT_SIZE, 584, Short.MAX_VALUE)
+                                    .addContainerGap())
             );
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
-
-    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - godieina fire
-    private JTabbedPane tabbedPane1;
-    private JPanel pnlHistory;
-    private JLabel lblCardNumberHistory;
-    private JLabel lblJourneyHistory;
-    private JScrollPane scrollPane1;
-    private JTextArea txtaHistory;
-    private JButton btnExitHistory;
-    private JPanel pnlHome;
-    private JPanel pnlAccount;
-    private JLabel lblCardNumberAccount;
-    private JTextField txtCredits;
-    private JLabel lblCreditsRemaining;
-    private JButton btnAddCredits;
-    private JButton btnExitAccount;
-    private JPanel pnlAddCredits;
-    private JButton btnCard;
-    private JButton btnCash;
-    private JLabel lblCardNumberAddCredits;
-    private JButton btnExitAddCredits;
-    private JPanel pnlCash;
-    private JLabel lblCardNumberCash;
-    private JLabel label2;
-    private JLabel label3;
-    private JLabel label4;
-    private JLabel lblCashValue;
-    private JLabel lblCreditsGained;
-    private JButton btnFinish;
-    private JButton btnExitCash;
-    private JButton btnInsert;
-    private JPanel pnlCashConfirmation;
-    private JLabel lblCardNumberCashConfirmation;
-    private JLabel label6;
-    private JButton btnExitCashConfirmation;
-    private JPanel pnlCard;
-    private JButton btn5Pound;
-    private JButton btn10Pound;
-    private JButton btn15Pound;
-    private JLabel label7;
-    private JLabel lblCardNumberCard;
-    private JButton btnNext;
-    private JButton btnExitCard;
-    private JPanel pnlCardDetails;
-    private JLabel label8;
-    private JLabel label9;
-    private JLabel label10;
-    private JTextField txtCardName;
-    private JTextField txtCardNumber;
-    private JTextField txtSecurityCode;
-    private JButton btnCardFinish;
-    private JButton btnExitCardDetails;
-    private JLabel lblCardDetails;
-    private JLabel lblTransactionFailed;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
