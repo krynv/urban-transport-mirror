@@ -16,7 +16,7 @@ public class EmployeeRegistery {
 
     public EmployeeRegistery() throws IOException, ParseException {
         JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader("src\\main\\java\\users.json"));
+        Object obj = parser.parse(new FileReader("./src/main/java/users.json"));
         JSONArray jsonArray = (JSONArray) obj;
         for (int i = 0; i < jsonArray.size(); i++) {
             String userName = (String) ((JSONObject) jsonArray.get(i)).get("username");
@@ -40,7 +40,7 @@ public class EmployeeRegistery {
     public void addEmployee(JSONArray user) throws IOException, ParseException {
         // writing the JSONObject into a file(info.json)
         JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader("src\\main\\java\\users.json"));
+        Object obj = parser.parse(new FileReader("./src/main/java/users.json"));
         JSONArray jsonArray = (JSONArray) obj;
         String userName = (String) ((JSONObject) user.get(0)).get("username");
         String firstName = (String) ((JSONObject) user.get(0)).get("firstName");
@@ -52,7 +52,7 @@ public class EmployeeRegistery {
 
         employees.add(new Employee(userName, firstName, lastName, password, admin));
         try {
-            FileWriter fileWriter = new FileWriter("src\\main\\java\\users.json");
+            FileWriter fileWriter = new FileWriter("./src/main/java/users.json");
             fileWriter.write(jsonArray.toJSONString());
             fileWriter.flush();
         } catch (Exception e) {

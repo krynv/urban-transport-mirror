@@ -71,41 +71,41 @@ public class loginGUITest {
 //        }
 //    }
 
-    @Test
-    public void cDeleteUserTest()  throws IOException, ParseException {
-
-        System.out.println("DELETE USER TEST-------");
-        JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader("users.json"));
-        JSONArray jsonArray = (JSONArray) obj;
-
-        System.out.println("Finding the user - testing");
-
-        for (int i = 0; i < jsonArray.size(); i++) {
-            String userName = (String) ((JSONObject) jsonArray.get(i)).get("username");
-            if (userName.equals("testing")) {
-
-                System.out.println("Found User deleting now- testing");
-                jsonArray.remove(i);
-            }
-        }
-        try {
-            FileWriter fileWriter = new FileWriter("users.json");
-            fileWriter.write(jsonArray.toJSONString());
-            fileWriter.flush();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        employeeRegistery = new EmployeeRegistery();
-
-        System.out.println("Looking for user to check its been deleted - testing");
-        this.user = employeeRegistery.getEmployee("testing");
-        if(user != null) {
-            assertTrue(false);
-        } else {
-            assertTrue(true);
-        }
-    }
+//    @Test
+//    public void cDeleteUserTest()  throws IOException, ParseException {
+//
+//        System.out.println("DELETE USER TEST-------");
+//        JSONParser parser = new JSONParser();
+//        Object obj = parser.parse(new FileReader("users.json"));
+//        JSONArray jsonArray = (JSONArray) obj;
+//
+//        System.out.println("Finding the user - testing");
+//
+//        for (int i = 0; i < jsonArray.size(); i++) {
+//            String userName = (String) ((JSONObject) jsonArray.get(i)).get("username");
+//            if (userName.equals("testing")) {
+//
+//                System.out.println("Found User deleting now- testing");
+//                jsonArray.remove(i);
+//            }
+//        }
+//        try {
+//            FileWriter fileWriter = new FileWriter("users.json");
+//            fileWriter.write(jsonArray.toJSONString());
+//            fileWriter.flush();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        employeeRegistery = new EmployeeRegistery();
+//
+//        System.out.println("Looking for user to check its been deleted - testing");
+//        this.user = employeeRegistery.getEmployee("testing");
+//        if(user != null) {
+//            assertTrue(false);
+//        } else {
+//            assertTrue(true);
+//        }
+//    }
 
 
 }

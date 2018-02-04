@@ -7,7 +7,7 @@ public class Report {
     private LocalDateTime startDateTime;
     private LocalDateTime endDateTime;
 //    private Route route;
-//    private Printer printer;
+    private PrinterRegistry printerRegistry = new PrinterRegistry();
 //    private Vehicle vehicle;
 
     public Report() {}
@@ -23,4 +23,18 @@ public class Report {
         return name;
     }
 
+    public boolean print(int printerID) {
+        return this.printerRegistry.print(printerID);
+    }
+
+    @Override
+    public String toString() {
+        return "Report{" +
+                "name='" + name + '\'' +
+                ", type=" + type +
+                ", startDateTime=" + startDateTime +
+                ", endDateTime=" + endDateTime +
+                ", brakedown=" +
+                '}';
+    }
 }

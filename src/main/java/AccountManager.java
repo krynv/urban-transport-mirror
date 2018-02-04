@@ -41,7 +41,8 @@ public class AccountManager {
         if (activeUser.isAdmin()) {
             Report report = reportRegistery.getReport(name, startDateTime, endDateTime);
 
-            return new Report();
+
+            return report;
         }
 
         return null;

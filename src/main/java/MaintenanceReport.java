@@ -9,4 +9,26 @@ public class MaintenanceReport extends Report {
         this.numberOfBreakdowns = numberOfBreakdowns;
     }
 
+    public double getMaintenanceCost() {
+        return 100.0;
+    }
+
+    public double getBrakedownCost() {
+        return 85.0;
+    }
+
+    public String getMostExpensiveVehicle() {
+        return "Vehicle 1";
+    }
+
+    public String getCheapestVehicle() {
+        return "Vehicle 2";
+    }
+
+    @Override
+    public String toString() {
+        return "MaintenanceReport{" +
+                "numberOfBreakdowns=" + numberOfBreakdowns +
+                '}';
+    }
 }
