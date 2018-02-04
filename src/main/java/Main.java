@@ -8,15 +8,16 @@ public class Main {
     public static void main(String[] args) {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                //goes to login screen
-                loginForm gui = null;
+                LoginGUI gui = null;
+
                 try {
-                    gui = new loginForm();
+                    gui = new LoginGUI();
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
+
                 gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 gui.setVisible(true);
             }

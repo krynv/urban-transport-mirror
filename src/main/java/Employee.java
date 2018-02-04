@@ -35,10 +35,9 @@ public class Employee {
         return password;
     }
 
-    public Boolean getAdmin() {
+    public Boolean isAdmin() {
         return admin;
     }
-
 
     @Override
     public String toString() {

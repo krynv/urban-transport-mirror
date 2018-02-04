@@ -7,27 +7,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 
-public class loginForm extends JFrame {
-    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Benjamin Ward
-    private JPanel panel2;
-    private JPanel panel1;
-    private JLabel label1;
-    private JLabel label2;
-    private JLabel label3;
-    private JPasswordField passField;
-    private JTextField userField;
-    private JButton loginBut;
-    private JButton cancelBut;
-    private JButton successUserLogin;
-    private JButton successLoginAdmin;
-    private JButton unsuccessfulLogin;
-    private JLabel invalidCred;
-    private JButton regBut;
-    private JLabel tooManyRetries;
+public class LoginGUI extends JFrame {
     private AccountManager accountManager;
     private int counter;
-    public loginForm() throws IOException, ParseException {
+
+    public LoginGUI() throws IOException, ParseException {
         initComponents();
         this.setContentPane(panel1);
         this.pack();
@@ -55,21 +39,18 @@ public class loginForm extends JFrame {
         userField.setText("willSparks");
     }
 
-
     private void loginButActionPerformed(ActionEvent e) throws IOException, ParseException {
         String userName = userField.getText();
-
         String password = new String(passField.getPassword());
-
         boolean loginSuccess = accountManager.login(userName, password);
+
         if (loginSuccess) {
-            new adminHome().setVisible(true);
+            new EmployeeGUI(userName).setVisible(true);
             this.counter = 0;
             this.setVisible(false);
-        }
-
-        if (!loginSuccess) {
+        } else {
             this.counter++;
+
             if (this.counter > 3) {
                 invalidCred.setVisible(false);
                 tooManyRetries.setVisible(true);
@@ -77,7 +58,6 @@ public class loginForm extends JFrame {
                 invalidCred.setVisible(true);
             }
         }
-
     }
 
     private void regButActionPerformed(ActionEvent e) throws IOException, ParseException {
@@ -258,4 +238,22 @@ public class loginForm extends JFrame {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
     // JFormDesigner - End of variables declaration  //GEN-END:variables
+
+    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - Benjamin Ward
+    private JPanel panel2;
+    private JPanel panel1;
+    private JLabel label1;
+    private JLabel label2;
+    private JLabel label3;
+    private JPasswordField passField;
+    private JTextField userField;
+    private JButton loginBut;
+    private JButton cancelBut;
+    private JButton successUserLogin;
+    private JButton successLoginAdmin;
+    private JButton unsuccessfulLogin;
+    private JLabel invalidCred;
+    private JButton regBut;
+    private JLabel tooManyRetries;
 }

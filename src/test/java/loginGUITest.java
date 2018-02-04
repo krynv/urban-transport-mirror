@@ -15,7 +15,7 @@ import java.io.FileWriter;
 
 import static org.junit.jupiter.api.Assertions.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class loginFormTest {
+public class loginGUITest {
 
     private EmployeeRegistery employeeRegistery;
     private Employee user;
@@ -31,7 +31,7 @@ public class loginFormTest {
 //        //JSON object and values
 //
 //        jsonObject.put("username", "testing");
-//        jsonObject.put("firstName", "test");
+//        jsonObject.put("firstName", "EmployeeGUI");
 //        jsonObject.put("lastName", "ing");
 //        jsonObject.put("admin", true);
 //        String hashedPass = BCrypt.hashpw("password", BCrypt.gensalt(12));
