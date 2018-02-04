@@ -1,5 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import javax.management.remote.JMXConnectorFactory;
 import javax.swing.*;
 import javax.swing.GroupLayout;
@@ -29,7 +31,11 @@ public class SelectFares extends JFrame {
     }
 
     private void searchActionPerformed(ActionEvent e) {
-        new SearchedFares().setVisible(true);
+        LocalDateTime departureDateTime = LocalDateTime.of(2018,2,4,12,0);
+        LocalDateTime arrivalDateTime = LocalDateTime.of(2018,2,4,13,0);
+
+
+        new SearchedFares(departureDateTime, arrivalDateTime).setVisible(true);
         this.dispose();
     }
 
@@ -40,7 +46,7 @@ public class SelectFares extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - godieina fire
+        // Generated using JFormDesigner Evaluation license - Barry Chuckle
         panel2 = new JPanel();
         homeButton = new JButton();
         dateTime = new JLabel();
@@ -51,7 +57,7 @@ public class SelectFares extends JFrame {
         departureDateAndTimeLabel = new JLabel();
         returnDateAndTimeLabel = new JLabel();
         departureDropdownMenu = new JComboBox<>();
-        returnDropdownMenu = new JComboBox();
+        returnDropdownMenu = new JComboBox<>();
         ticketTypeLabel = new JLabel();
         oneWayCheckBox = new JCheckBox();
         returnCheckBox = new JCheckBox();
@@ -103,9 +109,12 @@ public class SelectFares extends JFrame {
 
             //---- departureDropdownMenu ----
             departureDropdownMenu.setModel(new DefaultComboBoxModel<>(new String[] {
-                "test1",
-                "test2",
-                "test3"
+                "12:00"
+            }));
+
+            //---- returnDropdownMenu ----
+            returnDropdownMenu.setModel(new DefaultComboBoxModel<>(new String[] {
+                "13:00"
             }));
 
             //---- ticketTypeLabel ----
@@ -203,7 +212,7 @@ public class SelectFares extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - godieina fire
+    // Generated using JFormDesigner Evaluation license - Barry Chuckle
     private JPanel panel2;
     private JButton homeButton;
     private JLabel dateTime;
@@ -214,7 +223,7 @@ public class SelectFares extends JFrame {
     private JLabel departureDateAndTimeLabel;
     private JLabel returnDateAndTimeLabel;
     private JComboBox<String> departureDropdownMenu;
-    private JComboBox returnDropdownMenu;
+    private JComboBox<String> returnDropdownMenu;
     private JLabel ticketTypeLabel;
     private JCheckBox oneWayCheckBox;
     private JCheckBox returnCheckBox;

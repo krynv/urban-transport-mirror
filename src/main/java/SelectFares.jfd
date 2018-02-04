@@ -52,14 +52,16 @@ new FormModel {
 			add( new FormComponent( "javax.swing.JComboBox" ) {
 				name: "departureDropdownMenu"
 				"model": new javax.swing.DefaultComboBoxModel {
-					selectedItem: "test1"
-					addElement( "test1" )
-					addElement( "test2" )
-					addElement( "test3" )
+					selectedItem: "12:00"
+					addElement( "12:00" )
 				}
 			} )
 			add( new FormComponent( "javax.swing.JComboBox" ) {
 				name: "returnDropdownMenu"
+				"model": new javax.swing.DefaultComboBoxModel {
+					selectedItem: "13:00"
+					addElement( "13:00" )
+				}
 			} )
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "ticketTypeLabel"

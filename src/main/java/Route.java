@@ -1,14 +1,16 @@
 public class Route {
 
+    private String routeID;
     private TimeBands timeBands;
     private LocationRegistry destinationLocations;
-    private String routeID;
     private double routeIncome;
     private double routeRunningCosts;
     private double routeMaintenanceCosts;
 
-    public Route() {
-
+    public Route(String routeID, TimeBands timeBands, LocationRegistry destinationLocations) {
+        this.routeID = routeID;
+        this.timeBands = timeBands;
+        this.destinationLocations = destinationLocations;
     }
 
     public double getCostOfRunning() {
