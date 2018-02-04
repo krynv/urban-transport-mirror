@@ -51,9 +51,18 @@ public class EmployeeGUI extends JFrame {
         MaintenanceReport maintenanceReport = (MaintenanceReport) report;
 
         System.out.println(maintenanceReport.print(7));
+    }
 
-
-
+    private void logOutButtonActionPerformed(ActionEvent e) {
+        this.accountManager.logout();
+        this.dispose();
+        try {
+            new LoginGUI().setVisible(true);
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        } catch (ParseException e1) {
+            e1.printStackTrace();
+        }
     }
 
     private void initComponents() {
@@ -107,6 +116,8 @@ public class EmployeeGUI extends JFrame {
         panel12 = new JPanel();
         panel13 = new JPanel();
         panel14 = new JPanel();
+        logOutPanel = new JPanel();
+        logOutButton = new JButton();
 
         //======== mainPanel ========
         {
@@ -534,6 +545,32 @@ public class EmployeeGUI extends JFrame {
                     panel9.add(tabbedPane14);
                 }
                 tabbedPane12.addTab("Reports", panel9);
+
+                //======== logOutPanel ========
+                {
+
+                    //---- logOutButton ----
+                    logOutButton.setText("Log Out");
+                    logOutButton.addActionListener(e -> logOutButtonActionPerformed(e));
+
+                    GroupLayout logOutPanelLayout = new GroupLayout(logOutPanel);
+                    logOutPanel.setLayout(logOutPanelLayout);
+                    logOutPanelLayout.setHorizontalGroup(
+                        logOutPanelLayout.createParallelGroup()
+                            .addGroup(GroupLayout.Alignment.TRAILING, logOutPanelLayout.createSequentialGroup()
+                                .addContainerGap(287, Short.MAX_VALUE)
+                                .addComponent(logOutButton)
+                                .addGap(276, 276, 276))
+                    );
+                    logOutPanelLayout.setVerticalGroup(
+                        logOutPanelLayout.createParallelGroup()
+                            .addGroup(logOutPanelLayout.createSequentialGroup()
+                                .addGap(204, 204, 204)
+                                .addComponent(logOutButton)
+                                .addContainerGap(220, Short.MAX_VALUE))
+                    );
+                }
+                tabbedPane12.addTab("Log Out", logOutPanel);
             }
 
             GroupLayout mainPanelLayout = new GroupLayout(mainPanel);
@@ -599,5 +636,7 @@ public class EmployeeGUI extends JFrame {
     private JPanel panel12;
     private JPanel panel13;
     private JPanel panel14;
+    private JPanel logOutPanel;
+    private JButton logOutButton;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

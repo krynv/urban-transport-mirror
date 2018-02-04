@@ -284,6 +284,19 @@ new FormModel {
 				}, new FormLayoutConstraints( null ) {
 					"title": "Reports"
 				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq t {space ::287:x, comp logOutButton:::p::p, space :p:276:p}}"
+					"$verticalGroup": "par l {seq l {space :p:204:p, comp logOutButton:::p::p, space ::220:x}}"
+				} ) {
+					name: "logOutPanel"
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "logOutButton"
+						"text": "Log Out"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "logOutButtonActionPerformed", true ) )
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "Log Out"
+				} )
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )

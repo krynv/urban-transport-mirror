@@ -53,4 +53,8 @@ public class AccountManager {
     private void setActiveUser(Employee employee) {
         activeUser = employee;
     }
+
+    public void logout() {
+        activeUser = null;
+    }
 }
