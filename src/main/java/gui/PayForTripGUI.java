@@ -117,7 +117,7 @@ public class PayForTripGUI extends JFrame {
     private void btnFare1ActionPerformed(ActionEvent e) {
         setAllToFalse();
         pnlConfirmBooking.setVisible(true);
-        this.setTitle("Searched Fares");
+        this.setTitle("Confirm Booking");
     }
 
     /* ----- Confirm Booking ----- */
