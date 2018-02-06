@@ -2,19 +2,19 @@ package logic;
 
 public class GateController {
 
-    private TokenRegistery tokenRegistery;
-    private AccountRegistery accountRegistery;
+    private TokenRegistry tokenRegistry;
+    private AccountRegistry accountRegistry;
     private Token token;
     private Account account;
 
     public GateController() {
-        tokenRegistery = new TokenRegistery();
-        accountRegistery = new AccountRegistery();
+        tokenRegistry = new TokenRegistry();
+        accountRegistry = new AccountRegistry();
     }
 
     public void passTokenId(int tokenId) {
-        token = tokenRegistery.getToken(tokenId);
-        account = accountRegistery.getAccount(token.getAccountId());
+        token = tokenRegistry.getToken(tokenId);
+        account = accountRegistry.getAccount(token.getAccountId());
     }
 
 }

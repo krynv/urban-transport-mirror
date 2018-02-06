@@ -2,9 +2,9 @@ package logic;
 
 import java.util.ArrayList;
 
-public class TokenRegistery extends ArrayList<Token> {
+public class TokenRegistry extends ArrayList<Token> {
 
-    public TokenRegistery() {
+    public TokenRegistry() {
         this.add(new Token(0, 0, "0"));
         this.add(new Token(1, 0, "1"));
         this.add(new Token(2, 0, "2"));
