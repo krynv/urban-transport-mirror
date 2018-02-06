@@ -21,6 +21,9 @@ public class GUI extends JFrame {
 
     private void btnPayForTripActionPerformed(ActionEvent e) {
         System.out.println("Pay for trip");
+
+        new PayForTripGUI().setVisible(true);
+        this.setVisible(false);
     }
 
     private void btnViewReportActionPerformed(ActionEvent e) {
@@ -70,24 +73,24 @@ public class GUI extends JFrame {
                 pnlSelectOption.setLayout(pnlSelectOptionLayout);
                 pnlSelectOptionLayout.setHorizontalGroup(
                     pnlSelectOptionLayout.createParallelGroup()
-                        .addGroup(pnlSelectOptionLayout.createSequentialGroup()
-                            .addGap(171, 171, 171)
+                        .addGroup(GroupLayout.Alignment.TRAILING, pnlSelectOptionLayout.createSequentialGroup()
+                            .addContainerGap(267, Short.MAX_VALUE)
                             .addGroup(pnlSelectOptionLayout.createParallelGroup()
                                 .addComponent(btnPayOnExit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnPayForTrip, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnViewReport, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                            .addContainerGap(359, Short.MAX_VALUE))
+                            .addGap(263, 263, 263))
                 );
                 pnlSelectOptionLayout.setVerticalGroup(
                     pnlSelectOptionLayout.createParallelGroup()
                         .addGroup(pnlSelectOptionLayout.createSequentialGroup()
-                            .addGap(89, 89, 89)
+                            .addGap(149, 149, 149)
                             .addComponent(btnPayOnExit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(btnPayForTrip, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(btnViewReport, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap(275, Short.MAX_VALUE))
+                            .addContainerGap(215, Short.MAX_VALUE))
                 );
             }
             pnlGUI.add(pnlSelectOption, "card1");
