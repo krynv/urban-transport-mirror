@@ -5,7 +5,6 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class GUI extends JFrame {
-    private JPanel pnlGUI;
 
     public GUI() {
         initComponents();
@@ -18,14 +17,23 @@ public class GUI extends JFrame {
 
     private void btnPayOnExitActionPerformed(ActionEvent e) {
         System.out.println("Pay on exit");
+
+        pnlSelectOption.setVisible(false);
+        pnlPayOnExit.setVisible(true);
     }
 
     private void btnPayForTripActionPerformed(ActionEvent e) {
         System.out.println("Pay for trip");
+
+        pnlSelectOption.setVisible(false);
+        pnlPayForTrip.setVisible(true);
     }
 
     private void btnViewReportActionPerformed(ActionEvent e) {
         System.out.println("View report");
+
+        pnlSelectOption.setVisible(false);
+        pnlViewReport.setVisible(true);
     }
 
     private void initComponents() {
@@ -36,10 +44,12 @@ public class GUI extends JFrame {
         btnPayOnExit = new JButton();
         btnPayForTrip = new JButton();
         btnViewReport = new JButton();
+        pnlPayOnExit = new JPanel();
+        pnlPayForTrip = new JPanel();
+        pnlViewReport = new JPanel();
 
         //======== pnlGUI ========
         {
-            pnlGUI.setPreferredSize(new Dimension(800, 700));
 
             // JFormDesigner evaluation mark
             pnlGUI.setBorder(new javax.swing.border.CompoundBorder(
@@ -48,7 +58,6 @@ public class GUI extends JFrame {
                     javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
                     java.awt.Color.red), pnlGUI.getBorder())); pnlGUI.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
-            pnlGUI.setLayout(new CardLayout());
 
             //======== pnlSelectOption ========
             {
@@ -75,9 +84,9 @@ public class GUI extends JFrame {
                         .addGroup(pnlSelectOptionLayout.createSequentialGroup()
                             .addGap(171, 171, 171)
                             .addGroup(pnlSelectOptionLayout.createParallelGroup()
-                                .addComponent(btnViewReport, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnPayOnExit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btnPayForTrip, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnPayForTrip, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnViewReport, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                             .addContainerGap(179, Short.MAX_VALUE))
                 );
                 pnlSelectOptionLayout.setVerticalGroup(
@@ -89,19 +98,96 @@ public class GUI extends JFrame {
                             .addComponent(btnPayForTrip, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(btnViewReport, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap(123, Short.MAX_VALUE))
+                            .addContainerGap(95, Short.MAX_VALUE))
                 );
             }
-            pnlGUI.add(pnlSelectOption, "card1");
+
+            //======== pnlPayOnExit ========
+            {
+
+                GroupLayout pnlPayOnExitLayout = new GroupLayout(pnlPayOnExit);
+                pnlPayOnExit.setLayout(pnlPayOnExitLayout);
+                pnlPayOnExitLayout.setHorizontalGroup(
+                    pnlPayOnExitLayout.createParallelGroup()
+                        .addGap(0, 500, Short.MAX_VALUE)
+                );
+                pnlPayOnExitLayout.setVerticalGroup(
+                    pnlPayOnExitLayout.createParallelGroup()
+                        .addGap(0, 400, Short.MAX_VALUE)
+                );
+            }
+
+            //======== pnlPayForTrip ========
+            {
+
+                GroupLayout pnlPayForTripLayout = new GroupLayout(pnlPayForTrip);
+                pnlPayForTrip.setLayout(pnlPayForTripLayout);
+                pnlPayForTripLayout.setHorizontalGroup(
+                    pnlPayForTripLayout.createParallelGroup()
+                        .addGap(0, 500, Short.MAX_VALUE)
+                );
+                pnlPayForTripLayout.setVerticalGroup(
+                    pnlPayForTripLayout.createParallelGroup()
+                        .addGap(0, 400, Short.MAX_VALUE)
+                );
+            }
+
+            //======== pnlViewReport ========
+            {
+
+                GroupLayout pnlViewReportLayout = new GroupLayout(pnlViewReport);
+                pnlViewReport.setLayout(pnlViewReportLayout);
+                pnlViewReportLayout.setHorizontalGroup(
+                    pnlViewReportLayout.createParallelGroup()
+                        .addGap(0, 500, Short.MAX_VALUE)
+                );
+                pnlViewReportLayout.setVerticalGroup(
+                    pnlViewReportLayout.createParallelGroup()
+                        .addGap(0, 400, Short.MAX_VALUE)
+                );
+            }
+
+            GroupLayout pnlGUILayout = new GroupLayout(pnlGUI);
+            pnlGUI.setLayout(pnlGUILayout);
+            pnlGUILayout.setHorizontalGroup(
+                pnlGUILayout.createParallelGroup()
+                    .addGroup(pnlGUILayout.createParallelGroup()
+                        .addGroup(pnlGUILayout.createSequentialGroup()
+                            .addGap(0, 0, Short.MAX_VALUE)
+                            .addGroup(pnlGUILayout.createParallelGroup()
+                                .addComponent(pnlSelectOption, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(pnlPayOnExit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(pnlPayForTrip, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(pnlViewReport, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                            .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 680, Short.MAX_VALUE)
+            );
+            pnlGUILayout.setVerticalGroup(
+                pnlGUILayout.createParallelGroup()
+                    .addGroup(pnlGUILayout.createParallelGroup()
+                        .addGroup(pnlGUILayout.createSequentialGroup()
+                            .addGap(0, 0, Short.MAX_VALUE)
+                            .addGroup(pnlGUILayout.createParallelGroup()
+                                .addComponent(pnlSelectOption, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(pnlPayOnExit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(pnlPayForTrip, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(pnlViewReport, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                            .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 580, Short.MAX_VALUE)
+            );
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Barry Chuckle
+    private JPanel pnlGUI;
     private JPanel pnlSelectOption;
     private JButton btnPayOnExit;
     private JButton btnPayForTrip;
     private JButton btnViewReport;
+    private JPanel pnlPayOnExit;
+    private JPanel pnlPayForTrip;
+    private JPanel pnlViewReport;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

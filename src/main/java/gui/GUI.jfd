@@ -3,15 +3,14 @@ JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_152-release" encoding: "UTF-8"
 new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
-		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.CardLayout ) ) {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {space :0:680:x};par l {seq {space :0:0:x, par l {comp pnlSelectOption:::p::p, comp pnlPayOnExit:::p::p, comp pnlPayForTrip:::p::p, comp pnlViewReport:::p::p}, space :0:0:x}}"
+			"$verticalGroup": "par l {space :0:580:x};par l {seq {space :0:0:x, par l {comp pnlSelectOption:::p::p, comp pnlPayOnExit:::p::p, comp pnlPayForTrip:::p::p, comp pnlViewReport:::p::p}, space :0:0:x}}"
+		} ) {
 			name: "pnlGUI"
-			"preferredSize": new java.awt.Dimension( 800, 700 )
-			auxiliary() {
-				"JavaCodeGenerator.variableLocal": true
-			}
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq l {space :p:171:p, par l {comp btnViewReport:::p::p, comp btnPayOnExit:::p::p, comp btnPayForTrip:::p::p}, space ::179:x}}"
-				"$verticalGroup": "par l {seq l {space :p:89:p, comp btnPayOnExit:::p::p, space s:::p, comp btnPayForTrip:::p::p, space s:::p, comp btnViewReport:::p::p, space ::123:x}}"
+				"$horizontalGroup": "par l {seq l {space :p:171:p, par l {comp btnPayOnExit:::p::p, comp btnPayForTrip:::p::p, comp btnViewReport::l:p::p}, space ::179:x}}"
+				"$verticalGroup": "par l {seq l {space :p:89:p, comp btnPayOnExit:::p::p, space s:::p, comp btnPayForTrip:::p::p, space s:::p, comp btnViewReport:::p::p, space ::95:x}}"
 			} ) {
 				name: "pnlSelectOption"
 				add( new FormComponent( "javax.swing.JButton" ) {
@@ -32,12 +31,28 @@ new FormModel {
 					"preferredSize": new java.awt.Dimension( 150, 60 )
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnViewReportActionPerformed", true ) )
 				} )
-			}, new FormLayoutConstraints( class java.lang.String ) {
-				"value": "card1"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {space :0:500:x}"
+				"$verticalGroup": "par l {space :0:400:x}"
+			} ) {
+				name: "pnlPayOnExit"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {space :0:500:x}"
+				"$verticalGroup": "par l {space :0:400:x}"
+			} ) {
+				name: "pnlPayForTrip"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {space :0:500:x}"
+				"$verticalGroup": "par l {space :0:400:x}"
+			} ) {
+				name: "pnlViewReport"
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 500, 400 )
+			"location": new java.awt.Point( 15, 10 )
+			"size": new java.awt.Dimension( 680, 580 )
 		} )
 	}
 }
