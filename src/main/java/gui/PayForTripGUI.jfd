@@ -322,6 +322,85 @@ new FormModel {
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card6"
 					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {seq l {space :p:58:p, par l {seq l {space :157:157:p, comp lblStationCardPayment:::p::p, space :6:6:p, comp lblDestinationCardPayment:::p::p}, seq l {space :89:89:p, comp lblDepartureDateTimeCardPayment:::p:135:p, space :0:0:p, comp lblReturnDateTimeCardPayment:::p::p}, seq l {space :176:176:p, comp lblViaLocationsCardPayment:::p::p}, seq l {space :71:71:p, comp lblPaymentValidate:::p:312:p}, comp lblPaymentInformationCardPayment:::p::p, seq l {space :32:32:p, comp lblTicketTypeCardPayment:::p::p, space :73:73:p, comp lblPriceCardPayment:::p::p}, seq l {space :32:32:p, comp lblCardName:::p:86:p, space :42:42:p, comp txtCardName:::p:147:p}, seq l {space :32:32:p, comp lblCardNumber:::p:86:p, space :42:42:p, comp txtCardNumber:::p:147:p}, seq l {space :32:32:p, comp lblSecurityCode:::p::p, space :42:42:p, comp txtSecurityCode:::p:147:p}, seq l {space :116:116:p, comp btnPrintTicket:::p::p, space :38:38:p, comp btnConfirmPayment:::p::p}}, space ::81:x}}"
+						"$verticalGroup": "par l {seq l {space :p:53:p, par l {comp lblStationCardPayment:::p::p, comp lblDestinationCardPayment:::p::p}, space :6:6:p, par l {comp lblDepartureDateTimeCardPayment:::p:24:p, seq l {space :4:4:p, comp lblReturnDateTimeCardPayment:::p::p}}, space :6:6:p, comp lblViaLocationsCardPayment:::p::p, space :6:6:p, comp lblPaymentValidate:::p:18:p, space :22:22:p, comp lblPaymentInformationCardPayment:::p::p, space :9:9:p, par l {comp lblTicketTypeCardPayment:::p::p, comp lblPriceCardPayment:::p::p}, space :22:22:p, par l {seq l {space :4:4:p, comp lblCardName:::p::p}, comp txtCardName:::p::p}, space :6:6:p, par l {seq l {space :4:4:p, comp lblCardNumber:::p::p}, comp txtCardNumber:::p::p}, space :6:6:p, par l {seq l {space :4:4:p, comp lblSecurityCode:::p::p}, comp txtSecurityCode:::p::p}, space :12:12:p, par l {comp btnPrintTicket:::p::p, comp btnConfirmPayment:::p::p}, space ::100:x}}"
+					} ) {
+						name: "pnlCardTicketPayment"
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnPrintTicket"
+							"text": "PRINT TICKET"
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnConfirmPayment"
+							"text": "Confirm Payment"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnConfirmPaymentActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblSecurityCode"
+							"text": "Security Code"
+							"labelFor": new FormReference( "txtSecurityCode" )
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "txtSecurityCode"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblCardNumber"
+							"text": "Card Number"
+							"labelFor": new FormReference( "txtCardNumber" )
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "txtCardNumber"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblCardName"
+							"text": "Card Name"
+							"labelFor": new FormReference( "txtCardName" )
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "txtCardName"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblTicketTypeCardPayment"
+							"text": "Ticket Type"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblPriceCardPayment"
+							"text": "PRICE"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblPaymentInformationCardPayment"
+							"text": "Payment Information"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblPaymentValidate"
+							"toolTipText": "Coupon Validity Check"
+							"horizontalAlignment": 0
+							"horizontalTextPosition": 0
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblViaLocationsCardPayment"
+							"text": "Via Locations"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblDepartureDateTimeCardPayment"
+							"text": "Departure Date/Time"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblReturnDateTimeCardPayment"
+							"text": "Return Date/Time"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblDestinationCardPayment"
+							"text": "Destination"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblStationCardPayment"
+							"text": "Station"
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "card7"
+					} )
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "card2"
