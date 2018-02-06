@@ -6,19 +6,24 @@ import javax.swing.*;
 import com.jgoodies.forms.layout.*;
 
 public class PayForTripGUI extends JFrame {
+
+    private String languageButtonPressed;
+
     public PayForTripGUI() {
 
-        initComponents();
         initComponents();
 
         this.setLocationRelativeTo(null);
         this.setContentPane(pnlMain);
         this.setTitle("Home");
+        pnlSelectLanguage.setVisible(false);
+        pnlHome.setVisible(true);
         this.pack();
     }
 
     private void btnSelectLanguageActionPerformed(ActionEvent e) {
-        // TODO add your code here
+        pnlHome.setVisible(false);
+        pnlSelectLanguage.setVisible(true);
     }
 
     private void btnDestination1ActionPerformed(ActionEvent e) {
@@ -31,6 +36,33 @@ public class PayForTripGUI extends JFrame {
         System.out.println("Loaded the " + language + " language");
     }
 
+    private void btnHomeActionPerformed(ActionEvent e) {
+        pnlSelectLanguage.setVisible(false);
+        pnlHome.setVisible(true);
+    }
+
+    /* ----- Select Language ----- */
+
+    private void englishButtonActionPerformed(ActionEvent e) {
+        languageButtonPressed = "English";
+    }
+
+    private void frenchButtonActionPerformed(ActionEvent e) {
+        languageButtonPressed = "French";
+    }
+
+    private void germanButtonActionPerformed(ActionEvent e) {
+        languageButtonPressed = "German";
+    }
+
+    private void btnLoadLanguageActionPerformed(ActionEvent e) {
+        if (languageButtonPressed != null) { // user has actually chosen something
+            loadLanguageFile(languageButtonPressed);
+            pnlSelectLanguage.setVisible(false);
+            pnlHome.setVisible(true);
+        }
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Barry Chuckle
@@ -41,6 +73,14 @@ public class PayForTripGUI extends JFrame {
         btnDisplayTimetable = new JButton();
         lblDateTime = new JLabel();
         pnlContent = new JPanel();
+        pnlSelectLanguage = new JPanel();
+        lblEnglish = new JLabel();
+        btnEnglish = new JButton();
+        lblFrench = new JLabel();
+        btnFrench = new JButton();
+        lblGerman = new JLabel();
+        btnGerman = new JButton();
+        btnLoadLanguage = new JButton();
         pnlHome = new JPanel();
         btnDestination1 = new JButton();
         btnDestination4 = new JButton();
@@ -66,6 +106,7 @@ public class PayForTripGUI extends JFrame {
 
                 //---- btnHome ----
                 btnHome.setText("Home");
+                btnHome.addActionListener(e -> btnHomeActionPerformed(e));
 
                 //---- btnSelectLanguage ----
                 btnSelectLanguage.setText("Select Language");
@@ -85,6 +126,77 @@ public class PayForTripGUI extends JFrame {
                 //======== pnlContent ========
                 {
                     pnlContent.setLayout(new CardLayout());
+
+                    //======== pnlSelectLanguage ========
+                    {
+
+                        //---- lblEnglish ----
+                        lblEnglish.setText("English");
+
+                        //---- btnEnglish ----
+                        btnEnglish.addActionListener(e -> englishButtonActionPerformed(e));
+
+                        //---- lblFrench ----
+                        lblFrench.setText("French");
+
+                        //---- btnFrench ----
+                        btnFrench.addActionListener(e -> frenchButtonActionPerformed(e));
+
+                        //---- lblGerman ----
+                        lblGerman.setText("German");
+
+                        //---- btnGerman ----
+                        btnGerman.addActionListener(e -> germanButtonActionPerformed(e));
+
+                        //---- btnLoadLanguage ----
+                        btnLoadLanguage.setText("Load Language");
+                        btnLoadLanguage.addActionListener(e -> btnLoadLanguageActionPerformed(e));
+
+                        GroupLayout pnlSelectLanguageLayout = new GroupLayout(pnlSelectLanguage);
+                        pnlSelectLanguage.setLayout(pnlSelectLanguageLayout);
+                        pnlSelectLanguageLayout.setHorizontalGroup(
+                            pnlSelectLanguageLayout.createParallelGroup()
+                                .addGroup(GroupLayout.Alignment.TRAILING, pnlSelectLanguageLayout.createSequentialGroup()
+                                    .addContainerGap(115, Short.MAX_VALUE)
+                                    .addGroup(pnlSelectLanguageLayout.createParallelGroup()
+                                        .addGroup(pnlSelectLanguageLayout.createSequentialGroup()
+                                            .addComponent(lblEnglish, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(6, 6, 6)
+                                            .addComponent(btnEnglish, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(pnlSelectLanguageLayout.createSequentialGroup()
+                                            .addComponent(lblFrench, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(6, 6, 6)
+                                            .addComponent(btnFrench, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(pnlSelectLanguageLayout.createSequentialGroup()
+                                            .addComponent(lblGerman, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(6, 6, 6)
+                                            .addComponent(btnGerman, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(pnlSelectLanguageLayout.createSequentialGroup()
+                                            .addGap(212, 212, 212)
+                                            .addComponent(btnLoadLanguage)))
+                                    .addGap(94, 94, 94))
+                        );
+                        pnlSelectLanguageLayout.setVerticalGroup(
+                            pnlSelectLanguageLayout.createParallelGroup()
+                                .addGroup(GroupLayout.Alignment.TRAILING, pnlSelectLanguageLayout.createSequentialGroup()
+                                    .addContainerGap(138, Short.MAX_VALUE)
+                                    .addGroup(pnlSelectLanguageLayout.createParallelGroup()
+                                        .addComponent(lblEnglish, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnEnglish, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE))
+                                    .addGap(6, 6, 6)
+                                    .addGroup(pnlSelectLanguageLayout.createParallelGroup()
+                                        .addComponent(lblFrench, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnFrench, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE))
+                                    .addGap(6, 6, 6)
+                                    .addGroup(pnlSelectLanguageLayout.createParallelGroup()
+                                        .addComponent(lblGerman, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnGerman, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE))
+                                    .addGap(61, 61, 61)
+                                    .addComponent(btnLoadLanguage)
+                                    .addGap(128, 128, 128))
+                        );
+                    }
+                    pnlContent.add(pnlSelectLanguage, "card2");
 
                     //======== pnlHome ========
                     {
@@ -118,41 +230,37 @@ public class PayForTripGUI extends JFrame {
                         pnlHome.setLayout(pnlHomeLayout);
                         pnlHomeLayout.setHorizontalGroup(
                             pnlHomeLayout.createParallelGroup()
-                                .addGroup(pnlHomeLayout.createParallelGroup()
-                                    .addGroup(pnlHomeLayout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addGroup(pnlHomeLayout.createParallelGroup()
-                                            .addGroup(pnlHomeLayout.createSequentialGroup()
-                                                .addComponent(btnDestination1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                                .addGap(12, 12, 12)
-                                                .addComponent(btnDestination2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                                .addGap(12, 12, 12)
-                                                .addComponent(btnDestination3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(pnlHomeLayout.createSequentialGroup()
-                                                .addComponent(btnDestination4, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                                .addGap(12, 12, 12)
-                                                .addComponent(btnDestination5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                                .addGap(12, 12, 12)
-                                                .addComponent(btnDestination6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                .addGap(0, 545, Short.MAX_VALUE)
+                                .addGroup(pnlHomeLayout.createSequentialGroup()
+                                    .addGap(0, 110, Short.MAX_VALUE)
+                                    .addGroup(pnlHomeLayout.createParallelGroup()
+                                        .addGroup(pnlHomeLayout.createSequentialGroup()
+                                            .addComponent(btnDestination1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(12, 12, 12)
+                                            .addComponent(btnDestination2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(12, 12, 12)
+                                            .addComponent(btnDestination3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(pnlHomeLayout.createSequentialGroup()
+                                            .addComponent(btnDestination4, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(12, 12, 12)
+                                            .addComponent(btnDestination5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(12, 12, 12)
+                                            .addComponent(btnDestination6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
+                                    .addGap(0, 111, Short.MAX_VALUE))
                         );
                         pnlHomeLayout.setVerticalGroup(
                             pnlHomeLayout.createParallelGroup()
-                                .addGroup(pnlHomeLayout.createParallelGroup()
-                                    .addGroup(pnlHomeLayout.createSequentialGroup()
-                                        .addGap(0, 0, Short.MAX_VALUE)
-                                        .addGroup(pnlHomeLayout.createParallelGroup()
-                                            .addComponent(btnDestination1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(btnDestination2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(btnDestination3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
-                                        .addGap(33, 33, 33)
-                                        .addGroup(pnlHomeLayout.createParallelGroup()
-                                            .addComponent(btnDestination4, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(btnDestination5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(btnDestination6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                .addGap(0, 458, Short.MAX_VALUE)
+                                .addGroup(pnlHomeLayout.createSequentialGroup()
+                                    .addGap(0, 112, Short.MAX_VALUE)
+                                    .addGroup(pnlHomeLayout.createParallelGroup()
+                                        .addComponent(btnDestination1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnDestination2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnDestination3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+                                    .addGap(33, 33, 33)
+                                    .addGroup(pnlHomeLayout.createParallelGroup()
+                                        .addComponent(btnDestination4, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnDestination5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnDestination6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+                                    .addGap(0, 113, Short.MAX_VALUE))
                         );
                     }
                     pnlContent.add(pnlHome, "card1");
@@ -204,6 +312,14 @@ public class PayForTripGUI extends JFrame {
     private JButton btnDisplayTimetable;
     private JLabel lblDateTime;
     private JPanel pnlContent;
+    private JPanel pnlSelectLanguage;
+    private JLabel lblEnglish;
+    private JButton btnEnglish;
+    private JLabel lblFrench;
+    private JButton btnFrench;
+    private JLabel lblGerman;
+    private JButton btnGerman;
+    private JButton btnLoadLanguage;
     private JPanel pnlHome;
     private JButton btnDestination1;
     private JButton btnDestination4;
