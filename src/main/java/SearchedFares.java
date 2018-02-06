@@ -12,6 +12,10 @@ public class SearchedFares extends JFrame {
 
         routeRegistry.getRoutes(new Location(1), new Location(2), departureDateTime, arrivalDateTime);
 
+        FaresStructures faresStructures = new FaresStructures();
+
+        faresStructures.getRouteCost(routeRegistry, departureDateTime, arrivalDateTime);
+
         button1.setText("<html>" + "<br>" +"</html>");
 
 

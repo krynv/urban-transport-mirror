@@ -1,5 +1,3 @@
-import jdk.vm.ci.meta.Local;
-
 import java.time.LocalDateTime;
 
 public class FaresStructures {
@@ -20,12 +18,12 @@ public class FaresStructures {
 
         Tariffs tariffs = new Tariffs();
 
+        double returnedCost = 0.0;
+
         for (Route aRoute:routeRegistry) {
-            tariffs.calculateRouteCost(aRoute, start, end);
+            returnedCost = tariffs.calculateRouteCost(aRoute, start, end);
         }
 
-
-
-        return 0.0;
+        return returnedCost;
     }
 }

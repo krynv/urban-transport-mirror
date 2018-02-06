@@ -1,10 +1,10 @@
 import java.awt.event.*;
 import javax.swing.*;
 
-public class GUI extends JFrame {
+public class CardGUI extends JFrame {
     private JPanel panel1;
 
-    public GUI() {
+    public CardGUI() {
         initComponents();
         this.setContentPane(panel1);
         this.pack();
@@ -23,8 +23,8 @@ public class GUI extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - godieina fire
-        panel1 = new JPanel();
+        // Generated using JFormDesigner Evaluation license - Barry Chuckle
+        JPanel panel1 = new JPanel();
         btnMagnetic = new JButton();
         btnContactless = new JButton();
         btnBarcode = new JButton();
@@ -71,7 +71,7 @@ public class GUI extends JFrame {
                             .addGroup(panel1Layout.createSequentialGroup()
                                 .addGap(147, 147, 147)
                                 .addComponent(lblCard)))
-                        .addContainerGap(160, Short.MAX_VALUE))
+                        .addContainerGap(148, Short.MAX_VALUE))
             );
             panel1Layout.setVerticalGroup(
                 panel1Layout.createParallelGroup()
@@ -84,14 +84,14 @@ public class GUI extends JFrame {
                         .addComponent(btnContactless)
                         .addGap(34, 34, 34)
                         .addComponent(btnBarcode)
-                        .addContainerGap(89, Short.MAX_VALUE))
+                        .addContainerGap(133, Short.MAX_VALUE))
             );
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - godieina fire
+    // Generated using JFormDesigner Evaluation license - Barry Chuckle
     private JButton btnMagnetic;
     private JButton btnContactless;
     private JButton btnBarcode;
