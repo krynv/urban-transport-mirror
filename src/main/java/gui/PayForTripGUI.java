@@ -5,7 +5,7 @@ import java.awt.event.*;
 import java.time.LocalDateTime;
 import javax.swing.*;
 import javax.swing.event.*;
-import com.jgoodies.forms.layout.*;
+import logic.*;
 
 public class PayForTripGUI extends JFrame {
 
@@ -17,11 +17,14 @@ public class PayForTripGUI extends JFrame {
 
         this.setLocationRelativeTo(null);
         this.setContentPane(pnlMain);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // TODO: revert back to initial 'GUI'
         this.setTitle("Home");
         setAllToFalse();
         pnlHome.setVisible(true);
         this.pack();
     }
+
+    /* ----- Main Menu ----- */
 
     private void btnSelectLanguageActionPerformed(ActionEvent e) {
         setAllToFalse();
@@ -47,9 +50,11 @@ public class PayForTripGUI extends JFrame {
         this.setTitle("Home");
     }
 
-    private void setAllToFalse() {
-        pnlSelectLanguage.setVisible(false);
+    private void setAllToFalse() { // contains all of the panels set to false
+        pnlConfirmBooking.setVisible(false);
+        pnlSearchedFares.setVisible(false);
         pnlSelectFares.setVisible(false);
+        pnlSelectLanguage.setVisible(false);
         pnlHome.setVisible(false);
     }
 
@@ -68,26 +73,31 @@ public class PayForTripGUI extends JFrame {
     }
 
     private void btnLoadLanguageActionPerformed(ActionEvent e) {
-        if (languageButtonPressed != null) { // user has actually chosen something
-            loadLanguageFile(languageButtonPressed);
-            pnlSelectLanguage.setVisible(false);
-            pnlHome.setVisible(true);
-            this.setTitle("Home");
-        }
-        else { // default to english
+        if (languageButtonPressed == null) { // default to english
             languageButtonPressed = "English";
-            loadLanguageFile(languageButtonPressed);
-            pnlSelectLanguage.setVisible(false);
-            pnlHome.setVisible(true);
-            this.setTitle("Home");
         }
+
+        loadLanguageFile(languageButtonPressed);
+        pnlSelectLanguage.setVisible(false);
+        pnlHome.setVisible(true);
+        this.setTitle("Home");
     }
+
+    /* ----- Select Fares ----- */
 
     private void searchActionPerformed(ActionEvent e) {
         LocalDateTime departureDateTime = LocalDateTime.of(2018,2,4,12,0);
         LocalDateTime arrivalDateTime = LocalDateTime.of(2018,2,4,13,0);
 
+        RouteRegistry routeRegistry = new RouteRegistry();
+        routeRegistry.getRoutes(new Location(1), new Location(2), departureDateTime, arrivalDateTime);
 
+        FaresStructures faresStructures = new FaresStructures();
+        faresStructures.getRouteCost(routeRegistry, departureDateTime, arrivalDateTime);
+
+        setAllToFalse();
+        pnlSearchedFares.setVisible(true);
+        this.setTitle("Searched Fares");
     }
 
     private void ckbxOneWayStateChanged(ChangeEvent e) {
@@ -98,6 +108,27 @@ public class PayForTripGUI extends JFrame {
             dpdnReturn.setEnabled(true);
         }
     }
+
+    /* ----- Searched Fares ----- */
+
+    private void btnFare1ActionPerformed(ActionEvent e) {
+        setAllToFalse();
+        pnlSearchedFares.setVisible(true);
+        this.setTitle("Searched Fares");
+    }
+
+    /* ----- Confirm Booking ----- */
+
+    private void button1ActionPerformed(ActionEvent e) {
+        // TODO add your code here
+    }
+
+    private void couponTextFieldKeyTyped(KeyEvent e) {
+        // TODO add your code here
+    }
+
+
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
@@ -135,6 +166,26 @@ public class PayForTripGUI extends JFrame {
         lblDepartureDateTime = new JLabel();
         lblReturnDateTime = new JLabel();
         lblDestination = new JLabel();
+        pnlSearchedFares = new JPanel();
+        btnFare3 = new JButton();
+        btnFare1 = new JButton();
+        btnFare2 = new JButton();
+        pnlConfirmBooking = new JPanel();
+        advanceButton = new JButton();
+        couponTextField = new JTextField();
+        couponCodeLabel = new JLabel();
+        cardCheckBox = new JCheckBox();
+        cashCheckBox = new JCheckBox();
+        paymentMethodLabel = new JLabel();
+        ticketTypeLabel = new JLabel();
+        priceLabel = new JLabel();
+        ticketInformationLabel = new JLabel();
+        couponVerificationLabel = new JLabel();
+        viaLocationsLabel = new JLabel();
+        departureDateAndTimeLabel = new JLabel();
+        returnDateAndTimeLabel = new JLabel();
+        destinationLabel = new JLabel();
+        stationLabel = new JLabel();
 
         //======== pnlMain ========
         {
@@ -411,6 +462,203 @@ public class PayForTripGUI extends JFrame {
                         );
                     }
                     pnlContent.add(pnlSelectFares, "card3");
+
+                    //======== pnlSearchedFares ========
+                    {
+
+                        //---- btnFare3 ----
+                        btnFare3.setText("<html>\nDestination <br>\nDeparture Date/Time <br>\nReturn Date/Time <br>\nPRICE\n</html>");
+                        btnFare3.setHorizontalAlignment(SwingConstants.TRAILING);
+                        btnFare3.setFont(new Font(".SF NS Text", Font.PLAIN, 11));
+
+                        //---- btnFare1 ----
+                        btnFare1.setText("<html>\nDestination <br>\nDeparture Date/Time <br>\nReturn Date/Time <br>\nPRICE\n</html>");
+                        btnFare1.setHorizontalAlignment(SwingConstants.TRAILING);
+                        btnFare1.setFont(new Font(".SF NS Text", Font.PLAIN, 11));
+                        btnFare1.addActionListener(e -> btnFare1ActionPerformed(e));
+
+                        //---- btnFare2 ----
+                        btnFare2.setText("<html>\nDestination <br>\nDeparture Date/Time <br>\nReturn Date/Time <br>\nPRICE\n</html>");
+                        btnFare2.setHorizontalAlignment(SwingConstants.TRAILING);
+                        btnFare2.setFont(new Font(".SF NS Text", Font.PLAIN, 11));
+
+                        GroupLayout pnlSearchedFaresLayout = new GroupLayout(pnlSearchedFares);
+                        pnlSearchedFares.setLayout(pnlSearchedFaresLayout);
+                        pnlSearchedFaresLayout.setHorizontalGroup(
+                            pnlSearchedFaresLayout.createParallelGroup()
+                                .addGroup(pnlSearchedFaresLayout.createSequentialGroup()
+                                    .addGap(116, 116, 116)
+                                    .addGroup(pnlSearchedFaresLayout.createParallelGroup()
+                                        .addGroup(pnlSearchedFaresLayout.createSequentialGroup()
+                                            .addComponent(btnFare1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(30, 30, 30)
+                                            .addComponent(btnFare2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(btnFare3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                    .addContainerGap(123, Short.MAX_VALUE))
+                        );
+                        pnlSearchedFaresLayout.setVerticalGroup(
+                            pnlSearchedFaresLayout.createParallelGroup()
+                                .addGroup(pnlSearchedFaresLayout.createSequentialGroup()
+                                    .addGap(141, 141, 141)
+                                    .addGroup(pnlSearchedFaresLayout.createParallelGroup()
+                                        .addComponent(btnFare1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnFare2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                    .addGap(6, 6, 6)
+                                    .addComponent(btnFare3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addContainerGap(167, Short.MAX_VALUE))
+                        );
+                    }
+                    pnlContent.add(pnlSearchedFares, "card4");
+
+                    //======== pnlConfirmBooking ========
+                    {
+
+                        //---- advanceButton ----
+                        advanceButton.setText("Advance");
+                        advanceButton.addActionListener(e -> button1ActionPerformed(e));
+
+                        //---- couponTextField ----
+                        couponTextField.addKeyListener(new KeyAdapter() {
+                            @Override
+                            public void keyTyped(KeyEvent e) {
+                                couponTextFieldKeyTyped(e);
+                            }
+                        });
+
+                        //---- couponCodeLabel ----
+                        couponCodeLabel.setText("Coupon Code");
+                        couponCodeLabel.setLabelFor(couponTextField);
+
+                        //---- cardCheckBox ----
+                        cardCheckBox.setText("CARD");
+
+                        //---- cashCheckBox ----
+                        cashCheckBox.setText("CASH");
+
+                        //---- paymentMethodLabel ----
+                        paymentMethodLabel.setText("Payment Method");
+
+                        //---- ticketTypeLabel ----
+                        ticketTypeLabel.setText("Ticket Type");
+
+                        //---- priceLabel ----
+                        priceLabel.setText("Price");
+
+                        //---- ticketInformationLabel ----
+                        ticketInformationLabel.setText("Ticket Information");
+
+                        //---- couponVerificationLabel ----
+                        couponVerificationLabel.setToolTipText("Coupon Validity Check");
+                        couponVerificationLabel.setHorizontalAlignment(SwingConstants.CENTER);
+
+                        //---- viaLocationsLabel ----
+                        viaLocationsLabel.setText("Via Locations");
+
+                        //---- departureDateAndTimeLabel ----
+                        departureDateAndTimeLabel.setText("Departure Date/Time");
+
+                        //---- returnDateAndTimeLabel ----
+                        returnDateAndTimeLabel.setText("Return Date/Time");
+
+                        //---- destinationLabel ----
+                        destinationLabel.setText("Destination");
+
+                        //---- stationLabel ----
+                        stationLabel.setText("Station");
+
+                        GroupLayout pnlConfirmBookingLayout = new GroupLayout(pnlConfirmBooking);
+                        pnlConfirmBooking.setLayout(pnlConfirmBookingLayout);
+                        pnlConfirmBookingLayout.setHorizontalGroup(
+                            pnlConfirmBookingLayout.createParallelGroup()
+                                .addGroup(pnlConfirmBookingLayout.createParallelGroup()
+                                    .addGroup(pnlConfirmBookingLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGroup(pnlConfirmBookingLayout.createParallelGroup()
+                                            .addGroup(pnlConfirmBookingLayout.createSequentialGroup()
+                                                .addGap(160, 160, 160)
+                                                .addComponent(stationLabel)
+                                                .addGap(6, 6, 6)
+                                                .addComponent(destinationLabel))
+                                            .addGroup(pnlConfirmBookingLayout.createSequentialGroup()
+                                                .addGap(92, 92, 92)
+                                                .addComponent(departureDateAndTimeLabel, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, 0)
+                                                .addComponent(returnDateAndTimeLabel))
+                                            .addGroup(pnlConfirmBookingLayout.createSequentialGroup()
+                                                .addGap(179, 179, 179)
+                                                .addComponent(viaLocationsLabel))
+                                            .addGroup(pnlConfirmBookingLayout.createSequentialGroup()
+                                                .addGap(153, 153, 153)
+                                                .addComponent(couponVerificationLabel, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(ticketInformationLabel)
+                                            .addGroup(pnlConfirmBookingLayout.createSequentialGroup()
+                                                .addGap(8, 8, 8)
+                                                .addComponent(ticketTypeLabel)
+                                                .addGap(60, 60, 60)
+                                                .addComponent(priceLabel))
+                                            .addGroup(pnlConfirmBookingLayout.createSequentialGroup()
+                                                .addGap(8, 8, 8)
+                                                .addComponent(paymentMethodLabel, GroupLayout.PREFERRED_SIZE, 112, GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(pnlConfirmBookingLayout.createSequentialGroup()
+                                                .addGap(31, 31, 31)
+                                                .addComponent(cashCheckBox))
+                                            .addGroup(pnlConfirmBookingLayout.createSequentialGroup()
+                                                .addGap(31, 31, 31)
+                                                .addComponent(cardCheckBox))
+                                            .addGroup(pnlConfirmBookingLayout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addComponent(couponCodeLabel))
+                                            .addGroup(pnlConfirmBookingLayout.createSequentialGroup()
+                                                .addGap(6, 6, 6)
+                                                .addComponent(couponTextField, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE)
+                                                .addGap(256, 256, 256)
+                                                .addComponent(advanceButton)))
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(0, 545, Short.MAX_VALUE)
+                        );
+                        pnlConfirmBookingLayout.setVerticalGroup(
+                            pnlConfirmBookingLayout.createParallelGroup()
+                                .addGroup(pnlConfirmBookingLayout.createParallelGroup()
+                                    .addGroup(pnlConfirmBookingLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGroup(pnlConfirmBookingLayout.createParallelGroup()
+                                            .addComponent(stationLabel)
+                                            .addComponent(destinationLabel))
+                                        .addGap(6, 6, 6)
+                                        .addGroup(pnlConfirmBookingLayout.createParallelGroup()
+                                            .addComponent(departureDateAndTimeLabel, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(pnlConfirmBookingLayout.createSequentialGroup()
+                                                .addGap(4, 4, 4)
+                                                .addComponent(returnDateAndTimeLabel)))
+                                        .addGap(6, 6, 6)
+                                        .addComponent(viaLocationsLabel)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(couponVerificationLabel, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
+                                        .addGap(23, 23, 23)
+                                        .addComponent(ticketInformationLabel)
+                                        .addGap(12, 12, 12)
+                                        .addGroup(pnlConfirmBookingLayout.createParallelGroup()
+                                            .addComponent(ticketTypeLabel)
+                                            .addComponent(priceLabel))
+                                        .addGap(6, 6, 6)
+                                        .addComponent(paymentMethodLabel)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(cashCheckBox)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(cardCheckBox)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(couponCodeLabel)
+                                        .addGap(6, 6, 6)
+                                        .addGroup(pnlConfirmBookingLayout.createParallelGroup()
+                                            .addGroup(pnlConfirmBookingLayout.createSequentialGroup()
+                                                .addGap(4, 4, 4)
+                                                .addComponent(couponTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(advanceButton))
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(0, 458, Short.MAX_VALUE)
+                        );
+                    }
+                    pnlContent.add(pnlConfirmBooking, "card5");
                 }
 
                 GroupLayout pnlSideLayout = new GroupLayout(pnlSide);
@@ -485,5 +733,25 @@ public class PayForTripGUI extends JFrame {
     private JLabel lblDepartureDateTime;
     private JLabel lblReturnDateTime;
     private JLabel lblDestination;
+    private JPanel pnlSearchedFares;
+    private JButton btnFare3;
+    private JButton btnFare1;
+    private JButton btnFare2;
+    private JPanel pnlConfirmBooking;
+    private JButton advanceButton;
+    private JTextField couponTextField;
+    private JLabel couponCodeLabel;
+    private JCheckBox cardCheckBox;
+    private JCheckBox cashCheckBox;
+    private JLabel paymentMethodLabel;
+    private JLabel ticketTypeLabel;
+    private JLabel priceLabel;
+    private JLabel ticketInformationLabel;
+    private JLabel couponVerificationLabel;
+    private JLabel viaLocationsLabel;
+    private JLabel departureDateAndTimeLabel;
+    private JLabel returnDateAndTimeLabel;
+    private JLabel destinationLabel;
+    private JLabel stationLabel;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

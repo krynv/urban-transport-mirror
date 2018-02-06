@@ -167,6 +167,104 @@ new FormModel {
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card3"
 					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {seq l {space :p:116:p, par l {seq l {comp btnFare1:::p::p, space :30:30:p, comp btnFare2:::p::p}, comp btnFare3:::p::p}, space ::123:x}}"
+						"$verticalGroup": "par l {seq l {space :p:141:p, par l {comp btnFare1:::p::p, comp btnFare2:::p::p}, space :6:6:p, comp btnFare3:::p::p, space ::167:x}}"
+					} ) {
+						name: "pnlSearchedFares"
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnFare3"
+							"text": "<html>\nDestination <br>\nDeparture Date/Time <br>\nReturn Date/Time <br>\nPRICE\n</html>"
+							"horizontalAlignment": 11
+							"font": &Font1 new java.awt.Font( ".SF NS Text", 0, 11 )
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnFare1"
+							"text": "<html>\nDestination <br>\nDeparture Date/Time <br>\nReturn Date/Time <br>\nPRICE\n</html>"
+							"horizontalAlignment": 11
+							"font": #Font1
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnFare1ActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnFare2"
+							"text": "<html>\nDestination <br>\nDeparture Date/Time <br>\nReturn Date/Time <br>\nPRICE\n</html>"
+							"horizontalAlignment": 11
+							"font": #Font1
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "card4"
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {space :0:545:x};par l {seq {space :0:0:x, par l {seq {space :160:160:p, comp stationLabel:::p::p, space :6:6:p, comp destinationLabel:::p::p}, seq {space :92:92:p, comp departureDateAndTimeLabel:::p:135:p, space :0:0:p, comp returnDateAndTimeLabel:::p::p}, seq {space :179:179:p, comp viaLocationsLabel:::p::p}, seq {space :153:153:p, comp couponVerificationLabel:::p:137:p}, comp ticketInformationLabel:::p::p, seq {space :8:8:p, comp ticketTypeLabel:::p::p, space :60:60:p, comp priceLabel:::p::p}, seq {space :8:8:p, comp paymentMethodLabel:::p:112:p}, seq {space :31:31:p, comp cashCheckBox:::p::p}, seq {space :31:31:p, comp cardCheckBox:::p::p}, seq {space :6:6:p, comp couponCodeLabel:::p::p}, seq {space :6:6:p, comp couponTextField:::p:85:p, space :256:256:p, comp advanceButton:::p::p}}, space :0:0:x}}"
+						"$verticalGroup": "par l {space :0:458:x};par l {seq {space :0:0:x, par l {comp stationLabel:::p::p, comp destinationLabel:::p::p}, space :6:6:p, par l {comp departureDateAndTimeLabel:::p:24:p, seq {space :4:4:p, comp returnDateAndTimeLabel:::p::p}}, space :6:6:p, comp viaLocationsLabel:::p::p, space :6:6:p, comp couponVerificationLabel:::p:18:p, space :23:23:p, comp ticketInformationLabel:::p::p, space :12:12:p, par l {comp ticketTypeLabel:::p::p, comp priceLabel:::p::p}, space :6:6:p, comp paymentMethodLabel:::p::p, space :6:6:p, comp cashCheckBox:::p::p, space :6:6:p, comp cardCheckBox:::p::p, space :6:6:p, comp couponCodeLabel:::p::p, space :6:6:p, par l {seq {space :4:4:p, comp couponTextField:::p::p}, comp advanceButton:::p::p}, space :0:0:x}}"
+					} ) {
+						name: "pnlConfirmBooking"
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "advanceButton"
+							"text": "Advance"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1ActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "couponTextField"
+							addEvent( new FormEvent( "java.awt.event.KeyListener", "keyTyped", "couponTextFieldKeyTyped", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "couponCodeLabel"
+							"text": "Coupon Code"
+							"labelFor": new FormReference( "couponTextField" )
+						} )
+						add( new FormComponent( "javax.swing.JCheckBox" ) {
+							name: "cardCheckBox"
+							"text": "CARD"
+						} )
+						add( new FormComponent( "javax.swing.JCheckBox" ) {
+							name: "cashCheckBox"
+							"text": "CASH"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "paymentMethodLabel"
+							"text": "Payment Method"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "ticketTypeLabel"
+							"text": "Ticket Type"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "priceLabel"
+							"text": "Price"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "ticketInformationLabel"
+							"text": "Ticket Information"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "couponVerificationLabel"
+							"toolTipText": "Coupon Validity Check"
+							"horizontalAlignment": 0
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "viaLocationsLabel"
+							"text": "Via Locations"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "departureDateAndTimeLabel"
+							"text": "Departure Date/Time"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "returnDateAndTimeLabel"
+							"text": "Return Date/Time"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "destinationLabel"
+							"text": "Destination"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "stationLabel"
+							"text": "Station"
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "card5"
+					} )
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "card2"
