@@ -111,6 +111,62 @@ new FormModel {
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card1"
 					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {space :0:545:x};par l {seq {space :0:0:x, par l {seq {space :112:112:p, comp lblDestination:::p::p}, seq {comp lblDepartureDateTime:::p::p, space :63:63:p, comp lblReturnDateTime:::p:126:p}, seq {comp dpdnDeparture:::p:126:p, space :63:63:p, comp dpdnReturn:::p:126:p}, comp lblTicketType:::p::p, comp ckbxOneWay:::p:102:p, comp ckbxReturn:::p:102:p, seq {comp ckbxOpenReturn:::p::p, space :191:191:p, comp btnSearch:::p::p}}, space :0:0:x}}"
+						"$verticalGroup": "par l {space :0:458:x};par l {seq {space :0:0:x, comp lblDestination:::p::p, space :28:28:p, par l {comp lblDepartureDateTime:::p:26:p, comp lblReturnDateTime:::p:26:p}, space :6:6:p, par l {comp dpdnDeparture:::p::p, comp dpdnReturn:::p::p}, space :17:17:p, comp lblTicketType:::p::p, space :6:6:p, comp ckbxOneWay:::p::p, space :6:6:p, comp ckbxReturn:::p::p, space :6:6:p, par l {comp ckbxOpenReturn:::p::p, seq {space :6:6:p, comp btnSearch:::p::p}}, space :0:0:x}}"
+					} ) {
+						name: "pnlSelectFares"
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnSearch"
+							"text": "Search"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "searchActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JCheckBox" ) {
+							name: "ckbxOpenReturn"
+							"text": "Open Return"
+						} )
+						add( new FormComponent( "javax.swing.JCheckBox" ) {
+							name: "ckbxReturn"
+							"text": "Return"
+						} )
+						add( new FormComponent( "javax.swing.JCheckBox" ) {
+							name: "ckbxOneWay"
+							"text": "One Way"
+							addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "ckbxOneWayStateChanged", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblTicketType"
+							"text": "Ticket Type"
+						} )
+						add( new FormComponent( "javax.swing.JComboBox" ) {
+							name: "dpdnDeparture"
+							"model": new javax.swing.DefaultComboBoxModel {
+								selectedItem: "12:00"
+								addElement( "12:00" )
+							}
+						} )
+						add( new FormComponent( "javax.swing.JComboBox" ) {
+							name: "dpdnReturn"
+							"model": new javax.swing.DefaultComboBoxModel {
+								selectedItem: "13:00"
+								addElement( "13:00" )
+							}
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblDepartureDateTime"
+							"text": "Departure Date/Time"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblReturnDateTime"
+							"text": "Return Date/Time"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblDestination"
+							"text": "London"
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "card3"
+					} )
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "card2"
