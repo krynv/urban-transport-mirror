@@ -401,6 +401,20 @@ new FormModel {
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card7"
 					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {space :0:545:x};par l {seq {space :0:0:x, comp scrollPane:::p:472:p, space :0:0:x}}"
+						"$verticalGroup": "par l {space :0:458:x};par l {seq {space :0:0:x, comp scrollPane:::p:281:p, space :0:0:x}}"
+					} ) {
+						name: "pnlTimetable"
+						add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+							name: "scrollPane"
+							add( new FormComponent( "javax.swing.JTable" ) {
+								name: "tblTicket"
+							} )
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "card8"
+					} )
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "card2"

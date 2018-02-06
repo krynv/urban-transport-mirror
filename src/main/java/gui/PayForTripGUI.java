@@ -51,6 +51,8 @@ public class PayForTripGUI extends JFrame {
     }
 
     private void setAllToFalse() { // contains all of the panels set to false
+        pnlTimetable.setVisible(false);
+        pnlCardTicketPayment.setVisible(false);
         pnlCashTicketPayment.setVisible(false);
         pnlConfirmBooking.setVisible(false);
         pnlSearchedFares.setVisible(false);
@@ -270,6 +272,9 @@ public class PayForTripGUI extends JFrame {
         lblReturnDateTimeCardPayment = new JLabel();
         lblDestinationCardPayment = new JLabel();
         lblStationCardPayment = new JLabel();
+        pnlTimetable = new JPanel();
+        scrollPane = new JScrollPane();
+        tblTicket = new JTable();
 
         //======== pnlMain ========
         {
@@ -1004,6 +1009,37 @@ public class PayForTripGUI extends JFrame {
                         );
                     }
                     pnlContent.add(pnlCardTicketPayment, "card7");
+
+                    //======== pnlTimetable ========
+                    {
+
+                        //======== scrollPane ========
+                        {
+                            scrollPane.setViewportView(tblTicket);
+                        }
+
+                        GroupLayout pnlTimetableLayout = new GroupLayout(pnlTimetable);
+                        pnlTimetable.setLayout(pnlTimetableLayout);
+                        pnlTimetableLayout.setHorizontalGroup(
+                            pnlTimetableLayout.createParallelGroup()
+                                .addGroup(pnlTimetableLayout.createParallelGroup()
+                                    .addGroup(pnlTimetableLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 472, GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(0, 545, Short.MAX_VALUE)
+                        );
+                        pnlTimetableLayout.setVerticalGroup(
+                            pnlTimetableLayout.createParallelGroup()
+                                .addGroup(pnlTimetableLayout.createParallelGroup()
+                                    .addGroup(pnlTimetableLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 281, GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGap(0, 458, Short.MAX_VALUE)
+                        );
+                    }
+                    pnlContent.add(pnlTimetable, "card8");
                 }
 
                 GroupLayout pnlSideLayout = new GroupLayout(pnlSide);
@@ -1128,5 +1164,8 @@ public class PayForTripGUI extends JFrame {
     private JLabel lblReturnDateTimeCardPayment;
     private JLabel lblDestinationCardPayment;
     private JLabel lblStationCardPayment;
+    private JPanel pnlTimetable;
+    private JScrollPane scrollPane;
+    private JTable tblTicket;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
