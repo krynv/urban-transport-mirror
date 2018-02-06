@@ -10,13 +10,15 @@ public class GUI extends JFrame {
         initComponents();
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null);
         this.setContentPane(pnlGUI);
         this.pack();
     }
 
     private void btnPayOnExitActionPerformed(ActionEvent e) {
         System.out.println("Pay on exit");
+
+        this.setVisible(false);
+        new PayOnExitGUI().setVisible(true);
     }
 
     private void btnPayForTripActionPerformed(ActionEvent e) {
