@@ -206,7 +206,7 @@ new FormModel {
 						} )
 						add( new FormComponent( "javax.swing.JTextField" ) {
 							name: "txtCouponCode"
-							addEvent( new FormEvent( "java.awt.event.InputMethodListener", "inputMethodTextChanged", "txtCouponCodeInputMethodTextChanged", true ) )
+							addEvent( new FormEvent( "java.awt.event.KeyListener", "keyPressed", "txtCouponCodeKeyPressed", true ) )
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblCouponCode"

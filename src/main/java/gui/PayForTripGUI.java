@@ -116,7 +116,7 @@ public class PayForTripGUI extends JFrame {
 
     private void btnFare1ActionPerformed(ActionEvent e) {
         setAllToFalse();
-        pnlSearchedFares.setVisible(true);
+        pnlConfirmBooking.setVisible(true);
         this.setTitle("Searched Fares");
     }
 
@@ -135,7 +135,7 @@ public class PayForTripGUI extends JFrame {
         }
     }
 
-    private void txtCouponCodeInputMethodTextChanged(InputMethodEvent e) {
+    private void txtCouponCodeKeyPressed(KeyEvent e) {
         changed();
     }
 
@@ -607,12 +607,10 @@ public class PayForTripGUI extends JFrame {
                         btnAdvance.addActionListener(e -> btnAdvanceActionPerformed(e));
 
                         //---- txtCouponCode ----
-                        txtCouponCode.addInputMethodListener(new InputMethodListener() {
+                        txtCouponCode.addKeyListener(new KeyAdapter() {
                             @Override
-                            public void caretPositionChanged(InputMethodEvent e) {}
-                            @Override
-                            public void inputMethodTextChanged(InputMethodEvent e) {
-                                txtCouponCodeInputMethodTextChanged(e);
+                            public void keyPressed(KeyEvent e) {
+                                txtCouponCodeKeyPressed(e);
                             }
                         });
 
