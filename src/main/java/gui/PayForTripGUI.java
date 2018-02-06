@@ -186,6 +186,46 @@ public class PayForTripGUI extends JFrame {
         lblPaymentValidate.setText("PAYMENT SUCCESSFUL");
     }
 
+    public void resetAllInteractiveElements() {
+        lblPaymentInformationCardPayment.setVisible(true);
+        lblTicketTypeCardPayment.setVisible(true);
+        lblPriceCardPayment.setVisible(true);
+        lblCardName.setVisible(true);
+        lblCardNumber.setVisible(true);
+        lblSecurityCode.setVisible(true);
+        txtCardName.setVisible(true);
+        txtCardNumber.setVisible(true);
+        txtSecurityCode.setVisible(true);
+        btnConfirmPayment.setVisible(true);
+
+        btnPrintTicket.setVisible(false);
+        lblPaymentValidate.setVisible(false);
+
+        txtSecurityCode.setText("");
+        txtCardNumber.setText("");
+        txtCardName.setText("");
+        txtCouponCode.setText("");
+
+        ckbxCash.setSelected(false);
+        ckbxOneWay.setSelected(false);
+        ckbxCard.setSelected(false);
+        ckbxOpenReturn.setSelected(false);
+        ckbxReturn.setSelected(false);
+
+        lblCouponVerification.setText("");
+        lblCouponVerification.setOpaque(false);
+        lblPaymentValidate.setText("");
+        lblPaymentValidate.setOpaque(false);
+
+    }
+
+    private void btnPrintTicketActionPerformed(ActionEvent e) {
+        resetAllInteractiveElements();
+        setAllToFalse();
+        pnlHome.setVisible(true);
+        this.setTitle("Home");
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Barry Chuckle
@@ -861,6 +901,7 @@ public class PayForTripGUI extends JFrame {
 
                         //---- btnPrintTicket ----
                         btnPrintTicket.setText("PRINT TICKET");
+                        btnPrintTicket.addActionListener(e -> btnPrintTicketActionPerformed(e));
 
                         //---- btnConfirmPayment ----
                         btnConfirmPayment.setText("Confirm Payment");

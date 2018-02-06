@@ -330,6 +330,7 @@ new FormModel {
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnPrintTicket"
 							"text": "PRINT TICKET"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnPrintTicketActionPerformed", true ) )
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnConfirmPayment"
