@@ -11,7 +11,7 @@ public class PayOnExitGUI extends JFrame {
     private GateController gateController;
 
     public PayOnExitGUI() {
-        tokenReader = new TokenReader(0);
+        tokenReader = new TokenReader(0, new Location("0"));
         gateController = new GateController();
 
         initComponents();

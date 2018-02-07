@@ -10,9 +10,21 @@ public class Journey {
     private Location startLocation;
     private Location endLocation;
 
+    public Journey(LocalDateTime startDateTime, Location startLocation, LocalDateTime endDateTime, Location endLocation, double distance) {
+        this.startDateTime = startDateTime;
+        this.startLocation = startLocation;
+        this.endDateTime = endDateTime;
+        this.endLocation = endLocation;
+        this.distance = distance;
+    }
+
     public Journey(LocalDateTime startDateTime, Location startLocation) {
         this.startDateTime = startDateTime;
         this.startLocation = startLocation;
+    }
+
+    public LocalDateTime getEndDateTime() {
+        return endDateTime;
     }
 
     public Boolean isOpen() {
@@ -20,6 +32,19 @@ public class Journey {
     }
 
     public void closeJourney(LocalDateTime endDateTime, Location endLocation) {
+        this.endDateTime = endDateTime;
+        this.endLocation = endLocation;
+        distance = 100.0;
+    }
 
+    @Override
+    public String toString() {
+        return "Journey{" +
+                "startDateTime=" + startDateTime +
+                ", endDateTime=" + endDateTime +
+                ", distance=" + distance +
+                ", startLocation=" + startLocation +
+                ", endLocation=" + endLocation +
+                '}';
     }
 }
