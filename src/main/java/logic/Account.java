@@ -43,6 +43,10 @@ public class Account {
         }
         else {
             System.out.println("Not Covered");
+
+            FareRegistry fares = new FareRegistry();
+
+            double journeyCost = fares.calculateCostOfJourney(openJourney);
         }
     }
 
