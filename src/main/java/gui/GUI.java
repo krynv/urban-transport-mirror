@@ -1,8 +1,11 @@
 package gui;
 
-import java.awt.*;
-import java.awt.event.*;
+import org.json.simple.parser.ParseException;
+
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 public class GUI extends JFrame {
 
@@ -26,8 +29,9 @@ public class GUI extends JFrame {
         this.setVisible(false);
     }
 
-    private void btnViewReportActionPerformed(ActionEvent e) {
-        System.out.println("View report");
+    private void btnViewReportActionPerformed(ActionEvent e) throws IOException, ParseException {
+        new LoginRegisterGUI().setVisible(true);
+        this.setVisible(false);
     }
 
     private void initComponents() {
@@ -67,7 +71,15 @@ public class GUI extends JFrame {
                 //---- btnViewReport ----
                 btnViewReport.setText("View report");
                 btnViewReport.setPreferredSize(new Dimension(150, 60));
-                btnViewReport.addActionListener(e -> btnViewReportActionPerformed(e));
+                btnViewReport.addActionListener(e -> {
+                    try {
+                        btnViewReportActionPerformed(e);
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    } catch (ParseException e1) {
+                        e1.printStackTrace();
+                    }
+                });
 
                 GroupLayout pnlSelectOptionLayout = new GroupLayout(pnlSelectOption);
                 pnlSelectOption.setLayout(pnlSelectOptionLayout);
