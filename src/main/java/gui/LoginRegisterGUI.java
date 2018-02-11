@@ -183,7 +183,15 @@ public class LoginRegisterGUI  extends JFrame {
 
                 //---- loginBut ----
                 loginBut.setText("Login");
-                loginBut.addActionListener(e -> loginButActionPerformed(e));
+                loginBut.addActionListener(e -> {
+                    try {
+                        loginButActionPerformed(e);
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    } catch (ParseException e1) {
+                        e1.printStackTrace();
+                    }
+                });
 
                 //---- cancelBut2 ----
                 cancelBut2.setText("Cancel");
@@ -319,7 +327,15 @@ public class LoginRegisterGUI  extends JFrame {
 
                 //---- submitRegBut ----
                 submitRegBut.setText("Submit");
-                submitRegBut.addActionListener(e -> submitRegButActionPerformed(e));
+                submitRegBut.addActionListener(e -> {
+                    try {
+                        submitRegButActionPerformed(e);
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    } catch (ParseException e1) {
+                        e1.printStackTrace();
+                    }
+                });
 
                 //---- cancelRegBut ----
                 cancelRegBut.setText("Cancel");
