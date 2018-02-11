@@ -16,10 +16,11 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class LoginRegisterGUITest {
+public class LoginRegisterGUI {
 
     private EmployeeRegistry employeeRegistry;
     private Employee user;
+
     @Test
     public void aRegisterUserTest()  throws IOException, ParseException {
 
@@ -32,7 +33,7 @@ public class LoginRegisterGUITest {
         //JSON object and values
 
         jsonObject.put("username", "testing");
-        jsonObject.put("firstName", "test");
+        jsonObject.put("firstName", "EmployeeGUI");
         jsonObject.put("lastName", "ing");
         jsonObject.put("admin", true);
         String hashedPass = BCrypt.hashpw("password", BCrypt.gensalt(12));
@@ -77,7 +78,7 @@ public class LoginRegisterGUITest {
 
         System.out.println("DELETE USER TEST-------");
         JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader("src\\main\\java\\users.json"));
+        Object obj = parser.parse(new FileReader("./src/main/java/users.json"));
         JSONArray jsonArray = (JSONArray) obj;
 
         System.out.println("Finding the user - testing");
@@ -91,8 +92,7 @@ public class LoginRegisterGUITest {
             }
         }
         try {
-            FileWriter fileWriter;
-            fileWriter = new FileWriter("src\\main\\java\\users.json");
+            FileWriter fileWriter = new FileWriter("./src/main/java/users.json");
             fileWriter.write(jsonArray.toJSONString());
             fileWriter.flush();
         } catch (Exception e) {
