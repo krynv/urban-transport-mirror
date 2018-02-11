@@ -7,7 +7,7 @@ new FormModel {
 			name: "pnlGUI"
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 				"$horizontalGroup": "par l {seq t {space ::267:x, par l {comp btnPayOnExit:::p::p, comp btnPayForTrip:::p::p, comp btnViewReport::l:p::p}, space :p:263:p}}"
-				"$verticalGroup": "par l {seq l {space :p:149:p, comp btnPayOnExit:::p::p, space s:::p, comp btnPayForTrip:::p::p, space s:::p, comp btnViewReport:::p::p, space ::215:x}}"
+				"$verticalGroup": "par l {seq l {space :p:149:p, comp btnPayOnExit:::p::p, space s:::p, comp btnPayForTrip:::p::p, space u:::p, comp btnViewReport:::p::p, space ::221:x}}"
 			} ) {
 				name: "pnlSelectOption"
 				add( new FormComponent( "javax.swing.JButton" ) {

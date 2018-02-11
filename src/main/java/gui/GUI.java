@@ -1,7 +1,10 @@
 package gui;
 
+import org.json.simple.parser.ParseException;
+
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 import javax.swing.*;
 
 public class GUI extends JFrame {
@@ -26,13 +29,15 @@ public class GUI extends JFrame {
         this.setVisible(false);
     }
 
-    private void btnViewReportActionPerformed(ActionEvent e) {
+    private void btnViewReportActionPerformed(ActionEvent e) throws IOException, ParseException {
         System.out.println("View report");
+        new LoginRegisterGUI().setVisible(true);
+        this.setVisible(false);
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Barry Chuckle
+        // Generated using JFormDesigner Evaluation license - Benjamin Ward
         pnlGUI = new JPanel();
         pnlSelectOption = new JPanel();
         btnPayOnExit = new JButton();
@@ -67,7 +72,15 @@ public class GUI extends JFrame {
                 //---- btnViewReport ----
                 btnViewReport.setText("View report");
                 btnViewReport.setPreferredSize(new Dimension(150, 60));
-                btnViewReport.addActionListener(e -> btnViewReportActionPerformed(e));
+                btnViewReport.addActionListener(e -> {
+                    try {
+                        btnViewReportActionPerformed(e);
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    } catch (ParseException e1) {
+                        e1.printStackTrace();
+                    }
+                });
 
                 GroupLayout pnlSelectOptionLayout = new GroupLayout(pnlSelectOption);
                 pnlSelectOption.setLayout(pnlSelectOptionLayout);
@@ -88,9 +101,9 @@ public class GUI extends JFrame {
                             .addComponent(btnPayOnExit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(btnPayForTrip, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(btnViewReport, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap(215, Short.MAX_VALUE))
+                            .addContainerGap(221, Short.MAX_VALUE))
                 );
             }
             pnlGUI.add(pnlSelectOption, "card1");
@@ -99,7 +112,7 @@ public class GUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Barry Chuckle
+    // Generated using JFormDesigner Evaluation license - Benjamin Ward
     private JPanel pnlGUI;
     private JPanel pnlSelectOption;
     private JButton btnPayOnExit;
