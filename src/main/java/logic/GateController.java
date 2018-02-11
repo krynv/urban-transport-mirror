@@ -17,7 +17,7 @@ public class GateController {
     public void passTokenId(int tokenId) {
         token = tokenRegistry.getToken(tokenId);
         account = accountRegistry.getAccount(token.getAccountId());
-        account.processPassengerExit(new Location("0"), LocalDateTime.now());
+        account.processPassengerExit(new Location("1"), LocalDateTime.now());
     }
 
 }

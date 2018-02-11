@@ -14,6 +14,8 @@ public class FareRegistry {
     }};
 
     public double calculateCostOfJourney(Journey journey) {
-        return 0.0;
+        DistanceFare fare = (DistanceFare) fares.get(0);
+
+        return fare.calculateCostOfJourney(journey);
     }
 }

@@ -23,6 +23,14 @@ public class Journey {
         this.startLocation = startLocation;
     }
 
+    public Location getStartLocation() {
+        return startLocation;
+    }
+
+    public Location getEndLocation() {
+        return endLocation;
+    }
+
     public LocalDateTime getEndDateTime() {
         return endDateTime;
     }

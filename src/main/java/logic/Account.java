@@ -10,11 +10,13 @@ public class Account {
     private JourneyHistory journeyHistory;
     private Journey openJourney;
     private PassRegistry passes;
+    private double spentToday;
 
     public Account(String name, String id, double credits) {
         this.name = name;
         this.id = id;
         this.credits = credits;
+        this.spentToday = 10.0;
 
         this.journeyHistory = new JourneyHistory();
         this.passes = new PassRegistry();
@@ -47,6 +49,10 @@ public class Account {
             FareRegistry fares = new FareRegistry();
 
             double journeyCost = fares.calculateCostOfJourney(openJourney);
+
+            spentToday += journeyCost;
+
+            
         }
     }
 

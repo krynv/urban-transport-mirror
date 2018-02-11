@@ -36,10 +36,22 @@ public class DistanceFare extends Fare {
         trips.add(new Trip(new Location("0"), new Location("1"), 5.0));
         trips.add(new Trip(new Location("0"), new Location("2"), 7.5));
         trips.add(new Trip(new Location("1"), new Location("2"), 4.5));
+        trips.add(new Trip(new Location("0"), new Location("3"), 6.5));
+        trips.add(new Trip(new Location("3"), new Location("4"), 8.0));
+        trips.add(new Trip(new Location("4"), new Location("1"), 9.5));
     }
 
     public double calculateCostOfJourney(Journey journey) {
-        return 0;
+        double cost = 0.0;
+
+        for (Trip trip: trips) {
+            if (journey.getStartLocation().getId().equals(trip.getStart().getId()) &&
+                    journey.getEndLocation().getId().equals(trip.getEnd().getId())) {
+                cost = trip.getPrice();
+            }
+        }
+
+        return cost;
     }
 
 }
