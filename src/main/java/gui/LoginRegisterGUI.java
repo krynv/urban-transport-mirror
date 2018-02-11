@@ -38,7 +38,8 @@ public class LoginRegisterGUI  extends JFrame {
         lastNameField.setText("");
         regPasswordField.setText("");
         adminCheckBox.setSelected(false);
-        // TODO go to login screen
+        pnlLogin.setVisible(true);
+        pnlRegister.setVisible(false);
     }
 
     private void submitRegButActionPerformed(ActionEvent e) throws IOException, ParseException {
@@ -56,6 +57,8 @@ public class LoginRegisterGUI  extends JFrame {
         jsonArray.add(jsonObject);
         employeeRegistry.addEmployee(jsonArray);
 
+        pnlLogin.setVisible(true);
+        pnlRegister.setVisible(false);
     }
 
 
@@ -86,8 +89,8 @@ public class LoginRegisterGUI  extends JFrame {
 
         boolean loginSuccess = accountManager.login(userName, password);
         if (loginSuccess) {
-            // TODO go to other gui
-            System.out.println("hello");
+            new EmployeeGUI(userName).setVisible(true);
+            this.setVisible(false);
             this.counter = 0;
         }
 
@@ -106,6 +109,11 @@ public class LoginRegisterGUI  extends JFrame {
     private void regOpenButActionPerformed(ActionEvent e) {
         pnlLogin.setVisible(false);
         pnlRegister.setVisible(true);
+    }
+
+    private void btnMainGUIActionPerformed(ActionEvent e) {
+        pnlLogin.setVisible(false);
+        new GUI().setVisible(true);
     }
 
 
@@ -129,6 +137,7 @@ public class LoginRegisterGUI  extends JFrame {
         regOpenBut = new JButton();
         tooManyRetries = new JLabel();
         invalidCred = new JLabel();
+        btnMainGUI = new JButton();
         pnlRegister = new JPanel();
         label1 = new JLabel();
         label2 = new JLabel();
@@ -174,15 +183,7 @@ public class LoginRegisterGUI  extends JFrame {
 
                 //---- loginBut ----
                 loginBut.setText("Login");
-                loginBut.addActionListener(e -> {
-                    try {
-                        loginButActionPerformed(e);
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    } catch (ParseException e1) {
-                        e1.printStackTrace();
-                    }
-                });
+                loginBut.addActionListener(e -> loginButActionPerformed(e));
 
                 //---- cancelBut2 ----
                 cancelBut2.setText("Cancel");
@@ -217,13 +218,19 @@ public class LoginRegisterGUI  extends JFrame {
                 invalidCred.setForeground(Color.red);
                 invalidCred.setVisible(false);
 
+                //---- btnMainGUI ----
+                btnMainGUI.setText("Go Back To Main Page");
+                btnMainGUI.addActionListener(e -> btnMainGUIActionPerformed(e));
+
                 GroupLayout pnlLoginLayout = new GroupLayout(pnlLogin);
                 pnlLogin.setLayout(pnlLoginLayout);
                 pnlLoginLayout.setHorizontalGroup(
                     pnlLoginLayout.createParallelGroup()
                         .addGroup(pnlLoginLayout.createSequentialGroup()
                             .addContainerGap()
-                            .addComponent(successUserLogin)
+                            .addGroup(pnlLoginLayout.createParallelGroup()
+                                .addComponent(successUserLogin)
+                                .addComponent(btnMainGUI, GroupLayout.PREFERRED_SIZE, 152, GroupLayout.PREFERRED_SIZE))
                             .addGap(85, 85, 85)
                             .addGroup(pnlLoginLayout.createParallelGroup()
                                 .addGroup(pnlLoginLayout.createSequentialGroup()
@@ -259,26 +266,29 @@ public class LoginRegisterGUI  extends JFrame {
                                 .addComponent(unsuccessfulLogin)
                                 .addComponent(successLoginAdmin))
                             .addGap(91, 91, 91)
-                            .addComponent(label6)
-                            .addGap(26, 26, 26)
-                            .addComponent(invalidCred)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(label7)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(userField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(label8)
-                            .addGap(18, 18, 18)
-                            .addComponent(passField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addGap(26, 26, 26)
-                            .addComponent(tooManyRetries)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(loginBut)
-                            .addGap(18, 18, 18)
-                            .addComponent(cancelBut2)
-                            .addGap(18, 18, 18)
-                            .addComponent(regOpenBut)
-                            .addContainerGap(119, Short.MAX_VALUE))
+                            .addGroup(pnlLoginLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                .addGroup(pnlLoginLayout.createSequentialGroup()
+                                    .addComponent(label6)
+                                    .addGap(26, 26, 26)
+                                    .addComponent(invalidCred)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(label7)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(userField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(label8)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(passField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(44, 44, 44)
+                                    .addComponent(tooManyRetries)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(loginBut)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(cancelBut2)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(regOpenBut))
+                                .addComponent(btnMainGUI, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+                            .addContainerGap(101, Short.MAX_VALUE))
                 );
             }
             pnlMain.add(pnlLogin, "card2");
@@ -309,15 +319,7 @@ public class LoginRegisterGUI  extends JFrame {
 
                 //---- submitRegBut ----
                 submitRegBut.setText("Submit");
-                submitRegBut.addActionListener(e -> {
-                    try {
-                        submitRegButActionPerformed(e);
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    } catch (ParseException e1) {
-                        e1.printStackTrace();
-                    }
-                });
+                submitRegBut.addActionListener(e -> submitRegButActionPerformed(e));
 
                 //---- cancelRegBut ----
                 cancelRegBut.setText("Cancel");
@@ -424,6 +426,7 @@ public class LoginRegisterGUI  extends JFrame {
     private JButton regOpenBut;
     private JLabel tooManyRetries;
     private JLabel invalidCred;
+    private JButton btnMainGUI;
     private JPanel pnlRegister;
     private JLabel label1;
     private JLabel label2;

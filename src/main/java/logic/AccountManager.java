@@ -42,8 +42,6 @@ public class AccountManager {
     public Report viewReport(String name, LocalDateTime startDateTime, LocalDateTime endDateTime) {
         if (activeUser.isAdmin()) {
             Report report = reportRegistry.getReport(name, startDateTime, endDateTime);
-
-
             return report;
         }
 

@@ -76,8 +76,7 @@ public class GUI extends JFrame {
                     try {
                         btnViewReportActionPerformed(e);
                     } catch (IOException e1) {
-
-
+                        e1.printStackTrace();
                     } catch (ParseException e1) {
                         e1.printStackTrace();
                     }
