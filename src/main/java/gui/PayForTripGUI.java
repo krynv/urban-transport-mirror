@@ -10,6 +10,9 @@ import logic.*;
 public class PayForTripGUI extends JFrame {
 
     private String languageButtonPressed;
+    private RouteRegistry routeRegistry = new RouteRegistry();
+    private Coupon coupon = new Coupon("0", LocalDateTime.of(2018, 5, 1, 12, 0));
+    private String chosenTicketType = "Return ticket";
 
     public PayForTripGUI() {
 
@@ -89,14 +92,18 @@ public class PayForTripGUI extends JFrame {
     /* ----- Select Fares ----- */
 
     private void searchActionPerformed(ActionEvent e) {
-        LocalDateTime departureDateTime = LocalDateTime.of(2018,2,4,12,0);
-        LocalDateTime arrivalDateTime = LocalDateTime.of(2018,2,4,13,0);
 
-        RouteRegistry routeRegistry = new RouteRegistry();
+        LocalDateTime departureDateTime = LocalDateTime.of(2018, 2, 4, 12, 0);
+        LocalDateTime arrivalDateTime = LocalDateTime.of(2018, 2, 4, 13, 0);
+
         routeRegistry.getRoutes(new Location("0"), new Location("1"), departureDateTime, arrivalDateTime);
 
         FareRegistry fareRegistry = new FareRegistry();
         routeRegistry = fareRegistry.getRoutesCost(routeRegistry, departureDateTime, arrivalDateTime);
+
+        btnFare1.setText(routeRegistry.get(0).toString());
+        btnFare2.setText(routeRegistry.get(1).toString());
+        btnFare3.setText(routeRegistry.get(2).toString());
 
         setAllToFalse();
         pnlSearchedFares.setVisible(true);
@@ -115,16 +122,21 @@ public class PayForTripGUI extends JFrame {
     /* ----- Searched Fares ----- */
 
     private void btnFare1ActionPerformed(ActionEvent e) {
+        lblTicketTypeConfirmBooking.setText(chosenTicketType);
+        lblPrice.setText(Double.toString(routeRegistry.get(0).getCost()));
         setAllToFalse();
         pnlConfirmBooking.setVisible(true);
         this.setTitle("Confirm Booking");
     }
 
-    /* ----- Confirm Booking ----- */
+    private boolean hasPromotionalCoupon() {
+        return !coupon.equals(null);
+    }
 
-    public void changed() {
+    private void checkCoupon() {
         if (txtCouponCode.getText().equals("UrbanTransport")) {
-            lblCouponVerification.setText("Coode Applied");
+            coupon.getCoupon(LocalDateTime.now(), "0");
+            lblCouponVerification.setText("Code Applied");
             lblCouponVerification.setOpaque(true);
             lblCouponVerification.setBackground(new Color(216, 231, 213));
         }
@@ -135,28 +147,39 @@ public class PayForTripGUI extends JFrame {
         }
     }
 
-    private void txtCouponCodeKeyPressed(KeyEvent e) {
-        changed();
-    }
+    /* ----- Confirm Booking ----- */
 
     private void btnAdvanceActionPerformed(ActionEvent e) {
+
         if (ckbxCash.isSelected() && ckbxCard.isSelected()) {
             // if both are selected
             // do nothing
         }
         else if (ckbxCash.isSelected()) {
-
+            checkCoupon();
             setAllToFalse();
             pnlCashTicketPayment.setVisible(true);
             this.setTitle("Pay With Cash");
+            lblCouponVerification.setText("");
+            lblCouponVerification.setOpaque(false);
+            ckbxCash.setSelected(false);
+            txtCouponCode.setText("");
+            lblPriceCashPayment.setText(Double.toString(routeRegistry.get(0).getCost()));
+            lblTicketTypeCashPayment.setText(chosenTicketType);
         }
-
         else if (ckbxCard.isSelected()) {
+            checkCoupon();
             setAllToFalse();
             pnlCardTicketPayment.setVisible(true);
             btnPrintTicket.setVisible(false);
             lblPaymentValidate.setVisible(false);
             this.setTitle("Pay With Card");
+            lblCouponVerification.setText("");
+            lblCouponVerification.setOpaque(false);
+            ckbxCard.setSelected(false);
+            txtCouponCode.setText("");
+            lblPriceCardPayment.setText(Double.toString(routeRegistry.get(0).getCost()));
+            lblTicketTypeCardPayment.setText(chosenTicketType);
         }
         else {
             // if none are selected
@@ -205,6 +228,7 @@ public class PayForTripGUI extends JFrame {
         txtCardNumber.setText("");
         txtCardName.setText("");
         txtCouponCode.setText("");
+        lblPrice.setText("");
 
         ckbxCash.setSelected(false);
         ckbxOneWay.setSelected(false);
@@ -224,6 +248,63 @@ public class PayForTripGUI extends JFrame {
         setAllToFalse();
         pnlHome.setVisible(true);
         this.setTitle("Home");
+    }
+
+    private void ckbxOneWayActionPerformed(ActionEvent e) {
+        chosenTicketType = "One way ticket";
+    }
+
+    private void ckbxReturnActionPerformed(ActionEvent e) {
+        chosenTicketType = "Return ticket";
+    }
+
+    private void ckbxOpenReturnActionPerformed(ActionEvent e) {
+        chosenTicketType = "Open ticket";
+    }
+
+    private void btnPayCashActionPerformed(ActionEvent e) {
+
+        double valuePayingIn = Double.parseDouble(txtCashValue.getText());
+        double valueYetToPay = Double.parseDouble(lblPriceCashPayment.getText());
+
+        lblCashValue.setText(txtCashValue.getText());
+
+//        if (isCashEnteredSufficient(valueYetToPay, valuePayingIn)) {
+//            Purchase purchase = new Purchase();
+//            if (purchase.makePurchase(Double.parseDouble(lblPriceCashPayment.getText()))) {
+//                lblPriceCashPayment.setText(Double.toString(getRemainignCost(valuePayingIn, valueYetToPay)));
+//            }
+//            else {
+//                lblNotification.setText("Transaction canceled. Cash refunded");
+//            }
+//        } else {
+//            lblNotification.setText("Enter more cash. Not enough cash entered");
+//        }
+
+        if (getRemainignCost(valuePayingIn, valueYetToPay) > 0) {
+            lblPriceCashPayment.setText(Double.toString(getRemainignCost(valuePayingIn, valueYetToPay)));
+            txtCashValue.setText("");
+        } else if (getRemainignCost(valuePayingIn, valueYetToPay) < 0) {
+            lblNotification.setText("Ticket fully paid");
+            txtCashValue.setText("");
+            lblPriceCashPayment.setText("");
+        }
+        if (lblNotification.getText().equals("Ticket fully paid")) {
+            // once everything has been paid for
+            resetAllInteractiveElements();
+        }
+    }
+
+    private boolean isCashEnteredSufficient(double tally, double cashEntered) {
+        return (tally-cashEntered) > 0;
+    }
+
+    private double getRemainignCost(double valuePayingIn, double totalToPay) {
+        return totalToPay-valuePayingIn;
+    }
+
+    private void makePurchase(double amount) {
+
     }
 
     private void initComponents() {
@@ -294,6 +375,8 @@ public class PayForTripGUI extends JFrame {
         lblReturnDateTimeCashPayment = new JLabel();
         lblDestinationCashPayment = new JLabel();
         lblStationCashPayment = new JLabel();
+        btnPayCash = new JButton();
+        txtCashValue = new JTextField();
         pnlCardTicketPayment = new JPanel();
         btnPrintTicket = new JButton();
         btnConfirmPayment = new JButton();
@@ -501,13 +584,16 @@ public class PayForTripGUI extends JFrame {
 
                         //---- ckbxOpenReturn ----
                         ckbxOpenReturn.setText("Open Return");
+                        ckbxOpenReturn.addActionListener(e -> ckbxOpenReturnActionPerformed(e));
 
                         //---- ckbxReturn ----
                         ckbxReturn.setText("Return");
+                        ckbxReturn.addActionListener(e -> ckbxReturnActionPerformed(e));
 
                         //---- ckbxOneWay ----
                         ckbxOneWay.setText("One Way");
                         ckbxOneWay.addChangeListener(e -> ckbxOneWayStateChanged(e));
+                        ckbxOneWay.addActionListener(e -> ckbxOneWayActionPerformed(e));
 
                         //---- lblTicketType ----
                         lblTicketType.setText("Ticket Type");
@@ -601,7 +687,7 @@ public class PayForTripGUI extends JFrame {
                         btnFare3.setFont(new Font(".SF NS Text", Font.PLAIN, 11));
 
                         //---- btnFare1 ----
-                        btnFare1.setText("<html>\nDestination <br>\nDeparture Date/Time <br>\nReturn Date/Time <br>\nPRICE\n</html>");
+                        btnFare1.setText("<html> Destination <br> Departure Date/Time <br> Return Date/Time <br> PRICE </html>");
                         btnFare1.setHorizontalAlignment(SwingConstants.TRAILING);
                         btnFare1.setFont(new Font(".SF NS Text", Font.PLAIN, 11));
                         btnFare1.addActionListener(e -> btnFare1ActionPerformed(e));
@@ -645,14 +731,6 @@ public class PayForTripGUI extends JFrame {
                         //---- btnAdvance ----
                         btnAdvance.setText("Advance");
                         btnAdvance.addActionListener(e -> btnAdvanceActionPerformed(e));
-
-                        //---- txtCouponCode ----
-                        txtCouponCode.addKeyListener(new KeyAdapter() {
-                            @Override
-                            public void keyPressed(KeyEvent e) {
-                                txtCouponCodeKeyPressed(e);
-                            }
-                        });
 
                         //---- lblCouponCode ----
                         lblCouponCode.setText("Coupon Code");
@@ -830,6 +908,10 @@ public class PayForTripGUI extends JFrame {
                         //---- lblStationCashPayment ----
                         lblStationCashPayment.setText("Station");
 
+                        //---- btnPayCash ----
+                        btnPayCash.setText("Pay");
+                        btnPayCash.addActionListener(e -> btnPayCashActionPerformed(e));
+
                         GroupLayout pnlCashTicketPaymentLayout = new GroupLayout(pnlCashTicketPayment);
                         pnlCashTicketPayment.setLayout(pnlCashTicketPaymentLayout);
                         pnlCashTicketPaymentLayout.setHorizontalGroup(
@@ -837,6 +919,10 @@ public class PayForTripGUI extends JFrame {
                                 .addGroup(pnlCashTicketPaymentLayout.createSequentialGroup()
                                     .addGap(68, 68, 68)
                                     .addGroup(pnlCashTicketPaymentLayout.createParallelGroup()
+                                        .addGroup(pnlCashTicketPaymentLayout.createSequentialGroup()
+                                            .addComponent(txtCashValue, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(btnPayCash))
                                         .addGroup(pnlCashTicketPaymentLayout.createSequentialGroup()
                                             .addGap(152, 152, 152)
                                             .addComponent(lblStationCashPayment)
@@ -891,7 +977,11 @@ public class PayForTripGUI extends JFrame {
                                     .addGroup(pnlCashTicketPaymentLayout.createParallelGroup()
                                         .addComponent(lblCashInserted)
                                         .addComponent(lblCashValue))
-                                    .addContainerGap(143, Short.MAX_VALUE))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                                    .addGroup(pnlCashTicketPaymentLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(btnPayCash)
+                                        .addComponent(txtCashValue, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                    .addGap(79, 79, 79))
                         );
                     }
                     pnlContent.add(pnlCashTicketPayment, "card6");
@@ -1185,6 +1275,8 @@ public class PayForTripGUI extends JFrame {
     private JLabel lblReturnDateTimeCashPayment;
     private JLabel lblDestinationCashPayment;
     private JLabel lblStationCashPayment;
+    private JButton btnPayCash;
+    private JTextField txtCashValue;
     private JPanel pnlCardTicketPayment;
     private JButton btnPrintTicket;
     private JButton btnConfirmPayment;

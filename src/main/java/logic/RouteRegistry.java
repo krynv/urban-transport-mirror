@@ -35,8 +35,8 @@ public class RouteRegistry extends ArrayList<Route> {
         locationRegistry3.addLocation(new Location("4"));
         locationRegistry3.addLocation(new Location("1"));
 
-//        this.add(new Route("1", timeBands1, locationRegistry1));
-//        this.add(new Route("2", timeBands2, locationRegistry2));
+        this.add(new Route("1", timeBands1, locationRegistry1));
+        this.add(new Route("2", timeBands2, locationRegistry2));
         this.add(new Route("3", timeBands3, locationRegistry3));
     }
 
@@ -67,5 +67,4 @@ public class RouteRegistry extends ArrayList<Route> {
 
         return returnedRoutes;
     }
-
 }

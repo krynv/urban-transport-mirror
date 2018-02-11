@@ -1,10 +1,7 @@
 package gui;
 
-import org.json.simple.parser.ParseException;
-
 import java.awt.*;
 import java.awt.event.*;
-import java.io.IOException;
 import javax.swing.*;
 
 public class GUI extends JFrame {
@@ -29,15 +26,13 @@ public class GUI extends JFrame {
         this.setVisible(false);
     }
 
-    private void btnViewReportActionPerformed(ActionEvent e) throws IOException, ParseException {
+    private void btnViewReportActionPerformed(ActionEvent e) {
         System.out.println("View report");
-        new LoginRegisterGUI().setVisible(true);
-        this.setVisible(false);
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Benjamin Ward
+        // Generated using JFormDesigner Evaluation license - Barry Chuckle
         pnlGUI = new JPanel();
         pnlSelectOption = new JPanel();
         btnPayOnExit = new JButton();
@@ -72,15 +67,7 @@ public class GUI extends JFrame {
                 //---- btnViewReport ----
                 btnViewReport.setText("View report");
                 btnViewReport.setPreferredSize(new Dimension(150, 60));
-                btnViewReport.addActionListener(e -> {
-                    try {
-                        btnViewReportActionPerformed(e);
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    } catch (ParseException e1) {
-                        e1.printStackTrace();
-                    }
-                });
+                btnViewReport.addActionListener(e -> btnViewReportActionPerformed(e));
 
                 GroupLayout pnlSelectOptionLayout = new GroupLayout(pnlSelectOption);
                 pnlSelectOption.setLayout(pnlSelectOptionLayout);
@@ -112,7 +99,7 @@ public class GUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Benjamin Ward
+    // Generated using JFormDesigner Evaluation license - Barry Chuckle
     private JPanel pnlGUI;
     private JPanel pnlSelectOption;
     private JButton btnPayOnExit;

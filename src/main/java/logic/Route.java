@@ -32,6 +32,10 @@ public class Route {
         this.cost = cost;
     }
 
+    public double getCost() {
+        return cost;
+    }
+
     public float calcDistanceBetweenStops(Location start, Location finish) {
 
         //var distance = start-finish;
@@ -41,5 +45,15 @@ public class Route {
 
     public Location getStartLocation() {
         return destinationLocations.get(0);
+    }
+
+    @Override
+    public String toString() {
+        return "<html>\n" +
+                "Destination <br>\n" +
+                "Departure Date/Time <br>\n" +
+                "Return Date/Time <br>\n" +
+                "£" + cost + "\n" +
+                "</html>";
     }
 }
