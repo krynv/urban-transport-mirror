@@ -20,20 +20,23 @@ public class RouteRegistry extends ArrayList<Route> {
         LocationRegistry locationRegistry2 = new LocationRegistry();
         LocationRegistry locationRegistry3 = new LocationRegistry();
 
-        locationRegistry1.addLocation(new Location(1));
-        locationRegistry1.addLocation(new Location(2));
-        locationRegistry1.addLocation(new Location(3));
+        // Sheffield to London
+        locationRegistry1.addLocation(new Location("0"));
+        locationRegistry1.addLocation(new Location("1"));
 
-        locationRegistry2.addLocation(new Location(4));
-        locationRegistry2.addLocation(new Location(5));
-        locationRegistry2.addLocation(new Location(6));
+        // Sheffield to London via Derby
+        locationRegistry2.addLocation(new Location("0"));
+        locationRegistry2.addLocation(new Location("2"));
+        locationRegistry2.addLocation(new Location("1"));
 
-        locationRegistry3.addLocation(new Location(7));
-        locationRegistry3.addLocation(new Location(8));
-        locationRegistry3.addLocation(new Location(10));
+        // Sheffield to London via Nottingham and Leicester
+        locationRegistry3.addLocation(new Location("0"));
+        locationRegistry3.addLocation(new Location("3"));
+        locationRegistry3.addLocation(new Location("4"));
+        locationRegistry3.addLocation(new Location("1"));
 
-        this.add(new Route("1", timeBands1, locationRegistry1));
-        this.add(new Route("2", timeBands2, locationRegistry2));
+//        this.add(new Route("1", timeBands1, locationRegistry1));
+//        this.add(new Route("2", timeBands2, locationRegistry2));
         this.add(new Route("3", timeBands3, locationRegistry3));
     }
 

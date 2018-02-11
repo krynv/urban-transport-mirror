@@ -8,6 +8,7 @@ public class Route {
     private double routeIncome;
     private double routeRunningCosts;
     private double routeMaintenanceCosts;
+    private double cost;
 
     public Route(String routeID, TimeBands timeBands, LocationRegistry destinationLocations) {
         this.routeID = routeID;
@@ -27,10 +28,18 @@ public class Route {
         return destinationLocations;
     }
 
+    public void setCost(double cost) {
+        this.cost = cost;
+    }
+
     public float calcDistanceBetweenStops(Location start, Location finish) {
 
         //var distance = start-finish;
 
         return 0.0f;
+    }
+
+    public Location getStartLocation() {
+        return destinationLocations.get(0);
     }
 }

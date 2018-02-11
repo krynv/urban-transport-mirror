@@ -8,6 +8,14 @@ public class LocationRegistry extends ArrayList<Location> {
         super();
     }
 
+    public LocationRegistry(LocationRegistry locations) {
+        super();
+
+        for (Location location: locations) {
+            this.add(location);
+        }
+    }
+
     public void addLocation(Location aLocation) {
         super.add(aLocation);
     }
@@ -20,12 +28,23 @@ public class LocationRegistry extends ArrayList<Location> {
         Location returnLocationObject = null;
 
         for(Location aLocation:this) {
-            if (aLocation.getLocationID() == givenLocationID) {
+            if (aLocation.getLocationID().equals(givenLocationID)) {
                 returnLocationObject = aLocation;
             }
         }
 
         return returnLocationObject;
+    }
+
+    public LocationRegistry tail() {
+        LocationRegistry locations = new LocationRegistry(this);
+
+        if (locations.size() > 1) {
+            locations.remove(0);
+            return locations;
+        } else {
+            return locations;
+        }
     }
 
 }

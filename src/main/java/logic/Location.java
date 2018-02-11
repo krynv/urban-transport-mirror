@@ -2,14 +2,20 @@ package logic;
 
 public class Location {
 
-    private int locationID;
+    private String id;
 
-    public Location(int locationIDValue) {
-        locationID = locationIDValue;
+    public Location(String id) {
+        this.id = id;
     }
 
-    public int getLocationID() {
-        return locationID;
+    public String getLocationID() {
+        return id;
     }
 
+    @Override
+    public String toString() {
+        return "Location{" +
+                "id='" + id + '\'' +
+                '}';
+    }
 }

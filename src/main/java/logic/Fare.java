@@ -2,7 +2,7 @@ package logic;
 
 import java.time.LocalDateTime;
 
-public class Tariffs {
+public class Fare {
 
     private int type;
     private float cost;
@@ -12,7 +12,7 @@ public class Tariffs {
     //private TimeBandRegistry peakPeriods;
     private boolean peakAllowed;
 
-    public Tariffs() {
+    public Fare() {
 
     }
 
