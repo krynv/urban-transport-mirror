@@ -1,4 +1,4 @@
-package logic;
+package logic.account;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,7 @@ public class AccountRegistry extends ArrayList<Account> {
         this.add(new Account("Jamie", "4", 30.0));
     }
 
-    public Account getAccount(String accountId) {
+    public Account getAccountById(String accountId) {
         for(Account account: this) {
             if (account.getId().equals(accountId)) {
                 return account;

@@ -1,4 +1,6 @@
-package logic;
+package logic.journey;
+
+import logic.location.Location;
 
 import java.time.LocalDateTime;
 
@@ -47,4 +49,5 @@ public class Journey {
                 ", endLocation=" + endLocation +
                 '}';
     }
+
 }

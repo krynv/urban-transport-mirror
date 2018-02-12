@@ -1,4 +1,11 @@
-package logic;
+package logic.account;
+
+import logic.fare.FareRegistry;
+import logic.journey.Journey;
+import logic.journey.JourneyHistory;
+import logic.location.Location;
+import logic.pass.Pass;
+import logic.pass.PassRegistry;
 
 import java.time.LocalDateTime;
 

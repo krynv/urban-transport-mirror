@@ -1,4 +1,4 @@
-package logic;
+package logic.fare;
 
 public class Fare {
 

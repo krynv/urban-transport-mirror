@@ -18,7 +18,7 @@ public class GUI extends JFrame {
         System.out.println("Pay on exit");
 
         this.setVisible(false);
-        new PayOnExitGUI().setVisible(true);
+        new Gate().setVisible(true);
     }
 
     private void btnPayForTripActionPerformed(ActionEvent e) {
