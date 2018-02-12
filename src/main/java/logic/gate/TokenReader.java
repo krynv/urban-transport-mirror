@@ -21,4 +21,7 @@ public class TokenReader {
         return tokenId;
     }
 
+    public Location getLocation() {
+        return location;
+    }
 }

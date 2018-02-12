@@ -6,6 +6,8 @@ import logic.location.Location;
 import logic.token.Token;
 import logic.token.TokenRegistry;
 
+import java.time.LocalDateTime;
+
 public class GateController {
 
     private TokenReader tokenReader;
@@ -21,15 +23,13 @@ public class GateController {
     public void presentToken(String tokenId) {
         tokenReader.setTokenId(tokenId);
 
-        String scannedTokenId = tokenReader.getTokenId();
-
-        Token token = tokenRegistry.getTokenById(scannedTokenId);
+        Token token = tokenRegistry.getTokenById(tokenReader.getTokenId());
 
         if (token != null) {
             Account account = accountRegistry.getAccountById(token.getAccountId());
 
             if (account != null) {
-
+                account.processPassengerExit(tokenReader.getLocation(), LocalDateTime.now());
             } else {
                 System.out.println("Account is null");  // TODO: Change to Logger
             }

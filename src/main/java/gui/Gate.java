@@ -1,7 +1,6 @@
 package gui;
 
 import logic.gate.GateController;
-import logic.location.Location;
 
 import java.awt.event.*;
 import javax.swing.*;

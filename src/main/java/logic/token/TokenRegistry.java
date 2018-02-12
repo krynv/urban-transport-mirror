@@ -1,21 +1,19 @@
 package logic.token;
 
-import logic.token.Token;
+import java.util.List;
 
-import java.util.ArrayList;
+public class TokenRegistry {
 
-public class TokenRegistry extends ArrayList<Token> {
+    private TokenDaoJson tokenDaoJson;
+    private List<Token> tokens;
 
     public TokenRegistry() {
-        this.add(new Token("0", "0"));
-        this.add(new Token("1", "1"));
-        this.add(new Token("2", "2"));
-        this.add(new Token("3", "3"));
-        this.add(new Token("4", "4"));
+        tokenDaoJson = new TokenDaoJson();
+        tokens = tokenDaoJson.getTokens();
     }
 
     public Token getTokenById(String tokenId) {
-        for(Token token: this) {
+        for(Token token: tokens) {
             if (token.getId().equals(tokenId)) {
                 return token;
             }

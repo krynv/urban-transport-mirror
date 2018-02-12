@@ -1,20 +1,20 @@
 package logic.account;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class AccountRegistry extends ArrayList<Account> {
+public class AccountRegistry {
+
+    private AccountDaoJson accountDaoJson;
+    private List<Account> accounts;
 
     public AccountRegistry() {
-        this.add(new Account("Callum", "0", 10.0));
-        this.add(new Account("Chris", "1", 15.0));
-        this.add(new Account("Peter", "2", 20.0));
-        this.add(new Account("Luke", "3", 25.0));
-        this.add(new Account("Jamie", "4", 30.0));
+        accountDaoJson = new AccountDaoJson();
+        accounts = accountDaoJson.getAccounts();
     }
 
-    public Account getAccountById(String accountId) {
-        for(Account account: this) {
-            if (account.getId().equals(accountId)) {
+    public Account getAccountById(String id) {
+        for(Account account: accounts) {
+            if (account.getId().equals(id)) {
                 return account;
             }
         }
