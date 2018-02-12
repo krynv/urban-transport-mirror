@@ -17,23 +17,11 @@ public class EmployeeGUI extends JFrame {
 
     private AccountManager accountManager;
     public EmployeeGUI(String username) throws IOException, ParseException {
-        initComponents();
         this.accountManager = new AccountManager();
         this.accountManager.setActiveUser(username);
-    }
-
-    private void rptPaneChanged(ChangeEvent e) {
-        String name = "maintenance";
-        LocalDateTime startDateTime = LocalDateTime.of(2018, 02, 04, 12, 0,0);
-        LocalDateTime endDateTime = LocalDateTime.of(2018, 02, 04, 13, 0,0);
-
-        Report report = this.accountManager.viewReport(name, startDateTime, endDateTime);
-        MaintenanceReport maintenanceReport = (MaintenanceReport) report;
-
-        maintCostField.setText(Double.toString(maintenanceReport.getMaintenanceCost()));
-        breakdownCostField.setText(Double.toString(maintenanceReport.getBrakedownCost()));
-        expensVehicles.setText(maintenanceReport.getMostExpensiveVehicle());
-        cheapestVehicle.setText(maintenanceReport.getCheapestVehicle());
+        initComponents();
+        this.setContentPane(mainPnl);
+        this.pack();
     }
 
 
@@ -61,11 +49,26 @@ public class EmployeeGUI extends JFrame {
         }
     }
 
+    private void tabbedPane14StateChanged(ChangeEvent e) {
+        String name = "maintenance";
+        LocalDateTime startDateTime = LocalDateTime.of(2018, 02, 04, 12, 0,0);
+        LocalDateTime endDateTime = LocalDateTime.of(2018, 02, 04, 13, 0,0);
+
+        Report report = this.accountManager.viewReport(name, startDateTime, endDateTime);
+        MaintenanceReport maintenanceReport = (MaintenanceReport) report;
+
+        textField2.setText(Double.toString(maintenanceReport.getMaintenanceCost()));
+        textField4.setText(Double.toString(maintenanceReport.getBrakedownCost()));
+        textField5.setText(maintenanceReport.getMostExpensiveVehicle());
+        textField11.setText(maintenanceReport.getCheapestVehicle());
+    }
+
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Benjamin Ward
-        pnlMain = new JPanel();
+        mainPnl = new JPanel();
+        JPanel tabbedPanel = new JPanel();
         tabbedPane12 = new JTabbedPane();
         panel20 = new JPanel();
         label10 = new JLabel();
@@ -83,12 +86,12 @@ public class EmployeeGUI extends JFrame {
         panel21 = new JPanel();
         panel22 = new JPanel();
         panel9 = new JPanel();
-        rptPane = new JTabbedPane();
+        tabbedPane14 = new JTabbedPane();
         panel19 = new JPanel();
         label9 = new JLabel();
         panel18 = new JPanel();
-        maintCostField = new JTextField();
-        breakdownCostField = new JTextField();
+        textField2 = new JTextField();
+        textField4 = new JTextField();
         label5 = new JLabel();
         label6 = new JLabel();
         label7 = new JLabel();
@@ -97,8 +100,8 @@ public class EmployeeGUI extends JFrame {
         button3 = new JButton();
         button4 = new JButton();
         button5 = new JButton();
-        expensVehicles = new JTextField();
-        cheapestVehicle = new JTextField();
+        textField5 = new JTextField();
+        textField11 = new JTextField();
         panel23 = new JPanel();
         textField7 = new JTextField();
         button6 = new JButton();
@@ -116,465 +119,484 @@ public class EmployeeGUI extends JFrame {
         logOutPanel = new JPanel();
         logOutButton = new JButton();
 
-        //======== pnlMain ========
+        //======== mainPnl ========
         {
-            pnlMain.setMinimumSize(new Dimension(627, 413));
-            pnlMain.setPreferredSize(new Dimension(700, 478));
 
             // JFormDesigner evaluation mark
-            pnlMain.setBorder(new javax.swing.border.CompoundBorder(
+            mainPnl.setBorder(new javax.swing.border.CompoundBorder(
                 new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
                     "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
                     javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                    java.awt.Color.red), pnlMain.getBorder())); pnlMain.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+                    java.awt.Color.red), mainPnl.getBorder())); mainPnl.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
 
-            pnlMain.setLayout(new CardLayout());
+            mainPnl.setLayout(new CardLayout());
 
-            //======== tabbedPane12 ========
+            //======== tabbedPanel ========
             {
 
-                //======== panel20 ========
+                //======== tabbedPane12 ========
                 {
 
-                    //---- label10 ----
-                    label10.setText("Welcome to Transport Management");
-                    label10.setFont(new Font("Segoe UI", Font.PLAIN, 22));
-                    label10.setHorizontalAlignment(SwingConstants.CENTER);
-
-                    GroupLayout panel20Layout = new GroupLayout(panel20);
-                    panel20.setLayout(panel20Layout);
-                    panel20Layout.setHorizontalGroup(
-                        panel20Layout.createParallelGroup()
-                            .addComponent(label10, GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
-                    );
-                    panel20Layout.setVerticalGroup(
-                        panel20Layout.createParallelGroup()
-                            .addGroup(panel20Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(label10, GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE))
-                    );
-                }
-                tabbedPane12.addTab("Staff Menu:", panel20);
-
-                //======== panel3 ========
-                {
-                    panel3.setLayout(new GridLayout());
-
-                    //======== tabbedPane13 ========
+                    //======== panel20 ========
                     {
 
-                        //======== panel4 ========
-                        {
-                            panel4.setLayout(new GridLayout());
+                        //---- label10 ----
+                        label10.setText("Welcome to Transport Management");
+                        label10.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                        label10.setHorizontalAlignment(SwingConstants.CENTER);
 
-                            //---- label14 ----
-                            label14.setText("News Homepage");
-                            label14.setFont(new Font("Segoe UI", Font.PLAIN, 22));
-                            label14.setHorizontalAlignment(SwingConstants.CENTER);
-                            panel4.add(label14);
-                        }
-                        tabbedPane13.addTab("T1", panel4);
-
-                        //======== panel5 ========
-                        {
-                            panel5.setLayout(new GridLayout());
-                        }
-                        tabbedPane13.addTab("T2", panel5);
-
-                        //======== panel6 ========
-                        {
-                            panel6.setLayout(new GridLayout());
-                        }
-                        tabbedPane13.addTab("T3", panel6);
-
-                        //======== panel7 ========
-                        {
-                            panel7.setLayout(new GridLayout());
-                        }
-                        tabbedPane13.addTab("T4", panel7);
+                        GroupLayout panel20Layout = new GroupLayout(panel20);
+                        panel20.setLayout(panel20Layout);
+                        panel20Layout.setHorizontalGroup(
+                            panel20Layout.createParallelGroup()
+                                .addComponent(label10, GroupLayout.DEFAULT_SIZE, 658, Short.MAX_VALUE)
+                        );
+                        panel20Layout.setVerticalGroup(
+                            panel20Layout.createParallelGroup()
+                                .addGroup(panel20Layout.createSequentialGroup()
+                                    .addContainerGap()
+                                    .addComponent(label10, GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE))
+                        );
                     }
-                    panel3.add(tabbedPane13);
-                }
-                tabbedPane12.addTab("News", panel3);
+                    tabbedPane12.addTab("Staff Menu:", panel20);
 
-                //======== panel8 ========
-                {
-                    panel8.setLayout(new GridLayout());
-
-                    //======== tabbedPane15 ========
+                    //======== panel3 ========
                     {
+                        panel3.setLayout(new GridLayout());
 
-                        //======== panel15 ========
-                        {
-                            panel15.setLayout(new GridLayout());
-
-                            //---- label15 ----
-                            label15.setText("Accounts Homepage");
-                            label15.setFont(new Font("Segoe UI", Font.PLAIN, 22));
-                            label15.setHorizontalAlignment(SwingConstants.CENTER);
-                            panel15.add(label15);
-                        }
-                        tabbedPane15.addTab("T1", panel15);
-
-                        //======== panel21 ========
+                        //======== tabbedPane13 ========
                         {
 
-                            GroupLayout panel21Layout = new GroupLayout(panel21);
-                            panel21.setLayout(panel21Layout);
-                            panel21Layout.setHorizontalGroup(
-                                panel21Layout.createParallelGroup()
-                                    .addGap(0, 541, Short.MAX_VALUE)
-                            );
-                            panel21Layout.setVerticalGroup(
-                                panel21Layout.createParallelGroup()
-                                    .addGap(0, 453, Short.MAX_VALUE)
-                            );
-                        }
-                        tabbedPane15.addTab("T2", panel21);
+                            //======== panel4 ========
+                            {
+                                panel4.setLayout(new GridLayout());
 
-                        //======== panel22 ========
-                        {
+                                //---- label14 ----
+                                label14.setText("News Homepage");
+                                label14.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                                label14.setHorizontalAlignment(SwingConstants.CENTER);
+                                panel4.add(label14);
+                            }
+                            tabbedPane13.addTab("T1", panel4);
 
-                            GroupLayout panel22Layout = new GroupLayout(panel22);
-                            panel22.setLayout(panel22Layout);
-                            panel22Layout.setHorizontalGroup(
-                                panel22Layout.createParallelGroup()
-                                    .addGap(0, 541, Short.MAX_VALUE)
-                            );
-                            panel22Layout.setVerticalGroup(
-                                panel22Layout.createParallelGroup()
-                                    .addGap(0, 453, Short.MAX_VALUE)
-                            );
+                            //======== panel5 ========
+                            {
+                                panel5.setLayout(new GridLayout());
+                            }
+                            tabbedPane13.addTab("T2", panel5);
+
+                            //======== panel6 ========
+                            {
+                                panel6.setLayout(new GridLayout());
+                            }
+                            tabbedPane13.addTab("T3", panel6);
+
+                            //======== panel7 ========
+                            {
+                                panel7.setLayout(new GridLayout());
+                            }
+                            tabbedPane13.addTab("T4", panel7);
                         }
-                        tabbedPane15.addTab("T3", panel22);
+                        panel3.add(tabbedPane13);
                     }
-                    panel8.add(tabbedPane15);
-                }
-                tabbedPane12.addTab("Accounts", panel8);
+                    tabbedPane12.addTab("News", panel3);
 
-                //======== panel9 ========
-                {
-                    panel9.setLayout(new GridLayout());
-
-                    //======== rptPane ========
+                    //======== panel8 ========
                     {
-                        rptPane.setFont(rptPane.getFont().deriveFont(rptPane.getFont().getStyle() | Font.ITALIC));
-                        rptPane.addChangeListener(e -> rptPaneChanged(e));
+                        panel8.setLayout(new GridLayout());
 
-                        //======== panel19 ========
+                        //======== tabbedPane15 ========
                         {
 
-                            //---- label9 ----
-                            label9.setText("Select one of the available reports");
-                            label9.setHorizontalAlignment(SwingConstants.CENTER);
-                            label9.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                            //======== panel15 ========
+                            {
+                                panel15.setLayout(new GridLayout());
 
-                            GroupLayout panel19Layout = new GroupLayout(panel19);
-                            panel19.setLayout(panel19Layout);
-                            panel19Layout.setHorizontalGroup(
-                                panel19Layout.createParallelGroup()
-                                    .addComponent(label9, GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE)
-                            );
-                            panel19Layout.setVerticalGroup(
-                                panel19Layout.createParallelGroup()
-                                    .addComponent(label9, GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
-                            );
+                                //---- label15 ----
+                                label15.setText("Accounts Homepage");
+                                label15.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                                label15.setHorizontalAlignment(SwingConstants.CENTER);
+                                panel15.add(label15);
+                            }
+                            tabbedPane15.addTab("T1", panel15);
+
+                            //======== panel21 ========
+                            {
+
+                                GroupLayout panel21Layout = new GroupLayout(panel21);
+                                panel21.setLayout(panel21Layout);
+                                panel21Layout.setHorizontalGroup(
+                                    panel21Layout.createParallelGroup()
+                                        .addGap(0, 656, Short.MAX_VALUE)
+                                );
+                                panel21Layout.setVerticalGroup(
+                                    panel21Layout.createParallelGroup()
+                                        .addGap(0, 428, Short.MAX_VALUE)
+                                );
+                            }
+                            tabbedPane15.addTab("T2", panel21);
+
+                            //======== panel22 ========
+                            {
+
+                                GroupLayout panel22Layout = new GroupLayout(panel22);
+                                panel22.setLayout(panel22Layout);
+                                panel22Layout.setHorizontalGroup(
+                                    panel22Layout.createParallelGroup()
+                                        .addGap(0, 656, Short.MAX_VALUE)
+                                );
+                                panel22Layout.setVerticalGroup(
+                                    panel22Layout.createParallelGroup()
+                                        .addGap(0, 428, Short.MAX_VALUE)
+                                );
+                            }
+                            tabbedPane15.addTab("T3", panel22);
                         }
-                        rptPane.addTab("Reports:", panel19);
+                        panel8.add(tabbedPane15);
+                    }
+                    tabbedPane12.addTab("Accounts", panel8);
 
-                        //======== panel18 ========
+                    //======== panel9 ========
+                    {
+                        panel9.setLayout(new GridLayout());
+
+                        //======== tabbedPane14 ========
                         {
+                            tabbedPane14.setFont(tabbedPane14.getFont().deriveFont(tabbedPane14.getFont().getStyle() | Font.ITALIC));
+                            tabbedPane14.addChangeListener(e -> {
+			tabbedPane14StateChanged(e);
+			tabbedPane14StateChanged(e);
+			tabbedPane14StateChanged(e);
+			tabbedPane14StateChanged(e);
+		});
 
-                            //---- maintCostField ----
-                            maintCostField.setBackground(UIManager.getColor("Button.background"));
-                            maintCostField.setText("\u00a3");
-                            maintCostField.setForeground(UIManager.getColor("Button.darcula.selectedButtonForeground"));
-                            maintCostField.setFont(new Font("Segoe UI", Font.PLAIN, 22));
-                            maintCostField.setHorizontalAlignment(SwingConstants.CENTER);
+                            //======== panel19 ========
+                            {
 
-                            //---- breakdownCostField ----
-                            breakdownCostField.setBackground(new Color(60, 63, 65));
-                            breakdownCostField.setText("\u00a3");
-                            breakdownCostField.setForeground(UIManager.getColor("Button.darcula.selectedButtonForeground"));
-                            breakdownCostField.setFont(new Font("Segoe UI", Font.PLAIN, 22));
-                            breakdownCostField.setHorizontalAlignment(SwingConstants.CENTER);
+                                //---- label9 ----
+                                label9.setText("Select one of the available reports");
+                                label9.setHorizontalAlignment(SwingConstants.CENTER);
+                                label9.setFont(new Font("Segoe UI", Font.PLAIN, 22));
 
-                            //---- label5 ----
-                            label5.setText("Maintenance Cost");
-                            label5.setHorizontalAlignment(SwingConstants.CENTER);
-                            label5.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                                GroupLayout panel19Layout = new GroupLayout(panel19);
+                                panel19.setLayout(panel19Layout);
+                                panel19Layout.setHorizontalGroup(
+                                    panel19Layout.createParallelGroup()
+                                        .addComponent(label9, GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE)
+                                );
+                                panel19Layout.setVerticalGroup(
+                                    panel19Layout.createParallelGroup()
+                                        .addComponent(label9, GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+                                );
+                            }
+                            tabbedPane14.addTab("Reports:", panel19);
 
-                            //---- label6 ----
-                            label6.setText("Breakdown Cost");
-                            label6.setFont(new Font("Segoe UI", Font.PLAIN, 22));
-                            label6.setHorizontalAlignment(SwingConstants.CENTER);
+                            //======== panel18 ========
+                            {
+                                panel18.setForeground(new Color(204, 204, 204));
 
-                            //---- label7 ----
-                            label7.setText("Most Expensive Vehicles");
-                            label7.setHorizontalAlignment(SwingConstants.CENTER);
-                            label7.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                                //---- textField2 ----
+                                textField2.setBackground(UIManager.getColor("Button.background"));
+                                textField2.setText("\u00a3");
+                                textField2.setForeground(UIManager.getColor("Button.darcula.selectedButtonForeground"));
+                                textField2.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                                textField2.setHorizontalAlignment(SwingConstants.CENTER);
 
-                            //---- label8 ----
-                            label8.setText("Cheapest Vehicle");
-                            label8.setFont(new Font("Segoe UI", Font.PLAIN, 22));
-                            label8.setHorizontalAlignment(SwingConstants.CENTER);
+                                //---- textField4 ----
+                                textField4.setBackground(UIManager.getColor("Button.background"));
+                                textField4.setText("\u00a3");
+                                textField4.setForeground(UIManager.getColor("Button.darcula.selectedButtonForeground"));
+                                textField4.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                                textField4.setHorizontalAlignment(SwingConstants.CENTER);
 
-                            //---- textField6 ----
-                            textField6.setText("Start Date - End Date");
-                            textField6.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+                                //---- label5 ----
+                                label5.setText("Maintenance Cost");
+                                label5.setHorizontalAlignment(SwingConstants.CENTER);
+                                label5.setFont(new Font("Segoe UI", Font.PLAIN, 22));
 
-                            //---- button3 ----
-                            button3.setText("<");
+                                //---- label6 ----
+                                label6.setText("Breakdown Cost");
+                                label6.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                                label6.setHorizontalAlignment(SwingConstants.CENTER);
 
-                            //---- button4 ----
-                            button4.setText(">");
+                                //---- label7 ----
+                                label7.setText("Most Expensive Vehicles");
+                                label7.setHorizontalAlignment(SwingConstants.CENTER);
+                                label7.setFont(new Font("Segoe UI", Font.PLAIN, 22));
 
-                            //---- button5 ----
-                            button5.setText("Print Report");
-                            button5.setFont(new Font("Segoe UI", Font.PLAIN, 12));
-                            button5.addActionListener(e -> printButtonClicked(e));
+                                //---- label8 ----
+                                label8.setText("Cheapest Vehicle");
+                                label8.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                                label8.setHorizontalAlignment(SwingConstants.CENTER);
 
-                            //---- expensVehicles ----
-                            expensVehicles.setBackground(new Color(60, 63, 65));
-                            expensVehicles.setText("Vehicle");
-                            expensVehicles.setForeground(UIManager.getColor("Button.darcula.selectedButtonForeground"));
-                            expensVehicles.setFont(new Font("Segoe UI", Font.PLAIN, 22));
-                            expensVehicles.setHorizontalAlignment(SwingConstants.CENTER);
+                                //---- textField6 ----
+                                textField6.setText("Start Date - End Date");
+                                textField6.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 
-                            //---- cheapestVehicle ----
-                            cheapestVehicle.setBackground(new Color(60, 63, 65));
-                            cheapestVehicle.setText("Vehicle");
-                            cheapestVehicle.setForeground(UIManager.getColor("Button.darcula.selectedButtonForeground"));
-                            cheapestVehicle.setFont(new Font("Segoe UI", Font.PLAIN, 22));
-                            cheapestVehicle.setHorizontalAlignment(SwingConstants.CENTER);
+                                //---- button3 ----
+                                button3.setText("<");
 
-                            GroupLayout panel18Layout = new GroupLayout(panel18);
-                            panel18.setLayout(panel18Layout);
-                            panel18Layout.setHorizontalGroup(
-                                panel18Layout.createParallelGroup()
-                                    .addGroup(panel18Layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addGroup(panel18Layout.createParallelGroup()
-                                            .addGroup(panel18Layout.createSequentialGroup()
-                                                .addGroup(panel18Layout.createParallelGroup()
-                                                    .addGroup(panel18Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(maintCostField, GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                                                        .addComponent(breakdownCostField, GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
-                                                    .addComponent(expensVehicles, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(cheapestVehicle, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE))
-                                                .addGap(43, 43, 43)
-                                                .addGroup(panel18Layout.createParallelGroup()
-                                                    .addComponent(label8)
-                                                    .addComponent(label7)
-                                                    .addComponent(label6)
-                                                    .addComponent(label5))
-                                                .addContainerGap(107, Short.MAX_VALUE))
-                                            .addGroup(panel18Layout.createSequentialGroup()
-                                                .addGap(0, 244, Short.MAX_VALUE)
-                                                .addComponent(button3)
-                                                .addGap(18, 18, 18)
+                                //---- button4 ----
+                                button4.setText(">");
+
+                                //---- button5 ----
+                                button5.setText("Print Report");
+                                button5.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+                                button5.addActionListener(e -> printButtonClicked(e));
+
+                                //---- textField5 ----
+                                textField5.setBackground(UIManager.getColor("Button.background"));
+                                textField5.setText("Vehicle");
+                                textField5.setForeground(UIManager.getColor("Button.darcula.selectedButtonForeground"));
+                                textField5.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                                textField5.setHorizontalAlignment(SwingConstants.CENTER);
+
+                                //---- textField11 ----
+                                textField11.setBackground(UIManager.getColor("Button.background"));
+                                textField11.setText("Vehicle");
+                                textField11.setForeground(UIManager.getColor("Button.darcula.selectedButtonForeground"));
+                                textField11.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                                textField11.setHorizontalAlignment(SwingConstants.CENTER);
+
+                                GroupLayout panel18Layout = new GroupLayout(panel18);
+                                panel18.setLayout(panel18Layout);
+                                panel18Layout.setHorizontalGroup(
+                                    panel18Layout.createParallelGroup()
+                                        .addGroup(panel18Layout.createSequentialGroup()
+                                            .addContainerGap()
+                                            .addGroup(panel18Layout.createParallelGroup()
+                                                .addGroup(panel18Layout.createSequentialGroup()
+                                                    .addGroup(panel18Layout.createParallelGroup()
+                                                        .addGroup(panel18Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                            .addComponent(textField2, GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                                                            .addComponent(textField4, GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                                                        .addComponent(textField5, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(textField11, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE))
+                                                    .addGap(43, 43, 43)
+                                                    .addGroup(panel18Layout.createParallelGroup()
+                                                        .addComponent(label8)
+                                                        .addComponent(label7)
+                                                        .addComponent(label6)
+                                                        .addComponent(label5))
+                                                    .addContainerGap(222, Short.MAX_VALUE))
+                                                .addGroup(panel18Layout.createSequentialGroup()
+                                                    .addGap(0, 359, Short.MAX_VALUE)
+                                                    .addComponent(button3)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(textField6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(button4)
+                                                    .addGap(56, 56, 56))))
+                                        .addGroup(GroupLayout.Alignment.TRAILING, panel18Layout.createSequentialGroup()
+                                            .addContainerGap(431, Short.MAX_VALUE)
+                                            .addComponent(button5, GroupLayout.PREFERRED_SIZE, 136, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(89, 89, 89))
+                                );
+                                panel18Layout.setVerticalGroup(
+                                    panel18Layout.createParallelGroup()
+                                        .addGroup(panel18Layout.createSequentialGroup()
+                                            .addContainerGap()
+                                            .addGroup(panel18Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                                 .addComponent(textField6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
                                                 .addComponent(button4)
-                                                .addGap(56, 56, 56))))
-                                    .addGroup(GroupLayout.Alignment.TRAILING, panel18Layout.createSequentialGroup()
-                                        .addContainerGap(316, Short.MAX_VALUE)
-                                        .addComponent(button5, GroupLayout.PREFERRED_SIZE, 136, GroupLayout.PREFERRED_SIZE)
-                                        .addGap(89, 89, 89))
-                            );
-                            panel18Layout.setVerticalGroup(
-                                panel18Layout.createParallelGroup()
-                                    .addGroup(panel18Layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addGroup(panel18Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                            .addComponent(textField6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(button4)
-                                            .addComponent(button3))
-                                        .addGap(33, 33, 33)
-                                        .addGroup(panel18Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                            .addComponent(maintCostField, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(label5))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(panel18Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                            .addComponent(breakdownCostField, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(label6))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(panel18Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                            .addComponent(label7)
-                                            .addComponent(expensVehicles, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
-                                        .addGap(7, 7, 7)
-                                        .addGroup(panel18Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                            .addComponent(label8)
-                                            .addComponent(cheapestVehicle, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                                        .addComponent(button5, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
-                                        .addGap(31, 31, 31))
-                            );
-                        }
-                        rptPane.addTab("Maintenance", panel18);
+                                                .addComponent(button3))
+                                            .addGap(33, 33, 33)
+                                            .addGroup(panel18Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(textField2, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(label5))
+                                            .addGap(18, 18, 18)
+                                            .addGroup(panel18Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(textField4, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(label6))
+                                            .addGap(18, 18, 18)
+                                            .addGroup(panel18Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(label7)
+                                                .addComponent(textField5, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+                                            .addGap(7, 7, 7)
+                                            .addGroup(panel18Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(label8)
+                                                .addComponent(textField11, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                                            .addComponent(button5, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(31, 31, 31))
+                                );
+                            }
+                            tabbedPane14.addTab("Maintenance", panel18);
 
-                        //======== panel23 ========
-                        {
+                            //======== panel23 ========
+                            {
 
-                            //---- textField7 ----
-                            textField7.setText("Start Date - End Date");
-                            textField7.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+                                //---- textField7 ----
+                                textField7.setText("Start Date - End Date");
+                                textField7.setFont(new Font("Segoe UI", Font.PLAIN, 12));
 
-                            //---- button6 ----
-                            button6.setText("<");
+                                //---- button6 ----
+                                button6.setText("<");
 
-                            //---- button7 ----
-                            button7.setText(">");
+                                //---- button7 ----
+                                button7.setText(">");
 
-                            //---- textField8 ----
-                            textField8.setText("%");
-                            textField8.setFont(new Font("Segoe UI", Font.PLAIN, 22));
-                            textField8.setHorizontalAlignment(SwingConstants.CENTER);
-                            textField8.setBackground(UIManager.getColor("Button.background"));
+                                //---- textField8 ----
+                                textField8.setText("%");
+                                textField8.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                                textField8.setHorizontalAlignment(SwingConstants.CENTER);
+                                textField8.setBackground(UIManager.getColor("Button.background"));
 
-                            //---- textField9 ----
-                            textField9.setHorizontalAlignment(SwingConstants.CENTER);
-                            textField9.setText("%");
-                            textField9.setFont(new Font("Segoe UI", Font.PLAIN, 22));
-                            textField9.setBackground(UIManager.getColor("Button.background"));
+                                //---- textField9 ----
+                                textField9.setHorizontalAlignment(SwingConstants.CENTER);
+                                textField9.setText("%");
+                                textField9.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                                textField9.setBackground(UIManager.getColor("Button.background"));
 
-                            //---- textField10 ----
-                            textField10.setHorizontalAlignment(SwingConstants.CENTER);
-                            textField10.setText("%");
-                            textField10.setFont(new Font("Segoe UI", Font.PLAIN, 22));
-                            textField10.setBackground(UIManager.getColor("Button.background"));
+                                //---- textField10 ----
+                                textField10.setHorizontalAlignment(SwingConstants.CENTER);
+                                textField10.setText("%");
+                                textField10.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                                textField10.setBackground(UIManager.getColor("Button.background"));
 
-                            //---- label11 ----
-                            label11.setText("of buses full.");
-                            label11.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                                //---- label11 ----
+                                label11.setText("of buses full.");
+                                label11.setFont(new Font("Segoe UI", Font.PLAIN, 22));
 
-                            //---- label12 ----
-                            label12.setText("of trains full.");
-                            label12.setHorizontalAlignment(SwingConstants.CENTER);
-                            label12.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                                //---- label12 ----
+                                label12.setText("of trains full.");
+                                label12.setHorizontalAlignment(SwingConstants.CENTER);
+                                label12.setFont(new Font("Segoe UI", Font.PLAIN, 22));
 
-                            //---- label13 ----
-                            label13.setText("of trams full.");
-                            label13.setHorizontalAlignment(SwingConstants.CENTER);
-                            label13.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                                //---- label13 ----
+                                label13.setText("of trams full.");
+                                label13.setHorizontalAlignment(SwingConstants.CENTER);
+                                label13.setFont(new Font("Segoe UI", Font.PLAIN, 22));
 
-                            //---- button8 ----
-                            button8.setText("Print Report");
+                                //---- button8 ----
+                                button8.setText("Print Report");
 
-                            GroupLayout panel23Layout = new GroupLayout(panel23);
-                            panel23.setLayout(panel23Layout);
-                            panel23Layout.setHorizontalGroup(
-                                panel23Layout.createParallelGroup()
-                                    .addGroup(panel23Layout.createSequentialGroup()
-                                        .addGap(34, 34, 34)
-                                        .addGroup(panel23Layout.createParallelGroup()
-                                            .addComponent(textField9)
-                                            .addGroup(panel23Layout.createSequentialGroup()
-                                                .addGroup(panel23Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(textField8, GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
-                                                    .addComponent(textField10, GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
-                                                .addGap(0, 0, Short.MAX_VALUE)))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(panel23Layout.createParallelGroup()
-                                            .addComponent(label11)
-                                            .addComponent(label12)
-                                            .addComponent(label13))
-                                        .addContainerGap(214, Short.MAX_VALUE))
-                                    .addGroup(GroupLayout.Alignment.TRAILING, panel23Layout.createSequentialGroup()
-                                        .addContainerGap(247, Short.MAX_VALUE)
-                                        .addComponent(button6)
-                                        .addGap(18, 18, 18)
-                                        .addGroup(panel23Layout.createParallelGroup()
-                                            .addComponent(button8, GroupLayout.PREFERRED_SIZE, 139, GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(panel23Layout.createSequentialGroup()
-                                                .addComponent(textField7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(button7)))
-                                        .addGap(59, 59, 59))
-                            );
-                            panel23Layout.setVerticalGroup(
-                                panel23Layout.createParallelGroup()
-                                    .addGroup(panel23Layout.createSequentialGroup()
-                                        .addContainerGap()
-                                        .addGroup(panel23Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                            .addComponent(textField7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                GroupLayout panel23Layout = new GroupLayout(panel23);
+                                panel23.setLayout(panel23Layout);
+                                panel23Layout.setHorizontalGroup(
+                                    panel23Layout.createParallelGroup()
+                                        .addGroup(panel23Layout.createSequentialGroup()
+                                            .addGap(34, 34, 34)
+                                            .addGroup(panel23Layout.createParallelGroup()
+                                                .addComponent(textField9)
+                                                .addGroup(panel23Layout.createSequentialGroup()
+                                                    .addGroup(panel23Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(textField8, GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE)
+                                                        .addComponent(textField10, GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
+                                                    .addGap(0, 0, Short.MAX_VALUE)))
+                                            .addGap(18, 18, 18)
+                                            .addGroup(panel23Layout.createParallelGroup()
+                                                .addComponent(label11)
+                                                .addComponent(label12)
+                                                .addComponent(label13))
+                                            .addContainerGap(328, Short.MAX_VALUE))
+                                        .addGroup(GroupLayout.Alignment.TRAILING, panel23Layout.createSequentialGroup()
+                                            .addContainerGap(362, Short.MAX_VALUE)
                                             .addComponent(button6)
-                                            .addComponent(button7))
-                                        .addGap(38, 38, 38)
-                                        .addGroup(panel23Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                            .addComponent(textField8, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(label11))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(panel23Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                            .addComponent(textField9, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(label12))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(panel23Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                            .addComponent(textField10, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(label13))
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
-                                        .addComponent(button8, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
-                                        .addGap(31, 31, 31))
-                            );
-                        }
-                        rptPane.addTab("Capacity", panel23);
+                                            .addGap(18, 18, 18)
+                                            .addGroup(panel23Layout.createParallelGroup()
+                                                .addComponent(button8, GroupLayout.PREFERRED_SIZE, 139, GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(panel23Layout.createSequentialGroup()
+                                                    .addComponent(textField7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(button7)))
+                                            .addGap(59, 59, 59))
+                                );
+                                panel23Layout.setVerticalGroup(
+                                    panel23Layout.createParallelGroup()
+                                        .addGroup(panel23Layout.createSequentialGroup()
+                                            .addContainerGap()
+                                            .addGroup(panel23Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(textField7, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(button6)
+                                                .addComponent(button7))
+                                            .addGap(38, 38, 38)
+                                            .addGroup(panel23Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(textField8, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(label11))
+                                            .addGap(18, 18, 18)
+                                            .addGroup(panel23Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(textField9, GroupLayout.PREFERRED_SIZE, 59, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(label12))
+                                            .addGap(18, 18, 18)
+                                            .addGroup(panel23Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(textField10, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(label13))
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                                            .addComponent(button8, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
+                                            .addGap(31, 31, 31))
+                                );
+                            }
+                            tabbedPane14.addTab("Capacity", panel23);
 
-                        //======== panel12 ========
-                        {
-                            panel12.setLayout(new GridLayout());
-                        }
-                        rptPane.addTab("Financials", panel12);
+                            //======== panel12 ========
+                            {
+                                panel12.setLayout(new GridLayout());
+                            }
+                            tabbedPane14.addTab("Financials", panel12);
 
-                        //======== panel13 ========
-                        {
-                            panel13.setLayout(new GridLayout());
-                        }
-                        rptPane.addTab("Incidents", panel13);
+                            //======== panel13 ========
+                            {
+                                panel13.setLayout(new GridLayout());
+                            }
+                            tabbedPane14.addTab("Incidents", panel13);
 
-                        //======== panel14 ========
-                        {
-                            panel14.setLayout(new GridLayout());
+                            //======== panel14 ========
+                            {
+                                panel14.setLayout(new GridLayout());
+                            }
+                            tabbedPane14.addTab("Fare Evasion", panel14);
                         }
-                        rptPane.addTab("Fare Evasion", panel14);
+                        panel9.add(tabbedPane14);
                     }
-                    panel9.add(rptPane);
+                    tabbedPane12.addTab("Reports", panel9);
+
+                    //======== logOutPanel ========
+                    {
+
+                        //---- logOutButton ----
+                        logOutButton.setText("Log Out");
+                        logOutButton.addActionListener(e -> logOutButtonActionPerformed(e));
+
+                        GroupLayout logOutPanelLayout = new GroupLayout(logOutPanel);
+                        logOutPanel.setLayout(logOutPanelLayout);
+                        logOutPanelLayout.setHorizontalGroup(
+                            logOutPanelLayout.createParallelGroup()
+                                .addGroup(GroupLayout.Alignment.TRAILING, logOutPanelLayout.createSequentialGroup()
+                                    .addContainerGap(309, Short.MAX_VALUE)
+                                    .addComponent(logOutButton)
+                                    .addGap(276, 276, 276))
+                        );
+                        logOutPanelLayout.setVerticalGroup(
+                            logOutPanelLayout.createParallelGroup()
+                                .addGroup(logOutPanelLayout.createSequentialGroup()
+                                    .addGap(204, 204, 204)
+                                    .addComponent(logOutButton)
+                                    .addContainerGap(218, Short.MAX_VALUE))
+                        );
+                    }
+                    tabbedPane12.addTab("Log Out", logOutPanel);
                 }
-                tabbedPane12.addTab("Reports", panel9);
 
-                //======== logOutPanel ========
-                {
-
-                    //---- logOutButton ----
-                    logOutButton.setText("Log Out");
-                    logOutButton.addActionListener(e -> logOutButtonActionPerformed(e));
-
-                    GroupLayout logOutPanelLayout = new GroupLayout(logOutPanel);
-                    logOutPanel.setLayout(logOutPanelLayout);
-                    logOutPanelLayout.setHorizontalGroup(
-                        logOutPanelLayout.createParallelGroup()
-                            .addGroup(GroupLayout.Alignment.TRAILING, logOutPanelLayout.createSequentialGroup()
-                                .addContainerGap(194, Short.MAX_VALUE)
-                                .addComponent(logOutButton)
-                                .addGap(276, 276, 276))
-                    );
-                    logOutPanelLayout.setVerticalGroup(
-                        logOutPanelLayout.createParallelGroup()
-                            .addGroup(logOutPanelLayout.createSequentialGroup()
-                                .addGap(204, 204, 204)
-                                .addComponent(logOutButton)
-                                .addContainerGap(243, Short.MAX_VALUE))
-                    );
-                }
-                tabbedPane12.addTab("Log Out", logOutPanel);
+                GroupLayout tabbedPanelLayout = new GroupLayout(tabbedPanel);
+                tabbedPanel.setLayout(tabbedPanelLayout);
+                tabbedPanelLayout.setHorizontalGroup(
+                    tabbedPanelLayout.createParallelGroup()
+                        .addComponent(tabbedPane12)
+                );
+                tabbedPanelLayout.setVerticalGroup(
+                    tabbedPanelLayout.createParallelGroup()
+                        .addComponent(tabbedPane12)
+                );
             }
-            pnlMain.add(tabbedPane12, "card1");
+            mainPnl.add(tabbedPanel, "card1");
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - Benjamin Ward
-    private JPanel pnlMain;
+    private JPanel mainPnl;
     private JTabbedPane tabbedPane12;
     private JPanel panel20;
     private JLabel label10;
@@ -592,12 +614,12 @@ public class EmployeeGUI extends JFrame {
     private JPanel panel21;
     private JPanel panel22;
     private JPanel panel9;
-    private JTabbedPane rptPane;
+    private JTabbedPane tabbedPane14;
     private JPanel panel19;
     private JLabel label9;
     private JPanel panel18;
-    private JTextField maintCostField;
-    private JTextField breakdownCostField;
+    private JTextField textField2;
+    private JTextField textField4;
     private JLabel label5;
     private JLabel label6;
     private JLabel label7;
@@ -606,8 +628,8 @@ public class EmployeeGUI extends JFrame {
     private JButton button3;
     private JButton button4;
     private JButton button5;
-    private JTextField expensVehicles;
-    private JTextField cheapestVehicle;
+    private JTextField textField5;
+    private JTextField textField11;
     private JPanel panel23;
     private JTextField textField7;
     private JButton button6;
