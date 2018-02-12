@@ -7,16 +7,23 @@ public class Account {
     private String name;
     private String id;
     private double credits;
+    private int sortCode;
+    private int securityNo;
+    private int accountNum;
     private JourneyHistory journeyHistory;
     private Journey openJourney;
     private PassRegistry passes;
     private double spentToday;
 
-    public Account(String name, String id, double credits) {
+
+    public Account(String name, String id, double credits, int sortCode, int securityNo, int accountNum) {
         this.name = name;
         this.id = id;
         this.credits = credits;
         this.spentToday = 10.0;
+        this.sortCode = sortCode;
+        this.securityNo = securityNo;
+        this.accountNum = accountNum;
 
         this.journeyHistory = new JourneyHistory();
         this.passes = new PassRegistry();
@@ -56,4 +63,40 @@ public class Account {
         }
     }
 
+    public Boolean takePayment (double amount, String accNo) {
+        return true;
+    }
+
+
+    public int getSortCode() {
+        return sortCode;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getSecurityNo() {
+        return securityNo;
+    }
+
+    public int getAccountNum() {
+        return accountNum;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                ", credits=" + credits +
+                ", sortCode=" + sortCode +
+                ", securityNo=" + securityNo +
+                ", accountNum=" + accountNum +
+                ", journeyHistory=" + journeyHistory +
+                ", openJourney=" + openJourney +
+                ", passes=" + passes +
+                ", spentToday=" + spentToday +
+                '}';
+    }
 }
