@@ -4,7 +4,6 @@ import javax.swing.*;
 import javax.swing.plaf.*;
 import com.jgoodies.forms.factories.*;
 import com.jgoodies.forms.layout.*;
-import org.jdesktop.swingx.*;
 
 public class test extends JFrame {
 
@@ -26,7 +25,7 @@ public class test extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Daniel Morrris
+        // Generated using JFormDesigner Evaluation license - Daniel Morris
         JPanel mainPanel = new JPanel();
         tabbedPane12 = new JTabbedPane();
         panel20 = new JPanel();
@@ -73,8 +72,47 @@ public class test extends JFrame {
         label13 = new JLabel();
         button8 = new JButton();
         panel12 = new JPanel();
+        textField1 = new JTextField();
+        button1 = new JButton();
+        button2 = new JButton();
+        label1 = new JLabel();
+        textField3 = new JTextField();
+        button9 = new JButton();
         panel13 = new JPanel();
+        label2 = new JLabel();
+        label3 = new JLabel();
+        label4 = new JLabel();
+        textField5 = new JTextField();
+        textField11 = new JTextField();
+        textField12 = new JTextField();
+        button10 = new JButton();
+        button11 = new JButton();
+        textField13 = new JTextField();
+        button12 = new JButton();
+        button13 = new JButton();
+        panel1 = new JPanel();
+        label21 = new JLabel();
+        label22 = new JLabel();
+        button17 = new JButton();
+        textField18 = new JTextField();
+        panel2 = new JPanel();
+        textField19 = new JTextField();
+        label23 = new JLabel();
+        label24 = new JLabel();
+        scrollPane1 = new JScrollPane();
+        textArea1 = new JTextArea();
+        button18 = new JButton();
         panel14 = new JPanel();
+        button14 = new JButton();
+        button15 = new JButton();
+        textField14 = new JTextField();
+        label16 = new JLabel();
+        label17 = new JLabel();
+        label18 = new JLabel();
+        textField15 = new JTextField();
+        textField16 = new JTextField();
+        button16 = new JButton();
+        textField17 = new JTextField();
 
         //======== mainPanel ========
         {
@@ -108,7 +146,7 @@ public class test extends JFrame {
                         panel20Layout.createParallelGroup()
                             .addGroup(panel20Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(label10, GroupLayout.DEFAULT_SIZE, 448, Short.MAX_VALUE))
+                                .addComponent(label10, GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE))
                     );
                 }
                 tabbedPane12.addTab("Staff Menu:", panel20);
@@ -184,7 +222,7 @@ public class test extends JFrame {
                             );
                             panel21Layout.setVerticalGroup(
                                 panel21Layout.createParallelGroup()
-                                    .addGap(0, 428, Short.MAX_VALUE)
+                                    .addGap(0, 442, Short.MAX_VALUE)
                             );
                         }
                         tabbedPane15.addTab("T2", panel21);
@@ -200,7 +238,7 @@ public class test extends JFrame {
                             );
                             panel22Layout.setVerticalGroup(
                                 panel22Layout.createParallelGroup()
-                                    .addGap(0, 428, Short.MAX_VALUE)
+                                    .addGap(0, 442, Short.MAX_VALUE)
                             );
                         }
                         tabbedPane15.addTab("T3", panel22);
@@ -233,7 +271,7 @@ public class test extends JFrame {
                             );
                             panel19Layout.setVerticalGroup(
                                 panel19Layout.createParallelGroup()
-                                    .addComponent(label9, GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
+                                    .addComponent(label9, GroupLayout.DEFAULT_SIZE, 442, Short.MAX_VALUE)
                             );
                         }
                         tabbedPane14.addTab("Reports:", panel19);
@@ -346,7 +384,7 @@ public class test extends JFrame {
                                         .addGroup(panel18Layout.createParallelGroup()
                                             .addComponent(comboBox2, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
                                             .addComponent(label8))
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                                         .addComponent(button5, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
                                         .addGap(31, 31, 31))
                             );
@@ -452,7 +490,7 @@ public class test extends JFrame {
                                         .addGroup(panel23Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                             .addComponent(textField10, GroupLayout.PREFERRED_SIZE, 51, GroupLayout.PREFERRED_SIZE)
                                             .addComponent(label13))
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                                         .addComponent(button8, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
                                         .addGap(31, 31, 31))
                             );
@@ -461,19 +499,382 @@ public class test extends JFrame {
 
                         //======== panel12 ========
                         {
-                            panel12.setLayout(new GridLayout());
+
+                            //---- textField1 ----
+                            textField1.setText("Start Date - End Date");
+
+                            //---- button1 ----
+                            button1.setText("<");
+
+                            //---- button2 ----
+                            button2.setText(">");
+
+                            //---- label1 ----
+                            label1.setText("Profit / Loss");
+                            label1.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+
+                            //---- textField3 ----
+                            textField3.setText("\u00a3");
+                            textField3.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+
+                            //---- button9 ----
+                            button9.setText("Print reports");
+
+                            GroupLayout panel12Layout = new GroupLayout(panel12);
+                            panel12.setLayout(panel12Layout);
+                            panel12Layout.setHorizontalGroup(
+                                panel12Layout.createParallelGroup()
+                                    .addGroup(panel12Layout.createSequentialGroup()
+                                        .addGap(37, 37, 37)
+                                        .addComponent(textField3, GroupLayout.PREFERRED_SIZE, 149, GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(label1)
+                                        .addContainerGap(323, Short.MAX_VALUE))
+                                    .addGroup(GroupLayout.Alignment.TRAILING, panel12Layout.createSequentialGroup()
+                                        .addContainerGap(350, Short.MAX_VALUE)
+                                        .addComponent(button1)
+                                        .addGap(18, 18, 18)
+                                        .addGroup(panel12Layout.createParallelGroup()
+                                            .addGroup(panel12Layout.createSequentialGroup()
+                                                .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(button2))
+                                            .addComponent(button9, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE))
+                                        .addGap(56, 56, 56))
+                            );
+                            panel12Layout.setVerticalGroup(
+                                panel12Layout.createParallelGroup()
+                                    .addGroup(panel12Layout.createSequentialGroup()
+                                        .addGap(14, 14, 14)
+                                        .addGroup(panel12Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                            .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(button1)
+                                            .addComponent(button2))
+                                        .addGap(35, 35, 35)
+                                        .addGroup(panel12Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                            .addComponent(textField3, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(label1))
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 227, Short.MAX_VALUE)
+                                        .addComponent(button9, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
+                                        .addGap(33, 33, 33))
+                            );
                         }
                         tabbedPane14.addTab("Financials", panel12);
 
                         //======== panel13 ========
                         {
-                            panel13.setLayout(new GridLayout());
+
+                            //---- label2 ----
+                            label2.setText("Unsociable Reports");
+                            label2.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+
+                            //---- label3 ----
+                            label3.setText("Incident Reports");
+                            label3.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+
+                            //---- label4 ----
+                            label4.setText("Drivers Accident Reports");
+                            label4.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+
+                            //---- button10 ----
+                            button10.setText("<");
+
+                            //---- button11 ----
+                            button11.setText(">");
+
+                            //---- textField13 ----
+                            textField13.setText("Start Date - End Date");
+
+                            //---- button12 ----
+                            button12.setText("Print Reports");
+
+                            //---- button13 ----
+                            button13.setText("Driver Search");
+
+                            GroupLayout panel13Layout = new GroupLayout(panel13);
+                            panel13.setLayout(panel13Layout);
+                            panel13Layout.setHorizontalGroup(
+                                panel13Layout.createParallelGroup()
+                                    .addGroup(GroupLayout.Alignment.TRAILING, panel13Layout.createSequentialGroup()
+                                        .addGroup(panel13Layout.createParallelGroup()
+                                            .addGroup(panel13Layout.createSequentialGroup()
+                                                .addGap(24, 24, 24)
+                                                .addGroup(panel13Layout.createParallelGroup()
+                                                    .addGroup(panel13Layout.createSequentialGroup()
+                                                        .addComponent(label3, GroupLayout.PREFERRED_SIZE, 224, GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(0, 54, Short.MAX_VALUE))
+                                                    .addComponent(textField5, GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                                                    .addGroup(panel13Layout.createSequentialGroup()
+                                                        .addComponent(label2, GroupLayout.PREFERRED_SIZE, 201, GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE))
+                                                    .addComponent(textField11, GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                                                    .addComponent(label4, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE))
+                                                .addGap(76, 76, 76))
+                                            .addGroup(GroupLayout.Alignment.TRAILING, panel13Layout.createSequentialGroup()
+                                                .addContainerGap(322, Short.MAX_VALUE)
+                                                .addComponent(button10)
+                                                .addGap(18, 18, 18)))
+                                        .addComponent(textField13, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(button11)
+                                        .addGap(84, 84, 84))
+                                    .addGroup(panel13Layout.createSequentialGroup()
+                                        .addGroup(panel13Layout.createParallelGroup()
+                                            .addGroup(panel13Layout.createSequentialGroup()
+                                                .addGap(24, 24, 24)
+                                                .addComponent(textField12, GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE))
+                                            .addGroup(panel13Layout.createSequentialGroup()
+                                                .addGap(101, 101, 101)
+                                                .addComponent(button13, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)))
+                                        .addGap(99, 99, 99)
+                                        .addComponent(button12, GroupLayout.PREFERRED_SIZE, 133, GroupLayout.PREFERRED_SIZE)
+                                        .addGap(107, 107, 107))
+                            );
+                            panel13Layout.setVerticalGroup(
+                                panel13Layout.createParallelGroup()
+                                    .addGroup(panel13Layout.createSequentialGroup()
+                                        .addGroup(panel13Layout.createParallelGroup()
+                                            .addGroup(panel13Layout.createSequentialGroup()
+                                                .addGap(72, 72, 72)
+                                                .addComponent(label2)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(textField5, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
+                                                .addGap(14, 14, 14)
+                                                .addComponent(label3, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(panel13Layout.createSequentialGroup()
+                                                .addGap(12, 12, 12)
+                                                .addGroup(panel13Layout.createParallelGroup()
+                                                    .addGroup(panel13Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(textField13, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(button10))
+                                                    .addComponent(button11))))
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(textField11, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(label4)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(textField12, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(panel13Layout.createParallelGroup()
+                                            .addComponent(button13)
+                                            .addComponent(button12, GroupLayout.PREFERRED_SIZE, 54, GroupLayout.PREFERRED_SIZE))
+                                        .addContainerGap(33, Short.MAX_VALUE))
+                            );
                         }
                         tabbedPane14.addTab("Incidents", panel13);
 
+                        //======== panel1 ========
+                        {
+
+                            //---- label21 ----
+                            label21.setText("Specific Driver Accident Reports");
+                            label21.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+
+                            //---- label22 ----
+                            label22.setText("Enter Driver's Name :");
+                            label22.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+
+                            //---- button17 ----
+                            button17.setText("Search");
+
+                            GroupLayout panel1Layout = new GroupLayout(panel1);
+                            panel1.setLayout(panel1Layout);
+                            panel1Layout.setHorizontalGroup(
+                                panel1Layout.createParallelGroup()
+                                    .addGroup(panel1Layout.createSequentialGroup()
+                                        .addGroup(panel1Layout.createParallelGroup()
+                                            .addGroup(panel1Layout.createSequentialGroup()
+                                                .addGap(39, 39, 39)
+                                                .addComponent(label22)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(textField18, GroupLayout.PREFERRED_SIZE, 274, GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(panel1Layout.createSequentialGroup()
+                                                .addGap(221, 221, 221)
+                                                .addComponent(button17, GroupLayout.PREFERRED_SIZE, 168, GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(panel1Layout.createSequentialGroup()
+                                                .addGap(152, 152, 152)
+                                                .addComponent(label21)))
+                                        .addContainerGap(106, Short.MAX_VALUE))
+                            );
+                            panel1Layout.setVerticalGroup(
+                                panel1Layout.createParallelGroup()
+                                    .addGroup(panel1Layout.createSequentialGroup()
+                                        .addGap(76, 76, 76)
+                                        .addComponent(label21)
+                                        .addGap(74, 74, 74)
+                                        .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                            .addComponent(label22)
+                                            .addComponent(textField18, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
+                                        .addGap(59, 59, 59)
+                                        .addComponent(button17, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+                                        .addContainerGap(114, Short.MAX_VALUE))
+                            );
+                        }
+                        tabbedPane14.addTab("Driver Search", panel1);
+
+                        //======== panel2 ========
+                        {
+
+                            //---- textField19 ----
+                            textField19.setText("\"Driver's Name Here\"");
+                            textField19.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+
+                            //---- label23 ----
+                            label23.setText("- Accident History");
+                            label23.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+
+                            //---- label24 ----
+                            label24.setText("Driver's Accident History");
+                            label24.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+
+                            //======== scrollPane1 ========
+                            {
+
+                                //---- textArea1 ----
+                                textArea1.setText(".............");
+                                scrollPane1.setViewportView(textArea1);
+                            }
+
+                            //---- button18 ----
+                            button18.setText("Print Report");
+
+                            GroupLayout panel2Layout = new GroupLayout(panel2);
+                            panel2.setLayout(panel2Layout);
+                            panel2Layout.setHorizontalGroup(
+                                panel2Layout.createParallelGroup()
+                                    .addGroup(panel2Layout.createSequentialGroup()
+                                        .addGroup(panel2Layout.createParallelGroup()
+                                            .addGroup(panel2Layout.createSequentialGroup()
+                                                .addGap(37, 37, 37)
+                                                .addComponent(textField19, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(label23, GroupLayout.PREFERRED_SIZE, 228, GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(panel2Layout.createSequentialGroup()
+                                                .addGap(78, 78, 78)
+                                                .addGroup(panel2Layout.createParallelGroup()
+                                                    .addComponent(label24)
+                                                    .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 410, GroupLayout.PREFERRED_SIZE))))
+                                        .addContainerGap(147, Short.MAX_VALUE))
+                                    .addGroup(GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
+                                        .addGap(0, 414, Short.MAX_VALUE)
+                                        .addComponent(button18, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE)
+                                        .addGap(95, 95, 95))
+                            );
+                            panel2Layout.setVerticalGroup(
+                                panel2Layout.createParallelGroup()
+                                    .addGroup(panel2Layout.createSequentialGroup()
+                                        .addGap(28, 28, 28)
+                                        .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                            .addComponent(textField19, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(label23))
+                                        .addGap(29, 29, 29)
+                                        .addComponent(label24)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 87, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                                        .addComponent(button18, GroupLayout.PREFERRED_SIZE, 52, GroupLayout.PREFERRED_SIZE)
+                                        .addGap(38, 38, 38))
+                            );
+                        }
+                        tabbedPane14.addTab("Driver Search Results", panel2);
+
                         //======== panel14 ========
                         {
-                            panel14.setLayout(new GridLayout());
+
+                            //---- button14 ----
+                            button14.setText("<");
+
+                            //---- button15 ----
+                            button15.setText(">");
+
+                            //---- textField14 ----
+                            textField14.setText("Start Date - End Date");
+
+                            //---- label16 ----
+                            label16.setText("Number of evaders caught");
+                            label16.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+
+                            //---- label17 ----
+                            label17.setText("Revenue Recovered");
+                            label17.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+
+                            //---- label18 ----
+                            label18.setText("Revenue Lost");
+                            label18.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+
+                            //---- textField15 ----
+                            textField15.setText("#");
+                            textField15.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                            textField15.setHorizontalAlignment(SwingConstants.CENTER);
+
+                            //---- textField16 ----
+                            textField16.setText("\u00a3");
+                            textField16.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                            textField16.setHorizontalAlignment(SwingConstants.CENTER);
+
+                            //---- button16 ----
+                            button16.setText("Print Reports");
+
+                            //---- textField17 ----
+                            textField17.setText("\u00a3");
+                            textField17.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+                            textField17.setHorizontalAlignment(SwingConstants.CENTER);
+
+                            GroupLayout panel14Layout = new GroupLayout(panel14);
+                            panel14.setLayout(panel14Layout);
+                            panel14Layout.setHorizontalGroup(
+                                panel14Layout.createParallelGroup()
+                                    .addGroup(panel14Layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(panel14Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                            .addComponent(textField15, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(textField16, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(textField17, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(panel14Layout.createParallelGroup()
+                                            .addGroup(panel14Layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addGroup(panel14Layout.createParallelGroup()
+                                                    .addComponent(label16, GroupLayout.PREFERRED_SIZE, 295, GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(label17, GroupLayout.PREFERRED_SIZE, 283, GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(label18, GroupLayout.PREFERRED_SIZE, 255, GroupLayout.PREFERRED_SIZE))
+                                                .addGap(0, 208, Short.MAX_VALUE))
+                                            .addGroup(GroupLayout.Alignment.TRAILING, panel14Layout.createSequentialGroup()
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 187, Short.MAX_VALUE)
+                                                .addGroup(panel14Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(button16, GroupLayout.PREFERRED_SIZE, 128, GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(panel14Layout.createSequentialGroup()
+                                                        .addComponent(button14)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(textField14, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(button15)))
+                                                .addGap(99, 99, 99))))
+                            );
+                            panel14Layout.setVerticalGroup(
+                                panel14Layout.createParallelGroup()
+                                    .addGroup(panel14Layout.createSequentialGroup()
+                                        .addGap(15, 15, 15)
+                                        .addGroup(panel14Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                            .addComponent(button15)
+                                            .addComponent(textField14, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(button14))
+                                        .addGap(42, 42, 42)
+                                        .addGroup(panel14Layout.createParallelGroup()
+                                            .addComponent(textField15, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(label16, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGap(28, 28, 28)
+                                        .addGroup(panel14Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                            .addComponent(textField16, GroupLayout.PREFERRED_SIZE, 42, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(label17))
+                                        .addGap(26, 26, 26)
+                                        .addGroup(panel14Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                            .addComponent(textField17, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(label18))
+                                        .addGap(91, 91, 91)
+                                        .addComponent(button16, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
+                                        .addGap(35, 35, 35))
+                            );
                         }
                         tabbedPane14.addTab("Fare Evasion", panel14);
                     }
@@ -497,7 +898,7 @@ public class test extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Daniel Morrris
+    // Generated using JFormDesigner Evaluation license - Daniel Morris
     private JTabbedPane tabbedPane12;
     private JPanel panel20;
     private JLabel label10;
@@ -543,7 +944,46 @@ public class test extends JFrame {
     private JLabel label13;
     private JButton button8;
     private JPanel panel12;
+    private JTextField textField1;
+    private JButton button1;
+    private JButton button2;
+    private JLabel label1;
+    private JTextField textField3;
+    private JButton button9;
     private JPanel panel13;
+    private JLabel label2;
+    private JLabel label3;
+    private JLabel label4;
+    private JTextField textField5;
+    private JTextField textField11;
+    private JTextField textField12;
+    private JButton button10;
+    private JButton button11;
+    private JTextField textField13;
+    private JButton button12;
+    private JButton button13;
+    private JPanel panel1;
+    private JLabel label21;
+    private JLabel label22;
+    private JButton button17;
+    private JTextField textField18;
+    private JPanel panel2;
+    private JTextField textField19;
+    private JLabel label23;
+    private JLabel label24;
+    private JScrollPane scrollPane1;
+    private JTextArea textArea1;
+    private JButton button18;
     private JPanel panel14;
+    private JButton button14;
+    private JButton button15;
+    private JTextField textField14;
+    private JLabel label16;
+    private JLabel label17;
+    private JLabel label18;
+    private JTextField textField15;
+    private JTextField textField16;
+    private JButton button16;
+    private JTextField textField17;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
