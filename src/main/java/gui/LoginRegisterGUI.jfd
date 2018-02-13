@@ -1,0 +1,152 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.CardLayout ) ) {
+			name: "pnlMain"
+			"minimumSize": new java.awt.Dimension( 627, 413 )
+			"preferredSize": new java.awt.Dimension( 700, 478 )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :::p, par l {comp successUserLogin:::p::p, comp btnMainGUI::l:p:152:p}, space :p:85:p, par l {seq {comp label7:::p::p, space ::384:x}, seq {comp successLoginAdmin:::p::p, space ::102:x, comp unsuccessfulLogin:::p::p, space :p:35:p}, seq {par l {comp tooManyRetries:::p::p, comp regOpenBut:::p:150:p, comp cancelBut2:::p:150:p, comp loginBut:::p:150:p, comp passField:::p:150:p, comp label8:::p::p, comp userField:::p:150:p, comp label6:::p::p}, space :0:287:x}}}, seq {space :p:276:p, comp invalidCred:::p::p, space :0:404:x}}"
+				"$verticalGroup": "par l {seq l {space :p:15:p, par b {comp successUserLogin::b:p::p, comp unsuccessfulLogin::b:p::p, comp successLoginAdmin::b:p::p}, space :p:91:p, par t {seq {comp label6:::p::p, space :p:26:p, comp invalidCred:::p::p, space u:::p, comp label7:::p::p, space :::p, comp userField:::p::p, space s:::p, comp label8:::p::p, space s:::p, comp passField:::p::p, space :p:44:p, comp tooManyRetries:::p::p, space :::p, comp loginBut:::p::p, space s:::p, comp cancelBut2:::p::p, space s:::p, comp regOpenBut:::p::p}, comp btnMainGUI:::p:50:p}, space ::101:x}}"
+			} ) {
+				name: "pnlLogin"
+				"preferredSize": new java.awt.Dimension( 700, 478 )
+				"visible": false
+				"minimumSize": new java.awt.Dimension( 627, 413 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label6"
+					"text": "Enter Your Login Credentials"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label7"
+					"text": "Username"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label8"
+					"text": "Password"
+				} )
+				add( new FormComponent( "javax.swing.JPasswordField" ) {
+					name: "passField"
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "userField"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "loginBut"
+					"text": "Login"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "loginButActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "cancelBut2"
+					"text": "Cancel"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cancelButActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "successUserLogin"
+					"text": "Successful Login - User"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "successUserLoginActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "successLoginAdmin"
+					"text": "Successful Login - Admin"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "successLoginAdminActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "unsuccessfulLogin"
+					"text": "Unsuccessful Login "
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "unsuccessfulLoginActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "regOpenBut"
+					"text": "Register"
+					"background": new java.awt.Color( 0, 0, 0, 255 )
+					"foreground": sfield java.awt.Color blue
+					"opaque": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "regOpenButActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "tooManyRetries"
+					"text": "Too Many Retries. Please wait"
+					"foreground": &Color0 new java.awt.Color( 255, 0, 0, 255 )
+					"visible": false
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "invalidCred"
+					"text": "Invalid Credentials"
+					"foreground": #Color0
+					"visible": false
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnMainGUI"
+					"text": "Go Back To Main Page"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnMainGUIActionPerformed", true ) )
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "card2"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {space :0:680:x};par l {seq {space :0:0:x, par l {seq {space :55:55:p, comp label1:::p::p}, comp label2:::p::p, seq {space :3:3:p, comp regUserNameField:::p:188:p}, seq {space :3:3:p, comp label3:::p::p}, seq {space :3:3:p, comp firstNameField:::p:188:p}, seq {space :3:3:p, comp label4:::p::p}, seq {space :3:3:p, comp lastNameField:::p:188:p}, seq {space :3:3:p, comp label5:::p::p}, seq {space :3:3:p, comp regPasswordField:::p:188:p}, seq {space :3:3:p, comp adminCheckBox:::p::p}, seq {space :3:3:p, comp submitRegBut:::p:84:p, space :18:18:p, comp cancelRegBut:::p:86:p}}, space :0:0:x}}"
+				"$verticalGroup": "par l {space :0:580:x};par l {seq {space :0:0:x, comp label1:::p::p, space :18:18:p, comp label2:::p::p, space :12:12:p, comp regUserNameField:::p::p, space :6:6:p, comp label3:::p::p, space :12:12:p, comp firstNameField:::p::p, space :6:6:p, comp label4:::p::p, space :18:18:p, comp lastNameField:::p::p, space :12:12:p, comp label5:::p::p, space :6:6:p, comp regPasswordField:::p::p, space :21:21:p, comp adminCheckBox:::p::p, space :18:18:p, par l {comp submitRegBut:::p::p, comp cancelRegBut:::p::p}, space :0:0:x}}"
+			} ) {
+				name: "pnlRegister"
+				"minimumSize": new java.awt.Dimension( 627, 413 )
+				"preferredSize": new java.awt.Dimension( 700, 478 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "Register"
+					"font": new java.awt.Font( "Segoe UI", 1, 18 )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "Username"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label3"
+					"text": "First Name"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label4"
+					"text": "Last Name"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label5"
+					"text": "Password"
+				} )
+				add( new FormComponent( "javax.swing.JCheckBox" ) {
+					name: "adminCheckBox"
+					"text": "Admin"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "submitRegBut"
+					"text": "Submit"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "submitRegButActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "cancelRegBut"
+					"text": "Cancel"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cancelButActionPerformed", true ) )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cancelRegButActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "regUserNameField"
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "firstNameField"
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "lastNameField"
+				} )
+				add( new FormComponent( "javax.swing.JPasswordField" ) {
+					name: "regPasswordField"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "card3"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 680, 580 )
+		} )
+	}
+}

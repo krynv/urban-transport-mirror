@@ -1,8 +1,11 @@
 package gui;
 
-import java.awt.*;
-import java.awt.event.*;
+import org.json.simple.parser.ParseException;
+
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 public class GUI extends JFrame {
 
@@ -23,10 +26,14 @@ public class GUI extends JFrame {
 
     private void btnPayForTripActionPerformed(ActionEvent e) {
         System.out.println("Pay for trip");
+
+        new PayForTripGUI().setVisible(true);
+        this.setVisible(false);
     }
 
-    private void btnViewReportActionPerformed(ActionEvent e) {
-        System.out.println("View report");
+    private void btnViewReportActionPerformed(ActionEvent e) throws IOException, ParseException {
+        new LoginRegisterGUI().setVisible(true);
+        this.setVisible(false);
     }
 
     private void initComponents() {
@@ -66,30 +73,38 @@ public class GUI extends JFrame {
                 //---- btnViewReport ----
                 btnViewReport.setText("View report");
                 btnViewReport.setPreferredSize(new Dimension(150, 60));
-                btnViewReport.addActionListener(e -> btnViewReportActionPerformed(e));
+                btnViewReport.addActionListener(e -> {
+                    try {
+                        btnViewReportActionPerformed(e);
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    } catch (ParseException e1) {
+                        e1.printStackTrace();
+                    }
+                });
 
                 GroupLayout pnlSelectOptionLayout = new GroupLayout(pnlSelectOption);
                 pnlSelectOption.setLayout(pnlSelectOptionLayout);
                 pnlSelectOptionLayout.setHorizontalGroup(
                     pnlSelectOptionLayout.createParallelGroup()
-                        .addGroup(pnlSelectOptionLayout.createSequentialGroup()
-                            .addGap(171, 171, 171)
+                        .addGroup(GroupLayout.Alignment.TRAILING, pnlSelectOptionLayout.createSequentialGroup()
+                            .addContainerGap(267, Short.MAX_VALUE)
                             .addGroup(pnlSelectOptionLayout.createParallelGroup()
                                 .addComponent(btnPayOnExit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnPayForTrip, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnViewReport, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                            .addContainerGap(359, Short.MAX_VALUE))
+                            .addGap(263, 263, 263))
                 );
                 pnlSelectOptionLayout.setVerticalGroup(
                     pnlSelectOptionLayout.createParallelGroup()
                         .addGroup(pnlSelectOptionLayout.createSequentialGroup()
-                            .addGap(89, 89, 89)
+                            .addGap(149, 149, 149)
                             .addComponent(btnPayOnExit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(btnPayForTrip, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(btnViewReport, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap(275, Short.MAX_VALUE))
+                            .addContainerGap(221, Short.MAX_VALUE))
                 );
             }
             pnlGUI.add(pnlSelectOption, "card1");
