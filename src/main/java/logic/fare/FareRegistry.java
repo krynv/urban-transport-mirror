@@ -2,25 +2,49 @@ package logic.fare;
 
 import logic.account.Account;
 import logic.journey.Journey;
-import logic.journey.JourneyRegistry;
 
-import java.util.Map;
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FareRegistry {
 
-    static Map<String, Fare> fares = new HashMap<String, Fare>() {{
-        put("DistanceFare", new DistanceFare());
-        // put("DurationFare", new DurationFare());
-        // put("CreditFare", new CreditFare());
-        // put("OAPFare", new OAPFare());
-        // put("OffPeakFare", new OffPeakFare());
+    static List<Fare> fares = new ArrayList<Fare>() {{
+        add(new DistanceFare());
+        add(new OffPeakFare());
     }};
 
-    public double calculateCostOfJourney(Journey journey) {
-        return 0.0;
+    /**
+     * Traverse through the appropriate fares in the system.
+     * Calculate the cost of the journey dependent on each fare.
+     * Compare the costs of each fare.
+     * Return the highest cost.
+     *
+     * @param journey the journey that has just been closed
+     * @return the highest cost of the journey from the fares
+     */
+    public double calculateCost(Journey journey) {
+        double cost = 0.0;
+
+        for (Fare fare:fares) {
+            double fareCost = fare.calculateCost(journey);
+
+            if (fareCost > cost) {
+                cost = fareCost;
+            }
+        }
+
+        return cost;
     }
 
+    /**
+     * Traverse through the appropriate tariffs for the conditions provided.
+     * Calculate the cost of the tariff dependent of each tariff in the system.
+     * Compare the costs of each of the tariffs.
+     * Return the lowest cost.
+     *
+     * @param account the account used to calculate the tariff
+     * @return the lowest cost for the journey from the tariffs
+     */
     public double findCheapestTariff(Account account) {
         return 0.0;
     }

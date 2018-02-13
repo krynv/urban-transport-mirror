@@ -30,7 +30,7 @@ public class Journey {
     public LocalDateTime getDepartureDateTime() {
         return departureDateTime;
     }
-
+    
     public Boolean isOpen() {
         return (departureDateTime == null && departureLocation == null);
     }

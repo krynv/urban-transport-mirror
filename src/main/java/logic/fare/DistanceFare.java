@@ -44,7 +44,8 @@ public class DistanceFare extends Fare {
         trips.add(new Trip(new Location("4"), new Location("1"), 9.5));
     }
 
-    public double calculateCostOfJourney(Journey journey) {
+    public double calculateCost(Journey journey) {
+        // TODO: Implement logic for calculate cost
         return 0.0;
     }
 

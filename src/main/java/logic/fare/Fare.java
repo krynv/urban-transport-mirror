@@ -6,7 +6,7 @@ public class Fare {
 
     public Fare() {}
 
-    public double calculateCostOfJourney(Journey journey) {
+    public double calculateCost(Journey journey) {
         return 0.0;
     }
 

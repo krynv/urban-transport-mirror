@@ -42,9 +42,9 @@ public class Account {
             if (!pass.isCovered(openJourney)) {
                 FareRegistry fares = new FareRegistry();
 
-                spentToday += fares.calculateCostOfJourney(openJourney); // TODO: Implement logic for calculate cost;
+                spentToday += fares.calculateCost(openJourney); // TODO: Implement logic for calculate cost
 
-                credits -= fares.findCheapestTariff(this);
+                credits -= fares.findCheapestTariff(this);  // TODO: Implement logic for find cheapest tariff
 
                 exit = true;
             } else {
