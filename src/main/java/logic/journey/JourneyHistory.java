@@ -12,6 +12,7 @@ public class JourneyHistory {
     private List<Journey> journeys;
 
     public JourneyHistory(String id) {
+        // TODO: Create JourneySerializer
 //        journeyDaoJson = new JourneyDaoJson();
 //        journeys = journeyDaoJson.getJourneysByAccountId(id);
 //        journeyDaoJson.setJourneysByAccountId(id, journeys);
