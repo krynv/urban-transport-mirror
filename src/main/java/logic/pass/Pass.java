@@ -15,7 +15,7 @@ public class Pass {
     }
 
     public Boolean isCovered(Journey journey) {
-        return (valid && dateTimeExpires.isAfter(journey.getEndDateTime()));
+        return (valid && dateTimeExpires.isAfter(journey.getDepartureDateTime()));
     }
 
     @Override

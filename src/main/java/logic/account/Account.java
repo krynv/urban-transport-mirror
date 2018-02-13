@@ -3,8 +3,6 @@ package logic.account;
 import logic.journey.Journey;
 import logic.journey.JourneyHistory;
 import logic.location.Location;
-import logic.pass.Pass;
-import logic.pass.PassRegistry;
 
 import java.time.LocalDateTime;
 
@@ -12,12 +10,12 @@ public class Account {
 
     private String id;
     private String name;
-    private JourneyHistory journeyHistory;
-    private PassRegistry passes;
+    private JourneyHistory journeys;
 
     public Account(String id, String name) {
         this.id = id;
         this.name = name;
+        this.journeys = new JourneyHistory(id);
     }
 
     public String getId() {
@@ -30,7 +28,7 @@ public class Account {
      * @param departureDateTime the time the token was scanned at.
      */
     public void processPassengerExit(Location departureLocation, LocalDateTime departureDateTime) {
-        Journey openJourney = journeyHistory.findOpenJourney();
+        Journey openJourney = journeys.findOpenJourney();
 
         if (openJourney != null) {
 

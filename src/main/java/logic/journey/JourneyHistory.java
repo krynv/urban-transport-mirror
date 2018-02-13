@@ -1,17 +1,30 @@
 package logic.journey;
 
+import logic.location.Location;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JourneyHistory extends ArrayList<Journey> {
+public class JourneyHistory {
 
-    public JourneyHistory() {}
+    private JourneyDaoJson journeyDaoJson;
+    private List<Journey> journeys;
 
-    public Journey findOpenJourney() { // TODO: Unit test
+    public JourneyHistory(String id) {
+        journeyDaoJson = new JourneyDaoJson();
+        journeys = journeyDaoJson.getJourneysByAccountId(id);
 
+        journeys.add(new Journey(LocalDateTime.now(), new Location("0")));
+        journeys.add(new Journey(LocalDateTime.now(), new Location("1")));
+
+        journeyDaoJson.setJourneysByAccountId(id, journeys);
+    }
+
+    public Journey findOpenJourney() {  // TODO: Create unit test
         List<Journey> openJourneys = new ArrayList<Journey>();
 
-        for(Journey journey: this) {
+        for(Journey journey: journeys) {
             if (journey.isOpen()) {
                 openJourneys.add(journey);
             }
