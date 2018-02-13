@@ -449,11 +449,9 @@ public class PayForTripGUI extends JFrame {
     private void btnPrintPhyTicActionPerformed(ActionEvent e) {
         // TODO add your code here 29.2.1 - 29.2.2
         // produceToken returns bool... needs token class and physical token  class
-        if(true) {
-            lblReceiptNotification.setVisible(true);
-            lblTransAccNotification.setBackground(new Color(216, 231, 213));
-            lblTransAccNotification.setOpaque(true);
-            lblReceiptNotification.setText("Ticket Printed");
+        PhysicalToken token = new PhysicalToken("1", "1");
+        if(token.produceToken().equals("token")) {
+            producePhysicalToken();
         } else {
             lblReceiptNotification.setVisible(true);
             lblTransAccNotification.setBackground(new Color(216, 231, 213));
@@ -461,6 +459,13 @@ public class PayForTripGUI extends JFrame {
             lblReceiptNotification.setText("Not Printed");
         }
 
+    }
+
+    private void producePhysicalToken() {
+        lblReceiptNotification.setVisible(true);
+        lblTransAccNotification.setBackground(new Color(216, 231, 213));
+        lblTransAccNotification.setOpaque(true);
+        lblReceiptNotification.setText("Ticket Printed");
     }
 
     private void initComponents() {
