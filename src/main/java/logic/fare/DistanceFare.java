@@ -1,4 +1,7 @@
-package logic;
+package logic.fare;
+
+import logic.journey.Journey;
+import logic.location.Location;
 
 import java.util.Vector;
 

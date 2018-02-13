@@ -1,4 +1,6 @@
-package logic;
+package logic.pass;
+
+import logic.journey.Journey;
 
 import java.time.LocalDateTime;
 

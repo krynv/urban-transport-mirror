@@ -1,17 +1,15 @@
 package gui;
 
-import logic.*;
+import logic.gate.GateController;
 
 import java.awt.event.*;
 import javax.swing.*;
 
-public class PayOnExitGUI extends JFrame {
+public class Gate extends JFrame {
 
-    private TokenReader tokenReader;
     private GateController gateController;
 
-    public PayOnExitGUI() {
-        tokenReader = new TokenReader(0, new Location("0"));
+    public Gate() {
         gateController = new GateController();
 
         initComponents();
@@ -21,10 +19,9 @@ public class PayOnExitGUI extends JFrame {
     }
 
     private void btnScanTokenActionPerformed(ActionEvent e) {
-        System.out.println("Scan token");
+        System.out.println("Scan Token");   // TODO: Change to Logger
 
-        tokenReader.extractTokenId();
-        gateController.passTokenId(tokenReader.getTokenId());
+        gateController.presentToken("1");
     }
 
     private void initComponents() {

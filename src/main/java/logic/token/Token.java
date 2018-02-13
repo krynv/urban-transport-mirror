@@ -1,18 +1,16 @@
-package logic;
+package logic.token;
 
 public class Token {
-
-    private int id;
-    private int type;
+    private String id;
     private String accountId;
 
-    public Token(int id, int type, String accountId) {
+    public Token(String id, String accountId) {
         this.id = id;
-        this.type = type;
         this.accountId = accountId;
+
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 

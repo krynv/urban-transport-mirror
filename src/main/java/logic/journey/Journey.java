@@ -1,4 +1,6 @@
-package logic;
+package logic.journey;
+
+import logic.location.Location;
 
 import java.time.LocalDateTime;
 
@@ -9,6 +11,10 @@ public class Journey {
     private double distance;
     private Location startLocation;
     private Location endLocation;
+
+    public Journey() {
+
+    }
 
     public Journey(LocalDateTime startDateTime, Location startLocation, LocalDateTime endDateTime, Location endLocation, double distance) {
         this.startDateTime = startDateTime;
@@ -35,6 +41,8 @@ public class Journey {
         return endDateTime;
     }
 
+    public LocalDateTime getStartDateTime() { return startDateTime; }
+
     public Boolean isOpen() {
         return (endDateTime == null && endLocation == null);
     }
@@ -55,4 +63,5 @@ public class Journey {
                 ", endLocation=" + endLocation +
                 '}';
     }
+
 }

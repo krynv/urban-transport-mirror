@@ -1,4 +1,7 @@
-package logic;
+package logic.pass;
+
+import logic.journey.Journey;
+import logic.pass.Pass;
 
 import java.util.ArrayList;
 
