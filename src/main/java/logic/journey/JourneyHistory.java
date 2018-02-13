@@ -39,7 +39,7 @@ public class JourneyHistory {
                 Journey journey = openJourneys.get(0);
 
                 for (int i=1; i < openJourneys.size(); i++) {
-                    if (journey.getStartDateTime().isBefore(openJourneys.get(i).getStartDateTime())) {
+                    if (journey.getDepartureDateTime().isBefore(openJourneys.get(i).getDepartureDateTime())) {
                         journey = openJourneys.get(i);
                     }
                 }
