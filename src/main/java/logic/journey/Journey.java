@@ -6,47 +6,57 @@ import java.time.LocalDateTime;
 
 public class Journey {
 
-    private LocalDateTime startDateTime;
-    private LocalDateTime endDateTime;
+    private LocalDateTime arrivalDateTime;
+    private LocalDateTime departureDateTime;
     private double distance;
-    private Location startLocation;
-    private Location endLocation;
+    private Location arrivalLocation;
+    private Location departureLocation;
 
-    public Journey(LocalDateTime startDateTime, Location startLocation, LocalDateTime endDateTime, Location endLocation, double distance) {
-        this.startDateTime = startDateTime;
-        this.startLocation = startLocation;
-        this.endDateTime = endDateTime;
-        this.endLocation = endLocation;
+    public Journey() {}
+
+    public Journey(LocalDateTime arrivalDateTime, Location arrivalLocation, LocalDateTime departureDateTime, Location departureLocation, double distance) {
+        this.arrivalDateTime = arrivalDateTime;
+        this.arrivalLocation = arrivalLocation;
+        this.departureDateTime = departureDateTime;
+        this.departureLocation = departureLocation;
         this.distance = distance;
     }
 
-    public Journey(LocalDateTime startDateTime, Location startLocation) {
-        this.startDateTime = startDateTime;
-        this.startLocation = startLocation;
+    public Journey(LocalDateTime arrivalDateTime, Location arrivalLocation) {
+        this.arrivalDateTime = arrivalDateTime;
+        this.arrivalLocation = arrivalLocation;
     }
 
-    public LocalDateTime getEndDateTime() {
-        return endDateTime;
+    public LocalDateTime getDepartureDateTime() {
+        return departureDateTime;
     }
 
     public Boolean isOpen() {
-        return (endDateTime == null && endLocation == null);
+        return (departureDateTime == null && departureLocation == null);
     }
 
     public void closeJourney(LocalDateTime endDateTime, Location endLocation) {
-        this.endDateTime = endDateTime;
-        this.endLocation = endLocation;
+        this.departureDateTime = endDateTime;
+        this.departureLocation = endLocation;
         distance = 100.0;
+    }
+
+    public LocalDateTime getArrivalDateTime() {
+        return arrivalDateTime;
+    }
+
+    public Location getArrivalLocation() {
+        return arrivalLocation;
     }
 
     @Override
     public String toString() {
         return "Journey{" +
-                "startDateTime=" + startDateTime +
-                ", endDateTime=" + endDateTime +
+                "arrivalDateTime=" + arrivalDateTime +
+                ", departureDateTime=" + departureDateTime +
                 ", distance=" + distance +
-                ", startLocation=" + startLocation +
-                ", endLocation=" + endLocation +
+                ", arrivalLocation=" + arrivalLocation +
+                ", departureLocation=" + departureLocation +
                 '}';
     }
 
