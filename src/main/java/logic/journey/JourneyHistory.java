@@ -8,17 +8,17 @@ import java.util.List;
 
 public class JourneyHistory {
 
-    private JourneyDaoJson journeyDaoJson;
+//    private JourneyDaoJson journeyDaoJson;
     private List<Journey> journeys;
 
     public JourneyHistory(String id) {
-        journeyDaoJson = new JourneyDaoJson();
-        journeys = journeyDaoJson.getJourneysByAccountId(id);
+//        journeyDaoJson = new JourneyDaoJson();
+//        journeys = journeyDaoJson.getJourneysByAccountId(id);
+//        journeyDaoJson.setJourneysByAccountId(id, journeys);
 
+        journeys = new ArrayList<Journey>();
         journeys.add(new Journey(LocalDateTime.now(), new Location("0")));
         journeys.add(new Journey(LocalDateTime.now(), new Location("1")));
-
-        journeyDaoJson.setJourneysByAccountId(id, journeys);
     }
 
     public Journey findOpenJourney() {  // TODO: Create unit test

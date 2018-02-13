@@ -1,5 +1,7 @@
 package logic.fare;
 
+import logic.journey.Journey;
+
 public class Fare {
 
     public Fare() {}

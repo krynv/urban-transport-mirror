@@ -45,16 +45,7 @@ public class DistanceFare extends Fare {
     }
 
     public double calculateCostOfJourney(Journey journey) {
-        double cost = 0.0;
-
-        for (Trip trip: trips) {
-            if (journey.getStartLocation().getId().equals(trip.getStart().getId()) &&
-                    journey.getEndLocation().getId().equals(trip.getEnd().getId())) {
-                cost = trip.getPrice();
-            }
-        }
-
-        return cost;
+        return 0.0;
     }
 
 }
