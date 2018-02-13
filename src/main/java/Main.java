@@ -1,6 +1,4 @@
 import gui.GUI;
-import logic.journey.JourneyDaoJson;
-import logic.journey.JourneyHistory;
 
 public class Main {
 

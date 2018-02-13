@@ -12,7 +12,7 @@ import java.util.List;
 
 public class TokenDaoJson {
 
-    private static final String fileName = ".\\src\\main\\resources\\token.json";
+    private static final String fileName = "./src/main/resources/token.json";
 
     List<Token> tokens;
 

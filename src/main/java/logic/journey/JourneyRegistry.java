@@ -6,12 +6,12 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JourneyHistory {
+public class JourneyRegistry {
 
 //    private JourneyDaoJson journeyDaoJson;
     private List<Journey> journeys;
 
-    public JourneyHistory(String id) {
+    public JourneyRegistry(String id) {
         // TODO: Create JourneySerializer
 //        journeyDaoJson = new JourneyDaoJson();
 //        journeys = journeyDaoJson.getJourneysByAccountId(id);
@@ -39,7 +39,7 @@ public class JourneyHistory {
             } else {
                 Journey journey = openJourneys.get(0);
 
-                for (int i=1; i < openJourneys.size(); i++) {
+                for (int i=1; i < openJourneys.size()-1; i++) {
                     if (journey.getDepartureDateTime().isBefore(openJourneys.get(i).getDepartureDateTime())) {
                         journey = openJourneys.get(i);
                     }

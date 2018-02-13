@@ -7,15 +7,15 @@ import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 
 import java.io.IOException;
 
-public class JourneyHistorySerializer extends StdSerializer<JourneyHistory> {
+public class JourneyRegistrySerializer extends StdSerializer<JourneyRegistry> {
 
     public String accountId;
 
-    public JourneyHistorySerializer() {
+    public JourneyRegistrySerializer() {
         this(null);
     }
 
-    public JourneyHistorySerializer(Class<JourneyHistory> t) {
+    public JourneyRegistrySerializer(Class<JourneyRegistry> t) {
         super(t);
     }
 
@@ -24,7 +24,7 @@ public class JourneyHistorySerializer extends StdSerializer<JourneyHistory> {
     }
 
     @Override
-    public void serialize(JourneyHistory value, JsonGenerator jgen, SerializerProvider provider)throws IOException, JsonProcessingException {
+    public void serialize(JourneyRegistry value, JsonGenerator jgen, SerializerProvider provider)throws IOException, JsonProcessingException {
         jgen.writeStartObject();
         jgen.writeStringField("accountId", accountId);
         jgen.writeEndObject();

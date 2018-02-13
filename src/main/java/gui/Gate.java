@@ -22,6 +22,12 @@ public class Gate extends JFrame {
         System.out.println("Scan Token");   // TODO: Change to Logger
 
         gateController.presentToken("1");
+
+        if (gateController.canOpen()) {
+            System.out.println("Open");     // TODO: Add UI aid to showcase this.
+        } else {
+            System.out.println("Close");    // TODO: Add UI aid to showcase this.
+        }
     }
 
     private void initComponents() {

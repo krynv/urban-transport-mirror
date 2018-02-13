@@ -35,7 +35,7 @@ public class Journey {
         return (departureDateTime == null && departureLocation == null);
     }
 
-    public void closeJourney(LocalDateTime endDateTime, Location endLocation) {
+    public void closeJourney(Location endLocation, LocalDateTime endDateTime) {
         this.departureDateTime = endDateTime;
         this.departureLocation = endLocation;
         distance = 100.0;

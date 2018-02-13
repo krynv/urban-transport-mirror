@@ -12,7 +12,7 @@ import java.util.List;
 
 public class AccountDaoJson implements AccountDao {
 
-    private static final String fileName = ".\\src\\main\\resources\\account.json";
+    private static final String fileName = "./src/main/resources/account.json";
 
     List<Account> accounts;
 

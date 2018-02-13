@@ -25,11 +25,11 @@ public class JourneyDaoJson implements JourneyDao {
     public void setJourneysByAccountId(String accountId, List<Journey> journeys) {
         ObjectMapper objectMapper = new ObjectMapper();
 
-        JourneyHistorySerializer journeyHistorySerializer = new JourneyHistorySerializer();
+        JourneyRegistrySerializer journeyHistorySerializer = new JourneyRegistrySerializer();
         journeyHistorySerializer.setAccountId(accountId);
 
         SimpleModule simpleModule = new SimpleModule();
-        simpleModule.addSerializer(JourneyHistory.class, journeyHistorySerializer);
+        simpleModule.addSerializer(JourneyRegistry.class, journeyHistorySerializer);
         objectMapper.registerModule(simpleModule);
 
         File file = new File(fileName);

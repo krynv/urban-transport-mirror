@@ -13,11 +13,13 @@ public class GateController {
     private TokenReader tokenReader;
     private TokenRegistry tokenRegistry;
     private AccountRegistry accountRegistry;
+    private Boolean open;
 
     public GateController() {
         tokenReader = new TokenReader("0", new Location("1"));
         tokenRegistry = new TokenRegistry();
         accountRegistry = new AccountRegistry();
+        open = false;
     }
 
     public void presentToken(String tokenId) {
@@ -30,12 +32,22 @@ public class GateController {
 
             if (account != null) {
                 account.processPassengerExit(tokenReader.getLocation(), LocalDateTime.now());
+
+                if (account.canExit()) {
+                    open = true;
+                } else {
+                    System.out.println("User cannot exit");  // TODO: Change to Logger
+                }
             } else {
                 System.out.println("Account is null");  // TODO: Change to Logger
             }
         } else {
             System.out.println("Token is null");    // TODO: Change to Logger
         }
+    }
+
+    public Boolean canOpen() {
+        return open;
     }
 
 }
