@@ -511,8 +511,8 @@ new FormModel {
 						"value": "card8"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {par l {seq l {space :p:165:p, comp lblReceiptNotification:::p:204:p}, seq l {space :p:231:p, comp lbllReceiptLocation:::p::p}, seq l {space :p:222:p, par l {comp lblViaLocationslReceipt5:::p:96:p, comp lblViaLocationslReceipt3:::p:96:p, comp lblViaLocationslReceipt4::l:p:96:p, comp lblViaLocationlReceipt6::l:p:96:p}}, seq l {space :p:220:p, par l {seq {space :6:6:p, comp lblViaLocationslReceipt1:::p:96:p}, seq {comp lblStationlReceipt:::p::p, space :6:6:p, comp lblDestinationlReceipt:::p::p}}}, par t:l::p {seq l {space :p:68:p, par l:::p {comp btnProlReceipt:::::x, comp btnPrintReceipt:::::x}, space :::x, comp btnPrintReceipt2:::p:130:p}, seq l {space :p:89:p, par l {comp lblDepartureDateTimelReceipt::l:p:135:p, comp lblreturnDateValuelReceipt2::l:p::p}, space :p:73:p, par l {comp lblreturnDateValuelReceipt:::p::p, comp lblReturnDateTimelReceipt:::p::p}}}}, space ::142:x}}"
-						"$verticalGroup": "par l {seq l {space :p:106:p, par l {comp lblStationlReceipt:::p::p, comp lblDestinationlReceipt:::p::p}, space :p:4:p, comp lblViaLocationslReceipt1:::p:20:p, space :::p, par b {comp lblDepartureDateTimelReceipt::b:p:24:p, comp lblReturnDateTimelReceipt::b:p::p}, space :::p, par b {comp lblreturnDateValuelReceipt2::b:p::p, comp lblreturnDateValuelReceipt::b:p::p}, space :p:5:p, comp lbllReceiptLocation:::p::p, space :::p, comp lblViaLocationslReceipt4:::p::p, space :p:5:p, comp lblViaLocationslReceipt5:::p::p, space :::p, comp lblViaLocationslReceipt3:::p:20:p, space :::p, comp lblViaLocationlReceipt6:::p:20:p, space ::19:x, comp lblReceiptNotification:::p:18:p, space s:::p, par l {seq {comp btnProlReceipt:::p::p, space :::p, comp btnPrintReceipt:::p::p, space :p:19:p}, seq t {comp btnPrintReceipt2:::p::p, space :p:37:p}}}}"
+						"$horizontalGroup": "par l {seq {par l {seq l {space :p:231:p, comp lbllReceiptLocation:::p::p}, seq l {space :p:222:p, par l {comp lblViaLocationslReceipt5:::p:96:p, comp lblViaLocationslReceipt3:::p:96:p, comp lblViaLocationslReceipt4::l:p:96:p, comp lblViaLocationlReceipt6::l:p:96:p}}, seq l {space :p:220:p, par l {seq {space :6:6:p, comp lblViaLocationslReceipt1:::p:96:p}, seq {comp lblStationlReceipt:::p::p, space :6:6:p, comp lblDestinationlReceipt:::p::p}}}, par t:l::p {seq l {space :p:68:p, par l:::p {comp btnProlReceipt:::::x, comp btnPrintReceipt:::::x}, space :::x, par l {comp btnPrintPhyTic::t:p:130:p, comp btnAddCredit::t:p:130:p}}, seq l {space :p:89:p, par l {comp lblDepartureDateTimelReceipt::l:p:135:p, comp lblreturnDateValuelReceipt2::l:p::p}, space :p:73:p, par l {comp lblreturnDateValuelReceipt:::p::p, comp lblReturnDateTimelReceipt:::p::p}}}, seq l {space :p:155:p, comp lblReceiptNotification:::p:204:p}}, space ::142:x}}"
+						"$verticalGroup": "par l {seq l {space :p:106:p, par l {comp lblStationlReceipt:::p::p, comp lblDestinationlReceipt:::p::p}, space :p:4:p, comp lblViaLocationslReceipt1:::p:20:p, space :::p, par b {comp lblDepartureDateTimelReceipt::b:p:24:p, comp lblReturnDateTimelReceipt::b:p::p}, space :::p, par b {comp lblreturnDateValuelReceipt2::b:p::p, comp lblreturnDateValuelReceipt::b:p::p}, space :p:5:p, comp lbllReceiptLocation:::p::p, space :::p, comp lblViaLocationslReceipt4:::p::p, space :p:5:p, comp lblViaLocationslReceipt5:::p::p, space :::p, comp lblViaLocationslReceipt3:::p:20:p, space :::p, comp lblViaLocationlReceipt6:::p:20:p, space ::25:x, comp lblReceiptNotification:::p:18:p, space u:::p, par b {comp btnProlReceipt::b:p::p, comp btnPrintPhyTic::b:p::p}, space :::p, par b {comp btnPrintReceipt::b:p::p, comp btnAddCredit::b:p::p}, space :p:19:p}}"
 					} ) {
 						name: "pnlPrintReceipt"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -583,9 +583,14 @@ new FormModel {
 							"text": "London"
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
-							name: "btnPrintReceipt2"
+							name: "btnPrintPhyTic"
 							"text": "PRINT TICKET"
-							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnPrintTicketActionPerformed", true ) )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnPrintPhyTicActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnAddCredit"
+							"text": "ADD CREDIT"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAddCreditActionPerformed", true ) )
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card10"

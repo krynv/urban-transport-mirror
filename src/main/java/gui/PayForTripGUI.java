@@ -14,6 +14,8 @@ public class PayForTripGUI extends JFrame {
     private RouteRegistry routeRegistry = new RouteRegistry();
     private Coupon coupon = new Coupon("0", LocalDateTime.of(2018, 5, 1, 12, 0));
     private String chosenTicketType = "Return ticket";
+    private String accID = "";
+    private double amount = 0;
 
     public PayForTripGUI() {
 
@@ -185,6 +187,7 @@ public class PayForTripGUI extends JFrame {
             ckbxCash.setSelected(false);
             txtCouponCode.setText("");
             lblPriceCashPayment.setText(Double.toString(routeRegistry.get(0).getCost()));
+            this.amount = routeRegistry.get(0).getCost();
             lblTicketTypeCashPayment.setText(chosenTicketType);
         }
         else if (ckbxCard.isSelected()) {
@@ -229,11 +232,11 @@ public class PayForTripGUI extends JFrame {
         int securityNo = Integer.parseInt(txtSecurityCode.getText());
         int accountNo = Integer.parseInt(txtCardNumber.getText());
         int sortCode = Integer.parseInt(txtSortCode.getText());
-        double amount = Double.parseDouble(lblPriceCardPayment.getText());
+        this.amount = Double.parseDouble(lblPriceCardPayment.getText());
         String accName = txtCardName.getText();
 
         Purchase purchase = new Purchase();
-        if (purchase.makePurchase(accName, accountNo, sortCode, securityNo, amount)) {
+        if (purchase.makePurchase(accName, accountNo, sortCode, securityNo, this.amount)) {
             lblPaymentInformationCardPayment.setVisible(false);
             lblTicketTypeCardPayment.setVisible(false);
             lblPriceCardPayment.setVisible(false);
@@ -352,18 +355,18 @@ public class PayForTripGUI extends JFrame {
     }
 
     private void btnPayTransAccActionPerformed(ActionEvent e) {
-        double amount = Double.parseDouble(lblPriceTransAccPayment.getText());
-        String accID = txtFieldAccountID.getText();
+        this.amount = Double.parseDouble(lblPriceTransAccPayment.getText());
+        this.accID = txtFieldAccountID.getText();
         Purchase purchase = new Purchase();
         AccountRegistry accountRegistry = new AccountRegistry();
-        Account account = accountRegistry.getAccount(accID);
+        Account account = accountRegistry.getAccount(this.accID);
         if( account != null) {
             String accName = account.getName();
             int accountNo = account.getAccountNum();
             int sortCode = account.getSortCode();
             int securityNo = account.getSecurityNo();
 
-            if (purchase.makePurchase(accName, accountNo, sortCode, securityNo, amount)) {
+            if (purchase.makePurchase(accName, accountNo, sortCode, securityNo, this.amount)) {
                 txtFieldAccountID.setVisible(false);
                 lblTicketTypeTransAccAccountId.setVisible(false);
                 lblTicketTypeTransAccPayment.setVisible(false);
@@ -392,7 +395,7 @@ public class PayForTripGUI extends JFrame {
     private void btnPrintAccTicActionPerformed(ActionEvent e) {
         resetAllInteractiveElements();
         setAllToFalse();
-        pnlTransportAccountPayment.setVisible(true);
+        pnlPrintReceipt.setVisible(true);
         setAllReceiptFalse();
     }
 
@@ -417,10 +420,47 @@ public class PayForTripGUI extends JFrame {
     }
 
     private void btnPrintReceiptActionPerformed(ActionEvent e) {
+
         lblReceiptNotification.setVisible(true);
         lblTransAccNotification.setBackground(new Color(216, 231, 213));
         lblTransAccNotification.setOpaque(true);
         lblReceiptNotification.setText("Receipt Printed");
+    }
+
+    private void btnAddCreditActionPerformed(ActionEvent e) {
+        // TODO add your code here
+
+        AccountRegistry accountRegistry = new AccountRegistry();
+        Account account = accountRegistry.getAccount(this.accID);
+        if(account.addCredit(this.amount)) {
+            lblReceiptNotification.setVisible(true);
+            lblTransAccNotification.setBackground(new Color(216, 231, 213));
+            lblTransAccNotification.setOpaque(true);
+            lblReceiptNotification.setText("Credit Added to Account");
+        } else {
+            lblReceiptNotification.setVisible(true);
+            lblTransAccNotification.setBackground(new Color(216, 231, 213));
+            lblTransAccNotification.setOpaque(true);
+            lblReceiptNotification.setText("Credit Not Added");
+        }
+
+    }
+
+    private void btnPrintPhyTicActionPerformed(ActionEvent e) {
+        // TODO add your code here 29.2.1 - 29.2.2
+        // produceToken returns bool... needs token class and physical token  class
+        if(true) {
+            lblReceiptNotification.setVisible(true);
+            lblTransAccNotification.setBackground(new Color(216, 231, 213));
+            lblTransAccNotification.setOpaque(true);
+            lblReceiptNotification.setText("Ticket Printed");
+        } else {
+            lblReceiptNotification.setVisible(true);
+            lblTransAccNotification.setBackground(new Color(216, 231, 213));
+            lblTransAccNotification.setOpaque(true);
+            lblReceiptNotification.setText("Not Printed");
+        }
+
     }
 
     private void initComponents() {
@@ -548,7 +588,8 @@ public class PayForTripGUI extends JFrame {
         lblViaLocationslReceipt5 = new JLabel();
         lblViaLocationlReceipt6 = new JLabel();
         lblViaLocationslReceipt1 = new JLabel();
-        btnPrintReceipt2 = new JButton();
+        btnPrintPhyTic = new JButton();
+        btnAddCredit = new JButton();
 
         //======== pnlMain ========
         {
@@ -1536,9 +1577,13 @@ public class PayForTripGUI extends JFrame {
                         //---- lblViaLocationslReceipt1 ----
                         lblViaLocationslReceipt1.setText("London");
 
-                        //---- btnPrintReceipt2 ----
-                        btnPrintReceipt2.setText("PRINT TICKET");
-                        btnPrintReceipt2.addActionListener(e -> btnPrintTicketActionPerformed(e));
+                        //---- btnPrintPhyTic ----
+                        btnPrintPhyTic.setText("PRINT TICKET");
+                        btnPrintPhyTic.addActionListener(e -> btnPrintPhyTicActionPerformed(e));
+
+                        //---- btnAddCredit ----
+                        btnAddCredit.setText("ADD CREDIT");
+                        btnAddCredit.addActionListener(e -> btnAddCreditActionPerformed(e));
 
                         GroupLayout pnlPrintReceiptLayout = new GroupLayout(pnlPrintReceipt);
                         pnlPrintReceipt.setLayout(pnlPrintReceiptLayout);
@@ -1546,9 +1591,6 @@ public class PayForTripGUI extends JFrame {
                             pnlPrintReceiptLayout.createParallelGroup()
                                 .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
                                     .addGroup(pnlPrintReceiptLayout.createParallelGroup()
-                                        .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
-                                            .addGap(165, 165, 165)
-                                            .addComponent(lblReceiptNotification, GroupLayout.PREFERRED_SIZE, 204, GroupLayout.PREFERRED_SIZE))
                                         .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
                                             .addGap(231, 231, 231)
                                             .addComponent(lbllReceiptLocation))
@@ -1576,7 +1618,9 @@ public class PayForTripGUI extends JFrame {
                                                     .addComponent(btnProlReceipt, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                     .addComponent(btnPrintReceipt, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                                 .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(btnPrintReceipt2, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(pnlPrintReceiptLayout.createParallelGroup()
+                                                    .addComponent(btnPrintPhyTic, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(btnAddCredit, GroupLayout.Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)))
                                             .addGroup(GroupLayout.Alignment.LEADING, pnlPrintReceiptLayout.createSequentialGroup()
                                                 .addGap(89, 89, 89)
                                                 .addGroup(pnlPrintReceiptLayout.createParallelGroup()
@@ -1585,7 +1629,10 @@ public class PayForTripGUI extends JFrame {
                                                 .addGap(73, 73, 73)
                                                 .addGroup(pnlPrintReceiptLayout.createParallelGroup()
                                                     .addComponent(lblreturnDateValuelReceipt)
-                                                    .addComponent(lblReturnDateTimelReceipt)))))
+                                                    .addComponent(lblReturnDateTimelReceipt))))
+                                        .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
+                                            .addGap(155, 155, 155)
+                                            .addComponent(lblReceiptNotification, GroupLayout.PREFERRED_SIZE, 204, GroupLayout.PREFERRED_SIZE)))
                                     .addContainerGap(142, Short.MAX_VALUE))
                         );
                         pnlPrintReceiptLayout.setVerticalGroup(
@@ -1615,18 +1662,17 @@ public class PayForTripGUI extends JFrame {
                                     .addComponent(lblViaLocationslReceipt3, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(lblViaLocationlReceipt6, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                                     .addComponent(lblReceiptNotification, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addGroup(pnlPrintReceiptLayout.createParallelGroup()
-                                        .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
-                                            .addComponent(btnProlReceipt)
-                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(btnPrintReceipt)
-                                            .addGap(19, 19, 19))
-                                        .addGroup(GroupLayout.Alignment.TRAILING, pnlPrintReceiptLayout.createSequentialGroup()
-                                            .addComponent(btnPrintReceipt2)
-                                            .addGap(37, 37, 37))))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(pnlPrintReceiptLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(btnProlReceipt)
+                                        .addComponent(btnPrintPhyTic))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(pnlPrintReceiptLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(btnPrintReceipt)
+                                        .addComponent(btnAddCredit))
+                                    .addGap(19, 19, 19))
                         );
                     }
                     pnlContent.add(pnlPrintReceipt, "card10");
@@ -1793,6 +1839,7 @@ public class PayForTripGUI extends JFrame {
     private JLabel lblViaLocationslReceipt5;
     private JLabel lblViaLocationlReceipt6;
     private JLabel lblViaLocationslReceipt1;
-    private JButton btnPrintReceipt2;
+    private JButton btnPrintPhyTic;
+    private JButton btnAddCredit;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

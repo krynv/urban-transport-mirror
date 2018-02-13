@@ -67,6 +67,10 @@ public class Account {
         return true;
     }
 
+    public Boolean addCredit (double amount) {
+        this.credits = this.credits + amount;
+        return true;
+    }
 
     public int getSortCode() {
         return sortCode;
