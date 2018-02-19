@@ -7,7 +7,7 @@ new FormModel {
 			name: "mainPnl"
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 				"$horizontalGroup": "par l {comp tabbedPane12::l:::x}"
-				"$verticalGroup": "par l {comp tabbedPane12::l:::x}"
+				"$verticalGroup": "par l {comp tabbedPane12::l::480:x}"
 			} ) {
 				name: "tabbedPanel"
 				auxiliary() {
@@ -17,7 +17,7 @@ new FormModel {
 					name: "tabbedPane12"
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 						"$horizontalGroup": "par l {comp label10::l::658:x}"
-						"$verticalGroup": "par l {seq l {space :::p, comp label10::::448:x}}"
+						"$verticalGroup": "par l {seq l {space :::p, comp label10::::450:x}}"
 					} ) {
 						name: "panel20"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -80,7 +80,7 @@ new FormModel {
 							} )
 							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 								"$horizontalGroup": "par l {space :0:656:x}"
-								"$verticalGroup": "par l {space :0:428:x}"
+								"$verticalGroup": "par l {space :0:432:x}"
 							} ) {
 								name: "panel21"
 							}, new FormLayoutConstraints( null ) {
@@ -88,7 +88,7 @@ new FormModel {
 							} )
 							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 								"$horizontalGroup": "par l {space :0:656:x}"
-								"$verticalGroup": "par l {space :0:428:x}"
+								"$verticalGroup": "par l {space :0:432:x}"
 							} ) {
 								name: "panel22"
 							}, new FormLayoutConstraints( null ) {
@@ -109,7 +109,7 @@ new FormModel {
 							addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "tabbedPane14StateChanged", true ) )
 							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 								"$horizontalGroup": "par l {comp label9::l::656:x}"
-								"$verticalGroup": "par l {comp label9::l::428:x}"
+								"$verticalGroup": "par l {comp label9::l::432:x}"
 							} ) {
 								name: "panel19"
 								add( new FormComponent( "javax.swing.JLabel" ) {
@@ -122,8 +122,8 @@ new FormModel {
 								"title": "Reports:"
 							} )
 							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-								"$horizontalGroup": "par l {seq l {space :::p, par l {seq l {par l {par l:::p {comp textField2::l::150:x, comp textField4::l::150:x}, comp textField5::l:p:150:p, comp textField11::l:p:150:p}, space :p:43:p, par l {comp label8:::p::p, comp label7:::p::p, comp label6:::p::p, comp label5:::p::p}, space ::222:x}, seq l {space :0:359:x, comp button3:::p::p, space s:::p, comp textField6:::p::p, space s:::p, comp button4:::p::p, space :p:56:p}}}, seq t {space ::431:x, comp button5:::p:136:p, space :p:89:p}}"
-								"$verticalGroup": "par l {seq {space :::p, par b {comp textField6::b:p::p, comp button4::b:p::p, comp button3::b:p::p}, space :p:33:p, par b {comp textField2::b:p:50:p, comp label5::b:p::p}, space s:::p, par b {comp textField4::b:p:50:p, comp label6::b:p::p}, space s:::p, par b {comp label7::b:p::p, comp textField5::b:p:50:p}, space :p:7:p, par b {comp label8::b:p::p, comp textField11::b:p:50:p}, space ::32:x, comp button5:::p:51:p, space :p:31:p}}"
+								"$horizontalGroup": "par l {seq l {space :::p, par l {seq l {par l {par l:::p {comp textField2::l::150:x, comp textField4::l::150:x}, comp textField5::l:p:150:p, comp textField11::l:p:150:p}, space :p:43:p, par l {comp label8:::p::p, comp label7:::p::p, comp label6:::p::p, comp label5:::p::p}, space ::200:x}, seq l {space :0:343:x, comp button3:::p::p, space s:::p, comp textField6:::p::p, space s:::p, comp button4:::p::p, space :p:56:p}}}, seq t {space ::343:x, comp lblPrinted:::p:114:p, space :p:88:p, comp button5:::p:136:p, space :p:89:p}}"
+								"$verticalGroup": "par l {seq {space :::p, par b {comp textField6::b:p::p, comp button4::b:p::p, comp button3::b:p::p}, space :p:33:p, par b {comp textField2::b:p:50:p, comp label5::b:p::p}, space s:::p, par b {comp textField4::b:p:50:p, comp label6::b:p::p}, space s:::p, par b {comp label7::b:p::p, comp textField5::b:p:50:p}, space :p:7:p, par b {comp label8::b:p::p, comp textField11::b:p:50:p}, space ::36:x, par l {comp button5:::p:51:p, comp lblPrinted:::p::p}, space :p:31:p}}"
 							} ) {
 								name: "panel18"
 								"foreground": new java.awt.Color( 204, 204, 204, 255 )
@@ -202,12 +202,17 @@ new FormModel {
 									"font": #Font1
 									"horizontalAlignment": 0
 								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "lblPrinted"
+									"text": "Report Printed"
+									"visible": false
+								} )
 							}, new FormLayoutConstraints( null ) {
 								"title": "Maintenance"
 							} )
 							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-								"$horizontalGroup": "par l {seq l {space :p:34:p, par l {comp textField9::l:::x, seq {par l:::p {comp textField8::::154:x, comp textField10::::154:x}, space :0:0:x}}, space s:::p, par l {comp label11:::p::p, comp label12:::p::p, comp label13:::p::p}, space ::328:x}, seq t {space ::362:x, comp button6:::p::p, space s:::p, par l {comp button8:::p:139:p, seq {comp textField7:::p::p, space s:::p, comp button7:::p::p}}, space :p:59:p}}"
-								"$verticalGroup": "par l {seq {space :::p, par b {comp textField7::b:p::p, comp button6::b:p::p, comp button7::b:p::p}, space :p:38:p, par b {comp textField8::b:p:55:p, comp label11::b:p::p}, space s:::p, par b {comp textField9::b:p:59:p, comp label12::b:p::p}, space s:::p, par b {comp textField10::b:p:51:p, comp label13::b:p::p}, space ::67:x, comp button8:::p:53:p, space :p:31:p}}"
+								"$horizontalGroup": "par l {seq l {space :p:34:p, par l {comp textField9::l:::x, seq {par l:::p {comp textField8::::154:x, comp textField10::::154:x}, space :0:0:x}}, space s:::p, par l {comp label11:::p::p, comp label12:::p::p, comp label13:::p::p}, space ::311:x}, seq t {space ::346:x, comp button6:::p::p, space s:::p, par l {comp button8:::p:139:p, seq {comp textField7:::p::p, space s:::p, comp button7:::p::p}}, space :p:59:p}}"
+								"$verticalGroup": "par l {seq {space :::p, par b {comp textField7::b:p::p, comp button6::b:p::p, comp button7::b:p::p}, space :p:38:p, par b {comp textField8::b:p:55:p, comp label11::b:p::p}, space s:::p, par b {comp textField9::b:p:59:p, comp label12::b:p::p}, space s:::p, par b {comp textField10::b:p:51:p, comp label13::b:p::p}, space ::71:x, comp button8:::p:53:p, space :p:31:p}}"
 							} ) {
 								name: "panel23"
 								add( new FormComponent( "javax.swing.JTextField" ) {
@@ -268,18 +273,212 @@ new FormModel {
 							}, new FormLayoutConstraints( null ) {
 								"title": "Capacity"
 							} )
-							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) ) {
+							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+								"$horizontalGroup": "par l {space :0:656:x};par l {seq {space :0:0:x, par l {seq {space :290:290:p, comp button1:::p::p, space :18:18:p, comp textField1:::p::p, space :18:18:p, comp button2:::p::p}, seq {comp textField3:::p:149:p, space :18:18:p, comp label1:::p::p}, seq {space :346:346:p, comp button9:::p:132:p}}, space :0:0:x}}"
+								"$verticalGroup": "par l {space :0:432:x};par l {seq {space :0:0:x, par l {comp button1:::p::p, seq {space :4:4:p, comp textField1:::p::p}, comp button2:::p::p}, space :35:35:p, par l {comp textField3:::p:48:p, seq {space :10:10:p, comp label1:::p::p}}, space :224:224:p, comp button9:::p:53:p, space :0:0:x}}"
+							} ) {
 								name: "panel12"
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField3"
+									"text": "£"
+									"font": new java.awt.Font( "Segoe UI", 0, 22 )
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label1"
+									"text": "Profit / Loss"
+									"font": new java.awt.Font( "Segoe UI", 0, 22 )
+								} )
+								add( new FormComponent( "javax.swing.JButton" ) {
+									name: "button1"
+									"text": "<"
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField1"
+									"text": "Start Date - End Date"
+								} )
+								add( new FormComponent( "javax.swing.JButton" ) {
+									name: "button2"
+									"text": ">"
+								} )
+								add( new FormComponent( "javax.swing.JButton" ) {
+									name: "button9"
+									"text": "Print reports"
+								} )
 							}, new FormLayoutConstraints( null ) {
 								"title": "Financials"
 							} )
-							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) ) {
+							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+								"$horizontalGroup": "par l {space :0:656:x};par l {comp panel17::l::0:x};par l {comp panel24::l::0:x};par l {seq {space :0:0:x, comp panel16:::p:641:p, space :0:0:x}}"
+								"$verticalGroup": "par l {space :0:439:x};par l {comp panel17::l::0:x};par l {comp panel24::l::0:x};par l {seq {space :0:0:x, comp panel16:::p::p, space :0:0:x}}"
+							} ) {
 								name: "panel13"
+								add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+									"$horizontalGroup": "par l {seq {space :101::x, par l {seq t {comp label20:::p:455:p, space :p:91:p}, seq t {comp label21:::p:228:p, space :p:200:p}, seq t {comp textField22:::p:281:p, space :p:183:p}, seq t {comp button19:::p:133:p, space :p:257:p}}}, seq l {space :p:22:p, comp button21:::p:133:p, space :0:0:x}}"
+									"$verticalGroup": "par l {seq l {space :::p, comp label20:::p:42:p, space :p:105:p, comp label21:::p::p, space :::p, comp textField22:::p:39:p, space s:::p, comp button19:::p:54:p, space :::x, comp button21:::p:54:p, space :p:17:p}}"
+								} ) {
+									name: "panel17"
+									"visible": false
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label20"
+										"text": "GET SPECIFIC DRIVER ACCIDENT REPORT"
+										"font": &Font2 new java.awt.Font( "Segoe UI", 0, 22 )
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label21"
+										"text": "Enter Drivers Name"
+										"font": &Font3 new java.awt.Font( "Segoe UI", 0, 22 )
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField22"
+									} )
+									add( new FormComponent( "javax.swing.JButton" ) {
+										name: "button19"
+										"text": "SEARCH"
+										addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button19ActionPerformed", true ) )
+									} )
+									add( new FormComponent( "javax.swing.JButton" ) {
+										name: "button21"
+										"text": "BACK"
+										addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button21ActionPerformed", true ) )
+									} )
+								} )
+								add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+									"$horizontalGroup": "par l {seq {par l {seq l {space :p:169:p, comp label22:::p:346:p}, seq l {space :p:32:p, par l {comp textField23:::p:588:p, comp label23:::p:269:p}}}, space :0:0:x}, seq l {space :::p, comp button22:::p:133:p, space :p:101:p, comp button20:::p:133:p, space :::x}}"
+									"$verticalGroup": "par l {seq l {space :::p, comp label22:::p:42:p, space :p:105:p, comp label23:::p::p, space :::p, comp textField23:::p:146:p, space u:::p, comp button20:::p:54:p, space :::x}, seq t {space :::x, comp button22:::p:54:p, space :::p}}"
+								} ) {
+									name: "panel24"
+									"visible": false
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label22"
+										"text": "Driver Name - Accident History"
+										"font": #Font2
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label23"
+										"text": "Drivers Accident History"
+										"font": #Font3
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField23"
+									} )
+									add( new FormComponent( "javax.swing.JButton" ) {
+										name: "button20"
+										"text": "PRINT REPORT"
+									} )
+									add( new FormComponent( "javax.swing.JButton" ) {
+										name: "button22"
+										"text": "BACK"
+										addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button22ActionPerformed", true ) )
+									} )
+								} )
+								add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+									"$horizontalGroup": "par l {seq t {par l {seq {space :p:24:p, par l {comp textField12:::::x, comp textField13::l:::x, comp label4::t:::x, seq {comp label3:::p:224:p, space :0:0:x}, comp label2:::::x}, space :p:76:p}, seq t {space :::x, comp button10:::p::p, space s:::p}}, comp textField15:::p::p, space s:::p, comp button11:::p::p, space :p:84:p}, seq l {par l {seq {space :p:24:p, comp textField14:::::x}, seq l {space :p:101:p, comp button13:::p:114:p}}, space :p:99:p, comp button12:::p:133:p, space :p:107:p}}"
+									"$verticalGroup": "par l {seq l {par l {seq {space :p:72:p, comp label2:::p::p, space u:::p, comp textField12:::p:34:p, space :p:14:p, comp label3:::p:42:p}, seq {space :p:12:p, par l {par b {comp textField15::b:p::p, comp button10::b:p::p}, comp button11:::p::p}}}, space :::p, comp textField13:::p:34:p, space u:::p, comp label4:::p::p, space s:::p, comp textField14:::p:39:p, space u:::p, par l {comp button13:::p::p, comp button12::l:p:54:p}, space ::36:x}}"
+								} ) {
+									name: "panel16"
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label2"
+										"text": "Unsociable Reports"
+										"font": new java.awt.Font( "Segoe UI", 0, 22 )
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label3"
+										"text": "Incident Reports"
+										"font": new java.awt.Font( "Segoe UI", 0, 22 )
+									} )
+									add( new FormComponent( "javax.swing.JLabel" ) {
+										name: "label4"
+										"text": "Drivers Accident Reports"
+										"font": new java.awt.Font( "Segoe UI", 0, 22 )
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField12"
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField13"
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField14"
+									} )
+									add( new FormComponent( "javax.swing.JButton" ) {
+										name: "button10"
+										"text": "<"
+									} )
+									add( new FormComponent( "javax.swing.JButton" ) {
+										name: "button11"
+										"text": ">"
+									} )
+									add( new FormComponent( "javax.swing.JTextField" ) {
+										name: "textField15"
+										"text": "Start Date - End Date"
+									} )
+									add( new FormComponent( "javax.swing.JButton" ) {
+										name: "button12"
+										"text": "Print Reports"
+									} )
+									add( new FormComponent( "javax.swing.JButton" ) {
+										name: "button13"
+										"text": "Driver Search"
+										addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button13ActionPerformed", true ) )
+									} )
+								} )
 							}, new FormLayoutConstraints( null ) {
 								"title": "Incidents"
 							} )
-							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) ) {
+							add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+								"$horizontalGroup": "par l {space :0:656:x};par l {seq {space :0:0:x, par l {seq {space :266:266:p, comp button14:::p::p, space :18:18:p, comp textField19:::p::p, space :18:18:p, comp button15:::p::p}, seq {comp textField16:::p:102:p, space :18:18:p, comp label16:::p:295:p}, seq {comp textField17:::p:102:p, space :18:18:p, comp label17:::p:283:p}, seq {comp textField18:::p:102:p, space :18:18:p, comp label18:::p:255:p}, seq {space :396:396:p, comp button16:::p:128:p}}, space :0:0:x}}"
+								"$verticalGroup": "par l {space :0:432:x};par l {seq {space :0:0:x, par l {comp button14:::p::p, seq {space :4:4:p, comp textField19:::p::p}, comp button15:::p::p}, space :42:42:p, par l {comp textField16:::p::p, comp label16:::p:35:p}, space :28:28:p, par l {comp textField17:::p:42:p, seq {space :7:7:p, comp label17:::p::p}}, space :26:26:p, par l {comp textField18:::p:40:p, seq {space :6:6:p, comp label18:::p::p}}, space :91:91:p, comp button16:::p:53:p, space :0:0:x}}"
+							} ) {
 								name: "panel14"
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField16"
+									"text": "#"
+									"font": new java.awt.Font( "Segoe UI", 0, 22 )
+									"horizontalAlignment": 0
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label16"
+									"text": "Number of evaders caught"
+									"font": new java.awt.Font( "Segoe UI", 0, 22 )
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField17"
+									"text": "£"
+									"font": new java.awt.Font( "Segoe UI", 0, 22 )
+									"horizontalAlignment": 0
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label17"
+									"text": "Revenue Recovered"
+									"font": new java.awt.Font( "Segoe UI", 0, 22 )
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField18"
+									"text": "£"
+									"font": new java.awt.Font( "Segoe UI", 0, 22 )
+									"horizontalAlignment": 0
+								} )
+								add( new FormComponent( "javax.swing.JLabel" ) {
+									name: "label18"
+									"text": "Revenue Lost"
+									"font": new java.awt.Font( "Segoe UI", 0, 22 )
+								} )
+								add( new FormComponent( "javax.swing.JButton" ) {
+									name: "button14"
+									"text": "<"
+								} )
+								add( new FormComponent( "javax.swing.JTextField" ) {
+									name: "textField19"
+									"text": "Start Date - End Date"
+								} )
+								add( new FormComponent( "javax.swing.JButton" ) {
+									name: "button15"
+									"text": ">"
+								} )
+								add( new FormComponent( "javax.swing.JButton" ) {
+									name: "button16"
+									"text": "Print Reports"
+								} )
 							}, new FormLayoutConstraints( null ) {
 								"title": "Fare Evasion"
 							} )
@@ -288,8 +487,8 @@ new FormModel {
 						"title": "Reports"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq t {space ::309:x, comp logOutButton:::p::p, space :p:276:p}}"
-						"$verticalGroup": "par l {seq l {space :p:204:p, comp logOutButton:::p::p, space ::218:x}}"
+						"$horizontalGroup": "par l {seq t {space ::302:x, comp logOutButton:::p::p, space :p:276:p}}"
+						"$verticalGroup": "par l {seq l {space :p:204:p, comp logOutButton:::p::p, space ::220:x}}"
 					} ) {
 						name: "logOutPanel"
 						add( new FormComponent( "javax.swing.JButton" ) {
@@ -303,6 +502,14 @@ new FormModel {
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "card1"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {space :0:660:x}"
+				"$verticalGroup": "par l {space :0:480:x}"
+			} ) {
+				name: "panel1"
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "card2"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )

@@ -114,6 +114,7 @@ public class LoginRegisterGUI  extends JFrame {
     private void btnMainGUIActionPerformed(ActionEvent e) {
         pnlLogin.setVisible(false);
         new GUI().setVisible(true);
+        this.dispose();
     }
 
 
@@ -121,7 +122,7 @@ public class LoginRegisterGUI  extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Benjamin Ward
+        // Generated using JFormDesigner Evaluation license - Barry Chuckle
         pnlMain = new JPanel();
         pnlLogin = new JPanel();
         label6 = new JLabel();
@@ -131,7 +132,6 @@ public class LoginRegisterGUI  extends JFrame {
         userField = new JTextField();
         loginBut = new JButton();
         cancelBut2 = new JButton();
-        successUserLogin = new JButton();
         successLoginAdmin = new JButton();
         unsuccessfulLogin = new JButton();
         regOpenBut = new JButton();
@@ -197,10 +197,6 @@ public class LoginRegisterGUI  extends JFrame {
                 cancelBut2.setText("Cancel");
                 cancelBut2.addActionListener(e -> cancelButActionPerformed(e));
 
-                //---- successUserLogin ----
-                successUserLogin.setText("Successful Login - User");
-                successUserLogin.addActionListener(e -> successUserLoginActionPerformed(e));
-
                 //---- successLoginAdmin ----
                 successLoginAdmin.setText("Successful Login - Admin");
                 successLoginAdmin.addActionListener(e -> successLoginAdminActionPerformed(e));
@@ -236,19 +232,12 @@ public class LoginRegisterGUI  extends JFrame {
                     pnlLoginLayout.createParallelGroup()
                         .addGroup(pnlLoginLayout.createSequentialGroup()
                             .addContainerGap()
-                            .addGroup(pnlLoginLayout.createParallelGroup()
-                                .addComponent(successUserLogin)
-                                .addComponent(btnMainGUI, GroupLayout.PREFERRED_SIZE, 152, GroupLayout.PREFERRED_SIZE))
-                            .addGap(85, 85, 85)
+                            .addComponent(btnMainGUI, GroupLayout.PREFERRED_SIZE, 152, GroupLayout.PREFERRED_SIZE)
+                            .addGap(111, 111, 111)
                             .addGroup(pnlLoginLayout.createParallelGroup()
                                 .addGroup(pnlLoginLayout.createSequentialGroup()
                                     .addComponent(label7)
-                                    .addContainerGap(384, Short.MAX_VALUE))
-                                .addGroup(pnlLoginLayout.createSequentialGroup()
-                                    .addComponent(successLoginAdmin)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
-                                    .addComponent(unsuccessfulLogin)
-                                    .addGap(35, 35, 35))
+                                    .addContainerGap(349, Short.MAX_VALUE))
                                 .addGroup(pnlLoginLayout.createSequentialGroup()
                                     .addGroup(pnlLoginLayout.createParallelGroup()
                                         .addComponent(tooManyRetries)
@@ -259,21 +248,26 @@ public class LoginRegisterGUI  extends JFrame {
                                         .addComponent(label8)
                                         .addComponent(userField, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(label6))
-                                    .addGap(0, 287, Short.MAX_VALUE))))
+                                    .addGap(0, 233, Short.MAX_VALUE))))
                         .addGroup(pnlLoginLayout.createSequentialGroup()
                             .addGap(276, 276, 276)
                             .addComponent(invalidCred)
                             .addGap(0, 404, Short.MAX_VALUE))
+                        .addGroup(pnlLoginLayout.createSequentialGroup()
+                            .addGap(50, 50, 50)
+                            .addComponent(successLoginAdmin)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 242, Short.MAX_VALUE)
+                            .addComponent(unsuccessfulLogin)
+                            .addGap(44, 44, 44))
                 );
                 pnlLoginLayout.setVerticalGroup(
                     pnlLoginLayout.createParallelGroup()
                         .addGroup(pnlLoginLayout.createSequentialGroup()
-                            .addGap(15, 15, 15)
+                            .addGap(20, 20, 20)
                             .addGroup(pnlLoginLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(successUserLogin)
-                                .addComponent(unsuccessfulLogin)
-                                .addComponent(successLoginAdmin))
-                            .addGap(91, 91, 91)
+                                .addComponent(successLoginAdmin)
+                                .addComponent(unsuccessfulLogin))
+                            .addGap(86, 86, 86)
                             .addGroup(pnlLoginLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                 .addGroup(pnlLoginLayout.createSequentialGroup()
                                     .addComponent(label6)
@@ -296,7 +290,7 @@ public class LoginRegisterGUI  extends JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(regOpenBut))
                                 .addComponent(btnMainGUI, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
-                            .addContainerGap(101, Short.MAX_VALUE))
+                            .addContainerGap(102, Short.MAX_VALUE))
                 );
             }
             pnlMain.add(pnlLogin, "card2");
@@ -426,7 +420,7 @@ public class LoginRegisterGUI  extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Benjamin Ward
+    // Generated using JFormDesigner Evaluation license - Barry Chuckle
     private JPanel pnlMain;
     private JPanel pnlLogin;
     private JLabel label6;
@@ -436,7 +430,6 @@ public class LoginRegisterGUI  extends JFrame {
     private JTextField userField;
     private JButton loginBut;
     private JButton cancelBut2;
-    private JButton successUserLogin;
     private JButton successLoginAdmin;
     private JButton unsuccessfulLogin;
     private JButton regOpenBut;
