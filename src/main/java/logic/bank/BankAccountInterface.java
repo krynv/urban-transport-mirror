@@ -1,4 +1,4 @@
-package logic;
+package logic.bank;
 
 public class BankAccountInterface {
 

@@ -2,7 +2,10 @@ package logic.fare;
 
 import logic.account.Account;
 import logic.journey.Journey;
+import logic.route.Route;
+import logic.route.RouteRegistry;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,4 +52,16 @@ public class FareRegistry {
         return 0.0;
     }
 
+    public RouteRegistry getRoutesCost(RouteRegistry routeRegistry, LocalDateTime start, LocalDateTime end) {
+        // Get the cost of each of the routes
+        // Iterate through each route and set the cost of the route
+
+        Fare fare = fares.get(0);   // DistanceFare
+
+        for (Route aRoute:routeRegistry) {
+            aRoute.setCost(fare.calculateRouteCost(aRoute, start, end));
+        }
+
+        return routeRegistry;
+    }
 }

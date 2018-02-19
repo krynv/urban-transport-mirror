@@ -1,4 +1,4 @@
-package logic;
+package logic.employee;
 
 import org.mindrot.jbcrypt.BCrypt;
 

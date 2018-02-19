@@ -1,9 +1,11 @@
-package logic;
+package logic.timeband;
+
+import logic.timeband.TimeBand;
 
 import java.util.ArrayList;
 
-public class TimeBands extends ArrayList<TimeBand> {
-    public TimeBands() {
+public class TimeRegistry extends ArrayList<TimeBand> {
+    public TimeRegistry() {
         super();
     }
 

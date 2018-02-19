@@ -1,4 +1,7 @@
-package logic;
+package logic.report;
+
+import logic.report.MaintenanceReport;
+import logic.report.Report;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

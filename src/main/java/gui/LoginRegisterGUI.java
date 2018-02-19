@@ -5,8 +5,8 @@ import java.awt.event.*;
 import java.io.IOException;
 import javax.swing.*;
 
-import logic.AccountManager;
-import logic.EmployeeRegistry;
+import logic.account.AccountManager;
+import logic.employee.EmployeeRegistry;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;

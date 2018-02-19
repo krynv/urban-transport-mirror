@@ -1,4 +1,6 @@
-package logic;
+package logic.printer;
+
+import logic.printer.Printer;
 
 import java.util.ArrayList;
 

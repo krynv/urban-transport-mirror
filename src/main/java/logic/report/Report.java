@@ -1,4 +1,6 @@
-package logic;
+package logic.report;
+
+import logic.printer.PrinterRegistry;
 
 import java.time.LocalDateTime;
 

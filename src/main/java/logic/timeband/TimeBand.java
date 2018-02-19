@@ -1,4 +1,4 @@
-package logic;
+package logic.timeband;
 
 import java.time.LocalDateTime;
 

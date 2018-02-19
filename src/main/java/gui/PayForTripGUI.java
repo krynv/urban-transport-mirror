@@ -1,6 +1,13 @@
 package gui;
 
-import logic.*;
+import logic.account.Account;
+import logic.account.AccountRegistry;
+import logic.coupon.Coupon;
+import logic.fare.FareRegistry;
+import logic.location.Location;
+import logic.purchase.Purchase;
+import logic.route.RouteRegistry;
+import logic.token.PhysicalToken;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -359,7 +366,7 @@ public class PayForTripGUI extends JFrame {
         this.accID = txtFieldAccountID.getText();
         Purchase purchase = new Purchase();
         AccountRegistry accountRegistry = new AccountRegistry();
-        Account account = accountRegistry.getAccount(this.accID);
+        Account account = accountRegistry.getAccountById(this.accID);
         if( account != null) {
             String accName = account.getName();
             int accountNo = account.getAccountNum();
@@ -431,7 +438,7 @@ public class PayForTripGUI extends JFrame {
         // TODO add your code here
 
         AccountRegistry accountRegistry = new AccountRegistry();
-        Account account = accountRegistry.getAccount(this.accID);
+        Account account = accountRegistry.getAccountById(this.accID);
         if(account.addCredit(this.amount)) {
             lblReceiptNotification.setVisible(true);
             lblTransAccNotification.setBackground(new Color(216, 231, 213));

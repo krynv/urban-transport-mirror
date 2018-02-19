@@ -1,4 +1,4 @@
-package logic;
+package logic.printer;
 
 public class Printer {
 

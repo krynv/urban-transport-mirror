@@ -29,7 +29,7 @@ public class AccountDaoJson implements AccountDao {
 
             for (int i = 0; i < jsonArray.size(); i++) {
                 JSONObject jsonObject = (JSONObject) jsonArray.get(i);
-                accounts.add(new Account((String) jsonObject.get("id"), (String) jsonObject.get("name")));
+                accounts.add(new Account((String) jsonObject.get("id"), (String) jsonObject.get("name"), (Double) jsonObject.get("credits"), (Integer) jsonObject.get("sortCode"), (Integer) jsonObject.get("securityNo"), (Integer) jsonObject.get("accountNum") ));
             }
         } catch (IOException e) {
             e.printStackTrace();

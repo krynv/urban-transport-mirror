@@ -1,4 +1,6 @@
-package logic;
+package logic.location;
+
+import logic.location.Location;
 
 import java.util.ArrayList;
 
@@ -28,7 +30,7 @@ public class LocationRegistry extends ArrayList<Location> {
         Location returnLocationObject = null;
 
         for(Location aLocation:this) {
-            if (aLocation.getLocationID().equals(givenLocationID)) {
+            if (aLocation.getId().equals(givenLocationID)) {
                 returnLocationObject = aLocation;
             }
         }

@@ -6,11 +6,10 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import javax.swing.*;
 import javax.swing.event.*;
-import javax.swing.plaf.*;
-import com.intellij.uiDesigner.core.*;
-import logic.AccountManager;
-import logic.MaintenanceReport;
-import logic.Report;
+
+import logic.account.AccountManager;
+import logic.report.MaintenanceReport;
+import logic.report.Report;
 import org.json.simple.parser.ParseException;
 
 public class EmployeeGUI extends JFrame {

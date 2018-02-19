@@ -1,4 +1,6 @@
-package logic;
+package logic.token;
+
+import logic.token.Token;
 
 public class PhysicalToken extends Token {
     public PhysicalToken(String id, String accountId) {

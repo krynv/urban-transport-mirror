@@ -1,4 +1,4 @@
-package logic;
+package logic.coupon;
 
 import java.time.LocalDateTime;
 

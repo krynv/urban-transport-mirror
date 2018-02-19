@@ -49,4 +49,22 @@ public class DistanceFare extends Fare {
         return 0.0;
     }
 
+//    public double calculateRouteCost(Route route, LocalDateTime start, LocalDateTime end) {
+//        double cost = 0.0;
+//
+//        logic.Location startLocation = route.getStartLocation();
+//        LocationRegistry locationRegistry = route.getDestinationLocations().tail();
+//
+//        for (logic.Location location: locationRegistry) {
+//            for (logic.DistanceFare.Trip trip: trips) {
+//                if (startLocation.getLocationID().equals(trip.getStart().getLocationID()) && location.getLocationID().equals(trip.getEnd().getLocationID())) {
+//                    cost += trip.getPrice();
+//                    startLocation = location;
+//                }
+//            }
+//        }
+//
+//        return cost;
+//    }
+
 }

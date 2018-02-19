@@ -10,22 +10,30 @@ import java.time.LocalDateTime;
 
 public class Account {
 
-    private String id;
+
     private String name;
+    private String id;
+    private double credits;
+    private int sortCode;
+    private int securityNo;
+    private int accountNum;
     private JourneyRegistry journeys;
     private Pass pass; // TODO: Change to pass registry
     private double spentToday;
-    private double credits;
+
     private Boolean exit;
 
-    public Account(String id, String name) {
+    public Account(String id, String name, double credits, int sortCode, int securityNo, int accountNum) {
         this.id = id;
         this.name = name;
         this.journeys = new JourneyRegistry(id);
         this.pass = new Pass(true, LocalDateTime.now());
         this.spentToday = 10.0;
-        this.credits = 100.0;
+        this.credits = credits;
         this.exit = false;
+        this.sortCode = sortCode;
+        this.securityNo = securityNo;
+        this.accountNum = accountNum;
     }
 
     /**
@@ -63,4 +71,44 @@ public class Account {
         return exit;
     }
 
+
+    public Boolean takePayment (double amount, String accNo) {
+        return true;
+    }
+
+    public Boolean addCredit (double amount) {
+        this.credits = this.credits + amount;
+        return true;
+    }
+
+    public int getSortCode() {
+        return sortCode;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getSecurityNo() {
+        return securityNo;
+    }
+
+    public int getAccountNum() {
+        return accountNum;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                ", credits=" + credits +
+                ", sortCode=" + sortCode +
+                ", securityNo=" + securityNo +
+                ", accountNum=" + accountNum +
+                ", journeyregistry=" + journeys +
+                ", pass=" + pass +
+                ", spentToday=" + spentToday +
+                '}';
+    }
 }

@@ -1,5 +1,5 @@
-import logic.Employee;
-import logic.EmployeeRegistry;
+import logic.employee.Employee;
+import logic.employee.EmployeeRegistry;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -78,7 +78,7 @@ public class LoginRegisterGUI {
 
         System.out.println("DELETE USER TEST-------");
         JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader("./src/main/java/users.json"));
+        Object obj = parser.parse(new FileReader("./src/main/resources/users.json"));
         JSONArray jsonArray = (JSONArray) obj;
 
         System.out.println("Finding the user - testing");
@@ -92,7 +92,7 @@ public class LoginRegisterGUI {
             }
         }
         try {
-            FileWriter fileWriter = new FileWriter("./src/main/java/users.json");
+            FileWriter fileWriter = new FileWriter("./src/main/resources/users.json");
             fileWriter.write(jsonArray.toJSONString());
             fileWriter.flush();
         } catch (Exception e) {

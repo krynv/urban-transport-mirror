@@ -1,18 +1,34 @@
 [
   {
     "id": "0",
-    "name": "Callum"
+    "name": "Callum",
+    "credits": 10.0,
+    "sortCode": 1234,
+    "securityNo": 2345,
+    "accountNum": 678945
   },
   {
     "id": "1",
-    "name": "Vitaliy"
+    "name": "Vitaliy",
+    "credits": 15.0,
+    "sortCode": 1234,
+    "securityNo": 2345,
+    "accountNum": 678945
   },
   {
     "id": "2",
-    "name": "Ben"
+    "name": "Ben",
+    "credits": 20.0,
+    "sortCode": 1234,
+    "securityNo": 2345,
+    "accountNum": 678945
   },
   {
     "id": "3",
-    "name": "Dan"
+    "name": "Dan",
+    "credits": 25.0,
+    "sortCode": 1234,
+    "securityNo": 2345,
+    "accountNum": 678945
   }
 ]

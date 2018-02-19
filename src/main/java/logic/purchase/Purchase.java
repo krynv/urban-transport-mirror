@@ -1,4 +1,7 @@
-package logic;
+package logic.purchase;
+
+import logic.account.Account;
+import logic.bank.BankAccountInterface;
 
 public class Purchase {
 

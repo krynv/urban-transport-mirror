@@ -1,18 +1,22 @@
-package logic;
+package logic.route;
+
+import logic.location.Location;
+import logic.location.LocationRegistry;
+import logic.timeband.TimeRegistry;
 
 public class Route {
 
     private String routeID;
-    private TimeBands timeBands;
+    private TimeRegistry timeRegistry;
     private LocationRegistry destinationLocations;
     private double routeIncome;
     private double routeRunningCosts;
     private double routeMaintenanceCosts;
     private double cost;
 
-    public Route(String routeID, TimeBands timeBands, LocationRegistry destinationLocations) {
+    public Route(String routeID, TimeRegistry timeRegistry, LocationRegistry destinationLocations) {
         this.routeID = routeID;
-        this.timeBands = timeBands;
+        this.timeRegistry = timeRegistry;
         this.destinationLocations = destinationLocations;
     }
 
