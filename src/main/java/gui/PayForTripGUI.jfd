@@ -237,8 +237,8 @@ new FormModel {
 						"value": "card3"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq l {space :p:116:p, par l {seq l {comp btnFare1:::p::p, space :30:30:p, comp btnFare2:::p::p}, comp btnFare3:::p::p}, space ::143:x}}"
-						"$verticalGroup": "par l {seq l {space :p:141:p, par l {comp btnFare1:::p::p, comp btnFare2:::p::p}, space :6:6:p, comp btnFare3:::p::p, space ::159:x}}"
+						"$horizontalGroup": "par l {seq l {space :p:116:p, par l {seq {comp btnFare1:::p::p, space :p:30:p, comp btnFare2:::p::p}, comp btnFare3:::p::p}, space ::143:x}}"
+						"$verticalGroup": "par l {seq l {space :p:141:p, par b {comp btnFare2::b:p::p, comp btnFare1::b:p::p}, space :6:6:p, comp btnFare3:::p::p, space ::159:x}}"
 					} ) {
 						name: "pnlSearchedFares"
 						add( new FormComponent( "javax.swing.JButton" ) {
@@ -605,3 +605,4 @@ new FormModel {
 		} )
 	}
 }
+

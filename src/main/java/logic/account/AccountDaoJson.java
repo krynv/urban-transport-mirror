@@ -29,18 +29,7 @@ public class AccountDaoJson implements AccountDao {
 
             for (int i = 0; i < jsonArray.size(); i++) {
                 JSONObject jsonObject = (JSONObject) jsonArray.get(i);
-
-                String barry = (String) jsonObject.get("credits");
-                double barry2 = Double.parseDouble(barry);
-
-//                String id = (String) jsonObject.get("id");
-//                String name = (String) jsonObject.get("name");
-//                double credits = Double.parseDouble((String) jsonObject.get("credits"));
-//                int sortCode = Integer.parseInt((String) jsonObject.get("sortCode"));
-//                int securityNo = Integer.parseInt((String) jsonObject.get("securityNo"));
-//                int accountNum = Integer.parseInt((String) jsonObject.get("accountNum"));
-
-                //accounts.add(new Account((String) jsonObject.get("id"), (String) jsonObject.get("name"), Double.parseDouble((String) jsonObject.get("credits")), Integer.parseInt((String) jsonObject.get("sortCode")), Integer.parseInt((String) jsonObject.get("securityNo")), Integer.parseInt((String) jsonObject.get("accountNum") )));
+                accounts.add(new Account((String) jsonObject.get("id"), (String) jsonObject.get("name"), (Double) jsonObject.get("credits"), (int) (long) jsonObject.get("sortCode"), (int) (long) jsonObject.get("securityNo"), (int) (long) jsonObject.get("accountNum") ));
             }
         } catch (IOException e) {
             e.printStackTrace();
