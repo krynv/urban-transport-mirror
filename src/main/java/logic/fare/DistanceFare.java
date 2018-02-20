@@ -2,7 +2,10 @@ package logic.fare;
 
 import logic.journey.Journey;
 import logic.location.Location;
+import logic.location.LocationRegistry;
+import logic.route.Route;
 
+import java.time.LocalDateTime;
 import java.util.Vector;
 
 public class DistanceFare extends Fare {
@@ -49,22 +52,22 @@ public class DistanceFare extends Fare {
         return 0.0;
     }
 
-//    public double calculateRouteCost(Route route, LocalDateTime start, LocalDateTime end) {
-//        double cost = 0.0;
-//
-//        logic.Location startLocation = route.getStartLocation();
-//        LocationRegistry locationRegistry = route.getDestinationLocations().tail();
-//
-//        for (logic.Location location: locationRegistry) {
-//            for (logic.DistanceFare.Trip trip: trips) {
-//                if (startLocation.getLocationID().equals(trip.getStart().getLocationID()) && location.getLocationID().equals(trip.getEnd().getLocationID())) {
-//                    cost += trip.getPrice();
-//                    startLocation = location;
-//                }
-//            }
-//        }
-//
-//        return cost;
-//    }
+    public double calculateRouteCost(Route route, LocalDateTime start, LocalDateTime end) {
+        double cost = 0.0;
+
+        Location startLocation = route.getStartLocation();
+        LocationRegistry locationRegistry = route.getDestinationLocations().tail();
+
+        for (Location location: locationRegistry) {
+            for (DistanceFare.Trip trip: trips) {
+                if (startLocation.getId().equals(trip.getStart().getId()) && location.getId().equals(trip.getEnd().getId())) {
+                    cost += trip.getPrice();
+                    startLocation = location;
+                }
+            }
+        }
+
+        return cost;
+    }
 
 }

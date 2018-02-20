@@ -511,8 +511,8 @@ new FormModel {
 						"value": "card8"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {par l {seq l {space :p:231:p, comp lbllReceiptLocation:::p::p}, seq l {space :p:222:p, par l {comp lblViaLocationslReceipt5:::p:96:p, comp lblViaLocationslReceipt3:::p:96:p, comp lblViaLocationslReceipt4::l:p:96:p, comp lblViaLocationlReceipt6::l:p:96:p}}, seq l {space :p:220:p, par l {seq {space :6:6:p, comp lblViaLocationslReceipt1:::p:96:p}, seq {comp lblStationlReceipt:::p::p, space :6:6:p, comp lblDestinationlReceipt:::p::p}}}, par t:l::p {seq l {space :p:68:p, par l:::p {comp btnProlReceipt:::::x, comp btnPrintReceipt:::::x}, space :::x, par l {comp btnPrintPhyTic::t:p:130:p, comp btnAddCredit::t:p:130:p}}, seq l {space :p:89:p, par l {comp lblDepartureDateTimelReceipt::l:p:135:p, comp lblreturnDateValuelReceipt2::l:p::p}, space :p:73:p, par l {comp lblreturnDateValuelReceipt:::p::p, comp lblReturnDateTimelReceipt:::p::p}}}, seq l {space :p:155:p, comp lblReceiptNotification:::p:204:p}}, space ::142:x}}"
-						"$verticalGroup": "par l {seq l {space :p:106:p, par l {comp lblStationlReceipt:::p::p, comp lblDestinationlReceipt:::p::p}, space :p:4:p, comp lblViaLocationslReceipt1:::p:20:p, space :::p, par b {comp lblDepartureDateTimelReceipt::b:p:24:p, comp lblReturnDateTimelReceipt::b:p::p}, space :::p, par b {comp lblreturnDateValuelReceipt2::b:p::p, comp lblreturnDateValuelReceipt::b:p::p}, space :p:5:p, comp lbllReceiptLocation:::p::p, space :::p, comp lblViaLocationslReceipt4:::p::p, space :p:5:p, comp lblViaLocationslReceipt5:::p::p, space :::p, comp lblViaLocationslReceipt3:::p:20:p, space :::p, comp lblViaLocationlReceipt6:::p:20:p, space ::25:x, comp lblReceiptNotification:::p:18:p, space u:::p, par b {comp btnProlReceipt::b:p::p, comp btnPrintPhyTic::b:p::p}, space :::p, par b {comp btnPrintReceipt::b:p::p, comp btnAddCredit::b:p::p}, space :p:19:p}}"
+						"$horizontalGroup": "par l {seq t {space ::199:x, par t {comp lblViaLocationslReceipt1:::p:96:p, seq {comp lblStationlReceipt:::p::p, space :p:28:p, comp lblDestinationlReceipt:::p::p, space :p:8:p}}, space :p:213:p}, seq {par l {seq l {space :p:169:p, comp txtAccountID:::p:147:p}, seq l {space :p:210:p, comp lblAccount:::p:96:p}, seq l {space :p:68:p, par l:::p {comp btnProlReceipt:::::x, comp btnPrintReceipt:::::x}, space :p:91:p, par l {comp btnPrintPhyTic:::p:130:p, comp btnAddCredit:::p:130:p}}, seq l {space :p:211:p, par l {comp lblViaLocationslReceipt4:::p:96:p, comp lbllReceiptLocation:::p::p, comp lblViaLocationslReceipt5::l:p:96:p, comp lblViaLocationslReceipt3::l:p:96:p, comp lblViaLocationlReceipt6::l:p:96:p}}}, space ::126:x}, seq l {space :p:45:p, par l {seq {comp lblReceiptNotification:::p:444:p, space ::56:x}, seq {par l {comp lblDepartureDateTimelReceipt:::p:135:p, comp lblreturnDateValuelReceipt2:::p::p}, space ::150:x, par l {comp lblReturnDateTimelReceipt:::p::p, comp lblreturnDateValuelReceipt:::p::p}, space :p:109:p}}}}"
+						"$verticalGroup": "par l {seq l {space :p:32:p, par b {comp lblStationlReceipt::b:p::p, comp lblDestinationlReceipt::b:p::p}, space u:::p, comp lblViaLocationslReceipt1:::p:20:p, space :4:4:p, par b {comp lblDepartureDateTimelReceipt::b:p:24:p, comp lblReturnDateTimelReceipt::b:p::p}, space :::p, par l {comp lblreturnDateValuelReceipt:::p::p, comp lblreturnDateValuelReceipt2:::p::p}, space :p:12:p, comp lbllReceiptLocation:::p::p, space :::p, comp lblViaLocationslReceipt4:::p::p, space u:::p, comp lblViaLocationslReceipt5:::p::p, space :::p, comp lblViaLocationslReceipt3:::p:20:p, space :::p, comp lblViaLocationlReceipt6:::p:20:p, space s:::p, comp lblReceiptNotification:::p:18:p, space ::55:x, comp lblAccount:::p:20:p, space :::p, comp txtAccountID:::p::p, space s:::p, par b {comp btnProlReceipt::b:p::p, comp btnPrintPhyTic::b:p::p}, space :::p, par b {comp btnPrintReceipt::b:p::p, comp btnAddCredit::b:p::p}, space :p:19:p}}"
 					} ) {
 						name: "pnlPrintReceipt"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -592,6 +592,15 @@ new FormModel {
 							"text": "ADD CREDIT"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAddCreditActionPerformed", true ) )
 						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "txtAccountID"
+							"visible": false
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblAccount"
+							"text": "Account ID"
+							"visible": false
+						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card10"
 					} )
@@ -605,4 +614,3 @@ new FormModel {
 		} )
 	}
 }
-
