@@ -6,15 +6,15 @@ new FormModel {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.CardLayout ) ) {
 			name: "pnlMain"
 			"minimumSize": new java.awt.Dimension( 627, 413 )
-			"preferredSize": new java.awt.Dimension( 700, 478 )
+			"preferredSize": new java.awt.Dimension( 680, 580 )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq l {space :::p, comp btnMainGUI:::p:152:p, space :p:111:p, par l {seq {comp label7:::p::p, space ::349:x}, seq {par l {comp tooManyRetries:::p::p, comp regOpenBut:::p:150:p, comp cancelBut2:::p:150:p, comp loginBut:::p:150:p, comp passField:::p:150:p, comp label8:::p::p, comp userField:::p:150:p, comp label6:::p::p}, space :0:233:x}}}, seq {space :p:276:p, comp invalidCred:::p::p, space :0:404:x}, seq l {space :p:50:p, comp successLoginAdmin:::p::p, space ::242:x, comp unsuccessfulLogin:::p::p, space :p:44:p}}"
-				"$verticalGroup": "par l {seq l {space :p:20:p, par b {comp successLoginAdmin::b:p::p, comp unsuccessfulLogin::b:p::p}, space :p:86:p, par t {seq {comp label6:::p::p, space :p:26:p, comp invalidCred:::p::p, space u:::p, comp label7:::p::p, space :::p, comp userField:::p::p, space s:::p, comp label8:::p::p, space s:::p, comp passField:::p::p, space :p:44:p, comp tooManyRetries:::p::p, space :::p, comp loginBut:::p::p, space s:::p, comp cancelBut2:::p::p, space s:::p, comp regOpenBut:::p::p}, comp btnMainGUI:::p:50:p}, space ::102:x}}"
+				"$horizontalGroup": "par l {seq l {space :::p, comp btnMainGUI:::p:199:p, space :p:64:p, par l {seq {comp label7:::p::p, space ::358:x}, seq {par l {comp tooManyRetries:::p::p, comp regOpenBut:::p:150:p, comp cancelBut2:::p:150:p, comp loginBut:::p:150:p, comp passField:::p:150:p, comp label8:::p::p, comp userField:::p:150:p, comp label6:::p::p}, space :0:261:x}}}, seq {space :p:276:p, comp invalidCred:::p::p, space :0:404:x}, seq l {space :p:50:p, comp successLoginAdmin:::p::p, space ::286:x, comp unsuccessfulLogin:::p::p, space :p:44:p}}"
+				"$verticalGroup": "par l {seq l {space :p:20:p, par b {comp successLoginAdmin::b:p::p, comp unsuccessfulLogin::b:p::p}, space :p:86:p, par t {seq {comp label6:::p::p, space :p:26:p, comp invalidCred:::p::p, space u:::p, comp label7:::p::p, space :::p, comp userField:::p::p, space s:::p, comp label8:::p::p, space s:::p, comp passField:::p::p, space :p:44:p, comp tooManyRetries:::p::p, space :::p, comp loginBut:::p::p, space s:::p, comp cancelBut2:::p::p, space s:::p, comp regOpenBut:::p::p}, comp btnMainGUI:::p:50:p}, space ::101:x}}"
 			} ) {
 				name: "pnlLogin"
 				"preferredSize": new java.awt.Dimension( 700, 478 )
-				"visible": false
 				"minimumSize": new java.awt.Dimension( 627, 413 )
+				"visible": false
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label6"
 					"text": "Enter Your Login Credentials"

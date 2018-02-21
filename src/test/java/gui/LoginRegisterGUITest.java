@@ -1,3 +1,5 @@
+package gui;
+
 import logic.employee.Employee;
 import logic.employee.EmployeeRegistry;
 import org.json.simple.JSONArray;
@@ -16,7 +18,7 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class LoginRegisterGUI {
+public class LoginRegisterGUITest {
 
     private EmployeeRegistry employeeRegistry;
     private Employee user;
