@@ -8,7 +8,7 @@ public class BankAccountInterfaceTest {
 
     private BankAccountInterface bank;
     @Test
-    public void checkLastName() {
+    public void checkBank() {
         this.bank = new BankAccountInterface();
         if(this.bank.takePayment( "name", 123, 123, 123, 12) ) {
             assertTrue(true);
