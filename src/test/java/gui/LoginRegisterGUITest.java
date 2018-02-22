@@ -104,6 +104,7 @@ public class LoginRegisterGUITest {
 
         System.out.println("Looking for user to check its been deleted - testing");
         this.user = employeeRegistry.getEmployee("testing");
+        System.out.println("-------------------  " + user);
         if(user != null) {
             assertTrue(false);
         } else {
