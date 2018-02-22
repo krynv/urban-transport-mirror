@@ -1,0 +1,364 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.CardLayout ) ) {
+			name: "pnlGUI"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq {par l {seq l {space :p:206:p, comp lblCard:::p::p}, seq l {space :p:231:p, par l:::p {comp btnMagnetic:::::x, comp btnContactless:::::x, comp btnBarcode:::::x}}}, space ::275:x}}"
+				"$verticalGroup": "par l {seq l {space :p:99:p, comp lblCard:::p::p, space :p:125:p, comp btnMagnetic:::p::p, space :p:32:p, comp btnContactless:::p::p, space :p:29:p, comp btnBarcode:::p::p, space ::322:x}}"
+			} ) {
+				name: "pnlCardChoice"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "lblCard"
+					"text": "WHICH TYPE OF CARD DO YOU HAVE?"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnMagnetic"
+					"text": "MAGNETIC STRIP CARD"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnMagneticActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnContactless"
+					"text": "CONTACTLESS CARD"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnContactlessActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnBarcode"
+					"text": "BARCODE CARD"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnBarcodeActionPerformed", true ) )
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "card1"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq t {space ::591:x, comp lblMagneticError:::p::p, space :p:259:p}, seq l {space :p:287:p, par l {seq {comp btnValidMagnetic:::p::p, space u:::p, comp btnInvalidMagnetic:::p::p}, comp btnSwipe:::p::p}, space ::222:x}}"
+				"$verticalGroup": "par l {seq l {space :p:261:p, comp lblMagneticError:::p::p, space :::p, comp btnSwipe:::p::p, space :p:37:p, par b {comp btnValidMagnetic::b:p::p, comp btnInvalidMagnetic::b:p::p}, space ::374:x}}"
+			} ) {
+				name: "pnlMagnetic"
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnSwipe"
+					"text": "SWIPE CARD TO BEGIN"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnSwipeActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "lblMagneticError"
+					"text": "ERROR INVALID CARD TRY AGAIN"
+					"visible": false
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnValidMagnetic"
+					"text": "Valid Card"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnValidMagneticActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnInvalidMagnetic"
+					"text": "Invalid Card"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnInvalidMagneticActionPerformed", true ) )
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "card2"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :p:264:p, par l {comp lblBarcodeError:::p::p, par l:::p {comp lblBarcode:::::x, comp txtBarcode:::::x, seq t {comp btnBarcodeBegin:::p::p, space :p:69:p}}}, space ::324:x}}"
+				"$verticalGroup": "par l {seq l {space :p:252:p, comp lblBarcode:::p::p, space :::p, comp lblBarcodeError:::p::p, space :::p, comp txtBarcode:::p::p, space s:::p, comp btnBarcodeBegin:::p::p, space ::371:x}}"
+			} ) {
+				name: "pnlBarcode"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "lblBarcode"
+					"text": "INPUT BARCODE TO BEGIN"
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "txtBarcode"
+					addEvent( new FormEvent( "java.awt.event.FocusListener", "focusGained", "txtBarcodeFocusGained", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnBarcodeBegin"
+					"text": "BEGIN"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnBarcodeBeginActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "lblBarcodeError"
+					"text": "INVALID BARCODE TRY AGAIN"
+					"visible": false
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "card3"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq {par l {seq l {space :p:247:p, comp lblContactlessError:::p::p}, seq l {space :p:278:p, par l {seq {comp btnValidContactless:::p::p, space u:::p, comp btnInvalidContactless:::p::p}, comp btnContactlessBegin:::p::p}}}, space ::231:x}}"
+				"$verticalGroup": "par l {seq l {space :p:220:p, comp lblContactlessError:::p::p, space u:::p, comp btnContactlessBegin:::p::p, space u:::p, par b {comp btnValidContactless::b:p::p, comp btnInvalidContactless::b:p::p}, space ::431:x}}"
+			} ) {
+				name: "pnlContactless"
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnContactlessBegin"
+					"text": "TAP CARD TO BEGIN"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnContactlessBeginActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "lblContactlessError"
+					"text": "ERROR INVALID CARD TRY AGAIN"
+					"visible": false
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnValidContactless"
+					"text": "Valid Card"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnValidContactlessActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnInvalidContactless"
+					"text": "Invalid Card"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnInvalidContactlessActionPerformed", true ) )
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "card4"
+			} )
+			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
+				name: "pnlAccount"
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq {par l {seq {space :p:293:p, comp lblCardNumberJourneyHistory:::p::p}, seq l {space :p:95:p, comp scrollPane1:::p:635:p}, seq l {space :p:335:p, comp btnHistoryExit:::p::p}}, space ::111:x}}"
+					"$verticalGroup": "par l {seq l {space :p:69:p, comp lblCardNumberJourneyHistory:::p::p, space :p:87:p, comp scrollPane1:::p:317:p, space :p:55:p, comp btnHistoryExit:::p::p, space ::113:x}}"
+				} ) {
+					name: "pnlHistory"
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lblCardNumberJourneyHistory"
+						"text": "CARD #"
+					} )
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "scrollPane1"
+						add( new FormComponent( "javax.swing.JTextArea" ) {
+							name: "txtHistory"
+						} )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "btnHistoryExit"
+						"text": "EXIT"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnHistoryExitActionPerformed", true ) )
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "JOURNEY HISTORY"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.CardLayout ) ) {
+					name: "pnlHome"
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {seq {par l {seq {space :p:325:p, comp lblCardNumberAddCredits:::p::p}, seq l {space :p:110:p, par l {comp btnAddCredit:::p::p, seq {comp txtCreditRemaining:::p:241:p, space u:::p, comp lblCreditRemaining:::p::p}}}, seq l {space :p:325:p, comp btnAddCreditsExit:::p::p}}, space ::298:x}}"
+						"$verticalGroup": "par l {seq l {space :p:79:p, comp lblCardNumberAddCredits:::p::p, space :p:54:p, par b {comp txtCreditRemaining::b:p::p, comp lblCreditRemaining::b:p::p}, space :p:34:p, comp btnAddCredit:::p::p, space ::210:x, comp btnAddCreditsExit:::p::p, space :p:193:p}}"
+					} ) {
+						name: "pnlAddCredits"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblCardNumberAddCredits"
+							"text": "CARD #"
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "txtCreditRemaining"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblCreditRemaining"
+							"text": "Credits Remaining"
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnAddCredit"
+							"text": "Add Credits"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAddCreditActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnAddCreditsExit"
+							"text": "EXIT"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAddCreditsExitActionPerformed", true ) )
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "card1"
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {seq {par l {seq {space :p:242:p, comp lblDepositAmount:::p::p}, seq l {space :p:347:p, comp lblCardNumberCardPayment:::p::p}, seq l {space :p:81:p, par t {seq {comp btnDeposit5:::p::p, space :p:176:p, comp btnDeposit10:::p::p}, par l:t {comp btnCardPaymentExit:::p::p, comp btnCardPaymentNext:::p::p}}, space :p:157:p, comp btnDeposit15:::p::p}}, space ::176:x}}"
+						"$verticalGroup": "par l {seq l {space :p:105:p, comp lblCardNumberCardPayment:::p::p, space :p:64:p, comp lblDepositAmount:::p::p, space u:::p, par b {comp btnDeposit5::b:p::p, comp btnDeposit10::b:p::p, comp btnDeposit15::b:p::p}, space :p:132:p, comp btnCardPaymentNext:::p::p, space :p:50:p, comp btnCardPaymentExit:::p::p, space ::165:x}}"
+					} ) {
+						name: "pnlCardPayment"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblCardNumberCardPayment"
+							"text": "CARD #"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblDepositAmount"
+							"text": "SELECT DEPOSIT AMOUNT"
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnDeposit5"
+							"text": "£5"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnDeposit5ActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnDeposit10"
+							"text": "£10"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnDeposit10ActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnDeposit15"
+							"text": "£15"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnDeposit15ActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnCardPaymentNext"
+							"text": "NEXT"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnCardPaymentNextActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnCardPaymentExit"
+							"text": "EXIT"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnCardPaymentExitActionPerformed", true ) )
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "card2"
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {seq {par l {seq {space :p:318:p, comp lblCardNumberConfirmation:::p::p}, seq l {space :p:129:p, comp lblCreditsAdded:::p::p}, seq l {space :p:296:p, comp btnConfirmationExit:::p::p}}, space ::180:x}}"
+						"$verticalGroup": "par l {seq l {space :p:112:p, comp lblCardNumberConfirmation:::p::p, space :p:89:p, comp lblCreditsAdded:::p::p, space :p:86:p, comp btnConfirmationExit:::p::p, space ::328:x}}"
+					} ) {
+						name: "pnlConfirmation"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblCardNumberConfirmation"
+							"text": "CARD #"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblCreditsAdded"
+							"text": "YOUR CREDITS HAVE BEEN ADDED TO YOUR ACCOUNT"
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnConfirmationExit"
+							"text": "EXIT"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnConfirmationExitActionPerformed", true ) )
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "card3"
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {seq l {par t {par l {seq l {space :p:311:p, comp lblCardNumberCashPayment:::p::p}, seq l {space :p:194:p, par l {comp lblCreditGained:::p::p, comp lblCashInserted:::p::p}}}, par l:t {comp btnCashPaymentExit:::p::p, comp btnCashPaymentFinished:::p::p}}, space ::167:x, comp btnAddCash:::p::p, space :p:145:p}}"
+						"$verticalGroup": "par l {seq l {space :p:129:p, comp lblCardNumberCashPayment:::p::p, space :p:60:p, par b {comp lblCashInserted::b:p::p, comp btnAddCash::b:p::p}, space :p:30:p, comp lblCreditGained:::p::p, space :p:94:p, comp btnCashPaymentFinished:::p::p, space :p:57:p, comp btnCashPaymentExit:::p::p, space ::167:x}}"
+					} ) {
+						name: "pnlCashPayment"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblCardNumberCashPayment"
+							"text": "CARD #"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblCashInserted"
+							"text": "Cash Inserted"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblCreditGained"
+							"text": "Credit Gained"
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnCashPaymentFinished"
+							"text": "FINISH"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnCashPaymentFinishedActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnAddCash"
+							"text": "Add Cash"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAddCashActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnCashPaymentExit"
+							"text": "EXIT"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnCashPaymentExitActionPerformed", true ) )
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "card4"
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {seq {par l {seq l {space :p:288:p, comp lblCardNumberCardDetails:::p::p}, seq l {space :p:184:p, comp lblMoneyCredits:::p::p}, seq l {space :p:273:p, comp lblTransactionFailed:::p::p}, seq l {space :p:98:p, par l {comp lblCardName::l:p::p, comp lblCardNumber::l:p::p, comp lblSecurityCode::l:p::p}, space :p:37:p, par l {comp btnCardDetailsExit:::p::p, par l:::p {comp btnCardDetailsFinish::::229:x, comp txtCardName::::229:x, comp txtCardNumber::::229:x, comp txtSecurityCode::::229:x}}}}, space ::348:x}}"
+						"$verticalGroup": "par l {seq l {space :p:100:p, comp lblCardNumberCardDetails:::p::p, space u:::p, comp lblMoneyCredits:::p::p, space :p:16:p, comp lblTransactionFailed:::p::p, space s:::p, par b {comp lblCardName::b:p::p, comp txtCardName::b:p::p}, space u:::p, par b {comp lblCardNumber::b:p::p, comp txtCardNumber::b:p::p}, space u:::p, par b {comp lblSecurityCode::b:p::p, comp txtSecurityCode::b:p::p}, space :::p, comp btnCardDetailsFinish:::p::p, space :p:57:p, comp btnCardDetailsExit:::p::p, space ::214:x}}"
+					} ) {
+						name: "pnlCardDetails"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblCardNumberCardDetails"
+							"text": "CARD #"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblMoneyCredits"
+							"text": "£ Amount - Amount Credits"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblCardName"
+							"text": "Card Name"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblCardNumber"
+							"text": "Card Number"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblSecurityCode"
+							"text": "Security Code"
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "txtCardName"
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "txtCardNumber"
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "txtSecurityCode"
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnCardDetailsFinish"
+							"text": "Finish"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnCardDetailsFinishActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblTransactionFailed"
+							"text": "TRANSACTION FAILED"
+							"visible": false
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnCardDetailsExit"
+							"text": "EXIT"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnCardDetailsExitActionPerformed", true ) )
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "card5"
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+						"$horizontalGroup": "par l {seq {par l {seq {space :p:304:p, comp lblCardNumberPaymentChoice:::p::p}, seq l {space :p:216:p, comp lblPaymentChoice:::p::p}, seq l {space :p:152:p, comp btnPaymentChoiceCard:::p::p, space :p:123:p, comp btnPaymentChoiceCash:::p::p}, seq l {space :p:294:p, comp btnPaymentChoiceExit:::p::p}}, space ::288:x}}"
+						"$verticalGroup": "par l {seq l {space :p:114:p, comp lblCardNumberPaymentChoice:::p::p, space u:::p, comp lblPaymentChoice:::p::p, space :p:92:p, par b {comp btnPaymentChoiceCard::b:p::p, comp btnPaymentChoiceCash::b:p::p}, space ::139:x, comp btnPaymentChoiceExit:::p::p, space :p:210:p}}"
+					} ) {
+						name: "pnlPaymentChoice"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblCardNumberPaymentChoice"
+							"text": "CARD #"
+						} )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "lblPaymentChoice"
+							"text": "PLEASE SELECT PAYMENT METHOD"
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnPaymentChoiceCard"
+							"text": "CARD"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnPaymentChoiceCardActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnPaymentChoiceCash"
+							"text": "CASH"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnPaymentChoiceCashActionPerformed", true ) )
+						} )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "btnPaymentChoiceExit"
+							"text": "EXIT"
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnPaymentChoiceExitActionPerformed", true ) )
+						} )
+					}, new FormLayoutConstraints( class java.lang.String ) {
+						"value": "card6"
+					} )
+				}, new FormLayoutConstraints( null ) {
+					"title": "HOME"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "card6"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 425, 375 )
+		} )
+	}
+}

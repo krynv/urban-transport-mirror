@@ -36,6 +36,11 @@ public class GUI extends JFrame {
         this.setVisible(false);
     }
 
+    private void btnAddCreditActionPerformed(ActionEvent e) {
+        new TerminalGUI().setVisible(true);
+        this.setVisible(false);
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Barry Chuckle
@@ -44,6 +49,7 @@ public class GUI extends JFrame {
         btnPayOnExit = new JButton();
         btnPayForTrip = new JButton();
         btnViewReport = new JButton();
+        btnAddCredit = new JButton();
 
         //======== pnlGUI ========
         {
@@ -83,13 +89,19 @@ public class GUI extends JFrame {
                     }
                 });
 
+                //---- btnAddCredit ----
+                btnAddCredit.setText("Add credit");
+                btnAddCredit.setPreferredSize(new Dimension(150, 60));
+                btnAddCredit.addActionListener(e -> btnAddCreditActionPerformed(e));
+
                 GroupLayout pnlSelectOptionLayout = new GroupLayout(pnlSelectOption);
                 pnlSelectOption.setLayout(pnlSelectOptionLayout);
                 pnlSelectOptionLayout.setHorizontalGroup(
                     pnlSelectOptionLayout.createParallelGroup()
                         .addGroup(GroupLayout.Alignment.TRAILING, pnlSelectOptionLayout.createSequentialGroup()
-                            .addContainerGap(267, Short.MAX_VALUE)
+                            .addContainerGap(947, Short.MAX_VALUE)
                             .addGroup(pnlSelectOptionLayout.createParallelGroup()
+                                .addComponent(btnAddCredit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnPayOnExit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnPayForTrip, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btnViewReport, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
@@ -104,7 +116,9 @@ public class GUI extends JFrame {
                             .addComponent(btnPayForTrip, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(btnViewReport, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap(221, Short.MAX_VALUE))
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(btnAddCredit, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap(711, Short.MAX_VALUE))
                 );
             }
             pnlGUI.add(pnlSelectOption, "card1");
@@ -119,5 +133,6 @@ public class GUI extends JFrame {
     private JButton btnPayOnExit;
     private JButton btnPayForTrip;
     private JButton btnViewReport;
+    private JButton btnAddCredit;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

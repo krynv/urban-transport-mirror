@@ -6,8 +6,8 @@ new FormModel {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.CardLayout ) ) {
 			name: "pnlGUI"
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq t {space ::267:x, par l {comp btnPayOnExit:::p::p, comp btnPayForTrip:::p::p, comp btnViewReport::l:p::p}, space :p:263:p}}"
-				"$verticalGroup": "par l {seq l {space :p:149:p, comp btnPayOnExit:::p::p, space s:::p, comp btnPayForTrip:::p::p, space u:::p, comp btnViewReport:::p::p, space ::221:x}}"
+				"$horizontalGroup": "par l {seq t {space ::947:x, par l {comp btnAddCredit:::p::p, comp btnPayOnExit:::p::p, comp btnPayForTrip:::p::p, comp btnViewReport::l:p::p}, space :p:263:p}}"
+				"$verticalGroup": "par l {seq l {space :p:149:p, comp btnPayOnExit:::p::p, space s:::p, comp btnPayForTrip:::p::p, space u:::p, comp btnViewReport:::p::p, space u:::p, comp btnAddCredit:::p::p, space ::711:x}}"
 			} ) {
 				name: "pnlSelectOption"
 				add( new FormComponent( "javax.swing.JButton" ) {
@@ -25,8 +25,14 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "btnViewReport"
 					"text": "View report"
-					"preferredSize": new java.awt.Dimension( 150, 60 )
+					"preferredSize": &Dimension0 new java.awt.Dimension( 150, 60 )
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnViewReportActionPerformed", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnAddCredit"
+					"text": "Add credit"
+					"preferredSize": #Dimension0
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAddCreditActionPerformed", true ) )
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "card1"
