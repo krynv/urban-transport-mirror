@@ -4,7 +4,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.FileReader;
@@ -13,6 +15,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class EmployeeRegistryTest {
 
     private EmployeeRegistry employeeRegistry;
