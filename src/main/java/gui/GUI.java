@@ -37,7 +37,8 @@ public class GUI extends JFrame {
     }
 
     private void btnAddCreditActionPerformed(ActionEvent e) {
-        // TODO add your code here
+        new TerminalGUI().setVisible(true);
+        this.setVisible(false);
     }
 
     private void initComponents() {
@@ -78,7 +79,15 @@ public class GUI extends JFrame {
                 //---- btnViewReport ----
                 btnViewReport.setText("View report");
                 btnViewReport.setPreferredSize(new Dimension(150, 60));
-                btnViewReport.addActionListener(e -> btnViewReportActionPerformed(e));
+                btnViewReport.addActionListener(e -> {
+                    try {
+                        btnViewReportActionPerformed(e);
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    } catch (ParseException e1) {
+                        e1.printStackTrace();
+                    }
+                });
 
                 //---- btnAddCredit ----
                 btnAddCredit.setText("Add credit");
