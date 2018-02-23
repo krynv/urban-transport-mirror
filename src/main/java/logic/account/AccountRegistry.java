@@ -12,7 +12,7 @@ public class AccountRegistry {
         accounts = accountDaoJson.getAccounts();
     }
 
-    public Account getAccountById(String id) { // TODO: Change a function that has 'getAccount' to getAccountById
+    public Account getAccountById(String id) {
         for(Account account: accounts) {
             if (account.getId().equals(id)) {
                 return account;

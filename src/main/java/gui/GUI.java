@@ -37,13 +37,12 @@ public class GUI extends JFrame {
     }
 
     private void btnAddCreditActionPerformed(ActionEvent e) {
-        new TerminalGUI().setVisible(true);
-        this.setVisible(false);
+        // TODO add your code here
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Barry Chuckle
+        // Generated using JFormDesigner Evaluation license - Benjamin Ward
         pnlGUI = new JPanel();
         pnlSelectOption = new JPanel();
         btnPayOnExit = new JButton();
@@ -79,15 +78,7 @@ public class GUI extends JFrame {
                 //---- btnViewReport ----
                 btnViewReport.setText("View report");
                 btnViewReport.setPreferredSize(new Dimension(150, 60));
-                btnViewReport.addActionListener(e -> {
-                    try {
-                        btnViewReportActionPerformed(e);
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    } catch (ParseException e1) {
-                        e1.printStackTrace();
-                    }
-                });
+                btnViewReport.addActionListener(e -> btnViewReportActionPerformed(e));
 
                 //---- btnAddCredit ----
                 btnAddCredit.setText("Add credit");
@@ -127,7 +118,7 @@ public class GUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Barry Chuckle
+    // Generated using JFormDesigner Evaluation license - Benjamin Ward
     private JPanel pnlGUI;
     private JPanel pnlSelectOption;
     private JButton btnPayOnExit;
