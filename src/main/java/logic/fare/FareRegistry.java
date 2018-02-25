@@ -13,7 +13,6 @@ public class FareRegistry {
 
     static List<Fare> fares = new ArrayList<Fare>() {{
         add(new DistanceFare());
-        add(new OffPeakFare());
     }};
 
     /**
@@ -26,6 +25,7 @@ public class FareRegistry {
      * @return the highest cost of the journey from the fares
      */
     public double calculateCost(Journey journey) {
+        // TODO: Implement one to two more fares to calculate the maximum fare cost
         double cost = 0.0;
 
         for (Fare fare:fares) {

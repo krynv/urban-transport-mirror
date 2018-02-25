@@ -19,7 +19,6 @@ public class JourneyRegistry {
 
         journeys = new ArrayList<Journey>();
         journeys.add(new Journey(LocalDateTime.now(), new Location("0")));
-        journeys.add(new Journey(LocalDateTime.now(), new Location("1")));
     }
 
     public Journey findOpenJourney() {  // TODO: Create unit test
@@ -39,7 +38,7 @@ public class JourneyRegistry {
             } else {
                 Journey journey = openJourneys.get(0);
 
-                for (int i=1; i < openJourneys.size()-1; i++) {
+                for (int i = 1; i < openJourneys.size() - 1; i++) {
                     if (journey.getDepartureDateTime().isBefore(openJourneys.get(i).getDepartureDateTime())) {
                         journey = openJourneys.get(i);
                     }

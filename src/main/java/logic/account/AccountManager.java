@@ -27,6 +27,7 @@ public class AccountManager {
     public boolean login(String username, String password) throws IOException, ParseException {
         this.username = username;
         this.password = password;
+
         Employee employee = employeeRegistry.getEmployee(username);
 
         if (employee != null) {

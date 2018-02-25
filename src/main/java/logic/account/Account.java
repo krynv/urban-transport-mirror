@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 
 public class Account {
 
-
     private String name;
     private String id;
     private double credits;
@@ -36,16 +35,11 @@ public class Account {
         this.accountNum = accountNum;
     }
 
-    /**
-     *
-     * @param departureLocation the location the token was scanned at.
-     * @param departureDateTime the time the token was scanned at.
-     */
-    public void processPassengerExit(Location departureLocation, LocalDateTime departureDateTime) {
+    public void processPassengerExit(Location arrivalLocation, LocalDateTime arrivalDateTime) {
         Journey openJourney = journeys.findOpenJourney();
 
         if (openJourney != null) {
-            openJourney.closeJourney(departureLocation, departureDateTime);
+            openJourney.closeJourney(arrivalLocation, arrivalDateTime);
 
             if (!pass.isCovered(openJourney)) {
                 FareRegistry fares = new FareRegistry();
@@ -70,7 +64,6 @@ public class Account {
     public Boolean canExit() {
         return exit;
     }
-
 
     public Boolean takePayment (double amount, String accNo) {
         return true;
