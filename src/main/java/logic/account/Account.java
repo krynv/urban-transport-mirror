@@ -10,17 +10,19 @@ import java.time.LocalDateTime;
 
 public class Account {
 
-    private String name;
     private String id;
+    private String name;
     private double credits;
     private int sortCode;
     private int securityNo;
     private int accountNum;
-    private JourneyRegistry journeys;
-    private Pass pass; // TODO: Change to pass registry
     private double spentToday;
-
+    private JourneyRegistry journeys;
+    private Pass pass;                  // TODO: Change to pass registry
     private Boolean exit;
+
+    public Account() {
+    }
 
     public Account(String id, String name, double credits, int sortCode, int securityNo, int accountNum) {
         this.id = id;
@@ -65,11 +67,11 @@ public class Account {
         return exit;
     }
 
-    public Boolean takePayment (double amount, String accNo) {
+    public Boolean takePayment(double amount, String accNo) {
         return true;
     }
 
-    public Boolean addCredit (double amount) {
+    public Boolean addCredit(double amount) {
         this.credits = this.credits + amount;
         return true;
     }
@@ -86,8 +88,36 @@ public class Account {
         return securityNo;
     }
 
+    public double getCredits() {
+        return credits;
+    }
+
     public int getAccountNum() {
         return accountNum;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setCredits(double credits) {
+        this.credits = credits;
+    }
+
+    public void setSortCode(int sortCode) {
+        this.sortCode = sortCode;
+    }
+
+    public void setSecurityNo(int securityNo) {
+        this.securityNo = securityNo;
+    }
+
+    public void setAccountNum(int accountNum) {
+        this.accountNum = accountNum;
     }
 
     @Override

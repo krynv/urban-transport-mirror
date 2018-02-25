@@ -8,7 +8,7 @@ import java.util.List;
 
 public class JourneyRegistry {
 
-//    private JourneyDaoJson journeyDaoJson;
+    private JourneyDaoJson journeyDaoJson;
     private List<Journey> journeys;
 
     public JourneyRegistry(String id) {

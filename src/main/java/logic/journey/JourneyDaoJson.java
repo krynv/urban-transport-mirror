@@ -10,12 +10,12 @@ import java.util.List;
 
 public class JourneyDaoJson implements JourneyDao {
 
-    private static final String fileName = ".\\src\\main\\resources\\journey.json";
+    private static final String fileName = "./src/main/resources/journey.json";
 
     List<Journey> journeys;
 
     public JourneyDaoJson() {
-        journeys = new ArrayList<Journey>();
+        journeys = new ArrayList<>();
     }
 
     public List<Journey> getJourneysByAccountId(String accountId) {
@@ -25,17 +25,11 @@ public class JourneyDaoJson implements JourneyDao {
     public void setJourneysByAccountId(String accountId, List<Journey> journeys) {
         ObjectMapper objectMapper = new ObjectMapper();
 
-        JourneyRegistrySerializer journeyHistorySerializer = new JourneyRegistrySerializer();
-        journeyHistorySerializer.setAccountId(accountId);
-
-        SimpleModule simpleModule = new SimpleModule();
-        simpleModule.addSerializer(JourneyRegistry.class, journeyHistorySerializer);
-        objectMapper.registerModule(simpleModule);
-
         File file = new File(fileName);
 
         try {
-            objectMapper.writeValue(file, journeys);
+            // objectMapper.writeValue(file, journeys);
+            System.out.println(objectMapper.writeValueAsString(journeys));
         } catch (IOException e) {
             e.printStackTrace();
         }
