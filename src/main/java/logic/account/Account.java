@@ -120,6 +120,18 @@ public class Account {
         this.accountNum = accountNum;
     }
 
+    public void setJourneys() {
+        journeys = new JourneyRegistry(id);
+    }
+
+    public void setPasses() {
+        pass = new Pass(true, LocalDateTime.now());
+    }
+
+    public void setExit() {
+        exit = true;
+    }
+
     @Override
     public String toString() {
         return "Account{" +

@@ -1,10 +1,5 @@
 package logic.journey;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
-
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,16 +18,7 @@ public class JourneyDaoJson implements JourneyDao {
     }
 
     public void setJourneysByAccountId(String accountId, List<Journey> journeys) {
-        ObjectMapper objectMapper = new ObjectMapper();
 
-        File file = new File(fileName);
-
-        try {
-            // objectMapper.writeValue(file, journeys);
-            System.out.println(objectMapper.writeValueAsString(journeys));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
 }

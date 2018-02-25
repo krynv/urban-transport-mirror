@@ -12,13 +12,13 @@ public class JourneyRegistry {
     private List<Journey> journeys;
 
     public JourneyRegistry(String id) {
-        // TODO: Create JourneySerializer
-//        journeyDaoJson = new JourneyDaoJson();
-//        journeys = journeyDaoJson.getJourneysByAccountId(id);
-//        journeyDaoJson.setJourneysByAccountId(id, journeys);
-
-        journeys = new ArrayList<Journey>();
+        journeys = new ArrayList<>();
         journeys.add(new Journey(LocalDateTime.now(), new Location("0")));
+
+        // TODO: Create JourneySerializer and Deserializer
+        journeyDaoJson = new JourneyDaoJson();
+//        journeys = journeyDaoJson.getJourneysByAccountId(id);
+        journeyDaoJson.setJourneysByAccountId(id, journeys);
     }
 
     public Journey findOpenJourney() {  // TODO: Create unit test

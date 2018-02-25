@@ -1,6 +1,5 @@
 package logic.account;
 
-import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
@@ -23,7 +22,7 @@ public class AccountDaoJson implements AccountDao {
     public List<Account> getAccounts() {
         ObjectMapper objectMapper = new ObjectMapper();
 
-        SimpleModule simpleModule = new SimpleModule("AccountDeserializer", new Version(1, 0, 0, null, null, null));
+        SimpleModule simpleModule = new SimpleModule("AccountDeserializer");
         simpleModule.addDeserializer(Account.class, new AccountDeserializer());
 
         objectMapper.registerModule(simpleModule);
@@ -35,5 +34,11 @@ public class AccountDaoJson implements AccountDao {
         }
 
         return accounts;
+    }
+
+    public List<Account> getJourneys(List<Account> accounts) {
+
+
+        return null;
     }
 }

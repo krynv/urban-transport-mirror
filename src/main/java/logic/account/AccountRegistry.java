@@ -10,9 +10,10 @@ public class AccountRegistry {
     public AccountRegistry() {
         accountDaoJson = new AccountDaoJson();
         accounts = accountDaoJson.getAccounts();
+//        accounts = accountDaoJson.getJourneys(accounts);
     }
 
-    public Account getAccountById(String id) { // TODO: Change a function that has 'getAccount' to getAccountById
+    public Account getAccountById(String id) {
         for(Account account: accounts) {
             if (account.getId().equals(id)) {
                 return account;
