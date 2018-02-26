@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:358:p, comp btnScanToken:::p::p, space ::482:x}}"
-			"$verticalGroup": "par l {seq l {space :p:259:p, comp btnScanToken:::p::p, space ::317:x}}"
+			"$horizontalGroup": "par l {seq {par l {seq l {space :p:358:p, comp btnScanToken:::p::p}, seq l {space :::p, comp btnMainGUI:::p:199:p}}, space ::343:x}}"
+			"$verticalGroup": "par l {seq l {space :p:259:p, comp btnScanToken:::p::p, space ::173:x, comp btnMainGUI:::p:50:p, space :::p}}"
 		} ) {
 			name: "pnlMain"
 			add( new FormComponent( "javax.swing.JButton" ) {
@@ -13,9 +13,14 @@ new FormModel {
 				"text": "Scan token"
 				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnScanTokenActionPerformed", true ) )
 			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnMainGUI"
+				"text": "Go Back To Main Page"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnMainGUIActionPerformed", true ) )
+			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 5, 5 )
-			"size": new java.awt.Dimension( 470, 320 )
+			"size": new java.awt.Dimension( 800, 520 )
 		} )
 	}
 }

@@ -30,11 +30,17 @@ public class Gate extends JFrame {
         }
     }
 
+    private void btnMainGUIActionPerformed(ActionEvent e) {
+        new GUI().setVisible(true);
+        this.dispose();
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Barry Chuckle
+        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
         pnlMain = new JPanel();
         btnScanToken = new JButton();
+        btnMainGUI = new JButton();
 
         //======== pnlMain ========
         {
@@ -51,29 +57,41 @@ public class Gate extends JFrame {
             btnScanToken.setText("Scan token");
             btnScanToken.addActionListener(e -> btnScanTokenActionPerformed(e));
 
+            //---- btnMainGUI ----
+            btnMainGUI.setText("Go Back To Main Page");
+            btnMainGUI.addActionListener(e -> btnMainGUIActionPerformed(e));
+
             GroupLayout pnlMainLayout = new GroupLayout(pnlMain);
             pnlMain.setLayout(pnlMainLayout);
             pnlMainLayout.setHorizontalGroup(
                 pnlMainLayout.createParallelGroup()
                     .addGroup(pnlMainLayout.createSequentialGroup()
-                        .addGap(358, 358, 358)
-                        .addComponent(btnScanToken)
-                        .addContainerGap(482, Short.MAX_VALUE))
+                        .addGroup(pnlMainLayout.createParallelGroup()
+                            .addGroup(pnlMainLayout.createSequentialGroup()
+                                .addGap(358, 358, 358)
+                                .addComponent(btnScanToken))
+                            .addGroup(pnlMainLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(btnMainGUI, GroupLayout.PREFERRED_SIZE, 199, GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(343, Short.MAX_VALUE))
             );
             pnlMainLayout.setVerticalGroup(
                 pnlMainLayout.createParallelGroup()
                     .addGroup(pnlMainLayout.createSequentialGroup()
                         .addGap(259, 259, 259)
                         .addComponent(btnScanToken)
-                        .addContainerGap(317, Short.MAX_VALUE))
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
+                        .addComponent(btnMainGUI, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
             );
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Barry Chuckle
+    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
     private JPanel pnlMain;
     private JButton btnScanToken;
+    private JButton btnMainGUI;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
