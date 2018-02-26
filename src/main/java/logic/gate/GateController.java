@@ -29,6 +29,9 @@ public class GateController {
 
         if (token != null) {
             Account account = accountRegistry.getAccountById(token.getAccountId());
+            account.setJourneys();  // TODO: Remove after JourneyDaoJson has been implemented
+            account.setPasses();    // TODO: Remove after PassDaoJson has been implemented
+            account.setExit();      // TODO: Remove after Daos have been implemented
 
             if (account != null) {
                 account.processPassengerExit(tokenReader.getLocation(), LocalDateTime.now());

@@ -1,11 +1,10 @@
 package logic.account;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 
-import java.io.FileReader;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,27 +16,29 @@ public class AccountDaoJson implements AccountDao {
     List<Account> accounts;
 
     public AccountDaoJson() {
-        accounts = new ArrayList<Account>();
+        accounts = new ArrayList<>();
     }
 
     public List<Account> getAccounts() {
-        JSONParser jsonParser = new JSONParser();
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        SimpleModule simpleModule = new SimpleModule("AccountDeserializer");
+        simpleModule.addDeserializer(Account.class, new AccountDeserializer());
+
+        objectMapper.registerModule(simpleModule);
 
         try {
-            Object object = jsonParser.parse(new FileReader(fileName));
-            JSONArray jsonArray = (JSONArray) object;
-
-            for (int i = 0; i < jsonArray.size(); i++) {
-                JSONObject jsonObject = (JSONObject) jsonArray.get(i);
-                accounts.add(new Account((String) jsonObject.get("id"), (String) jsonObject.get("name"), (Double) jsonObject.get("credits"), (int) (long) jsonObject.get("sortCode"), (int) (long) jsonObject.get("securityNo"), (int) (long) jsonObject.get("accountNum") ));
-            }
+            accounts = objectMapper.readValue(new File(fileName), new TypeReference<List<Account>>(){});
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
             e.printStackTrace();
         }
 
         return accounts;
     }
 
+    public List<Account> getJourneys(List<Account> accounts) {
+
+
+        return null;
+    }
 }

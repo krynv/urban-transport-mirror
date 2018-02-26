@@ -8,18 +8,17 @@ import java.util.List;
 
 public class JourneyRegistry {
 
-//    private JourneyDaoJson journeyDaoJson;
+    private JourneyDaoJson journeyDaoJson;
     private List<Journey> journeys;
 
     public JourneyRegistry(String id) {
-        // TODO: Create JourneySerializer
-//        journeyDaoJson = new JourneyDaoJson();
-//        journeys = journeyDaoJson.getJourneysByAccountId(id);
-//        journeyDaoJson.setJourneysByAccountId(id, journeys);
-
-        journeys = new ArrayList<Journey>();
+        journeys = new ArrayList<>();
         journeys.add(new Journey(LocalDateTime.now(), new Location("0")));
-        journeys.add(new Journey(LocalDateTime.now(), new Location("1")));
+
+        // TODO: Create JourneySerializer and Deserializer
+        journeyDaoJson = new JourneyDaoJson();
+//        journeys = journeyDaoJson.getJourneysByAccountId(id);
+        journeyDaoJson.setJourneysByAccountId(id, journeys);
     }
 
     public Journey findOpenJourney() {  // TODO: Create unit test
@@ -39,7 +38,7 @@ public class JourneyRegistry {
             } else {
                 Journey journey = openJourneys.get(0);
 
-                for (int i=1; i < openJourneys.size()-1; i++) {
+                for (int i = 1; i < openJourneys.size() - 1; i++) {
                     if (journey.getDepartureDateTime().isBefore(openJourneys.get(i).getDepartureDateTime())) {
                         journey = openJourneys.get(i);
                     }

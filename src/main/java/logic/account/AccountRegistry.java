@@ -10,6 +10,7 @@ public class AccountRegistry {
     public AccountRegistry() {
         accountDaoJson = new AccountDaoJson();
         accounts = accountDaoJson.getAccounts();
+//        accounts = accountDaoJson.getJourneys(accounts);
     }
 
     public Account getAccountById(String id) {
