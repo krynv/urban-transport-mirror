@@ -6,8 +6,8 @@ new FormModel {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.CardLayout ) ) {
 			name: "pnlGUI"
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq {par l {seq l {space :p:206:p, comp lblCard:::p::p}, seq l {space :p:231:p, par l:::p {comp btnMagnetic:::::x, comp btnContactless:::::x, comp btnBarcode:::::x}}}, space ::275:x}}"
-				"$verticalGroup": "par l {seq l {space :p:99:p, comp lblCard:::p::p, space :p:125:p, comp btnMagnetic:::p::p, space :p:32:p, comp btnContactless:::p::p, space :p:29:p, comp btnBarcode:::p::p, space ::322:x}}"
+				"$horizontalGroup": "par l {seq {par l {seq l {space :p:206:p, comp lblCard:::p::p}, seq l {space :p:231:p, par l:::p {comp btnMagnetic:::::x, comp btnContactless:::::x, comp btnBarcode:::::x}}, seq l {space :::p, comp btnMainGUI:::p:199:p}}, space ::214:x}}"
+				"$verticalGroup": "par l {seq l {space :p:99:p, comp lblCard:::p::p, space :p:125:p, comp btnMagnetic:::p::p, space :p:32:p, comp btnContactless:::p::p, space :p:29:p, comp btnBarcode:::p::p, space ::82:x, comp btnMainGUI:::p:50:p, space :::p}}"
 			} ) {
 				name: "pnlCardChoice"
 				add( new FormComponent( "javax.swing.JLabel" ) {
@@ -29,12 +29,17 @@ new FormModel {
 					"text": "BARCODE CARD"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnBarcodeActionPerformed", true ) )
 				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnMainGUI"
+					"text": "Go Back To Main Page"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnMainGUIActionPerformed", true ) )
+				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "card1"
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq t {space ::591:x, comp lblMagneticError:::p::p, space :p:259:p}, seq l {space :p:287:p, par l {seq {comp btnValidMagnetic:::p::p, space u:::p, comp btnInvalidMagnetic:::p::p}, comp btnSwipe:::p::p}, space ::222:x}}"
-				"$verticalGroup": "par l {seq l {space :p:261:p, comp lblMagneticError:::p::p, space :::p, comp btnSwipe:::p::p, space :p:37:p, par b {comp btnValidMagnetic::b:p::p, comp btnInvalidMagnetic::b:p::p}, space ::374:x}}"
+				"$horizontalGroup": "par l {seq t {space ::406:x, comp lblMagneticError:::p::p, space :p:259:p}, seq l {space :p:287:p, par l {seq {comp btnValidMagnetic:::p::p, space u:::p, comp btnInvalidMagnetic:::p::p}, comp btnSwipe:::p::p}, space ::171:x}}"
+				"$verticalGroup": "par l {seq l {space :p:261:p, comp lblMagneticError:::p::p, space :::p, comp btnSwipe:::p::p, space :p:37:p, par b {comp btnValidMagnetic::b:p::p, comp btnInvalidMagnetic::b:p::p}, space ::173:x}}"
 			} ) {
 				name: "pnlMagnetic"
 				add( new FormComponent( "javax.swing.JButton" ) {
@@ -61,8 +66,8 @@ new FormModel {
 				"value": "card2"
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq l {space :p:264:p, par l {comp lblBarcodeError:::p::p, par l:::p {comp lblBarcode:::::x, comp txtBarcode:::::x, seq t {comp btnBarcodeBegin:::p::p, space :p:69:p}}}, space ::324:x}}"
-				"$verticalGroup": "par l {seq l {space :p:252:p, comp lblBarcode:::p::p, space :::p, comp lblBarcodeError:::p::p, space :::p, comp txtBarcode:::p::p, space s:::p, comp btnBarcodeBegin:::p::p, space ::371:x}}"
+				"$horizontalGroup": "par l {seq l {space :p:264:p, par l {comp lblBarcodeError:::p::p, par l:::p {comp lblBarcode:::::x, comp txtBarcode:::::x, seq t {comp btnBarcodeBegin:::p::p, space :p:69:p}}}, space ::230:x}}"
+				"$verticalGroup": "par l {seq l {space :p:252:p, comp lblBarcode:::p::p, space :::p, comp lblBarcodeError:::p::p, space :::p, comp txtBarcode:::p::p, space s:::p, comp btnBarcodeBegin:::p::p, space ::187:x}}"
 			} ) {
 				name: "pnlBarcode"
 				add( new FormComponent( "javax.swing.JLabel" ) {
@@ -87,8 +92,8 @@ new FormModel {
 				"value": "card3"
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq {par l {seq l {space :p:247:p, comp lblContactlessError:::p::p}, seq l {space :p:278:p, par l {seq {comp btnValidContactless:::p::p, space u:::p, comp btnInvalidContactless:::p::p}, comp btnContactlessBegin:::p::p}}}, space ::231:x}}"
-				"$verticalGroup": "par l {seq l {space :p:220:p, comp lblContactlessError:::p::p, space u:::p, comp btnContactlessBegin:::p::p, space u:::p, par b {comp btnValidContactless::b:p::p, comp btnInvalidContactless::b:p::p}, space ::431:x}}"
+				"$horizontalGroup": "par l {seq {par l {seq l {space :p:247:p, comp lblContactlessError:::p::p}, seq l {space :p:278:p, par l {seq {comp btnValidContactless:::p::p, space u:::p, comp btnInvalidContactless:::p::p}, comp btnContactlessBegin:::p::p}}}, space ::180:x}}"
+				"$verticalGroup": "par l {seq l {space :p:220:p, comp lblContactlessError:::p::p, space u:::p, comp btnContactlessBegin:::p::p, space u:::p, par b {comp btnValidContactless::b:p::p, comp btnInvalidContactless::b:p::p}, space ::239:x}}"
 			} ) {
 				name: "pnlContactless"
 				add( new FormComponent( "javax.swing.JButton" ) {
@@ -117,8 +122,8 @@ new FormModel {
 			add( new FormContainer( "javax.swing.JTabbedPane", new FormLayoutManager( class javax.swing.JTabbedPane ) ) {
 				name: "pnlAccount"
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {seq {par l {seq {space :p:293:p, comp lblCardNumberJourneyHistory:::p::p}, seq l {space :p:95:p, comp scrollPane1:::p:635:p}, seq l {space :p:335:p, comp btnHistoryExit:::p::p}}, space ::111:x}}"
-					"$verticalGroup": "par l {seq l {space :p:69:p, comp lblCardNumberJourneyHistory:::p::p, space :p:87:p, comp scrollPane1:::p:317:p, space :p:55:p, comp btnHistoryExit:::p::p, space ::113:x}}"
+					"$horizontalGroup": "par l {seq {par l {seq {space :p:293:p, comp lblCardNumberJourneyHistory:::p::p}, seq l {space :p:95:p, comp scrollPane1:::p:635:p}, seq l {space :p:335:p, comp btnHistoryExit:::p::p}}, space :::x}}"
+					"$verticalGroup": "par l {seq l {space :p:69:p, comp lblCardNumberJourneyHistory:::p::p, space :p:87:p, comp scrollPane1:::p:317:p, space :p:55:p, comp btnHistoryExit:::p::p, space :::x}}"
 				} ) {
 					name: "pnlHistory"
 					add( new FormComponent( "javax.swing.JLabel" ) {
@@ -142,8 +147,8 @@ new FormModel {
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.CardLayout ) ) {
 					name: "pnlHome"
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {par l {seq {space :p:325:p, comp lblCardNumberAddCredits:::p::p}, seq l {space :p:110:p, par l {comp btnAddCredit:::p::p, seq {comp txtCreditRemaining:::p:241:p, space u:::p, comp lblCreditRemaining:::p::p}}}, seq l {space :p:325:p, comp btnAddCreditsExit:::p::p}}, space ::298:x}}"
-						"$verticalGroup": "par l {seq l {space :p:79:p, comp lblCardNumberAddCredits:::p::p, space :p:54:p, par b {comp txtCreditRemaining::b:p::p, comp lblCreditRemaining::b:p::p}, space :p:34:p, comp btnAddCredit:::p::p, space ::210:x, comp btnAddCreditsExit:::p::p, space :p:193:p}}"
+						"$horizontalGroup": "par l {seq {par l {seq {space :p:325:p, comp lblCardNumberAddCredits:::p::p}, seq l {space :p:110:p, par l {comp btnAddCredit:::p::p, seq {comp txtCreditRemaining:::p:241:p, space u:::p, comp lblCreditRemaining:::p::p}}}, seq l {space :p:325:p, comp btnAddCreditsExit:::p::p}}, space ::189:x}}"
+						"$verticalGroup": "par l {seq l {space :p:79:p, comp lblCardNumberAddCredits:::p::p, space :p:54:p, par b {comp txtCreditRemaining::b:p::p, comp lblCreditRemaining::b:p::p}, space :p:34:p, comp btnAddCredit:::p::p, space :::x, comp btnAddCreditsExit:::p::p, space :p:193:p}}"
 					} ) {
 						name: "pnlAddCredits"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -171,8 +176,8 @@ new FormModel {
 						"value": "card1"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {par l {seq {space :p:242:p, comp lblDepositAmount:::p::p}, seq l {space :p:347:p, comp lblCardNumberCardPayment:::p::p}, seq l {space :p:81:p, par t {seq {comp btnDeposit5:::p::p, space :p:176:p, comp btnDeposit10:::p::p}, par l:t {comp btnCardPaymentExit:::p::p, comp btnCardPaymentNext:::p::p}}, space :p:157:p, comp btnDeposit15:::p::p}}, space ::176:x}}"
-						"$verticalGroup": "par l {seq l {space :p:105:p, comp lblCardNumberCardPayment:::p::p, space :p:64:p, comp lblDepositAmount:::p::p, space u:::p, par b {comp btnDeposit5::b:p::p, comp btnDeposit10::b:p::p, comp btnDeposit15::b:p::p}, space :p:132:p, comp btnCardPaymentNext:::p::p, space :p:50:p, comp btnCardPaymentExit:::p::p, space ::165:x}}"
+						"$horizontalGroup": "par l {seq {par l {seq {space :p:242:p, comp lblDepositAmount:::p::p}, seq l {space :p:347:p, comp lblCardNumberCardPayment:::p::p}, seq l {space :p:81:p, par t {seq {comp btnDeposit5:::p::p, space :p:176:p, comp btnDeposit10:::p::p}, par l:t {comp btnCardPaymentExit:::p::p, comp btnCardPaymentNext:::p::p}}, space :p:157:p, comp btnDeposit15:::p::p}}, space ::99:x}}"
+						"$verticalGroup": "par l {seq l {space :p:105:p, comp lblCardNumberCardPayment:::p::p, space :p:64:p, comp lblDepositAmount:::p::p, space u:::p, par b {comp btnDeposit5::b:p::p, comp btnDeposit10::b:p::p, comp btnDeposit15::b:p::p}, space :p:132:p, comp btnCardPaymentNext:::p::p, space :p:50:p, comp btnCardPaymentExit:::p::p, space :::x}}"
 					} ) {
 						name: "pnlCardPayment"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -212,8 +217,8 @@ new FormModel {
 						"value": "card2"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {par l {seq {space :p:318:p, comp lblCardNumberConfirmation:::p::p}, seq l {space :p:129:p, comp lblCreditsAdded:::p::p}, seq l {space :p:296:p, comp btnConfirmationExit:::p::p}}, space ::180:x}}"
-						"$verticalGroup": "par l {seq l {space :p:112:p, comp lblCardNumberConfirmation:::p::p, space :p:89:p, comp lblCreditsAdded:::p::p, space :p:86:p, comp btnConfirmationExit:::p::p, space ::328:x}}"
+						"$horizontalGroup": "par l {seq {par l {seq {space :p:318:p, comp lblCardNumberConfirmation:::p::p}, seq l {space :p:129:p, comp lblCreditsAdded:::p::p}, seq l {space :p:296:p, comp btnConfirmationExit:::p::p}}, space ::181:x}}"
+						"$verticalGroup": "par l {seq l {space :p:112:p, comp lblCardNumberConfirmation:::p::p, space :p:89:p, comp lblCreditsAdded:::p::p, space :p:86:p, comp btnConfirmationExit:::p::p, space ::160:x}}"
 					} ) {
 						name: "pnlConfirmation"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -233,8 +238,8 @@ new FormModel {
 						"value": "card3"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq l {par t {par l {seq l {space :p:311:p, comp lblCardNumberCashPayment:::p::p}, seq l {space :p:194:p, par l {comp lblCreditGained:::p::p, comp lblCashInserted:::p::p}}}, par l:t {comp btnCashPaymentExit:::p::p, comp btnCashPaymentFinished:::p::p}}, space ::167:x, comp btnAddCash:::p::p, space :p:145:p}}"
-						"$verticalGroup": "par l {seq l {space :p:129:p, comp lblCardNumberCashPayment:::p::p, space :p:60:p, par b {comp lblCashInserted::b:p::p, comp btnAddCash::b:p::p}, space :p:30:p, comp lblCreditGained:::p::p, space :p:94:p, comp btnCashPaymentFinished:::p::p, space :p:57:p, comp btnCashPaymentExit:::p::p, space ::167:x}}"
+						"$horizontalGroup": "par l {seq l {par t {par l {seq l {space :p:311:p, comp lblCardNumberCashPayment:::p::p}, seq l {space :p:194:p, par l {comp lblCreditGained:::p::p, comp lblCashInserted:::p::p}}}, par l:t {comp btnCashPaymentExit:::p::p, comp btnCashPaymentFinished:::p::p}}, space ::70:x, comp btnAddCash:::p::p, space :p:145:p}}"
+						"$verticalGroup": "par l {seq l {space :p:129:p, comp lblCardNumberCashPayment:::p::p, space :p:60:p, par b {comp lblCashInserted::b:p::p, comp btnAddCash::b:p::p}, space :p:30:p, comp lblCreditGained:::p::p, space :p:94:p, comp btnCashPaymentFinished:::p::p, space :p:57:p, comp btnCashPaymentExit:::p::p, space :::x}}"
 					} ) {
 						name: "pnlCashPayment"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -268,8 +273,8 @@ new FormModel {
 						"value": "card4"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {par l {seq l {space :p:288:p, comp lblCardNumberCardDetails:::p::p}, seq l {space :p:184:p, comp lblMoneyCredits:::p::p}, seq l {space :p:273:p, comp lblTransactionFailed:::p::p}, seq l {space :p:98:p, par l {comp lblCardName::l:p::p, comp lblCardNumber::l:p::p, comp lblSecurityCode::l:p::p}, space :p:37:p, par l {comp btnCardDetailsExit:::p::p, par l:::p {comp btnCardDetailsFinish::::229:x, comp txtCardName::::229:x, comp txtCardNumber::::229:x, comp txtSecurityCode::::229:x}}}}, space ::348:x}}"
-						"$verticalGroup": "par l {seq l {space :p:100:p, comp lblCardNumberCardDetails:::p::p, space u:::p, comp lblMoneyCredits:::p::p, space :p:16:p, comp lblTransactionFailed:::p::p, space s:::p, par b {comp lblCardName::b:p::p, comp txtCardName::b:p::p}, space u:::p, par b {comp lblCardNumber::b:p::p, comp txtCardNumber::b:p::p}, space u:::p, par b {comp lblSecurityCode::b:p::p, comp txtSecurityCode::b:p::p}, space :::p, comp btnCardDetailsFinish:::p::p, space :p:57:p, comp btnCardDetailsExit:::p::p, space ::214:x}}"
+						"$horizontalGroup": "par l {seq {par l {seq l {space :p:288:p, comp lblCardNumberCardDetails:::p::p}, seq l {space :p:184:p, comp lblMoneyCredits:::p::p}, seq l {space :p:273:p, comp lblTransactionFailed:::p::p}, seq l {space :p:98:p, par l {comp lblCardName::l:p::p, comp lblCardNumber::l:p::p, comp lblSecurityCode::l:p::p}, space :p:37:p, par l {comp btnCardDetailsExit:::p::p, par l:::p {comp btnCardDetailsFinish::::229:x, comp txtCardName::::229:x, comp txtCardNumber::::229:x, comp txtSecurityCode::::229:x}}}}, space ::213:x}}"
+						"$verticalGroup": "par l {seq l {space :p:100:p, comp lblCardNumberCardDetails:::p::p, space u:::p, comp lblMoneyCredits:::p::p, space :p:16:p, comp lblTransactionFailed:::p::p, space s:::p, par b {comp lblCardName::b:p::p, comp txtCardName::b:p::p}, space u:::p, par b {comp lblCardNumber::b:p::p, comp txtCardNumber::b:p::p}, space u:::p, par b {comp lblSecurityCode::b:p::p, comp txtSecurityCode::b:p::p}, space :::p, comp btnCardDetailsFinish:::p::p, space :p:57:p, comp btnCardDetailsExit:::p::p, space ::110:x}}"
 					} ) {
 						name: "pnlCardDetails"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -320,8 +325,8 @@ new FormModel {
 						"value": "card5"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {par l {seq {space :p:304:p, comp lblCardNumberPaymentChoice:::p::p}, seq l {space :p:216:p, comp lblPaymentChoice:::p::p}, seq l {space :p:152:p, comp btnPaymentChoiceCard:::p::p, space :p:123:p, comp btnPaymentChoiceCash:::p::p}, seq l {space :p:294:p, comp btnPaymentChoiceExit:::p::p}}, space ::288:x}}"
-						"$verticalGroup": "par l {seq l {space :p:114:p, comp lblCardNumberPaymentChoice:::p::p, space u:::p, comp lblPaymentChoice:::p::p, space :p:92:p, par b {comp btnPaymentChoiceCard::b:p::p, comp btnPaymentChoiceCash::b:p::p}, space ::139:x, comp btnPaymentChoiceExit:::p::p, space :p:210:p}}"
+						"$horizontalGroup": "par l {seq {par l {seq {space :p:304:p, comp lblCardNumberPaymentChoice:::p::p}, seq l {space :p:216:p, comp lblPaymentChoice:::p::p}, seq l {space :p:152:p, comp btnPaymentChoiceCard:::p::p, space :p:123:p, comp btnPaymentChoiceCash:::p::p}, seq l {space :p:294:p, comp btnPaymentChoiceExit:::p::p}}, space ::220:x}}"
+						"$verticalGroup": "par l {seq l {space :p:114:p, comp lblCardNumberPaymentChoice:::p::p, space u:::p, comp lblPaymentChoice:::p::p, space :p:92:p, par b {comp btnPaymentChoiceCard::b:p::p, comp btnPaymentChoiceCash::b:p::p}, space :::x, comp btnPaymentChoiceExit:::p::p, space :p:210:p}}"
 					} ) {
 						name: "pnlPaymentChoice"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -358,7 +363,7 @@ new FormModel {
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 425, 375 )
+			"size": new java.awt.Dimension( 665, 535 )
 		} )
 	}
 }
