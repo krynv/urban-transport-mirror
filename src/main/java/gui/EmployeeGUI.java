@@ -87,7 +87,7 @@ public class EmployeeGUI extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Barry Chuckle
+        // Generated using JFormDesigner Evaluation license - Benjamin Ward
         mainPnl = new JPanel();
         JPanel tabbedPanel = new JPanel();
         tabbedPane12 = new JTabbedPane();
@@ -1102,7 +1102,7 @@ public class EmployeeGUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Barry Chuckle
+    // Generated using JFormDesigner Evaluation license - Benjamin Ward
     private JPanel mainPnl;
     private JTabbedPane tabbedPane12;
     private JPanel panel20;
