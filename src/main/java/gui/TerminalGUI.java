@@ -235,17 +235,12 @@ public class TerminalGUI extends JFrame {
     }
 
     private void btnMainGUIActionPerformed(ActionEvent e) {
-        new GUI().setVisible(true);
-        this.dispose();
+        // TODO add your code here
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-<<<<<<< Updated upstream
-        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
-=======
         // Generated using JFormDesigner Evaluation license - Benjamin Ward
->>>>>>> Stashed changes
         pnlGUI = new JPanel();
         pnlCardChoice = new JPanel();
         lblCard = new JLabel();
@@ -1008,11 +1003,7 @@ public class TerminalGUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-<<<<<<< Updated upstream
-    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
-=======
     // Generated using JFormDesigner Evaluation license - Benjamin Ward
->>>>>>> Stashed changes
     private JPanel pnlGUI;
     private JPanel pnlCardChoice;
     private JLabel lblCard;
