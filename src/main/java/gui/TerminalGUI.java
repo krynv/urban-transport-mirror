@@ -235,7 +235,8 @@ public class TerminalGUI extends JFrame {
     }
 
     private void btnMainGUIActionPerformed(ActionEvent e) {
-        // TODO add your code here
+        new GUI().setVisible(true);
+        this.dispose();
     }
 
     private void initComponents() {
