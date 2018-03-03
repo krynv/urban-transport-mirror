@@ -13,19 +13,12 @@ public class AccountDaoJson implements AccountDao {
 
     private static final String fileName = "./src/main/resources/account.json";
 
-    List<Account> accounts;
-
-    public AccountDaoJson() {
-        accounts = new ArrayList<>();
-    }
+    public AccountDaoJson() {}
 
     public List<Account> getAccounts() {
         ObjectMapper objectMapper = new ObjectMapper();
 
-        SimpleModule simpleModule = new SimpleModule("AccountDeserializer");
-        simpleModule.addDeserializer(Account.class, new AccountDeserializer());
-
-        objectMapper.registerModule(simpleModule);
+        List<Account> accounts = new ArrayList<>();
 
         try {
             accounts = objectMapper.readValue(new File(fileName), new TypeReference<List<Account>>(){});
@@ -36,9 +29,14 @@ public class AccountDaoJson implements AccountDao {
         return accounts;
     }
 
-    public List<Account> getJourneys(List<Account> accounts) {
+    public void setAccounts(List<Account> accounts) {
+        ObjectMapper objectMapper = new ObjectMapper();
 
-
-        return null;
+        try {
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(fileName), accounts);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 }

@@ -18,6 +18,13 @@ public class JourneySerializer extends StdSerializer<JourneyRegistry> {
 
     @Override
     public void serialize(JourneyRegistry value, JsonGenerator jgen, SerializerProvider provider) {
+        try {
+            jgen.writeStartObject();
+            jgen.writeStringField("id", "0");
+            jgen.writeEndObject();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }

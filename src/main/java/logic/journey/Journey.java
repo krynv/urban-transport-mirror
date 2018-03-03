@@ -50,6 +50,30 @@ public class Journey {
         return departureDateTime;
     }
 
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setArrivalDateTime(LocalDateTime arrivalDateTime) {
+        this.arrivalDateTime = arrivalDateTime;
+    }
+
+    public void setDepartureDateTime(LocalDateTime departureDateTime) {
+        this.departureDateTime = departureDateTime;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
+    }
+
+    public void setArrivalLocation(Location arrivalLocation) {
+        this.arrivalLocation = arrivalLocation;
+    }
+
+    public void setDepartureLocation(Location departureLocation) {
+        this.departureLocation = departureLocation;
+    }
+
     @Override
     public String toString() {
         return "Journey{" +

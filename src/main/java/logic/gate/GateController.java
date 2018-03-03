@@ -29,7 +29,6 @@ public class GateController {
 
         if (token != null) {
             Account account = accountRegistry.getAccountById(token.getAccountId());
-            account.setJourneys();  // TODO: Remove after JourneyDaoJson has been implemented
             account.setPasses();    // TODO: Remove after PassDaoJson has been implemented
             account.setExit();      // TODO: Remove after Daos have been implemented
 
@@ -38,6 +37,9 @@ public class GateController {
 
                 if (account.canExit()) {
                     open = true;
+                    account.setName("Vitaliy1");
+                    accountRegistry.setAccount(account);
+                    accountRegistry.saveAccounts();
                 } else {
                     System.out.println("User cannot exit");  // TODO: Change to Logger
                 }

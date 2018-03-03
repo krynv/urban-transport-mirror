@@ -10,7 +10,6 @@ public class AccountRegistry {
     public AccountRegistry() {
         accountDaoJson = new AccountDaoJson();
         accounts = accountDaoJson.getAccounts();
-//        accounts = accountDaoJson.getJourneys(accounts);
     }
 
     public Account getAccountById(String id) {
@@ -20,6 +19,18 @@ public class AccountRegistry {
             }
         }
         return null;
+    }
+
+    public void setAccount(Account account) {
+        for (int i = 0; i < accounts.size(); i++) {
+            if (accounts.get(i).getId().equals(account.getId())) {
+                accounts.set(i, account);
+            }
+        }
+    }
+
+    public void saveAccounts() {
+        accountDaoJson.setAccounts(accounts);
     }
 
 }

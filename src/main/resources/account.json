@@ -1,34 +1,60 @@
-[
-  {
-    "id": "0",
-    "name": "Callum",
-    "credits": 10.0,
-    "sortCode": 123456,
-    "securityNo": 235,
-    "accountNum": 5678904
-  },
-  {
-    "id": "1",
-    "name": "Vitaliy",
-    "credits": 15.0,
-    "sortCode": 123456,
-    "securityNo": 234,
-    "accountNum": 5678904
-  },
-  {
-    "id": "2",
-    "name": "Ben",
-    "credits": 20.0,
-    "sortCode": 123467,
-    "securityNo": 235,
-    "accountNum": 5678904
-  },
-  {
-    "id": "3",
-    "name": "Dan",
-    "credits": 25.0,
-    "sortCode": 123456,
-    "securityNo": 345,
-    "accountNum": 5678904
+[ {
+  "id" : "0",
+  "name" : "Callum",
+  "credits" : 10.0,
+  "sortCode" : 123456,
+  "securityNo" : 235,
+  "accountNum" : 5678904,
+  "journeys" : null
+}, {
+  "id" : "1",
+  "name" : "Vitaliy1",
+  "credits" : 15.0,
+  "sortCode" : 123456,
+  "securityNo" : 234,
+  "accountNum" : 5678904,
+  "journeys" : {
+    "journeys" : [ {
+      "departureDateTime" : {
+        "nano" : 399521500,
+        "year" : 2018,
+        "monthValue" : 3,
+        "dayOfMonth" : 2,
+        "hour" : 20,
+        "minute" : 57,
+        "second" : 32,
+        "month" : "MARCH",
+        "dayOfWeek" : "FRIDAY",
+        "dayOfYear" : 61,
+        "chronology" : {
+          "id" : "ISO",
+          "calendarType" : "iso8601"
+        }
+      },
+      "distance" : 100.0,
+      "arrivalLocation" : {
+        "id" : "1"
+      },
+      "departureLocation" : {
+        "id" : "0"
+      },
+      "open" : false
+    } ]
   }
-]
+}, {
+  "id" : "2",
+  "name" : "Ben",
+  "credits" : 20.0,
+  "sortCode" : 123467,
+  "securityNo" : 235,
+  "accountNum" : 5678904,
+  "journeys" : null
+}, {
+  "id" : "3",
+  "name" : "Dan",
+  "credits" : 25.0,
+  "sortCode" : 123456,
+  "securityNo" : 345,
+  "accountNum" : 5678904,
+  "journeys" : null
+} ]

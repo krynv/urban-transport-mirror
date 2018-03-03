@@ -8,17 +8,10 @@ import java.util.List;
 
 public class JourneyRegistry {
 
-    private JourneyDaoJson journeyDaoJson;
     private List<Journey> journeys;
 
     public JourneyRegistry(String id) {
         journeys = new ArrayList<>();
-        journeys.add(new Journey(LocalDateTime.now(), new Location("0")));
-
-        // TODO: Create JourneySerializer and Deserializer
-        journeyDaoJson = new JourneyDaoJson();
-//        journeys = journeyDaoJson.getJourneysByAccountId(id);
-        journeyDaoJson.setJourneysByAccountId(id, journeys);
     }
 
     public Journey findOpenJourney() {  // TODO: Create unit test
@@ -49,4 +42,11 @@ public class JourneyRegistry {
         }
     }
 
+    public List<Journey> getJourneys() {
+        return journeys;
+    }
+
+    public void addJourney(Journey journey) {
+        journeys.add(journey);
+    }
 }

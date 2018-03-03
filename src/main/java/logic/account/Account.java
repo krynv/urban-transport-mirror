@@ -1,5 +1,7 @@
 package logic.account;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import logic.fare.FareRegistry;
 import logic.journey.Journey;
 import logic.journey.JourneyRegistry;
@@ -8,6 +10,7 @@ import logic.pass.Pass;
 
 import java.time.LocalDateTime;
 
+@JsonDeserialize(using = AccountDeserializer.class)
 public class Account {
 
     private String id;
@@ -16,9 +19,16 @@ public class Account {
     private int sortCode;
     private int securityNo;
     private int accountNum;
+
+    @JsonIgnore
     private double spentToday;
+
     private JourneyRegistry journeys;
+
+    @JsonIgnore
     private Pass pass;                  // TODO: Change to pass registry
+
+    @JsonIgnore
     private Boolean exit;
 
     public Account() {
@@ -130,6 +140,14 @@ public class Account {
 
     public void setExit() {
         exit = true;
+    }
+
+    public JourneyRegistry getJourneys() {
+        return journeys;
+    }
+
+    public void addJourney(Journey journey) {
+        journeys.addJourney(journey);
     }
 
     @Override
