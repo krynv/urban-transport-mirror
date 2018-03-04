@@ -102,6 +102,7 @@ public class PayForTripGUI extends JFrame {
     /* ----- Select Fares ----- */
 
     private void searchActionPerformed(ActionEvent e) {
+
         LocalDateTime departureDateTime = LocalDateTime.of(2018, 2, 4, 12, 0);
         LocalDateTime arrivalDateTime = LocalDateTime.of(2018, 2, 4, 13, 0);
 
@@ -315,6 +316,8 @@ public class PayForTripGUI extends JFrame {
 
         lblCashValue.setText(txtCashValue.getText());
 
+
+
         if (getRemainingCost(valuePayingIn, valueYetToPay) > 0) {
             lblPriceCashPayment.setText(Double.toString(getRemainingCost(valuePayingIn, valueYetToPay)));
             txtCashValue.setText("");
@@ -354,7 +357,6 @@ public class PayForTripGUI extends JFrame {
     private boolean isCashEnteredSufficient(double tally, double cashEntered) {
         return cashEntered >= tally;
     }
-
     private double getRemainingCost(double valuePayingIn, double totalToPay) {
         return totalToPay-valuePayingIn;
     }

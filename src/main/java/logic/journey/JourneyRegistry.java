@@ -10,8 +10,10 @@ public class JourneyRegistry {
 
     private List<Journey> journeys;
 
-    public JourneyRegistry(String id) {
+    public JourneyRegistry() {
         journeys = new ArrayList<>();
+
+        journeys.add(new Journey(LocalDateTime.of(2018, 3, 4, 12, 0), new Location("0")));
     }
 
     public Journey findOpenJourney() {  // TODO: Create unit test

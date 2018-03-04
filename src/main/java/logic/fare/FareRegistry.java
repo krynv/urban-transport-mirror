@@ -15,6 +15,12 @@ public class FareRegistry {
         add(new DistanceFare());
     }};
 
+    static List<Tariff> tariffs = new ArrayList<Tariff>() {{
+       add(new NormalPeakTariff());
+       add(new OffPeakTariff());
+       add(new SuperOffPeakTariff());
+    }};
+
     /**
      * Traverse through the appropriate fares in the system.
      * Calculate the cost of the journey dependent on each fare.
@@ -25,7 +31,6 @@ public class FareRegistry {
      * @return the highest cost of the journey from the fares
      */
     public double calculateCost(Journey journey) {
-        // TODO: Implement one to two more fares to calculate the maximum fare cost
         double cost = 0.0;
 
         for (Fare fare:fares) {
@@ -45,11 +50,25 @@ public class FareRegistry {
      * Compare the costs of each of the tariffs.
      * Return the lowest cost.
      *
-     * @param account the account used to calculate the tariff
+     * @param journey the journey used to calculate the tariff
      * @return the lowest cost for the journey from the tariffs
      */
-    public double findCheapestTariff(Account account) {
-        return 0.0;
+    public double findCheapestTariff(double journeyCost, Journey journey) {
+        double cost = 0.0;
+
+        for (int i =  0; i < tariffs.size(); i++) {
+            double tariffCost = tariffs.get(i).calculateCost(journeyCost, journey.getDepartureDateTime());
+
+            if (i == 0) {
+                cost = tariffCost;
+            } else {
+                if (tariffCost < cost) {
+                    cost = tariffCost;
+                }
+            }
+        }
+
+        return cost;
     }
 
     public RouteRegistry getRoutesCost(RouteRegistry routeRegistry, LocalDateTime start, LocalDateTime end) {

@@ -8,6 +8,7 @@ public class Pass {
 
     private Boolean valid;
     private LocalDateTime dateTimeExpires;
+    private double modifier;
 
     public Pass(Boolean valid, LocalDateTime dateTimeExpires) {
         this.valid = valid;
@@ -16,6 +17,18 @@ public class Pass {
 
     public Boolean isCovered(Journey journey) {
         return (valid && dateTimeExpires.isAfter(journey.getDepartureDateTime()));
+    }
+
+    public Boolean isValid() {
+        return (valid && dateTimeExpires.isAfter(LocalDateTime.now()));
+    }
+
+    public double getModifier() {
+        return modifier;
+    }
+
+    public void invalidate() {
+        valid = false;
     }
 
     @Override

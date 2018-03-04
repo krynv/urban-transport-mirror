@@ -6,7 +6,9 @@ import logic.fare.FareRegistry;
 import logic.journey.Journey;
 import logic.journey.JourneyRegistry;
 import logic.location.Location;
+import logic.pass.DayPass;
 import logic.pass.Pass;
+import logic.pass.PassRegistry;
 
 import java.time.LocalDateTime;
 
@@ -25,19 +27,18 @@ public class Account {
     private JourneyRegistry journeys;
 
     @JsonIgnore
-    private Pass pass;                  // TODO: Change to pass registry
+    private PassRegistry passes;
 
     @JsonIgnore
     private Boolean exit;
 
-    public Account() {
-    }
+    public Account() {}
 
     public Account(String id, String name, double credits, int sortCode, int securityNo, int accountNum) {
         this.id = id;
         this.name = name;
-        this.journeys = new JourneyRegistry(id);
-        this.pass = new Pass(true, LocalDateTime.now());
+        this.journeys = new JourneyRegistry();
+        this.passes = new PassRegistry();
         this.spentToday = 10.0;
         this.credits = credits;
         this.exit = false;
@@ -52,17 +53,22 @@ public class Account {
         if (openJourney != null) {
             openJourney.closeJourney(arrivalLocation, arrivalDateTime);
 
-            if (!pass.isCovered(openJourney)) {
+            if (passes.getDayPass() == null) {
                 FareRegistry fares = new FareRegistry();
 
-                spentToday += fares.calculateCost(openJourney); // TODO: Implement logic for calculate cost
+                double cost = fares.findCheapestTariff(fares.calculateCost(openJourney), openJourney);
 
-                credits -= fares.findCheapestTariff(this);  // TODO: Implement logic for find cheapest tariff
+                cost = passes.applyPass(cost);
 
-                exit = true;
-            } else {
-                System.out.println("Pass covers journey"); // TODO: Change to Logger
+                if (spentToday + cost >= 15) {
+                    passes.awardDayPass();
+                    cost = Math.abs(spentToday - 15);
+                }
+
+                credits -= cost;
             }
+
+            exit = true;
         } else {
             System.out.println("Open Journey is null"); // TODO: Change to Logger
         }
@@ -130,15 +136,16 @@ public class Account {
     }
 
     public void setJourneys() {
-        journeys = new JourneyRegistry(id);
+        journeys = new JourneyRegistry();
     }
 
     public void setPasses() {
-        pass = new Pass(true, LocalDateTime.now());
+        passes = new PassRegistry();
     }
 
     public void setExit() {
         exit = true;
+        spentToday = 14.5;
     }
 
     public JourneyRegistry getJourneys() {
@@ -159,7 +166,7 @@ public class Account {
                 ", securityNo=" + securityNo +
                 ", accountNum=" + accountNum +
                 ", journeyregistry=" + journeys +
-                ", pass=" + pass +
+                ", pass=" + passes +
                 ", spentToday=" + spentToday +
                 '}';
     }
