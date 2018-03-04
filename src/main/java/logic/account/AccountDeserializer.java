@@ -29,7 +29,7 @@ public class AccountDeserializer extends StdDeserializer<Account> {
             JsonNode sortCodeNode = jsonNode.get("sortCode");
             JsonNode securityNoNode = jsonNode.get("securityNo");
             JsonNode accountNumNode = jsonNode.get("accountNum");
-            JsonNode journeysNode = jsonNode.get("journeys");
+            JsonNode spentTodayNode = jsonNode.get("spentToday");
 
             account.setId(idNode.asText());
             account.setName(nameNode.asText());
@@ -37,6 +37,7 @@ public class AccountDeserializer extends StdDeserializer<Account> {
             account.setSortCode(sortCodeNode.asInt());
             account.setSecurityNo(securityNoNode.asInt());
             account.setAccountNum(accountNumNode.asInt());
+            account.setSpentToday(spentTodayNode.asDouble());
 
 //            if (!journeysNode.asText().equals("null")) {
 //                for (JsonNode journeyNode: journeysNode.get("journeys")) {

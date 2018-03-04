@@ -5,7 +5,7 @@
   "sortCode" : 123456,
   "securityNo" : 235,
   "accountNum" : 5678904,
-  "journeys" : null
+  "spentToday": 15.0
 }, {
   "id" : "1",
   "name" : "Vitaliy1",
@@ -13,34 +13,7 @@
   "sortCode" : 123456,
   "securityNo" : 234,
   "accountNum" : 5678904,
-  "journeys" : {
-    "journeys" : [ {
-      "departureDateTime" : {
-        "nano" : 399521500,
-        "year" : 2018,
-        "monthValue" : 3,
-        "dayOfMonth" : 2,
-        "hour" : 20,
-        "minute" : 57,
-        "second" : 32,
-        "month" : "MARCH",
-        "dayOfWeek" : "FRIDAY",
-        "dayOfYear" : 61,
-        "chronology" : {
-          "id" : "ISO",
-          "calendarType" : "iso8601"
-        }
-      },
-      "distance" : 100.0,
-      "arrivalLocation" : {
-        "id" : "1"
-      },
-      "departureLocation" : {
-        "id" : "0"
-      },
-      "open" : false
-    } ]
-  }
+  "spentToday": 14.5
 }, {
   "id" : "2",
   "name" : "Ben",
@@ -48,7 +21,7 @@
   "sortCode" : 123467,
   "securityNo" : 235,
   "accountNum" : 5678904,
-  "journeys" : null
+  "spentToday": 15.0
 }, {
   "id" : "3",
   "name" : "Dan",
@@ -56,5 +29,5 @@
   "sortCode" : 123456,
   "securityNo" : 345,
   "accountNum" : 5678904,
-  "journeys" : null
+  "spentToday": 15.0
 } ]

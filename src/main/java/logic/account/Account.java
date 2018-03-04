@@ -34,12 +34,12 @@ public class Account {
 
     public Account() {}
 
-    public Account(String id, String name, double credits, int sortCode, int securityNo, int accountNum) {
+    public Account(String id, String name, double credits, int sortCode, int securityNo, int accountNum, double spentToday) {
         this.id = id;
         this.name = name;
         this.journeys = new JourneyRegistry();
         this.passes = new PassRegistry();
-        this.spentToday = 10.0;
+        this.spentToday = spentToday;
         this.credits = credits;
         this.exit = false;
         this.sortCode = sortCode;
@@ -135,6 +135,10 @@ public class Account {
         this.accountNum = accountNum;
     }
 
+    public void setSpentToday(double spentToday) {
+        this.spentToday = spentToday;
+    }
+
     public void setJourneys() {
         journeys = new JourneyRegistry();
     }
@@ -145,7 +149,6 @@ public class Account {
 
     public void setExit() {
         exit = true;
-        spentToday = 14.5;
     }
 
     public JourneyRegistry getJourneys() {
