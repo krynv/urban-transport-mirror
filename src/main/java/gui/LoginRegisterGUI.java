@@ -186,6 +186,7 @@ public class LoginRegisterGUI  extends JFrame {
                     try {
                         loginButActionPerformed(e);
                     } catch (IOException e1) {
+
                         e1.printStackTrace();
                     } catch (ParseException e1) {
                         e1.printStackTrace();
@@ -419,6 +420,7 @@ public class LoginRegisterGUI  extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
+    // Generated using JFormDesigner Evaluation license - Benjamin Ward
     private JPanel pnlMain;
     private JPanel pnlLogin;
     private JLabel label6;

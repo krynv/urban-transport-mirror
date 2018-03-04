@@ -48,7 +48,9 @@ public class RouteRegistry extends ArrayList<Route> {
 
     public RouteRegistry getRoutes(Location departingLocation, Location arrivingLocation, LocalDateTime start, LocalDateTime end) {
         RouteRegistry routes = new RouteRegistry();
-
+        for (Route aRoute:this) {
+            aRoute.setLocation(arrivingLocation.getId());
+        }
         return routes;
     }
 
@@ -67,10 +69,21 @@ public class RouteRegistry extends ArrayList<Route> {
                 if (aLocation.getId() == arrivingLocation.getId()) {
                     // do something useful
                     returnedRoutes.add(aRoute);
+
                 }
             }
         }
 
         return returnedRoutes;
     }
+    public void setRouteInfo(String arrivalTime, String departureTime, String location) {
+        for (Route aRoute:this) {
+            aRoute.setArriveTime(arrivalTime);
+            aRoute.setDepartTime(departureTime);
+            aRoute.setLocation(location);
+        }
+    }
+
 }
+
+

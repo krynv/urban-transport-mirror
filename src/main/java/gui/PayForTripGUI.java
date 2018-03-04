@@ -48,8 +48,45 @@ public class PayForTripGUI extends JFrame {
     private void btnDestination1ActionPerformed(ActionEvent e) {
         setAllToFalse();
         pnlSelectFares.setVisible(true);
+        lblDestination.setText("London");
         this.setTitle("Select Fares");
     }
+
+    private void btnDestination2ActionPerformed(ActionEvent e) {
+        setAllToFalse();
+        pnlSelectFares.setVisible(true);
+        lblDestination.setText("Sheffield");
+        this.setTitle("Select Fares");
+    }
+
+    private void btnDestination3ActionPerformed(ActionEvent e) {
+        setAllToFalse();
+        pnlSelectFares.setVisible(true);
+        lblDestination.setText("Derby");
+        this.setTitle("Select Fares");
+    }
+
+    private void btnDestination4ActionPerformed(ActionEvent e) {
+        setAllToFalse();
+        pnlSelectFares.setVisible(true);
+        lblDestination.setText("Nottingham");
+        this.setTitle("Select Fares");
+    }
+
+    private void btnDestination5ActionPerformed(ActionEvent e) {
+        setAllToFalse();
+        pnlSelectFares.setVisible(true);
+        lblDestination.setText("Newcastle");
+        this.setTitle("Select Fares");
+    }
+
+    private void btnDestination6ActionPerformed(ActionEvent e) {
+        setAllToFalse();
+        pnlSelectFares.setVisible(true);
+        lblDestination.setText("Leicester");
+        this.setTitle("Select Fares");
+    }
+
 
     public void loadLanguageFile(String language) {
         //load language file
@@ -104,9 +141,8 @@ public class PayForTripGUI extends JFrame {
     private void searchActionPerformed(ActionEvent e) {
         LocalDateTime departureDateTime = LocalDateTime.of(2018, 2, 4, 12, 0);
         LocalDateTime arrivalDateTime = LocalDateTime.of(2018, 2, 4, 13, 0);
-
         routeRegistry.getRoutes(new Location("0"), new Location("1"), departureDateTime, arrivalDateTime);
-
+        routeRegistry.setRouteInfo(dpdnReturn.getSelectedItem().toString(), dpdnDeparture.getSelectedItem().toString(), lblDestination.getText());
         FareRegistry fareRegistry = new FareRegistry();
         routeRegistry = fareRegistry.getRoutesCost(routeRegistry, departureDateTime, arrivalDateTime);
 
@@ -133,6 +169,22 @@ public class PayForTripGUI extends JFrame {
     private void btnFare1ActionPerformed(ActionEvent e) {
         lblTicketTypeConfirmBooking.setText(chosenTicketType);
         lblPrice.setText(Double.toString(routeRegistry.get(0).getCost()));
+        setAllToFalse();
+        pnlConfirmBooking.setVisible(true);
+        this.setTitle("Confirm Booking");
+    }
+
+    private void btnFare2ActionPerformed(ActionEvent e) {
+        lblTicketTypeConfirmBooking.setText(chosenTicketType);
+        lblPrice.setText(Double.toString(routeRegistry.get(1).getCost()));
+        setAllToFalse();
+        pnlConfirmBooking.setVisible(true);
+        this.setTitle("Confirm Booking");
+    }
+
+    private void btnFare3ActionPerformed(ActionEvent e) {
+        lblTicketTypeConfirmBooking.setText(chosenTicketType);
+        lblPrice.setText(Double.toString(routeRegistry.get(2).getCost()));
         setAllToFalse();
         pnlConfirmBooking.setVisible(true);
         this.setTitle("Confirm Booking");
@@ -499,6 +551,9 @@ public class PayForTripGUI extends JFrame {
         this.dispose();
     }
 
+    private void btnDestination2StateChanged(ChangeEvent e) {
+        // TODO add your code here
+    }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Sheffield Hallan
@@ -872,24 +927,30 @@ public class PayForTripGUI extends JFrame {
                         btnDestination1.addActionListener(e -> btnDestination1ActionPerformed(e));
 
                         //---- btnDestination4 ----
-                        btnDestination4.setText("Destination 4");
+                        btnDestination4.setText("Nottingham");
                         btnDestination4.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
+                        btnDestination4.addActionListener(e -> btnDestination4ActionPerformed(e));
 
                         //---- btnDestination5 ----
-                        btnDestination5.setText("Destination 5");
+                        btnDestination5.setText("Newcastle");
                         btnDestination5.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
+                        btnDestination5.addActionListener(e -> btnDestination5ActionPerformed(e));
 
                         //---- btnDestination2 ----
-                        btnDestination2.setText("Destination 2");
+                        btnDestination2.setText("Sheffield");
                         btnDestination2.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
+                        btnDestination2.addChangeListener(e -> btnDestination2StateChanged(e));
+                        btnDestination2.addActionListener(e -> btnDestination2ActionPerformed(e));
 
                         //---- btnDestination3 ----
-                        btnDestination3.setText("Destination 3");
+                        btnDestination3.setText("Derby");
                         btnDestination3.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
+                        btnDestination3.addActionListener(e -> btnDestination3ActionPerformed(e));
 
                         //---- btnDestination6 ----
-                        btnDestination6.setText("Destination 6");
+                        btnDestination6.setText("Leicester");
                         btnDestination6.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
+                        btnDestination6.addActionListener(e -> btnDestination6ActionPerformed(e));
 
                         GroupLayout pnlHomeLayout = new GroupLayout(pnlHome);
                         pnlHome.setLayout(pnlHomeLayout);
@@ -902,11 +963,11 @@ public class PayForTripGUI extends JFrame {
                                             .addComponent(btnDestination1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                                             .addGap(12, 12, 12)
                                             .addComponent(btnDestination2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                            .addGap(12, 12, 12)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(btnDestination3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
                                         .addGroup(pnlHomeLayout.createSequentialGroup()
                                             .addComponent(btnDestination4, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                            .addGap(12, 12, 12)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(btnDestination5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                                             .addGap(12, 12, 12)
                                             .addComponent(btnDestination6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
@@ -918,12 +979,14 @@ public class PayForTripGUI extends JFrame {
                                     .addGap(0, 332, Short.MAX_VALUE)
                                     .addGroup(pnlHomeLayout.createParallelGroup()
                                         .addComponent(btnDestination1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnDestination2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnDestination3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(pnlHomeLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                            .addComponent(btnDestination3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(btnDestination2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
                                     .addGap(33, 33, 33)
                                     .addGroup(pnlHomeLayout.createParallelGroup()
-                                        .addComponent(btnDestination4, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnDestination5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(pnlHomeLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                            .addComponent(btnDestination5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(btnDestination4, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
                                         .addComponent(btnDestination6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
                                     .addGap(0, 333, Short.MAX_VALUE))
                         );
@@ -955,12 +1018,58 @@ public class PayForTripGUI extends JFrame {
 
                         //---- dpdnDeparture ----
                         dpdnDeparture.setModel(new DefaultComboBoxModel<>(new String[] {
-                            "12:00"
+                            "01:00",
+                            "02:00",
+                            "03:00",
+                            "04:00",
+                            "05:00",
+                            "06:00",
+                            "07:00",
+                            "08:00",
+                            "09:00",
+                            "10:00",
+                            "11:00",
+                            "12:00",
+                            "13:00",
+                            "14:00",
+                            "15:00",
+                            "16:00",
+                            "17:00",
+                            "18:00",
+                            "19:00",
+                            "20:00",
+                            "21:00",
+                            "22:00",
+                            "23:00",
+                            "00:00"
                         }));
 
                         //---- dpdnReturn ----
                         dpdnReturn.setModel(new DefaultComboBoxModel<>(new String[] {
-                            "13:00"
+                            "01:00",
+                            "02:00",
+                            "03:00",
+                            "04:00",
+                            "05:00",
+                            "06:00",
+                            "07:00",
+                            "08:00",
+                            "09:00",
+                            "10:00",
+                            "11:00",
+                            "12:00",
+                            "13:00",
+                            "14:00",
+                            "15:00",
+                            "16:00",
+                            "17:00",
+                            "18:00",
+                            "19:00",
+                            "20:00",
+                            "21:00",
+                            "22:00",
+                            "23:00",
+                            "00:00"
                         }));
 
                         //---- lblDepartureDateTime ----
@@ -1040,6 +1149,7 @@ public class PayForTripGUI extends JFrame {
                         btnFare3.setText("<html>\nDestination <br>\nDeparture Date/Time <br>\nReturn Date/Time <br>\nPRICE\n</html>");
                         btnFare3.setHorizontalAlignment(SwingConstants.TRAILING);
                         btnFare3.setFont(new Font(".SF NS Text", Font.PLAIN, 11));
+                        btnFare3.addActionListener(e -> btnFare3ActionPerformed(e));
 
                         //---- btnFare1 ----
                         btnFare1.setText("<html> Destination <br> Departure Date/Time <br> Return Date/Time <br> PRICE </html>");
@@ -1051,6 +1161,7 @@ public class PayForTripGUI extends JFrame {
                         btnFare2.setText("<html>\nDestination <br>\nDeparture Date/Time <br>\nReturn Date/Time <br>\nPRICE\n</html>");
                         btnFare2.setHorizontalAlignment(SwingConstants.TRAILING);
                         btnFare2.setFont(new Font(".SF NS Text", Font.PLAIN, 11));
+                        btnFare2.addActionListener(e -> btnFare2ActionPerformed(e));
 
                         GroupLayout pnlSearchedFaresLayout = new GroupLayout(pnlSearchedFares);
                         pnlSearchedFares.setLayout(pnlSearchedFaresLayout);
@@ -1620,7 +1731,7 @@ public class PayForTripGUI extends JFrame {
                         lblViaLocationslReceipt1.setText("London");
 
                         //---- btnPrintPhyTic ----
-                        btnPrintPhyTic.setText("PRINT TICKET");
+                        btnPrintPhyTic.setText("PRODUCE TOKEN");
                         btnPrintPhyTic.addActionListener(e -> btnPrintPhyTicActionPerformed(e));
 
                         //---- btnAddCredit ----
