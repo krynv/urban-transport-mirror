@@ -21,15 +21,13 @@ public class ReportRegistry {
     }
 
     public Report getReport(String name, LocalDateTime start, LocalDateTime end) {
-        Report report = null;
-
         for (Report r: reports) {
             if (name.equals(r.getName())) {
                 return r;
             }
         }
 
-        return report;
+        return null;
     }
 
 }

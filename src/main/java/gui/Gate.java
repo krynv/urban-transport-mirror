@@ -21,7 +21,7 @@ public class Gate extends JFrame {
     private void btnScanTokenActionPerformed(ActionEvent e) {
         System.out.println("Scan Token");   // TODO: Change to Logger
 
-        gateController.presentToken("1");
+        gateController.presentToken("1");   // TODO: Add ability to select different tokens
 
         if (gateController.canOpen()) {
             System.out.println("Open");     // TODO: Add UI aid to showcase this.

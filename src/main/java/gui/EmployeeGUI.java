@@ -15,14 +15,16 @@ import org.json.simple.parser.ParseException;
 public class EmployeeGUI extends JFrame {
 
     private AccountManager accountManager;
+
     public EmployeeGUI(String username) throws IOException, ParseException {
         this.accountManager = new AccountManager();
         this.accountManager.setActiveUser(username);
+
         initComponents();
+
         this.setContentPane(mainPnl);
         this.pack();
     }
-
 
     private void printButtonClicked(ActionEvent e) {
         String name = "maintenance";
@@ -39,8 +41,10 @@ public class EmployeeGUI extends JFrame {
 
     private void logOutButtonActionPerformed(ActionEvent e) {
         this.accountManager.logout();
+
         lblPrinted.setVisible(false);
         this.dispose();
+
         try {
             new LoginRegisterGUI().setVisible(true);
         } catch (IOException e1) {
@@ -52,10 +56,11 @@ public class EmployeeGUI extends JFrame {
 
     private void tabbedPane14StateChanged(ChangeEvent e) {
         String name = "maintenance";
+
         LocalDateTime startDateTime = LocalDateTime.of(2018, 02, 04, 12, 0,0);
         LocalDateTime endDateTime = LocalDateTime.of(2018, 02, 04, 13, 0,0);
 
-        Report report = this.accountManager.viewReport(name, startDateTime, endDateTime);
+        Report report = accountManager.viewReport(name, startDateTime, endDateTime);
         MaintenanceReport maintenanceReport = (MaintenanceReport) report;
 
         textField2.setText(Double.toString(maintenanceReport.getMaintenanceCost()));

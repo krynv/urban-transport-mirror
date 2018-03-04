@@ -33,4 +33,5 @@ public class MaintenanceReport extends Report {
                 "numberOfBreakdowns=" + numberOfBreakdowns +
                 '}';
     }
+
 }

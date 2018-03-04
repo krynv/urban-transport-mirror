@@ -53,7 +53,6 @@ public class Employee {
     }
 
     public boolean passwordMatch(String password) {
-
         if (this.addAuthenticationAttempt()) {
             if (BCrypt.checkpw(password, this.getPassword())) {
                 this.resetAuthentication();
@@ -72,11 +71,12 @@ public class Employee {
 
     private boolean addAuthenticationAttempt() {
         this.auth += 1;
+
         if (auth > 3) {
             return false;
         } else {
             return true;
         }
-
     }
+
 }

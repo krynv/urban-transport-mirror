@@ -19,10 +19,9 @@ public class Account {
     private int sortCode;
     private int securityNo;
     private int accountNum;
-
-    @JsonIgnore
     private double spentToday;
 
+    @JsonIgnore
     private JourneyRegistry journeys;
 
     @JsonIgnore

@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 
 public class AccountManager {
+
     private String username;
     private String password;
     private Employee activeUser;
@@ -20,7 +21,6 @@ public class AccountManager {
     public AccountManager() throws IOException, ParseException {
         employeeRegistry = new EmployeeRegistry();
         reportRegistry = new ReportRegistry();
-
         counter = 0;
     }
 
@@ -64,4 +64,5 @@ public class AccountManager {
     public void logout() {
         activeUser = null;
     }
+
 }

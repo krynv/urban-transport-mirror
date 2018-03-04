@@ -1,15 +1,11 @@
 package logic.account;
 
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.ObjectCodec;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import logic.journey.Journey;
-import logic.location.Location;
 
 import java.io.IOException;
-import java.time.LocalDateTime;
 
 public class AccountDeserializer extends StdDeserializer<Account> {
 
