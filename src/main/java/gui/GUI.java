@@ -19,8 +19,6 @@ public class GUI extends JFrame {
 
     private void btnPayOnExitActionPerformed(ActionEvent e) {
         System.out.println("Pay on exit");
-
-        this.setVisible(false);
         new Gate().setVisible(true);
     }
 
@@ -28,17 +26,14 @@ public class GUI extends JFrame {
         System.out.println("Pay for trip");
 
         new PayForTripGUI().setVisible(true);
-        this.setVisible(false);
     }
 
     private void btnViewReportActionPerformed(ActionEvent e) throws IOException, ParseException {
         new LoginRegisterGUI().setVisible(true);
-        this.setVisible(false);
     }
 
     private void btnAddCreditActionPerformed(ActionEvent e) {
         new TerminalGUI().setVisible(true);
-        this.setVisible(false);
     }
 
     private void initComponents() {

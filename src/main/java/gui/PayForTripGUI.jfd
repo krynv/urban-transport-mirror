@@ -139,8 +139,13 @@ new FormModel {
 						"value": "card2"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+<<<<<<< Updated upstream
 						"$horizontalGroup": "par l {seq {space :0:450:x, par l {seq {comp btnDestination1:::p:100:p, space :12:12:p, comp btnDestination2:::p:100:p, space :12:12:p, comp btnDestination3:::p:100:p}, seq {comp btnDestination4:::p:100:p, space :12:12:p, comp btnDestination5:::p:100:p, space :12:12:p, comp btnDestination6:::p:100:p}}, space :0:450:x}}"
 						"$verticalGroup": "par l {seq {space :0:332:x, par l {comp btnDestination1:::p:100:p, comp btnDestination2:::p:100:p, comp btnDestination3:::p:100:p}, space :33:33:p, par l {comp btnDestination4:::p:100:p, comp btnDestination5:::p:100:p, comp btnDestination6:::p:100:p}, space :0:333:x}}"
+=======
+						"$horizontalGroup": "par l {seq {space :0:107:x, par l {seq {comp btnDestination1:::p:100:p, space :p:12:p, comp btnDestination2:::p:100:p, space u:::p, comp btnDestination3:::p:100:p}, seq {comp btnDestination4:::p:100:p, space u:::p, comp btnDestination5:::p:100:p, space :12:12:p, comp btnDestination6:::p:100:p}}, space :0:108:x}}"
+						"$verticalGroup": "par l {seq {space :0:112:x, par l {comp btnDestination1:::p:100:p, par b {comp btnDestination3::b:p:100:p, comp btnDestination2::b:p:100:p}}, space :33:33:p, par l {par b {comp btnDestination5::b:p:100:p, comp btnDestination4::b:p:100:p}, comp btnDestination6:::p:100:p}, space :0:113:x}}"
+>>>>>>> Stashed changes
 					} ) {
 						name: "pnlHome"
 						add( new FormComponent( "javax.swing.JButton" ) {
@@ -151,28 +156,34 @@ new FormModel {
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnDestination4"
-							"text": "Destination 4"
+							"text": "Nottingham"
 							"font": #Font0
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnDestination4ActionPerformed", true ) )
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnDestination5"
-							"text": "Destination 5"
+							"text": "Newcastle"
 							"font": #Font0
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnDestination5ActionPerformed", true ) )
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnDestination2"
-							"text": "Destination 2"
+							"text": "Sheffield"
 							"font": #Font0
+							addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "btnDestination2StateChanged", true ) )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnDestination2ActionPerformed", true ) )
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnDestination3"
-							"text": "Destination 3"
+							"text": "Derby"
 							"font": #Font0
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnDestination3ActionPerformed", true ) )
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnDestination6"
-							"text": "Destination 6"
+							"text": "Leicester"
 							"font": #Font0
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnDestination6ActionPerformed", true ) )
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card1"
@@ -210,15 +221,61 @@ new FormModel {
 						add( new FormComponent( "javax.swing.JComboBox" ) {
 							name: "dpdnDeparture"
 							"model": new javax.swing.DefaultComboBoxModel {
-								selectedItem: "12:00"
+								selectedItem: "01:00"
+								addElement( "01:00" )
+								addElement( "02:00" )
+								addElement( "03:00" )
+								addElement( "04:00" )
+								addElement( "05:00" )
+								addElement( "06:00" )
+								addElement( "07:00" )
+								addElement( "08:00" )
+								addElement( "09:00" )
+								addElement( "10:00" )
+								addElement( "11:00" )
 								addElement( "12:00" )
+								addElement( "13:00" )
+								addElement( "14:00" )
+								addElement( "15:00" )
+								addElement( "16:00" )
+								addElement( "17:00" )
+								addElement( "18:00" )
+								addElement( "19:00" )
+								addElement( "20:00" )
+								addElement( "21:00" )
+								addElement( "22:00" )
+								addElement( "23:00" )
+								addElement( "00:00" )
 							}
 						} )
 						add( new FormComponent( "javax.swing.JComboBox" ) {
 							name: "dpdnReturn"
 							"model": new javax.swing.DefaultComboBoxModel {
-								selectedItem: "13:00"
+								selectedItem: "01:00"
+								addElement( "01:00" )
+								addElement( "02:00" )
+								addElement( "03:00" )
+								addElement( "04:00" )
+								addElement( "05:00" )
+								addElement( "06:00" )
+								addElement( "07:00" )
+								addElement( "08:00" )
+								addElement( "09:00" )
+								addElement( "10:00" )
+								addElement( "11:00" )
+								addElement( "12:00" )
 								addElement( "13:00" )
+								addElement( "14:00" )
+								addElement( "15:00" )
+								addElement( "16:00" )
+								addElement( "17:00" )
+								addElement( "18:00" )
+								addElement( "19:00" )
+								addElement( "20:00" )
+								addElement( "21:00" )
+								addElement( "22:00" )
+								addElement( "23:00" )
+								addElement( "00:00" )
 							}
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -246,6 +303,7 @@ new FormModel {
 							"text": "<html>\nDestination <br>\nDeparture Date/Time <br>\nReturn Date/Time <br>\nPRICE\n</html>"
 							"horizontalAlignment": 11
 							"font": &Font1 new java.awt.Font( ".SF NS Text", 0, 11 )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnFare3ActionPerformed", true ) )
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnFare1"
@@ -259,6 +317,7 @@ new FormModel {
 							"text": "<html>\nDestination <br>\nDeparture Date/Time <br>\nReturn Date/Time <br>\nPRICE\n</html>"
 							"horizontalAlignment": 11
 							"font": #Font1
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnFare2ActionPerformed", true ) )
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card4"
@@ -585,7 +644,7 @@ new FormModel {
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnPrintPhyTic"
-							"text": "PRINT TICKET"
+							"text": "PRODUCE TOKEN"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnPrintPhyTicActionPerformed", true ) )
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
