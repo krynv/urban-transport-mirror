@@ -12,7 +12,11 @@ public class Journey {
     private Location arrivalLocation;
     private Location departureLocation;
 
-    public Journey() {
+    public Journey() {}
+
+    public Journey(LocalDateTime departureDateTime, Location departureLocation) {
+        this.departureDateTime = departureDateTime;
+        this.departureLocation = departureLocation;
     }
 
     public Journey(LocalDateTime arrivalDateTime, Location arrivalLocation, LocalDateTime departureDateTime, Location departureLocation, double distance) {
@@ -23,13 +27,44 @@ public class Journey {
         this.distance = distance;
     }
 
-    public Journey(LocalDateTime departureDateTime, Location departureLocation) {
-        this.departureDateTime = departureDateTime;
-        this.departureLocation = departureLocation;
+    public LocalDateTime getArrivalDateTime() {
+        return arrivalDateTime;
     }
 
-    public Boolean isOpen() {
-        return (arrivalDateTime == null && arrivalLocation == null);
+    public void setArrivalDateTime(LocalDateTime arrivalDateTime) {
+        this.arrivalDateTime = arrivalDateTime;
+    }
+
+    public LocalDateTime getDepartureDateTime() {
+        return departureDateTime;
+    }
+
+    public void setDepartureDateTime(LocalDateTime departureDateTime) {
+        this.departureDateTime = departureDateTime;
+    }
+
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
+    }
+
+    public Location getArrivalLocation() {
+        return arrivalLocation;
+    }
+
+    public void setArrivalLocation(Location arrivalLocation) {
+        this.arrivalLocation = arrivalLocation;
+    }
+
+    public Location getDepartureLocation() {
+        return departureLocation;
+    }
+
+    public void setDepartureLocation(Location departureLocation) {
+        this.departureLocation = departureLocation;
     }
 
     public void closeJourney(Location endLocation, LocalDateTime endDateTime) {
@@ -38,40 +73,8 @@ public class Journey {
         distance = 100.0;
     }
 
-    public Location getArrivalLocation() {
-        return arrivalLocation;
-    }
-
-    public Location getDepartureLocation() {
-        return departureLocation;
-    }
-
-    public LocalDateTime getDepartureDateTime() {
-        return departureDateTime;
-    }
-
-    public double getDistance() {
-        return distance;
-    }
-
-    public void setArrivalDateTime(LocalDateTime arrivalDateTime) {
-        this.arrivalDateTime = arrivalDateTime;
-    }
-
-    public void setDepartureDateTime(LocalDateTime departureDateTime) {
-        this.departureDateTime = departureDateTime;
-    }
-
-    public void setDistance(double distance) {
-        this.distance = distance;
-    }
-
-    public void setArrivalLocation(Location arrivalLocation) {
-        this.arrivalLocation = arrivalLocation;
-    }
-
-    public void setDepartureLocation(Location departureLocation) {
-        this.departureLocation = departureLocation;
+    public Boolean isOpen() {
+        return (arrivalDateTime == null && arrivalLocation == null);
     }
 
     @Override
@@ -84,5 +87,4 @@ public class Journey {
                 ", departureLocation=" + departureLocation +
                 '}';
     }
-
 }

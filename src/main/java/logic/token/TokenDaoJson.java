@@ -1,39 +1,32 @@
 package logic.token;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TokenDaoJson {
+public class TokenDaoJson implements TokenDao {
 
     private static final String fileName = "./src/main/resources/token.json";
 
-    List<Token> tokens;
-
-    public TokenDaoJson() {
-        tokens = new ArrayList<Token>();
-    }
+    public TokenDaoJson() {}
 
     public List<Token> getTokens() {
-        JSONParser jsonParser = new JSONParser();
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        List<Token> tokens = new ArrayList<Token>();
 
         try {
-            Object object = jsonParser.parse(new FileReader(fileName));
-            JSONArray jsonArray = (JSONArray) object;
-
-            for (int i = 0; i < jsonArray.size(); i++) {
-                JSONObject jsonObject = (JSONObject) jsonArray.get(i);
-                tokens.add(new Token((String) jsonObject.get("id"), (String) jsonObject.get("accountId")));
-            }
+            tokens = objectMapper.readValue(new File(fileName), new TypeReference<List<Token>>() {});
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
             e.printStackTrace();
         }
 

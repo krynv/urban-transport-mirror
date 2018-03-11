@@ -1,0 +1,57 @@
+JFDML JFormDesigner: "6.0.2.0.116" Java: "1.8.0_152-release" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :::p, par l {comp btnMainGUI:::p:232:p, seq {par l {seq l {comp btnEntry:::p:232:p, space :p:81:p, comp btnExit:::p:238:p}, seq l {par t {comp lblToken:::p::p, comp lblLocation:::p::p}, space u:::p, par l:::p {comp cbxLocations::::250:x, comp txtTokenId::::250:x}}}, space :p:65:p, comp scrollPane1:::p::p}}, space ::31:x}}"
+			"$verticalGroup": "par l {seq {space :::p, par l {seq l {par b {comp lblLocation::b:p::p, comp cbxLocations::b:p::p}, space :::p, par l {comp txtTokenId::l:p::p, comp lblToken::l:p::p}, space :p:47:p, par b {comp btnEntry::b:p:204:p, comp btnExit::b:p:204:p}}, comp scrollPane1::l:p:453:p}, space :p:106:p, comp btnMainGUI:::p:50:p, space ::60:x}}"
+		} ) {
+			name: "pnlMain"
+			"maximumSize": sfield com.jformdesigner.model.FormObject NULL_VALUE
+			"preferredSize": sfield com.jformdesigner.model.FormObject NULL_VALUE
+			"minimumSize": sfield com.jformdesigner.model.FormObject NULL_VALUE
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnMainGUI"
+				"text": "Main Page"
+				"maximumSize": new java.awt.Dimension( 151, 25 )
+				"minimumSize": new java.awt.Dimension( 151, 25 )
+				"preferredSize": new java.awt.Dimension( 151, 25 )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnMainGUIActionPerformed", true ) )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "tblInformation"
+				} )
+			} )
+			add( new FormComponent( "javax.swing.JComboBox" ) {
+				name: "cbxLocations"
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "txtTokenId"
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnEntry"
+				"text": "Entry"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnEntryActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "btnExit"
+				"text": "Exit"
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnExitActionPerformed", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "lblLocation"
+				"text": "Select Gate Locations:"
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "lblToken"
+				"text": "Enter a Token Id:"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 5, 5 )
+			"size": new java.awt.Dimension( 560, 345 )
+		} )
+	}
+}

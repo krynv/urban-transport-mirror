@@ -87,7 +87,7 @@ public class Route {
     }
 
     public Location getStartLocation() {
-        return destinationLocations.get(0);
+        return destinationLocations.getLocations().get(0);
     }
 
     @Override

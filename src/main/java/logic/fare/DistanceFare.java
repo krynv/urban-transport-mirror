@@ -41,10 +41,10 @@ public class DistanceFare extends Fare {
 
         trips.add(new Trip(new Location("0"), new Location("1"), 5.0));
         trips.add(new Trip(new Location("0"), new Location("2"), 7.5));
-        trips.add(new Trip(new Location("1"), new Location("2"), 4.5));
-        trips.add(new Trip(new Location("0"), new Location("3"), 6.5));
-        trips.add(new Trip(new Location("3"), new Location("4"), 8.0));
-        trips.add(new Trip(new Location("4"), new Location("1"), 9.5));
+        trips.add(new Trip(new Location("1"), new Location("0"), 4.5));
+        trips.add(new Trip(new Location("1"), new Location("2"), 6.5));
+        trips.add(new Trip(new Location("2"), new Location("0"), 8.0));
+        trips.add(new Trip(new Location("2"), new Location("1"), 9.5));
     }
 
     public double calculateCost(Journey journey) {
@@ -63,7 +63,7 @@ public class DistanceFare extends Fare {
         Location startLocation = route.getStartLocation();
         LocationRegistry locationRegistry = route.getDestinationLocations().tail();
 
-        for (Location location: locationRegistry) {
+        for (Location location: locationRegistry.getLocations()) {
             for (DistanceFare.Trip trip: trips) {
                 if (startLocation.getId().equals(trip.getStart().getId()) && location.getId().equals(trip.getEnd().getId())) {
                     cost += trip.getPrice();

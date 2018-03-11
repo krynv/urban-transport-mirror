@@ -65,7 +65,7 @@ public class RouteRegistry extends ArrayList<Route> {
 
         for (Route aRoute:this) {
             LocationRegistry destinationLocations = aRoute.getDestinationLocations();
-            for (Location aLocation: destinationLocations) {
+            for (Location aLocation: destinationLocations.getLocations()) {
                 if (aLocation.getId() == arrivingLocation.getId()) {
                     // do something useful
                     returnedRoutes.add(aRoute);

@@ -6,8 +6,6 @@ import logic.fare.FareRegistry;
 import logic.journey.Journey;
 import logic.journey.JourneyRegistry;
 import logic.location.Location;
-import logic.pass.DayPass;
-import logic.pass.Pass;
 import logic.pass.PassRegistry;
 
 import java.time.LocalDateTime;
@@ -18,19 +16,18 @@ public class Account {
     private String id;
     private String name;
     private double credits;
+    private double spentToday;
     private int sortCode;
     private int securityNo;
     private int accountNum;
-    private double spentToday;
-
-    @JsonIgnore
     private JourneyRegistry journeys;
-
-    @JsonIgnore
     private PassRegistry passes;
 
     @JsonIgnore
     private Boolean exit;
+
+    @JsonIgnore
+    private Boolean entry;
 
     public Account() {}
 
@@ -47,6 +44,11 @@ public class Account {
         this.accountNum = accountNum;
     }
 
+    public void processPassengerEntry(Location entryLocation, LocalDateTime entryDateTime) {
+        journeys.setOpenJourney(entryLocation, entryDateTime);
+        entry = true;
+    }
+
     public void processPassengerExit(Location arrivalLocation, LocalDateTime arrivalDateTime) {
         Journey openJourney = journeys.findOpenJourney();
 
@@ -60,7 +62,9 @@ public class Account {
 
                 cost = passes.applyPass(cost);
 
-                if (spentToday + cost >= 15) {
+                spentToday += cost;
+
+                if (spentToday >= 15) {
                     passes.awardDayPass();
                     cost = Math.abs(spentToday - 15);
                 }
@@ -78,85 +82,93 @@ public class Account {
         return id;
     }
 
-    public Boolean canExit() {
-        return exit;
-    }
-
-    public Boolean takePayment(double amount, String accNo) {
-        return true;
-    }
-
-    public Boolean addCredit(double amount) {
-        this.credits = this.credits + amount;
-        return true;
-    }
-
-    public int getSortCode() {
-        return sortCode;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getSecurityNo() {
-        return securityNo;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public double getCredits() {
         return credits;
     }
 
-    public int getAccountNum() {
-        return accountNum;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public void setCredits(double credits) {
         this.credits = credits;
     }
 
-    public void setSortCode(int sortCode) {
-        this.sortCode = sortCode;
-    }
-
-    public void setSecurityNo(int securityNo) {
-        this.securityNo = securityNo;
-    }
-
-    public void setAccountNum(int accountNum) {
-        this.accountNum = accountNum;
+    public double getSpentToday() {
+        return spentToday;
     }
 
     public void setSpentToday(double spentToday) {
         this.spentToday = spentToday;
     }
 
-    public void setJourneys() {
-        journeys = new JourneyRegistry();
+    public int getSortCode() {
+        return sortCode;
     }
 
-    public void setPasses() {
-        passes = new PassRegistry();
+    public void setSortCode(int sortCode) {
+        this.sortCode = sortCode;
     }
 
-    public void setExit() {
-        exit = true;
+    public int getSecurityNo() {
+        return securityNo;
+    }
+
+    public void setSecurityNo(int securityNo) {
+        this.securityNo = securityNo;
+    }
+
+    public int getAccountNum() {
+        return accountNum;
+    }
+
+    public void setAccountNum(int accountNum) {
+        this.accountNum = accountNum;
     }
 
     public JourneyRegistry getJourneys() {
         return journeys;
     }
 
-    public void addJourney(Journey journey) {
-        journeys.addJourney(journey);
+    public void setJourneys(JourneyRegistry journeys) {
+        this.journeys = journeys;
+    }
+
+    public PassRegistry getPasses() {
+        return passes;
+    }
+
+    public void setPasses(PassRegistry passes) {
+        this.passes = passes;
+    }
+
+    public Boolean getExit() {
+        return exit;
+    }
+
+    public void setExit(Boolean exit) {
+        this.exit = true;
+    }
+
+    public Boolean getEntry() {
+        return entry;
+    }
+
+    public void setEntry(Boolean entry) {
+        this.entry = entry;
+    }
+
+    public Boolean addCredit(double amount) {
+        this.credits = this.credits + amount;
+        return true;
     }
 
     @Override

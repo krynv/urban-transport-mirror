@@ -1,51 +1,48 @@
 package logic.location;
 
-import logic.location.Location;
-
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
-public class LocationRegistry extends ArrayList<Location> {
+public class LocationRegistry {
+
+    private LocationDaoJson locationDaoJson;
+    private List<Location> locations;
 
     public LocationRegistry() {
-        super();
+        locationDaoJson = new LocationDaoJson();
+        locations = locationDaoJson.getLocations();
     }
 
-    public LocationRegistry(LocationRegistry locations) {
-        super();
-
-        for (Location location: locations) {
-            this.add(location);
-        }
+    public LocationRegistry(List<Location> locations) {
+        this.locations = locations;
     }
 
-    public void addLocation(Location aLocation) {
-        super.add(aLocation);
+    public void addLocation(Location location) {
+        locations.add(location);
     }
 
-    public void removeLocation(Location givenLocation) {
-        super.remove(givenLocation);
-    }
-
-    public Location getLocationByID(int givenLocationID) {
-        Location returnLocationObject = null;
-
-        for(Location aLocation:this) {
-            if (aLocation.getId().equals(givenLocationID)) {
-                returnLocationObject = aLocation;
+    public Location getLocationById(String id) {
+        for(Location location: locations) {
+            if (location.getId().equals(id)) {
+                return location;
             }
         }
+        return null;
+    }
 
-        return returnLocationObject;
+    public List<Location> getLocations() {
+        return locations;
     }
 
     public LocationRegistry tail() {
-        LocationRegistry locations = new LocationRegistry(this);
+        LocationRegistry locationRegistry = new LocationRegistry(locations);
 
-        if (locations.size() > 1) {
-            locations.remove(0);
-            return locations;
+        if (locationRegistry.getLocations().size() > 1) {
+            locationRegistry.getLocations().remove(0);
+            return locationRegistry;
         } else {
-            return locations;
+            return locationRegistry;
         }
     }
 

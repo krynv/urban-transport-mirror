@@ -17,6 +17,7 @@ public class AccountDaoJson implements AccountDao {
 
     public List<Account> getAccounts() {
         ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.findAndRegisterModules();
 
         List<Account> accounts = new ArrayList<>();
 

@@ -12,8 +12,6 @@ public class JourneyRegistry {
 
     public JourneyRegistry() {
         journeys = new ArrayList<>();
-
-        journeys.add(new Journey(LocalDateTime.of(2018, 3, 4, 12, 0), new Location("0")));
     }
 
     public Journey findOpenJourney() {  // TODO: Create unit test
@@ -44,11 +42,19 @@ public class JourneyRegistry {
         }
     }
 
+    public void setOpenJourney(Location location, LocalDateTime localDateTime) {
+        journeys.add(new Journey(localDateTime, location));
+    }
+
     public List<Journey> getJourneys() {
         return journeys;
     }
 
     public void addJourney(Journey journey) {
         journeys.add(journey);
+    }
+
+    public Journey getLatestJourney() {
+        return journeys.get(journeys.size() - 1);
     }
 }

@@ -5,6 +5,9 @@ public class Token {
     private String id;
     private String accountId;
 
+    public Token() {
+    }
+
     public Token(String id, String accountId) {
         this.id = id;
         this.accountId = accountId;
@@ -14,8 +17,15 @@ public class Token {
         return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getAccountId() {
         return accountId;
     }
 
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
 }

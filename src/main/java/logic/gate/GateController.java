@@ -3,6 +3,7 @@ package logic.gate;
 import logic.account.Account;
 import logic.account.AccountRegistry;
 import logic.location.Location;
+import logic.location.LocationRegistry;
 import logic.token.Token;
 import logic.token.TokenRegistry;
 
@@ -13,33 +14,38 @@ public class GateController {
     private TokenReader tokenReader;
     private TokenRegistry tokenRegistry;
     private AccountRegistry accountRegistry;
+    private LocationRegistry locationRegistry;
     private Boolean open;
+    private Account account;
 
     public GateController() {
-        tokenReader = new TokenReader("0", new Location("1"));
+        tokenReader = new TokenReader("0", new Location("0"));
+
         tokenRegistry = new TokenRegistry();
         accountRegistry = new AccountRegistry();
+        locationRegistry = new LocationRegistry();
+
         open = false;
     }
 
-    public void presentToken(String tokenId) {
+    public void presentToken(String type, String tokenId, String locationId) {
         tokenReader.setTokenId(tokenId);
 
         Token token = tokenRegistry.getTokenById(tokenReader.getTokenId());
 
         if (token != null) {
-            Account account = accountRegistry.getAccountById(token.getAccountId());
-            account.setJourneys();
-            account.setPasses();
-            account.setExit();      // TODO: Remove after Daos have been implemented
+            account = accountRegistry.getAccountById(token.getAccountId());
 
             if (account != null) {
-                account.processPassengerExit(tokenReader.getLocation(), LocalDateTime.now());
 
-                if (account.canExit()) {
+                if (type.equals("Entry")) {
+                    account.processPassengerEntry(locationRegistry.getLocationById(locationId), LocalDateTime.now());
                     open = true;
                 } else {
-                    System.out.println("User cannot exit");  // TODO: Change to Logger
+                    account.processPassengerExit(locationRegistry.getLocationById(locationId), LocalDateTime.now());
+                    accountRegistry.setAccount(account);
+                    accountRegistry.saveAccounts();
+                    open = true;
                 }
             } else {
                 System.out.println("Account is null");  // TODO: Change to Logger
@@ -51,6 +57,10 @@ public class GateController {
 
     public Boolean canOpen() {
         return open;
+    }
+
+    public Account getAccount() {
+        return account;
     }
 
 }

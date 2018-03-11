@@ -1,33 +1,188 @@
 [ {
   "id" : "0",
   "name" : "Callum",
-  "credits" : 10.0,
+  "credits" : 30.3125,
+  "spentToday" : 4.6875,
   "sortCode" : 123456,
   "securityNo" : 235,
   "accountNum" : 5678904,
-  "spentToday": 15.0
-}, {
-  "id" : "1",
-  "name" : "Vitaliy1",
-  "credits" : 15.0,
-  "sortCode" : 123456,
-  "securityNo" : 234,
-  "accountNum" : 5678904,
-  "spentToday": 14.5
-}, {
-  "id" : "2",
-  "name" : "Ben",
-  "credits" : 20.0,
-  "sortCode" : 123467,
-  "securityNo" : 235,
-  "accountNum" : 5678904,
-  "spentToday": 15.0
-}, {
-  "id" : "3",
-  "name" : "Dan",
-  "credits" : 25.0,
-  "sortCode" : 123456,
-  "securityNo" : 345,
-  "accountNum" : 5678904,
-  "spentToday": 15.0
+  "journeys" : {
+    "journeys" : [ {
+      "arrivalDateTime" : {
+        "nano" : 0,
+        "year" : 2018,
+        "monthValue" : 3,
+        "dayOfMonth" : 7,
+        "hour" : 11,
+        "minute" : 27,
+        "second" : 33,
+        "month" : "MARCH",
+        "dayOfWeek" : "WEDNESDAY",
+        "dayOfYear" : 66,
+        "chronology" : {
+          "id" : "ISO",
+          "calendarType" : "iso8601"
+        }
+      },
+      "departureDateTime" : {
+        "nano" : 0,
+        "year" : 2018,
+        "monthValue" : 3,
+        "dayOfMonth" : 7,
+        "hour" : 11,
+        "minute" : 27,
+        "second" : 26,
+        "month" : "MARCH",
+        "dayOfWeek" : "WEDNESDAY",
+        "dayOfYear" : 66,
+        "chronology" : {
+          "id" : "ISO",
+          "calendarType" : "iso8601"
+        }
+      },
+      "distance" : 100.0,
+      "arrivalLocation" : {
+        "id" : "1",
+        "name" : "Sheffield"
+      },
+      "departureLocation" : {
+        "id" : "0",
+        "name" : "London"
+      },
+      "open" : false
+    }, {
+      "arrivalDateTime" : {
+        "nano" : 0,
+        "year" : 2018,
+        "monthValue" : 3,
+        "dayOfMonth" : 7,
+        "hour" : 11,
+        "minute" : 27,
+        "second" : 56,
+        "month" : "MARCH",
+        "dayOfWeek" : "WEDNESDAY",
+        "dayOfYear" : 66,
+        "chronology" : {
+          "id" : "ISO",
+          "calendarType" : "iso8601"
+        }
+      },
+      "departureDateTime" : {
+        "nano" : 0,
+        "year" : 2018,
+        "monthValue" : 3,
+        "dayOfMonth" : 7,
+        "hour" : 11,
+        "minute" : 27,
+        "second" : 54,
+        "month" : "MARCH",
+        "dayOfWeek" : "WEDNESDAY",
+        "dayOfYear" : 66,
+        "chronology" : {
+          "id" : "ISO",
+          "calendarType" : "iso8601"
+        }
+      },
+      "distance" : 100.0,
+      "arrivalLocation" : {
+        "id" : "0",
+        "name" : "London"
+      },
+      "departureLocation" : {
+        "id" : "1",
+        "name" : "Sheffield"
+      },
+      "open" : false
+    }, {
+      "arrivalDateTime" : {
+        "nano" : 0,
+        "year" : 2018,
+        "monthValue" : 3,
+        "dayOfMonth" : 7,
+        "hour" : 11,
+        "minute" : 28,
+        "second" : 8,
+        "month" : "MARCH",
+        "dayOfWeek" : "WEDNESDAY",
+        "dayOfYear" : 66,
+        "chronology" : {
+          "id" : "ISO",
+          "calendarType" : "iso8601"
+        }
+      },
+      "departureDateTime" : {
+        "nano" : 0,
+        "year" : 2018,
+        "monthValue" : 3,
+        "dayOfMonth" : 7,
+        "hour" : 11,
+        "minute" : 28,
+        "second" : 6,
+        "month" : "MARCH",
+        "dayOfWeek" : "WEDNESDAY",
+        "dayOfYear" : 66,
+        "chronology" : {
+          "id" : "ISO",
+          "calendarType" : "iso8601"
+        }
+      },
+      "distance" : 100.0,
+      "arrivalLocation" : {
+        "id" : "2",
+        "name" : "Birmingham"
+      },
+      "departureLocation" : {
+        "id" : "0",
+        "name" : "London"
+      },
+      "open" : false
+    } ],
+    "latestJourney" : {
+      "arrivalDateTime" : {
+        "nano" : 0,
+        "year" : 2018,
+        "monthValue" : 3,
+        "dayOfMonth" : 7,
+        "hour" : 11,
+        "minute" : 28,
+        "second" : 8,
+        "month" : "MARCH",
+        "dayOfWeek" : "WEDNESDAY",
+        "dayOfYear" : 66,
+        "chronology" : {
+          "id" : "ISO",
+          "calendarType" : "iso8601"
+        }
+      },
+      "departureDateTime" : {
+        "nano" : 0,
+        "year" : 2018,
+        "monthValue" : 3,
+        "dayOfMonth" : 7,
+        "hour" : 11,
+        "minute" : 28,
+        "second" : 6,
+        "month" : "MARCH",
+        "dayOfWeek" : "WEDNESDAY",
+        "dayOfYear" : 66,
+        "chronology" : {
+          "id" : "ISO",
+          "calendarType" : "iso8601"
+        }
+      },
+      "distance" : 100.0,
+      "arrivalLocation" : {
+        "id" : "2",
+        "name" : "Birmingham"
+      },
+      "departureLocation" : {
+        "id" : "0",
+        "name" : "London"
+      },
+      "open" : false
+    }
+  },
+  "passes" : {
+    "dayPass" : null
+  }
 } ]
