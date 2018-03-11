@@ -196,6 +196,8 @@ public class TerminalGUI extends JFrame {
         lblCreditGained.setText("Credit Gained: " + insertedCash);
 
         account.setCredits(account.getCredits()+insertedCash);
+
+        accountRegistry.saveAccounts();
     }
 
     private void btnCashPaymentExitActionPerformed(ActionEvent e) {
@@ -218,6 +220,10 @@ public class TerminalGUI extends JFrame {
 
     private void btnCardPaymentNextActionPerformed(ActionEvent e) {
         setComponentsDefaultState();
+
+        account.setCredits(account.getCredits()+insertedCash);
+
+        accountRegistry.saveAccounts();
 
         pnlAccount.setVisible(true);
         pnlCardDetails.setVisible(true);

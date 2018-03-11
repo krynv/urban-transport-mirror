@@ -1,7 +1,7 @@
 [ {
   "id" : "0",
   "name" : "Callum",
-  "credits" : 30.3125,
+  "credits" : 31.3125,
   "spentToday" : 4.6875,
   "sortCode" : 123456,
   "securityNo" : 235,
@@ -181,7 +181,7 @@
       "open" : false
     }, {
       "arrivalDateTime" : {
-        "nano" : 434574300,
+        "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
         "dayOfMonth" : 11,
@@ -197,7 +197,7 @@
         }
       },
       "departureDateTime" : {
-        "nano" : 176422500,
+        "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
         "dayOfMonth" : 11,
@@ -225,7 +225,7 @@
     } ],
     "latestJourney" : {
       "arrivalDateTime" : {
-        "nano" : 434574300,
+        "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
         "dayOfMonth" : 11,
@@ -241,7 +241,7 @@
         }
       },
       "departureDateTime" : {
-        "nano" : 176422500,
+        "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
         "dayOfMonth" : 11,
