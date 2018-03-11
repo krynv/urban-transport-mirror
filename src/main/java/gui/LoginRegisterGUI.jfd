@@ -82,8 +82,8 @@ new FormModel {
 				"value": "card2"
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {space :0:680:x};par l {seq {space :0:0:x, par l {seq {space :55:55:p, comp label1:::p::p}, comp label2:::p::p, seq {space :3:3:p, comp regUserNameField:::p:188:p}, seq {space :3:3:p, comp label3:::p::p}, seq {space :3:3:p, comp firstNameField:::p:188:p}, seq {space :3:3:p, comp label4:::p::p}, seq {space :3:3:p, comp lastNameField:::p:188:p}, seq {space :3:3:p, comp label5:::p::p}, seq {space :3:3:p, comp regPasswordField:::p:188:p}, seq {space :3:3:p, comp adminCheckBox:::p::p}, seq {space :3:3:p, comp submitRegBut:::p:84:p, space :18:18:p, comp cancelRegBut:::p:86:p}}, space :0:0:x}}"
-				"$verticalGroup": "par l {space :0:580:x};par l {seq {space :0:0:x, comp label1:::p::p, space :18:18:p, comp label2:::p::p, space :12:12:p, comp regUserNameField:::p::p, space :6:6:p, comp label3:::p::p, space :12:12:p, comp firstNameField:::p::p, space :6:6:p, comp label4:::p::p, space :18:18:p, comp lastNameField:::p::p, space :12:12:p, comp label5:::p::p, space :6:6:p, comp regPasswordField:::p::p, space :21:21:p, comp adminCheckBox:::p::p, space :18:18:p, par l {comp submitRegBut:::p::p, comp cancelRegBut:::p::p}, space :0:0:x}}"
+				"$horizontalGroup": "par l {seq {par l {seq {space :p:223:p, par l {seq l {space :55:55:p, comp label1:::p::p}, comp label2:::p::p, seq l {space :3:3:p, comp regUserNameField:::p:188:p}, seq l {space :p:3:p, comp label3:::p::p}, seq l {space :p:3:p, comp firstNameField:::p:188:p}, seq l {space :p:3:p, par l {comp lastNameField:::p:188:p, comp label4:::p::p, comp label5::l:p::p, comp regPasswordField::l:p:188:p, comp adminCheckBox::l:p::p, seq l {comp submitRegBut:::p:84:p, space s:::p, comp cancelRegBut:::p:86:p}}}}}, seq l {space :p:16:p, comp passStrengthMess:::p:643:p}, seq l {space :p:141:p, comp passStrength:::p:357:p}}, space ::21:x}}"
+				"$verticalGroup": "par l {seq t {comp label1:::p::p, space :18:18:p, comp label2:::p::p, space :12:12:p, comp regUserNameField:::p::p, space :::p, comp label3:::p::p, space :::p, comp firstNameField:::p::p, space s:::p, comp label4:::p::p, space u:::p, comp lastNameField:::p::p, space s:::p, comp label5:::p::p, space :::p, comp regPasswordField:::p::p, space u:::p, comp passStrength:::p::p, space ::36:x, comp passStrengthMess:::p::p, space :p:32:p, comp adminCheckBox:::p::p, space :p:61:p, par b {comp submitRegBut::b:p::p, comp cancelRegBut::b:p::p}, space :p:69:p}}"
 			} ) {
 				name: "pnlRegister"
 				"minimumSize": new java.awt.Dimension( 627, 413 )
@@ -135,6 +135,19 @@ new FormModel {
 				} )
 				add( new FormComponent( "javax.swing.JPasswordField" ) {
 					name: "regPasswordField"
+					addEvent( new FormEvent( "java.awt.event.KeyListener", "keyTyped", "regPasswordFieldKeyTyped", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "passStrengthMess"
+					"text": "Password needs to be 6 or more characters"
+					"horizontalAlignment": 0
+					"visible": false
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "passStrength"
+					"text": "Password Strength - TOO SHORT"
+					"horizontalAlignment": 0
+					"visible": false
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "card3"

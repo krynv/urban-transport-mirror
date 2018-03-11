@@ -59,6 +59,7 @@ public class LoginRegisterGUI  extends JFrame {
         employeeRegistry = new EmployeeRegistry();
         pnlLogin.setVisible(true);
         pnlRegister.setVisible(false);
+        submitRegBut.setEnabled(false);
     }
 
 
@@ -109,11 +110,61 @@ public class LoginRegisterGUI  extends JFrame {
     private void regOpenButActionPerformed(ActionEvent e) {
         pnlLogin.setVisible(false);
         pnlRegister.setVisible(true);
+        submitRegBut.setEnabled(false);
     }
 
     private void btnMainGUIActionPerformed(ActionEvent e) {
         pnlLogin.setVisible(false);
         this.dispose();
+    }
+
+    private void regPasswordFieldKeyTyped(KeyEvent e) {
+        String password = new String(regPasswordField.getPassword());
+        passStrength.setOpaque(true);
+        passStrengthMess.setOpaque(true);
+
+        if(password.length() < 6) {
+            submitRegBut.setEnabled(false);
+            passStrength.setVisible(true);
+            passStrength.setText("Password Strength - TOO SHORT");
+            passStrength.setBackground(Color.gray);
+            passStrengthMess.setBackground(Color.gray);
+            passStrengthMess.setVisible(true);
+            passStrengthMess.setText("Password needs to be 6 or more characters");
+        } else if(password.length() <= 8){
+            submitRegBut.setEnabled(true);
+            passStrength.setVisible(true);
+            passStrength.setBackground(Color.red);
+            passStrengthMess.setBackground(Color.red);
+            passStrength.setText("Password Strength - VERY WEAK");
+            passStrengthMess.setVisible(true);
+            passStrengthMess.setText("Recommend password to be more than 8 at least");
+
+        }else if(password.length() <= 10){
+            submitRegBut.setEnabled(true);
+            passStrength.setVisible(true);
+            passStrength.setText("Password Strength - FAIR");
+            passStrength.setBackground(Color.yellow);
+            passStrengthMess.setBackground(Color.yellow);
+            passStrengthMess.setVisible(true);
+            passStrengthMess.setText("Getting there try to some more characters");
+        } else if(password.length() <= 12){
+            submitRegBut.setEnabled(true);
+            passStrength.setVisible(true);
+            passStrength.setBackground(Color.cyan);
+            passStrengthMess.setBackground(Color.cyan);
+            passStrength.setText("Password Strength - GOOD");
+            passStrengthMess.setVisible(true);
+            passStrengthMess.setText("Brilliant. Want to be more secure? Add more characters or numbers");
+        } else if(password.length() > 14){
+            submitRegBut.setEnabled(true);
+            passStrength.setVisible(true);
+            passStrength.setText("Password Strength - STRONG");
+            passStrength.setBackground(Color.GREEN);
+            passStrengthMess.setBackground(Color.green);
+            passStrengthMess.setVisible(true);
+            passStrengthMess.setText("Brilliant. Press that submit button");
+        }
     }
 
 
@@ -149,6 +200,8 @@ public class LoginRegisterGUI  extends JFrame {
         firstNameField = new JTextField();
         lastNameField = new JTextField();
         regPasswordField = new JPasswordField();
+        passStrengthMess = new JLabel();
+        passStrength = new JLabel();
 
         //======== pnlMain ========
         {
@@ -181,15 +234,7 @@ public class LoginRegisterGUI  extends JFrame {
 
                 //---- loginBut ----
                 loginBut.setText("Login");
-                loginBut.addActionListener(e -> {
-                    try {
-                        loginButActionPerformed(e);
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    } catch (ParseException e1) {
-                        e1.printStackTrace();
-                    }
-                });
+                loginBut.addActionListener(e -> loginButActionPerformed(e));
 
                 //---- cancelBut2 ----
                 cancelBut2.setText("Cancel");
@@ -319,15 +364,7 @@ public class LoginRegisterGUI  extends JFrame {
 
                 //---- submitRegBut ----
                 submitRegBut.setText("Submit");
-                submitRegBut.addActionListener(e -> {
-                    try {
-                        submitRegButActionPerformed(e);
-                    } catch (IOException e1) {
-                        e1.printStackTrace();
-                    } catch (ParseException e1) {
-                        e1.printStackTrace();
-                    }
-                });
+                submitRegBut.addActionListener(e -> submitRegButActionPerformed(e));
 
                 //---- cancelRegBut ----
                 cancelRegBut.setText("Cancel");
@@ -336,80 +373,97 @@ public class LoginRegisterGUI  extends JFrame {
 			cancelRegButActionPerformed(e);
 		});
 
+                //---- regPasswordField ----
+                regPasswordField.addKeyListener(new KeyAdapter() {
+                    @Override
+                    public void keyTyped(KeyEvent e) {
+                        regPasswordFieldKeyTyped(e);
+                    }
+                });
+
+                //---- passStrengthMess ----
+                passStrengthMess.setText("Password needs to be 6 or more characters");
+                passStrengthMess.setHorizontalAlignment(SwingConstants.CENTER);
+                passStrengthMess.setVisible(false);
+
+                //---- passStrength ----
+                passStrength.setText("Password Strength - TOO SHORT");
+                passStrength.setHorizontalAlignment(SwingConstants.CENTER);
+                passStrength.setVisible(false);
+
                 GroupLayout pnlRegisterLayout = new GroupLayout(pnlRegister);
                 pnlRegister.setLayout(pnlRegisterLayout);
                 pnlRegisterLayout.setHorizontalGroup(
                     pnlRegisterLayout.createParallelGroup()
-                        .addGroup(pnlRegisterLayout.createParallelGroup()
-                            .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(pnlRegisterLayout.createParallelGroup()
-                                    .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                        .addGap(55, 55, 55)
-                                        .addComponent(label1))
-                                    .addComponent(label2)
-                                    .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(regUserNameField, GroupLayout.PREFERRED_SIZE, 188, GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(label3))
-                                    .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(firstNameField, GroupLayout.PREFERRED_SIZE, 188, GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(label4))
-                                    .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(lastNameField, GroupLayout.PREFERRED_SIZE, 188, GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(label5))
-                                    .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(regPasswordField, GroupLayout.PREFERRED_SIZE, 188, GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(adminCheckBox))
-                                    .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                        .addGap(3, 3, 3)
-                                        .addComponent(submitRegBut, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(cancelRegBut, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(0, 680, Short.MAX_VALUE)
+                        .addGroup(pnlRegisterLayout.createSequentialGroup()
+                            .addGroup(pnlRegisterLayout.createParallelGroup()
+                                .addGroup(pnlRegisterLayout.createSequentialGroup()
+                                    .addGap(223, 223, 223)
+                                    .addGroup(pnlRegisterLayout.createParallelGroup()
+                                        .addGroup(pnlRegisterLayout.createSequentialGroup()
+                                            .addGap(55, 55, 55)
+                                            .addComponent(label1))
+                                        .addComponent(label2)
+                                        .addGroup(pnlRegisterLayout.createSequentialGroup()
+                                            .addGap(3, 3, 3)
+                                            .addComponent(regUserNameField, GroupLayout.PREFERRED_SIZE, 188, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(pnlRegisterLayout.createSequentialGroup()
+                                            .addGap(3, 3, 3)
+                                            .addComponent(label3))
+                                        .addGroup(pnlRegisterLayout.createSequentialGroup()
+                                            .addGap(3, 3, 3)
+                                            .addComponent(firstNameField, GroupLayout.PREFERRED_SIZE, 188, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(pnlRegisterLayout.createSequentialGroup()
+                                            .addGap(3, 3, 3)
+                                            .addGroup(pnlRegisterLayout.createParallelGroup()
+                                                .addComponent(lastNameField, GroupLayout.PREFERRED_SIZE, 188, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(label4)
+                                                .addComponent(label5)
+                                                .addComponent(regPasswordField, GroupLayout.PREFERRED_SIZE, 188, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(adminCheckBox)
+                                                .addGroup(pnlRegisterLayout.createSequentialGroup()
+                                                    .addComponent(submitRegBut, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(cancelRegBut, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE))))))
+                                .addGroup(pnlRegisterLayout.createSequentialGroup()
+                                    .addGap(16, 16, 16)
+                                    .addComponent(passStrengthMess, GroupLayout.PREFERRED_SIZE, 643, GroupLayout.PREFERRED_SIZE))
+                                .addGroup(pnlRegisterLayout.createSequentialGroup()
+                                    .addGap(141, 141, 141)
+                                    .addComponent(passStrength, GroupLayout.PREFERRED_SIZE, 357, GroupLayout.PREFERRED_SIZE)))
+                            .addContainerGap(21, Short.MAX_VALUE))
                 );
                 pnlRegisterLayout.setVerticalGroup(
                     pnlRegisterLayout.createParallelGroup()
-                        .addGroup(pnlRegisterLayout.createParallelGroup()
-                            .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(label1)
-                                .addGap(18, 18, 18)
-                                .addComponent(label2)
-                                .addGap(12, 12, 12)
-                                .addComponent(regUserNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                .addGap(6, 6, 6)
-                                .addComponent(label3)
-                                .addGap(12, 12, 12)
-                                .addComponent(firstNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                .addGap(6, 6, 6)
-                                .addComponent(label4)
-                                .addGap(18, 18, 18)
-                                .addComponent(lastNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                .addGap(12, 12, 12)
-                                .addComponent(label5)
-                                .addGap(6, 6, 6)
-                                .addComponent(regPasswordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                .addGap(21, 21, 21)
-                                .addComponent(adminCheckBox)
-                                .addGap(18, 18, 18)
-                                .addGroup(pnlRegisterLayout.createParallelGroup()
-                                    .addComponent(submitRegBut)
-                                    .addComponent(cancelRegBut))
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(0, 580, Short.MAX_VALUE)
+                        .addGroup(GroupLayout.Alignment.TRAILING, pnlRegisterLayout.createSequentialGroup()
+                            .addComponent(label1)
+                            .addGap(18, 18, 18)
+                            .addComponent(label2)
+                            .addGap(12, 12, 12)
+                            .addComponent(regUserNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(label3)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(firstNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(label4)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(lastNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(label5)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(regPasswordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(passStrength)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                            .addComponent(passStrengthMess)
+                            .addGap(32, 32, 32)
+                            .addComponent(adminCheckBox)
+                            .addGap(61, 61, 61)
+                            .addGroup(pnlRegisterLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(submitRegBut)
+                                .addComponent(cancelRegBut))
+                            .addGap(69, 69, 69))
                 );
             }
             pnlMain.add(pnlRegister, "card3");
@@ -447,5 +501,7 @@ public class LoginRegisterGUI  extends JFrame {
     private JTextField firstNameField;
     private JTextField lastNameField;
     private JPasswordField regPasswordField;
+    private JLabel passStrengthMess;
+    private JLabel passStrength;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
