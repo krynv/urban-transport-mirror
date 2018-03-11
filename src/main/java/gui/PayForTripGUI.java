@@ -1,5 +1,6 @@
 package gui;
 
+import java.awt.event.*;
 import logic.account.Account;
 import logic.account.AccountRegistry;
 import logic.coupon.Coupon;
@@ -113,6 +114,7 @@ public class PayForTripGUI extends JFrame {
         pnlSelectLanguage.setVisible(false);
         pnlHome.setVisible(false);
         lblNotification2.setVisible(false);
+        lblNotifyLang.setVisible(false);
     }
 
     /* ----- Select Language ----- */
@@ -130,12 +132,13 @@ public class PayForTripGUI extends JFrame {
     }
 
     private void btnLoadLanguageActionPerformed(ActionEvent e) {
-        if (languageButtonPressed == null) { // default to english
-            languageButtonPressed = "English";
-        }
 
-        loadLanguageFile(languageButtonPressed);
+        String chosenLang = cmbBoxLanguage.getSelectedItem().toString();
+
+        loadLanguageFile(chosenLang);
         pnlSelectLanguage.setVisible(false);
+        lblNotifyLang.setText("Language Change to " + chosenLang);
+        lblNotifyLang.setVisible(true);
         pnlHome.setVisible(true);
         this.setTitle("Home");
     }
@@ -160,14 +163,6 @@ public class PayForTripGUI extends JFrame {
         this.setTitle("Searched Fares");
     }
 
-    private void ckbxOneWayStateChanged(ChangeEvent e) {
-        if (ckbxOneWay.isSelected()) {
-            dpdnReturn.setEnabled(false);
-        }
-        else {
-            dpdnReturn.setEnabled(true);
-        }
-    }
 
     /* ----- Searched Fares ----- */
 
@@ -363,10 +358,10 @@ public class PayForTripGUI extends JFrame {
 
         ckbxCash.setSelected(false);
         ckbxTransAcc.setSelected(false);
-        ckbxOneWay.setSelected(false);
         ckbxCard.setSelected(false);
-        ckbxOpenReturn.setSelected(false);
-        ckbxReturn.setSelected(false);
+
+        dpdnReturn.setEnabled(false);
+        cmbBoxTicket.setSelectedIndex(0);
 
         lblCouponVerification.setText("");
         lblCouponVerification.setOpaque(false);
@@ -604,6 +599,15 @@ public class PayForTripGUI extends JFrame {
             }
         }
     }
+
+    private void cmbBoxTicketItemStateChanged(ItemEvent e) {
+        chosenTicketType = cmbBoxTicket.getSelectedItem().toString();
+        if(cmbBoxTicket.getSelectedItem().toString().equals("One Way")) {
+            dpdnReturn.setEnabled(false);
+        } else {
+            dpdnReturn.setEnabled(true);
+        }
+    }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Benjamin Ward
@@ -631,14 +635,10 @@ public class PayForTripGUI extends JFrame {
         txtFieldCredit = new JTextField();
         lblTicketTypeTransAccAccountId3 = new JLabel();
         pnlSelectLanguage = new JPanel();
-        lblEnglish = new JLabel();
-        btnEnglish = new JButton();
-        lblFrench = new JLabel();
-        btnFrench = new JButton();
-        lblGerman = new JLabel();
-        btnGerman = new JButton();
         btnLoadLanguage = new JButton();
         lblLanguageLoaded = new JLabel();
+        lblLanguageLoaded2 = new JLabel();
+        cmbBoxLanguage = new JComboBox<>();
         pnlHome = new JPanel();
         btnDestination1 = new JButton();
         btnDestination4 = new JButton();
@@ -646,17 +646,16 @@ public class PayForTripGUI extends JFrame {
         btnDestination2 = new JButton();
         btnDestination3 = new JButton();
         btnDestination6 = new JButton();
+        lblNotifyLang = new JLabel();
         pnlSelectFares = new JPanel();
         btnSearch = new JButton();
-        ckbxOpenReturn = new JCheckBox();
-        ckbxReturn = new JCheckBox();
-        ckbxOneWay = new JCheckBox();
         lblTicketType = new JLabel();
         dpdnDeparture = new JComboBox<>();
         dpdnReturn = new JComboBox<>();
         lblDepartureDateTime = new JLabel();
         lblReturnDateTime = new JLabel();
         lblDestination = new JLabel();
+        cmbBoxTicket = new JComboBox<>();
         pnlSearchedFares = new JPanel();
         btnFare3 = new JButton();
         btnFare1 = new JButton();
@@ -930,24 +929,6 @@ public class PayForTripGUI extends JFrame {
                     //======== pnlSelectLanguage ========
                     {
 
-                        //---- lblEnglish ----
-                        lblEnglish.setText("English");
-
-                        //---- btnEnglish ----
-                        btnEnglish.addActionListener(e -> englishButtonActionPerformed(e));
-
-                        //---- lblFrench ----
-                        lblFrench.setText("French");
-
-                        //---- btnFrench ----
-                        btnFrench.addActionListener(e -> frenchButtonActionPerformed(e));
-
-                        //---- lblGerman ----
-                        lblGerman.setText("German");
-
-                        //---- btnGerman ----
-                        btnGerman.addActionListener(e -> germanButtonActionPerformed(e));
-
                         //---- btnLoadLanguage ----
                         btnLoadLanguage.setText("Load Language");
                         btnLoadLanguage.addActionListener(e -> btnLoadLanguageActionPerformed(e));
@@ -955,31 +936,35 @@ public class PayForTripGUI extends JFrame {
                         //---- lblLanguageLoaded ----
                         lblLanguageLoaded.setText("Language Loaded");
 
+                        //---- lblLanguageLoaded2 ----
+                        lblLanguageLoaded2.setText("Please select a language from the dropdown list");
+
+                        //---- cmbBoxLanguage ----
+                        cmbBoxLanguage.setModel(new DefaultComboBoxModel<>(new String[] {
+                            "English (UK)",
+                            "English (US)",
+                            "French",
+                            "German",
+                            "Spanish",
+                            "Welsh"
+                        }));
+
                         GroupLayout pnlSelectLanguageLayout = new GroupLayout(pnlSelectLanguage);
                         pnlSelectLanguage.setLayout(pnlSelectLanguageLayout);
                         pnlSelectLanguageLayout.setHorizontalGroup(
                             pnlSelectLanguageLayout.createParallelGroup()
                                 .addGroup(pnlSelectLanguageLayout.createSequentialGroup()
-                                    .addContainerGap(122, Short.MAX_VALUE)
+                                    .addContainerGap(126, Short.MAX_VALUE)
                                     .addGroup(pnlSelectLanguageLayout.createParallelGroup()
                                         .addGroup(GroupLayout.Alignment.TRAILING, pnlSelectLanguageLayout.createSequentialGroup()
                                             .addGroup(pnlSelectLanguageLayout.createParallelGroup()
-                                                .addGroup(pnlSelectLanguageLayout.createSequentialGroup()
-                                                    .addComponent(lblEnglish, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                                    .addGap(6, 6, 6)
-                                                    .addComponent(btnEnglish, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(pnlSelectLanguageLayout.createSequentialGroup()
-                                                    .addComponent(lblFrench, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                                    .addGap(6, 6, 6)
-                                                    .addComponent(btnFrench, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(pnlSelectLanguageLayout.createSequentialGroup()
-                                                    .addComponent(lblGerman, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
-                                                    .addGap(6, 6, 6)
-                                                    .addComponent(btnGerman, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(pnlSelectLanguageLayout.createSequentialGroup()
-                                                    .addGap(212, 212, 212)
-                                                    .addComponent(btnLoadLanguage)))
-                                            .addGap(94, 94, 94))
+                                                .addComponent(lblLanguageLoaded2, GroupLayout.Alignment.TRAILING)
+                                                .addGroup(GroupLayout.Alignment.TRAILING, pnlSelectLanguageLayout.createSequentialGroup()
+                                                    .addGroup(pnlSelectLanguageLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(btnLoadLanguage)
+                                                        .addComponent(cmbBoxLanguage, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                                    .addGap(71, 71, 71)))
+                                            .addGap(161, 161, 161))
                                         .addGroup(GroupLayout.Alignment.TRAILING, pnlSelectLanguageLayout.createSequentialGroup()
                                             .addComponent(lblLanguageLoaded)
                                             .addGap(213, 213, 213))))
@@ -989,21 +974,13 @@ public class PayForTripGUI extends JFrame {
                                 .addGroup(GroupLayout.Alignment.TRAILING, pnlSelectLanguageLayout.createSequentialGroup()
                                     .addContainerGap(85, Short.MAX_VALUE)
                                     .addComponent(lblLanguageLoaded)
-                                    .addGap(37, 37, 37)
-                                    .addGroup(pnlSelectLanguageLayout.createParallelGroup()
-                                        .addComponent(lblEnglish, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnEnglish, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE))
-                                    .addGap(6, 6, 6)
-                                    .addGroup(pnlSelectLanguageLayout.createParallelGroup()
-                                        .addComponent(lblFrench, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnFrench, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE))
-                                    .addGap(6, 6, 6)
-                                    .addGroup(pnlSelectLanguageLayout.createParallelGroup()
-                                        .addComponent(lblGerman, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnGerman, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE))
-                                    .addGap(61, 61, 61)
+                                    .addGap(43, 43, 43)
+                                    .addComponent(lblLanguageLoaded2)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(cmbBoxLanguage, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(139, 139, 139)
                                     .addComponent(btnLoadLanguage)
-                                    .addGap(128, 128, 128))
+                                    .addGap(95, 95, 95))
                         );
                     }
                     pnlContent.add(pnlSelectLanguage, "card2");
@@ -1042,6 +1019,14 @@ public class PayForTripGUI extends JFrame {
                         btnDestination6.setFont(new Font(".SF NS Text", Font.PLAIN, 10));
                         btnDestination6.addActionListener(e -> btnDestination6ActionPerformed(e));
 
+                        //---- lblNotifyLang ----
+                        lblNotifyLang.setToolTipText("Information Text");
+                        lblNotifyLang.setBackground(new Color(216, 231, 213));
+                        lblNotifyLang.setOpaque(true);
+                        lblNotifyLang.setForeground(Color.black);
+                        lblNotifyLang.setHorizontalAlignment(SwingConstants.CENTER);
+                        lblNotifyLang.setText("Language Changed");
+
                         GroupLayout pnlHomeLayout = new GroupLayout(pnlHome);
                         pnlHome.setLayout(pnlHomeLayout);
                         pnlHomeLayout.setHorizontalGroup(
@@ -1062,11 +1047,17 @@ public class PayForTripGUI extends JFrame {
                                             .addGap(12, 12, 12)
                                             .addComponent(btnDestination6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
                                     .addGap(0, 108, Short.MAX_VALUE))
+                                .addGroup(pnlHomeLayout.createSequentialGroup()
+                                    .addGap(171, 171, 171)
+                                    .addComponent(lblNotifyLang, GroupLayout.PREFERRED_SIZE, 204, GroupLayout.PREFERRED_SIZE)
+                                    .addContainerGap(164, Short.MAX_VALUE))
                         );
                         pnlHomeLayout.setVerticalGroup(
                             pnlHomeLayout.createParallelGroup()
                                 .addGroup(pnlHomeLayout.createSequentialGroup()
-                                    .addGap(0, 112, Short.MAX_VALUE)
+                                    .addGap(0, 57, Short.MAX_VALUE)
+                                    .addComponent(lblNotifyLang, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(37, 37, 37)
                                     .addGroup(pnlHomeLayout.createParallelGroup()
                                         .addComponent(btnDestination1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                                         .addGroup(pnlHomeLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
@@ -1089,19 +1080,6 @@ public class PayForTripGUI extends JFrame {
                         //---- btnSearch ----
                         btnSearch.setText("Search");
                         btnSearch.addActionListener(e -> searchActionPerformed(e));
-
-                        //---- ckbxOpenReturn ----
-                        ckbxOpenReturn.setText("Open Return");
-                        ckbxOpenReturn.addActionListener(e -> ckbxOpenReturnActionPerformed(e));
-
-                        //---- ckbxReturn ----
-                        ckbxReturn.setText("Return");
-                        ckbxReturn.addActionListener(e -> ckbxReturnActionPerformed(e));
-
-                        //---- ckbxOneWay ----
-                        ckbxOneWay.setText("One Way");
-                        ckbxOneWay.addChangeListener(e -> ckbxOneWayStateChanged(e));
-                        ckbxOneWay.addActionListener(e -> ckbxOneWayActionPerformed(e));
 
                         //---- lblTicketType ----
                         lblTicketType.setText("Ticket Type");
@@ -1171,6 +1149,14 @@ public class PayForTripGUI extends JFrame {
                         //---- lblDestination ----
                         lblDestination.setText("London");
 
+                        //---- cmbBoxTicket ----
+                        cmbBoxTicket.setModel(new DefaultComboBoxModel<>(new String[] {
+                            "One Way",
+                            "Open Return",
+                            "Return"
+                        }));
+                        cmbBoxTicket.addItemListener(e -> cmbBoxTicketItemStateChanged(e));
+
                         GroupLayout pnlSelectFaresLayout = new GroupLayout(pnlSelectFares);
                         pnlSelectFares.setLayout(pnlSelectFaresLayout);
                         pnlSelectFaresLayout.setHorizontalGroup(
@@ -1191,14 +1177,14 @@ public class PayForTripGUI extends JFrame {
                                                 .addGap(63, 63, 63)
                                                 .addComponent(dpdnReturn, GroupLayout.PREFERRED_SIZE, 126, GroupLayout.PREFERRED_SIZE))
                                             .addComponent(lblTicketType)
-                                            .addComponent(ckbxOneWay, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(ckbxReturn, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE)
                                             .addGroup(pnlSelectFaresLayout.createSequentialGroup()
-                                                .addComponent(ckbxOpenReturn)
-                                                .addGap(191, 191, 191)
+                                                .addGap(286, 286, 286)
                                                 .addComponent(btnSearch)))
                                         .addGap(0, 0, Short.MAX_VALUE)))
-                                .addGap(0, 539, Short.MAX_VALUE)
+                                .addGroup(pnlSelectFaresLayout.createSequentialGroup()
+                                    .addGap(94, 94, 94)
+                                    .addComponent(cmbBoxTicket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addContainerGap(348, Short.MAX_VALUE))
                         );
                         pnlSelectFaresLayout.setVerticalGroup(
                             pnlSelectFaresLayout.createParallelGroup()
@@ -1216,18 +1202,13 @@ public class PayForTripGUI extends JFrame {
                                             .addComponent(dpdnReturn, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                         .addGap(17, 17, 17)
                                         .addComponent(lblTicketType)
-                                        .addGap(6, 6, 6)
-                                        .addComponent(ckbxOneWay)
-                                        .addGap(6, 6, 6)
-                                        .addComponent(ckbxReturn)
-                                        .addGap(6, 6, 6)
-                                        .addGroup(pnlSelectFaresLayout.createParallelGroup()
-                                            .addComponent(ckbxOpenReturn)
-                                            .addGroup(pnlSelectFaresLayout.createSequentialGroup()
-                                                .addGap(6, 6, 6)
-                                                .addComponent(btnSearch)))
+                                        .addGap(72, 72, 72)
+                                        .addComponent(btnSearch)
                                         .addGap(0, 0, Short.MAX_VALUE)))
-                                .addGap(0, 458, Short.MAX_VALUE)
+                                .addGroup(GroupLayout.Alignment.TRAILING, pnlSelectFaresLayout.createSequentialGroup()
+                                    .addContainerGap(261, Short.MAX_VALUE)
+                                    .addComponent(cmbBoxTicket, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(171, 171, 171))
                         );
                     }
                     pnlContent.add(pnlSelectFares, "card3");
@@ -2082,14 +2063,10 @@ public class PayForTripGUI extends JFrame {
     private JTextField txtFieldCredit;
     private JLabel lblTicketTypeTransAccAccountId3;
     private JPanel pnlSelectLanguage;
-    private JLabel lblEnglish;
-    private JButton btnEnglish;
-    private JLabel lblFrench;
-    private JButton btnFrench;
-    private JLabel lblGerman;
-    private JButton btnGerman;
     private JButton btnLoadLanguage;
     private JLabel lblLanguageLoaded;
+    private JLabel lblLanguageLoaded2;
+    private JComboBox<String> cmbBoxLanguage;
     private JPanel pnlHome;
     private JButton btnDestination1;
     private JButton btnDestination4;
@@ -2097,17 +2074,16 @@ public class PayForTripGUI extends JFrame {
     private JButton btnDestination2;
     private JButton btnDestination3;
     private JButton btnDestination6;
+    private JLabel lblNotifyLang;
     private JPanel pnlSelectFares;
     private JButton btnSearch;
-    private JCheckBox ckbxOpenReturn;
-    private JCheckBox ckbxReturn;
-    private JCheckBox ckbxOneWay;
     private JLabel lblTicketType;
     private JComboBox<String> dpdnDeparture;
     private JComboBox<String> dpdnReturn;
     private JLabel lblDepartureDateTime;
     private JLabel lblReturnDateTime;
     private JLabel lblDestination;
+    private JComboBox<String> cmbBoxTicket;
     private JPanel pnlSearchedFares;
     private JButton btnFare3;
     private JButton btnFare1;
