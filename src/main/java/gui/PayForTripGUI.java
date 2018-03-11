@@ -139,6 +139,7 @@ public class PayForTripGUI extends JFrame {
         LocalDateTime arrivalDateTime = LocalDateTime.of(2018, 2, 4, 13, 0);
         routeRegistry.getRoutes(new Location("0"), new Location("1"), departureDateTime, arrivalDateTime);
         routeRegistry.setRouteInfo(dpdnReturn.getSelectedItem().toString(), dpdnDeparture.getSelectedItem().toString(), lblDestination.getText());
+
         FareRegistry fareRegistry = new FareRegistry();
         routeRegistry = fareRegistry.getRoutesCost(routeRegistry, departureDateTime, arrivalDateTime);
 

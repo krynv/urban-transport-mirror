@@ -45,6 +45,9 @@ public class TerminalGUI extends JFrame {
         pnlCashPayment.setVisible(false);
         pnlCardDetails.setVisible(false);
         pnlPaymentChoice.setVisible(false);
+        lblCashInserted.setText("Cash Inserted: ");
+        lblCreditGained.setText("Credit Gained: ");
+        insertedCash = 0;
     }
 
     // Terminal
@@ -93,11 +96,19 @@ public class TerminalGUI extends JFrame {
         String barcode = txtBarcode.getText();
 
         if (barcode.equals(validBarcode)) {
+
+            String tokenId = "0";
+
+            Token token = tokenRegistry.getTokenById(tokenId);
+
+            account = accountRegistry.getAccountById(token.getAccountId());
+
             setComponentsDefaultState();
 
             pnlAccount.setVisible(true);
-            txtCreditRemaining.setText(credits);
+            txtCreditRemaining.setText(Double.toString(account.getCredits()));
             pnlAddCredits.setVisible(true);
+
         } else {
             lblBarcodeError.setVisible(true);
         }
@@ -110,10 +121,17 @@ public class TerminalGUI extends JFrame {
     // RFID Method
     private void btnContactlessBeginActionPerformed(ActionEvent e) {
         if (validContactless) {
+
+            String tokenId = "0";
+
+            Token token = tokenRegistry.getTokenById(tokenId);
+
+            account = accountRegistry.getAccountById(token.getAccountId());
+
             setComponentsDefaultState();
 
             pnlAccount.setVisible(true);
-            txtCreditRemaining.setText(credits);
+            txtCreditRemaining.setText(Double.toString(account.getCredits()));
             pnlAddCredits.setVisible(true);
         } else {
             lblContactlessError.setVisible(true);
@@ -166,6 +184,7 @@ public class TerminalGUI extends JFrame {
     private void btnCashPaymentFinishedActionPerformed(ActionEvent e) {
         setComponentsDefaultState();
 
+
         pnlAccount.setVisible(true);
         pnlConfirmation.setVisible(true);
     }
@@ -175,6 +194,8 @@ public class TerminalGUI extends JFrame {
 
         lblCashInserted.setText("Cash Inserted: " + insertedCash);
         lblCreditGained.setText("Credit Gained: " + insertedCash);
+
+        account.setCredits(account.getCredits()+insertedCash);
     }
 
     private void btnCashPaymentExitActionPerformed(ActionEvent e) {
@@ -253,7 +274,7 @@ public class TerminalGUI extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Benjamin Ward
+        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
         pnlGUI = new JPanel();
         pnlCardChoice = new JPanel();
         lblCard = new JLabel();
@@ -379,7 +400,7 @@ public class TerminalGUI extends JFrame {
                                         .addComponent(btnContactless, GroupLayout.PREFERRED_SIZE, 281, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(btnMagnetic)
                                         .addComponent(btnBarcode, GroupLayout.PREFERRED_SIZE, 281, GroupLayout.PREFERRED_SIZE))))
-                            .addContainerGap(513, Short.MAX_VALUE))
+                            .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 );
                 pnlCardChoiceLayout.setVerticalGroup(
                     pnlCardChoiceLayout.createParallelGroup()
@@ -392,7 +413,7 @@ public class TerminalGUI extends JFrame {
                             .addComponent(btnContactless, GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(btnBarcode, GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 526, Short.MAX_VALUE)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                             .addComponent(btnMainGUI, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
                             .addContainerGap())
                 );
@@ -418,7 +439,7 @@ public class TerminalGUI extends JFrame {
                 pnlMagneticLayout.setHorizontalGroup(
                     pnlMagneticLayout.createParallelGroup()
                         .addGroup(GroupLayout.Alignment.TRAILING, pnlMagneticLayout.createSequentialGroup()
-                            .addContainerGap(1071, Short.MAX_VALUE)
+                            .addContainerGap(606, Short.MAX_VALUE)
                             .addComponent(lblMagneticError)
                             .addGap(259, 259, 259))
                         .addGroup(pnlMagneticLayout.createSequentialGroup()
@@ -431,7 +452,7 @@ public class TerminalGUI extends JFrame {
                                 .addGroup(pnlMagneticLayout.createSequentialGroup()
                                     .addGap(506, 506, 506)
                                     .addComponent(btnSwipe)))
-                            .addContainerGap(541, Short.MAX_VALUE))
+                            .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 );
                 pnlMagneticLayout.setVerticalGroup(
                     pnlMagneticLayout.createParallelGroup()
@@ -444,7 +465,7 @@ public class TerminalGUI extends JFrame {
                             .addComponent(btnSwipe, GroupLayout.PREFERRED_SIZE, 119, GroupLayout.PREFERRED_SIZE)
                             .addGap(27, 27, 27)
                             .addComponent(lblMagneticError)
-                            .addContainerGap(813, Short.MAX_VALUE))
+                            .addContainerGap(292, Short.MAX_VALUE))
                 );
             }
             pnlGUI.add(pnlMagnetic, "card2");
@@ -485,7 +506,7 @@ public class TerminalGUI extends JFrame {
                                     .addGroup(GroupLayout.Alignment.TRAILING, pnlBarcodeLayout.createSequentialGroup()
                                         .addComponent(btnBarcodeBegin)
                                         .addGap(69, 69, 69))))
-                            .addContainerGap(804, Short.MAX_VALUE))
+                            .addContainerGap(230, Short.MAX_VALUE))
                 );
                 pnlBarcodeLayout.setVerticalGroup(
                     pnlBarcodeLayout.createParallelGroup()
@@ -498,7 +519,7 @@ public class TerminalGUI extends JFrame {
                             .addComponent(txtBarcode, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(btnBarcodeBegin)
-                            .addContainerGap(691, Short.MAX_VALUE))
+                            .addContainerGap(187, Short.MAX_VALUE))
                 );
             }
             pnlGUI.add(pnlBarcode, "card3");
@@ -539,7 +560,7 @@ public class TerminalGUI extends JFrame {
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(btnInvalidContactless))
                                         .addComponent(btnContactlessBegin))))
-                            .addContainerGap(711, Short.MAX_VALUE))
+                            .addContainerGap(180, Short.MAX_VALUE))
                 );
                 pnlContactlessLayout.setVerticalGroup(
                     pnlContactlessLayout.createParallelGroup()
@@ -552,7 +573,7 @@ public class TerminalGUI extends JFrame {
                             .addGroup(pnlContactlessLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                 .addComponent(btnValidContactless)
                                 .addComponent(btnInvalidContactless))
-                            .addContainerGap(751, Short.MAX_VALUE))
+                            .addContainerGap(239, Short.MAX_VALUE))
                 );
             }
             pnlGUI.add(pnlContactless, "card4");
@@ -617,7 +638,7 @@ public class TerminalGUI extends JFrame {
                         lblCardNumberAddCredits.setText("CARD #");
 
                         //---- lblCreditRemaining ----
-                        lblCreditRemaining.setText("Credits Remaining");
+                        lblCreditRemaining.setText("Credits Remaining in the Account");
 
                         //---- btnAddCredit ----
                         btnAddCredit.setText("Add Credits");
@@ -632,36 +653,31 @@ public class TerminalGUI extends JFrame {
                         pnlAddCreditsLayout.setHorizontalGroup(
                             pnlAddCreditsLayout.createParallelGroup()
                                 .addGroup(pnlAddCreditsLayout.createSequentialGroup()
+                                    .addGap(86, 86, 86)
                                     .addGroup(pnlAddCreditsLayout.createParallelGroup()
                                         .addGroup(pnlAddCreditsLayout.createSequentialGroup()
-                                            .addGap(325, 325, 325)
-                                            .addComponent(lblCardNumberAddCredits))
-                                        .addGroup(pnlAddCreditsLayout.createSequentialGroup()
+                                            .addComponent(btnAddCredit)
                                             .addGap(110, 110, 110)
                                             .addGroup(pnlAddCreditsLayout.createParallelGroup()
-                                                .addComponent(btnAddCredit)
-                                                .addGroup(pnlAddCreditsLayout.createSequentialGroup()
-                                                    .addComponent(txtCreditRemaining, GroupLayout.PREFERRED_SIZE, 241, GroupLayout.PREFERRED_SIZE)
-                                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(lblCreditRemaining))))
-                                        .addGroup(pnlAddCreditsLayout.createSequentialGroup()
-                                            .addGap(325, 325, 325)
-                                            .addComponent(btnAddCreditsExit)))
-                                    .addContainerGap(778, Short.MAX_VALUE))
+                                                .addComponent(lblCardNumberAddCredits)
+                                                .addComponent(btnAddCreditsExit)))
+                                        .addComponent(lblCreditRemaining)
+                                        .addComponent(txtCreditRemaining, GroupLayout.PREFERRED_SIZE, 241, GroupLayout.PREFERRED_SIZE))
+                                    .addContainerGap(306, Short.MAX_VALUE))
                         );
                         pnlAddCreditsLayout.setVerticalGroup(
                             pnlAddCreditsLayout.createParallelGroup()
                                 .addGroup(pnlAddCreditsLayout.createSequentialGroup()
                                     .addGap(79, 79, 79)
                                     .addComponent(lblCardNumberAddCredits)
-                                    .addGap(54, 54, 54)
+                                    .addGap(90, 90, 90)
+                                    .addComponent(lblCreditRemaining)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtCreditRemaining, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                                     .addGroup(pnlAddCreditsLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                        .addComponent(txtCreditRemaining, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lblCreditRemaining))
-                                    .addGap(34, 34, 34)
-                                    .addComponent(btnAddCredit)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnAddCreditsExit)
+                                        .addComponent(btnAddCreditsExit)
+                                        .addComponent(btnAddCredit))
                                     .addGap(193, 193, 193))
                         );
                     }
@@ -720,7 +736,7 @@ public class TerminalGUI extends JFrame {
                                                     .addComponent(btnCardPaymentNext)))
                                             .addGap(157, 157, 157)
                                             .addComponent(btnDeposit15)))
-                                    .addContainerGap(656, Short.MAX_VALUE))
+                                    .addContainerGap(99, Short.MAX_VALUE))
                         );
                         pnlCardPaymentLayout.setVerticalGroup(
                             pnlCardPaymentLayout.createParallelGroup()
@@ -771,7 +787,7 @@ public class TerminalGUI extends JFrame {
                                         .addGroup(pnlConfirmationLayout.createSequentialGroup()
                                             .addGap(296, 296, 296)
                                             .addComponent(btnConfirmationExit)))
-                                    .addContainerGap(660, Short.MAX_VALUE))
+                                    .addContainerGap(181, Short.MAX_VALUE))
                         );
                         pnlConfirmationLayout.setVerticalGroup(
                             pnlConfirmationLayout.createParallelGroup()
@@ -782,7 +798,7 @@ public class TerminalGUI extends JFrame {
                                     .addComponent(lblCreditsAdded)
                                     .addGap(86, 86, 86)
                                     .addComponent(btnConfirmationExit)
-                                    .addContainerGap(648, Short.MAX_VALUE))
+                                    .addContainerGap(160, Short.MAX_VALUE))
                         );
                     }
                     pnlHome.add(pnlConfirmation, "card3");
@@ -829,7 +845,7 @@ public class TerminalGUI extends JFrame {
                                         .addGroup(pnlCashPaymentLayout.createParallelGroup()
                                             .addComponent(btnCashPaymentExit)
                                             .addComponent(btnCashPaymentFinished)))
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 647, Short.MAX_VALUE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                                     .addComponent(btnAddCash)
                                     .addGap(145, 145, 145))
                         );
@@ -912,7 +928,7 @@ public class TerminalGUI extends JFrame {
                                                     .addComponent(txtCardName, GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
                                                     .addComponent(txtCardNumber, GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
                                                     .addComponent(txtSecurityCode, GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)))))
-                                    .addContainerGap(828, Short.MAX_VALUE))
+                                    .addContainerGap(213, Short.MAX_VALUE))
                         );
                         pnlCardDetailsLayout.setVerticalGroup(
                             pnlCardDetailsLayout.createParallelGroup()
@@ -939,7 +955,7 @@ public class TerminalGUI extends JFrame {
                                     .addComponent(btnCardDetailsFinish)
                                     .addGap(57, 57, 57)
                                     .addComponent(btnCardDetailsExit)
-                                    .addContainerGap(534, Short.MAX_VALUE))
+                                    .addContainerGap(110, Short.MAX_VALUE))
                         );
                     }
                     pnlHome.add(pnlCardDetails, "card5");
@@ -985,7 +1001,7 @@ public class TerminalGUI extends JFrame {
                                         .addGroup(pnlPaymentChoiceLayout.createSequentialGroup()
                                             .addGap(294, 294, 294)
                                             .addComponent(btnPaymentChoiceExit)))
-                                    .addContainerGap(768, Short.MAX_VALUE))
+                                    .addContainerGap(220, Short.MAX_VALUE))
                         );
                         pnlPaymentChoiceLayout.setVerticalGroup(
                             pnlPaymentChoiceLayout.createParallelGroup()
@@ -1013,7 +1029,7 @@ public class TerminalGUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Benjamin Ward
+    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
     private JPanel pnlGUI;
     private JPanel pnlCardChoice;
     private JLabel lblCard;
