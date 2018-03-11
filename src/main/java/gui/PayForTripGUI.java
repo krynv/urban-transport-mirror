@@ -41,42 +41,108 @@ public class PayForTripGUI extends JFrame {
     private void btnDestination1ActionPerformed(ActionEvent e) {
         setAllToFalse();
         pnlSelectFares.setVisible(true);
+
+        lblStation.setText("Sheffield");
+        lblStationCashPayment.setText("Sheffield");
+        lblStationCardPayment.setText("Sheffield");
+        lblStationlReceipt.setText("Sheffield");
+
         lblDestination.setText("London");
+        lblDestinationCashPayment.setText("London");
+        lblDestinationConfirmBooking.setText("London");
+        lblDestinationCardPayment.setText("London");
+        lblDestinationlReceipt.setText("London");
+
         this.setTitle("Select Fares");
     }
 
     private void btnDestination2ActionPerformed(ActionEvent e) {
         setAllToFalse();
         pnlSelectFares.setVisible(true);
+
+        lblStation.setText("Sheffield");
+        lblStationCashPayment.setText("Sheffield");
+        lblStationCardPayment.setText("Sheffield");
+        lblStationlReceipt.setText("Sheffield");
+
         lblDestination.setText("Sheffield");
+        lblDestinationCashPayment.setText("Sheffield");
+        lblDestinationConfirmBooking.setText("Sheffield");
+        lblDestinationCardPayment.setText("Sheffield");
+        lblDestinationlReceipt.setText("Sheffield");
+
         this.setTitle("Select Fares");
     }
 
     private void btnDestination3ActionPerformed(ActionEvent e) {
         setAllToFalse();
         pnlSelectFares.setVisible(true);
+
+        lblStation.setText("Sheffield");
+        lblStationCashPayment.setText("Sheffield");
+        lblStationCardPayment.setText("Sheffield");
+        lblStationlReceipt.setText("Sheffield");
+
         lblDestination.setText("Derby");
+        lblDestinationCashPayment.setText("Derby");
+        lblDestinationConfirmBooking.setText("Derby");
+        lblDestinationCardPayment.setText("Derby");
+        lblDestinationlReceipt.setText("Derby");
+
         this.setTitle("Select Fares");
     }
 
     private void btnDestination4ActionPerformed(ActionEvent e) {
         setAllToFalse();
         pnlSelectFares.setVisible(true);
+
+        lblStation.setText("Sheffield");
+        lblStationCashPayment.setText("Sheffield");
+        lblStationCardPayment.setText("Sheffield");
+        lblStationlReceipt.setText("Sheffield");
+
         lblDestination.setText("Nottingham");
+        lblDestinationCashPayment.setText("Nottingham");
+        lblDestinationConfirmBooking.setText("Nottingham");
+        lblDestinationCardPayment.setText("Nottingham");
+        lblDestinationlReceipt.setText("Nottingham");
+
         this.setTitle("Select Fares");
     }
 
     private void btnDestination5ActionPerformed(ActionEvent e) {
         setAllToFalse();
         pnlSelectFares.setVisible(true);
+
+        lblStation.setText("Sheffield");
+        lblStationCashPayment.setText("Sheffield");
+        lblStationCardPayment.setText("Sheffield");
+        lblStationlReceipt.setText("Sheffield");
+
         lblDestination.setText("Newcastle");
+        lblDestinationCashPayment.setText("Newcastle");
+        lblDestinationConfirmBooking.setText("Newcastle");
+        lblDestinationCardPayment.setText("Newcastle");
+        lblDestinationlReceipt.setText("Newcastle");
+
         this.setTitle("Select Fares");
     }
 
     private void btnDestination6ActionPerformed(ActionEvent e) {
         setAllToFalse();
         pnlSelectFares.setVisible(true);
+
+        lblStation.setText("Sheffield");
+        lblStationCashPayment.setText("Sheffield");
+        lblStationCardPayment.setText("Sheffield");
+        lblStationlReceipt.setText("Sheffield");
+
         lblDestination.setText("Leicester");
+        lblDestinationCashPayment.setText("Leicester");
+        lblDestinationConfirmBooking.setText("Leicester");
+        lblDestinationCardPayment.setText("Leicester");
+        lblDestinationlReceipt.setText("Leicester");
+
         this.setTitle("Select Fares");
     }
 
