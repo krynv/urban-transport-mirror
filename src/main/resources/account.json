@@ -136,19 +136,18 @@
         "name" : "London"
       },
       "open" : false
-    } ],
-    "latestJourney" : {
+    }, {
       "arrivalDateTime" : {
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
-        "dayOfMonth" : 7,
-        "hour" : 11,
-        "minute" : 28,
-        "second" : 8,
+        "dayOfMonth" : 11,
+        "hour" : 10,
+        "minute" : 11,
+        "second" : 20,
         "month" : "MARCH",
-        "dayOfWeek" : "WEDNESDAY",
-        "dayOfYear" : 66,
+        "dayOfWeek" : "SUNDAY",
+        "dayOfYear" : 70,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -158,13 +157,13 @@
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
-        "dayOfMonth" : 7,
-        "hour" : 11,
-        "minute" : 28,
-        "second" : 6,
+        "dayOfMonth" : 11,
+        "hour" : 10,
+        "minute" : 11,
+        "second" : 19,
         "month" : "MARCH",
-        "dayOfWeek" : "WEDNESDAY",
-        "dayOfYear" : 66,
+        "dayOfWeek" : "SUNDAY",
+        "dayOfYear" : 70,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -172,8 +171,95 @@
       },
       "distance" : 100.0,
       "arrivalLocation" : {
-        "id" : "2",
-        "name" : "Birmingham"
+        "id" : "0",
+        "name" : "London"
+      },
+      "departureLocation" : {
+        "id" : "0",
+        "name" : "London"
+      },
+      "open" : false
+    }, {
+      "arrivalDateTime" : {
+        "nano" : 434574300,
+        "year" : 2018,
+        "monthValue" : 3,
+        "dayOfMonth" : 11,
+        "hour" : 11,
+        "minute" : 51,
+        "second" : 49,
+        "month" : "MARCH",
+        "dayOfWeek" : "SUNDAY",
+        "dayOfYear" : 70,
+        "chronology" : {
+          "id" : "ISO",
+          "calendarType" : "iso8601"
+        }
+      },
+      "departureDateTime" : {
+        "nano" : 176422500,
+        "year" : 2018,
+        "monthValue" : 3,
+        "dayOfMonth" : 11,
+        "hour" : 11,
+        "minute" : 51,
+        "second" : 46,
+        "month" : "MARCH",
+        "dayOfWeek" : "SUNDAY",
+        "dayOfYear" : 70,
+        "chronology" : {
+          "id" : "ISO",
+          "calendarType" : "iso8601"
+        }
+      },
+      "distance" : 100.0,
+      "arrivalLocation" : {
+        "id" : "0",
+        "name" : "London"
+      },
+      "departureLocation" : {
+        "id" : "0",
+        "name" : "London"
+      },
+      "open" : false
+    } ],
+    "latestJourney" : {
+      "arrivalDateTime" : {
+        "nano" : 434574300,
+        "year" : 2018,
+        "monthValue" : 3,
+        "dayOfMonth" : 11,
+        "hour" : 11,
+        "minute" : 51,
+        "second" : 49,
+        "month" : "MARCH",
+        "dayOfWeek" : "SUNDAY",
+        "dayOfYear" : 70,
+        "chronology" : {
+          "id" : "ISO",
+          "calendarType" : "iso8601"
+        }
+      },
+      "departureDateTime" : {
+        "nano" : 176422500,
+        "year" : 2018,
+        "monthValue" : 3,
+        "dayOfMonth" : 11,
+        "hour" : 11,
+        "minute" : 51,
+        "second" : 46,
+        "month" : "MARCH",
+        "dayOfWeek" : "SUNDAY",
+        "dayOfYear" : 70,
+        "chronology" : {
+          "id" : "ISO",
+          "calendarType" : "iso8601"
+        }
+      },
+      "distance" : 100.0,
+      "arrivalLocation" : {
+        "id" : "0",
+        "name" : "London"
       },
       "departureLocation" : {
         "id" : "0",
