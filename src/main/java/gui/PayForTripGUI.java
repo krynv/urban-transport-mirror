@@ -380,8 +380,6 @@ public class PayForTripGUI extends JFrame {
 
         lblCashValue.setText(txtCashValue.getText());
 
-
-
         if (getRemainingCost(valuePayingIn, valueYetToPay) > 0) {
 
             lblPriceCashPayment.setText(Double.toString(getRemainingCost(valuePayingIn, valueYetToPay)));
@@ -396,7 +394,6 @@ public class PayForTripGUI extends JFrame {
                     btnPrintCashTic.setVisible(true);
                     lblPriceCashPayment.setText("0");
                     if (valuePayingIn > this.amount) {
-                        //TODO ttt
                         valuePayingIn = valuePayingIn - this.amount;
                         lblNotification2.setText("Cash Amount Refunded: " + valuePayingIn);
                         lblNotification2.setVisible(true);
