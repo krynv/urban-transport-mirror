@@ -23,19 +23,6 @@ public class DistanceFareTest extends TestCase{
     }
 
     @Test
-    public void testCheckForValidLocations() {
-        this.distanceFare = new DistanceFare();
-
-        for (Trip trip: distanceFare.trips) {
-            if(trip.getStart().getId() != "") {
-                assertTrue(true);
-            } else {
-                assertTrue(false);
-            }
-        }
-    }
-
-    @Test
     public void testCheckFirstTripIsValid() {
         this.distanceFare = new DistanceFare();
 
