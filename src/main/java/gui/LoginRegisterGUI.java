@@ -113,7 +113,6 @@ public class LoginRegisterGUI  extends JFrame {
 
     private void btnMainGUIActionPerformed(ActionEvent e) {
         pnlLogin.setVisible(false);
-        new GUI().setVisible(true);
         this.dispose();
     }
 
@@ -186,7 +185,6 @@ public class LoginRegisterGUI  extends JFrame {
                     try {
                         loginButActionPerformed(e);
                     } catch (IOException e1) {
-
                         e1.printStackTrace();
                     } catch (ParseException e1) {
                         e1.printStackTrace();

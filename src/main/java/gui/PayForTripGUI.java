@@ -569,7 +569,6 @@ public class PayForTripGUI extends JFrame {
     }
 
     private void btnGoToMenuActionPerformed(ActionEvent e) {
-        new GUI().setVisible(true);
         this.dispose();
     }
 
