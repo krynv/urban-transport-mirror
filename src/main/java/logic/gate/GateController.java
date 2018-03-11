@@ -48,10 +48,10 @@ public class GateController {
                     open = true;
                 }
             } else {
-                System.out.println("Account is null");  // TODO: Change to Logger
+                System.out.println("Account is null");
             }
         } else {
-            System.out.println("Token is null");    // TODO: Change to Logger
+            System.out.println("Token is null");
         }
     }
 

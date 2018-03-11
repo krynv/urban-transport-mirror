@@ -81,7 +81,7 @@ public class TerminalGUI extends JFrame {
                 txtCreditRemaining.setText(Double.toString(account.getCredits()));
                 pnlAddCredits.setVisible(true);
             } else {
-                System.out.println("Token is null");    // TODO: Change to Logger
+                System.out.println("Token is null");
             }
         } else {
             lblMagneticError.setVisible(true);

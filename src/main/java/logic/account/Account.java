@@ -74,7 +74,7 @@ public class Account {
 
             exit = true;
         } else {
-            System.out.println("Open Journey is null"); // TODO: Change to Logger
+            System.out.println("Open Journey is null");
         }
     }
 

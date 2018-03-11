@@ -21,7 +21,6 @@ public class LoginRegisterGUI  extends JFrame {
 
     public LoginRegisterGUI() throws IOException, ParseException {
         initComponents();
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         this.setContentPane(pnlMain);
         this.pack();
@@ -30,7 +29,6 @@ public class LoginRegisterGUI  extends JFrame {
         this.counter = 0;
         accountManager = new AccountManager();
     }
-
 
     private void cancelRegButActionPerformed(ActionEvent e) {
         regUserNameField.setText("");
@@ -120,7 +118,7 @@ public class LoginRegisterGUI  extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Benjamin Ward
+        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
         pnlMain = new JPanel();
         pnlLogin = new JPanel();
         label6 = new JLabel();
@@ -418,7 +416,7 @@ public class LoginRegisterGUI  extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Benjamin Ward
+    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
     private JPanel pnlMain;
     private JPanel pnlLogin;
     private JLabel label6;
