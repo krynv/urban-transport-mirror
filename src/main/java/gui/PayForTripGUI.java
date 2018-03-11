@@ -109,6 +109,7 @@ public class PayForTripGUI extends JFrame {
         pnlSelectFares.setVisible(false);
         pnlSelectLanguage.setVisible(false);
         pnlHome.setVisible(false);
+        lblNotification2.setVisible(false);
     }
 
     /* ----- Select Language ----- */
@@ -170,6 +171,10 @@ public class PayForTripGUI extends JFrame {
     private void btnFare1ActionPerformed(ActionEvent e) {
         lblTicketTypeConfirmBooking.setText(chosenTicketType);
         lblPrice.setText(Double.toString(routeRegistry.get(0).getCost()));
+        lblPriceCashPayment.setText(Double.toString(routeRegistry.get(0).getCost()));
+        lblPriceTransAccPayment.setText(Double.toString(routeRegistry.get(0).getCost()));
+        lblPriceCardPayment.setText(Double.toString(routeRegistry.get(0).getCost()));
+        this.amount = routeRegistry.get(0).getCost();
         setAllToFalse();
         pnlConfirmBooking.setVisible(true);
         this.setTitle("Confirm Booking");
@@ -178,6 +183,10 @@ public class PayForTripGUI extends JFrame {
     private void btnFare2ActionPerformed(ActionEvent e) {
         lblTicketTypeConfirmBooking.setText(chosenTicketType);
         lblPrice.setText(Double.toString(routeRegistry.get(1).getCost()));
+        lblPriceCashPayment.setText(Double.toString(routeRegistry.get(1).getCost()));
+        lblPriceTransAccPayment.setText(Double.toString(routeRegistry.get(1).getCost()));
+        lblPriceCardPayment.setText(Double.toString(routeRegistry.get(1).getCost()));
+        this.amount = routeRegistry.get(1).getCost();
         setAllToFalse();
         pnlConfirmBooking.setVisible(true);
         this.setTitle("Confirm Booking");
@@ -186,6 +195,10 @@ public class PayForTripGUI extends JFrame {
     private void btnFare3ActionPerformed(ActionEvent e) {
         lblTicketTypeConfirmBooking.setText(chosenTicketType);
         lblPrice.setText(Double.toString(routeRegistry.get(2).getCost()));
+        lblPriceCashPayment.setText(Double.toString(routeRegistry.get(2).getCost()));
+        lblPriceTransAccPayment.setText(Double.toString(routeRegistry.get(2).getCost()));
+        lblPriceCardPayment.setText(Double.toString(routeRegistry.get(2).getCost()));
+        this.amount = routeRegistry.get(2).getCost();
         setAllToFalse();
         pnlConfirmBooking.setVisible(true);
         this.setTitle("Confirm Booking");
@@ -197,6 +210,10 @@ public class PayForTripGUI extends JFrame {
 
     private void checkCoupon() {
         if (txtCouponCode.getText().equals("UrbanTransport")) {
+            Double price = Double.parseDouble(lblPriceCardPayment.getText());
+            lblPriceCashPayment.setText(Double.toString(price-(price*0.1)));
+            lblPriceTransAccPayment.setText(Double.toString(price-(price*0.1)));
+            lblPriceCardPayment.setText(Double.toString(price-(price*0.1)));
             coupon.getCoupon(LocalDateTime.now(), "0");
             lblCouponVerification.setText("Code Applied");
             lblCouponVerification.setOpaque(true);
@@ -244,8 +261,6 @@ public class PayForTripGUI extends JFrame {
             lblCouponVerification.setOpaque(false);
             ckbxCash.setSelected(false);
             txtCouponCode.setText("");
-            lblPriceCashPayment.setText(Double.toString(routeRegistry.get(0).getCost()));
-            this.amount = routeRegistry.get(0).getCost();
             lblTicketTypeCashPayment.setText(chosenTicketType);
         }
         else if (ckbxCard.isSelected()) {
@@ -260,7 +275,6 @@ public class PayForTripGUI extends JFrame {
             lblCouponVerification.setOpaque(false);
             ckbxCard.setSelected(false);
             txtCouponCode.setText("");
-            lblPriceCardPayment.setText(Double.toString(routeRegistry.get(0).getCost()));
             lblTicketTypeCardPayment.setText(chosenTicketType);
         }
         else if (ckbxTransAcc.isSelected()) {
@@ -276,7 +290,6 @@ public class PayForTripGUI extends JFrame {
             ckbxTransAcc.setSelected(false);
             txtCouponCode.setText("");
             txtFieldAccountID.setText("1");
-            lblPriceTransAccPayment.setText(Double.toString(routeRegistry.get(0).getCost()));
             lblTicketTypeTransAccPayment.setText(chosenTicketType);
         }
         else {
@@ -362,7 +375,6 @@ public class PayForTripGUI extends JFrame {
     }
 
     private void btnPayCashActionPerformed(ActionEvent e) {
-
         double valuePayingIn = Double.parseDouble(txtCashValue.getText());
         double valueYetToPay = Double.parseDouble(lblPriceCashPayment.getText());
 
@@ -371,6 +383,7 @@ public class PayForTripGUI extends JFrame {
 
 
         if (getRemainingCost(valuePayingIn, valueYetToPay) > 0) {
+
             lblPriceCashPayment.setText(Double.toString(getRemainingCost(valuePayingIn, valueYetToPay)));
             txtCashValue.setText("");
         } else if (getRemainingCost(valuePayingIn, valueYetToPay) <= 0) {
@@ -382,11 +395,16 @@ public class PayForTripGUI extends JFrame {
                     txtCashValue.setText("");
                     btnPrintCashTic.setVisible(true);
                     lblPriceCashPayment.setText("0");
+                    if (valuePayingIn > this.amount) {
+                        //TODO ttt
+                        valuePayingIn = valuePayingIn - this.amount;
+                        lblNotification2.setText("Cash Amount Refunded: " + valuePayingIn);
+                        lblNotification2.setVisible(true);
+                    }
                 } else {
                     lblNotification.setText("Transaction canceled. Cash refunded");
                 }
             } else {
-                lblNotification.setText("Enter more cash. Not enough cash entered");
                 lblNotification.setText("Enter more cash. Not enough cash entered");
             }
         }
@@ -414,6 +432,8 @@ public class PayForTripGUI extends JFrame {
     }
 
     private void btnPayTransAccActionPerformed(ActionEvent e) {
+
+        System.out.println(lblPriceTransAccPayment.getText());
         this.amount = Double.parseDouble(lblPriceTransAccPayment.getText());
         this.accID = txtFieldAccountID.getText();
         Purchase purchase = new Purchase();
@@ -558,7 +578,7 @@ public class PayForTripGUI extends JFrame {
     }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
+        // Generated using JFormDesigner Evaluation license - Benjamin Ward
         pnlMain = new JPanel();
         pnlSide = new JPanel();
         btnHome = new JButton();
@@ -642,6 +662,7 @@ public class PayForTripGUI extends JFrame {
         btnPayCash = new JButton();
         txtCashValue = new JTextField();
         btnPrintCashTic = new JButton();
+        lblNotification2 = new JLabel();
         pnlCardTicketPayment = new JPanel();
         btnPrintTicket = new JButton();
         btnConfirmPayment = new JButton();
@@ -811,7 +832,7 @@ public class PayForTripGUI extends JFrame {
                                                     .addGroup(pnlTransportAccountPaymentLayout.createParallelGroup()
                                                         .addComponent(lblPriceTransAccPayment, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(txtFieldAccountID))))))
-                                    .addContainerGap(762, Short.MAX_VALUE))
+                                    .addContainerGap(158, Short.MAX_VALUE))
                         );
                         pnlTransportAccountPaymentLayout.setVerticalGroup(
                             pnlTransportAccountPaymentLayout.createParallelGroup()
@@ -840,7 +861,7 @@ public class PayForTripGUI extends JFrame {
                                     .addGroup(pnlTransportAccountPaymentLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                         .addComponent(lblTicketTypeTransAccAccountId)
                                         .addComponent(txtFieldAccountID, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 438, Short.MAX_VALUE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                                     .addGroup(pnlTransportAccountPaymentLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                         .addComponent(btnPrintAccTic)
                                         .addComponent(btnPayTransAcc))
@@ -879,7 +900,7 @@ public class PayForTripGUI extends JFrame {
                         pnlSelectLanguageLayout.setHorizontalGroup(
                             pnlSelectLanguageLayout.createParallelGroup()
                                 .addGroup(GroupLayout.Alignment.TRAILING, pnlSelectLanguageLayout.createSequentialGroup()
-                                    .addContainerGap(721, Short.MAX_VALUE)
+                                    .addContainerGap(122, Short.MAX_VALUE)
                                     .addGroup(pnlSelectLanguageLayout.createParallelGroup()
                                         .addGroup(pnlSelectLanguageLayout.createSequentialGroup()
                                             .addComponent(lblEnglish, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
@@ -901,7 +922,7 @@ public class PayForTripGUI extends JFrame {
                         pnlSelectLanguageLayout.setVerticalGroup(
                             pnlSelectLanguageLayout.createParallelGroup()
                                 .addGroup(GroupLayout.Alignment.TRAILING, pnlSelectLanguageLayout.createSequentialGroup()
-                                    .addContainerGap(571, Short.MAX_VALUE)
+                                    .addContainerGap(138, Short.MAX_VALUE)
                                     .addGroup(pnlSelectLanguageLayout.createParallelGroup()
                                         .addComponent(lblEnglish, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(btnEnglish, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE))
@@ -959,7 +980,7 @@ public class PayForTripGUI extends JFrame {
                         pnlHomeLayout.setHorizontalGroup(
                             pnlHomeLayout.createParallelGroup()
                                 .addGroup(pnlHomeLayout.createSequentialGroup()
-                                    .addGap(0, 450, Short.MAX_VALUE)
+                                    .addGap(0, 107, Short.MAX_VALUE)
                                     .addGroup(pnlHomeLayout.createParallelGroup()
                                         .addGroup(pnlHomeLayout.createSequentialGroup()
                                             .addComponent(btnDestination1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
@@ -973,12 +994,12 @@ public class PayForTripGUI extends JFrame {
                                             .addComponent(btnDestination5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                                             .addGap(12, 12, 12)
                                             .addComponent(btnDestination6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
-                                    .addGap(0, 450, Short.MAX_VALUE))
+                                    .addGap(0, 108, Short.MAX_VALUE))
                         );
                         pnlHomeLayout.setVerticalGroup(
                             pnlHomeLayout.createParallelGroup()
                                 .addGroup(pnlHomeLayout.createSequentialGroup()
-                                    .addGap(0, 332, Short.MAX_VALUE)
+                                    .addGap(0, 112, Short.MAX_VALUE)
                                     .addGroup(pnlHomeLayout.createParallelGroup()
                                         .addComponent(btnDestination1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                                         .addGroup(pnlHomeLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
@@ -990,7 +1011,7 @@ public class PayForTripGUI extends JFrame {
                                             .addComponent(btnDestination5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                                             .addComponent(btnDestination4, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
                                         .addComponent(btnDestination6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
-                                    .addGap(0, 333, Short.MAX_VALUE))
+                                    .addGap(0, 113, Short.MAX_VALUE))
                         );
                     }
                     pnlContent.add(pnlHome, "card1");
@@ -1110,7 +1131,7 @@ public class PayForTripGUI extends JFrame {
                                                 .addGap(191, 191, 191)
                                                 .addComponent(btnSearch)))
                                         .addGap(0, 0, Short.MAX_VALUE)))
-                                .addGap(0, 1224, Short.MAX_VALUE)
+                                .addGap(0, 539, Short.MAX_VALUE)
                         );
                         pnlSelectFaresLayout.setVerticalGroup(
                             pnlSelectFaresLayout.createParallelGroup()
@@ -1139,7 +1160,7 @@ public class PayForTripGUI extends JFrame {
                                                 .addGap(6, 6, 6)
                                                 .addComponent(btnSearch)))
                                         .addGap(0, 0, Short.MAX_VALUE)))
-                                .addGap(0, 898, Short.MAX_VALUE)
+                                .addGap(0, 458, Short.MAX_VALUE)
                         );
                     }
                     pnlContent.add(pnlSelectFares, "card3");
@@ -1177,7 +1198,7 @@ public class PayForTripGUI extends JFrame {
                                             .addGap(30, 30, 30)
                                             .addComponent(btnFare2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                         .addComponent(btnFare3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                                    .addContainerGap(772, Short.MAX_VALUE))
+                                    .addContainerGap(137, Short.MAX_VALUE))
                         );
                         pnlSearchedFaresLayout.setVerticalGroup(
                             pnlSearchedFaresLayout.createParallelGroup()
@@ -1188,7 +1209,7 @@ public class PayForTripGUI extends JFrame {
                                         .addComponent(btnFare1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                     .addGap(6, 6, 6)
                                     .addComponent(btnFare3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                    .addContainerGap(605, Short.MAX_VALUE))
+                                    .addContainerGap(159, Short.MAX_VALUE))
                         );
                     }
                     pnlContent.add(pnlSearchedFares, "card4");
@@ -1199,9 +1220,6 @@ public class PayForTripGUI extends JFrame {
                         //---- btnAdvance ----
                         btnAdvance.setText("Advance");
                         btnAdvance.addActionListener(e -> btnAdvanceActionPerformed(e));
-
-                        //---- txtCouponCode ----
-                        txtCouponCode.setAction(null);
 
                         //---- lblCouponCode ----
                         lblCouponCode.setText("Coupon Code");
@@ -1295,10 +1313,10 @@ public class PayForTripGUI extends JFrame {
                                                 .addGap(256, 256, 256)
                                                 .addComponent(btnAdvance)))
                                         .addGap(0, 0, Short.MAX_VALUE)))
-                                .addGroup(GroupLayout.Alignment.TRAILING, pnlConfirmBookingLayout.createSequentialGroup()
-                                    .addContainerGap(537, Short.MAX_VALUE)
+                                .addGroup(pnlConfirmBookingLayout.createSequentialGroup()
+                                    .addGap(184, 184, 184)
                                     .addComponent(ckbxTransAcc)
-                                    .addGap(486, 486, 486))
+                                    .addContainerGap(228, Short.MAX_VALUE))
                         );
                         pnlConfirmBookingLayout.setVerticalGroup(
                             pnlConfirmBookingLayout.createParallelGroup()
@@ -1340,9 +1358,9 @@ public class PayForTripGUI extends JFrame {
                                             .addComponent(btnAdvance))
                                         .addGap(0, 0, Short.MAX_VALUE)))
                                 .addGroup(GroupLayout.Alignment.TRAILING, pnlConfirmBookingLayout.createSequentialGroup()
-                                    .addContainerGap(489, Short.MAX_VALUE)
+                                    .addContainerGap(265, Short.MAX_VALUE)
                                     .addComponent(ckbxTransAcc)
-                                    .addGap(370, 370, 370))
+                                    .addGap(169, 169, 169))
                         );
                     }
                     pnlContent.add(pnlConfirmBooking, "card5");
@@ -1396,45 +1414,54 @@ public class PayForTripGUI extends JFrame {
                         btnPrintCashTic.setText("Adance");
                         btnPrintCashTic.addActionListener(e -> btnPrintCashTicActionPerformed(e));
 
+                        //---- lblNotification2 ----
+                        lblNotification2.setToolTipText("Information Text");
+                        lblNotification2.setBackground(new Color(216, 231, 213));
+                        lblNotification2.setOpaque(true);
+                        lblNotification2.setText("Input cash to confirm payment");
+                        lblNotification2.setForeground(Color.black);
+                        lblNotification2.setHorizontalAlignment(SwingConstants.CENTER);
+
                         GroupLayout pnlCashTicketPaymentLayout = new GroupLayout(pnlCashTicketPayment);
                         pnlCashTicketPayment.setLayout(pnlCashTicketPaymentLayout);
                         pnlCashTicketPaymentLayout.setHorizontalGroup(
                             pnlCashTicketPaymentLayout.createParallelGroup()
                                 .addGroup(pnlCashTicketPaymentLayout.createSequentialGroup()
                                     .addGap(68, 68, 68)
-                                    .addGroup(pnlCashTicketPaymentLayout.createParallelGroup()
-                                        .addGroup(pnlCashTicketPaymentLayout.createSequentialGroup()
-                                            .addComponent(txtCashValue, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(btnPayCash)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(btnPrintCashTic))
-                                        .addGroup(pnlCashTicketPaymentLayout.createSequentialGroup()
-                                            .addGap(152, 152, 152)
-                                            .addComponent(lblStationCashPayment)
-                                            .addGap(6, 6, 6)
-                                            .addComponent(lblDestinationCashPayment))
-                                        .addGroup(pnlCashTicketPaymentLayout.createSequentialGroup()
-                                            .addGap(84, 84, 84)
-                                            .addComponent(lblDepartureDateTimeCashPayment, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
-                                            .addGap(0, 0, 0)
-                                            .addComponent(lblReturnDateTimeCashPayment))
-                                        .addGroup(pnlCashTicketPaymentLayout.createSequentialGroup()
-                                            .addGap(168, 168, 168)
-                                            .addComponent(lblViaLocationsCashPayment))
-                                        .addGroup(pnlCashTicketPaymentLayout.createSequentialGroup()
-                                            .addGap(106, 106, 106)
+                                    .addGroup(pnlCashTicketPaymentLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                        .addGroup(pnlCashTicketPaymentLayout.createParallelGroup()
+                                            .addComponent(lblNotification2, GroupLayout.PREFERRED_SIZE, 204, GroupLayout.PREFERRED_SIZE)
                                             .addComponent(lblNotification, GroupLayout.PREFERRED_SIZE, 204, GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(lblPaymentInformation)
-                                        .addGroup(pnlCashTicketPaymentLayout.createSequentialGroup()
-                                            .addComponent(lblTicketTypeCashPayment)
-                                            .addGap(69, 69, 69)
-                                            .addComponent(lblPriceCashPayment, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(pnlCashTicketPaymentLayout.createSequentialGroup()
-                                            .addComponent(lblCashInserted)
-                                            .addGap(55, 55, 55)
-                                            .addComponent(lblCashValue)))
-                                    .addContainerGap(770, Short.MAX_VALUE))
+                                        .addGroup(pnlCashTicketPaymentLayout.createParallelGroup()
+                                            .addComponent(lblPaymentInformation)
+                                            .addGroup(pnlCashTicketPaymentLayout.createSequentialGroup()
+                                                .addComponent(txtCashValue, GroupLayout.PREFERRED_SIZE, 67, GroupLayout.PREFERRED_SIZE)
+                                                .addGap(12, 12, 12)
+                                                .addComponent(btnPayCash)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(btnPrintCashTic))
+                                            .addGroup(pnlCashTicketPaymentLayout.createSequentialGroup()
+                                                .addGap(152, 152, 152)
+                                                .addComponent(lblStationCashPayment)
+                                                .addGap(6, 6, 6)
+                                                .addComponent(lblDestinationCashPayment))
+                                            .addGroup(pnlCashTicketPaymentLayout.createSequentialGroup()
+                                                .addGap(168, 168, 168)
+                                                .addComponent(lblViaLocationsCashPayment))
+                                            .addGroup(pnlCashTicketPaymentLayout.createSequentialGroup()
+                                                .addGroup(pnlCashTicketPaymentLayout.createParallelGroup()
+                                                    .addComponent(lblCashInserted)
+                                                    .addComponent(lblTicketTypeCashPayment))
+                                                .addGap(55, 55, 55)
+                                                .addGroup(pnlCashTicketPaymentLayout.createParallelGroup()
+                                                    .addComponent(lblPriceCashPayment, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(lblCashValue)))
+                                            .addGroup(pnlCashTicketPaymentLayout.createSequentialGroup()
+                                                .addGap(84, 84, 84)
+                                                .addComponent(lblDepartureDateTimeCashPayment, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, 0)
+                                                .addComponent(lblReturnDateTimeCashPayment))))
+                                    .addContainerGap(158, Short.MAX_VALUE))
                         );
                         pnlCashTicketPaymentLayout.setVerticalGroup(
                             pnlCashTicketPaymentLayout.createParallelGroup()
@@ -1451,23 +1478,25 @@ public class PayForTripGUI extends JFrame {
                                             .addComponent(lblReturnDateTimeCashPayment)))
                                     .addGap(8, 8, 8)
                                     .addComponent(lblViaLocationsCashPayment)
-                                    .addGap(6, 6, 6)
+                                    .addGap(1, 1, 1)
                                     .addComponent(lblNotification, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(27, 27, 27)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(lblNotification2, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(lblPaymentInformation)
-                                    .addGap(28, 28, 28)
-                                    .addGroup(pnlCashTicketPaymentLayout.createParallelGroup()
+                                    .addGap(18, 18, 18)
+                                    .addGroup(pnlCashTicketPaymentLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                         .addComponent(lblTicketTypeCashPayment)
                                         .addComponent(lblPriceCashPayment))
                                     .addGap(12, 12, 12)
                                     .addGroup(pnlCashTicketPaymentLayout.createParallelGroup()
                                         .addComponent(lblCashInserted)
                                         .addComponent(lblCashValue))
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 409, Short.MAX_VALUE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                                     .addGroup(pnlCashTicketPaymentLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                        .addComponent(btnPayCash)
                                         .addComponent(txtCashValue, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(btnPrintCashTic))
+                                        .addComponent(btnPrintCashTic)
+                                        .addComponent(btnPayCash))
                                     .addGap(79, 79, 79))
                         );
                     }
@@ -1588,7 +1617,7 @@ public class PayForTripGUI extends JFrame {
                                             .addComponent(btnPrintTicket)
                                             .addGap(66, 66, 66)
                                             .addComponent(btnConfirmPayment)))
-                                    .addContainerGap(775, Short.MAX_VALUE))
+                                    .addContainerGap(98, Short.MAX_VALUE))
                         );
                         pnlCardTicketPaymentLayout.setVerticalGroup(
                             pnlCardTicketPaymentLayout.createParallelGroup()
@@ -1631,13 +1660,13 @@ public class PayForTripGUI extends JFrame {
                                             .addComponent(lblSecurityCode)
                                             .addGap(18, 18, 18)
                                             .addComponent(lblSortCode)
-                                            .addContainerGap(472, Short.MAX_VALUE))
+                                            .addContainerGap(114, Short.MAX_VALUE))
                                         .addGroup(pnlCardTicketPaymentLayout.createSequentialGroup()
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(txtSecurityCode, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(txtSortCode, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 374, Short.MAX_VALUE)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                                             .addGroup(pnlCardTicketPaymentLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                                 .addComponent(btnConfirmPayment)
                                                 .addComponent(btnPrintTicket))
@@ -1663,7 +1692,7 @@ public class PayForTripGUI extends JFrame {
                                         .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 472, GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE)))
-                                .addGap(0, 1224, Short.MAX_VALUE)
+                                .addGap(0, 539, Short.MAX_VALUE)
                         );
                         pnlTimetableLayout.setVerticalGroup(
                             pnlTimetableLayout.createParallelGroup()
@@ -1672,7 +1701,7 @@ public class PayForTripGUI extends JFrame {
                                         .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 281, GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE)))
-                                .addGap(0, 898, Short.MAX_VALUE)
+                                .addGap(0, 458, Short.MAX_VALUE)
                         );
                     }
                     pnlContent.add(pnlTimetable, "card8");
@@ -1752,7 +1781,7 @@ public class PayForTripGUI extends JFrame {
                         pnlPrintReceiptLayout.setHorizontalGroup(
                             pnlPrintReceiptLayout.createParallelGroup()
                                 .addGroup(GroupLayout.Alignment.TRAILING, pnlPrintReceiptLayout.createSequentialGroup()
-                                    .addContainerGap(806, Short.MAX_VALUE)
+                                    .addContainerGap(193, Short.MAX_VALUE)
                                     .addGroup(pnlPrintReceiptLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                         .addComponent(lblViaLocationslReceipt1, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
                                         .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
@@ -1786,18 +1815,18 @@ public class PayForTripGUI extends JFrame {
                                                 .addComponent(lblViaLocationslReceipt5, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(lblViaLocationslReceipt3, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(lblViaLocationlReceipt6, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE))))
-                                    .addContainerGap(698, Short.MAX_VALUE))
+                                    .addContainerGap(120, Short.MAX_VALUE))
                                 .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
                                     .addGap(45, 45, 45)
                                     .addGroup(pnlPrintReceiptLayout.createParallelGroup()
                                         .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
                                             .addComponent(lblReceiptNotification, GroupLayout.PREFERRED_SIZE, 444, GroupLayout.PREFERRED_SIZE)
-                                            .addContainerGap(735, Short.MAX_VALUE))
+                                            .addContainerGap(50, Short.MAX_VALUE))
                                         .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
                                             .addGroup(pnlPrintReceiptLayout.createParallelGroup()
                                                 .addComponent(lblDepartureDateTimelReceipt, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(lblreturnDateValuelReceipt2))
-                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 687, Short.MAX_VALUE)
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
                                             .addGroup(pnlPrintReceiptLayout.createParallelGroup()
                                                 .addComponent(lblReturnDateTimelReceipt)
                                                 .addComponent(lblreturnDateValuelReceipt))
@@ -1832,7 +1861,7 @@ public class PayForTripGUI extends JFrame {
                                     .addComponent(lblViaLocationlReceipt6, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
                                     .addComponent(lblReceiptNotification, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 381, Short.MAX_VALUE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                                     .addComponent(lblAccount, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(txtAccountID, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
@@ -1895,7 +1924,7 @@ public class PayForTripGUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
+    // Generated using JFormDesigner Evaluation license - Benjamin Ward
     private JPanel pnlMain;
     private JPanel pnlSide;
     private JButton btnHome;
@@ -1979,6 +2008,7 @@ public class PayForTripGUI extends JFrame {
     private JButton btnPayCash;
     private JTextField txtCashValue;
     private JButton btnPrintCashTic;
+    private JLabel lblNotification2;
     private JPanel pnlCardTicketPayment;
     private JButton btnPrintTicket;
     private JButton btnConfirmPayment;
