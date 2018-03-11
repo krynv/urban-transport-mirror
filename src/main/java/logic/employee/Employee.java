@@ -21,22 +21,42 @@ public class Employee {
         this.auth = 0;
     }
 
+    /**
+     *
+     * @return the username of the user
+     */
     public String getUserName() {
         return userName;
     }
 
+    /**
+     *
+     * @return the firstname of the user
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     *
+     * @return the lastname of the user
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     *
+     * @return the password of the user
+     */
     public String getPassword() {
         return password;
     }
 
+    /**
+     *
+     * @return true or false of the admin
+     */
     public Boolean isAdmin() {
         return admin;
     }
@@ -52,6 +72,13 @@ public class Employee {
                 '}';
     }
 
+    /**
+     * Checks that the users inputted password matches the encrypted password
+     * If it has reset the authentication
+     *
+     * @param password the password which is inputted by the user
+     * @return true if the users inputed password matches else false
+     */
     public boolean passwordMatch(String password) {
         if (this.addAuthenticationAttempt()) {
             if (BCrypt.checkpw(password, this.getPassword())) {
@@ -65,10 +92,17 @@ public class Employee {
         }
     }
 
+    /**
+     * Resets the authentication if user logs in
+     */
     private void resetAuthentication() {
         this.auth = 0;
     }
 
+    /**
+     * adds 1 everytime the user enters the wrong password
+     * @return true or false depending on how many times the user has tried to log in
+     */
     private boolean addAuthenticationAttempt() {
         this.auth += 1;
 

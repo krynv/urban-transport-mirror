@@ -323,9 +323,6 @@ public class PayForTripGUI extends JFrame {
         } else {
             lblPaymentValidate.setText("Transaction canceled. Card refunded");
         }
-
-
-
     }
 
     public void resetAllInteractiveElements() {

@@ -30,6 +30,12 @@ public class EmployeeRegistry {
         }
     }
 
+    /**
+     * Checks the employee exists based on the name of the user
+     *
+     * @param userName the username which is inputed by the user
+     * @return the employee if it exists
+     */
     public Employee getEmployee(String userName) {
         for (Employee employee : employees) {
             if (employee.getUserName().equals(userName)) {
@@ -39,6 +45,14 @@ public class EmployeeRegistry {
         return null;
     }
 
+    /**
+     * Adds a user to the file so they can now log into the system.
+     *
+     * @param user the inputted values that the user has inputted in the UI
+     *
+     * @throws IOException if the file isn't read or written to then throw the exception
+     * @throws ParseException if the parse fails then throw the exception
+     */
     public void addEmployee(JSONArray user) throws IOException, ParseException {
         // writing the JSONObject into a file(info.json)
         JSONParser parser = new JSONParser();

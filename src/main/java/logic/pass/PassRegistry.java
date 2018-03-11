@@ -16,6 +16,12 @@ public class PassRegistry {
         passes.add(new StudentPass(true, LocalDateTime.of(2019, 1, 1, 12, 0)));
     }
 
+    /**
+     * Checks that journey is covered through the pass class
+     *
+     * @param journey the journey that has been selected to check if it has been covered
+     * @return if the journey is covered then return true if it isn't return false
+     */
     public Boolean isCovered(Journey journey) {
         for (Pass pass: passes) {
             if (pass.isCovered(journey)) {
@@ -26,6 +32,13 @@ public class PassRegistry {
         return false;
     }
 
+    /**
+     * Applies the pass to the user if the user is under 25 and over 60
+     * returns the total cost based on the reduction of the pass
+     *
+     * @param totalCost total cost of the journey so far before checking for passes
+     * @return the new total cost based on if the use has a pass
+     */
     public double applyPass(double totalCost) {
         for (Pass pass: passes) {
             if (pass.isValid()) {
@@ -43,6 +56,11 @@ public class PassRegistry {
         return totalCost;
     }
 
+    /**
+     * gets the day pass if it valid if not returns null
+     *
+     * @return checks the day pass is valid and if it is returns day pass
+     */
     public DayPass getDayPass() {
         for (Pass pass: passes) {
             if (pass.getClass() == DayPass.class && pass.isValid()) {
@@ -53,6 +71,9 @@ public class PassRegistry {
         return null;
     }
 
+    /**
+     * Awards day pass if spent over £15
+     */
     public void awardDayPass() {
         passes.add(new DayPass(true, LocalDateTime.of(2019, 1, 1, 12, 0)));
     }

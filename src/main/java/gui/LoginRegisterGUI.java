@@ -55,6 +55,8 @@ public class LoginRegisterGUI  extends JFrame {
         jsonArray.add(jsonObject);
         employeeRegistry.addEmployee(jsonArray);
 
+
+        employeeRegistry = new EmployeeRegistry();
         pnlLogin.setVisible(true);
         pnlRegister.setVisible(false);
     }
@@ -82,8 +84,8 @@ public class LoginRegisterGUI  extends JFrame {
 
     private void loginButActionPerformed(ActionEvent e) throws IOException, ParseException {
         String userName = userField.getText();
-
         String password = new String(passField.getPassword());
+        employeeRegistry = new EmployeeRegistry();
 
         boolean loginSuccess = accountManager.login(userName, password);
         if (loginSuccess) {

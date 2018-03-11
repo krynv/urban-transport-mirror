@@ -15,10 +15,18 @@ public class Pass {
         this.dateTimeExpires = dateTimeExpires;
     }
 
+    /**
+     *
+     * @param journey selects current journey
+     * @return true or false depending if the journey is covered
+     */
     public Boolean isCovered(Journey journey) {
         return (valid && dateTimeExpires.isAfter(journey.getDepartureDateTime()));
     }
-
+    /**
+     *
+     * @return true or false depending if its valid
+     */
     public Boolean isValid() {
         return (valid && dateTimeExpires.isAfter(LocalDateTime.now()));
     }
