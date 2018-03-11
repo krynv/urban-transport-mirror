@@ -19,11 +19,7 @@ public class DistanceFareTest extends TestCase{
     public void testCheckDistanceFareSize() {
         this.distanceFare = new DistanceFare();
 
-        if (distanceFare.trips.size() == 6) {
-            assertTrue(true);
-        } else {
-            assertTrue(false);
-        }
+        assertEquals(this.distanceFare.getTrips().size(), 6);
     }
 
     @Test

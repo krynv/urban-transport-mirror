@@ -6,6 +6,7 @@ import logic.location.LocationRegistry;
 import logic.route.Route;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Vector;
 
 public class DistanceFare extends Fare {
@@ -77,6 +78,10 @@ public class DistanceFare extends Fare {
         }
 
         return cost;
+    }
+
+    public List<Trip> getTrips() {
+        return trips;
     }
 
 }
