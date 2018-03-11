@@ -15,6 +15,9 @@ public class FareRegistry {
         add(new DistanceFare());
     }};
 
+    /**
+     * Set tarriffs to a list of three different tarriffs
+     */
     static List<Tariff> tariffs = new ArrayList<Tariff>() {{
        add(new NormalPeakTariff());
        add(new OffPeakTariff());
@@ -71,11 +74,18 @@ public class FareRegistry {
         return cost;
     }
 
+    /**
+     * Get the cost of each of the routes
+     * Iterate through each route and set the cost of the route
+     *
+     * @param routeRegistry - to obtain all of the routes for traversal
+     * @param start - for calculating the route cost in fare
+     * @param end - for calculating the route cost in fare
+     * @return the route registry so the UI can display the information
+     */
     public RouteRegistry getRoutesCost(RouteRegistry routeRegistry, LocalDateTime start, LocalDateTime end) {
-        // Get the cost of each of the routes
-        // Iterate through each route and set the cost of the route
 
-        Fare fare = fares.get(0);   // DistanceFare
+        Fare fare = fares.get(0);
 
         for (Route aRoute:routeRegistry) {
             aRoute.setCost(fare.calculateRouteCost(aRoute, start, end));
