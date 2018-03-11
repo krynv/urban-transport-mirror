@@ -22,6 +22,13 @@ public class LocationRegistry {
         locations.add(location);
     }
 
+    /**
+     * Traverse through the list of locations
+     * If id matches the location
+     *
+     * @param id the id of a location
+     * @return the location corresponding to an id
+     */
     public Location getLocationById(String id) {
         for(Location location: locations) {
             if (location.getId().equals(id)) {
@@ -35,6 +42,11 @@ public class LocationRegistry {
         return locations;
     }
 
+    /**
+     * Remove the top element and return the resulting list
+     *
+     * @return a list of locations
+     */
     public LocationRegistry tail() {
         LocationRegistry locationRegistry = new LocationRegistry(locations);
 

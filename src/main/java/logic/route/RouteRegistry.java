@@ -1,6 +1,5 @@
 package logic.route;
 
-
 import logic.location.Location;
 import logic.location.LocationRegistry;
 import logic.timeband.TimeBand;
@@ -10,6 +9,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList; 
 
 public class RouteRegistry extends ArrayList<Route> {
+
     public RouteRegistry() {
         super();
 
@@ -45,36 +45,32 @@ public class RouteRegistry extends ArrayList<Route> {
         this.add(new Route("3", timeRegistry3, locationRegistry3));
     }
 
+    /**
+     * Traverse a list of routes
+     *
+     * @param departingLocation start location of the route
+     * @param arrivingLocation end location of the route
+     * @param start of the route
+     * @param end of the route
+     * @return a list of Routes
+     */
     public RouteRegistry getRoutes(Location departingLocation, Location arrivingLocation, LocalDateTime start, LocalDateTime end) {
         RouteRegistry routes = new RouteRegistry();
+
         for (Route aRoute:this) {
             aRoute.setLocation(arrivingLocation.getId());
         }
-        return routes;
-    }
-
-    public RouteRegistry getRoutesByNotSoManyVariables() {
-        RouteRegistry routes = new RouteRegistry();
 
         return routes;
     }
 
-    public RouteRegistry getRoutesByDepartureAndDestinationLocations(Location departingLocation, Location arrivingLocation) {
-        RouteRegistry returnedRoutes = new RouteRegistry();
-
-        for (Route aRoute:this) {
-            LocationRegistry destinationLocations = aRoute.getDestinationLocations();
-            for (Location aLocation: destinationLocations.getLocations()) {
-                if (aLocation.getId() == arrivingLocation.getId()) {
-                    // do something useful
-                    returnedRoutes.add(aRoute);
-
-                }
-            }
-        }
-
-        return returnedRoutes;
-    }
+    /**
+     * Set details of all routes
+     *
+     * @param arrivalTime end time of route
+     * @param departureTime start time of route
+     * @param location end location
+     */
     public void setRouteInfo(String arrivalTime, String departureTime, String location) {
         for (Route aRoute:this) {
             aRoute.setArriveTime(arrivalTime);

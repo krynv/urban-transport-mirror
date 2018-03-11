@@ -15,6 +15,12 @@ public class AccountDaoJson implements AccountDao {
 
     public AccountDaoJson() {}
 
+    /**
+     * Read contents from JSON file
+     * Deserialize each account from JSON to POJO
+     *
+     * @return list of all accounts
+     */
     public List<Account> getAccounts() {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.findAndRegisterModules();
@@ -30,6 +36,12 @@ public class AccountDaoJson implements AccountDao {
         return accounts;
     }
 
+    /**
+     *  Write POJO to JSON file
+     *  Serialize each account from POJO to JSON
+     *
+     * @param accounts list of all accounts
+     */
     public void setAccounts(List<Account> accounts) {
         ObjectMapper objectMapper = new ObjectMapper();
 

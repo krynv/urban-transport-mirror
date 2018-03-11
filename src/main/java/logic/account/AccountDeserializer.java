@@ -24,6 +24,14 @@ public class AccountDeserializer extends StdDeserializer<Account> {
         super(t);
     }
 
+    /**
+     * Reads each object from JSON file
+     * Sets the attributes of account class based on contents
+     *
+     * @param parser
+     * @param deserializer
+     * @return instance of account POJO
+     */
     @Override
     public Account deserialize(JsonParser parser, DeserializationContext deserializer) {
         Account account = new Account();

@@ -28,6 +28,17 @@ public class GateController {
         open = false;
     }
 
+    /**
+     * The token is scanned when the user gets to a gate
+     * Instance of token is found from a registry of tokens
+     * Instance of account is found from the token entered
+     *  On entry, create an open journey for the account.
+     *  On exit, close an open journey for the account.
+     *
+     * @param type entry or exit gate
+     * @param tokenId id from the scanned token
+     * @param locationId id of the location where the token was scanned
+     */
     public void presentToken(String type, String tokenId, String locationId) {
         tokenReader.setTokenId(tokenId);
 

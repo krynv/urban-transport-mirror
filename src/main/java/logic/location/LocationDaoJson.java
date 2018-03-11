@@ -14,6 +14,12 @@ public class LocationDaoJson implements LocationDao {
 
     public LocationDaoJson() {}
 
+    /**
+     * Reads all locations from json file
+     * Deseralize each location from json to POJO
+     *
+     * @return list of locations
+     */
     public List<Location> getLocations() {
         ObjectMapper objectMapper = new ObjectMapper();
 
