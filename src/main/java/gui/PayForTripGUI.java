@@ -462,11 +462,15 @@ public class PayForTripGUI extends JFrame {
                     accountRegistry.saveAccounts();
                 }
             } else {
-                lblNotification.setVisible(true);
+                lblTransAccNotification.setVisible(true);
+                lblTransAccNotification.setBackground(Color.red);
+                lblTransAccNotification.setOpaque(true);
                 lblTransAccNotification.setText("NO ACCOUNT FOUND");
             }
         } else {
-            lblNotification.setVisible(true);
+            lblTransAccNotification.setVisible(true);
+            lblTransAccNotification.setBackground(Color.red);
+            lblTransAccNotification.setOpaque(true);
             lblTransAccNotification.setText("Account doesn't have enough credit");
         }
 
