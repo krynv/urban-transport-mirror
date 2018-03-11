@@ -9,7 +9,6 @@ import logic.timeband.TimeRegistry;
 import java.time.LocalDateTime;
 import java.util.ArrayList; 
 
-// TODO: Removed RouteController class and merged with RouteRegistry
 public class RouteRegistry extends ArrayList<Route> {
     public RouteRegistry() {
         super();

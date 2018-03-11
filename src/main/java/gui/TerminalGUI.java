@@ -81,7 +81,7 @@ public class TerminalGUI extends JFrame {
                 txtCreditRemaining.setText(Double.toString(account.getCredits()));
                 pnlAddCredits.setVisible(true);
             } else {
-                System.out.println("Token is null");    // TODO: Change to Logger
+                System.out.println("Token is null");
             }
         } else {
             lblMagneticError.setVisible(true);
@@ -248,13 +248,12 @@ public class TerminalGUI extends JFrame {
     }
 
     private void btnMainGUIActionPerformed(ActionEvent e) {
-        new GUI().setVisible(true);
         this.dispose();
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
+        // Generated using JFormDesigner Evaluation license - Benjamin Ward
         pnlGUI = new JPanel();
         pnlCardChoice = new JPanel();
         lblCard = new JLabel();
@@ -1014,7 +1013,7 @@ public class TerminalGUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
+    // Generated using JFormDesigner Evaluation license - Benjamin Ward
     private JPanel pnlGUI;
     private JPanel pnlCardChoice;
     private JLabel lblCard;

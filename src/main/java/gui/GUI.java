@@ -43,7 +43,7 @@ public class GUI extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
+        // Generated using JFormDesigner Evaluation license - Benjamin Ward
         pnlGUI = new JPanel();
         pnlSelectOption = new JPanel();
         btnViewReport = new JButton();
@@ -78,8 +78,9 @@ public class GUI extends JFrame {
                 btnViewReport.addActionListener(e -> btnViewReportActionPerformed(e));
 
                 //---- btnAddCredit ----
-                btnAddCredit.setText("Ticket Machine 2");
+                btnAddCredit.setText("Ticket Machine  (Add Credit)");
                 btnAddCredit.setPreferredSize(new Dimension(150, 60));
+                btnAddCredit.setActionCommand("Ticket Machine (Add Credit)");
                 btnAddCredit.addActionListener(e -> btnAddCreditActionPerformed(e));
 
                 //---- btnPayOnExit ----
@@ -109,7 +110,7 @@ public class GUI extends JFrame {
                                         .addComponent(btnViewReport, GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
                                         .addComponent(btnPayForTrip, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE)
                                         .addComponent(btnPayOnExit, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 332, Short.MAX_VALUE))))
-                            .addContainerGap(87, Short.MAX_VALUE))
+                            .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 );
                 pnlSelectOptionLayout.setVerticalGroup(
                     pnlSelectOptionLayout.createParallelGroup()
@@ -131,7 +132,7 @@ public class GUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
+    // Generated using JFormDesigner Evaluation license - Benjamin Ward
     private JPanel pnlGUI;
     private JPanel pnlSelectOption;
     private JButton btnViewReport;
