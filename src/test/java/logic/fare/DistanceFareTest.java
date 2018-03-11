@@ -4,28 +4,38 @@ import logic.location.Location;
 import org.junit.Test;
 import junit.framework.TestCase;
 
-public class DistanceFareTest extends TestCase{
+public class DistanceFareTest extends TestCase {
 
-    private DistanceFare distanceFare;
+    @Test
+    public void testCheckDistanceFareSize() {
+        DistanceFare distanceFare = new DistanceFare();
+
+        assertEquals(distanceFare.getTrips().size(), 18);
+    }
 
     @Test
     public void testCheckDistanceFareGetsCreated() {
-        this.distanceFare = new DistanceFare();
+        DistanceFare distanceFare = new DistanceFare();
 
         assertNotNull(distanceFare);
     }
 
-    @Test
-    public void testCheckDistanceFareSize() {
-        this.distanceFare = new DistanceFare();
 
-        assertEquals(this.distanceFare.getTrips().size(), 6);
+    @Test
+    public void testCheckForValidLocations() {
+        DistanceFare distanceFare  = new DistanceFare();
+
+        for (Trip trip: distanceFare.getTrips()) {
+            assertTrue(trip.getStart().getId() != null && trip.getEnd().getId() != null && trip.getPrice() > 0.0);
+        }
     }
 
     @Test
     public void testCheckFirstTripIsValid() {
-        this.distanceFare = new DistanceFare();
+        DistanceFare distanceFare = new DistanceFare();
 
-        assertEquals(distanceFare.trips.firstElement(), new Trip.TripBuilder().setStartLocation(new Location("0")).setEndLocation(new Location("1")).setPrice(5.0).build());
+        assertEquals(distanceFare.trips.firstElement().getStart().getId(), "0");
+        assertEquals(distanceFare.trips.firstElement().getEnd().getId(), "1");
+        assertEquals(distanceFare.trips.firstElement().getPrice(), 5.0);
     }
 }
