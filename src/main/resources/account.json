@@ -1,7 +1,7 @@
 [ {
   "id" : "0",
   "name" : "Callum",
-  "credits" : 32.3125,
+  "credits" : 36.5,
   "spentToday" : 4.6875,
   "sortCode" : 123456,
   "securityNo" : 235,
@@ -9,32 +9,32 @@
   "journeys" : {
     "journeys" : [ {
       "arrivalDateTime" : {
-        "nano" : 0,
+        "month" : "MARCH",
         "year" : 2018,
-        "monthValue" : 3,
         "dayOfMonth" : 7,
+        "dayOfWeek" : "WEDNESDAY",
+        "dayOfYear" : 66,
+        "monthValue" : 3,
         "hour" : 11,
         "minute" : 27,
+        "nano" : 0,
         "second" : 33,
-        "month" : "MARCH",
-        "dayOfWeek" : "WEDNESDAY",
-        "dayOfYear" : 66,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "departureDateTime" : {
-        "nano" : 0,
+        "month" : "MARCH",
         "year" : 2018,
-        "monthValue" : 3,
         "dayOfMonth" : 7,
+        "dayOfWeek" : "WEDNESDAY",
+        "dayOfYear" : 66,
+        "monthValue" : 3,
         "hour" : 11,
         "minute" : 27,
+        "nano" : 0,
         "second" : 26,
-        "month" : "MARCH",
-        "dayOfWeek" : "WEDNESDAY",
-        "dayOfYear" : 66,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -52,32 +52,32 @@
       "open" : false
     }, {
       "arrivalDateTime" : {
-        "nano" : 0,
+        "month" : "MARCH",
         "year" : 2018,
-        "monthValue" : 3,
         "dayOfMonth" : 7,
+        "dayOfWeek" : "WEDNESDAY",
+        "dayOfYear" : 66,
+        "monthValue" : 3,
         "hour" : 11,
         "minute" : 27,
+        "nano" : 0,
         "second" : 56,
-        "month" : "MARCH",
-        "dayOfWeek" : "WEDNESDAY",
-        "dayOfYear" : 66,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "departureDateTime" : {
-        "nano" : 0,
-        "year" : 2018,
-        "monthValue" : 3,
-        "dayOfMonth" : 7,
-        "hour" : 11,
-        "minute" : 27,
-        "second" : 54,
         "month" : "MARCH",
+        "year" : 2018,
+        "dayOfMonth" : 7,
         "dayOfWeek" : "WEDNESDAY",
         "dayOfYear" : 66,
+        "monthValue" : 3,
+        "hour" : 11,
+        "minute" : 27,
+        "nano" : 0,
+        "second" : 54,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -95,32 +95,32 @@
       "open" : false
     }, {
       "arrivalDateTime" : {
-        "nano" : 0,
-        "year" : 2018,
-        "monthValue" : 3,
-        "dayOfMonth" : 7,
-        "hour" : 11,
-        "minute" : 28,
-        "second" : 8,
         "month" : "MARCH",
+        "year" : 2018,
+        "dayOfMonth" : 7,
         "dayOfWeek" : "WEDNESDAY",
         "dayOfYear" : 66,
+        "monthValue" : 3,
+        "hour" : 11,
+        "minute" : 28,
+        "nano" : 0,
+        "second" : 8,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "departureDateTime" : {
-        "nano" : 0,
-        "year" : 2018,
-        "monthValue" : 3,
-        "dayOfMonth" : 7,
-        "hour" : 11,
-        "minute" : 28,
-        "second" : 6,
         "month" : "MARCH",
+        "year" : 2018,
+        "dayOfMonth" : 7,
         "dayOfWeek" : "WEDNESDAY",
         "dayOfYear" : 66,
+        "monthValue" : 3,
+        "hour" : 11,
+        "minute" : 28,
+        "nano" : 0,
+        "second" : 6,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -138,32 +138,32 @@
       "open" : false
     }, {
       "arrivalDateTime" : {
-        "nano" : 0,
-        "year" : 2018,
-        "monthValue" : 3,
-        "dayOfMonth" : 11,
-        "hour" : 10,
-        "minute" : 11,
-        "second" : 20,
         "month" : "MARCH",
+        "year" : 2018,
+        "dayOfMonth" : 11,
         "dayOfWeek" : "SUNDAY",
         "dayOfYear" : 70,
+        "monthValue" : 3,
+        "hour" : 10,
+        "minute" : 11,
+        "nano" : 0,
+        "second" : 20,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "departureDateTime" : {
-        "nano" : 0,
-        "year" : 2018,
-        "monthValue" : 3,
-        "dayOfMonth" : 11,
-        "hour" : 10,
-        "minute" : 11,
-        "second" : 19,
         "month" : "MARCH",
+        "year" : 2018,
+        "dayOfMonth" : 11,
         "dayOfWeek" : "SUNDAY",
         "dayOfYear" : 70,
+        "monthValue" : 3,
+        "hour" : 10,
+        "minute" : 11,
+        "nano" : 0,
+        "second" : 19,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -181,32 +181,32 @@
       "open" : false
     }, {
       "arrivalDateTime" : {
-        "nano" : 0,
-        "year" : 2018,
-        "monthValue" : 3,
-        "dayOfMonth" : 11,
-        "hour" : 11,
-        "minute" : 51,
-        "second" : 49,
         "month" : "MARCH",
+        "year" : 2018,
+        "dayOfMonth" : 11,
         "dayOfWeek" : "SUNDAY",
         "dayOfYear" : 70,
+        "monthValue" : 3,
+        "hour" : 11,
+        "minute" : 51,
+        "nano" : 0,
+        "second" : 49,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "departureDateTime" : {
-        "nano" : 0,
-        "year" : 2018,
-        "monthValue" : 3,
-        "dayOfMonth" : 11,
-        "hour" : 11,
-        "minute" : 51,
-        "second" : 46,
         "month" : "MARCH",
+        "year" : 2018,
+        "dayOfMonth" : 11,
         "dayOfWeek" : "SUNDAY",
         "dayOfYear" : 70,
+        "monthValue" : 3,
+        "hour" : 11,
+        "minute" : 51,
+        "nano" : 0,
+        "second" : 46,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -225,32 +225,32 @@
     } ],
     "latestJourney" : {
       "arrivalDateTime" : {
-        "nano" : 0,
-        "year" : 2018,
-        "monthValue" : 3,
-        "dayOfMonth" : 11,
-        "hour" : 11,
-        "minute" : 51,
-        "second" : 49,
         "month" : "MARCH",
+        "year" : 2018,
+        "dayOfMonth" : 11,
         "dayOfWeek" : "SUNDAY",
         "dayOfYear" : 70,
+        "monthValue" : 3,
+        "hour" : 11,
+        "minute" : 51,
+        "nano" : 0,
+        "second" : 49,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "departureDateTime" : {
-        "nano" : 0,
-        "year" : 2018,
-        "monthValue" : 3,
-        "dayOfMonth" : 11,
-        "hour" : 11,
-        "minute" : 51,
-        "second" : 46,
         "month" : "MARCH",
+        "year" : 2018,
+        "dayOfMonth" : 11,
         "dayOfWeek" : "SUNDAY",
         "dayOfYear" : 70,
+        "monthValue" : 3,
+        "hour" : 11,
+        "minute" : 51,
+        "nano" : 0,
+        "second" : 46,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"

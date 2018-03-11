@@ -188,7 +188,9 @@ public class TerminalGUI extends JFrame {
 
         pnlAccount.setVisible(true);
         pnlConfirmation.setVisible(true);
+
         lblCurrentAccountBalance.setText("Account Balance: " + account.getCredits());
+
     }
 
     private void btnAddCashActionPerformed(ActionEvent e) {
@@ -197,9 +199,9 @@ public class TerminalGUI extends JFrame {
         lblCashInserted.setText("Cash Inserted: " + insertedCash);
         lblCreditGained.setText("Credit Gained: " + insertedCash);
 
-        account.setCredits(account.getCredits()+insertedCash);
-
+        account.setCredits(account.getCredits()+ 1);
         accountRegistry.saveAccounts();
+
     }
 
     private void btnCashPaymentExitActionPerformed(ActionEvent e) {
@@ -283,7 +285,7 @@ public class TerminalGUI extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
+        // Generated using JFormDesigner Evaluation license - Benjamin Ward
         pnlGUI = new JPanel();
         pnlCardChoice = new JPanel();
         lblCard = new JLabel();
@@ -1048,7 +1050,7 @@ public class TerminalGUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
+    // Generated using JFormDesigner Evaluation license - Benjamin Ward
     private JPanel pnlGUI;
     private JPanel pnlCardChoice;
     private JLabel lblCard;
