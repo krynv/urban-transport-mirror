@@ -48,6 +48,7 @@ public class TerminalGUI extends JFrame {
         lblCashInserted.setText("Cash Inserted: ");
         lblCreditGained.setText("Credit Gained: ");
         insertedCash = 0;
+        lblCurrentAccountBalance.setText("Account Balance: ");
     }
 
     // Terminal
@@ -187,6 +188,7 @@ public class TerminalGUI extends JFrame {
 
         pnlAccount.setVisible(true);
         pnlConfirmation.setVisible(true);
+        lblCurrentAccountBalance.setText("Account Balance: " + account.getCredits());
     }
 
     private void btnAddCashActionPerformed(ActionEvent e) {
@@ -252,6 +254,7 @@ public class TerminalGUI extends JFrame {
 
             pnlAccount.setVisible(true);
             pnlConfirmation.setVisible(true);
+            lblCurrentAccountBalance.setText("Account Balance: " + account.getCredits());
         } else {
             lblTransactionFailed.setVisible(true);
         }
@@ -328,6 +331,7 @@ public class TerminalGUI extends JFrame {
         lblCardNumberConfirmation = new JLabel();
         lblCreditsAdded = new JLabel();
         btnConfirmationExit = new JButton();
+        lblCurrentAccountBalance = new JLabel();
         pnlCashPayment = new JPanel();
         lblCardNumberCashPayment = new JLabel();
         lblCashInserted = new JLabel();
@@ -778,6 +782,9 @@ public class TerminalGUI extends JFrame {
                         btnConfirmationExit.setText("EXIT");
                         btnConfirmationExit.addActionListener(e -> btnConfirmationExitActionPerformed(e));
 
+                        //---- lblCurrentAccountBalance ----
+                        lblCurrentAccountBalance.setText("Account Balance: ");
+
                         GroupLayout pnlConfirmationLayout = new GroupLayout(pnlConfirmation);
                         pnlConfirmation.setLayout(pnlConfirmationLayout);
                         pnlConfirmationLayout.setHorizontalGroup(
@@ -794,6 +801,10 @@ public class TerminalGUI extends JFrame {
                                             .addGap(296, 296, 296)
                                             .addComponent(btnConfirmationExit)))
                                     .addContainerGap(181, Short.MAX_VALUE))
+                                .addGroup(GroupLayout.Alignment.TRAILING, pnlConfirmationLayout.createSequentialGroup()
+                                    .addGap(0, 281, Short.MAX_VALUE)
+                                    .addComponent(lblCurrentAccountBalance)
+                                    .addGap(270, 270, 270))
                         );
                         pnlConfirmationLayout.setVerticalGroup(
                             pnlConfirmationLayout.createParallelGroup()
@@ -802,9 +813,11 @@ public class TerminalGUI extends JFrame {
                                     .addComponent(lblCardNumberConfirmation)
                                     .addGap(89, 89, 89)
                                     .addComponent(lblCreditsAdded)
-                                    .addGap(86, 86, 86)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(lblCurrentAccountBalance)
+                                    .addGap(54, 54, 54)
                                     .addComponent(btnConfirmationExit)
-                                    .addContainerGap(160, Short.MAX_VALUE))
+                                    .addContainerGap(164, Short.MAX_VALUE))
                         );
                     }
                     pnlHome.add(pnlConfirmation, "card3");
@@ -1083,6 +1096,7 @@ public class TerminalGUI extends JFrame {
     private JLabel lblCardNumberConfirmation;
     private JLabel lblCreditsAdded;
     private JButton btnConfirmationExit;
+    private JLabel lblCurrentAccountBalance;
     private JPanel pnlCashPayment;
     private JLabel lblCardNumberCashPayment;
     private JLabel lblCashInserted;
