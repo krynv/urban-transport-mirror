@@ -12,39 +12,15 @@ public class DistanceFare extends Fare {
 
     static Vector<Trip> trips = new Vector<Trip>();
 
-    class Trip {
-        private Location start;
-        private Location end;
-        private double price;
-
-        Trip(Location start, Location end, double price) {
-            this.start = start;
-            this.end = end;
-            this.price = price;
-        }
-
-        public Location getStart() {
-            return start;
-        }
-
-        public Location getEnd() {
-            return end;
-        }
-
-        public double getPrice() {
-            return price;
-        }
-    }
-
     public DistanceFare() {
         super();
 
-        trips.add(new Trip(new Location("0"), new Location("1"), 5.0));
-        trips.add(new Trip(new Location("0"), new Location("2"), 7.5));
-        trips.add(new Trip(new Location("1"), new Location("0"), 4.5));
-        trips.add(new Trip(new Location("1"), new Location("2"), 6.5));
-        trips.add(new Trip(new Location("2"), new Location("0"), 8.0));
-        trips.add(new Trip(new Location("2"), new Location("1"), 9.5));
+        trips.add(new Trip.TripBuilder().setStartLocation(new Location("0")).setEndLocation(new Location("1")).setPrice(5.0).build());
+        trips.add(new Trip.TripBuilder().setStartLocation(new Location("0")).setEndLocation(new Location("2")).setPrice(7.5).build());
+        trips.add(new Trip.TripBuilder().setStartLocation(new Location("1")).setEndLocation(new Location("0")).setPrice(4.5).build());
+        trips.add(new Trip.TripBuilder().setStartLocation(new Location("1")).setEndLocation(new Location("2")).setPrice(6.5).build());
+        trips.add(new Trip.TripBuilder().setStartLocation(new Location("2")).setEndLocation(new Location("0")).setPrice(8.0).build());
+        trips.add(new Trip.TripBuilder().setStartLocation(new Location("2")).setEndLocation(new Location("1")).setPrice(9.5).build());
     }
 
     public double calculateCost(Journey journey) {
@@ -64,7 +40,7 @@ public class DistanceFare extends Fare {
         LocationRegistry locationRegistry = route.getDestinationLocations().tail();
 
         for (Location location: locationRegistry.getLocations()) {
-            for (DistanceFare.Trip trip: trips) {
+            for (Trip trip: trips) {
                 if (startLocation.getId().equals(trip.getStart().getId()) && location.getId().equals(trip.getEnd().getId())) {
                     cost += trip.getPrice();
                     startLocation = location;
