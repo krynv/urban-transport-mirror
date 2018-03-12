@@ -4,6 +4,7 @@ import java.awt.event.*;
 import logic.account.Account;
 import logic.account.AccountRegistry;
 import logic.coupon.Coupon;
+import logic.email.SendEmail;
 import logic.fare.FareRegistry;
 import logic.location.Location;
 import logic.purchase.Purchase;
@@ -41,54 +42,113 @@ public class PayForTripGUI extends JFrame {
     }
 
     /* ----- Main Menu ----- */
-
-    private void n(ActionEvent e) {
-        setAllToFalse();
-        pnlSelectLanguage.setVisible(true);
-        this.setTitle("Select Language");
-    }
-
     private void btnDestination1ActionPerformed(ActionEvent e) {
         setAllToFalse();
         pnlSelectFares.setVisible(true);
+
+        lblStation.setText("Sheffield");
+        lblStationCashPayment.setText("Sheffield");
+        lblStationCardPayment.setText("Sheffield");
+        lblStationlReceipt.setText("Sheffield");
+
         lblDestination.setText("London");
+        lblDestinationCashPayment.setText("London");
+        lblDestinationConfirmBooking.setText("London");
+        lblDestinationCardPayment.setText("London");
+        lblDestinationlReceipt.setText("London");
+
         this.setTitle("Select Fares");
     }
 
     private void btnDestination2ActionPerformed(ActionEvent e) {
         setAllToFalse();
         pnlSelectFares.setVisible(true);
+
+        lblStation.setText("Sheffield");
+        lblStationCashPayment.setText("Sheffield");
+        lblStationCardPayment.setText("Sheffield");
+        lblStationlReceipt.setText("Sheffield");
+
         lblDestination.setText("Sheffield");
+        lblDestinationCashPayment.setText("Sheffield");
+        lblDestinationConfirmBooking.setText("Sheffield");
+        lblDestinationCardPayment.setText("Sheffield");
+        lblDestinationlReceipt.setText("Sheffield");
+
         this.setTitle("Select Fares");
     }
 
     private void btnDestination3ActionPerformed(ActionEvent e) {
         setAllToFalse();
         pnlSelectFares.setVisible(true);
+
+        lblStation.setText("Sheffield");
+        lblStationCashPayment.setText("Sheffield");
+        lblStationCardPayment.setText("Sheffield");
+        lblStationlReceipt.setText("Sheffield");
+
         lblDestination.setText("Derby");
+        lblDestinationCashPayment.setText("Derby");
+        lblDestinationConfirmBooking.setText("Derby");
+        lblDestinationCardPayment.setText("Derby");
+        lblDestinationlReceipt.setText("Derby");
+
         this.setTitle("Select Fares");
     }
 
     private void btnDestination4ActionPerformed(ActionEvent e) {
         setAllToFalse();
         pnlSelectFares.setVisible(true);
+
+        lblStation.setText("Sheffield");
+        lblStationCashPayment.setText("Sheffield");
+        lblStationCardPayment.setText("Sheffield");
+        lblStationlReceipt.setText("Sheffield");
+
         lblDestination.setText("Nottingham");
+        lblDestinationCashPayment.setText("Nottingham");
+        lblDestinationConfirmBooking.setText("Nottingham");
+        lblDestinationCardPayment.setText("Nottingham");
+        lblDestinationlReceipt.setText("Nottingham");
+
         this.setTitle("Select Fares");
     }
 
     private void btnDestination5ActionPerformed(ActionEvent e) {
         setAllToFalse();
         pnlSelectFares.setVisible(true);
+
+        lblStation.setText("Sheffield");
+        lblStationCashPayment.setText("Sheffield");
+        lblStationCardPayment.setText("Sheffield");
+        lblStationlReceipt.setText("Sheffield");
+
         lblDestination.setText("Newcastle");
+        lblDestinationCashPayment.setText("Newcastle");
+        lblDestinationConfirmBooking.setText("Newcastle");
+        lblDestinationCardPayment.setText("Newcastle");
+        lblDestinationlReceipt.setText("Newcastle");
+
         this.setTitle("Select Fares");
     }
 
     private void btnDestination6ActionPerformed(ActionEvent e) {
         setAllToFalse();
         pnlSelectFares.setVisible(true);
+        lblStation.setText("Sheffield");
+        lblStationCashPayment.setText("Sheffield");
+        lblStationCardPayment.setText("Sheffield");
+        lblStationlReceipt.setText("Sheffield");
+
         lblDestination.setText("Leicester");
+        lblDestinationCashPayment.setText("Leicester");
+        lblDestinationConfirmBooking.setText("Leicester");
+        lblDestinationCardPayment.setText("Leicester");
+        lblDestinationlReceipt.setText("Leicester");
+
         this.setTitle("Select Fares");
     }
+
 
 
     public void loadLanguageFile(String language) {
@@ -343,6 +403,8 @@ public class PayForTripGUI extends JFrame {
         txtSecurityCode.setVisible(true);
         txtSortCode.setVisible(true);
         btnConfirmPayment.setVisible(true);
+        txtCashValue.setVisible(true);
+        btnPayCash.setVisible(true);
 
         btnPrintTicket.setVisible(false);
         btnPrintAccTic.setVisible(false);
@@ -389,6 +451,8 @@ public class PayForTripGUI extends JFrame {
                     txtCashValue.setText("");
                     btnPrintCashTic.setVisible(true);
                     lblPriceCashPayment.setText("0");
+                    txtCashValue.setVisible(false);
+                    btnPayCash.setVisible(false);
                     if (valuePayingIn > this.amount) {
                         valuePayingIn = valuePayingIn - this.amount;
                         lblNotification2.setText("Cash Amount Refunded: " + valuePayingIn);
@@ -608,6 +672,27 @@ public class PayForTripGUI extends JFrame {
             dpdnReturn.setEnabled(true);
         }
     }
+
+    private void btnEmailActionPerformed(ActionEvent e) {
+        String email = txtEmailField.getText();
+        String des =   lblDestination.getText();
+        String station = lblStation.getText();
+
+        if(!email.isEmpty()) {
+            String timeStart = dpdnDeparture.getSelectedItem().toString();
+            String timeReturn = dpdnReturn.getSelectedItem().toString();
+            SendEmail sendEmail = new SendEmail(email, des, station, timeStart, timeReturn);
+            lblReceiptNotification.setVisible(true);
+            lblTransAccNotification.setBackground(new Color(216, 231, 213));
+            lblTransAccNotification.setOpaque(true);
+            lblReceiptNotification.setText("Email Sent");
+        } else {
+            lblReceiptNotification.setVisible(true);
+            lblTransAccNotification.setBackground(new Color(216, 231, 213));
+            lblTransAccNotification.setOpaque(true);
+            lblReceiptNotification.setText("Email cannot be blank");
+        }
+    }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Benjamin Ward
@@ -736,6 +821,11 @@ public class PayForTripGUI extends JFrame {
         btnAddCredit = new JButton();
         txtAccountID = new JTextField();
         lblAccount = new JLabel();
+        btnEmail = new JButton();
+        txtEmailField = new JTextField();
+        lblViaLocationlReceipt7 = new JLabel();
+        lblViaLocationlReceipt8 = new JLabel();
+        lblViaLocationlReceipt9 = new JLabel();
         pnlSearchAccount = new JPanel();
         lblTicketTypeTransAccPayment2 = new JLabel();
         lblTransAccPaymentInformation2 = new JLabel();
@@ -1055,7 +1145,7 @@ public class PayForTripGUI extends JFrame {
                         pnlHomeLayout.setVerticalGroup(
                             pnlHomeLayout.createParallelGroup()
                                 .addGroup(pnlHomeLayout.createSequentialGroup()
-                                    .addGap(0, 57, Short.MAX_VALUE)
+                                    .addGap(0, 58, Short.MAX_VALUE)
                                     .addComponent(lblNotifyLang, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
                                     .addGap(37, 37, 37)
                                     .addGroup(pnlHomeLayout.createParallelGroup()
@@ -1069,7 +1159,7 @@ public class PayForTripGUI extends JFrame {
                                             .addComponent(btnDestination5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
                                             .addComponent(btnDestination4, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
                                         .addComponent(btnDestination6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
-                                    .addGap(0, 113, Short.MAX_VALUE))
+                                    .addGap(0, 112, Short.MAX_VALUE))
                         );
                     }
                     pnlContent.add(pnlHome, "card1");
@@ -1824,104 +1914,146 @@ public class PayForTripGUI extends JFrame {
                         lblAccount.setText("Account ID");
                         lblAccount.setVisible(false);
 
+                        //---- btnEmail ----
+                        btnEmail.setText("SEND TICKET AS EMAIL");
+                        btnEmail.addActionListener(e -> btnEmailActionPerformed(e));
+
+                        //---- lblViaLocationlReceipt7 ----
+                        lblViaLocationlReceipt7.setText("Please Enter Email Address");
+
+                        //---- lblViaLocationlReceipt8 ----
+                        lblViaLocationlReceipt8.setText("If you would like to send the ticket as an email please fill in the input");
+                        lblViaLocationlReceipt8.setHorizontalAlignment(SwingConstants.CENTER);
+
+                        //---- lblViaLocationlReceipt9 ----
+                        lblViaLocationlReceipt9.setText("below and then press the button.");
+                        lblViaLocationlReceipt9.setHorizontalAlignment(SwingConstants.CENTER);
+
                         GroupLayout pnlPrintReceiptLayout = new GroupLayout(pnlPrintReceipt);
                         pnlPrintReceipt.setLayout(pnlPrintReceiptLayout);
                         pnlPrintReceiptLayout.setHorizontalGroup(
                             pnlPrintReceiptLayout.createParallelGroup()
-                                .addGroup(GroupLayout.Alignment.TRAILING, pnlPrintReceiptLayout.createSequentialGroup()
-                                    .addContainerGap(193, Short.MAX_VALUE)
-                                    .addGroup(pnlPrintReceiptLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                        .addComponent(lblViaLocationslReceipt1, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
-                                            .addComponent(lblStationlReceipt)
-                                            .addGap(28, 28, 28)
-                                            .addComponent(lblDestinationlReceipt)
-                                            .addGap(8, 8, 8)))
-                                    .addGap(213, 213, 213))
                                 .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
                                     .addGroup(pnlPrintReceiptLayout.createParallelGroup()
                                         .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
-                                            .addGap(169, 169, 169)
-                                            .addComponent(txtAccountID, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE))
+                                            .addGap(230, 230, 230)
+                                            .addComponent(lblStationlReceipt)
+                                            .addGap(26, 26, 26)
+                                            .addComponent(lblDestinationlReceipt))
                                         .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
-                                            .addGap(210, 210, 210)
-                                            .addComponent(lblAccount, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
-                                            .addGap(68, 68, 68)
-                                            .addGroup(pnlPrintReceiptLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(btnProlReceipt, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(btnPrintReceipt, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addGap(91, 91, 91)
-                                            .addGroup(pnlPrintReceiptLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(btnPrintPhyTic, GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                                                .addComponent(btnAddCredit, GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)))
-                                        .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
-                                            .addGap(211, 211, 211)
+                                            .addGap(252, 252, 252)
                                             .addGroup(pnlPrintReceiptLayout.createParallelGroup()
                                                 .addComponent(lblViaLocationslReceipt4, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(lbllReceiptLocation)
                                                 .addComponent(lblViaLocationslReceipt5, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(lblViaLocationslReceipt3, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(lblViaLocationlReceipt6, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE))))
-                                    .addContainerGap(97, Short.MAX_VALUE))
+                                    .addGap(0, 186, Short.MAX_VALUE))
                                 .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
-                                    .addGap(45, 45, 45)
                                     .addGroup(pnlPrintReceiptLayout.createParallelGroup()
                                         .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
-                                            .addComponent(lblReceiptNotification, GroupLayout.PREFERRED_SIZE, 444, GroupLayout.PREFERRED_SIZE)
-                                            .addContainerGap(50, Short.MAX_VALUE))
+                                            .addGap(102, 102, 102)
+                                            .addGroup(pnlPrintReceiptLayout.createParallelGroup()
+                                                .addComponent(btnPrintReceipt, GroupLayout.PREFERRED_SIZE, 130, GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(pnlPrintReceiptLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                                                    .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
+                                                        .addComponent(btnProlReceipt)
+                                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(btnPrintPhyTic, GroupLayout.PREFERRED_SIZE, 153, GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
+                                                        .addComponent(lblAccount, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
+                                                        .addGroup(pnlPrintReceiptLayout.createParallelGroup()
+                                                            .addComponent(lblDepartureDateTimelReceipt, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
+                                                            .addGroup(pnlPrintReceiptLayout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                                                                .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
+                                                                    .addComponent(lblreturnDateValuelReceipt2)
+                                                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                    .addComponent(lblreturnDateValuelReceipt))
+                                                                .addGroup(GroupLayout.Alignment.LEADING, pnlPrintReceiptLayout.createSequentialGroup()
+                                                                    .addGap(166, 166, 166)
+                                                                    .addComponent(lblViaLocationslReceipt1, GroupLayout.PREFERRED_SIZE, 96, GroupLayout.PREFERRED_SIZE)
+                                                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                                    .addComponent(lblReturnDateTimelReceipt)))
+                                                            .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
+                                                                .addGap(238, 238, 238)
+                                                                .addComponent(btnAddCredit, GroupLayout.PREFERRED_SIZE, 153, GroupLayout.PREFERRED_SIZE))
+                                                            .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
+                                                                .addGap(368, 368, 368)
+                                                                .addComponent(txtAccountID, GroupLayout.PREFERRED_SIZE, 147, GroupLayout.PREFERRED_SIZE)))))))
                                         .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
+                                            .addGap(73, 73, 73)
                                             .addGroup(pnlPrintReceiptLayout.createParallelGroup()
-                                                .addComponent(lblDepartureDateTimelReceipt, GroupLayout.PREFERRED_SIZE, 135, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(lblreturnDateValuelReceipt2))
-                                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
-                                            .addGroup(pnlPrintReceiptLayout.createParallelGroup()
-                                                .addComponent(lblReturnDateTimelReceipt)
-                                                .addComponent(lblreturnDateValuelReceipt))
-                                            .addGap(109, 109, 109))))
+                                                .addComponent(lblReceiptNotification, GroupLayout.PREFERRED_SIZE, 444, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(lblViaLocationlReceipt9, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(lblViaLocationlReceipt8, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addContainerGap(22, Short.MAX_VALUE))
+                                .addGroup(GroupLayout.Alignment.TRAILING, pnlPrintReceiptLayout.createSequentialGroup()
+                                    .addGap(179, 179, 179)
+                                    .addGroup(pnlPrintReceiptLayout.createParallelGroup()
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pnlPrintReceiptLayout.createSequentialGroup()
+                                            .addGroup(pnlPrintReceiptLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                .addComponent(txtEmailField, GroupLayout.PREFERRED_SIZE, 158, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(lblViaLocationlReceipt7, GroupLayout.PREFERRED_SIZE, 157, GroupLayout.PREFERRED_SIZE))
+                                            .addGap(180, 180, 180))
+                                        .addGroup(GroupLayout.Alignment.TRAILING, pnlPrintReceiptLayout.createSequentialGroup()
+                                            .addComponent(btnEmail, GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
+                                            .addGap(153, 153, 153))))
                         );
                         pnlPrintReceiptLayout.setVerticalGroup(
                             pnlPrintReceiptLayout.createParallelGroup()
                                 .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
-                                    .addGap(32, 32, 32)
+                                    .addGap(27, 27, 27)
                                     .addGroup(pnlPrintReceiptLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                         .addComponent(lblStationlReceipt)
                                         .addComponent(lblDestinationlReceipt))
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(lblViaLocationslReceipt1, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(4, 4, 4)
-                                    .addGroup(pnlPrintReceiptLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                        .addComponent(lblDepartureDateTimelReceipt, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lblReturnDateTimelReceipt))
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(pnlPrintReceiptLayout.createParallelGroup()
-                                        .addComponent(lblreturnDateValuelReceipt)
-                                        .addComponent(lblreturnDateValuelReceipt2))
-                                    .addGap(12, 12, 12)
+                                        .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
+                                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addGroup(pnlPrintReceiptLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(lblDepartureDateTimelReceipt, GroupLayout.PREFERRED_SIZE, 24, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(lblReturnDateTimelReceipt))
+                                            .addGap(5, 5, 5)
+                                            .addGroup(pnlPrintReceiptLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                .addComponent(lblreturnDateValuelReceipt2)
+                                                .addComponent(lblreturnDateValuelReceipt)))
+                                        .addGroup(pnlPrintReceiptLayout.createSequentialGroup()
+                                            .addGap(2, 2, 2)
+                                            .addComponent(lblViaLocationslReceipt1, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(lbllReceiptLocation)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(lblViaLocationslReceipt4)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(lblViaLocationslReceipt5)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(lblViaLocationslReceipt3, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(lblViaLocationlReceipt6, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(lblReceiptNotification, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                                    .addComponent(lblAccount, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtAccountID, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
+                                    .addComponent(lblReceiptNotification, GroupLayout.PREFERRED_SIZE, 18, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(pnlPrintReceiptLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                         .addComponent(btnProlReceipt)
                                         .addComponent(btnPrintPhyTic))
                                     .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(pnlPrintReceiptLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                    .addGroup(pnlPrintReceiptLayout.createParallelGroup()
                                         .addComponent(btnPrintReceipt)
                                         .addComponent(btnAddCredit))
-                                    .addGap(19, 19, 19))
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(lblAccount, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, 0)
+                                    .addComponent(txtAccountID, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblViaLocationlReceipt8, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(lblViaLocationlReceipt9, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(lblViaLocationlReceipt7, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtEmailField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnEmail, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+                                    .addContainerGap())
                         );
                     }
                     pnlContent.add(pnlPrintReceipt, "card10");
@@ -2164,6 +2296,11 @@ public class PayForTripGUI extends JFrame {
     private JButton btnAddCredit;
     private JTextField txtAccountID;
     private JLabel lblAccount;
+    private JButton btnEmail;
+    private JTextField txtEmailField;
+    private JLabel lblViaLocationlReceipt7;
+    private JLabel lblViaLocationlReceipt8;
+    private JLabel lblViaLocationlReceipt9;
     private JPanel pnlSearchAccount;
     private JLabel lblTicketTypeTransAccPayment2;
     private JLabel lblTransAccPaymentInformation2;
