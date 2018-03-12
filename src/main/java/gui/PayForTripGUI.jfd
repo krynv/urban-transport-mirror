@@ -6,8 +6,8 @@ new FormModel {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.CardLayout ) ) {
 			name: "pnlMain"
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq {par l {comp btnHome:::p:143:p, comp btnSelectLanguage:::p:143:p, comp btnDisplayTimetable:::p:143:p, comp lblDateTime:::p:143:p, comp btnGoToMenu:::p:143:p}, space :p:12:p, comp pnlContent::::539:x, space :::p}}"
-				"$verticalGroup": "par l {seq {par l {seq t {comp btnHome:::p:60:p, space :::x, comp btnSelectLanguage:::p:60:p, space s:::p, comp btnDisplayTimetable:::p:60:p, space :p:42:p, comp btnGoToMenu:::p:60:p, space :p:41:p, comp lblDateTime:::p:60:p}, seq {space :::p, comp pnlContent:::::x}}, space :::p}}"
+				"$horizontalGroup": "par l {seq {par l {comp btnHome:::p:143:p, comp btnSelectLanguage:::p:143:p, comp btnDisplayTimetable:::p:143:p, comp lblDateTime:::p:143:p, comp btnGoToMenu:::p:143:p}, par l {seq {par l {seq l {space s:::p, par l {comp progressBar1:::::x, seq l {space :p:242:p, comp label1:::p:146:p, space :0:0:x}}}, seq {space :p:12:p, comp pnlContent:::::x}}, space :::p}, seq l {space :p:214:p, comp label2:::p::p, space :::x}}}}"
+				"$verticalGroup": "par l {seq t {par t {seq {space :::p, comp label2:::p::p, space :::p, comp label1:::p::p, space :::x, comp progressBar1:::p:24:p, space :::p, comp pnlContent:::p:445:p}, seq {comp btnHome:::p:60:p, space :::x, comp btnSelectLanguage:::p:60:p, space s:::p, comp btnDisplayTimetable:::p:60:p, space :p:42:p, comp btnGoToMenu:::p:60:p, space :p:41:p, comp lblDateTime:::p:60:p}}, space :::p}}"
 			} ) {
 				name: "pnlSide"
 				add( new FormComponent( "javax.swing.JButton" ) {
@@ -36,8 +36,8 @@ new FormModel {
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.CardLayout ) ) {
 					name: "pnlContent"
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {par l {seq l {space :p:297:p, comp btnPrintAccTic:::p::p}, seq l {space :p:68:p, par l {seq l {space :106:106:p, comp lblTransAccNotification:::p:204:p}, comp lblTransAccPaymentInformation::l:p::p, seq t {comp btnPayTransAcc:::p::p, space :p:177:p}, seq l {par l {comp lblTicketTypeTransAccPayment::l:p::p, comp lblTicketTypeTransAccAccountId::l:p::p}, space :p:40:p, par l {comp lblPriceTransAccPayment:::p:43:p, comp txtFieldAccountID:::p:212:p}}, seq t {comp lblTicketTypeTransAccAccountId3:::p::p, space :42:42:p, comp txtFieldCredit:::p:212:p}}}}, space ::158:x}, seq t {space :0:107:x, par l {seq l {space :118:118:p, comp lblStationTransAcc:::p::p, space :6:6:p, comp lblDestinationConfirmBookingTransAcc:::p::p}, seq l {comp lblDepartureDateTimeConfirmBooking2:::p:135:p, space :82:82:p, comp lblReturnDateTimeConfirmBooking2:::p::p}, seq l {space :6:6:p, comp lblDepartTime2:::p:108:p, space :103:103:p, comp lblReturnTimeTransAcc:::p:110:p}}, space :p:105:p}}"
-						"$verticalGroup": "par l {seq l {space :p:96:p, par l {comp lblStationTransAcc:::p::p, comp lblDestinationConfirmBookingTransAcc:::p::p}, space :6:6:p, par l {comp lblDepartureDateTimeConfirmBooking2:::p:24:p, seq l {space :4:4:p, comp lblReturnDateTimeConfirmBooking2:::p::p}}, space :6:6:p, par l {comp lblDepartTime2:::p::p, comp lblReturnTimeTransAcc:::p::p}, space s:::p, comp lblTransAccNotification:::p:18:p, space s:::p, comp lblTransAccPaymentInformation:::p::p, space s:::p, par b {comp lblTicketTypeTransAccPayment::b:p::p, comp lblPriceTransAccPayment::b:p::p}, space s:::p, par b {comp lblTicketTypeTransAccAccountId::b:p::p, comp txtFieldAccountID::b:p::p}, space :::p, par l {seq l {space :4:4:p, comp lblTicketTypeTransAccAccountId3:::p::p}, comp txtFieldCredit:::p::p}, space ::29:x, par b {comp btnPrintAccTic::b:p::p, comp btnPayTransAcc::b:p::p}, space :p:57:p}}"
+						"$horizontalGroup": "par l {seq l {space :p:67:p, par l {seq l {par l {seq l {space :p:229:p, comp btnPrintAccTic:::p::p}, par l:l {seq l {space :106:106:p, comp lblTransAccNotification:::p:204:p}, comp lblTransAccPaymentInformation::l:p::p, seq t {comp btnPayTransAcc:::p::p, space :p:177:p}, seq l {par l {comp lblTicketTypeTransAccPayment::l:p::p, comp lblTicketTypeTransAccAccountId::l:p::p}, space :p:40:p, par l {comp lblPriceTransAccPayment:::p:43:p, comp txtFieldAccountID:::p:212:p}}, seq t {comp lblTicketTypeTransAccAccountId3:::p::p, space :42:42:p, comp txtFieldCredit:::p:212:p}}}, space ::153:p}, seq t {space :p:149:p, par l {seq l {space :118:118:p, comp lblStationTransAcc:::p::p, space :6:6:p, comp lblDestinationConfirmBookingTransAcc:::p::p}, seq l {comp lblDepartureDateTimeConfirmBooking2:::p:135:p, space :82:82:p, comp lblReturnDateTimeConfirmBooking2:::p::p}, seq l {space :6:6:p, comp lblDepartTime2:::p:108:p, space :103:103:p, comp lblReturnTimeTransAcc:::p:110:p}}}}, space ::106:x}}"
+						"$verticalGroup": "par l {seq {space :p:19:p, par l {comp lblStationTransAcc:::p::p, comp lblDestinationConfirmBookingTransAcc:::p::p}, space :6:6:p, par l {comp lblDepartureDateTimeConfirmBooking2:::p:24:p, seq l {space :4:4:p, comp lblReturnDateTimeConfirmBooking2:::p::p}}, space :6:6:p, par l {comp lblDepartTime2:::p::p, comp lblReturnTimeTransAcc:::p::p}, space s:::p, comp lblTransAccNotification:::p:18:p, space s:::p, comp lblTransAccPaymentInformation:::p::p, space s:::p, par b {comp lblTicketTypeTransAccPayment::b:p::p, comp lblPriceTransAccPayment::b:p::p}, space s:::p, par b {comp lblTicketTypeTransAccAccountId::b:p::p, comp txtFieldAccountID::b:p::p}, space :::p, par l {seq l {space :4:4:p, comp lblTicketTypeTransAccAccountId3:::p::p}, comp txtFieldCredit:::p::p}, space ::16:x, par b {comp btnPrintAccTic::b:p::p, comp btnPayTransAcc::b:p::p}, space :p:134:p}}"
 					} ) {
 						name: "pnlTransportAccountPayment"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -115,8 +115,8 @@ new FormModel {
 						"value": "card9"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {space ::126:x, par l {seq t {par l {comp lblLanguageLoaded2::t:p::p, seq t {par t {comp btnLoadLanguage:::p::p, comp cmbBoxLanguage:::p::p}, space :p:71:p}}, space :p:161:p}, seq t {comp lblLanguageLoaded:::p::p, space :p:213:p}}}}"
-						"$verticalGroup": "par l {seq t {space ::85:x, comp lblLanguageLoaded:::p::p, space :p:43:p, comp lblLanguageLoaded2:::p::p, space :::p, comp cmbBoxLanguage:::p::p, space :p:139:p, comp btnLoadLanguage:::p::p, space :p:95:p}}"
+						"$horizontalGroup": "par l {seq {space ::192:x, par l {seq t {par l {comp lblLanguageLoaded2::t:p::p, seq t {par t {comp btnLoadLanguage:::p::p, comp cmbBoxLanguage:::p::p}, space :p:71:p}}, space :p:161:p}, seq t {comp lblLanguageLoaded:::p::p, space :p:213:p}}}}"
+						"$verticalGroup": "par l {seq t {space ::72:x, comp lblLanguageLoaded:::p::p, space :p:43:p, comp lblLanguageLoaded2:::p::p, space :::p, comp cmbBoxLanguage:::p::p, space :p:139:p, comp btnLoadLanguage:::p::p, space :p:95:p}}"
 					} ) {
 						name: "pnlSelectLanguage"
 						add( new FormComponent( "javax.swing.JButton" ) {
@@ -148,8 +148,8 @@ new FormModel {
 						"value": "card2"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {space :0:107:x, par l {seq {comp btnDestination1:::p:100:p, space :p:12:p, comp btnDestination2:::p:100:p, space u:::p, comp btnDestination3:::p:100:p}, seq {comp btnDestination4:::p:100:p, space u:::p, comp btnDestination5:::p:100:p, space :12:12:p, comp btnDestination6:::p:100:p}}, space :0:108:x}, seq l {space :p:171:p, comp lblNotifyLang:::p:204:p, space ::164:x}}"
-						"$verticalGroup": "par l {seq {space :0:58:x, comp lblNotifyLang:::p:18:p, space :p:37:p, par l {comp btnDestination1:::p:100:p, par b {comp btnDestination3::b:p:100:p, comp btnDestination2::b:p:100:p}}, space :33:33:p, par l {par b {comp btnDestination5::b:p:100:p, comp btnDestination4::b:p:100:p}, comp btnDestination6:::p:100:p}, space :0:112:x}}"
+						"$horizontalGroup": "par l {seq {space :0:162:x, par l {seq {comp btnDestination1:::p:100:p, space :p:12:p, comp btnDestination2:::p:100:p, space u:::p, comp btnDestination3:::p:100:p}, seq {comp btnDestination4:::p:100:p, space u:::p, comp btnDestination5:::p:100:p, space :12:12:p, comp btnDestination6:::p:100:p}}, space :0:163:x}, seq l {space :p:171:p, comp lblNotifyLang:::p:204:p, space ::274:x}}"
+						"$verticalGroup": "par l {seq {space :0:52:x, comp lblNotifyLang:::p:18:p, space :p:37:p, par l {comp btnDestination1:::p:100:p, par b {comp btnDestination3::b:p:100:p, comp btnDestination2::b:p:100:p}}, space :33:33:p, par l {par b {comp btnDestination5::b:p:100:p, comp btnDestination4::b:p:100:p}, comp btnDestination6:::p:100:p}, space :0:105:x}}"
 					} ) {
 						name: "pnlHome"
 						add( new FormComponent( "javax.swing.JButton" ) {
@@ -202,8 +202,8 @@ new FormModel {
 						"value": "card1"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq l {space :p:94:p, comp cmbBoxTicket:::p::p, space ::348:x}};par l {seq {space :0:0:x, par l {seq {space :112:112:p, comp lblDestination:::p::p}, seq {comp lblDepartureDateTime:::p::p, space :63:63:p, comp lblReturnDateTime:::p:126:p}, seq {comp dpdnDeparture:::p:126:p, space :63:63:p, comp dpdnReturn:::p:126:p}, comp lblTicketType:::p::p, seq {space :p:286:p, comp btnSearch:::p::p}}, space :0:0:x}}"
-						"$verticalGroup": "par l {seq t {space ::261:x, comp cmbBoxTicket:::p::p, space :p:171:p}};par l {seq {space :0:0:x, comp lblDestination:::p::p, space :28:28:p, par l {comp lblDepartureDateTime:::p:26:p, comp lblReturnDateTime:::p:26:p}, space :6:6:p, par l {comp dpdnDeparture:::p::p, comp dpdnReturn:::p::p}, space :17:17:p, comp lblTicketType:::p::p, space :p:72:p, comp btnSearch:::p::p, space :0:0:x}}"
+						"$horizontalGroup": "par l {seq l {space :p:148:p, comp cmbBoxTicket:::p::p, space ::391:x}};par l {seq {space :0:0:x, par l {seq {space :112:112:p, comp lblDestination:::p::p}, seq {comp lblDepartureDateTime:::p::p, space :63:63:p, comp lblReturnDateTime:::p:126:p}, seq {comp dpdnDeparture:::p:126:p, space :63:63:p, comp dpdnReturn:::p:126:p}, comp lblTicketType:::p::p, seq {space :p:286:p, comp btnSearch:::p::p}}, space :0:0:x}}"
+						"$verticalGroup": "par l {seq t {space ::247:x, comp cmbBoxTicket:::p::p, space :p:172:p}};par l {seq {space :0:0:x, comp lblDestination:::p::p, space :28:28:p, par l {comp lblDepartureDateTime:::p:26:p, comp lblReturnDateTime:::p:26:p}, space :6:6:p, par l {comp dpdnDeparture:::p::p, comp dpdnReturn:::p::p}, space :17:17:p, comp lblTicketType:::p::p, space :p:72:p, comp btnSearch:::p::p, space :0:0:x}}"
 					} ) {
 						name: "pnlSelectFares"
 						add( new FormComponent( "javax.swing.JButton" ) {
@@ -301,8 +301,8 @@ new FormModel {
 						"value": "card3"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq l {space :p:116:p, par l {seq {comp btnFare1:::p::p, space :p:30:p, comp btnFare2:::p::p}, comp btnFare3:::p::p}, space ::137:x}}"
-						"$verticalGroup": "par l {seq l {space :p:141:p, par b {comp btnFare2::b:p::p, comp btnFare1::b:p::p}, space :6:6:p, comp btnFare3:::p::p, space ::159:x}}"
+						"$horizontalGroup": "par l {seq l {space :p:116:p, par l {seq {comp btnFare1:::p::p, space :p:30:p, comp btnFare2:::p::p}, comp btnFare3:::p::p}, space ::227:x}}"
+						"$verticalGroup": "par l {seq l {space :p:141:p, par b {comp btnFare2::b:p::p, comp btnFare1::b:p::p}, space :6:6:p, comp btnFare3:::p::p, space ::154:x}}"
 					} ) {
 						name: "pnlSearchedFares"
 						add( new FormComponent( "javax.swing.JButton" ) {
@@ -330,8 +330,8 @@ new FormModel {
 						"value": "card4"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq t {space ::208:x, par l {seq t {comp lblStation:::p::p, space :::p, comp lblDestinationConfirmBooking:::p::p, space :p:218:p}, seq t {comp lblCouponVerification:::p:137:p, space :p:194:p}}}, seq l {space :p:68:p, par l {comp ckbxTransAcc:::p::p, comp ckbxCash:::p::p, seq {comp lblTicketTypeConfirmBooking:::p::p, space :p:40:p, comp lblPrice:::p::p}, comp lblPaymentMethod::l:p:112:p, seq l {comp lblCouponCode:::p::p, space s:::p, comp txtCouponCode:::p:85:p}, comp ckbxCard::l:p::p, par t:l {par l {seq {comp lblTicketInformation:::p::p, space ::261:x}, seq t {space :p:38:p, comp lblDepartTime:::p:108:p, space :p:103:p, comp lblReturnTime::::110:x}}, seq l {space :p:32:p, comp lblDepartureDateTimeConfirmBooking:::p:135:p, space :p:82:p, comp lblReturnDateTimeConfirmBooking:::p::p}}}, space :p:112:p}};par l {seq {space ::424:x, comp btnAdvance:::p::p, space :0:39:x}}"
-						"$verticalGroup": "par l {seq t {space :p:34:p, par b {comp lblDestinationConfirmBooking::b:p::p, comp lblStation::b:p::p}, space :::p, par b {comp lblDepartureDateTimeConfirmBooking::b:p:24:p, comp lblReturnDateTimeConfirmBooking::b:p::p}, space :::p, par b {comp lblDepartTime::b:p::p, comp lblReturnTime::b:p::p}, space :p:35:p, comp lblCouponVerification:::p:18:p, space :p:7:p, comp lblTicketInformation:::p::p, space s:::p, par b {comp lblTicketTypeConfirmBooking::b:p::p, comp lblPrice::b:p::p}, space s:::p, comp lblPaymentMethod:::p::p, space :::p, comp ckbxCash:::p::p, space ::11:x, comp ckbxCard:::p::p, space u:::p, comp ckbxTransAcc:::p::p, space s:::p, par b {comp lblCouponCode::b:p::p, comp txtCouponCode::b:p::p}, space :p:69:p}};par l {seq {space ::426:x, comp btnAdvance:::p::p, space :0:0:x}}"
+						"$horizontalGroup": "par l {seq t {space ::311:x, par l {seq t {comp lblStation:::p::p, space :::p, comp lblDestinationConfirmBooking:::p::p, space :p:218:p}, seq t {comp lblCouponVerification:::p:137:p, space :p:194:p}}}, seq l {space :p:68:p, par l {seq {comp lblCouponCode:::p::p, space s:::p, comp txtCouponCode:::p:85:p, space :0:393:x}, seq {par l {comp ckbxCash:::p::p, seq {comp lblTicketTypeConfirmBooking:::p::p, space :p:40:p, comp lblPrice:::p::p}, comp lblPaymentMethod::l:p:112:p, comp ckbxCard::l:p::p, par t:l {par l {seq {comp lblTicketInformation:::p::p, space ::357:x}, seq t {space :p:38:p, comp lblDepartTime:::p:108:p, space :p:103:p, comp lblReturnTime::::220:x}}, seq l {space :p:32:p, comp lblDepartureDateTimeConfirmBooking:::p:135:p, space :p:82:p, comp lblReturnDateTimeConfirmBooking:::p::p}}}, space :p:112:p}, seq {comp ckbxTransAcc:::p::p, space ::195:x, comp btnAdvance:::p::p, space :p:162:p}}}}"
+						"$verticalGroup": "par l {seq t {space :p:34:p, par b {comp lblDestinationConfirmBooking::b:p::p, comp lblStation::b:p::p}, space :::p, par b {comp lblDepartureDateTimeConfirmBooking::b:p:24:p, comp lblReturnDateTimeConfirmBooking::b:p::p}, space :::p, par b {comp lblDepartTime::b:p::p, comp lblReturnTime::b:p::p}, space :p:35:p, comp lblCouponVerification:::p:18:p, space :p:7:p, comp lblTicketInformation:::p::p, space s:::p, par b {comp lblTicketTypeConfirmBooking::b:p::p, comp lblPrice::b:p::p}, space s:::p, comp lblPaymentMethod:::p::p, space :::p, comp ckbxCash:::p::p, space :::x, comp ckbxCard:::p::p, space u:::p, par l {comp btnAdvance:::p::p, comp ckbxTransAcc:::p::p}, space u:::p, par l {comp lblCouponCode:::p::p, comp txtCouponCode:::p::p}, space :p:67:p}}"
 					} ) {
 						name: "pnlConfirmBooking"
 						add( new FormComponent( "javax.swing.JButton" ) {
@@ -408,8 +408,8 @@ new FormModel {
 						"value": "card5"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {space :p:68:p, par l {comp lblPaymentInformation:::p::p, seq {comp txtCashValue:::p:67:p, space :p:12:p, comp btnPayCash:::p::p, space u:::p, comp btnPrintCashTic:::p::p}, seq l {space :152:152:p, comp lblStationCashPayment:::p::p, space :6:6:p, comp lblDestinationCashPayment:::p::p}, seq l {par l {comp lblCashInserted::l:p::p, comp lblTicketTypeCashPayment::l:p::p}, space :p:55:p, par l {comp lblPriceCashPayment:::p:43:p, comp lblCashValue:::p::p}}, seq l {space :84:84:p, par l {seq {par l {comp lblDepartureDateTimeCashPayment::l:p:135:p, comp lblDepartTime3::l:p:108:p}, par l {seq {space :6:6:p, comp lblReturnTime2:::p:91:p}, comp lblReturnDateTimeCashPayment:::p::p}}, comp lblNotification:::p:204:p, comp lblNotification2::l:p:204:p}}}, space ::155:x}}"
-						"$verticalGroup": "par l {seq l {space :p:106:p, par l {comp lblStationCashPayment:::p::p, comp lblDestinationCashPayment:::p::p}, space :6:6:p, par l {comp lblDepartureDateTimeCashPayment:::p:24:p, seq l {space :4:4:p, comp lblReturnDateTimeCashPayment:::p::p}}, space u:::p, par l {comp lblDepartTime3:::p::p, comp lblReturnTime2::l:p::p}, space :::p, comp lblNotification:::p:18:p, space u:::p, comp lblNotification2:::p:18:p, space :p:12:p, comp lblPaymentInformation:::p::p, space s:::p, par b {comp lblTicketTypeCashPayment::b:p::p, comp lblPriceCashPayment::b:p::p}, space :12:12:p, par l {comp lblCashInserted:::p::p, comp lblCashValue:::p::p}, space ::23:x, par b {comp txtCashValue::b:p::p, comp btnPrintCashTic::b:p::p, comp btnPayCash::b:p::p}, space :p:79:p}}"
+						"$horizontalGroup": "par l {seq {space :p:68:p, par l {comp lblPaymentInformation:::p::p, seq {comp txtCashValue:::p:67:p, space :p:12:p, comp btnPayCash:::p::p, space u:::p, comp btnPrintCashTic:::p::p}, seq l {space :152:152:p, comp lblStationCashPayment:::p::p, space :6:6:p, comp lblDestinationCashPayment:::p::p}, seq l {par l {comp lblCashInserted::l:p::p, comp lblTicketTypeCashPayment::l:p::p}, space :p:55:p, par l {comp lblPriceCashPayment:::p:43:p, comp lblCashValue:::p::p}}, seq l {space :84:84:p, par l {seq {par l {comp lblDepartureDateTimeCashPayment::l:p:135:p, comp lblDepartTime3::l:p:108:p}, par l {seq {space :6:6:p, comp lblReturnTime2:::p:91:p}, comp lblReturnDateTimeCashPayment:::p::p}}, comp lblNotification:::p:204:p, comp lblNotification2::l:p:204:p}}}, space ::265:x}}"
+						"$verticalGroup": "par l {seq l {space :p:106:p, par l {comp lblStationCashPayment:::p::p, comp lblDestinationCashPayment:::p::p}, space :6:6:p, par l {comp lblDepartureDateTimeCashPayment:::p:24:p, seq l {space :4:4:p, comp lblReturnDateTimeCashPayment:::p::p}}, space u:::p, par l {comp lblDepartTime3:::p::p, comp lblReturnTime2::l:p::p}, space :::p, comp lblNotification:::p:18:p, space u:::p, comp lblNotification2:::p:18:p, space :p:12:p, comp lblPaymentInformation:::p::p, space s:::p, par b {comp lblTicketTypeCashPayment::b:p::p, comp lblPriceCashPayment::b:p::p}, space :12:12:p, par l {comp lblCashInserted:::p::p, comp lblCashValue:::p::p}, space ::10:x, par b {comp txtCashValue::b:p::p, comp btnPrintCashTic::b:p::p, comp btnPayCash::b:p::p}, space :p:79:p}}"
 					} ) {
 						name: "pnlCashTicketPayment"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -491,8 +491,8 @@ new FormModel {
 						"value": "card6"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {par l {seq {space :p:58:p, par l {seq l {space :157:157:p, comp lblStationCardPayment:::p::p, space :6:6:p, comp lblDestinationCardPayment:::p::p}, comp lblPaymentInformationCardPayment:::p::p, seq l {space :32:32:p, comp lblTicketTypeCardPayment:::p::p, space :73:73:p, comp lblPriceCardPayment:::p::p}, seq l {space :32:32:p, comp lblCardName:::p:86:p, space :42:42:p, comp txtCardName:::p:147:p}, seq l {space :71:71:p, comp lblPaymentValidate:::p:312:p}, seq l {space :32:32:p, par l:::p {seq {comp lblSortCode:::p::p, space :::x, comp txtSortCode:::p:147:p}, seq l {comp lblSecurityCode:::p::p, space :::x, comp txtSecurityCode:::p:147:p}, seq l {comp lblCardNumber:::p:86:p, space :42:42:p, comp txtCardNumber:::p:147:p}}}, seq l {space :p:59:p, par t {comp lblDepartureDateTimeCardPayment:::p:135:p, comp lblDepartTime4:::p:108:p}, space :33:33:p, par l {comp lblReturnDateTimeCardPayment:::p::p, comp lblReturnTime3:::p:91:p}}}}, seq t {space :::p, comp btnPrintTicket:::p::p, space :p:66:p, comp btnConfirmPayment:::p::p}}, space ::98:x}}"
-						"$verticalGroup": "par l {seq l {space :p:53:p, par l {comp lblStationCardPayment:::p::p, comp lblDestinationCardPayment:::p::p}, space :p:6:p, par b {comp lblDepartureDateTimeCardPayment::b:p:24:p, comp lblReturnDateTimeCardPayment::b:p::p}, space :p:6:p, par l {comp lblDepartTime4:::p::p, comp lblReturnTime3:::p::p}, space :p:10:p, comp lblPaymentValidate:::p:18:p, space :22:22:p, comp lblPaymentInformationCardPayment:::p::p, space :9:9:p, par l {comp lblTicketTypeCardPayment:::p::p, comp lblPriceCardPayment:::p::p}, space :22:22:p, par l {seq l {space :4:4:p, comp lblCardName:::p::p}, comp txtCardName:::p::p}, space :6:6:p, par l {seq l {space :4:4:p, comp lblCardNumber:::p::p}, comp txtCardNumber:::p::p}, par l {seq {space :p:10:p, comp lblSecurityCode:::p::p, space s:::p, comp lblSortCode:::p::p, space ::110:x}, seq l {space :::p, comp txtSecurityCode:::p::p, space u:::p, comp txtSortCode:::p::p, space ::30:x, par b {comp btnConfirmPayment::b:p::p, comp btnPrintTicket::b:p::p}, space :p:42:p}}}}"
+						"$horizontalGroup": "par l {seq l {space :p:61:p, par l {seq l {space :157:157:p, comp lblStationCardPayment:::p::p, space :6:6:p, comp lblDestinationCardPayment:::p::p}, comp lblPaymentInformationCardPayment:::p::p, seq l {space :32:32:p, comp lblTicketTypeCardPayment:::p::p, space :73:73:p, comp lblPriceCardPayment:::p::p}, seq l {space :32:32:p, comp lblCardName:::p:86:p, space :42:42:p, comp txtCardName:::p:147:p}, seq l {space :71:71:p, comp lblPaymentValidate:::p:312:p}, seq l {space :32:32:p, par l:::p {seq l {comp lblSortCode:::p::p, space :::x, comp txtSortCode:::p:147:p}, seq l {comp lblSecurityCode:::p::p, space :::x, comp txtSecurityCode:::p:147:p}, seq l {comp lblCardNumber:::p:86:p, space :42:42:p, comp txtCardNumber:::p:147:p}}}, seq l {space :p:59:p, par t {comp lblDepartureDateTimeCardPayment:::p:135:p, comp lblDepartTime4:::p:108:p}, space :33:33:p, par l {comp lblReturnDateTimeCardPayment:::p::p, comp lblReturnTime3:::p:91:p}}, seq t {comp btnPrintTicket:::p::p, space :p:66:p, comp btnConfirmPayment:::p::p}}, space ::205:x}}"
+						"$verticalGroup": "par l {seq l {space :::p, par l {comp lblStationCardPayment:::p::p, comp lblDestinationCardPayment:::p::p}, space :p:6:p, par b {comp lblDepartureDateTimeCardPayment::b:p:24:p, comp lblReturnDateTimeCardPayment::b:p::p}, space :p:6:p, par l {comp lblDepartTime4:::p::p, comp lblReturnTime3:::p::p}, space :p:10:p, comp lblPaymentValidate:::p:18:p, space :22:22:p, comp lblPaymentInformationCardPayment:::p::p, space :9:9:p, par l {comp lblTicketTypeCardPayment:::p::p, comp lblPriceCardPayment:::p::p}, space :22:22:p, par l {seq l {space :4:4:p, comp lblCardName:::p::p}, comp txtCardName:::p::p}, space :6:6:p, par l {seq l {space :4:4:p, comp lblCardNumber:::p::p}, comp txtCardNumber:::p::p}, par l {seq l {space :p:10:p, comp lblSecurityCode:::p::p, space s:::p, comp lblSortCode:::p::p, space ::55:p}, seq l {space :::p, comp txtSecurityCode:::p::p, space u:::p, comp txtSortCode:::p::p, space :::x, par b {comp btnConfirmPayment::b:p::p, comp btnPrintTicket::b:p::p}}}, space :p:89:p}}"
 					} ) {
 						name: "pnlCardTicketPayment"
 						add( new FormComponent( "javax.swing.JButton" ) {
@@ -584,8 +584,8 @@ new FormModel {
 						"value": "card7"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {space :0:539:x};par l {seq {space :0:0:x, comp scrollPane:::p:472:p, space :0:0:x}}"
-						"$verticalGroup": "par l {space :0:458:x};par l {seq {space :0:0:x, comp scrollPane:::p:281:p, space :0:0:x}}"
+						"$horizontalGroup": "par l {space :0:649:x};par l {seq {space :0:0:x, comp scrollPane:::p:472:p, space :0:0:x}}"
+						"$verticalGroup": "par l {space :0:445:x};par l {seq {space :0:0:x, comp scrollPane:::p:281:p, space :0:0:x}}"
 					} ) {
 						name: "pnlTimetable"
 						add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
@@ -598,8 +598,8 @@ new FormModel {
 						"value": "card8"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {par l {seq l {space :p:230:p, comp lblStationlReceipt:::p::p, space :p:26:p, comp lblDestinationlReceipt:::p::p}, seq l {space :p:252:p, par l {comp lblViaLocationslReceipt5::l:p:96:p, comp lblViaLocationslReceipt3::l:p:96:p, comp lblViaLocationlReceipt6::l:p:96:p, comp lblViaLocationslReceipt4::l:p:96:p, comp lbllReceiptLocation::l:p::p}}}, space :0:186:x}, seq {par l {seq l {space :p:102:p, par l {comp btnPrintReceipt::l:p:130:p, seq {comp lblAccount:::p:96:p, par l {seq l {space :p:368:p, comp txtAccountID:::p:147:p}, seq {par l {comp lblDepartureDateTimelReceipt::l:p:135:p, seq l {space :6:6:p, comp lblDepartTime5:::p:108:p}}, space :p:133:p, par l {comp lblReturnTime4:::p:91:p, comp lblReturnDateTimelReceipt:::p::p}}, seq l {comp btnProlReceipt:::p::p, space :p:108:p, par l {comp btnPrintPhyTic:::p:153:p, comp btnAddCredit:::p:153:p}}}}}, space :p:68:p}, seq l {space :p:73:p, par l {comp lblReceiptNotification:::p:444:p, comp lblViaLocationlReceipt9::l:::x, comp lblViaLocationlReceipt8::t:::x}}}, space :::x}, seq t {space :179:179:p, par l {seq t {par t {comp txtEmailField:::p:158:p, comp lblViaLocationlReceipt7::t:p:157:p}, space :p:180:p}, seq t {comp btnEmail::::235:x, space :p:153:p}}}}"
-						"$verticalGroup": "par l {seq l {space :p:27:p, par b {comp lblStationlReceipt::b:p::p, comp lblDestinationlReceipt::b:p::p}, par l {seq {space u:::p, comp lblDepartureDateTimelReceipt:::p:24:p, space :p:5:p, comp lblDepartTime5:::p::p}, seq l {space :p:18:p, comp lblReturnDateTimelReceipt:::p::p, space :::p, comp lblReturnTime4:::p::p}}, space :::p, comp lbllReceiptLocation:::p::p, space :::p, comp lblViaLocationslReceipt4:::p::p, space :::p, comp lblViaLocationslReceipt5:::p::p, space :::p, comp lblViaLocationslReceipt3:::p:20:p, space :::p, comp lblViaLocationlReceipt6:::p:20:p, space :::p, comp lblReceiptNotification:::p:18:p, space :::p, par b {comp btnProlReceipt::b:p::p, comp btnPrintPhyTic::b:p::p}, space :::p, par l {comp btnPrintReceipt:::p::p, comp btnAddCredit:::p::p}, space :::p, comp lblAccount:::p:20:p, space :0:0:p, comp txtAccountID:::p::p, space :::x, comp lblViaLocationlReceipt8:::p:20:p, space :::p, comp lblViaLocationlReceipt9:::p:20:p, space :::p, comp lblViaLocationlReceipt7:::p:20:p, space :::p, comp txtEmailField:::p::p, space :::p, comp btnEmail:::p:20:p, space :::p}}"
+						"$horizontalGroup": "par l {seq {space :p:97:p, par l {comp lblViaLocationlReceipt9::l:::x, comp lblViaLocationlReceipt8::t:::x, seq t {space :p:106:p, par l {seq t {par t {comp txtEmailField:::p:158:p, comp lblViaLocationlReceipt7::t:p:157:p}, space :p:142:p}, seq t {comp btnEmail:::::x, space :p:115:p}}}, seq l {par l {seq l {space :p:157:p, comp lblStationlReceipt:::p::p, space :p:26:p, comp lblDestinationlReceipt:::p::p}, seq l {space :p:179:p, par l {comp lblViaLocationslReceipt5::l:p:96:p, comp lblViaLocationslReceipt3::l:p:96:p, comp lblViaLocationlReceipt6::l:p:96:p, comp lblViaLocationslReceipt4::l:p:96:p, comp lbllReceiptLocation::l:p::p}}, seq l {space :p:29:p, par l {comp btnPrintReceipt::l:p:130:p, seq l {comp lblAccount:::p:96:p, par l {seq l {space :p:368:p, comp txtAccountID:::p:147:p}, seq l {par l {comp lblDepartureDateTimelReceipt::l:p:135:p, seq l {space :6:6:p, comp lblDepartTime5:::p:108:p}}, space :p:133:p, par l {comp lblReturnTime4:::p:91:p, comp lblReturnDateTimelReceipt:::p::p}}, seq l {comp btnProlReceipt:::p::p, space :p:108:p, par l {comp btnPrintPhyTic:::p:153:p, comp btnAddCredit:::p:153:p}}}}}}, comp lblReceiptNotification:::p:444:p}, space :p:94:p}}, space :p:14:p}}"
+						"$verticalGroup": "par l {seq l {space :::p, par b {comp lblStationlReceipt::b:p::p, comp lblDestinationlReceipt::b:p::p}, par l {seq l {space u:::p, comp lblDepartureDateTimelReceipt:::p:24:p, space :p:5:p, comp lblDepartTime5:::p::p}, seq l {space :p:18:p, comp lblReturnDateTimelReceipt:::p::p, space :::p, comp lblReturnTime4:::p::p}}, space :::p, comp lbllReceiptLocation:::p::p, space :::p, comp lblViaLocationslReceipt4:::p::p, space :::p, comp lblViaLocationslReceipt5:::p::p, space :::p, comp lblViaLocationslReceipt3:::p:20:p, space :::p, comp lblViaLocationlReceipt6:::p:20:p, space :::p, comp lblReceiptNotification:::p:18:p, space :::p, par b {comp btnProlReceipt::b:p::p, comp btnPrintPhyTic::b:p::p}, space :::p, par l {comp btnPrintReceipt:::p::p, comp btnAddCredit:::p::p}, space :::p, comp lblAccount:::p:20:p, space :0:0:p, comp txtAccountID:::p::p, space :::x, comp lblViaLocationlReceipt8:::p:20:p, space :::p, comp lblViaLocationlReceipt9:::p:20:p, space :::p, comp lblViaLocationlReceipt7:::p:20:p, space :::p, comp txtEmailField:::p::p, space :::p, comp btnEmail:::p:20:p, space :p:20:p}}"
 					} ) {
 						name: "pnlPrintReceipt"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -686,7 +686,7 @@ new FormModel {
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblViaLocationlReceipt7"
-							"text": "Please Enter Email Address"
+							"text": "Please Enter Email"
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblViaLocationlReceipt8"
@@ -710,8 +710,8 @@ new FormModel {
 						"value": "card10"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {space :p:68:p, par l {comp btnSearchAccount::l:p::p, seq l {space :106:106:p, comp lblTransSearchNot:::p:204:p}, comp lblTransAccPaymentInformation2::l:p::p, seq l {par l {comp lblTicketTypeTransAccPayment2::l:p::p, comp lblTicketTypeTransAccAccountId2::l:p::p}, space :p:40:p, comp txtFieldAccountID2:::p:212:p}}, space ::120:x}}"
-						"$verticalGroup": "par l {seq l {space :p:182:p, comp lblTransSearchNot:::p:18:p, space s:::p, comp lblTransAccPaymentInformation2:::p::p, space s:::p, comp lblTicketTypeTransAccPayment2:::p::p, space s:::p, par b {comp lblTicketTypeTransAccAccountId2::b:p::p, comp txtFieldAccountID2::b:p::p}, space ::77:x, comp btnSearchAccount:::p::p, space :p:57:p}}"
+						"$horizontalGroup": "par l {seq l {space :p:112:p, par l {comp btnSearchAccount::l:p::p, seq l {space :106:106:p, comp lblTransSearchNot:::p:204:p}, comp lblTransAccPaymentInformation2::l:p::p, seq l {par l {comp lblTicketTypeTransAccPayment2::l:p::p, comp lblTicketTypeTransAccAccountId2::l:p::p}, space :p:40:p, comp txtFieldAccountID2:::p:212:p}}, space ::167:x}}"
+						"$verticalGroup": "par l {seq {space :p:82:p, comp lblTransSearchNot:::p:18:p, space s:::p, comp lblTransAccPaymentInformation2:::p::p, space s:::p, comp lblTicketTypeTransAccPayment2:::p::p, space s:::p, par b {comp lblTicketTypeTransAccAccountId2::b:p::p, comp txtFieldAccountID2::b:p::p}, space ::64:x, comp btnSearchAccount:::p::p, space :p:157:p}}"
 					} ) {
 						name: "pnlSearchAccount"
 						add( new FormComponent( "javax.swing.JLabel" ) {
@@ -754,12 +754,23 @@ new FormModel {
 					"text": "Main Menu"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnGoToMenuActionPerformed", true ) )
 				} )
+				add( new FormComponent( "javax.swing.JProgressBar" ) {
+					name: "progressBar1"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": "Overall progress"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": "You are currently at stage: X of 5"
+				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "card2"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 700, 470 )
+			"size": new java.awt.Dimension( 810, 525 )
 		} )
 	}
 }

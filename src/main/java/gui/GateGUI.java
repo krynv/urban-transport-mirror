@@ -83,13 +83,12 @@ public class GateGUI extends JFrame {
     }
 
     private void btnMainGUIActionPerformed(ActionEvent e) {
-        new GUI().setVisible(true);
         this.dispose();
     }
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Benjamin Ward
+        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
         pnlMain = new JPanel();
         btnMainGUI = new JButton();
         scrollPane1 = new JScrollPane();
@@ -194,7 +193,7 @@ public class GateGUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Benjamin Ward
+    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
     private JPanel pnlMain;
     private JButton btnMainGUI;
     private JScrollPane scrollPane1;
