@@ -8,10 +8,7 @@ new FormModel {
 			"maximumSize": new java.awt.Dimension( 500, 700 )
 			"minimumSize": new java.awt.Dimension( 500, 700 )
 			"preferredSize": new java.awt.Dimension( 500, 700 )
-			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq l {par t {seq t {space :::p, comp btnAddCredit:::p:332:p}, seq l {space :p:81:p, par t:::p {comp btnViewReport::::332:x, comp btnPayForTrip::l::332:x, comp btnPayOnExit::l::332:x}}}, space :::x}}"
-				"$verticalGroup": "par l {seq l {space :p:98:p, comp btnPayOnExit:::p:130:p, space :::p, comp btnPayForTrip:::p:124:p, space :::p, comp btnViewReport:::p:126:p, space :::x, comp btnAddCredit:::p:124:p, space :p:62:p}}"
-			} ) {
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 				name: "pnlSelectOption"
 				"preferredSize": sfield com.jformdesigner.model.FormObject NULL_VALUE
 				"maximumSize": sfield com.jformdesigner.model.FormObject NULL_VALUE
@@ -21,6 +18,11 @@ new FormModel {
 					"text": "Admin"
 					"preferredSize": &Dimension0 new java.awt.Dimension( 150, 60 )
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnViewReportActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 81
+					"y": 364
+					"width": 332
+					"height": 126
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "btnAddCredit"
@@ -28,12 +30,22 @@ new FormModel {
 					"preferredSize": #Dimension0
 					"actionCommand": "Ticket Machine (Add Credit)"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAddCreditActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 81
+					"y": 495
+					"width": 332
+					"height": 124
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "btnPayOnExit"
 					"text": "Gates"
 					"preferredSize": new java.awt.Dimension( 150, 60 )
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnPayOnExitActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 81
+					"y": 98
+					"width": 332
+					"height": 130
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "btnPayForTrip"
@@ -42,13 +54,18 @@ new FormModel {
 					"maximumSize": new java.awt.Dimension( 107, 39 )
 					"minimumSize": new java.awt.Dimension( 107, 39 )
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnPayForTripActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 81
+					"y": 234
+					"width": 332
+					"height": 124
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "card1"
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 15, 10 )
-			"size": new java.awt.Dimension( 250, 350 )
+			"size": new java.awt.Dimension( 570, 705 )
 		} )
 	}
 }

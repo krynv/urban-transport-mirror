@@ -92,7 +92,7 @@ public class EmployeeGUI extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Benjamin Ward
+        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
         mainPnl = new JPanel();
         JPanel tabbedPanel = new JPanel();
         tabbedPane12 = new JTabbedPane();
@@ -189,18 +189,16 @@ public class EmployeeGUI extends JFrame {
 
         //======== mainPnl ========
         {
-
-            // JFormDesigner evaluation mark
-            mainPnl.setBorder(new javax.swing.border.CompoundBorder(
-                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                    java.awt.Color.red), mainPnl.getBorder())); mainPnl.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+            mainPnl.setMinimumSize(new Dimension(100, 100));
+            mainPnl.setMaximumSize(new Dimension(1111, 635));
+            mainPnl.setPreferredSize(new Dimension(1111, 635));
 
             mainPnl.setLayout(new CardLayout());
 
             //======== tabbedPanel ========
             {
+                tabbedPanel.setPreferredSize(new Dimension(1111, 635));
+                tabbedPanel.setMinimumSize(new Dimension(645, 480));
 
                 //======== tabbedPane12 ========
                 {
@@ -1107,7 +1105,7 @@ public class EmployeeGUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Benjamin Ward
+    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
     private JPanel mainPnl;
     private JTabbedPane tabbedPane12;
     private JPanel panel20;

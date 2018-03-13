@@ -6,11 +6,8 @@ new FormModel {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.CardLayout ) ) {
 			name: "pnlMain"
 			"minimumSize": new java.awt.Dimension( 627, 413 )
-			"preferredSize": new java.awt.Dimension( 680, 580 )
-			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq l {space :::p, comp btnMainGUI:::p:199:p, space :p:64:p, par l {seq {comp label7:::p::p, space ::358:x}, seq {par l {comp tooManyRetries:::p::p, comp regOpenBut:::p:150:p, comp cancelBut2:::p:150:p, comp loginBut:::p:150:p, comp passField:::p:150:p, comp label8:::p::p, comp userField:::p:150:p, comp label6:::p::p}, space :0:261:x}}}, seq {space :p:276:p, comp invalidCred:::p::p, space :0:404:x}, seq l {space :p:50:p, comp successLoginAdmin:::p::p, space ::286:x, comp unsuccessfulLogin:::p::p, space :p:44:p}}"
-				"$verticalGroup": "par l {seq l {space :p:20:p, par b {comp successLoginAdmin::b:p::p, comp unsuccessfulLogin::b:p::p}, space :p:86:p, par t {seq {comp label6:::p::p, space :p:26:p, comp invalidCred:::p::p, space u:::p, comp label7:::p::p, space :::p, comp userField:::p::p, space s:::p, comp label8:::p::p, space s:::p, comp passField:::p::p, space :p:44:p, comp tooManyRetries:::p::p, space :::p, comp loginBut:::p::p, space s:::p, comp cancelBut2:::p::p, space s:::p, comp regOpenBut:::p::p}, comp btnMainGUI:::p:50:p}, space ::101:x}}"
-			} ) {
+			"preferredSize": new java.awt.Dimension( 1111, 635 )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 				name: "pnlLogin"
 				"preferredSize": new java.awt.Dimension( 700, 478 )
 				"minimumSize": new java.awt.Dimension( 627, 413 )
@@ -18,40 +15,71 @@ new FormModel {
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label6"
 					"text": "Enter Your Login Credentials"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 525
+					"y": 140
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label7"
 					"text": "Username"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 525
+					"y": 185
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label8"
 					"text": "Password"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 525
+					"y": 245
 				} )
 				add( new FormComponent( "javax.swing.JPasswordField" ) {
 					name: "passField"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 525
+					"y": 280
+					"width": 150
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "userField"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 525
+					"y": 205
+					"width": 150
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "loginBut"
 					"text": "Login"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "loginButActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 525
+					"y": 350
+					"width": 150
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "cancelBut2"
 					"text": "Cancel"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cancelButActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 525
+					"y": 400
+					"width": 150
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "successLoginAdmin"
 					"text": "Successful Login - Admin"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "successLoginAdminActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 305
+					"y": 25
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "unsuccessfulLogin"
 					"text": "Unsuccessful Login "
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "unsuccessfulLoginActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 735
+					"y": 25
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "regOpenBut"
@@ -60,31 +88,47 @@ new FormModel {
 					"foreground": sfield java.awt.Color blue
 					"opaque": false
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "regOpenButActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 525
+					"y": 450
+					"width": 150
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "tooManyRetries"
 					"text": "Too Many Retries. Please wait"
 					"foreground": &Color0 new java.awt.Color( 255, 0, 0, 255 )
 					"visible": false
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 525
+					"y": 350
+					"width": 0
+					"height": 0
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "invalidCred"
 					"text": "Invalid Credentials"
 					"foreground": #Color0
 					"visible": false
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 530
+					"y": 185
+					"width": 0
+					"height": 0
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "btnMainGUI"
 					"text": "Go Back To Main Page"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnMainGUIActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 10
+					"y": 515
+					"width": 199
+					"height": 50
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "card2"
 			} )
-			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq {par l {seq {space :p:223:p, par l {seq l {space :55:55:p, comp label1:::p::p}, comp label2:::p::p, seq l {space :3:3:p, comp regUserNameField:::p:188:p}, seq l {space :p:3:p, comp label3:::p::p}, seq l {space :p:3:p, comp firstNameField:::p:188:p}, seq l {space :p:3:p, par l {comp lastNameField:::p:188:p, comp label4:::p::p, comp label5::l:p::p, comp regPasswordField::l:p:188:p, comp adminCheckBox::l:p::p, seq l {comp submitRegBut:::p:84:p, space s:::p, comp cancelRegBut:::p:86:p}}}}}, seq l {space :p:16:p, comp passStrengthMess:::p:643:p}, seq l {space :p:141:p, comp passStrength:::p:357:p}}, space ::21:x}}"
-				"$verticalGroup": "par l {seq t {comp label1:::p::p, space :18:18:p, comp label2:::p::p, space :12:12:p, comp regUserNameField:::p::p, space :::p, comp label3:::p::p, space :::p, comp firstNameField:::p::p, space s:::p, comp label4:::p::p, space u:::p, comp lastNameField:::p::p, space s:::p, comp label5:::p::p, space :::p, comp regPasswordField:::p::p, space u:::p, comp passStrength:::p::p, space ::36:x, comp passStrengthMess:::p::p, space :p:32:p, comp adminCheckBox:::p::p, space :p:61:p, par b {comp submitRegBut::b:p::p, comp cancelRegBut::b:p::p}, space :p:69:p}}"
-			} ) {
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 				name: "pnlRegister"
 				"minimumSize": new java.awt.Dimension( 627, 413 )
 				"preferredSize": new java.awt.Dimension( 700, 478 )
@@ -92,62 +136,114 @@ new FormModel {
 					name: "label1"
 					"text": "Register"
 					"font": new java.awt.Font( "Segoe UI", 1, 18 )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 525
+					"y": 30
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label2"
 					"text": "Username"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 470
+					"y": 70
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label3"
 					"text": "First Name"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 475
+					"y": 130
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label4"
 					"text": "Last Name"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 475
+					"y": 195
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label5"
 					"text": "Password"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 475
+					"y": 265
 				} )
 				add( new FormComponent( "javax.swing.JCheckBox" ) {
 					name: "adminCheckBox"
 					"text": "Admin"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 475
+					"y": 430
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "submitRegBut"
 					"text": "Submit"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "submitRegButActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 475
+					"y": 510
+					"width": 84
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "cancelRegBut"
 					"text": "Cancel"
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cancelButActionPerformed", true ) )
 					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cancelRegButActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 575
+					"y": 510
+					"width": 86
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "regUserNameField"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 475
+					"y": 100
+					"width": 188
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "firstNameField"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 475
+					"y": 150
+					"width": 188
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "lastNameField"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 475
+					"y": 220
+					"width": 188
 				} )
 				add( new FormComponent( "javax.swing.JPasswordField" ) {
 					name: "regPasswordField"
 					addEvent( new FormEvent( "java.awt.event.KeyListener", "keyTyped", "regPasswordFieldKeyTyped", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 475
+					"y": 285
+					"width": 188
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "passStrengthMess"
 					"text": "Password needs to be 6 or more characters"
 					"horizontalAlignment": 0
 					"visible": false
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 280
+					"y": 335
+					"width": 540
+					"height": 25
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "passStrength"
 					"text": "Password Strength - TOO SHORT"
 					"horizontalAlignment": 0
 					"visible": false
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 280
+					"y": 380
+					"width": 540
+					"height": 25
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "card3"

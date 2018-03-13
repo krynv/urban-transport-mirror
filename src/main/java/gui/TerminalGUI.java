@@ -285,7 +285,7 @@ public class TerminalGUI extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Benjamin Ward
+        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
         pnlGUI = new JPanel();
         pnlCardChoice = new JPanel();
         lblCard = new JLabel();
@@ -362,13 +362,7 @@ public class TerminalGUI extends JFrame {
 
         //======== pnlGUI ========
         {
-
-            // JFormDesigner evaluation mark
-            pnlGUI.setBorder(new javax.swing.border.CompoundBorder(
-                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                    java.awt.Color.red), pnlGUI.getBorder())); pnlGUI.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+            pnlGUI.setPreferredSize(new Dimension(1111, 635));
 
             pnlGUI.setLayout(new CardLayout());
 
@@ -1050,7 +1044,7 @@ public class TerminalGUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Benjamin Ward
+    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
     private JPanel pnlGUI;
     private JPanel pnlCardChoice;
     private JLabel lblCard;

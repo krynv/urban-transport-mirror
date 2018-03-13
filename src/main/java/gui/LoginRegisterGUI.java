@@ -171,7 +171,7 @@ public class LoginRegisterGUI  extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Benjamin Ward
+        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
         pnlMain = new JPanel();
         pnlLogin = new JPanel();
         label6 = new JLabel();
@@ -206,14 +206,7 @@ public class LoginRegisterGUI  extends JFrame {
         //======== pnlMain ========
         {
             pnlMain.setMinimumSize(new Dimension(627, 413));
-            pnlMain.setPreferredSize(new Dimension(680, 580));
-
-            // JFormDesigner evaluation mark
-            pnlMain.setBorder(new javax.swing.border.CompoundBorder(
-                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                    java.awt.Color.red), pnlMain.getBorder())); pnlMain.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
+            pnlMain.setPreferredSize(new Dimension(1111, 635));
 
             pnlMain.setLayout(new CardLayout());
 
@@ -222,15 +215,26 @@ public class LoginRegisterGUI  extends JFrame {
                 pnlLogin.setPreferredSize(new Dimension(700, 478));
                 pnlLogin.setMinimumSize(new Dimension(627, 413));
                 pnlLogin.setVisible(false);
+                pnlLogin.setLayout(null);
 
                 //---- label6 ----
                 label6.setText("Enter Your Login Credentials");
+                pnlLogin.add(label6);
+                label6.setBounds(new Rectangle(new Point(525, 140), label6.getPreferredSize()));
 
                 //---- label7 ----
                 label7.setText("Username");
+                pnlLogin.add(label7);
+                label7.setBounds(new Rectangle(new Point(525, 185), label7.getPreferredSize()));
 
                 //---- label8 ----
                 label8.setText("Password");
+                pnlLogin.add(label8);
+                label8.setBounds(new Rectangle(new Point(525, 245), label8.getPreferredSize()));
+                pnlLogin.add(passField);
+                passField.setBounds(525, 280, 150, passField.getPreferredSize().height);
+                pnlLogin.add(userField);
+                userField.setBounds(525, 205, 150, userField.getPreferredSize().height);
 
                 //---- loginBut ----
                 loginBut.setText("Login");
@@ -243,18 +247,26 @@ public class LoginRegisterGUI  extends JFrame {
                         e1.printStackTrace();
                     }
                 });
+                pnlLogin.add(loginBut);
+                loginBut.setBounds(525, 350, 150, loginBut.getPreferredSize().height);
 
                 //---- cancelBut2 ----
                 cancelBut2.setText("Cancel");
                 cancelBut2.addActionListener(e -> cancelButActionPerformed(e));
+                pnlLogin.add(cancelBut2);
+                cancelBut2.setBounds(525, 400, 150, cancelBut2.getPreferredSize().height);
 
                 //---- successLoginAdmin ----
                 successLoginAdmin.setText("Successful Login - Admin");
                 successLoginAdmin.addActionListener(e -> successLoginAdminActionPerformed(e));
+                pnlLogin.add(successLoginAdmin);
+                successLoginAdmin.setBounds(new Rectangle(new Point(305, 25), successLoginAdmin.getPreferredSize()));
 
                 //---- unsuccessfulLogin ----
                 unsuccessfulLogin.setText("Unsuccessful Login ");
                 unsuccessfulLogin.addActionListener(e -> unsuccessfulLoginActionPerformed(e));
+                pnlLogin.add(unsuccessfulLogin);
+                unsuccessfulLogin.setBounds(new Rectangle(new Point(735, 25), unsuccessfulLogin.getPreferredSize()));
 
                 //---- regOpenBut ----
                 regOpenBut.setText("Register");
@@ -262,87 +274,42 @@ public class LoginRegisterGUI  extends JFrame {
                 regOpenBut.setForeground(Color.blue);
                 regOpenBut.setOpaque(false);
                 regOpenBut.addActionListener(e -> regOpenButActionPerformed(e));
+                pnlLogin.add(regOpenBut);
+                regOpenBut.setBounds(525, 450, 150, regOpenBut.getPreferredSize().height);
 
                 //---- tooManyRetries ----
                 tooManyRetries.setText("Too Many Retries. Please wait");
                 tooManyRetries.setForeground(Color.red);
                 tooManyRetries.setVisible(false);
+                pnlLogin.add(tooManyRetries);
+                tooManyRetries.setBounds(525, 350, 0, 0);
 
                 //---- invalidCred ----
                 invalidCred.setText("Invalid Credentials");
                 invalidCred.setForeground(Color.red);
                 invalidCred.setVisible(false);
+                pnlLogin.add(invalidCred);
+                invalidCred.setBounds(530, 185, 0, 0);
 
                 //---- btnMainGUI ----
                 btnMainGUI.setText("Go Back To Main Page");
                 btnMainGUI.addActionListener(e -> btnMainGUIActionPerformed(e));
+                pnlLogin.add(btnMainGUI);
+                btnMainGUI.setBounds(10, 515, 199, 50);
 
-                GroupLayout pnlLoginLayout = new GroupLayout(pnlLogin);
-                pnlLogin.setLayout(pnlLoginLayout);
-                pnlLoginLayout.setHorizontalGroup(
-                    pnlLoginLayout.createParallelGroup()
-                        .addGroup(pnlLoginLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(btnMainGUI, GroupLayout.PREFERRED_SIZE, 199, GroupLayout.PREFERRED_SIZE)
-                            .addGap(64, 64, 64)
-                            .addGroup(pnlLoginLayout.createParallelGroup()
-                                .addGroup(pnlLoginLayout.createSequentialGroup()
-                                    .addComponent(label7)
-                                    .addContainerGap(358, Short.MAX_VALUE))
-                                .addGroup(pnlLoginLayout.createSequentialGroup()
-                                    .addGroup(pnlLoginLayout.createParallelGroup()
-                                        .addComponent(tooManyRetries)
-                                        .addComponent(regOpenBut, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(cancelBut2, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(loginBut, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(passField, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(label8)
-                                        .addComponent(userField, GroupLayout.PREFERRED_SIZE, 150, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(label6))
-                                    .addGap(0, 261, Short.MAX_VALUE))))
-                        .addGroup(pnlLoginLayout.createSequentialGroup()
-                            .addGap(276, 276, 276)
-                            .addComponent(invalidCred)
-                            .addGap(0, 404, Short.MAX_VALUE))
-                        .addGroup(pnlLoginLayout.createSequentialGroup()
-                            .addGap(50, 50, 50)
-                            .addComponent(successLoginAdmin)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 286, Short.MAX_VALUE)
-                            .addComponent(unsuccessfulLogin)
-                            .addGap(44, 44, 44))
-                );
-                pnlLoginLayout.setVerticalGroup(
-                    pnlLoginLayout.createParallelGroup()
-                        .addGroup(pnlLoginLayout.createSequentialGroup()
-                            .addGap(20, 20, 20)
-                            .addGroup(pnlLoginLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(successLoginAdmin)
-                                .addComponent(unsuccessfulLogin))
-                            .addGap(86, 86, 86)
-                            .addGroup(pnlLoginLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                .addGroup(pnlLoginLayout.createSequentialGroup()
-                                    .addComponent(label6)
-                                    .addGap(26, 26, 26)
-                                    .addComponent(invalidCred)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(label7)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(userField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(label8)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(passField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(44, 44, 44)
-                                    .addComponent(tooManyRetries)
-                                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(loginBut)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(cancelBut2)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(regOpenBut))
-                                .addComponent(btnMainGUI, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
-                            .addContainerGap(101, Short.MAX_VALUE))
-                );
+                { // compute preferred size
+                    Dimension preferredSize = new Dimension();
+                    for(int i = 0; i < pnlLogin.getComponentCount(); i++) {
+                        Rectangle bounds = pnlLogin.getComponent(i).getBounds();
+                        preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
+                        preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
+                    }
+                    Insets insets = pnlLogin.getInsets();
+                    preferredSize.width += insets.right;
+                    preferredSize.height += insets.bottom;
+                    pnlLogin.setMinimumSize(preferredSize);
+                    pnlLogin.setPreferredSize(preferredSize);
+                }
             }
             pnlMain.add(pnlLogin, "card2");
 
@@ -350,25 +317,38 @@ public class LoginRegisterGUI  extends JFrame {
             {
                 pnlRegister.setMinimumSize(new Dimension(627, 413));
                 pnlRegister.setPreferredSize(new Dimension(700, 478));
+                pnlRegister.setLayout(null);
 
                 //---- label1 ----
                 label1.setText("Register");
                 label1.setFont(new Font("Segoe UI", Font.BOLD, 18));
+                pnlRegister.add(label1);
+                label1.setBounds(new Rectangle(new Point(525, 30), label1.getPreferredSize()));
 
                 //---- label2 ----
                 label2.setText("Username");
+                pnlRegister.add(label2);
+                label2.setBounds(new Rectangle(new Point(470, 70), label2.getPreferredSize()));
 
                 //---- label3 ----
                 label3.setText("First Name");
+                pnlRegister.add(label3);
+                label3.setBounds(new Rectangle(new Point(475, 130), label3.getPreferredSize()));
 
                 //---- label4 ----
                 label4.setText("Last Name");
+                pnlRegister.add(label4);
+                label4.setBounds(new Rectangle(new Point(475, 195), label4.getPreferredSize()));
 
                 //---- label5 ----
                 label5.setText("Password");
+                pnlRegister.add(label5);
+                label5.setBounds(new Rectangle(new Point(475, 265), label5.getPreferredSize()));
 
                 //---- adminCheckBox ----
                 adminCheckBox.setText("Admin");
+                pnlRegister.add(adminCheckBox);
+                adminCheckBox.setBounds(new Rectangle(new Point(475, 430), adminCheckBox.getPreferredSize()));
 
                 //---- submitRegBut ----
                 submitRegBut.setText("Submit");
@@ -381,6 +361,8 @@ public class LoginRegisterGUI  extends JFrame {
                         e1.printStackTrace();
                     }
                 });
+                pnlRegister.add(submitRegBut);
+                submitRegBut.setBounds(475, 510, 84, submitRegBut.getPreferredSize().height);
 
                 //---- cancelRegBut ----
                 cancelRegBut.setText("Cancel");
@@ -388,6 +370,14 @@ public class LoginRegisterGUI  extends JFrame {
 			cancelButActionPerformed(e);
 			cancelRegButActionPerformed(e);
 		});
+                pnlRegister.add(cancelRegBut);
+                cancelRegBut.setBounds(575, 510, 86, cancelRegBut.getPreferredSize().height);
+                pnlRegister.add(regUserNameField);
+                regUserNameField.setBounds(475, 100, 188, regUserNameField.getPreferredSize().height);
+                pnlRegister.add(firstNameField);
+                firstNameField.setBounds(475, 150, 188, firstNameField.getPreferredSize().height);
+                pnlRegister.add(lastNameField);
+                lastNameField.setBounds(475, 220, 188, lastNameField.getPreferredSize().height);
 
                 //---- regPasswordField ----
                 regPasswordField.addKeyListener(new KeyAdapter() {
@@ -396,91 +386,36 @@ public class LoginRegisterGUI  extends JFrame {
                         regPasswordFieldKeyTyped(e);
                     }
                 });
+                pnlRegister.add(regPasswordField);
+                regPasswordField.setBounds(475, 285, 188, regPasswordField.getPreferredSize().height);
 
                 //---- passStrengthMess ----
                 passStrengthMess.setText("Password needs to be 6 or more characters");
                 passStrengthMess.setHorizontalAlignment(SwingConstants.CENTER);
                 passStrengthMess.setVisible(false);
+                pnlRegister.add(passStrengthMess);
+                passStrengthMess.setBounds(280, 335, 540, 25);
 
                 //---- passStrength ----
                 passStrength.setText("Password Strength - TOO SHORT");
                 passStrength.setHorizontalAlignment(SwingConstants.CENTER);
                 passStrength.setVisible(false);
+                pnlRegister.add(passStrength);
+                passStrength.setBounds(280, 380, 540, 25);
 
-                GroupLayout pnlRegisterLayout = new GroupLayout(pnlRegister);
-                pnlRegister.setLayout(pnlRegisterLayout);
-                pnlRegisterLayout.setHorizontalGroup(
-                    pnlRegisterLayout.createParallelGroup()
-                        .addGroup(pnlRegisterLayout.createSequentialGroup()
-                            .addGroup(pnlRegisterLayout.createParallelGroup()
-                                .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                    .addGap(223, 223, 223)
-                                    .addGroup(pnlRegisterLayout.createParallelGroup()
-                                        .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                            .addGap(55, 55, 55)
-                                            .addComponent(label1))
-                                        .addComponent(label2)
-                                        .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                            .addGap(3, 3, 3)
-                                            .addComponent(regUserNameField, GroupLayout.PREFERRED_SIZE, 188, GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                            .addGap(3, 3, 3)
-                                            .addComponent(label3))
-                                        .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                            .addGap(3, 3, 3)
-                                            .addComponent(firstNameField, GroupLayout.PREFERRED_SIZE, 188, GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                            .addGap(3, 3, 3)
-                                            .addGroup(pnlRegisterLayout.createParallelGroup()
-                                                .addComponent(lastNameField, GroupLayout.PREFERRED_SIZE, 188, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(label4)
-                                                .addComponent(label5)
-                                                .addComponent(regPasswordField, GroupLayout.PREFERRED_SIZE, 188, GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(adminCheckBox)
-                                                .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                                    .addComponent(submitRegBut, GroupLayout.PREFERRED_SIZE, 84, GroupLayout.PREFERRED_SIZE)
-                                                    .addGap(18, 18, 18)
-                                                    .addComponent(cancelRegBut, GroupLayout.PREFERRED_SIZE, 86, GroupLayout.PREFERRED_SIZE))))))
-                                .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                    .addGap(16, 16, 16)
-                                    .addComponent(passStrengthMess, GroupLayout.PREFERRED_SIZE, 643, GroupLayout.PREFERRED_SIZE))
-                                .addGroup(pnlRegisterLayout.createSequentialGroup()
-                                    .addGap(141, 141, 141)
-                                    .addComponent(passStrength, GroupLayout.PREFERRED_SIZE, 357, GroupLayout.PREFERRED_SIZE)))
-                            .addContainerGap(21, Short.MAX_VALUE))
-                );
-                pnlRegisterLayout.setVerticalGroup(
-                    pnlRegisterLayout.createParallelGroup()
-                        .addGroup(GroupLayout.Alignment.TRAILING, pnlRegisterLayout.createSequentialGroup()
-                            .addComponent(label1)
-                            .addGap(18, 18, 18)
-                            .addComponent(label2)
-                            .addGap(12, 12, 12)
-                            .addComponent(regUserNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(label3)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(firstNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(label4)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(lastNameField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(label5)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(regPasswordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(passStrength)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                            .addComponent(passStrengthMess)
-                            .addGap(32, 32, 32)
-                            .addComponent(adminCheckBox)
-                            .addGap(61, 61, 61)
-                            .addGroup(pnlRegisterLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(submitRegBut)
-                                .addComponent(cancelRegBut))
-                            .addGap(69, 69, 69))
-                );
+                { // compute preferred size
+                    Dimension preferredSize = new Dimension();
+                    for(int i = 0; i < pnlRegister.getComponentCount(); i++) {
+                        Rectangle bounds = pnlRegister.getComponent(i).getBounds();
+                        preferredSize.width = Math.max(bounds.x + bounds.width, preferredSize.width);
+                        preferredSize.height = Math.max(bounds.y + bounds.height, preferredSize.height);
+                    }
+                    Insets insets = pnlRegister.getInsets();
+                    preferredSize.width += insets.right;
+                    preferredSize.height += insets.bottom;
+                    pnlRegister.setMinimumSize(preferredSize);
+                    pnlRegister.setPreferredSize(preferredSize);
+                }
             }
             pnlMain.add(pnlRegister, "card3");
         }
@@ -488,7 +423,7 @@ public class LoginRegisterGUI  extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Benjamin Ward
+    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
     private JPanel pnlMain;
     private JPanel pnlLogin;
     private JLabel label6;
