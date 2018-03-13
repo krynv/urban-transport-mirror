@@ -1,15 +1,17 @@
 [ {
   "id" : "0",
   "name" : "Callum",
-  "credits" : 30.00,
-  "spentToday" : 0.0,
+  "age" : 23,
+  "credits" : 28.125,
+  "spentToday" : 1.875,
   "sortCode" : 100000,
   "securityNo" : 100,
   "accountNum" : 100000
 }, {
   "id" : "1",
   "name" : "Ben",
-  "credits" : 50.00,
+  "age" : 22,
+  "credits" : 50.0,
   "spentToday" : 0.0,
   "sortCode" : 111111,
   "securityNo" : 111,
@@ -17,15 +19,17 @@
 }, {
   "id" : "2",
   "name" : "Vitaliy",
-  "credits" : 50.00,
+  "age" : 70,
+  "credits" : 50.0,
   "spentToday" : 0.0,
   "sortCode" : 111112,
   "securityNo" : 112,
   "accountNum" : 111112
 }, {
   "id" : "3",
-  "name" : "Ben",
-  "credits" : 50.00,
+  "name" : "Dan",
+  "age" : 18,
+  "credits" : 50.0,
   "spentToday" : 0.0,
   "sortCode" : 111113,
   "securityNo" : 113,
@@ -33,7 +37,8 @@
 }, {
   "id" : "4",
   "name" : "Andy",
-  "credits" : 50.00,
+  "age" : 90,
+  "credits" : 50.0,
   "spentToday" : 0.0,
   "sortCode" : 123456,
   "securityNo" : 235,
@@ -41,6 +46,7 @@
 }, {
   "id" : "5",
   "name" : "Mark",
+  "age" : 60,
   "credits" : 27.8125,
   "spentToday" : 9.1875,
   "sortCode" : 123456,

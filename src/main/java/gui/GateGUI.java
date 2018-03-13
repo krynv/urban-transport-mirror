@@ -6,6 +6,7 @@ import logic.location.LocationDaoJson;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -16,10 +17,12 @@ public class GateGUI extends JFrame {
     private GateController gateController;
     private DefaultTableModel model;
     private Border defaultBorder;
+    private List<String> users;
 
     public GateGUI() {
         gateController = new GateController();
         model = new DefaultTableModel();
+        users = new ArrayList();
 
         initComponents();
         initLocations();
@@ -51,15 +54,20 @@ public class GateGUI extends JFrame {
         String locationId = Integer.toString(cbxLocations.getSelectedIndex());
 
         if (!tokenId.isEmpty()) {
-            gateController.presentToken(type, tokenId, locationId);
 
-            if (gateController.canOpen()) {
-                model.insertRow(model.getRowCount(),
-                        new Object[]{
-                                tokenId,
-                                gateController.getAccount().getName(),
-                                gateController.getAccount().getJourneys().getLatestJourney().getDepartureLocation()
-                        });
+            if (!checkUser(tokenId)) {
+
+                gateController.presentToken(type, tokenId, locationId);
+
+                if (gateController.canOpen()) {
+                    users.add(tokenId);
+                    model.insertRow(model.getRowCount(),
+                            new Object[]{
+                                    tokenId,
+                                    gateController.getAccount().getName(),
+                                    gateController.getAccount().getJourneys().getLatestJourney().getDepartureLocation()
+                            });
+                }
             }
         } else {
             txtTokenId.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
@@ -75,6 +83,7 @@ public class GateGUI extends JFrame {
 
         if (!tokenId.isEmpty()) {
             if (gateController.canOpen()) {
+                removeUser(tokenId);
                 model = (DefaultTableModel) tblInformation.getModel();
 
                 for (int i = 0; i < model.getRowCount(); i++) {
@@ -97,6 +106,23 @@ public class GateGUI extends JFrame {
 
     private void txtTokenIdFocusGained(FocusEvent e) {
         txtTokenId.setBorder(defaultBorder);
+    }
+
+    private Boolean checkUser(String tokenId) {
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).equals(tokenId)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void removeUser(String tokenId) {
+        for (int i = 0; i < users.size(); i++) {
+            if (users.get(i).equals(tokenId)) {
+                users.remove(i);
+            }
+        }
     }
 
     private void initComponents() {

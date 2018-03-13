@@ -2,6 +2,7 @@ package logic.account;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import logic.fare.FareRegistry;
 import logic.journey.Journey;
 import logic.journey.JourneyRegistry;
@@ -11,10 +12,12 @@ import logic.pass.PassRegistry;
 import java.time.LocalDateTime;
 
 @JsonDeserialize(using = AccountDeserializer.class)
+@JsonSerialize(using = AccountSerializer.class)
 public class Account {
 
     private String id;
     private String name;
+    private int age;
     private double credits;
     private double spentToday;
     private int sortCode;
@@ -86,6 +89,8 @@ public class Account {
                 cost = passes.applyPass(cost);
 
                 spentToday += cost;
+
+                System.out.println();
 
                 if (spentToday >= 15) {
                     passes.awardDayPass();
@@ -192,6 +197,14 @@ public class Account {
     public Boolean addCredit(double amount) {
         this.credits = this.credits + amount;
         return true;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     @Override
