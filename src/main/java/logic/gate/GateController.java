@@ -66,6 +66,11 @@ public class GateController {
         }
     }
 
+    /**
+     * Checks to see if the gate is open
+     *
+     * @return true or false depending if the gate is open
+     */
     public Boolean canOpen() {
         return open;
     }

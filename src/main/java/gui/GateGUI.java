@@ -92,7 +92,6 @@ public class GateGUI extends JFrame {
     }
 
     private void btnMainGUIActionPerformed(ActionEvent e) {
-        new GUI().setVisible(true);
         this.dispose();
     }
 

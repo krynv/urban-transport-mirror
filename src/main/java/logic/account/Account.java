@@ -44,11 +44,34 @@ public class Account {
         this.accountNum = accountNum;
     }
 
+    /**
+     * Set an open journey for when a passenger enters the system
+     * @param entryLocation - Location value for the user's entry location
+     * @param entryDateTime - LocalDateTime value for the time the user entered the system
+     */
     public void processPassengerEntry(Location entryLocation, LocalDateTime entryDateTime) {
         journeys.setOpenJourney(entryLocation, entryDateTime);
         entry = true;
     }
 
+    /**
+     * Create a Journey openJourney object to find an open journey in the list of JourneyRegistry that belongs to the Account
+     *
+     * Check if there are any open journeys
+     * If so, close that journey by using the given parameters of arrival Location and LocalDateTime
+     *
+     * Check if the user has a day pass
+     * If not, calculate a cost based on the cheapest tarriff of all fares that exist in a FareRegistry
+     *
+     * Apply a modifier to the cost for every type of pass the user is awarded
+     * Increment the value of total spent today by the cost
+     * If the cost meets the threshold of a day pass value then award a day pass to the user
+     * Remove the cost for the journey from the user's account credits
+     * Allow them to exit
+     *
+     * @param arrivalLocation - Location of the exit gate
+     * @param arrivalDateTime - LocalDateTime value of the user's arrival at the exit gate
+     */
     public void processPassengerExit(Location arrivalLocation, LocalDateTime arrivalDateTime) {
         Journey openJourney = journeys.findOpenJourney();
 
