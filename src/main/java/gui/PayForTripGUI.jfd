@@ -48,22 +48,29 @@ new FormModel {
 				} )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.CardLayout ) ) {
 					name: "pnlContent"
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq l {space :p:67:p, par l {seq l {par l {seq l {space :p:229:p, comp btnPrintAccTic:::p::p}, par l:l {seq l {space :106:106:p, comp lblTransAccNotification:::p:204:p}, comp lblTransAccPaymentInformation::l:p::p, seq t {comp btnPayTransAcc:::p::p, space :p:177:p}, seq l {par l {comp lblTicketTypeTransAccPayment::l:p::p, comp lblTicketTypeTransAccAccountId::l:p::p}, space :p:40:p, par l {comp lblPriceTransAccPayment:::p:43:p, comp txtFieldAccountID:::p:212:p}}, seq t {comp lblTicketTypeTransAccAccountId3:::p::p, space :42:42:p, comp txtFieldCredit:::p:212:p}}}, space ::153:p}, seq t {space :p:149:p, par l {seq l {space :118:118:p, comp lblStationTransAcc:::p::p, space :6:6:p, comp lblDestinationConfirmBookingTransAcc:::p::p}, seq l {comp lblDepartureDateTimeConfirmBooking2:::p:135:p, space :82:82:p, comp lblReturnDateTimeConfirmBooking2:::p::p}, seq l {space :6:6:p, comp lblDepartTime2:::p:108:p, space :103:103:p, comp lblReturnTimeTransAcc:::p:110:p}}}}, space ::115:x}}"
-						"$verticalGroup": "par l {seq {space :p:19:p, par l {comp lblStationTransAcc:::p::p, comp lblDestinationConfirmBookingTransAcc:::p::p}, space :6:6:p, par l {comp lblDepartureDateTimeConfirmBooking2:::p:24:p, seq l {space :4:4:p, comp lblReturnDateTimeConfirmBooking2:::p::p}}, space :6:6:p, par l {comp lblDepartTime2:::p::p, comp lblReturnTimeTransAcc:::p::p}, space s:::p, comp lblTransAccNotification:::p:18:p, space s:::p, comp lblTransAccPaymentInformation:::p::p, space s:::p, par b {comp lblTicketTypeTransAccPayment::b:p::p, comp lblPriceTransAccPayment::b:p::p}, space s:::p, par b {comp lblTicketTypeTransAccAccountId::b:p::p, comp txtFieldAccountID::b:p::p}, space :::p, par l {seq l {space :4:4:p, comp lblTicketTypeTransAccAccountId3:::p::p}, comp txtFieldCredit:::p::p}, space ::16:x, par b {comp btnPrintAccTic::b:p::p, comp btnPayTransAcc::b:p::p}, space :p:134:p}}"
-					} ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 						name: "pnlTransportAccountPayment"
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblPriceTransAccPayment"
 							"text": "PRICE"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 395
+							"y": 250
+							"width": 43
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblTicketTypeTransAccPayment"
 							"text": "Ticket Type"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 285
+							"y": 250
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblTransAccPaymentInformation"
 							"text": "Transport Account Payment Information"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 285
+							"y": 220
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblTransAccNotification"
@@ -73,77 +80,131 @@ new FormModel {
 							"foreground": &Color1 new java.awt.Color( 0, 0, 0, 255 )
 							"horizontalAlignment": 0
 							"text": "Payment Successfully Made"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 360
+							"y": 145
+							"width": 204
+							"height": 18
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnPayTransAcc"
 							"text": "Pay with Account"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnPayTransAccActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 280
+							"y": 355
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnPrintAccTic"
 							"text": "Advance"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnPrintAccTicActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 520
+							"y": 355
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblTicketTypeTransAccAccountId"
 							"text": "Account ID"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 285
+							"y": 290
 						} )
 						add( new FormComponent( "javax.swing.JTextField" ) {
 							name: "txtFieldAccountID"
 							"enabled": false
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 395
+							"y": 285
+							"width": 212
 						} )
 						add( new FormComponent( "javax.swing.JTextField" ) {
 							name: "txtFieldCredit"
 							"enabled": false
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 395
+							"y": 315
+							"width": 212
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblTicketTypeTransAccAccountId3"
 							"text": "Credit"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 320
+							"y": 320
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblDestinationConfirmBookingTransAcc"
 							"text": "Destination"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 460
+							"y": 30
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblStationTransAcc"
 							"text": "Station"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 380
+							"y": 30
+							"width": 74
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblDepartureDateTimeConfirmBooking2"
 							"text": "Departure Time"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 315
+							"y": 55
+							"width": 135
+							"height": 24
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblDepartTime2"
 							"text": "text"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 345
+							"y": 85
+							"width": 108
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblReturnTimeTransAcc"
 							"text": "text"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 560
+							"y": 85
+							"width": 74
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblReturnDateTimeConfirmBooking2"
 							"text": "Return Time"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 535
+							"y": 55
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card9"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {space ::201:x, par l {seq t {par l {comp lblLanguageLoaded2::t:p::p, seq t {par t {comp btnLoadLanguage:::p::p, comp cmbBoxLanguage:::p::p}, space :p:71:p}}, space :p:161:p}, seq t {comp lblLanguageLoaded:::p::p, space :p:213:p}}}}"
-						"$verticalGroup": "par l {seq t {space ::72:x, comp lblLanguageLoaded:::p::p, space :p:43:p, comp lblLanguageLoaded2:::p::p, space :::p, comp cmbBoxLanguage:::p::p, space :p:139:p, comp btnLoadLanguage:::p::p, space :p:95:p}}"
-					} ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 						name: "pnlSelectLanguage"
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnLoadLanguage"
 							"text": "Load Language"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnLoadLanguageActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 435
+							"y": 245
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblLanguageLoaded"
 							"text": "Language Loaded"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 440
+							"y": 10
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblLanguageLoaded2"
 							"text": "Please select a language from the dropdown list"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 350
+							"y": 75
 						} )
 						add( new FormComponent( "javax.swing.JComboBox" ) {
 							name: "cmbBoxLanguage"
@@ -156,32 +217,47 @@ new FormModel {
 								addElement( "Spanish" )
 								addElement( "Welsh" )
 							}
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 440
+							"y": 125
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card2"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {space :0:167:x, par l {seq {comp btnDestination1:::p:100:p, space :p:12:p, comp btnDestination2:::p:100:p, space u:::p, comp btnDestination3:::p:100:p}, seq {comp btnDestination4:::p:100:p, space u:::p, comp btnDestination5:::p:100:p, space :12:12:p, comp btnDestination6:::p:100:p}}, space :0:167:x}, seq l {space :p:171:p, comp lblNotifyLang:::p:204:p, space ::283:x}}"
-						"$verticalGroup": "par l {seq {space :0:52:x, comp lblNotifyLang:::p:18:p, space :p:37:p, par l {comp btnDestination1:::p:100:p, par b {comp btnDestination3::b:p:100:p, comp btnDestination2::b:p:100:p}}, space :33:33:p, par l {par b {comp btnDestination5::b:p:100:p, comp btnDestination4::b:p:100:p}, comp btnDestination6:::p:100:p}, space :0:105:x}}"
-					} ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 						name: "pnlHome"
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnDestination1"
 							"text": "London"
 							"font": &Font0 new java.awt.Font( ".SF NS Text", 0, 10 )
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnDestination1ActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 325
+							"y": 120
+							"width": 100
+							"height": 100
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnDestination4"
 							"text": "Nottingham"
 							"font": #Font0
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnDestination4ActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 325
+							"y": 250
+							"width": 100
+							"height": 100
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnDestination5"
 							"text": "Newcastle"
 							"font": #Font0
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnDestination5ActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 435
+							"y": 250
+							"width": 100
+							"height": 100
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnDestination2"
@@ -189,18 +265,33 @@ new FormModel {
 							"font": #Font0
 							addEvent( new FormEvent( "javax.swing.event.ChangeListener", "stateChanged", "btnDestination2StateChanged", true ) )
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnDestination2ActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 435
+							"y": 120
+							"width": 100
+							"height": 100
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnDestination3"
 							"text": "Derby"
 							"font": #Font0
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnDestination3ActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 550
+							"y": 120
+							"width": 100
+							"height": 100
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnDestination6"
 							"text": "Leicester"
 							"font": #Font0
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnDestination6ActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 550
+							"y": 250
+							"width": 100
+							"height": 100
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblNotifyLang"
@@ -210,23 +301,32 @@ new FormModel {
 							"foreground": #Color1
 							"horizontalAlignment": 0
 							"text": "Language Changed"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 385
+							"y": 65
+							"width": 204
+							"height": 18
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card1"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq l {space :p:294:p, par l {comp cmbBoxTicket:::p::p, comp lblTicketType:::p::p}, space ::254:x}};par l {seq {space :0:0:x, par l {seq {space :112:112:p, comp lblDestination:::p::p}, seq {comp lblDepartureDateTime:::p::p, space :63:63:p, comp lblReturnDateTime:::p:126:p}, seq {comp dpdnDeparture:::p:126:p, space :63:63:p, comp dpdnReturn:::p:126:p}, seq {space :p:286:p, comp btnSearch:::p::p}}, space :0:0:x}}"
-						"$verticalGroup": "par l {seq t {space ::220:x, comp lblTicketType:::p::p, space u:::p, comp cmbBoxTicket:::p::p, space :p:171:p}};par l {seq {space :0:0:x, comp lblDestination:::p::p, space :28:28:p, par l {comp lblDepartureDateTime:::p:26:p, comp lblReturnDateTime:::p:26:p}, space :6:6:p, par l {comp dpdnDeparture:::p::p, comp dpdnReturn:::p::p}, space :p:105:p, comp btnSearch:::p::p, space :0:0:x}}"
-					} ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 						name: "pnlSelectFares"
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnSearch"
 							"text": "Search"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "searchActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 525
+							"y": 215
+							"width": 125
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblTicketType"
 							"text": "Ticket Type"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 335
+							"y": 195
 						} )
 						add( new FormComponent( "javax.swing.JComboBox" ) {
 							name: "dpdnDeparture"
@@ -257,6 +357,10 @@ new FormModel {
 								addElement( "23:00" )
 								addElement( "00:00" )
 							}
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 335
+							"y": 130
+							"width": 126
 						} )
 						add( new FormComponent( "javax.swing.JComboBox" ) {
 							name: "dpdnReturn"
@@ -287,18 +391,34 @@ new FormModel {
 								addElement( "23:00" )
 								addElement( "00:00" )
 							}
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 525
+							"y": 130
+							"width": 126
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblDepartureDateTime"
 							"text": "Departure Date/Time"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 335
+							"y": 95
+							"height": 26
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblReturnDateTime"
 							"text": "Return Date/Time"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 525
+							"y": 95
+							"width": 126
+							"height": 26
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblDestination"
 							"text": "London"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 470
+							"y": 20
 						} )
 						add( new FormComponent( "javax.swing.JComboBox" ) {
 							name: "cmbBoxTicket"
@@ -309,14 +429,14 @@ new FormModel {
 								addElement( "Return" )
 							}
 							addEvent( new FormEvent( "java.awt.event.ItemListener", "itemStateChanged", "cmbBoxTicketItemStateChanged", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 335
+							"y": 220
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card3"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq l {space :p:116:p, par l {seq {comp btnFare1:::p::p, space :p:30:p, comp btnFare2:::p::p}, comp btnFare3:::p::p}, space ::236:x}}"
-						"$verticalGroup": "par l {seq l {space :p:141:p, par b {comp btnFare2::b:p::p, comp btnFare1::b:p::p}, space :6:6:p, comp btnFare3:::p::p, space ::154:x}}"
-					} ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 						name: "pnlSearchedFares"
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnFare3"
@@ -324,6 +444,11 @@ new FormModel {
 							"horizontalAlignment": 11
 							"font": &Font1 new java.awt.Font( ".SF NS Text", 0, 11 )
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnFare3ActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 575
+							"y": 180
+							"height": 100
+							"width": 160
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnFare1"
@@ -331,6 +456,11 @@ new FormModel {
 							"horizontalAlignment": 11
 							"font": #Font1
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnFare1ActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 230
+							"y": 180
+							"height": 100
+							"width": 160
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnFare2"
@@ -338,6 +468,11 @@ new FormModel {
 							"horizontalAlignment": 11
 							"font": #Font1
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnFare2ActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 405
+							"y": 180
+							"height": 100
+							"width": 160
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card4"
@@ -477,30 +612,43 @@ new FormModel {
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card5"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq {space :p:68:p, par l {comp lblPaymentInformation:::p::p, seq {comp txtCashValue:::p:67:p, space :p:12:p, comp btnPayCash:::p::p, space u:::p, comp btnPrintCashTic:::p::p}, seq l {space :152:152:p, comp lblStationCashPayment:::p::p, space :6:6:p, comp lblDestinationCashPayment:::p::p}, seq l {par l {comp lblCashInserted::l:p::p, comp lblTicketTypeCashPayment::l:p::p}, space :p:55:p, par l {comp lblPriceCashPayment:::p:43:p, comp lblCashValue:::p::p}}, seq l {space :84:84:p, par l {seq {par l {comp lblDepartureDateTimeCashPayment::l:p:135:p, comp lblDepartTime3::l:p:108:p}, par l {seq {space :6:6:p, comp lblReturnTime2:::p:91:p}, comp lblReturnDateTimeCashPayment:::p::p}}, comp lblNotification:::p:204:p, comp lblNotification2::l:p:204:p}}}, space ::274:x}}"
-						"$verticalGroup": "par l {seq l {space :p:106:p, par l {comp lblStationCashPayment:::p::p, comp lblDestinationCashPayment:::p::p}, space :6:6:p, par l {comp lblDepartureDateTimeCashPayment:::p:24:p, seq l {space :4:4:p, comp lblReturnDateTimeCashPayment:::p::p}}, space u:::p, par l {comp lblDepartTime3:::p::p, comp lblReturnTime2::l:p::p}, space :::p, comp lblNotification:::p:18:p, space u:::p, comp lblNotification2:::p:18:p, space :p:12:p, comp lblPaymentInformation:::p::p, space s:::p, par b {comp lblTicketTypeCashPayment::b:p::p, comp lblPriceCashPayment::b:p::p}, space :12:12:p, par l {comp lblCashInserted:::p::p, comp lblCashValue:::p::p}, space ::10:x, par b {comp txtCashValue::b:p::p, comp btnPrintCashTic::b:p::p, comp btnPayCash::b:p::p}, space :p:79:p}}"
-					} ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 						name: "pnlCashTicketPayment"
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblCashInserted"
 							"text": "Cash Inserted"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 380
+							"y": 250
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblCashValue"
 							"text": "VALUE"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 520
+							"y": 250
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblPriceCashPayment"
 							"text": "PRICE"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 520
+							"y": 225
+							"width": 43
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblTicketTypeCashPayment"
 							"text": "Ticket Type"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 380
+							"y": 225
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblPaymentInformation"
 							"text": "Payment Information"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 380
+							"y": 190
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblNotification"
@@ -510,35 +658,65 @@ new FormModel {
 							"text": "Input cash to confirm payment"
 							"foreground": #Color1
 							"horizontalAlignment": 0
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 365
+							"y": 125
+							"width": 204
+							"height": 18
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblDepartureDateTimeCashPayment"
 							"text": "Departure Time"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 315
+							"y": 55
+							"width": 135
+							"height": 24
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblReturnDateTimeCashPayment"
 							"text": "Return Time"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 535
+							"y": 55
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblDestinationCashPayment"
 							"text": "Destination"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 460
+							"y": 30
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblStationCashPayment"
 							"text": "Station"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 380
+							"y": 30
+							"width": 74
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnPayCash"
 							"text": "Pay"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnPayCashActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 460
+							"y": 280
 						} )
 						add( new FormComponent( "javax.swing.JTextField" ) {
 							name: "txtCashValue"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 380
+							"y": 280
+							"width": 67
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnPrintCashTic"
 							"text": "Advance"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnPrintCashTicActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 525
+							"y": 280
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblNotification2"
@@ -548,114 +726,197 @@ new FormModel {
 							"text": "Input cash to confirm payment"
 							"foreground": #Color1
 							"horizontalAlignment": 0
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 365
+							"y": 155
+							"width": 204
+							"height": 18
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblReturnTime2"
 							"text": "text"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 560
+							"y": 85
+							"width": 74
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblDepartTime3"
 							"text": "text"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 345
+							"y": 85
+							"width": 108
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card6"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq l {space :p:61:p, par l {seq l {space :157:157:p, comp lblStationCardPayment:::p::p, space :6:6:p, comp lblDestinationCardPayment:::p::p}, comp lblPaymentInformationCardPayment:::p::p, seq l {space :32:32:p, comp lblTicketTypeCardPayment:::p::p, space :73:73:p, comp lblPriceCardPayment:::p::p}, seq l {space :32:32:p, comp lblCardName:::p:86:p, space :42:42:p, comp txtCardName:::p:147:p}, seq l {space :71:71:p, comp lblPaymentValidate:::p:312:p}, seq l {space :32:32:p, par l:::p {seq l {comp lblSortCode:::p::p, space :::x, comp txtSortCode:::p:147:p}, seq l {comp lblSecurityCode:::p::p, space :::x, comp txtSecurityCode:::p:147:p}, seq l {comp lblCardNumber:::p:86:p, space :42:42:p, comp txtCardNumber:::p:147:p}}}, seq l {space :p:59:p, par t {comp lblDepartureDateTimeCardPayment:::p:135:p, comp lblDepartTime4:::p:108:p}, space :33:33:p, par l {comp lblReturnDateTimeCardPayment:::p::p, comp lblReturnTime3:::p:91:p}}, seq t {comp btnPrintTicket:::p::p, space :p:66:p, comp btnConfirmPayment:::p::p}}, space ::214:x}}"
-						"$verticalGroup": "par l {seq l {space :::p, par l {comp lblStationCardPayment:::p::p, comp lblDestinationCardPayment:::p::p}, space :p:6:p, par b {comp lblDepartureDateTimeCardPayment::b:p:24:p, comp lblReturnDateTimeCardPayment::b:p::p}, space :p:6:p, par l {comp lblDepartTime4:::p::p, comp lblReturnTime3:::p::p}, space :p:10:p, comp lblPaymentValidate:::p:18:p, space :22:22:p, comp lblPaymentInformationCardPayment:::p::p, space :9:9:p, par l {comp lblTicketTypeCardPayment:::p::p, comp lblPriceCardPayment:::p::p}, space :22:22:p, par l {seq l {space :4:4:p, comp lblCardName:::p::p}, comp txtCardName:::p::p}, space :6:6:p, par l {seq l {space :4:4:p, comp lblCardNumber:::p::p}, comp txtCardNumber:::p::p}, par l {seq l {space :p:10:p, comp lblSecurityCode:::p::p, space s:::p, comp lblSortCode:::p::p, space ::55:p}, seq l {space :::p, comp txtSecurityCode:::p::p, space u:::p, comp txtSortCode:::p::p, space :::x, par b {comp btnConfirmPayment::b:p::p, comp btnPrintTicket::b:p::p}}}, space :p:89:p}}"
-					} ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 						name: "pnlCardTicketPayment"
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnPrintTicket"
 							"text": "Advance"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnPrintTicketActionPerformed", true ) )
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnPrintTicketActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 460
+							"y": 395
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnConfirmPayment"
 							"text": "Confirm Payment"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnConfirmPaymentActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 430
+							"y": 340
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblSecurityCode"
 							"text": "Security Code"
 							"labelFor": &FormReference0 new FormReference( "txtSecurityCode" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 350
+							"y": 265
 						} )
 						add( new FormComponent( "javax.swing.JTextField" ) {
 							name: "txtSecurityCode"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 480
+							"y": 260
+							"width": 147
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblCardNumber"
 							"text": "Card Number"
 							"labelFor": new FormReference( "txtCardNumber" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 350
+							"y": 235
+							"width": 86
 						} )
 						add( new FormComponent( "javax.swing.JTextField" ) {
 							name: "txtCardNumber"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 480
+							"y": 230
+							"width": 147
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblCardName"
 							"text": "Card Name"
 							"labelFor": new FormReference( "txtCardName" )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 350
+							"y": 205
+							"width": 86
 						} )
 						add( new FormComponent( "javax.swing.JTextField" ) {
 							name: "txtCardName"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 480
+							"y": 200
+							"width": 147
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblTicketTypeCardPayment"
 							"text": "Ticket Type"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 350
+							"y": 160
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblPriceCardPayment"
 							"text": "PRICE"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 495
+							"y": 160
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblPaymentInformationCardPayment"
 							"text": "Payment Information"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 320
+							"y": 135
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblPaymentValidate"
 							"toolTipText": "Coupon Validity Check"
 							"horizontalAlignment": 0
 							"horizontalTextPosition": 0
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 305
+							"y": 115
+							"width": 312
+							"height": 18
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblDepartureDateTimeCardPayment"
 							"text": "Departure Time"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 315
+							"y": 55
+							"width": 135
+							"height": 24
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblReturnDateTimeCardPayment"
 							"text": "Return Time"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 535
+							"y": 55
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblDestinationCardPayment"
 							"text": "Destination"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 460
+							"y": 30
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblStationCardPayment"
 							"text": "Station"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 380
+							"y": 30
+							"width": 74
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblSortCode"
 							"text": "Sort Code"
 							"labelFor": #FormReference0
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 350
+							"y": 300
 						} )
 						add( new FormComponent( "javax.swing.JTextField" ) {
 							name: "txtSortCode"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 480
+							"y": 295
+							"width": 147
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblReturnTime3"
 							"text": "text"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 560
+							"y": 85
+							"width": 74
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblDepartTime4"
 							"text": "text"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 345
+							"y": 85
+							"width": 108
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card7"
 					} )
 					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {space :0:658:x};par l {seq {space :0:0:x, comp scrollPane:::p:472:p, space :0:0:x}}"
-						"$verticalGroup": "par l {space :0:445:x};par l {seq {space :0:0:x, comp scrollPane:::p:281:p, space :0:0:x}}"
+						"$horizontalGroup": "par l {space :0:787:x};par l {seq {space :0:0:x, comp scrollPane:::p:472:p, space :0:0:x}}"
+						"$verticalGroup": "par l {space :0:492:x};par l {seq {space :0:0:x, comp scrollPane:::p:281:p, space :0:0:x}}"
 					} ) {
 						name: "pnlTimetable"
 						add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
@@ -667,10 +928,7 @@ new FormModel {
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card8"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq l {space :p:97:p, par l {seq l {par l {seq l {space :p:157:p, comp lblStationlReceipt:::p::p, space :p:26:p, comp lblDestinationlReceipt:::p::p}, seq l {space :p:179:p, par l {comp lblViaLocationslReceipt5::l:p:96:p, comp lblViaLocationslReceipt3::l:p:96:p, comp lblViaLocationlReceipt6::l:p:96:p, comp lblViaLocationslReceipt4::l:p:96:p, comp lbllReceiptLocation::l:p::p}}, seq l {space :p:29:p, par l {comp btnPrintReceipt::l:p:130:p, seq l {comp lblAccount:::p:96:p, par l {seq l {space :p:368:p, comp txtAccountID:::p:147:p}, seq l {par l {comp lblDepartureDateTimelReceipt::l:p:135:p, seq l {space :6:6:p, comp lblDepartTime5:::p:108:p}}, space :p:133:p, par l {comp lblReturnTime4:::p:91:p, comp lblReturnDateTimelReceipt:::p::p}}, seq l {comp btnProlReceipt:::p::p, space :p:108:p, par l {comp btnPrintPhyTic:::p:153:p, comp btnAddCredit:::p:153:p}}}}}}, comp lblReceiptNotification:::p:444:p}, space :108::x}, seq {par l {comp lblViaLocationlReceipt9::l:::x, comp lblViaLocationlReceipt8::t:::x}, space :p:14:p}, seq l {space :p:6:p, par t {comp btnEmail:::p:230:p, seq {comp lblViaLocationlReceipt7:::p:157:p, space :::p, comp txtEmailField:::p:158:p}}, space :0:0:x}}}}"
-						"$verticalGroup": "par l {seq l {space :::p, par b {comp lblStationlReceipt::b:p::p, comp lblDestinationlReceipt::b:p::p}, par l {seq l {space u:::p, comp lblDepartureDateTimelReceipt:::p:24:p, space :p:5:p, comp lblDepartTime5:::p::p}, seq l {space :p:18:p, comp lblReturnDateTimelReceipt:::p::p, space :::p, comp lblReturnTime4:::p::p}}, space :::p, comp lbllReceiptLocation:::p::p, space :::p, comp lblViaLocationslReceipt4:::p::p, space :::p, comp lblViaLocationslReceipt5:::p::p, space :::p, comp lblViaLocationslReceipt3:::p:20:p, space :::p, comp lblViaLocationlReceipt6:::p:20:p, space :::p, comp lblReceiptNotification:::p:18:p, space :::p, par b {comp btnProlReceipt::b:p::p, comp btnPrintPhyTic::b:p::p}, space :::p, par l {comp btnPrintReceipt:::p::p, comp btnAddCredit:::p::p}, space :::p, comp lblAccount:::p:20:p, space :0:0:p, comp txtAccountID:::p::p, space :::x, comp lblViaLocationlReceipt8:::p:20:p, space :::p, comp lblViaLocationlReceipt9:::p:20:p, space u:::p, par b {comp lblViaLocationlReceipt7::b:p:20:p, comp txtEmailField::b:p::p}, space u:::p, comp btnEmail:::p::p, space :p:22:p}}"
-					} ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 						name: "pnlPrintReceipt"
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblReceiptNotification"
@@ -680,117 +938,217 @@ new FormModel {
 							"foreground": #Color1
 							"horizontalAlignment": 0
 							"text": "Payment Complete"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 260
+							"y": 215
+							"width": 444
+							"height": 18
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lbllReceiptLocation"
 							"text": "Via Locations"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 440
+							"y": 90
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblDepartureDateTimelReceipt"
 							"text": "Departure Date/Time"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 315
+							"y": 55
+							"width": 135
+							"height": 24
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblReturnDateTimelReceipt"
 							"text": "Return Date/Time"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 535
+							"y": 55
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblDestinationlReceipt"
 							"text": "Destination"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 460
+							"y": 30
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblStationlReceipt"
 							"text": "Station"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 380
+							"y": 30
+							"width": 74
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnProlReceipt"
 							"text": "PRODUCE RECEIPT"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnProlReceiptActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 270
+							"y": 250
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnPrintReceipt"
 							"text": "PRINT RECEIPT"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnPrintReceiptActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 270
+							"y": 285
+							"width": 145
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblViaLocationslReceipt3"
 							"text": "Derby"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 440
+							"y": 155
+							"width": 96
+							"height": 20
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblViaLocationslReceipt4"
 							"text": "Sheffield"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 440
+							"y": 110
+							"width": 96
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblViaLocationslReceipt5"
 							"text": "Nottingham"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 440
+							"y": 135
+							"width": 96
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblViaLocationlReceipt6"
 							"text": "London"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 440
+							"y": 180
+							"width": 96
+							"height": 20
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnPrintPhyTic"
 							"text": "PRODUCE TOKEN"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnPrintPhyTicActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 525
+							"y": 250
+							"width": 153
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnAddCredit"
 							"text": "ACCOUNT TOKEN"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAddCreditActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 525
+							"y": 285
+							"width": 153
 						} )
 						add( new FormComponent( "javax.swing.JTextField" ) {
 							name: "txtAccountID"
 							"visible": false
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 494
+							"y": 297
+							"width": 0
+							"height": 0
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblAccount"
 							"text": "Account ID"
 							"visible": false
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 126
+							"y": 297
+							"width": 0
+							"height": 0
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnEmail"
 							"text": "SEND TICKET AS EMAIL"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnEmailActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 380
+							"y": 460
+							"width": 230
 						} )
 						add( new FormComponent( "javax.swing.JTextField" ) {
 							name: "txtEmailField"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 450
+							"y": 425
+							"width": 158
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblViaLocationlReceipt7"
 							"text": "Please Enter Email"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 285
+							"y": 430
+							"width": 157
+							"height": 20
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblViaLocationlReceipt8"
 							"text": "If you would like to send the ticket as an email please fill in the input"
 							"horizontalAlignment": 0
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 170
+							"y": 355
+							"width": 617
+							"height": 20
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblViaLocationlReceipt9"
 							"text": "below and then press the button."
 							"horizontalAlignment": 0
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 170
+							"y": 380
+							"width": 617
+							"height": 20
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblReturnTime4"
 							"text": "text"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 560
+							"y": 85
+							"width": 74
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblDepartTime5"
 							"text": "text"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 345
+							"y": 85
+							"width": 108
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card10"
 					} )
-					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-						"$horizontalGroup": "par l {seq l {space :p:112:p, par l {comp btnSearchAccount::l:p::p, seq l {space :106:106:p, comp lblTransSearchNot:::p:204:p}, comp lblTransAccPaymentInformation2::l:p::p, seq l {par l {comp lblTicketTypeTransAccPayment2::l:p::p, comp lblTicketTypeTransAccAccountId2::l:p::p}, space :p:40:p, comp txtFieldAccountID2:::p:212:p}}, space ::176:x}}"
-						"$verticalGroup": "par l {seq {space :p:82:p, comp lblTransSearchNot:::p:18:p, space s:::p, comp lblTransAccPaymentInformation2:::p::p, space s:::p, comp lblTicketTypeTransAccPayment2:::p::p, space s:::p, par b {comp lblTicketTypeTransAccAccountId2::b:p::p, comp txtFieldAccountID2::b:p::p}, space ::64:x, comp btnSearchAccount:::p::p, space :p:157:p}}"
-					} ) {
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
 						name: "pnlSearchAccount"
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblTicketTypeTransAccPayment2"
 							"text": "Search for account"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 240
+							"y": 140
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblTransAccPaymentInformation2"
 							"text": "Search for Transport Account"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 240
+							"y": 105
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblTransSearchNot"
@@ -802,18 +1160,33 @@ new FormModel {
 							"text": "Account cannot be found"
 							"doubleBuffered": true
 							"visible": false
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 330
+							"y": 50
+							"width": 270
+							"height": 25
 						} )
 						add( new FormComponent( "javax.swing.JButton" ) {
 							name: "btnSearchAccount"
 							"text": "Search for Account"
 							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnSearchAccountActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 240
+							"y": 310
 						} )
 						add( new FormComponent( "javax.swing.JLabel" ) {
 							name: "lblTicketTypeTransAccAccountId2"
 							"text": "Account ID"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 240
+							"y": 180
 						} )
 						add( new FormComponent( "javax.swing.JTextField" ) {
 							name: "txtFieldAccountID2"
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"x": 400
+							"y": 175
+							"width": 212
 						} )
 					}, new FormLayoutConstraints( class java.lang.String ) {
 						"value": "card11"
@@ -843,7 +1216,7 @@ new FormModel {
 					name: "label1"
 					"text": "Overall progress"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 590
+					"x": 555
 					"y": 30
 					"width": 146
 				} )
@@ -851,7 +1224,7 @@ new FormModel {
 					name: "label2"
 					"text": "You are currently at stage: X of 5"
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 545
+					"x": 510
 					"y": 5
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
