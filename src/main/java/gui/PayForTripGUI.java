@@ -853,7 +853,7 @@ public class PayForTripGUI extends JFrame {
     }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
+        // Generated using JFormDesigner Evaluation license - Benjamin Ward
         pnlMain = new JPanel();
         pnlSide = new JPanel();
         btnHome = new JButton();
@@ -1003,6 +1003,7 @@ public class PayForTripGUI extends JFrame {
         {
             pnlMain.setPreferredSize(new Dimension(1111, 635));
 
+
             pnlMain.setLayout(new CardLayout());
 
             //======== pnlSide ========
@@ -1052,7 +1053,7 @@ public class PayForTripGUI extends JFrame {
                         //---- lblTicketTypeTransAccPayment ----
                         lblTicketTypeTransAccPayment.setText("Ticket Type");
                         pnlTransportAccountPayment.add(lblTicketTypeTransAccPayment);
-                        lblTicketTypeTransAccPayment.setBounds(new Rectangle(new Point(285, 250), lblTicketTypeTransAccPayment.getPreferredSize()));
+                        lblTicketTypeTransAccPayment.setBounds(285, 250, 100, lblTicketTypeTransAccPayment.getPreferredSize().height);
 
                         //---- lblTransAccPaymentInformation ----
                         lblTransAccPaymentInformation.setText("Transport Account Payment Information");
@@ -1464,12 +1465,12 @@ public class PayForTripGUI extends JFrame {
                         //---- lblTicketTypeConfirmBooking ----
                         lblTicketTypeConfirmBooking.setText("Ticket Type");
                         pnlConfirmBooking.add(lblTicketTypeConfirmBooking);
-                        lblTicketTypeConfirmBooking.setBounds(new Rectangle(new Point(305, 190), lblTicketTypeConfirmBooking.getPreferredSize()));
+                        lblTicketTypeConfirmBooking.setBounds(305, 190, 100, lblTicketTypeConfirmBooking.getPreferredSize().height);
 
                         //---- lblPrice ----
                         lblPrice.setText("Price");
                         pnlConfirmBooking.add(lblPrice);
-                        lblPrice.setBounds(new Rectangle(new Point(415, 190), lblPrice.getPreferredSize()));
+                        lblPrice.setBounds(new Rectangle(new Point(430, 190), lblPrice.getPreferredSize()));
 
                         //---- lblTicketInformation ----
                         lblTicketInformation.setText("Ticket Information");
@@ -1555,7 +1556,7 @@ public class PayForTripGUI extends JFrame {
                         //---- lblTicketTypeCashPayment ----
                         lblTicketTypeCashPayment.setText("Ticket Type");
                         pnlCashTicketPayment.add(lblTicketTypeCashPayment);
-                        lblTicketTypeCashPayment.setBounds(new Rectangle(new Point(380, 225), lblTicketTypeCashPayment.getPreferredSize()));
+                        lblTicketTypeCashPayment.setBounds(380, 225, 85, lblTicketTypeCashPayment.getPreferredSize().height);
 
                         //---- lblPaymentInformation ----
                         lblPaymentInformation.setText("Payment Information");
@@ -1688,7 +1689,7 @@ public class PayForTripGUI extends JFrame {
                         //---- lblTicketTypeCardPayment ----
                         lblTicketTypeCardPayment.setText("Ticket Type");
                         pnlCardTicketPayment.add(lblTicketTypeCardPayment);
-                        lblTicketTypeCardPayment.setBounds(new Rectangle(new Point(350, 160), lblTicketTypeCardPayment.getPreferredSize()));
+                        lblTicketTypeCardPayment.setBounds(350, 160, 90, lblTicketTypeCardPayment.getPreferredSize().height);
 
                         //---- lblPriceCardPayment ----
                         lblPriceCardPayment.setText("PRICE");
@@ -2033,7 +2034,7 @@ public class PayForTripGUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
+    // Generated using JFormDesigner Evaluation license - Benjamin Ward
     private JPanel pnlMain;
     private JPanel pnlSide;
     private JButton btnHome;
