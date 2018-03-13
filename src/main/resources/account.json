@@ -2,7 +2,7 @@
   "id" : "0",
   "name" : "Callum",
   "age" : 23,
-  "credits" : 18.1875,
+  "credits" : 19.1875,
   "spentToday" : 15.0,
   "sortCode" : 100000,
   "securityNo" : 100,
@@ -10,6 +10,9 @@
   "journeys" : {
     "journeys" : [ {
       "arrivalDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -17,15 +20,15 @@
         "hour" : 12,
         "minute" : 26,
         "second" : 47,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "departureDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -33,9 +36,6 @@
         "hour" : 12,
         "minute" : 26,
         "second" : 43,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -53,6 +53,9 @@
       "open" : false
     }, {
       "arrivalDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -60,15 +63,15 @@
         "hour" : 12,
         "minute" : 28,
         "second" : 12,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "departureDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -76,9 +79,6 @@
         "hour" : 12,
         "minute" : 28,
         "second" : 5,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -97,6 +97,9 @@
     }, {
       "arrivalDateTime" : null,
       "departureDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -104,9 +107,6 @@
         "hour" : 12,
         "minute" : 28,
         "second" : 16,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -124,6 +124,9 @@
       "open" : false
     }, {
       "arrivalDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -131,15 +134,15 @@
         "hour" : 12,
         "minute" : 28,
         "second" : 53,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "departureDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -147,9 +150,6 @@
         "hour" : 12,
         "minute" : 28,
         "second" : 48,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -168,6 +168,9 @@
     }, {
       "arrivalDateTime" : null,
       "departureDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -175,9 +178,6 @@
         "hour" : 12,
         "minute" : 28,
         "second" : 54,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -185,8 +185,8 @@
       },
       "distance" : 0.0,
       "arrivalLocation" : {
-        "id" : null,
-        "name" : null
+        "id" : "null",
+        "name" : "null"
       },
       "departureLocation" : {
         "id" : "1",
@@ -197,6 +197,9 @@
     "latestJourney" : {
       "arrivalDateTime" : null,
       "departureDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -204,9 +207,6 @@
         "hour" : 12,
         "minute" : 28,
         "second" : 54,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -214,8 +214,8 @@
       },
       "distance" : 0.0,
       "arrivalLocation" : {
-        "id" : null,
-        "name" : null
+        "id" : "null",
+        "name" : "null"
       },
       "departureLocation" : {
         "id" : "1",
@@ -228,6 +228,9 @@
     "passes" : [ {
       "valid" : true,
       "dateTimeExpires" : {
+        "month" : "DECEMBER",
+        "dayOfYear" : 359,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 12,
@@ -235,9 +238,6 @@
         "hour" : 12,
         "minute" : 0,
         "second" : 0,
-        "month" : "DECEMBER",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 359,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -248,6 +248,9 @@
     }, {
       "valid" : true,
       "dateTimeExpires" : {
+        "month" : "DECEMBER",
+        "dayOfYear" : 359,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 12,
@@ -255,9 +258,6 @@
         "hour" : 12,
         "minute" : 0,
         "second" : 0,
-        "month" : "DECEMBER",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 359,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -269,6 +269,9 @@
     "dayPass" : {
       "valid" : true,
       "dateTimeExpires" : {
+        "month" : "DECEMBER",
+        "dayOfYear" : 359,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 12,
@@ -276,9 +279,6 @@
         "hour" : 12,
         "minute" : 0,
         "second" : 0,
-        "month" : "DECEMBER",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 359,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -300,6 +300,9 @@
   "journeys" : {
     "journeys" : [ {
       "arrivalDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -307,15 +310,15 @@
         "hour" : 12,
         "minute" : 28,
         "second" : 27,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "departureDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -323,9 +326,6 @@
         "hour" : 12,
         "minute" : 28,
         "second" : 24,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -343,6 +343,9 @@
       "open" : false
     }, {
       "arrivalDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -350,15 +353,15 @@
         "hour" : 12,
         "minute" : 29,
         "second" : 4,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "departureDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -366,9 +369,6 @@
         "hour" : 12,
         "minute" : 28,
         "second" : 59,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -386,6 +386,9 @@
       "open" : false
     }, {
       "arrivalDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -393,15 +396,15 @@
         "hour" : 12,
         "minute" : 29,
         "second" : 12,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "departureDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -409,9 +412,6 @@
         "hour" : 12,
         "minute" : 29,
         "second" : 5,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -429,6 +429,9 @@
       "open" : false
     }, {
       "arrivalDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -436,15 +439,15 @@
         "hour" : 12,
         "minute" : 29,
         "second" : 15,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "departureDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -452,9 +455,6 @@
         "hour" : 12,
         "minute" : 29,
         "second" : 13,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -472,6 +472,9 @@
       "open" : false
     }, {
       "arrivalDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -479,15 +482,15 @@
         "hour" : 12,
         "minute" : 29,
         "second" : 20,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "departureDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -495,9 +498,6 @@
         "hour" : 12,
         "minute" : 29,
         "second" : 16,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -516,6 +516,9 @@
     } ],
     "latestJourney" : {
       "arrivalDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -523,15 +526,15 @@
         "hour" : 12,
         "minute" : 29,
         "second" : 20,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "departureDateTime" : {
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
@@ -539,9 +542,6 @@
         "hour" : 12,
         "minute" : 29,
         "second" : 16,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -563,6 +563,9 @@
     "passes" : [ {
       "valid" : true,
       "dateTimeExpires" : {
+        "month" : "DECEMBER",
+        "dayOfYear" : 359,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 12,
@@ -570,9 +573,6 @@
         "hour" : 12,
         "minute" : 0,
         "second" : 0,
-        "month" : "DECEMBER",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 359,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -584,6 +584,9 @@
     "dayPass" : {
       "valid" : true,
       "dateTimeExpires" : {
+        "month" : "DECEMBER",
+        "dayOfYear" : 359,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 12,
@@ -591,9 +594,6 @@
         "hour" : 12,
         "minute" : 0,
         "second" : 0,
-        "month" : "DECEMBER",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 359,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -615,32 +615,32 @@
   "journeys" : {
     "journeys" : [ {
       "arrivalDateTime" : {
-        "nano" : 97589200,
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
+        "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
         "dayOfMonth" : 13,
         "hour" : 12,
         "minute" : 32,
         "second" : 55,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "departureDateTime" : {
-        "nano" : 271206600,
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
+        "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
         "dayOfMonth" : 13,
         "hour" : 12,
         "minute" : 32,
         "second" : 51,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -659,32 +659,32 @@
     } ],
     "latestJourney" : {
       "arrivalDateTime" : {
-        "nano" : 97589200,
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
+        "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
         "dayOfMonth" : 13,
         "hour" : 12,
         "minute" : 32,
         "second" : 55,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "departureDateTime" : {
-        "nano" : 271206600,
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
+        "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
         "dayOfMonth" : 13,
         "hour" : 12,
         "minute" : 32,
         "second" : 51,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -706,6 +706,9 @@
     "passes" : [ {
       "valid" : true,
       "dateTimeExpires" : {
+        "month" : "DECEMBER",
+        "dayOfYear" : 359,
+        "dayOfWeek" : "TUESDAY",
         "nano" : 0,
         "year" : 2018,
         "monthValue" : 12,
@@ -713,9 +716,6 @@
         "hour" : 12,
         "minute" : 0,
         "second" : 0,
-        "month" : "DECEMBER",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 359,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
@@ -739,54 +739,60 @@
     "journeys" : [ {
       "arrivalDateTime" : null,
       "departureDateTime" : {
-        "nano" : 844233300,
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
+        "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
         "dayOfMonth" : 13,
         "hour" : 12,
         "minute" : 32,
         "second" : 47,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "distance" : 0.0,
-      "arrivalLocation" : null,
+      "arrivalLocation" : {
+        "id" : null,
+        "name" : null
+      },
       "departureLocation" : {
         "id" : "0",
         "name" : "London"
       },
-      "open" : true
+      "open" : false
     } ],
     "latestJourney" : {
       "arrivalDateTime" : null,
       "departureDateTime" : {
-        "nano" : 844233300,
+        "month" : "MARCH",
+        "dayOfYear" : 72,
+        "dayOfWeek" : "TUESDAY",
+        "nano" : 0,
         "year" : 2018,
         "monthValue" : 3,
         "dayOfMonth" : 13,
         "hour" : 12,
         "minute" : 32,
         "second" : 47,
-        "month" : "MARCH",
-        "dayOfWeek" : "TUESDAY",
-        "dayOfYear" : 72,
         "chronology" : {
           "id" : "ISO",
           "calendarType" : "iso8601"
         }
       },
       "distance" : 0.0,
-      "arrivalLocation" : null,
+      "arrivalLocation" : {
+        "id" : null,
+        "name" : null
+      },
       "departureLocation" : {
         "id" : "0",
         "name" : "London"
       },
-      "open" : true
+      "open" : false
     }
   }
 }, {

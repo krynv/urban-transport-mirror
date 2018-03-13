@@ -853,7 +853,7 @@ public class PayForTripGUI extends JFrame {
     }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Benjamin Ward
+        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
         pnlMain = new JPanel();
         pnlSide = new JPanel();
         btnHome = new JButton();
@@ -1002,7 +1002,6 @@ public class PayForTripGUI extends JFrame {
         //======== pnlMain ========
         {
             pnlMain.setPreferredSize(new Dimension(1111, 635));
-
 
             pnlMain.setLayout(new CardLayout());
 
@@ -2034,7 +2033,7 @@ public class PayForTripGUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Benjamin Ward
+    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
     private JPanel pnlMain;
     private JPanel pnlSide;
     private JButton btnHome;
