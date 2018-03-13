@@ -33,6 +33,10 @@ public class AccountSerializer extends StdSerializer<Account> {
                 jgen.writeObjectField("journeys", account.getJourneys());
             }
 
+            if (account.getPasses().getPasses().size() != 0) {
+                jgen.writeObjectField("passes", account.getPasses());
+            }
+
             jgen.writeEndObject();
         } catch (IOException e) {
             e.printStackTrace();

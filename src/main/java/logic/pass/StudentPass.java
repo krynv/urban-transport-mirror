@@ -4,15 +4,7 @@ import java.time.LocalDateTime;
 
 public class StudentPass extends Pass {
 
-    private double modifier;
-
-    public StudentPass(Boolean valid, LocalDateTime localDateTime) {
-        super(valid, localDateTime);
-
-        modifier = 0.5;
-    }
-
-    public double getModifier() {
-        return modifier;
+    public StudentPass(Boolean valid, LocalDateTime dateTimeExpires, double modifier, String name) {
+        super(valid, dateTimeExpires, modifier, name);
     }
 }

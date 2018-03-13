@@ -8,8 +8,7 @@ import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import logic.journey.Journey;
 import logic.journey.JourneyRegistry;
 import logic.location.Location;
-import logic.pass.Pass;
-import logic.pass.PassRegistry;
+import logic.pass.*;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -49,6 +48,7 @@ public class AccountDeserializer extends StdDeserializer<Account> {
             JsonNode spentTodayNode = jsonNode.get("spentToday");
 
             JsonNode journeysRootNode = jsonNode.get("journeys");
+            JsonNode passesRootNode = jsonNode.get("passes");
 
             JourneyRegistry journeyRegistry = new JourneyRegistry();
 
@@ -117,6 +117,33 @@ public class AccountDeserializer extends StdDeserializer<Account> {
             }
 
             PassRegistry passRegistry = new PassRegistry();
+
+            if (passesRootNode != null) {
+                JsonNode passesNode = passesRootNode.get("passes");
+
+                for (JsonNode passNode : passesNode) {
+                    Pass pass = null;
+
+                    JsonNode typeNode = passNode.get("name");
+                    JsonNode modifierNode = passNode.get("modifier");
+                    JsonNode validNode = passNode.get("valid");
+                    JsonNode dateTimeNode = passesNode.get("dateTimeExpires");
+
+                    if (typeNode.asText().equals("DayPass")) {
+                        pass = new DayPass(validNode.asBoolean(), LocalDateTime.of(2018, 12, 25, 12, 0), modifierNode.asDouble(), typeNode.asText());
+                    }
+
+                    if (typeNode.asText().equals("StudentPass")) {
+                        pass = new StudentPass(validNode.asBoolean(), LocalDateTime.of(2018, 12, 25, 12, 0), modifierNode.asDouble(), typeNode.asText());
+                    }
+
+                    if (typeNode.asText().equals("OAPPass")) {
+                        pass = new OAPPass(validNode.asBoolean(), LocalDateTime.of(2018, 12, 25, 12, 0), modifierNode.asDouble(), typeNode.asText());
+                    }
+
+                    passRegistry.addPass(pass);
+                }
+            }
 
             account.setId(idNode.asText());
             account.setName(nameNode.asText());

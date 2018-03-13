@@ -44,6 +44,8 @@ public class GateGUI extends JFrame {
         model.addColumn("Token Id");
         model.addColumn("Account");
         model.addColumn("Departure Location");
+        model.addColumn("Passes");
+        model.addColumn("Credits");
 
         tblInformation.setModel(model);
     }
@@ -61,12 +63,19 @@ public class GateGUI extends JFrame {
 
                 if (gateController.canOpen()) {
                     users.add(tokenId);
+
+                    String passes = gateController.getAccount().getPasses().toString();
+
                     model.insertRow(model.getRowCount(),
                             new Object[]{
                                     tokenId,
                                     gateController.getAccount().getName(),
-                                    gateController.getAccount().getJourneys().getLatestJourney().getDepartureLocation()
+                                    gateController.getAccount().getJourneys().getLatestJourney().getDepartureLocation(),
+                                    passes,
+                                    gateController.getAccount().getCredits()
                             });
+                } else {
+                    txtTokenId.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
                 }
             }
         } else {

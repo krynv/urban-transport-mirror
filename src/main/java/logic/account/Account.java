@@ -90,11 +90,10 @@ public class Account {
 
                 spentToday += cost;
 
-                System.out.println();
-
                 if (spentToday >= 15) {
                     passes.awardDayPass();
                     cost = Math.abs(spentToday - 15);
+                    spentToday = 15;
                 }
 
                 credits -= cost;

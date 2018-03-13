@@ -12,8 +12,6 @@ public class PassRegistry {
 
     public PassRegistry() {
         passes = new ArrayList<>();
-
-        passes.add(new StudentPass(true, LocalDateTime.of(2019, 1, 1, 12, 0)));
     }
 
     /**
@@ -50,6 +48,10 @@ public class PassRegistry {
                     totalCost = pass.getModifier();
                     pass.invalidate();
                 }
+
+                if (pass.getClass() == OAPPass.class) {
+                    totalCost *= pass.getModifier();
+                }
             }
         }
 
@@ -75,7 +77,19 @@ public class PassRegistry {
      * Awards day pass if spent over £15
      */
     public void awardDayPass() {
-        passes.add(new DayPass(true, LocalDateTime.of(2019, 1, 1, 12, 0)));
+        passes.add(new DayPass(true, LocalDateTime.of(2018, 12, 25, 12, 0), 15.0, "DayPass"));
     }
 
+    public List<Pass> getPasses() {
+        return passes;
+    }
+
+    public void addPass(Pass pass) {
+        passes.add(pass);
+    }
+
+    @Override
+    public String toString() {
+        return "" + passes;
+    }
 }

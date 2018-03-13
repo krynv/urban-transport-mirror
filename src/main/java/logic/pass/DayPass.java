@@ -4,15 +4,23 @@ import java.time.LocalDateTime;
 
 public class DayPass extends Pass {
 
-    private double modifier;
+    public DayPass(Boolean valid, LocalDateTime dateTimeExpires, double modifier, String name) {
+        super(valid, dateTimeExpires, modifier, name);
+    }
 
-    public DayPass(Boolean valid, LocalDateTime localDateTime) {
-        super(valid, localDateTime);
+    public String getName() {
+        return super.getName();
+    }
 
-        modifier = 15.00;
+    public void setName(String name) {
+        super.setName(name);
     }
 
     public double getModifier() {
-        return modifier;
+        return super.getModifier();
+    }
+
+    public void setModifier(double modifier) {
+        super.setModifier(modifier);
     }
 }
