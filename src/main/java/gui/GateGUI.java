@@ -8,12 +8,14 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.table.DefaultTableModel;
 
 public class GateGUI extends JFrame {
 
     private GateController gateController;
     private DefaultTableModel model;
+    private Border defaultBorder;
 
     public GateGUI() {
         gateController = new GateController();
@@ -23,6 +25,7 @@ public class GateGUI extends JFrame {
         initLocations();
         initInformation();
 
+        defaultBorder  = txtTokenId.getBorder();
         this.setContentPane(pnlMain);
         this.pack();
     }
@@ -58,6 +61,8 @@ public class GateGUI extends JFrame {
                                 gateController.getAccount().getJourneys().getLatestJourney().getDepartureLocation()
                         });
             }
+        } else {
+            txtTokenId.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
         }
     }
 
@@ -68,17 +73,21 @@ public class GateGUI extends JFrame {
 
         gateController.presentToken(type, tokenId, locationId);
 
-        if (gateController.canOpen()) {
-            model = (DefaultTableModel) tblInformation.getModel();
+        if (!tokenId.isEmpty()) {
+            if (gateController.canOpen()) {
+                model = (DefaultTableModel) tblInformation.getModel();
 
-            for (int i = 0; i < model.getRowCount(); i++) {
-                if (model.getValueAt(i, 0).equals(tokenId)) {
-                    model.removeRow(i);
-                    break;
+                for (int i = 0; i < model.getRowCount(); i++) {
+                    if (model.getValueAt(i, 0).equals(tokenId)) {
+                        model.removeRow(i);
+                        break;
+                    }
                 }
+            } else {
+                System.out.println("Close");    // TODO: Add UI aid to showcase this.
             }
         } else {
-            System.out.println("Close");    // TODO: Add UI aid to showcase this.
+            txtTokenId.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
         }
     }
 
@@ -87,9 +96,13 @@ public class GateGUI extends JFrame {
         this.dispose();
     }
 
+    private void txtTokenIdFocusGained(FocusEvent e) {
+        txtTokenId.setBorder(defaultBorder);
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Benjamin Ward
+        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
         pnlMain = new JPanel();
         btnMainGUI = new JButton();
         scrollPane1 = new JScrollPane();
@@ -126,6 +139,14 @@ public class GateGUI extends JFrame {
             {
                 scrollPane1.setViewportView(tblInformation);
             }
+
+            //---- txtTokenId ----
+            txtTokenId.addFocusListener(new FocusAdapter() {
+                @Override
+                public void focusGained(FocusEvent e) {
+                    txtTokenIdFocusGained(e);
+                }
+            });
 
             //---- btnEntry ----
             btnEntry.setText("Entry");
@@ -194,7 +215,7 @@ public class GateGUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Benjamin Ward
+    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
     private JPanel pnlMain;
     private JButton btnMainGUI;
     private JScrollPane scrollPane1;

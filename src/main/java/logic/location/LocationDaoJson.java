@@ -15,8 +15,10 @@ public class LocationDaoJson implements LocationDao {
     public LocationDaoJson() {}
 
     /**
-     * Reads all locations from json file
-     * Deseralize each location from json to POJO
+     * This method is used to read the contents of the JSON file
+     * for locations. The contents is then translated in a POJO
+     * representing a instance of the Location class. Return all the
+     * locations in a list.
      *
      * @return list of locations
      */
