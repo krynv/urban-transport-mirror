@@ -43,7 +43,7 @@ public class GUI extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Benjamin Ward
+        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
         pnlGUI = new JPanel();
         pnlSelectOption = new JPanel();
         btnViewReport = new JButton();
@@ -132,7 +132,7 @@ public class GUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Benjamin Ward
+    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
     private JPanel pnlGUI;
     private JPanel pnlSelectOption;
     private JButton btnViewReport;

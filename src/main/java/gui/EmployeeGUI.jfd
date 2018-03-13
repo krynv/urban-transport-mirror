@@ -5,11 +5,16 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.CardLayout ) ) {
 			name: "mainPnl"
+			"minimumSize": new java.awt.Dimension( 100, 100 )
+			"maximumSize": new java.awt.Dimension( 1111, 635 )
+			"preferredSize": new java.awt.Dimension( 1111, 635 )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 				"$horizontalGroup": "par l {comp tabbedPane12::l:::x}"
 				"$verticalGroup": "par l {comp tabbedPane12::l::480:x}"
 			} ) {
 				name: "tabbedPanel"
+				"preferredSize": new java.awt.Dimension( 1111, 635 )
+				"minimumSize": new java.awt.Dimension( 645, 480 )
 				auxiliary() {
 					"JavaCodeGenerator.variableLocal": true
 				}
@@ -517,4 +522,3 @@ new FormModel {
 		} )
 	}
 }
-

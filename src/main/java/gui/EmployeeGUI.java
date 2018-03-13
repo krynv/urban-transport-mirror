@@ -92,7 +92,7 @@ public class EmployeeGUI extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Benjamin Ward
+        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
         mainPnl = new JPanel();
         JPanel tabbedPanel = new JPanel();
         tabbedPane12 = new JTabbedPane();
@@ -189,6 +189,9 @@ public class EmployeeGUI extends JFrame {
 
         //======== mainPnl ========
         {
+            mainPnl.setMinimumSize(new Dimension(100, 100));
+            mainPnl.setMaximumSize(new Dimension(1111, 635));
+            mainPnl.setPreferredSize(new Dimension(1111, 635));
 
             // JFormDesigner evaluation mark
             mainPnl.setBorder(new javax.swing.border.CompoundBorder(
@@ -201,6 +204,8 @@ public class EmployeeGUI extends JFrame {
 
             //======== tabbedPanel ========
             {
+                tabbedPanel.setPreferredSize(new Dimension(1111, 635));
+                tabbedPanel.setMinimumSize(new Dimension(645, 480));
 
                 //======== tabbedPane12 ========
                 {
@@ -1107,7 +1112,7 @@ public class EmployeeGUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Benjamin Ward
+    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
     private JPanel mainPnl;
     private JTabbedPane tabbedPane12;
     private JPanel panel20;

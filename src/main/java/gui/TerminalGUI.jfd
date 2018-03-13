@@ -5,6 +5,7 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.CardLayout ) ) {
 			name: "pnlGUI"
+			"preferredSize": new java.awt.Dimension( 1111, 635 )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 				"$horizontalGroup": "par l {seq {par l {seq l {space :::p, comp btnMainGUI:::p:199:p}, seq l {space :p:448:p, comp lblCard:::p::p}, seq l {space :p:491:p, par l {comp btnContactless:::p:281:p, comp btnMagnetic:::p::p, comp btnBarcode::l:p:281:p}}}, space :::x}}"
 				"$verticalGroup": "par l {seq l {space :p:99:p, comp lblCard:::p::p, space :::p, comp btnMagnetic:::p:98:p, space u:::p, comp btnContactless:::p:98:p, space u:::p, comp btnBarcode:::p:98:p, space ::40:x, comp btnMainGUI:::p:50:p, space :::p}}"

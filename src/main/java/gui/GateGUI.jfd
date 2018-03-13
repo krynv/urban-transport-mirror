@@ -4,12 +4,12 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :::p, par l {comp btnMainGUI:::p:232:p, seq {par l {seq l {comp btnEntry:::p:232:p, space :p:81:p, comp btnExit:::p:238:p}, seq l {par t {comp lblToken:::p::p, comp lblLocation:::p::p}, space u:::p, par l:::p {comp cbxLocations::::250:x, comp txtTokenId::::250:x}}}, space :p:65:p, comp scrollPane1:::p::p}}, space ::31:x}}"
-			"$verticalGroup": "par l {seq {space :::p, par l {seq l {par b {comp lblLocation::b:p::p, comp cbxLocations::b:p::p}, space :::p, par l {comp txtTokenId::l:p::p, comp lblToken::l:p::p}, space :p:47:p, par b {comp btnEntry::b:p:204:p, comp btnExit::b:p:204:p}}, comp scrollPane1::l:p:453:p}, space :p:106:p, comp btnMainGUI:::p:50:p, space ::60:x}}"
+			"$horizontalGroup": "par l {seq l {space :::p, par l {comp btnMainGUI:::p:232:p, seq {par l {seq l {comp btnEntry:::p:232:p, space :p:81:p, comp btnExit:::p:238:p}, seq l {par t {comp lblToken:::p::p, comp lblLocation:::p::p}, space u:::p, par l:::p {comp cbxLocations::::250:x, comp txtTokenId::::250:x}}}, space :p:65:p, comp scrollPane1:::p::p}}, space :::x}}"
+			"$verticalGroup": "par l {seq {space :::p, par l {seq l {par b {comp lblLocation::b:p::p, comp cbxLocations::b:p::p}, space :::p, par l {comp txtTokenId::l:p::p, comp lblToken::l:p::p}, space :p:47:p, par b {comp btnEntry::b:p:204:p, comp btnExit::b:p:204:p}}, comp scrollPane1::l:p:453:p}, space :p:106:p, comp btnMainGUI:::p:50:p, space :::x}}"
 		} ) {
 			name: "pnlMain"
 			"maximumSize": sfield com.jformdesigner.model.FormObject NULL_VALUE
-			"preferredSize": sfield com.jformdesigner.model.FormObject NULL_VALUE
+			"preferredSize": new java.awt.Dimension( 1111, 635 )
 			"minimumSize": sfield com.jformdesigner.model.FormObject NULL_VALUE
 			add( new FormComponent( "javax.swing.JButton" ) {
 				name: "btnMainGUI"

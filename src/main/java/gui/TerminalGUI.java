@@ -285,7 +285,7 @@ public class TerminalGUI extends JFrame {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
-        // Generated using JFormDesigner Evaluation license - Benjamin Ward
+        // Generated using JFormDesigner Evaluation license - Sheffield Hallan
         pnlGUI = new JPanel();
         pnlCardChoice = new JPanel();
         lblCard = new JLabel();
@@ -362,6 +362,7 @@ public class TerminalGUI extends JFrame {
 
         //======== pnlGUI ========
         {
+            pnlGUI.setPreferredSize(new Dimension(1111, 635));
 
             // JFormDesigner evaluation mark
             pnlGUI.setBorder(new javax.swing.border.CompoundBorder(
@@ -1050,7 +1051,7 @@ public class TerminalGUI extends JFrame {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
-    // Generated using JFormDesigner Evaluation license - Benjamin Ward
+    // Generated using JFormDesigner Evaluation license - Sheffield Hallan
     private JPanel pnlGUI;
     private JPanel pnlCardChoice;
     private JLabel lblCard;

@@ -103,7 +103,7 @@ public class GateGUI extends JFrame {
         //======== pnlMain ========
         {
             pnlMain.setMaximumSize(null);
-            pnlMain.setPreferredSize(null);
+            pnlMain.setPreferredSize(new Dimension(1111, 635));
             pnlMain.setMinimumSize(null);
 
             // JFormDesigner evaluation mark
@@ -164,7 +164,7 @@ public class GateGUI extends JFrame {
                                             .addComponent(txtTokenId, GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))))
                                 .addGap(65, 65, 65)
                                 .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(31, Short.MAX_VALUE))
+                        .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             );
             pnlMainLayout.setVerticalGroup(
                 pnlMainLayout.createParallelGroup()
@@ -186,7 +186,7 @@ public class GateGUI extends JFrame {
                             .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 453, GroupLayout.PREFERRED_SIZE))
                         .addGap(106, 106, 106)
                         .addComponent(btnMainGUI, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(60, Short.MAX_VALUE))
+                        .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             );
         }
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
