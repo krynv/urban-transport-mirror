@@ -394,14 +394,14 @@ public class LoginRegisterGUI  extends JFrame {
                 passStrengthMess.setHorizontalAlignment(SwingConstants.CENTER);
                 passStrengthMess.setVisible(false);
                 pnlRegister.add(passStrengthMess);
-                passStrengthMess.setBounds(16, 366, 0, 0);
+                passStrengthMess.setBounds(335, 400, 524, 25);
 
                 //---- passStrength ----
                 passStrength.setText("Password Strength - TOO SHORT");
                 passStrength.setHorizontalAlignment(SwingConstants.CENTER);
                 passStrength.setVisible(false);
                 pnlRegister.add(passStrength);
-                passStrength.setBounds(141, 278, 0, 0);
+                passStrength.setBounds(280, 345, 540, 25);
 
                 { // compute preferred size
                     Dimension preferredSize = new Dimension();

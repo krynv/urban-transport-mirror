@@ -229,10 +229,10 @@ new FormModel {
 					"horizontalAlignment": 0
 					"visible": false
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 16
-					"y": 366
-					"width": 0
-					"height": 0
+					"x": 335
+					"y": 400
+					"width": 524
+					"height": 25
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "passStrength"
@@ -240,10 +240,10 @@ new FormModel {
 					"horizontalAlignment": 0
 					"visible": false
 				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
-					"x": 141
-					"y": 278
-					"width": 0
-					"height": 0
+					"x": 280
+					"y": 345
+					"width": 540
+					"height": 25
 				} )
 			}, new FormLayoutConstraints( class java.lang.String ) {
 				"value": "card3"
