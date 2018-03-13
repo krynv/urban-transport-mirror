@@ -86,6 +86,10 @@ public class GateGUI extends JFrame {
         this.dispose();
     }
 
+    private void txtTokenIdFocusGained(FocusEvent e) {
+        // TODO add your code here
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         // Generated using JFormDesigner Evaluation license - Sheffield Hallan
@@ -125,6 +129,14 @@ public class GateGUI extends JFrame {
             {
                 scrollPane1.setViewportView(tblInformation);
             }
+
+            //---- txtTokenId ----
+            txtTokenId.addFocusListener(new FocusAdapter() {
+                @Override
+                public void focusGained(FocusEvent e) {
+                    txtTokenIdFocusGained(e);
+                }
+            });
 
             //---- btnEntry ----
             btnEntry.setText("Entry");
