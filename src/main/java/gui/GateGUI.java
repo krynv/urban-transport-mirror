@@ -110,14 +110,6 @@ public class GateGUI extends JFrame {
             pnlMain.setPreferredSize(new Dimension(1111, 635));
             pnlMain.setMinimumSize(null);
 
-            // JFormDesigner evaluation mark
-            pnlMain.setBorder(new javax.swing.border.CompoundBorder(
-                new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(0, 0, 0, 0),
-                    "JFormDesigner Evaluation", javax.swing.border.TitledBorder.CENTER,
-                    javax.swing.border.TitledBorder.BOTTOM, new java.awt.Font("Dialog", java.awt.Font.BOLD, 12),
-                    java.awt.Color.red), pnlMain.getBorder())); pnlMain.addPropertyChangeListener(new java.beans.PropertyChangeListener(){public void propertyChange(java.beans.PropertyChangeEvent e){if("border".equals(e.getPropertyName()))throw new RuntimeException();}});
-
-
             //---- btnMainGUI ----
             btnMainGUI.setText("Main Page");
             btnMainGUI.setMaximumSize(new Dimension(151, 25));
